@@ -1,0 +1,6 @@
+[submodule "tools/splat"]
+	path = tools/splat
+	url = https://github.com/ethteck/splat
+[submodule "tools/bk_rom_compressor"]
+	path = tools/bk_rom_compressor
+	url = https://github.com/MittenzHugg/bk_rom_compressor

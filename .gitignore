@@ -1,0 +1,65 @@
+# ignore all rom files
+baseroms/*
+*.z64
+*.n64
+*.v64
+
+#compiled or ripped asm
+asm/*
+asm
+build/*
+buil/
+
+#binaries ripped from the ROMs
+assets/
+assets/*
+bin/
+bin/*
+
+
+# This folder will hold modified asset binaries
+# these assets will override the original game
+# assets in the bin/ at compile time.
+mod/
+mod/*
+
+
+#compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+#Precompiled Headers
+*.gch
+*.pch
+
+#compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+#static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+#misc
+__pycache__/
+*__pycache__/
+expected/
+.*/
+*.ld
+*.map
+*auto.txt
+.splat_cache
+.splat_cache*
+diff_settings.py
+ctx.c
+nonmatchings/
+
+#progress reports
+*.csv
+undefined_funcs_auto.us.v10.txt
+undefined_syms_auto.us.v10.txt
