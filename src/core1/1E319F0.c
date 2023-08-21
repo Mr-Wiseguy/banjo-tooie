@@ -31,6 +31,7 @@ s32 func_8001C26C();                                /* extern */
 s32 func_8001C28C();                                /* extern */
 extern s32 D_8007E994;
 
+// Loads a non-relocatable overlay
 void func_80019EC0(s32 arg0, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* ovl_rom_end, u8* ovl_text_start, u8* ovl_text_end, u8* ovl_rodata_start, u8* ovl_data_end, u8* ovl_bss_start, u8* ovl_bss_end) {
     s32 var_a0;
     s32 sp30;

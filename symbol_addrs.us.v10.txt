@@ -9,6 +9,14 @@ osRomBase = 0x80000308;
 osResetType = 0x8000030C;
 osAppNMIBuffer = 0x8000031C;
 
+// core1
+cic_send_challenge = 0x8001E048;
+cic_read_response = 0x8001E11C;
+
+// core2
+syscall_handler = 0x80081E74;
+ovl_entrypoint_table = 0x80082540;
+
 // core1 deflate
 inflate = 0x8001C3FC;
 inflate_block = 0x8001C45C;
@@ -121,6 +129,7 @@ __osSetFpcCsr = 0x80031F20;
 __osSiRawReadIo = 0x80031F30;
 __osSiRawWriteIo = 0x80031F80;
 __osExceptionPreamble = 0x80031FE0;
+__osException = 0x80031FF0;
 __osEnqueueAndYield = 0x80032670;
 __osEnqueueThread = 0x80032770;
 __osPopThread = 0x800327B8;
@@ -227,6 +236,7 @@ __osBaseCounter = 0x800812B8;
 __osViIntrCount = 0x800812BC;
 __osTimerCounter = 0x800812C0;
 __osPfsInodeCache = 0x800812D0;
+__osThreadSave = 0x800813D0;
 __osPfsPifRam = 0x80081580; // size:0x40
 __osFinalrom = 0x8009EAD0;
 __Dom1SpeedParam = 0x8009EAE0;
