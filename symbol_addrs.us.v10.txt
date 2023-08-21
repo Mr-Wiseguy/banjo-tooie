@@ -333,3 +333,6 @@ boot_cpdist = 0x80004360;
 boot_border = 0x8000439C;
 boot_cplext = 0x800043AF;
 boot_cpdext = 0x800043CE;
+
+// overlay manual fixes
+R_80801478_chfiregen = 0x80801478; // force_migration:True segment:chfiregen rom:0x2037678 size:8

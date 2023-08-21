@@ -9,6 +9,8 @@
 #include <string_view>
 #include "zlib.h"
 
+// Relocate overlays to this address for easier disassembly
+constexpr uint32_t overlay_vram = 0x80800000;
 constexpr bool generate_splat_fies = true;
 
 static inline uint32_t byteswap32(uint32_t in) {
@@ -28,8 +30,9 @@ enum class RelocType {
 
 enum class SymbolType {
     Function,
-    Data,
+    Text,
     Rodata,
+    Data,
     Bss,
     None
 };
@@ -68,8 +71,8 @@ struct Overlay {
     uint32_t rom_start;
     uint32_t code_rom_start;
     uint32_t text_size;
-    uint32_t data_size;
     uint32_t rodata_size;
+    uint32_t data_size;
     uint32_t bss_size;
     uint32_t num_entrypoints;
     uint32_t num_relocs;
@@ -92,11 +95,14 @@ std::string symbol_name(const Symbol& symbol, SymbolType type) {
         case SymbolType::Function:
             type_name = "func";
             break;
-        case SymbolType::Data:
-            type_name = "D";
+        case SymbolType::Text:
+            type_name = "T";
             break;
         case SymbolType::Rodata:
             type_name = "R";
+            break;
+        case SymbolType::Data:
+            type_name = "D";
             break;
         case SymbolType::Bss:
             type_name = "B";
@@ -145,6 +151,10 @@ public:
         symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type = type;
     }
 
+    SymbolType get_symbol_type(const char* ovl_name, uint32_t addr) {
+        return symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type;
+    }
+
     void add_bss_symbol(const char* ovl_name, uint32_t addr) {
         if constexpr (generate_splat_fies) {
             Symbol sym{.ovl_name = ovl_name, .address = addr};
@@ -159,35 +169,41 @@ public:
             for (const auto& [s, details] : symbols) {
                 uint32_t rom_addr = details.rom_address;
                 const std::string& sym_name = details.name;
-                if (rom_addr == 0) {
-                    // Bss symbol
-                    fmt::print(symbol_addrs_file, "{} = 0x{:08X}; // segment:{}\n",
-                        sym_name.empty() ? symbol_name(s, details.type) : sym_name, s.address, s.ovl_name);
-                }
-                else {
-                    // Non-bss symbol
-                    fmt::print(symbol_addrs_file, "{} = 0x{:08X}; // segment:{} rom:0x{:08X} {}\n", 
-                        sym_name.empty() ? symbol_name(s, details.type) : sym_name, s.address, s.ovl_name, rom_addr, details.type == SymbolType::Function ? "type:func" : "");
+                // Don't emit symbol entries for generic text relocs
+                if (details.type != SymbolType::Text) {
+                    if (rom_addr == 0) {
+                        // Bss symbol
+                        fmt::print(symbol_addrs_file, "{} = 0x{:08X}; // segment:{}\n",
+                            sym_name.empty() ? symbol_name(s, details.type) : sym_name, s.address, s.ovl_name);
+                    }
+                    else {
+                        // Non-bss symbol
+                        fmt::print(symbol_addrs_file, "{} = 0x{:08X}; // segment:{} rom:0x{:08X} {}\n", 
+                            sym_name.empty() ? symbol_name(s, details.type) : sym_name, s.address, s.ovl_name, rom_addr, details.type == SymbolType::Function ? "type:func" : "");
+                    }
                 }
             }
             for (const auto& reloc : relocs) {
                 const auto& symbol_details = symbols[reloc.symbol];
                 const std::string& sym_name = symbol_details.name;
-                fmt::print(reloc_addrs_file, "rom:0x{:08X} symbol:{} reloc:{}\n",
-                    reloc.rom_address, sym_name.empty() ? symbol_name(reloc.symbol, symbol_details.type) : sym_name, reloc_names[(size_t)reloc.type]);
+                // Don't emit reloc_addrs entries for generic text relocs
+                if (symbol_details.type != SymbolType::Text) {
+                    fmt::print(reloc_addrs_file, "rom:0x{:08X} symbol:{} reloc:{}\n",
+                        reloc.rom_address, sym_name.empty() ? symbol_name(reloc.symbol, symbol_details.type) : sym_name, reloc_names[(size_t)reloc.type]);
+                }
             }
         }
     }
 
-    void add_overlay(const char* name, uint32_t rom_start, uint32_t code_rom_start, uint32_t text_size, uint32_t data_size, uint32_t rodata_size, uint32_t bss_size, uint32_t num_entrypoints, uint32_t num_relocs) {
+    void add_overlay(const char* name, uint32_t rom_start, uint32_t code_rom_start, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size, uint32_t num_entrypoints, uint32_t num_relocs) {
         if constexpr (generate_splat_fies) {
             overlays.emplace_back(Overlay{
                 .name = name,
                 .rom_start = rom_start,
                 .code_rom_start = code_rom_start,
                 .text_size = text_size,
-                .data_size = data_size,
                 .rodata_size = rodata_size,
+                .data_size = data_size,
                 .bss_size = bss_size,
                 .num_entrypoints = num_entrypoints,
                 .num_relocs = num_relocs
@@ -203,36 +219,40 @@ public:
                 "    type: code\n"
                 "    vram: 0 # Unimportant dummy value\n"
                 "    start: 0x{0:08X}\n"
+                "    exclusive_ram_id: overlay_table\n"
                 "    subsegments: \n"
-                "      - [0x{0:08X}, data, overlay_table]\n",
+                "      - [0x{0:08X}, bin, overlay_table]\n",
                 overlay_table_rom_start_);
             for (const auto& overlay : overlays) {
                 uint32_t text_start = overlay.code_rom_start;
-                uint32_t data_start = text_start + overlay.text_size;
-                uint32_t rodata_start = data_start + overlay.data_size;
-                uint32_t rodata_end = rodata_start + overlay.rodata_size;
+                uint32_t rodata_start = text_start + overlay.text_size;
+                uint32_t data_start = rodata_start + overlay.rodata_size;
+                uint32_t data_end = data_start + overlay.data_size;
                 fmt::print(yaml_file,
                     "  - name: {0}_header\n"
                     "    dir: {0}\n"
                     "    type: code\n"
                     "    vram: 0 # Unimportant dummy value\n"
                     "    start: 0x{1:08X}\n"
+                    "    exclusive_ram_id: overlay_header\n"
                     "    subsegments: \n"
-                    "      - [0x{1:08X}, data, {0}_header]\n"
+                    "      - [0x{1:08X}, bin, {0}_header]\n"
                     "  - name: {0}\n"
                     "    dir: {0}\n"
                     "    type: code\n"
-                    "    vram: 0x80000000\n"
+                    "    vram: 0x{7:08X}\n"
                     "    start: 0x{2:08X}\n"
-                    "    subalign: 4\n"
                     "    bss_size: 0x{6:08X}\n"
+                    "    exclusive_ram_id: overlay\n"
+                    "    symbol_name_format: $VRAM_$SEG\n"
+                    "    symbol_name_format_no_rom: $VRAM_$SEG\n"
                     "    subsegments: \n"
                     "      - [0x{2:08X}, c, {0}]\n"
-                    "      - [0x{3:08X}, .data, {0}]\n"
-                    "      - [0x{4:08X}, .rodata, {0}]\n"
+                    "      - [0x{3:08X}, .rodata, {0}]\n"
+                    "      - [0x{4:08X}, .data, {0}]\n"
                     "      - [0x{5:08X}, .bss, {0}]\n",
-                    overlay.name, overlay.rom_start, text_start, data_start, rodata_start, rodata_end, overlay.bss_size);
-                rom_end = rodata_end;
+                    overlay.name, overlay.rom_start, text_start, rodata_start, data_start, data_end, overlay.bss_size, overlay_vram);
+                rom_end = data_end;
             }
             fmt::print(yaml_file, "  - [0x{:08X}]\n", rom_end);
         }
@@ -243,8 +263,8 @@ constexpr uint32_t overlay_table_offset = 0x1E899B0;
 
 namespace ovl_header_offsets {
     constexpr size_t text_size = 0x0;
-    constexpr size_t data_size = 0x2;
-    constexpr size_t rodata_size = 0x4;
+    constexpr size_t rodata_size = 0x2;
+    constexpr size_t data_size = 0x4;
     constexpr size_t bss_size = 0x6;
     constexpr size_t entrypoint_count = 0x8;
     constexpr size_t reloc_count = 0xA;
@@ -318,7 +338,7 @@ void undo_xors(size_t overlay_index, char* rom_start, std::vector<char>& overlay
     }
 }
 
-void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const char* ovl_name, char* overlay_header, char* overlay_contents, uint32_t text_size, uint32_t data_size, uint32_t rodata_size, uint32_t bss_size) {
+void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const char* ovl_name, char* overlay_header, char* overlay_contents, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size) {
     // Get the pointer to the relocs and the number of relocs
     uint16_t num_entrypoints;
     uint16_t num_relocs;
@@ -329,14 +349,14 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
     size_t ovl_code_offset = ((ovl_relocs_end_offset + 16 - 1) & -16);
     char* ovl_code = overlay_contents + ovl_code_offset;
 
-    uint32_t text_end = 0x80000000 + text_size;
-    uint32_t data_end = text_end + data_size;
-    uint32_t rodata_end = data_end + rodata_size;
-    uint32_t bss_end = rodata_end + bss_size;
+    uint32_t text_end = overlay_vram + text_size;
+    uint32_t rodata_end = text_end + rodata_size;
+    uint32_t data_end = rodata_end + data_size;
+    uint32_t bss_end = data_end + bss_size;
 
-    fmt::print(" Text {:08X} Data {:08X} Rodata {:08X} Bss {:08X}\n", text_size, data_size, rodata_size, bss_size);
-    fmt::print(" Text {0:08X} - {1:08X}, Data {1:08X} - {2:08X}, Rodata {2:08X} - {3:08X}, Bss {3:08X} - 0x{4:08X}\n",
-        0x80000000, text_end, data_end, rodata_end, bss_end);
+    fmt::print(" Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
+    fmt::print(" Text {0:08X} - {1:08X}, Rodata {1:08X} - {2:08X}, Data {2:08X} - {3:08X}, Bss {3:08X} - 0x{4:08X}\n",
+        overlay_vram, text_end, rodata_end, data_end, bss_end);
     printf("  code offset: 0x%08lX\n", ovl_code_offset);
 
     bool tracking_hi = false;
@@ -373,10 +393,13 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
                 else {
                     fprintf(stderr, "hi with wrong reloc type afterwards (%s)\n", reloc_names[(size_t)next_reloc_type]);
                 }
+
             }
             else {
                 fprintf(stderr, "hi with no reloc afterwards\n");
             }
+            // This is safe to do as no overlay could possibly be large enough for these bits to overlap with a reloc's hi offset
+            reloc_word |= (overlay_vram >> 16);
         }
         else if (reloc_type == RelocType::R_MIPS_LO16) {
             if (tracking_hi) {
@@ -389,20 +412,24 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
         }
         else if (reloc_type == RelocType::R_MIPS_32) {
             reloc_addend = reloc_word;
+            reloc_word |= overlay_vram;
         }
         else if (reloc_type == RelocType::R_MIPS_26) {
             reloc_addend = (reloc_word & ((1 << 26) - 1)) << 2;
         }
+
+        // Write the word back with the vram adjusted to start at the overlay ram address
+        *reinterpret_cast<uint32_t*>(ovl_code + reloc_offset) = byteswap32(reloc_word);
 
         // Stop tracking the previous HI16 if we see anything other than a HI16 or LO16
         if (reloc_type != RelocType::R_MIPS_HI16 && reloc_type != RelocType::R_MIPS_LO16) {
             tracking_hi = false;
         }
 
-        uint32_t symbol_address = 0x80000000 + reloc_addend;
+        uint32_t symbol_address = overlay_vram | reloc_addend;
         fmt::print("      0x{:08X}\n", symbol_address);
         
-        if (symbol_address >= rodata_end) {
+        if (symbol_address >= data_end) {
             printf("      bss\n");
             splat_files.add_bss_symbol(ovl_name, symbol_address);
         }
@@ -412,16 +439,24 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
         splat_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type);
 
         if (symbol_address < text_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Function);
-        }
-        else if (symbol_address < data_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Data);
+            if (reloc_type == RelocType::R_MIPS_26) {
+                splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Function);
+            } else {
+                // Don't override functions with generic text symbols
+                SymbolType cur_type = splat_files.get_symbol_type(ovl_name, symbol_address);
+                if (cur_type != SymbolType::Function) {
+                    splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Text);
+                }
+            }
         }
         else if (symbol_address < rodata_end) {
             splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Rodata);
         }
+        else if (symbol_address < data_end) {
+            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Data);
+        }
         else if (symbol_address < bss_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Rodata);
+            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Bss);
         }
         else {
             fmt::print(stderr, "Symbol in reloc {} in {} is beyond the end of bss\n", reloc_index, ovl_name);
@@ -596,10 +631,10 @@ int main(int argc, const char** argv) {
             }
             
             uint32_t text_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::text_size));
-            uint32_t data_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::data_size));
             uint32_t rodata_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::rodata_size));
+            uint32_t data_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::data_size));
             uint32_t bss_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::bss_size));
-            fmt::print(" Parsed Text {:08X} Data {:08X} Rodata {:08X} Bss {:08X}\n", text_size, data_size, rodata_size, bss_size);
+            fmt::print(" Parsed Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
 
             // Get the pointer to the relocs and the number of relocs
             uint16_t num_relocs;
@@ -613,7 +648,7 @@ int main(int argc, const char** argv) {
             printf("  Name: %s\n", ovl_name);
 
             size_t before = output_rom_file.tellp();
-            parse_relocs(splat_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, data_size, rodata_size, bss_size);
+            parse_relocs(splat_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
 
             size_t pad_amount = 16 - (before & (16 - 1));
 
@@ -636,7 +671,7 @@ int main(int argc, const char** argv) {
 
             printf("  Code Size: 0x%08lX Total Size: 0x%08lX From: 0x%08lX to 0x%08lX\n", after - before - ovl_code_offset - 0x10, after - before, before, after);
             printf("  Num Entrypoints: %u\n", num_entrypoints);
-            splat_files.add_overlay(ovl_name, before, before + ovl_code_offset + 0x10, text_size, data_size, rodata_size, bss_size, num_entrypoints, num_relocs);
+            splat_files.add_overlay(ovl_name, before, before + ovl_code_offset + 0x10, text_size, rodata_size, data_size, bss_size, num_entrypoints, num_relocs);
         } else {
             printf("  Empty overlay\n");
         }
