@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/devmgr/__osDevMgrMain.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/devmgr/__osDevMgrMain.s")

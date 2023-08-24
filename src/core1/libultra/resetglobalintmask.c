@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/resetglobalintmask/__osResetGlobalIntMask.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/resetglobalintmask/__osResetGlobalIntMask.s")

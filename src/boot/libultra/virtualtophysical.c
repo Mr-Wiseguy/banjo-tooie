@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/boot/virtualtophysical/boot_osVirtualToPhysical.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/boot/libultra/virtualtophysical/boot_osVirtualToPhysical.s")

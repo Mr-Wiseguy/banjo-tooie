@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/aisetnextbuf/osAiSetNextBuffer.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/aisetnextbuf/osAiSetNextBuffer.s")

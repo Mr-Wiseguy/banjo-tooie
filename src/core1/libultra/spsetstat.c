@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/spsetstat/__osSpSetStatus.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/spsetstat/__osSpSetStatus.s")

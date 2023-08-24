@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/epirawdma/__osEPiRawStartDma.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/epirawdma/__osEPiRawStartDma.s")

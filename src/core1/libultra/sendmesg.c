@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/sendmesg/osSendMesg.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/sendmesg/osSendMesg.s")

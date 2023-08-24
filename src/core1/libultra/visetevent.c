@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/visetevent/osViSetEvent.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/visetevent/osViSetEvent.s")

@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/getthreadpri/osGetThreadPri.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/getthreadpri/osGetThreadPri.s")

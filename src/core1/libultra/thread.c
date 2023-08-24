@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/thread/__osDequeueThread.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/thread/__osDequeueThread.s")

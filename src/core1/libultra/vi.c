@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/vi/__osViInit.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/vi/__osViInit.s")

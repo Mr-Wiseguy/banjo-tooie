@@ -6,6 +6,7 @@
 #include <bit>
 #include <cstring>
 #include <unordered_map>
+#include <unordered_set>
 #include <string_view>
 #include "zlib.h"
 
@@ -122,6 +123,7 @@ private:
     std::unordered_map<Symbol, SymbolDetails> symbols;
     std::vector<Reloc> relocs;
     std::vector<Overlay> overlays;
+    std::unordered_set<Symbol> rejected_symbols;
     size_t overlay_table_rom_start_;
 public:
     splat_file_state(size_t overlay_table_rom_start) : overlay_table_rom_start_(overlay_table_rom_start) {
@@ -129,6 +131,11 @@ public:
             symbol_addrs_file = std::ofstream{"ovl_symbol_addrs.us.v10.txt"};
             reloc_addrs_file = std::ofstream{"ovl_reloc_addrs.us.v10.txt"};
             yaml_file = std::ofstream{"ovl.us.v10.yaml"};
+            // TODO pull this from a file
+            rejected_symbols.insert(Symbol{.ovl_name = "chterryegg", .address = 0x80801236});
+            rejected_symbols.insert(Symbol{.ovl_name = "badeathmatch", .address = 0x8080054F});
+            rejected_symbols.insert(Symbol{.ovl_name = "chlagoonufoint", .address = 0x8080193E});
+            rejected_symbols.insert(Symbol{.ovl_name = "gemarkersDll", .address = 0xFFFFFDB8});
         }
     }
 
@@ -216,12 +223,8 @@ public:
             uint32_t rom_end = 0;
             fmt::print(yaml_file,
                 "  - name: overlay_table\n"
-                "    type: code\n"
-                "    vram: 0 # Unimportant dummy value\n"
-                "    start: 0x{0:08X}\n"
-                "    exclusive_ram_id: overlay_table\n"
-                "    subsegments: \n"
-                "      - [0x{0:08X}, bin, overlay_table]\n",
+                "    type: bin\n"
+                "    start: 0x{0:08X}\n",
                 overlay_table_rom_start_);
             for (const auto& overlay : overlays) {
                 uint32_t text_start = overlay.code_rom_start;
@@ -231,12 +234,8 @@ public:
                 fmt::print(yaml_file,
                     "  - name: {0}_header\n"
                     "    dir: {0}\n"
-                    "    type: code\n"
-                    "    vram: 0 # Unimportant dummy value\n"
+                    "    type: bin\n"
                     "    start: 0x{1:08X}\n"
-                    "    exclusive_ram_id: overlay_header\n"
-                    "    subsegments: \n"
-                    "      - [0x{1:08X}, bin, {0}_header]\n"
                     "  - name: {0}\n"
                     "    dir: {0}\n"
                     "    type: code\n"
@@ -249,13 +248,17 @@ public:
                     "    subsegments: \n"
                     "      - [0x{2:08X}, c, {0}]\n"
                     "      - [0x{3:08X}, .rodata, {0}]\n"
-                    "      - [0x{4:08X}, .data, {0}]\n"
-                    "      - [0x{5:08X}, .bss, {0}]\n",
+                    "      - [0x{4:08X}, data, {0}]\n"
+                    "      - [0x{5:08X}, bss, {0}]\n",
                     overlay.name, overlay.rom_start, text_start, rodata_start, data_start, data_end, overlay.bss_size, overlay_vram);
                 rom_end = data_end;
             }
             fmt::print(yaml_file, "  - [0x{:08X}]\n", rom_end);
         }
+    }
+
+    bool is_rejected(const std::string& ovl_name, uint32_t address) {
+        return rejected_symbols.contains(Symbol{ovl_name, address});
     }
 };
 
@@ -416,6 +419,8 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
         }
         else if (reloc_type == RelocType::R_MIPS_26) {
             reloc_addend = (reloc_word & ((1 << 26) - 1)) << 2;
+            // Grab the lower 26 bits of the vram offset and right shift by 2 to encode the address as R_MIPS_26
+            reloc_word |= (overlay_vram & ((1 << 26) - 1)) >> 2;
         }
 
         // Write the word back with the vram adjusted to start at the overlay ram address
@@ -428,6 +433,11 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
 
         uint32_t symbol_address = overlay_vram | reloc_addend;
         fmt::print("      0x{:08X}\n", symbol_address);
+
+        // Skip rejected symbols
+        if (splat_files.is_rejected(ovl_name, symbol_address)) {
+            continue;
+        }
         
         if (symbol_address >= data_end) {
             printf("      bss\n");
@@ -648,8 +658,6 @@ int main(int argc, const char** argv) {
             printf("  Name: %s\n", ovl_name);
 
             size_t before = output_rom_file.tellp();
-            parse_relocs(splat_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
-
             size_t pad_amount = 16 - (before & (16 - 1));
 
             if (pad_amount != 16) {
@@ -657,6 +665,8 @@ int main(int argc, const char** argv) {
                 before = output_rom_file.tellp();
                 byteswapped_overlay_offsets[overlay_index - 1] = byteswap32((uint32_t)before - output_overlay_table_pos);
             }
+            
+            parse_relocs(splat_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
 
             output_rom_file.write(overlay_header.data(), 0x10);
             output_rom_file.write(overlay_contents, overlay_contents_length);

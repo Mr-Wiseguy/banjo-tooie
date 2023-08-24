@@ -1,0 +1,9 @@
+rom:0x01FD10E4 symbol:R_80801228_chterryegg reloc:MIPS_HI16 addend:0xE // TODO wrong symbol
+rom:0x01FD1108 symbol:R_80801228_chterryegg reloc:MIPS_LO16 addend:0xE // TODO wrong symbol
+rom:0x01F6FE58 symbol:D_80800550_badeathmatch reloc:MIPS_HI16 addend:-0x1
+rom:0x01F6FE64 symbol:D_80800550_badeathmatch reloc:MIPS_LO16 addend:-0x1
+rom:0x01F7D184 symbol:D_80801940_chlagoonufoint reloc:MIPS_HI16 addend:-0x2
+rom:0x01F7D1A4 symbol:D_80801940_chlagoonufoint reloc:MIPS_LO16 addend:-0x2
+rom:0x0214CDDC symbol:D_80800090_gemarkersDll reloc:MIPS_HI16 addend:-0x2D8
+rom:0x0214CDE4 symbol:D_80800090_gemarkersDll reloc:MIPS_LO16 addend:-0x2D8
+rom:0x01FE18C0 symbol:D_80802800 reloc:MIPS_NONE

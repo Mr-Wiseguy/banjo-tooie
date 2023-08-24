@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/conteeplongread/osEepromLongRead.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/conteeplongread/osEepromLongRead.s")

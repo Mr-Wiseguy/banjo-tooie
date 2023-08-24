@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/seteventmesg/osSetEventMesg.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/seteventmesg/osSetEventMesg.s")

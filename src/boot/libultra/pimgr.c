@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/boot/pimgr/boot_osCreatePiManager.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/boot/libultra/pimgr/boot_osCreatePiManager.s")

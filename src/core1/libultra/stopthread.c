@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/stopthread/osStopThread.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/stopthread/osStopThread.s")

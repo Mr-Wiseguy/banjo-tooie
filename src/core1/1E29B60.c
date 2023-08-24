@@ -36,17 +36,17 @@ extern struct {
 } D_80043388;
 extern s32 D_800459C8;
 extern s32 D_800459D0;
-u64 D_800459D8;
+extern u64 D_800459D8;
 extern u8 D_800815C0[]; // core2 start
 extern u8 D_80137390[]; // core2 end
 extern u8 D_1E5AEB0[]; // core2 decompressed rom start
 extern u8 D_1F00020[]; // core2 decompressed rom end
-extern u8 D_800815C0_2[]; // core2 text start
-extern u8 D_80117C60[]; // core2 text end
-extern u8 D_80117C60_2[]; // core2 rodata start
-extern u8 D_80126730[]; // core2 data end
-extern u8 D_80126730_2[]; // core2 bss start
-extern u8 D_80137390_2[]; // core2 bss end
+extern u8 core2_TEXT_START[]; // core2 text start
+extern u8 core2_TEXT_END[]; // core2 text end
+extern u8 core2_RODATA_START[]; // core2 rodata start
+extern u8 core2_DATA_END[]; // core2 data end
+extern u8 core2_BSS_START[]; // core2 bss start
+extern u8 core2_BSS_END[]; // core2 bss end
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012030.s")
 
@@ -70,6 +70,8 @@ extern u8 D_80137390_2[]; // core2 bss end
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800121D0.s")
 
+// Needs migration
+#if 0
 void func_80012214(void) {
     D_800459D0 = osGetMemSize();
     func_8001DDF0();
@@ -77,7 +79,7 @@ void func_80012214(void) {
     func_80014FE8();
     func_8001E7E8();
     func_8001C1C0();
-    func_80019EC0(0, D_800815C0, D_80137390, D_1E5AEB0, D_1F00020, D_800815C0_2, D_80117C60, D_80117C60_2, D_80126730, D_80126730_2, D_80137390_2);
+    func_80019EC0(0, D_800815C0, D_80137390, D_1E5AEB0, D_1F00020, core2_TEXT_START, core2_TEXT_END, core2_RODATA_START, core2_DATA_END, core2_BSS_START, core2_BSS_END);
     func_8001A8B4(1);
     func_80014E6C();
     D_80043388.unk400 = 0x01020304;
@@ -104,6 +106,9 @@ void func_80012214(void) {
     func_8001253C(func_80087890());
     func_8001209C(1);
 }
+#else
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012214.s")
+#endif
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123B0.s")
 

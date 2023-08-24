@@ -3,4 +3,7 @@
 	url = https://github.com/ethteck/splat
 [submodule "tools/bk_rom_compressor"]
 	path = tools/bk_rom_compressor
-	url = https://github.com/MittenzHugg/bk_rom_compressor
+	url = https://github.com/Mr-Wiseguy/bk_rom_compressor
+[submodule "tools/asm-processor"]
+	path = tools/asm-processor
+	url = https://github.com/simonlindholm/asm-processor

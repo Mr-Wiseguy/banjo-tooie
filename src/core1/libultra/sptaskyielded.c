@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/sptaskyielded/osSpTaskYielded.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/sptaskyielded/osSpTaskYielded.s")

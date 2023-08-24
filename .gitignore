@@ -55,7 +55,6 @@ expected/
 *auto.txt
 .splat_cache
 .splat_cache*
-diff_settings.py
 ctx.c
 nonmatchings/
 

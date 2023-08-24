@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/boot/createthread/boot_osCreateThread.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/boot/libultra/createthread/boot_osCreateThread.s")

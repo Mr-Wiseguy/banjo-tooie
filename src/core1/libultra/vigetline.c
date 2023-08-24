@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/vigetline/osViGetCurrentLine.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/vigetline/osViGetCurrentLine.s")

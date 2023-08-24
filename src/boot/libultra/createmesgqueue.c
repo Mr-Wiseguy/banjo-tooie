@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/boot/createmesgqueue/boot_osCreateMesgQueue.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/boot/libultra/createmesgqueue/boot_osCreateMesgQueue.s")

@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/virtualtophysical/osVirtualToPhysical.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/virtualtophysical/osVirtualToPhysical.s")

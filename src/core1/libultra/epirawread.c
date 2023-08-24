@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/epirawread/__osEPiRawReadIo.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/epirawread/__osEPiRawReadIo.s")

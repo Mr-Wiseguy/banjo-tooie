@@ -1,3 +1,3 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/gettime/osGetTime.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core1/libultra/gettime/osGetTime.s")
