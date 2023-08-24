@@ -233,11 +233,11 @@ public:
                 uint32_t data_end = data_start + overlay.data_size;
                 fmt::print(yaml_file,
                     "  - name: {0}_header\n"
-                    "    dir: {0}\n"
+                    "    dir: overlays/{0}\n"
                     "    type: bin\n"
                     "    start: 0x{1:08X}\n"
                     "  - name: {0}\n"
-                    "    dir: {0}\n"
+                    "    dir: overlays/{0}\n"
                     "    type: code\n"
                     "    vram: 0x{7:08X}\n"
                     "    start: 0x{2:08X}\n"
