@@ -1,0 +1,8586 @@
+[[overlay]] # Overlay 1
+empty = true
+
+[[overlay]] # Overlay 2
+name = "gsmaker"
+entrypoints = [
+  "gsmaker_entrypoint_0",
+  "gsmaker_entrypoint_1",
+  "gsmaker_entrypoint_2",
+  "gsmaker_entrypoint_3",
+  "gsmaker_entrypoint_4",
+  "gsmaker_entrypoint_5",
+  "gsmaker_entrypoint_6",
+  "gsmaker_entrypoint_7",
+  "gsmaker_entrypoint_8",
+  "gsmaker_entrypoint_9",
+  "gsmaker_entrypoint_10",
+  "gsmaker_entrypoint_11",
+  "gsmaker_entrypoint_12",
+  "gsmaker_entrypoint_13",
+  "gsmaker_entrypoint_14",
+  "gsmaker_entrypoint_15",
+  "gsmaker_entrypoint_16",
+  "gsmaker_entrypoint_17",
+  "gsmaker_entrypoint_18",
+  "gsmaker_entrypoint_19",
+  "gsmaker_entrypoint_20",
+  "gsmaker_entrypoint_21",
+  "gsmaker_entrypoint_22",
+  "gsmaker_entrypoint_23",
+  "gsmaker_entrypoint_24",
+  "gsmaker_entrypoint_25",
+]
+
+[[overlay]] # Overlay 3
+name = "anseq"
+entrypoints = [
+  "anseq_entrypoint_0",
+  "anseq_entrypoint_1",
+  "anseq_entrypoint_2",
+  "anseq_entrypoint_3",
+  "anseq_entrypoint_4",
+  "anseq_entrypoint_5",
+  "anseq_entrypoint_6",
+  "anseq_entrypoint_7",
+  "anseq_entrypoint_8",
+  "anseq_entrypoint_9",
+]
+
+[[overlay]] # Overlay 4
+name = "seqdefine"
+entrypoints = [
+  "seqdefine_entrypoint_0",
+]
+
+[[overlay]] # Overlay 5
+name = "bsbanbflip"
+entrypoints = [
+  "bsbanbflip_entrypoint_0",
+  "bsbanbflip_entrypoint_1",
+  "bsbanbflip_entrypoint_2",
+  "bsbanbflip_entrypoint_3",
+]
+
+[[overlay]] # Overlay 6
+name = "bsbanpackwhack"
+entrypoints = [
+  "bsbanpackwhack_entrypoint_0",
+  "bsbanpackwhack_entrypoint_1",
+  "bsbanpackwhack_entrypoint_2",
+  "bsbanpackwhack_entrypoint_3",
+]
+
+[[overlay]] # Overlay 7
+name = "bsbansack"
+entrypoints = [
+  "bsbansack_entrypoint_0",
+  "bsbansack_entrypoint_1",
+  "bsbansack_entrypoint_2",
+  "bsbansack_entrypoint_3",
+  "bsbansack_entrypoint_4",
+  "bsbansack_entrypoint_5",
+  "bsbansack_entrypoint_6",
+  "bsbansack_entrypoint_7",
+  "bsbansack_entrypoint_8",
+  "bsbansack_entrypoint_9",
+]
+
+[[overlay]] # Overlay 8
+name = "bsbanshack"
+entrypoints = [
+  "bsbanshack_entrypoint_0",
+  "bsbanshack_entrypoint_1",
+  "bsbanshack_entrypoint_2",
+  "bsbanshack_entrypoint_3",
+  "bsbanshack_entrypoint_4",
+  "bsbanshack_entrypoint_5",
+  "bsbanshack_entrypoint_6",
+]
+
+[[overlay]] # Overlay 9
+name = "bsbansnooze"
+entrypoints = [
+  "bsbansnooze_entrypoint_0",
+  "bsbansnooze_entrypoint_1",
+  "bsbansnooze_entrypoint_2",
+  "bsbansnooze_entrypoint_3",
+  "bsbansnooze_entrypoint_4",
+  "bsbansnooze_entrypoint_5",
+]
+
+[[overlay]] # Overlay 10
+name = "bsbanswim"
+entrypoints = [
+  "bsbanswim_entrypoint_0",
+  "bsbanswim_entrypoint_1",
+  "bsbanswim_entrypoint_2",
+  "bsbanswim_entrypoint_3",
+]
+
+[[overlay]] # Overlay 11
+name = "bsbbarge"
+entrypoints = [
+  "bsbbarge_entrypoint_0",
+]
+
+[[overlay]] # Overlay 12
+name = "bsbbilldrill"
+entrypoints = [
+  "bsbbilldrill_entrypoint_0",
+  "bsbbilldrill_entrypoint_1",
+  "bsbbilldrill_entrypoint_2",
+  "bsbbilldrill_entrypoint_3",
+]
+
+[[overlay]] # Overlay 13
+name = "bsbbuster"
+entrypoints = [
+  "bsbbuster_entrypoint_0",
+]
+
+[[overlay]] # Overlay 14
+name = "bsbabykaz"
+entrypoints = [
+  "bsbabykaz_entrypoint_0",
+  "bsbabykaz_entrypoint_1",
+  "bsbabykaz_entrypoint_2",
+  "bsbabykaz_entrypoint_3",
+  "bsbabykaz_entrypoint_4",
+  "bsbabykaz_entrypoint_5",
+  "bsbabykaz_entrypoint_6",
+  "bsbabykaz_entrypoint_7",
+  "bsbabykaz_entrypoint_8",
+  "bsbabykaz_entrypoint_9",
+  "bsbabykaz_entrypoint_10",
+  "bsbabykaz_entrypoint_11",
+  "bsbabykaz_entrypoint_12",
+  "bsbabykaz_entrypoint_13",
+  "bsbabykaz_entrypoint_14",
+]
+
+[[overlay]] # Overlay 15
+name = "bsbee"
+entrypoints = [
+  "bsbee_entrypoint_0",
+  "bsbee_entrypoint_1",
+  "bsbee_entrypoint_2",
+]
+
+[[overlay]] # Overlay 16
+name = "bsbeefly"
+entrypoints = [
+  "bsbeefly_entrypoint_0",
+  "bsbeefly_entrypoint_1",
+  "bsbeefly_entrypoint_2",
+  "bsbeefly_entrypoint_3",
+  "bsbeefly_entrypoint_4",
+]
+
+[[overlay]] # Overlay 17
+name = "bsbeemain"
+entrypoints = [
+  "bsbeemain_entrypoint_0",
+  "bsbeemain_entrypoint_1",
+  "bsbeemain_entrypoint_2",
+  "bsbeemain_entrypoint_3",
+  "bsbeemain_entrypoint_4",
+  "bsbeemain_entrypoint_5",
+  "bsbeemain_entrypoint_6",
+  "bsbeemain_entrypoint_7",
+  "bsbeemain_entrypoint_8",
+  "bsbeemain_entrypoint_9",
+  "bsbeemain_entrypoint_10",
+  "bsbeemain_entrypoint_11",
+]
+
+[[overlay]] # Overlay 18
+name = "bsbeggass"
+entrypoints = [
+  "bsbeggass_entrypoint_0",
+  "bsbeggass_entrypoint_1",
+  "bsbeggass_entrypoint_2",
+  "bsbeggass_entrypoint_3",
+]
+
+[[overlay]] # Overlay 19
+name = "bsbegghead"
+entrypoints = [
+  "bsbegghead_entrypoint_0",
+  "bsbegghead_entrypoint_1",
+  "bsbegghead_entrypoint_2",
+  "bsbegghead_entrypoint_3",
+]
+
+[[overlay]] # Overlay 20
+name = "bsbflap"
+entrypoints = [
+  "bsbflap_entrypoint_0",
+  "bsbflap_entrypoint_1",
+  "bsbflap_entrypoint_2",
+  "bsbflap_entrypoint_3",
+]
+
+[[overlay]] # Overlay 21
+name = "bsbflip"
+entrypoints = [
+  "bsbflip_entrypoint_0",
+  "bsbflip_entrypoint_1",
+  "bsbflip_entrypoint_2",
+  "bsbflip_entrypoint_3",
+]
+
+[[overlay]] # Overlay 22
+name = "bsbfly"
+entrypoints = [
+  "bsbfly_entrypoint_0",
+  "bsbfly_entrypoint_1",
+  "bsbfly_entrypoint_2",
+  "bsbfly_entrypoint_3",
+  "bsbfly_entrypoint_4",
+  "bsbfly_entrypoint_5",
+  "bsbfly_entrypoint_6",
+  "bsbfly_entrypoint_7",
+  "bsbfly_entrypoint_8",
+  "bsbfly_entrypoint_9",
+]
+
+[[overlay]] # Overlay 23
+name = "bsbkflamethrower"
+entrypoints = [
+  "bsbkflamethrower_entrypoint_0",
+  "bsbkflamethrower_entrypoint_1",
+  "bsbkflamethrower_entrypoint_2",
+  "bsbkflamethrower_entrypoint_3",
+  "bsbkflamethrower_entrypoint_4",
+]
+
+[[overlay]] # Overlay 24
+name = "bsblongleg"
+entrypoints = [
+  "bsblongleg_entrypoint_0",
+  "bsblongleg_entrypoint_1",
+  "bsblongleg_entrypoint_2",
+  "bsblongleg_entrypoint_3",
+  "bsblongleg_entrypoint_4",
+  "bsblongleg_entrypoint_5",
+  "bsblongleg_entrypoint_6",
+  "bsblongleg_entrypoint_7",
+  "bsblongleg_entrypoint_8",
+  "bsblongleg_entrypoint_9",
+  "bsblongleg_entrypoint_10",
+  "bsblongleg_entrypoint_11",
+  "bsblongleg_entrypoint_12",
+  "bsblongleg_entrypoint_13",
+  "bsblongleg_entrypoint_14",
+  "bsblongleg_entrypoint_15",
+  "bsblongleg_entrypoint_16",
+  "bsblongleg_entrypoint_17",
+  "bsblongleg_entrypoint_18",
+  "bsblongleg_entrypoint_19",
+  "bsblongleg_entrypoint_20",
+  "bsblongleg_entrypoint_21",
+  "bsblongleg_entrypoint_22",
+  "bsblongleg_entrypoint_23",
+  "bsblongleg_entrypoint_24",
+  "bsblongleg_entrypoint_25",
+  "bsblongleg_entrypoint_26",
+  "bsblongleg_entrypoint_27",
+  "bsblongleg_entrypoint_28",
+  "bsblongleg_entrypoint_29",
+  "bsblongleg_entrypoint_30",
+  "bsblongleg_entrypoint_31",
+]
+
+[[overlay]] # Overlay 25
+name = "bsbpeck"
+entrypoints = [
+  "bsbpeck_entrypoint_0",
+  "bsbpeck_entrypoint_1",
+  "bsbpeck_entrypoint_2",
+  "bsbpeck_entrypoint_3",
+]
+
+[[overlay]] # Overlay 26
+name = "bsbreegullbash"
+entrypoints = [
+  "bsbreegullbash_entrypoint_0",
+  "bsbreegullbash_entrypoint_1",
+  "bsbreegullbash_entrypoint_2",
+  "bsbreegullbash_entrypoint_3",
+]
+
+[[overlay]] # Overlay 27
+name = "bsbshock"
+entrypoints = [
+  "bsbshock_entrypoint_0",
+  "bsbshock_entrypoint_1",
+  "bsbshock_entrypoint_2",
+  "bsbshock_entrypoint_3",
+  "bsbshock_entrypoint_4",
+  "bsbshock_entrypoint_5",
+  "bsbshock_entrypoint_6",
+  "bsbshock_entrypoint_7",
+]
+
+[[overlay]] # Overlay 28
+name = "bsbswim"
+entrypoints = [
+  "bsbswim_entrypoint_0",
+  "bsbswim_entrypoint_1",
+  "bsbswim_entrypoint_2",
+  "bsbswim_entrypoint_3",
+  "bsbswim_entrypoint_4",
+  "bsbswim_entrypoint_5",
+  "bsbswim_entrypoint_6",
+  "bsbswim_entrypoint_7",
+  "bsbswim_entrypoint_8",
+  "bsbswim_entrypoint_9",
+  "bsbswim_entrypoint_10",
+  "bsbswim_entrypoint_11",
+  "bsbswim_entrypoint_12",
+  "bsbswim_entrypoint_13",
+  "bsbswim_entrypoint_14",
+]
+
+[[overlay]] # Overlay 29
+name = "bsbtrot"
+entrypoints = [
+  "bsbtrot_entrypoint_0",
+  "bsbtrot_entrypoint_1",
+  "bsbtrot_entrypoint_2",
+  "bsbtrot_entrypoint_3",
+  "bsbtrot_entrypoint_4",
+  "bsbtrot_entrypoint_5",
+  "bsbtrot_entrypoint_6",
+  "bsbtrot_entrypoint_7",
+  "bsbtrot_entrypoint_8",
+  "bsbtrot_entrypoint_9",
+  "bsbtrot_entrypoint_10",
+  "bsbtrot_entrypoint_11",
+  "bsbtrot_entrypoint_12",
+  "bsbtrot_entrypoint_13",
+  "bsbtrot_entrypoint_14",
+  "bsbtrot_entrypoint_15",
+  "bsbtrot_entrypoint_16",
+  "bsbtrot_entrypoint_17",
+  "bsbtrot_entrypoint_18",
+  "bsbtrot_entrypoint_19",
+  "bsbtrot_entrypoint_20",
+  "bsbtrot_entrypoint_21",
+  "bsbtrot_entrypoint_22",
+  "bsbtrot_entrypoint_23",
+  "bsbtrot_entrypoint_24",
+  "bsbtrot_entrypoint_25",
+  "bsbtrot_entrypoint_26",
+  "bsbtrot_entrypoint_27",
+  "bsbtrot_entrypoint_28",
+  "bsbtrot_entrypoint_29",
+  "bsbtrot_entrypoint_30",
+  "bsbtrot_entrypoint_31",
+  "bsbtrot_entrypoint_32",
+  "bsbtrot_entrypoint_33",
+  "bsbtrot_entrypoint_34",
+  "bsbtrot_entrypoint_35",
+  "bsbtrot_entrypoint_36",
+  "bsbtrot_entrypoint_37",
+  "bsbtrot_entrypoint_38",
+  "bsbtrot_entrypoint_39",
+  "bsbtrot_entrypoint_40",
+  "bsbtrot_entrypoint_41",
+  "bsbtrot_entrypoint_42",
+  "bsbtrot_entrypoint_43",
+  "bsbtrot_entrypoint_44",
+  "bsbtrot_entrypoint_45",
+  "bsbtrot_entrypoint_46",
+  "bsbtrot_entrypoint_47",
+  "bsbtrot_entrypoint_48",
+  "bsbtrot_entrypoint_49",
+  "bsbtrot_entrypoint_50",
+  "bsbtrot_entrypoint_51",
+  "bsbtrot_entrypoint_52",
+  "bsbtrot_entrypoint_53",
+  "bsbtrot_entrypoint_54",
+  "bsbtrot_entrypoint_55",
+]
+
+[[overlay]] # Overlay 30
+name = "bsbwhirl"
+entrypoints = [
+  "bsbwhirl_entrypoint_0",
+  "bsbwhirl_entrypoint_1",
+  "bsbwhirl_entrypoint_2",
+  "bsbwhirl_entrypoint_3",
+  "bsbwhirl_entrypoint_4",
+  "bsbwhirl_entrypoint_5",
+  "bsbwhirl_entrypoint_6",
+  "bsbwhirl_entrypoint_7",
+  "bsbwhirl_entrypoint_8",
+  "bsbwhirl_entrypoint_9",
+  "bsbwhirl_entrypoint_10",
+  "bsbwhirl_entrypoint_11",
+  "bsbwhirl_entrypoint_12",
+  "bsbwhirl_entrypoint_13",
+  "bsbwhirl_entrypoint_14",
+  "bsbwhirl_entrypoint_15",
+  "bsbwhirl_entrypoint_16",
+  "bsbwhirl_entrypoint_17",
+  "bsbwhirl_entrypoint_18",
+  "bsbwhirl_entrypoint_19",
+  "bsbwhirl_entrypoint_20",
+  "bsbwhirl_entrypoint_21",
+  "bsbwhirl_entrypoint_22",
+  "bsbwhirl_entrypoint_23",
+  "bsbwhirl_entrypoint_24",
+  "bsbwhirl_entrypoint_25",
+  "bsbwhirl_entrypoint_26",
+  "bsbwhirl_entrypoint_27",
+  "bsbwhirl_entrypoint_28",
+]
+
+[[overlay]] # Overlay 31
+name = "bscarry"
+entrypoints = [
+  "bscarry_entrypoint_0",
+  "bscarry_entrypoint_1",
+  "bscarry_entrypoint_2",
+  "bscarry_entrypoint_3",
+  "bscarry_entrypoint_4",
+]
+
+[[overlay]] # Overlay 32
+name = "bschokedie"
+entrypoints = [
+  "bschokedie_entrypoint_0",
+  "bschokedie_entrypoint_1",
+  "bschokedie_entrypoint_2",
+  "bschokedie_entrypoint_3",
+]
+
+[[overlay]] # Overlay 33
+name = "bsclaw"
+entrypoints = [
+  "bsclaw_entrypoint_0",
+  "bsclaw_entrypoint_1",
+  "bsclaw_entrypoint_2",
+  "bsclaw_entrypoint_3",
+]
+
+[[overlay]] # Overlay 34
+name = "bsclimb"
+entrypoints = [
+  "bsclimb_entrypoint_0",
+  "bsclimb_entrypoint_1",
+  "bsclimb_entrypoint_2",
+  "bsclimb_entrypoint_3",
+  "bsclimb_entrypoint_4",
+  "bsclimb_entrypoint_5",
+  "bsclimb_entrypoint_6",
+  "bsclimb_entrypoint_7",
+  "bsclimb_entrypoint_8",
+  "bsclimb_entrypoint_9",
+  "bsclimb_entrypoint_10",
+  "bsclimb_entrypoint_11",
+  "bsclimb_entrypoint_12",
+]
+
+[[overlay]] # Overlay 35
+name = "bscrashout"
+entrypoints = [
+  "bscrashout_entrypoint_0",
+  "bscrashout_entrypoint_1",
+  "bscrashout_entrypoint_2",
+  "bscrashout_entrypoint_3",
+]
+
+[[overlay]] # Overlay 36
+name = "bscrouch"
+entrypoints = [
+  "bscrouch_entrypoint_0",
+  "bscrouch_entrypoint_1",
+  "bscrouch_entrypoint_2",
+  "bscrouch_entrypoint_3",
+  "bscrouch_entrypoint_4",
+]
+
+[[overlay]] # Overlay 37
+name = "bsdie"
+entrypoints = [
+  "bsdie_entrypoint_0",
+  "bsdie_entrypoint_1",
+  "bsdie_entrypoint_2",
+  "bsdie_entrypoint_3",
+  "bsdie_entrypoint_4",
+  "bsdie_entrypoint_5",
+  "bsdie_entrypoint_6",
+  "bsdie_entrypoint_7",
+  "bsdie_entrypoint_8",
+  "bsdie_entrypoint_9",
+  "bsdie_entrypoint_10",
+  "bsdie_entrypoint_11",
+]
+
+[[overlay]] # Overlay 38
+name = "bsdrone"
+entrypoints = [
+  "bsdrone_entrypoint_0",
+  "bsdrone_entrypoint_1",
+  "bsdrone_entrypoint_2",
+  "bsdrone_entrypoint_3",
+]
+
+[[overlay]] # Overlay 39
+name = "bsdronebitten"
+entrypoints = [
+  "bsdronebitten_entrypoint_0",
+  "bsdronebitten_entrypoint_1",
+  "bsdronebitten_entrypoint_2",
+  "bsdronebitten_entrypoint_3",
+  "bsdronebitten_entrypoint_4",
+  "bsdronebitten_entrypoint_5",
+  "bsdronebitten_entrypoint_6",
+  "bsdronebitten_entrypoint_7",
+  "bsdronebitten_entrypoint_8",
+  "bsdronebitten_entrypoint_9",
+]
+
+[[overlay]] # Overlay 40
+name = "bsdronebubbled"
+entrypoints = [
+  "bsdronebubbled_entrypoint_0",
+  "bsdronebubbled_entrypoint_1",
+  "bsdronebubbled_entrypoint_2",
+  "bsdronebubbled_entrypoint_3",
+  "bsdronebubbled_entrypoint_4",
+  "bsdronebubbled_entrypoint_5",
+  "bsdronebubbled_entrypoint_6",
+  "bsdronebubbled_entrypoint_7",
+]
+
+[[overlay]] # Overlay 41
+name = "bsdronefalldie"
+entrypoints = [
+  "bsdronefalldie_entrypoint_0",
+  "bsdronefalldie_entrypoint_1",
+  "bsdronefalldie_entrypoint_2",
+  "bsdronefalldie_entrypoint_3",
+]
+
+[[overlay]] # Overlay 42
+name = "bsdronefired"
+entrypoints = [
+  "bsdronefired_entrypoint_0",
+  "bsdronefired_entrypoint_1",
+  "bsdronefired_entrypoint_2",
+  "bsdronefired_entrypoint_3",
+]
+
+[[overlay]] # Overlay 43
+name = "bsdronegoto"
+entrypoints = [
+  "bsdronegoto_entrypoint_0",
+  "bsdronegoto_entrypoint_1",
+  "bsdronegoto_entrypoint_2",
+  "bsdronegoto_entrypoint_3",
+]
+
+[[overlay]] # Overlay 44
+name = "bsdronejump"
+entrypoints = [
+  "bsdronejump_entrypoint_0",
+  "bsdronejump_entrypoint_1",
+  "bsdronejump_entrypoint_2",
+  "bsdronejump_entrypoint_3",
+  "bsdronejump_entrypoint_4",
+]
+
+[[overlay]] # Overlay 45
+name = "bsdronelook"
+entrypoints = [
+  "bsdronelook_entrypoint_0",
+  "bsdronelook_entrypoint_1",
+  "bsdronelook_entrypoint_2",
+  "bsdronelook_entrypoint_3",
+  "bsdronelook_entrypoint_4",
+]
+
+[[overlay]] # Overlay 46
+name = "bsdroneslide"
+entrypoints = [
+  "bsdroneslide_entrypoint_0",
+  "bsdroneslide_entrypoint_1",
+  "bsdroneslide_entrypoint_2",
+]
+
+[[overlay]] # Overlay 47
+name = "bsdronesuckunder"
+entrypoints = [
+  "bsdronesuckunder_entrypoint_0",
+  "bsdronesuckunder_entrypoint_1",
+  "bsdronesuckunder_entrypoint_2",
+  "bsdronesuckunder_entrypoint_3",
+]
+
+[[overlay]] # Overlay 48
+name = "bsdronevanish"
+entrypoints = [
+  "bsdronevanish_entrypoint_0",
+  "bsdronevanish_entrypoint_1",
+  "bsdronevanish_entrypoint_2",
+]
+
+[[overlay]] # Overlay 49
+name = "bsdronewaitbabykaz"
+entrypoints = [
+  "bsdronewaitbabykaz_entrypoint_0",
+  "bsdronewaitbabykaz_entrypoint_1",
+  "bsdronewaitbabykaz_entrypoint_2",
+  "bsdronewaitbabykaz_entrypoint_3",
+]
+
+[[overlay]] # Overlay 50
+name = "bsdronexform"
+entrypoints = [
+  "bsdronexform_entrypoint_0",
+  "bsdronexform_entrypoint_1",
+  "bsdronexform_entrypoint_2",
+  "bsdronexform_entrypoint_3",
+]
+
+[[overlay]] # Overlay 51
+name = "bsjig"
+entrypoints = [
+  "bsjig_entrypoint_0",
+  "bsjig_entrypoint_1",
+  "bsjig_entrypoint_2",
+  "bsjig_entrypoint_3",
+  "bsjig_entrypoint_4",
+  "bsjig_entrypoint_5",
+  "bsjig_entrypoint_6",
+  "bsjig_entrypoint_7",
+  "bsjig_entrypoint_8",
+  "bsjig_entrypoint_9",
+  "bsjig_entrypoint_10",
+  "bsjig_entrypoint_11",
+]
+
+[[overlay]] # Overlay 52
+name = "bsjump"
+entrypoints = [
+  "bsjump_entrypoint_0",
+  "bsjump_entrypoint_1",
+  "bsjump_entrypoint_2",
+  "bsjump_entrypoint_3",
+  "bsjump_entrypoint_4",
+  "bsjump_entrypoint_5",
+  "bsjump_entrypoint_6",
+  "bsjump_entrypoint_7",
+  "bsjump_entrypoint_8",
+  "bsjump_entrypoint_9",
+  "bsjump_entrypoint_10",
+  "bsjump_entrypoint_11",
+  "bsjump_entrypoint_12",
+  "bsjump_entrypoint_13",
+  "bsjump_entrypoint_14",
+  "bsjump_entrypoint_15",
+  "bsjump_entrypoint_16",
+  "bsjump_entrypoint_17",
+  "bsjump_entrypoint_18",
+  "bsjump_entrypoint_19",
+  "bsjump_entrypoint_20",
+]
+
+[[overlay]] # Overlay 53
+name = "bskaz"
+entrypoints = [
+  "bskaz_entrypoint_0",
+  "bskaz_entrypoint_1",
+  "bskaz_entrypoint_2",
+  "bskaz_entrypoint_3",
+  "bskaz_entrypoint_4",
+]
+
+[[overlay]] # Overlay 54
+name = "bskazcrouch"
+entrypoints = [
+  "bskazcrouch_entrypoint_0",
+  "bskazcrouch_entrypoint_1",
+  "bskazcrouch_entrypoint_2",
+  "bskazcrouch_entrypoint_3",
+  "bskazcrouch_entrypoint_4",
+]
+
+[[overlay]] # Overlay 55
+name = "bskazeggass"
+entrypoints = [
+  "bskazeggass_entrypoint_0",
+  "bskazeggass_entrypoint_1",
+  "bskazeggass_entrypoint_2",
+  "bskazeggass_entrypoint_3",
+]
+
+[[overlay]] # Overlay 56
+name = "bskazflamethrower"
+entrypoints = [
+  "bskazflamethrower_entrypoint_0",
+  "bskazflamethrower_entrypoint_1",
+  "bskazflamethrower_entrypoint_2",
+  "bskazflamethrower_entrypoint_3",
+  "bskazflamethrower_entrypoint_4",
+]
+
+[[overlay]] # Overlay 57
+name = "bskazfly"
+entrypoints = [
+  "bskazfly_entrypoint_0",
+  "bskazfly_entrypoint_1",
+  "bskazfly_entrypoint_2",
+  "bskazfly_entrypoint_3",
+  "bskazfly_entrypoint_4",
+  "bskazfly_entrypoint_5",
+  "bskazfly_entrypoint_6",
+  "bskazfly_entrypoint_7",
+  "bskazfly_entrypoint_8",
+  "bskazfly_entrypoint_9",
+]
+
+[[overlay]] # Overlay 58
+name = "bskazdie"
+entrypoints = [
+  "bskazdie_entrypoint_0",
+  "bskazdie_entrypoint_1",
+  "bskazdie_entrypoint_2",
+  "bskazdie_entrypoint_3",
+]
+
+[[overlay]] # Overlay 59
+name = "bskazglide"
+entrypoints = [
+  "bskazglide_entrypoint_0",
+  "bskazglide_entrypoint_1",
+  "bskazglide_entrypoint_2",
+  "bskazglide_entrypoint_3",
+  "bskazglide_entrypoint_4",
+]
+
+[[overlay]] # Overlay 60
+name = "bskazhatch"
+entrypoints = [
+  "bskazhatch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 61
+name = "bskazegghead"
+entrypoints = [
+  "bskazegghead_entrypoint_0",
+  "bskazegghead_entrypoint_1",
+  "bskazegghead_entrypoint_2",
+  "bskazegghead_entrypoint_3",
+]
+
+[[overlay]] # Overlay 62
+name = "bskazjump"
+entrypoints = [
+  "bskazjump_entrypoint_0",
+  "bskazjump_entrypoint_1",
+  "bskazjump_entrypoint_2",
+  "bskazjump_entrypoint_3",
+  "bskazjump_entrypoint_4",
+  "bskazjump_entrypoint_5",
+  "bskazjump_entrypoint_6",
+  "bskazjump_entrypoint_7",
+  "bskazjump_entrypoint_8",
+  "bskazjump_entrypoint_9",
+  "bskazjump_entrypoint_10",
+  "bskazjump_entrypoint_11",
+  "bskazjump_entrypoint_12",
+  "bskazjump_entrypoint_13",
+  "bskazjump_entrypoint_14",
+  "bskazjump_entrypoint_15",
+]
+
+[[overlay]] # Overlay 63
+name = "bskazmove"
+entrypoints = [
+  "bskazmove_entrypoint_0",
+  "bskazmove_entrypoint_1",
+  "bskazmove_entrypoint_2",
+  "bskazmove_entrypoint_3",
+  "bskazmove_entrypoint_4",
+  "bskazmove_entrypoint_5",
+  "bskazmove_entrypoint_6",
+  "bskazmove_entrypoint_7",
+  "bskazmove_entrypoint_8",
+  "bskazmove_entrypoint_9",
+  "bskazmove_entrypoint_10",
+  "bskazmove_entrypoint_11",
+]
+
+[[overlay]] # Overlay 64
+name = "bskazow"
+entrypoints = [
+  "bskazow_entrypoint_0",
+  "bskazow_entrypoint_1",
+]
+
+[[overlay]] # Overlay 65
+name = "bskazpaddle"
+entrypoints = [
+  "bskazpaddle_entrypoint_0",
+  "bskazpaddle_entrypoint_1",
+  "bskazpaddle_entrypoint_2",
+  "bskazpaddle_entrypoint_3",
+  "bskazpaddle_entrypoint_4",
+  "bskazpaddle_entrypoint_5",
+]
+
+[[overlay]] # Overlay 66
+name = "bskazshock"
+entrypoints = [
+  "bskazshock_entrypoint_0",
+  "bskazshock_entrypoint_1",
+  "bskazshock_entrypoint_2",
+  "bskazshock_entrypoint_3",
+  "bskazshock_entrypoint_4",
+  "bskazshock_entrypoint_5",
+  "bskazshock_entrypoint_6",
+  "bskazshock_entrypoint_7",
+  "bskazshock_entrypoint_8",
+]
+
+[[overlay]] # Overlay 67
+name = "bskazshoesspringjump"
+entrypoints = [
+  "bskazshoesspringjump_entrypoint_0",
+  "bskazshoesspringjump_entrypoint_1",
+  "bskazshoesspringjump_entrypoint_2",
+  "bskazshoesspringjump_entrypoint_3",
+]
+
+[[overlay]] # Overlay 68
+name = "bskazshoessuckspline"
+entrypoints = [
+  "bskazshoessuckspline_entrypoint_0",
+  "bskazshoessuckspline_entrypoint_1",
+  "bskazshoessuckspline_entrypoint_2",
+  "bskazshoessuckspline_entrypoint_3",
+  "bskazshoessuckspline_entrypoint_4",
+  "bskazshoessuckspline_entrypoint_5",
+  "bskazshoessuckspline_entrypoint_6",
+  "bskazshoessuckspline_entrypoint_7",
+  "bskazshoessuckspline_entrypoint_8",
+]
+
+[[overlay]] # Overlay 69
+name = "bskazspring"
+entrypoints = [
+  "bskazspring_entrypoint_0",
+]
+
+[[overlay]] # Overlay 70
+name = "bskazstill"
+entrypoints = [
+  "bskazstill_entrypoint_0",
+  "bskazstill_entrypoint_1",
+  "bskazstill_entrypoint_2",
+  "bskazstill_entrypoint_3",
+  "bskazstill_entrypoint_4",
+  "bskazstill_entrypoint_5",
+  "bskazstill_entrypoint_6",
+  "bskazstill_entrypoint_7",
+  "bskazstill_entrypoint_8",
+  "bskazstill_entrypoint_9",
+  "bskazstill_entrypoint_10",
+]
+
+[[overlay]] # Overlay 71
+name = "bskazstilt"
+entrypoints = [
+  "bskazstilt_entrypoint_0",
+  "bskazstilt_entrypoint_1",
+  "bskazstilt_entrypoint_2",
+  "bskazstilt_entrypoint_3",
+  "bskazstilt_entrypoint_4",
+  "bskazstilt_entrypoint_5",
+  "bskazstilt_entrypoint_6",
+  "bskazstilt_entrypoint_7",
+  "bskazstilt_entrypoint_8",
+  "bskazstilt_entrypoint_9",
+  "bskazstilt_entrypoint_10",
+  "bskazstilt_entrypoint_11",
+  "bskazstilt_entrypoint_12",
+  "bskazstilt_entrypoint_13",
+  "bskazstilt_entrypoint_14",
+  "bskazstilt_entrypoint_15",
+  "bskazstilt_entrypoint_16",
+  "bskazstilt_entrypoint_17",
+  "bskazstilt_entrypoint_18",
+  "bskazstilt_entrypoint_19",
+  "bskazstilt_entrypoint_20",
+  "bskazstilt_entrypoint_21",
+  "bskazstilt_entrypoint_22",
+  "bskazstilt_entrypoint_23",
+  "bskazstilt_entrypoint_24",
+  "bskazstilt_entrypoint_25",
+  "bskazstilt_entrypoint_26",
+  "bskazstilt_entrypoint_27",
+  "bskazstilt_entrypoint_28",
+  "bskazstilt_entrypoint_29",
+  "bskazstilt_entrypoint_30",
+  "bskazstilt_entrypoint_31",
+]
+
+[[overlay]] # Overlay 72
+name = "bskaztorpedo"
+entrypoints = [
+  "bskaztorpedo_entrypoint_0",
+  "bskaztorpedo_entrypoint_1",
+  "bskaztorpedo_entrypoint_2",
+  "bskaztorpedo_entrypoint_3",
+  "bskaztorpedo_entrypoint_4",
+  "bskaztorpedo_entrypoint_5",
+  "bskaztorpedo_entrypoint_6",
+  "bskaztorpedo_entrypoint_7",
+]
+
+[[overlay]] # Overlay 73
+name = "bskazwingwhack"
+entrypoints = [
+  "bskazwingwhack_entrypoint_0",
+  "bskazwingwhack_entrypoint_1",
+]
+
+[[overlay]] # Overlay 74
+name = "bsledge"
+entrypoints = [
+  "bsledge_entrypoint_0",
+  "bsledge_entrypoint_1",
+  "bsledge_entrypoint_2",
+  "bsledge_entrypoint_3",
+  "bsledge_entrypoint_4",
+  "bsledge_entrypoint_5",
+  "bsledge_entrypoint_6",
+  "bsledge_entrypoint_7",
+  "bsledge_entrypoint_8",
+]
+
+[[overlay]] # Overlay 75
+name = "bsmum"
+entrypoints = [
+  "bsmum_entrypoint_0",
+  "bsmum_entrypoint_1",
+  "bsmum_entrypoint_2",
+  "bsmum_entrypoint_3",
+  "bsmum_entrypoint_4",
+  "bsmum_entrypoint_5",
+  "bsmum_entrypoint_6",
+  "bsmum_entrypoint_7",
+  "bsmum_entrypoint_8",
+  "bsmum_entrypoint_9",
+  "bsmum_entrypoint_10",
+  "bsmum_entrypoint_11",
+  "bsmum_entrypoint_12",
+  "bsmum_entrypoint_13",
+  "bsmum_entrypoint_14",
+]
+
+[[overlay]] # Overlay 76
+name = "bsmumattack"
+entrypoints = [
+  "bsmumattack_entrypoint_0",
+]
+
+[[overlay]] # Overlay 77
+name = "bsmumcast"
+entrypoints = [
+  "bsmumcast_entrypoint_0",
+  "bsmumcast_entrypoint_1",
+  "bsmumcast_entrypoint_2",
+  "bsmumcast_entrypoint_3",
+  "bsmumcast_entrypoint_4",
+]
+
+[[overlay]] # Overlay 78
+name = "bsmummove"
+entrypoints = [
+  "bsmummove_entrypoint_0",
+  "bsmummove_entrypoint_1",
+  "bsmummove_entrypoint_2",
+  "bsmummove_entrypoint_3",
+  "bsmummove_entrypoint_4",
+]
+
+[[overlay]] # Overlay 79
+name = "bsmumsplat"
+entrypoints = [
+  "bsmumsplat_entrypoint_0",
+]
+
+[[overlay]] # Overlay 80
+name = "bsmumstill"
+entrypoints = [
+  "bsmumstill_entrypoint_0",
+  "bsmumstill_entrypoint_1",
+]
+
+[[overlay]] # Overlay 81
+name = "bsmumswim"
+entrypoints = [
+  "bsmumswim_entrypoint_0",
+  "bsmumswim_entrypoint_1",
+  "bsmumswim_entrypoint_2",
+  "bsmumswim_entrypoint_3",
+  "bsmumswim_entrypoint_4",
+  "bsmumswim_entrypoint_5",
+  "bsmumswim_entrypoint_6",
+  "bsmumswim_entrypoint_7",
+]
+
+[[overlay]] # Overlay 82
+name = "bsow"
+entrypoints = [
+  "bsow_entrypoint_0",
+  "bsow_entrypoint_1",
+  "bsow_entrypoint_2",
+  "bsow_entrypoint_3",
+]
+
+[[overlay]] # Overlay 83
+name = "bsrebound"
+entrypoints = [
+  "bsrebound_entrypoint_0",
+]
+
+[[overlay]] # Overlay 84
+name = "bsrest"
+entrypoints = [
+  "bsrest_entrypoint_0",
+  "bsrest_entrypoint_1",
+  "bsrest_entrypoint_2",
+  "bsrest_entrypoint_3",
+  "bsrest_entrypoint_4",
+  "bsrest_entrypoint_5",
+  "bsrest_entrypoint_6",
+  "bsrest_entrypoint_7",
+  "bsrest_entrypoint_8",
+  "bsrest_entrypoint_9",
+  "bsrest_entrypoint_10",
+  "bsrest_entrypoint_11",
+  "bsrest_entrypoint_12",
+  "bsrest_entrypoint_13",
+  "bsrest_entrypoint_14",
+  "bsrest_entrypoint_15",
+  "bsrest_entrypoint_16",
+  "bsrest_entrypoint_17",
+  "bsrest_entrypoint_18",
+  "bsrest_entrypoint_19",
+  "bsrest_entrypoint_20",
+]
+
+[[overlay]] # Overlay 85
+name = "bsride"
+entrypoints = [
+  "bsride_entrypoint_0",
+  "bsride_entrypoint_1",
+  "bsride_entrypoint_2",
+  "bsride_entrypoint_3",
+]
+
+[[overlay]] # Overlay 86
+name = "bssilowait"
+entrypoints = [
+  "bssilowait_entrypoint_0",
+]
+
+[[overlay]] # Overlay 87
+name = "bssnowball"
+entrypoints = [
+  "bssnowball_entrypoint_0",
+  "bssnowball_entrypoint_1",
+  "bssnowball_entrypoint_2",
+  "bssnowball_entrypoint_3",
+  "bssnowball_entrypoint_4",
+  "bssnowball_entrypoint_5",
+  "bssnowball_entrypoint_6",
+  "bssnowball_entrypoint_7",
+  "bssnowball_entrypoint_8",
+  "bssnowball_entrypoint_9",
+  "bssnowball_entrypoint_10",
+  "bssnowball_entrypoint_11",
+]
+
+[[overlay]] # Overlay 88
+name = "bssplat"
+entrypoints = [
+  "bssplat_entrypoint_0",
+  "bssplat_entrypoint_1",
+]
+
+[[overlay]] # Overlay 89
+name = "bssplitup"
+entrypoints = [
+  "bssplitup_entrypoint_0",
+  "bssplitup_entrypoint_1",
+  "bssplitup_entrypoint_2",
+  "bssplitup_entrypoint_3",
+  "bssplitup_entrypoint_4",
+  "bssplitup_entrypoint_5",
+  "bssplitup_entrypoint_6",
+  "bssplitup_entrypoint_7",
+  "bssplitup_entrypoint_8",
+  "bssplitup_entrypoint_9",
+  "bssplitup_entrypoint_10",
+  "bssplitup_entrypoint_11",
+  "bssplitup_entrypoint_12",
+  "bssplitup_entrypoint_13",
+  "bssplitup_entrypoint_14",
+  "bssplitup_entrypoint_15",
+  "bssplitup_entrypoint_16",
+  "bssplitup_entrypoint_17",
+  "bssplitup_entrypoint_18",
+  "bssplitup_entrypoint_19",
+]
+
+[[overlay]] # Overlay 90
+name = "bsstand"
+entrypoints = [
+  "bsstand_entrypoint_0",
+  "bsstand_entrypoint_1",
+  "bsstand_entrypoint_2",
+  "bsstand_entrypoint_3",
+  "bsstand_entrypoint_4",
+  "bsstand_entrypoint_5",
+  "bsstand_entrypoint_6",
+  "bsstand_entrypoint_7",
+  "bsstand_entrypoint_8",
+  "bsstand_entrypoint_9",
+  "bsstand_entrypoint_10",
+  "bsstand_entrypoint_11",
+  "bsstand_entrypoint_12",
+]
+
+[[overlay]] # Overlay 91
+name = "bsstatue"
+entrypoints = [
+  "bsstatue_entrypoint_0",
+  "bsstatue_entrypoint_1",
+  "bsstatue_entrypoint_2",
+  "bsstatue_entrypoint_3",
+  "bsstatue_entrypoint_4",
+  "bsstatue_entrypoint_5",
+  "bsstatue_entrypoint_6",
+  "bsstatue_entrypoint_7",
+  "bsstatue_entrypoint_8",
+  "bsstatue_entrypoint_9",
+]
+
+[[overlay]] # Overlay 92
+name = "bsstonehead"
+entrypoints = [
+  "bsstonehead_entrypoint_0",
+  "bsstonehead_entrypoint_1",
+  "bsstonehead_entrypoint_2",
+  "bsstonehead_entrypoint_3",
+  "bsstonehead_entrypoint_4",
+  "bsstonehead_entrypoint_5",
+  "bsstonehead_entrypoint_6",
+  "bsstonehead_entrypoint_7",
+  "bsstonehead_entrypoint_8",
+  "bsstonehead_entrypoint_9",
+  "bsstonehead_entrypoint_10",
+  "bsstonehead_entrypoint_11",
+  "bsstonehead_entrypoint_12",
+  "bsstonehead_entrypoint_13",
+  "bsstonehead_entrypoint_14",
+  "bsstonehead_entrypoint_15",
+  "bsstonehead_entrypoint_16",
+  "bsstonehead_entrypoint_17",
+  "bsstonehead_entrypoint_18",
+  "bsstonehead_entrypoint_19",
+  "bsstonehead_entrypoint_20",
+  "bsstonehead_entrypoint_21",
+  "bsstonehead_entrypoint_22",
+  "bsstonehead_entrypoint_23",
+  "bsstonehead_entrypoint_24",
+  "bsstonehead_entrypoint_25",
+  "bsstonehead_entrypoint_26",
+  "bsstonehead_entrypoint_27",
+  "bsstonehead_entrypoint_28",
+  "bsstonehead_entrypoint_29",
+  "bsstonehead_entrypoint_30",
+  "bsstonehead_entrypoint_31",
+  "bsstonehead_entrypoint_32",
+  "bsstonehead_entrypoint_33",
+  "bsstonehead_entrypoint_34",
+  "bsstonehead_entrypoint_35",
+  "bsstonehead_entrypoint_36",
+  "bsstonehead_entrypoint_37",
+  "bsstonehead_entrypoint_38",
+  "bsstonehead_entrypoint_39",
+  "bsstonehead_entrypoint_40",
+  "bsstonehead_entrypoint_41",
+  "bsstonehead_entrypoint_42",
+  "bsstonehead_entrypoint_43",
+]
+
+[[overlay]] # Overlay 93
+name = "bssub"
+entrypoints = [
+  "bssub_entrypoint_0",
+  "bssub_entrypoint_1",
+  "bssub_entrypoint_2",
+  "bssub_entrypoint_3",
+  "bssub_entrypoint_4",
+  "bssub_entrypoint_5",
+  "bssub_entrypoint_6",
+  "bssub_entrypoint_7",
+]
+
+[[overlay]] # Overlay 94
+name = "bsswim"
+entrypoints = [
+  "bsswim_entrypoint_0",
+  "bsswim_entrypoint_1",
+  "bsswim_entrypoint_2",
+  "bsswim_entrypoint_3",
+]
+
+[[overlay]] # Overlay 95
+name = "bstalk"
+entrypoints = [
+  "bstalk_entrypoint_0",
+  "bstalk_entrypoint_1",
+  "bstalk_entrypoint_2",
+  "bstalk_entrypoint_3",
+  "bstalk_entrypoint_4",
+]
+
+[[overlay]] # Overlay 96
+name = "bstaxi"
+entrypoints = [
+  "bstaxi_entrypoint_0",
+  "bstaxi_entrypoint_1",
+  "bstaxi_entrypoint_2",
+  "bstaxi_entrypoint_3",
+  "bstaxi_entrypoint_4",
+  "bstaxi_entrypoint_5",
+  "bstaxi_entrypoint_6",
+  "bstaxi_entrypoint_7",
+  "bstaxi_entrypoint_8",
+  "bstaxi_entrypoint_9",
+  "bstaxi_entrypoint_10",
+  "bstaxi_entrypoint_11",
+  "bstaxi_entrypoint_12",
+  "bstaxi_entrypoint_13",
+  "bstaxi_entrypoint_14",
+  "bstaxi_entrypoint_15",
+  "bstaxi_entrypoint_16",
+  "bstaxi_entrypoint_17",
+  "bstaxi_entrypoint_18",
+  "bstaxi_entrypoint_19",
+  "bstaxi_entrypoint_20",
+  "bstaxi_entrypoint_21",
+  "bstaxi_entrypoint_22",
+  "bstaxi_entrypoint_23",
+  "bstaxi_entrypoint_24",
+  "bstaxi_entrypoint_25",
+  "bstaxi_entrypoint_26",
+  "bstaxi_entrypoint_27",
+  "bstaxi_entrypoint_28",
+  "bstaxi_entrypoint_29",
+  "bstaxi_entrypoint_30",
+  "bstaxi_entrypoint_31",
+  "bstaxi_entrypoint_32",
+  "bstaxi_entrypoint_33",
+  "bstaxi_entrypoint_34",
+  "bstaxi_entrypoint_35",
+]
+
+[[overlay]] # Overlay 97
+name = "bsthrow"
+entrypoints = [
+  "bsthrow_entrypoint_0",
+  "bsthrow_entrypoint_1",
+  "bsthrow_entrypoint_2",
+  "bsthrow_entrypoint_3",
+  "bsthrow_entrypoint_4",
+]
+
+[[overlay]] # Overlay 98
+name = "bstimeout"
+entrypoints = [
+  "bstimeout_entrypoint_0",
+  "bstimeout_entrypoint_1",
+  "bstimeout_entrypoint_2",
+  "bstimeout_entrypoint_3",
+  "bstimeout_entrypoint_4",
+  "bstimeout_entrypoint_5",
+  "bstimeout_entrypoint_6",
+  "bstimeout_entrypoint_7",
+]
+
+[[overlay]] # Overlay 99
+name = "bstnt"
+entrypoints = [
+  "bstnt_entrypoint_0",
+  "bstnt_entrypoint_1",
+  "bstnt_entrypoint_2",
+  "bstnt_entrypoint_3",
+  "bstnt_entrypoint_4",
+  "bstnt_entrypoint_5",
+  "bstnt_entrypoint_6",
+  "bstnt_entrypoint_7",
+  "bstnt_entrypoint_8",
+  "bstnt_entrypoint_9",
+  "bstnt_entrypoint_10",
+  "bstnt_entrypoint_11",
+  "bstnt_entrypoint_12",
+  "bstnt_entrypoint_13",
+  "bstnt_entrypoint_14",
+  "bstnt_entrypoint_15",
+]
+
+[[overlay]] # Overlay 100
+name = "bstntswim"
+entrypoints = [
+  "bstntswim_entrypoint_0",
+  "bstntswim_entrypoint_1",
+  "bstntswim_entrypoint_2",
+  "bstntswim_entrypoint_3",
+  "bstntswim_entrypoint_4",
+]
+
+[[overlay]] # Overlay 101
+name = "bstrexlarge"
+entrypoints = [
+  "bstrexlarge_entrypoint_0",
+  "bstrexlarge_entrypoint_1",
+  "bstrexlarge_entrypoint_2",
+  "bstrexlarge_entrypoint_3",
+  "bstrexlarge_entrypoint_4",
+  "bstrexlarge_entrypoint_5",
+  "bstrexlarge_entrypoint_6",
+  "bstrexlarge_entrypoint_7",
+  "bstrexlarge_entrypoint_8",
+  "bstrexlarge_entrypoint_9",
+  "bstrexlarge_entrypoint_10",
+  "bstrexlarge_entrypoint_11",
+  "bstrexlarge_entrypoint_12",
+  "bstrexlarge_entrypoint_13",
+  "bstrexlarge_entrypoint_14",
+  "bstrexlarge_entrypoint_15",
+]
+
+[[overlay]] # Overlay 102
+name = "bstrexsmall"
+entrypoints = [
+  "bstrexsmall_entrypoint_0",
+  "bstrexsmall_entrypoint_1",
+  "bstrexsmall_entrypoint_2",
+  "bstrexsmall_entrypoint_3",
+  "bstrexsmall_entrypoint_4",
+  "bstrexsmall_entrypoint_5",
+  "bstrexsmall_entrypoint_6",
+  "bstrexsmall_entrypoint_7",
+  "bstrexsmall_entrypoint_8",
+  "bstrexsmall_entrypoint_9",
+  "bstrexsmall_entrypoint_10",
+  "bstrexsmall_entrypoint_11",
+  "bstrexsmall_entrypoint_12",
+  "bstrexsmall_entrypoint_13",
+  "bstrexsmall_entrypoint_14",
+  "bstrexsmall_entrypoint_15",
+]
+
+[[overlay]] # Overlay 103
+name = "bsturn"
+entrypoints = [
+  "bsturn_entrypoint_0",
+  "bsturn_entrypoint_1",
+  "bsturn_entrypoint_2",
+  "bsturn_entrypoint_3",
+]
+
+[[overlay]] # Overlay 104
+name = "bstwirl"
+entrypoints = [
+  "bstwirl_entrypoint_0",
+]
+
+[[overlay]] # Overlay 105
+name = "bsvan"
+entrypoints = [
+  "bsvan_entrypoint_0",
+  "bsvan_entrypoint_1",
+  "bsvan_entrypoint_2",
+  "bsvan_entrypoint_3",
+  "bsvan_entrypoint_4",
+  "bsvan_entrypoint_5",
+  "bsvan_entrypoint_6",
+  "bsvan_entrypoint_7",
+  "bsvan_entrypoint_8",
+  "bsvan_entrypoint_9",
+  "bsvan_entrypoint_10",
+  "bsvan_entrypoint_11",
+  "bsvan_entrypoint_12",
+  "bsvan_entrypoint_13",
+  "bsvan_entrypoint_14",
+  "bsvan_entrypoint_15",
+  "bsvan_entrypoint_16",
+]
+
+[[overlay]] # Overlay 106
+name = "bsvanswim"
+entrypoints = [
+  "bsvanswim_entrypoint_0",
+  "bsvanswim_entrypoint_1",
+  "bsvanswim_entrypoint_2",
+  "bsvanswim_entrypoint_3",
+  "bsvanswim_entrypoint_4",
+]
+
+[[overlay]] # Overlay 107
+name = "bswalk"
+entrypoints = [
+  "bswalk_entrypoint_0",
+  "bswalk_entrypoint_1",
+  "bswalk_entrypoint_2",
+  "bswalk_entrypoint_3",
+  "bswalk_entrypoint_4",
+  "bswalk_entrypoint_5",
+  "bswalk_entrypoint_6",
+  "bswalk_entrypoint_7",
+  "bswalk_entrypoint_8",
+  "bswalk_entrypoint_9",
+  "bswalk_entrypoint_10",
+  "bswalk_entrypoint_11",
+  "bswalk_entrypoint_12",
+  "bswalk_entrypoint_13",
+  "bswalk_entrypoint_14",
+  "bswalk_entrypoint_15",
+  "bswalk_entrypoint_16",
+  "bswalk_entrypoint_17",
+  "bswalk_entrypoint_18",
+  "bswalk_entrypoint_19",
+  "bswalk_entrypoint_20",
+  "bswalk_entrypoint_21",
+  "bswalk_entrypoint_22",
+]
+
+[[overlay]] # Overlay 108
+name = "bsfirstp"
+entrypoints = [
+  "bsfirstp_entrypoint_0",
+  "bsfirstp_entrypoint_1",
+  "bsfirstp_entrypoint_2",
+  "bsfirstp_entrypoint_3",
+  "bsfirstp_entrypoint_4",
+  "bsfirstp_entrypoint_5",
+  "bsfirstp_entrypoint_6",
+  "bsfirstp_entrypoint_7",
+  "bsfirstp_entrypoint_8",
+  "bsfirstp_entrypoint_9",
+  "bsfirstp_entrypoint_10",
+  "bsfirstp_entrypoint_11",
+  "bsfirstp_entrypoint_12",
+  "bsfirstp_entrypoint_13",
+  "bsfirstp_entrypoint_14",
+  "bsfirstp_entrypoint_15",
+  "bsfirstp_entrypoint_16",
+  "bsfirstp_entrypoint_17",
+  "bsfirstp_entrypoint_18",
+  "bsfirstp_entrypoint_19",
+  "bsfirstp_entrypoint_20",
+  "bsfirstp_entrypoint_21",
+  "bsfirstp_entrypoint_22",
+  "bsfirstp_entrypoint_23",
+  "bsfirstp_entrypoint_24",
+  "bsfirstp_entrypoint_25",
+  "bsfirstp_entrypoint_26",
+  "bsfirstp_entrypoint_27",
+  "bsfirstp_entrypoint_28",
+  "bsfirstp_entrypoint_29",
+  "bsfirstp_entrypoint_30",
+  "bsfirstp_entrypoint_31",
+  "bsfirstp_entrypoint_32",
+  "bsfirstp_entrypoint_33",
+  "bsfirstp_entrypoint_34",
+  "bsfirstp_entrypoint_35",
+  "bsfirstp_entrypoint_36",
+  "bsfirstp_entrypoint_37",
+]
+
+[[overlay]] # Overlay 109
+name = "bswasher"
+entrypoints = [
+  "bswasher_entrypoint_0",
+  "bswasher_entrypoint_1",
+  "bswasher_entrypoint_2",
+  "bswasher_entrypoint_3",
+  "bswasher_entrypoint_4",
+  "bswasher_entrypoint_5",
+  "bswasher_entrypoint_6",
+  "bswasher_entrypoint_7",
+  "bswasher_entrypoint_8",
+  "bswasher_entrypoint_9",
+  "bswasher_entrypoint_10",
+  "bswasher_entrypoint_11",
+]
+
+[[overlay]] # Overlay 110
+name = "baalarm"
+entrypoints = [
+  "baalarm_entrypoint_0",
+  "baalarm_entrypoint_1",
+  "baalarm_entrypoint_2",
+  "baalarm_entrypoint_3",
+]
+
+[[overlay]] # Overlay 111
+name = "baattach"
+entrypoints = [
+  "baattach_entrypoint_0",
+  "baattach_entrypoint_1",
+  "baattach_entrypoint_2",
+  "baattach_entrypoint_3",
+  "baattach_entrypoint_4",
+  "baattach_entrypoint_5",
+  "baattach_entrypoint_6",
+]
+
+[[overlay]] # Overlay 112
+name = "bababykaz"
+entrypoints = [
+  "bababykaz_entrypoint_0",
+  "bababykaz_entrypoint_1",
+  "bababykaz_entrypoint_2",
+  "bababykaz_entrypoint_3",
+  "bababykaz_entrypoint_4",
+  "bababykaz_entrypoint_5",
+  "bababykaz_entrypoint_6",
+  "bababykaz_entrypoint_7",
+  "bababykaz_entrypoint_8",
+  "bababykaz_entrypoint_9",
+  "bababykaz_entrypoint_10",
+  "bababykaz_entrypoint_11",
+  "bababykaz_entrypoint_12",
+  "bababykaz_entrypoint_13",
+  "bababykaz_entrypoint_14",
+]
+
+[[overlay]] # Overlay 113
+name = "babackpack"
+entrypoints = [
+  "babackpack_entrypoint_0",
+  "babackpack_entrypoint_1",
+  "babackpack_entrypoint_2",
+  "babackpack_entrypoint_3",
+  "babackpack_entrypoint_4",
+  "babackpack_entrypoint_5",
+  "babackpack_entrypoint_6",
+  "babackpack_entrypoint_7",
+  "babackpack_entrypoint_8",
+  "babackpack_entrypoint_9",
+  "babackpack_entrypoint_10",
+]
+
+[[overlay]] # Overlay 114
+name = "babee"
+entrypoints = [
+  "babee_entrypoint_0",
+  "babee_entrypoint_1",
+  "babee_entrypoint_2",
+  "babee_entrypoint_3",
+  "babee_entrypoint_4",
+  "babee_entrypoint_5",
+  "babee_entrypoint_6",
+  "babee_entrypoint_7",
+  "babee_entrypoint_8",
+]
+
+[[overlay]] # Overlay 115
+name = "baboost"
+entrypoints = [
+  "baboost_entrypoint_0",
+  "baboost_entrypoint_1",
+  "baboost_entrypoint_2",
+  "baboost_entrypoint_3",
+  "baboost_entrypoint_4",
+  "baboost_entrypoint_5",
+]
+
+[[overlay]] # Overlay 116
+name = "babounce"
+entrypoints = [
+  "babounce_entrypoint_0",
+  "babounce_entrypoint_1",
+  "babounce_entrypoint_2",
+  "babounce_entrypoint_3",
+  "babounce_entrypoint_4",
+  "babounce_entrypoint_5",
+  "babounce_entrypoint_6",
+  "babounce_entrypoint_7",
+  "babounce_entrypoint_8",
+  "babounce_entrypoint_9",
+  "babounce_entrypoint_10",
+]
+
+[[overlay]] # Overlay 117
+name = "bacough"
+entrypoints = [
+  "bacough_entrypoint_0",
+  "bacough_entrypoint_1",
+  "bacough_entrypoint_2",
+  "bacough_entrypoint_3",
+  "bacough_entrypoint_4",
+  "bacough_entrypoint_5",
+]
+
+[[overlay]] # Overlay 118
+name = "badata"
+entrypoints = [
+  "badata_entrypoint_0",
+  "badata_entrypoint_1",
+  "badata_entrypoint_2",
+  "badata_entrypoint_3",
+  "badata_entrypoint_4",
+  "badata_entrypoint_5",
+  "badata_entrypoint_6",
+  "badata_entrypoint_7",
+  "badata_entrypoint_8",
+  "badata_entrypoint_9",
+  "badata_entrypoint_10",
+  "badata_entrypoint_11",
+  "badata_entrypoint_12",
+  "badata_entrypoint_13",
+  "badata_entrypoint_14",
+  "badata_entrypoint_15",
+  "badata_entrypoint_16",
+  "badata_entrypoint_17",
+  "badata_entrypoint_18",
+  "badata_entrypoint_19",
+  "badata_entrypoint_20",
+  "badata_entrypoint_21",
+  "badata_entrypoint_22",
+  "badata_entrypoint_23",
+  "badata_entrypoint_24",
+  "badata_entrypoint_25",
+  "badata_entrypoint_26",
+  "badata_entrypoint_27",
+  "badata_entrypoint_28",
+  "badata_entrypoint_29",
+  "badata_entrypoint_30",
+  "badata_entrypoint_31",
+  "badata_entrypoint_32",
+  "badata_entrypoint_33",
+  "badata_entrypoint_34",
+  "badata_entrypoint_35",
+]
+
+[[overlay]] # Overlay 119
+name = "bapackctrl"
+entrypoints = [
+  "bapackctrl_entrypoint_0",
+  "bapackctrl_entrypoint_1",
+  "bapackctrl_entrypoint_2",
+  "bapackctrl_entrypoint_3",
+  "bapackctrl_entrypoint_4",
+  "bapackctrl_entrypoint_5",
+]
+
+[[overlay]] # Overlay 120
+name = "babuzz"
+entrypoints = [
+  "babuzz_entrypoint_0",
+  "babuzz_entrypoint_1",
+  "babuzz_entrypoint_2",
+  "babuzz_entrypoint_3",
+  "babuzz_entrypoint_4",
+  "babuzz_entrypoint_5",
+]
+
+[[overlay]] # Overlay 121
+name = "badialog"
+entrypoints = [
+  "badialog_entrypoint_0",
+  "badialog_entrypoint_1",
+  "badialog_entrypoint_2",
+  "badialog_entrypoint_3",
+  "badialog_entrypoint_4",
+]
+
+[[overlay]] # Overlay 122
+name = "badrone"
+entrypoints = [
+  "badrone_entrypoint_0",
+  "badrone_entrypoint_1",
+  "badrone_entrypoint_2",
+  "badrone_entrypoint_3",
+  "badrone_entrypoint_4",
+  "badrone_entrypoint_5",
+  "badrone_entrypoint_6",
+  "badrone_entrypoint_7",
+  "badrone_entrypoint_8",
+  "badrone_entrypoint_9",
+  "badrone_entrypoint_10",
+  "badrone_entrypoint_11",
+  "badrone_entrypoint_12",
+  "badrone_entrypoint_13",
+  "badrone_entrypoint_14",
+  "badrone_entrypoint_15",
+  "badrone_entrypoint_16",
+  "badrone_entrypoint_17",
+  "badrone_entrypoint_18",
+  "badrone_entrypoint_19",
+  "badrone_entrypoint_20",
+  "badrone_entrypoint_21",
+  "badrone_entrypoint_22",
+  "badrone_entrypoint_23",
+  "badrone_entrypoint_24",
+  "badrone_entrypoint_25",
+  "badrone_entrypoint_26",
+  "badrone_entrypoint_27",
+  "badrone_entrypoint_28",
+  "badrone_entrypoint_29",
+  "badrone_entrypoint_30",
+  "badrone_entrypoint_31",
+  "badrone_entrypoint_32",
+  "badrone_entrypoint_33",
+]
+
+[[overlay]] # Overlay 123
+name = "badronemem"
+entrypoints = [
+  "badronemem_entrypoint_0",
+  "badronemem_entrypoint_1",
+  "badronemem_entrypoint_2",
+  "badronemem_entrypoint_3",
+]
+
+[[overlay]] # Overlay 124
+name = "baduo"
+entrypoints = [
+  "baduo_entrypoint_0",
+  "baduo_entrypoint_1",
+  "baduo_entrypoint_2",
+  "baduo_entrypoint_3",
+  "baduo_entrypoint_4",
+  "baduo_entrypoint_5",
+  "baduo_entrypoint_6",
+  "baduo_entrypoint_7",
+  "baduo_entrypoint_8",
+  "baduo_entrypoint_9",
+  "baduo_entrypoint_10",
+  "baduo_entrypoint_11",
+  "baduo_entrypoint_12",
+  "baduo_entrypoint_13",
+  "baduo_entrypoint_14",
+  "baduo_entrypoint_15",
+  "baduo_entrypoint_16",
+  "baduo_entrypoint_17",
+  "baduo_entrypoint_18",
+  "baduo_entrypoint_19",
+  "baduo_entrypoint_20",
+  "baduo_entrypoint_21",
+]
+
+[[overlay]] # Overlay 125
+name = "badust"
+entrypoints = [
+  "badust_entrypoint_0",
+  "badust_entrypoint_1",
+  "badust_entrypoint_2",
+  "badust_entrypoint_3",
+  "badust_entrypoint_4",
+  "badust_entrypoint_5",
+  "badust_entrypoint_6",
+  "badust_entrypoint_7",
+  "badust_entrypoint_8",
+  "badust_entrypoint_9",
+  "badust_entrypoint_10",
+  "badust_entrypoint_11",
+  "badust_entrypoint_12",
+  "badust_entrypoint_13",
+]
+
+[[overlay]] # Overlay 126
+name = "baeggsetup"
+entrypoints = [
+  "baeggsetup_entrypoint_0",
+  "baeggsetup_entrypoint_1",
+  "baeggsetup_entrypoint_2",
+  "baeggsetup_entrypoint_3",
+  "baeggsetup_entrypoint_4",
+  "baeggsetup_entrypoint_5",
+  "baeggsetup_entrypoint_6",
+  "baeggsetup_entrypoint_7",
+  "baeggsetup_entrypoint_8",
+  "baeggsetup_entrypoint_9",
+  "baeggsetup_entrypoint_10",
+]
+
+[[overlay]] # Overlay 127
+name = "baeggaim"
+entrypoints = [
+  "baeggaim_entrypoint_0",
+  "baeggaim_entrypoint_1",
+  "baeggaim_entrypoint_2",
+  "baeggaim_entrypoint_3",
+]
+
+[[overlay]] # Overlay 128
+name = "baeggcursor"
+entrypoints = [
+  "baeggcursor_entrypoint_0",
+  "baeggcursor_entrypoint_1",
+  "baeggcursor_entrypoint_2",
+  "baeggcursor_entrypoint_3",
+  "baeggcursor_entrypoint_4",
+  "baeggcursor_entrypoint_5",
+  "baeggcursor_entrypoint_6",
+  "baeggcursor_entrypoint_7",
+  "baeggcursor_entrypoint_8",
+  "baeggcursor_entrypoint_9",
+  "baeggcursor_entrypoint_10",
+  "baeggcursor_entrypoint_11",
+]
+
+[[overlay]] # Overlay 129
+name = "baeggfire"
+entrypoints = [
+  "baeggfire_entrypoint_0",
+  "baeggfire_entrypoint_1",
+  "baeggfire_entrypoint_2",
+  "baeggfire_entrypoint_3",
+  "baeggfire_entrypoint_4",
+  "baeggfire_entrypoint_5",
+  "baeggfire_entrypoint_6",
+  "baeggfire_entrypoint_7",
+  "baeggfire_entrypoint_8",
+]
+
+[[overlay]] # Overlay 130
+name = "baflameline"
+entrypoints = [
+  "baflameline_entrypoint_0",
+  "baflameline_entrypoint_1",
+  "baflameline_entrypoint_2",
+  "baflameline_entrypoint_3",
+  "baflameline_entrypoint_4",
+  "baflameline_entrypoint_5",
+  "baflameline_entrypoint_6",
+  "baflameline_entrypoint_7",
+]
+
+[[overlay]] # Overlay 131
+name = "baflamethrower"
+entrypoints = [
+  "baflamethrower_entrypoint_0",
+  "baflamethrower_entrypoint_1",
+  "baflamethrower_entrypoint_2",
+  "baflamethrower_entrypoint_3",
+  "baflamethrower_entrypoint_4",
+  "baflamethrower_entrypoint_5",
+]
+
+[[overlay]] # Overlay 132
+name = "bafly"
+entrypoints = [
+  "bafly_entrypoint_0",
+  "bafly_entrypoint_1",
+  "bafly_entrypoint_2",
+  "bafly_entrypoint_3",
+  "bafly_entrypoint_4",
+  "bafly_entrypoint_5",
+  "bafly_entrypoint_6",
+  "bafly_entrypoint_7",
+  "bafly_entrypoint_8",
+  "bafly_entrypoint_9",
+  "bafly_entrypoint_10",
+  "bafly_entrypoint_11",
+  "bafly_entrypoint_12",
+  "bafly_entrypoint_13",
+  "bafly_entrypoint_14",
+  "bafly_entrypoint_15",
+  "bafly_entrypoint_16",
+  "bafly_entrypoint_17",
+  "bafly_entrypoint_18",
+  "bafly_entrypoint_19",
+  "bafly_entrypoint_20",
+  "bafly_entrypoint_21",
+]
+
+[[overlay]] # Overlay 133
+name = "bafpctrl"
+entrypoints = [
+  "bafpctrl_entrypoint_0",
+  "bafpctrl_entrypoint_1",
+  "bafpctrl_entrypoint_2",
+  "bafpctrl_entrypoint_3",
+  "bafpctrl_entrypoint_4",
+  "bafpctrl_entrypoint_5",
+  "bafpctrl_entrypoint_6",
+  "bafpctrl_entrypoint_7",
+  "bafpctrl_entrypoint_8",
+  "bafpctrl_entrypoint_9",
+  "bafpctrl_entrypoint_10",
+  "bafpctrl_entrypoint_11",
+  "bafpctrl_entrypoint_12",
+  "bafpctrl_entrypoint_13",
+  "bafpctrl_entrypoint_14",
+  "bafpctrl_entrypoint_15",
+  "bafpctrl_entrypoint_16",
+  "bafpctrl_entrypoint_17",
+  "bafpctrl_entrypoint_18",
+  "bafpctrl_entrypoint_19",
+]
+
+[[overlay]] # Overlay 134
+name = "bahold"
+entrypoints = [
+  "bahold_entrypoint_0",
+  "bahold_entrypoint_1",
+  "bahold_entrypoint_2",
+  "bahold_entrypoint_3",
+  "bahold_entrypoint_4",
+  "bahold_entrypoint_5",
+  "bahold_entrypoint_6",
+  "bahold_entrypoint_7",
+]
+
+[[overlay]] # Overlay 135
+name = "bahitspline"
+entrypoints = [
+  "bahitspline_entrypoint_0",
+  "bahitspline_entrypoint_1",
+  "bahitspline_entrypoint_2",
+]
+
+[[overlay]] # Overlay 136
+name = "bakaztorpedo"
+entrypoints = [
+  "bakaztorpedo_entrypoint_0",
+  "bakaztorpedo_entrypoint_1",
+  "bakaztorpedo_entrypoint_2",
+  "bakaztorpedo_entrypoint_3",
+  "bakaztorpedo_entrypoint_4",
+  "bakaztorpedo_entrypoint_5",
+  "bakaztorpedo_entrypoint_6",
+  "bakaztorpedo_entrypoint_7",
+  "bakaztorpedo_entrypoint_8",
+]
+
+[[overlay]] # Overlay 137
+name = "bamovegoto"
+entrypoints = [
+  "bamovegoto_entrypoint_0",
+  "bamovegoto_entrypoint_1",
+  "bamovegoto_entrypoint_2",
+  "bamovegoto_entrypoint_3",
+  "bamovegoto_entrypoint_4",
+  "bamovegoto_entrypoint_5",
+  "bamovegoto_entrypoint_6",
+  "bamovegoto_entrypoint_7",
+  "bamovegoto_entrypoint_8",
+  "bamovegoto_entrypoint_9",
+  "bamovegoto_entrypoint_10",
+  "bamovegoto_entrypoint_11",
+  "bamovegoto_entrypoint_12",
+  "bamovegoto_entrypoint_13",
+  "bamovegoto_entrypoint_14",
+]
+
+[[overlay]] # Overlay 138
+name = "bamovehover"
+entrypoints = [
+  "bamovehover_entrypoint_0",
+  "bamovehover_entrypoint_1",
+  "bamovehover_entrypoint_2",
+  "bamovehover_entrypoint_3",
+  "bamovehover_entrypoint_4",
+]
+
+[[overlay]] # Overlay 139
+name = "bamoveledge"
+entrypoints = [
+  "bamoveledge_entrypoint_0",
+  "bamoveledge_entrypoint_1",
+  "bamoveledge_entrypoint_2",
+  "bamoveledge_entrypoint_3",
+]
+
+[[overlay]] # Overlay 140
+name = "bamovespline"
+entrypoints = [
+  "bamovespline_entrypoint_0",
+  "bamovespline_entrypoint_1",
+  "bamovespline_entrypoint_2",
+  "bamovespline_entrypoint_3",
+  "bamovespline_entrypoint_4",
+  "bamovespline_entrypoint_5",
+  "bamovespline_entrypoint_6",
+  "bamovespline_entrypoint_7",
+  "bamovespline_entrypoint_8",
+  "bamovespline_entrypoint_9",
+  "bamovespline_entrypoint_10",
+]
+
+[[overlay]] # Overlay 141
+name = "bamovethrust"
+entrypoints = [
+  "bamovethrust_entrypoint_0",
+  "bamovethrust_entrypoint_1",
+  "bamovethrust_entrypoint_2",
+  "bamovethrust_entrypoint_3",
+  "bamovethrust_entrypoint_4",
+  "bamovethrust_entrypoint_5",
+  "bamovethrust_entrypoint_6",
+]
+
+[[overlay]] # Overlay 142
+name = "bamum"
+entrypoints = [
+  "bamum_entrypoint_0",
+  "bamum_entrypoint_1",
+  "bamum_entrypoint_2",
+  "bamum_entrypoint_3",
+  "bamum_entrypoint_4",
+  "bamum_entrypoint_5",
+]
+
+[[overlay]] # Overlay 143
+name = "bapreload"
+entrypoints = [
+  "bapreload_entrypoint_0",
+  "bapreload_entrypoint_1",
+]
+
+[[overlay]] # Overlay 144
+name = "bapulse"
+entrypoints = [
+  "bapulse_entrypoint_0",
+  "bapulse_entrypoint_1",
+  "bapulse_entrypoint_2",
+  "bapulse_entrypoint_3",
+  "bapulse_entrypoint_4",
+]
+
+[[overlay]] # Overlay 145
+name = "bareact"
+entrypoints = [
+  "bareact_entrypoint_0",
+  "bareact_entrypoint_1",
+  "bareact_entrypoint_2",
+  "bareact_entrypoint_3",
+  "bareact_entrypoint_4",
+  "bareact_entrypoint_5",
+]
+
+[[overlay]] # Overlay 146
+name = "basetup"
+entrypoints = [
+  "basetup_entrypoint_0",
+  "basetup_entrypoint_1",
+  "basetup_entrypoint_2",
+  "basetup_entrypoint_3",
+  "basetup_entrypoint_4",
+]
+
+[[overlay]] # Overlay 147
+name = "bashake"
+entrypoints = [
+  "bashake_entrypoint_0",
+  "bashake_entrypoint_1",
+]
+
+[[overlay]] # Overlay 148
+name = "bashoes"
+entrypoints = [
+  "bashoes_entrypoint_0",
+  "bashoes_entrypoint_1",
+  "bashoes_entrypoint_2",
+  "bashoes_entrypoint_3",
+  "bashoes_entrypoint_4",
+  "bashoes_entrypoint_5",
+  "bashoes_entrypoint_6",
+  "bashoes_entrypoint_7",
+  "bashoes_entrypoint_8",
+  "bashoes_entrypoint_9",
+  "bashoes_entrypoint_10",
+  "bashoes_entrypoint_11",
+  "bashoes_entrypoint_12",
+  "bashoes_entrypoint_13",
+  "bashoes_entrypoint_14",
+  "bashoes_entrypoint_15",
+  "bashoes_entrypoint_16",
+  "bashoes_entrypoint_17",
+  "bashoes_entrypoint_18",
+  "bashoes_entrypoint_19",
+  "bashoes_entrypoint_20",
+]
+
+[[overlay]] # Overlay 149
+name = "bashoessuck"
+entrypoints = [
+  "bashoessuck_entrypoint_0",
+  "bashoessuck_entrypoint_1",
+  "bashoessuck_entrypoint_2",
+  "bashoessuck_entrypoint_3",
+  "bashoessuck_entrypoint_4",
+  "bashoessuck_entrypoint_5",
+]
+
+[[overlay]] # Overlay 150
+name = "basquash"
+entrypoints = [
+  "basquash_entrypoint_0",
+  "basquash_entrypoint_1",
+  "basquash_entrypoint_2",
+  "basquash_entrypoint_3",
+  "basquash_entrypoint_4",
+]
+
+[[overlay]] # Overlay 151
+name = "basnowball"
+entrypoints = [
+  "basnowball_entrypoint_0",
+  "basnowball_entrypoint_1",
+  "basnowball_entrypoint_2",
+  "basnowball_entrypoint_3",
+  "basnowball_entrypoint_4",
+  "basnowball_entrypoint_5",
+  "basnowball_entrypoint_6",
+  "basnowball_entrypoint_7",
+  "basnowball_entrypoint_8",
+  "basnowball_entrypoint_9",
+  "basnowball_entrypoint_10",
+  "basnowball_entrypoint_11",
+  "basnowball_entrypoint_12",
+]
+
+[[overlay]] # Overlay 152
+name = "baspin"
+entrypoints = [
+  "baspin_entrypoint_0",
+  "baspin_entrypoint_1",
+  "baspin_entrypoint_2",
+  "baspin_entrypoint_3",
+]
+
+[[overlay]] # Overlay 153
+name = "bastatemem"
+entrypoints = [
+  "bastatemem_entrypoint_0",
+  "bastatemem_entrypoint_1",
+  "bastatemem_entrypoint_2",
+  "bastatemem_entrypoint_3",
+]
+
+[[overlay]] # Overlay 154
+name = "basub"
+entrypoints = [
+  "basub_entrypoint_0",
+  "basub_entrypoint_1",
+  "basub_entrypoint_2",
+  "basub_entrypoint_3",
+  "basub_entrypoint_4",
+  "basub_entrypoint_5",
+  "basub_entrypoint_6",
+  "basub_entrypoint_7",
+  "basub_entrypoint_8",
+  "basub_entrypoint_9",
+  "basub_entrypoint_10",
+  "basub_entrypoint_11",
+  "basub_entrypoint_12",
+  "basub_entrypoint_13",
+  "basub_entrypoint_14",
+  "basub_entrypoint_15",
+]
+
+[[overlay]] # Overlay 155
+name = "basudie"
+entrypoints = [
+  "basudie_entrypoint_0",
+  "basudie_entrypoint_1",
+  "basudie_entrypoint_2",
+  "basudie_entrypoint_3",
+  "basudie_entrypoint_4",
+  "basudie_entrypoint_5",
+  "basudie_entrypoint_6",
+  "basudie_entrypoint_7",
+  "basudie_entrypoint_8",
+  "basudie_entrypoint_9",
+  "basudie_entrypoint_10",
+  "basudie_entrypoint_11",
+  "basudie_entrypoint_12",
+]
+
+[[overlay]] # Overlay 156
+name = "baswim"
+entrypoints = [
+  "baswim_entrypoint_0",
+  "baswim_entrypoint_1",
+  "baswim_entrypoint_2",
+  "baswim_entrypoint_3",
+  "baswim_entrypoint_4",
+  "baswim_entrypoint_5",
+  "baswim_entrypoint_6",
+  "baswim_entrypoint_7",
+  "baswim_entrypoint_8",
+  "baswim_entrypoint_9",
+  "baswim_entrypoint_10",
+  "baswim_entrypoint_11",
+  "baswim_entrypoint_12",
+  "baswim_entrypoint_13",
+  "baswim_entrypoint_14",
+]
+
+[[overlay]] # Overlay 157
+name = "batimer"
+entrypoints = [
+  "batimer_entrypoint_0",
+  "batimer_entrypoint_1",
+  "batimer_entrypoint_2",
+  "batimer_entrypoint_3",
+  "batimer_entrypoint_4",
+  "batimer_entrypoint_5",
+  "batimer_entrypoint_6",
+  "batimer_entrypoint_7",
+  "batimer_entrypoint_8",
+  "batimer_entrypoint_9",
+  "batimer_entrypoint_10",
+  "batimer_entrypoint_11",
+]
+
+[[overlay]] # Overlay 158
+name = "batranslate"
+entrypoints = [
+  "batranslate_entrypoint_0",
+  "batranslate_entrypoint_1",
+  "batranslate_entrypoint_2",
+  "batranslate_entrypoint_3",
+  "batranslate_entrypoint_4",
+]
+
+[[overlay]] # Overlay 159
+name = "bavan"
+entrypoints = [
+  "bavan_entrypoint_0",
+  "bavan_entrypoint_1",
+  "bavan_entrypoint_2",
+  "bavan_entrypoint_3",
+  "bavan_entrypoint_4",
+  "bavan_entrypoint_5",
+  "bavan_entrypoint_6",
+  "bavan_entrypoint_7",
+  "bavan_entrypoint_8",
+]
+
+[[overlay]] # Overlay 160
+name = "bawandglow"
+entrypoints = [
+  "bawandglow_entrypoint_0",
+  "bawandglow_entrypoint_1",
+  "bawandglow_entrypoint_2",
+  "bawandglow_entrypoint_3",
+  "bawandglow_entrypoint_4",
+  "bawandglow_entrypoint_5",
+  "bawandglow_entrypoint_6",
+  "bawandglow_entrypoint_7",
+]
+
+[[overlay]] # Overlay 161
+name = "bawasher"
+entrypoints = [
+  "bawasher_entrypoint_0",
+  "bawasher_entrypoint_1",
+  "bawasher_entrypoint_2",
+  "bawasher_entrypoint_3",
+  "bawasher_entrypoint_4",
+  "bawasher_entrypoint_5",
+  "bawasher_entrypoint_6",
+  "bawasher_entrypoint_7",
+  "bawasher_entrypoint_8",
+  "bawasher_entrypoint_9",
+]
+
+[[overlay]] # Overlay 162
+name = "bawobble"
+entrypoints = [
+  "bawobble_entrypoint_0",
+  "bawobble_entrypoint_1",
+  "bawobble_entrypoint_2",
+  "bawobble_entrypoint_3",
+  "bawobble_entrypoint_4",
+  "bawobble_entrypoint_5",
+  "bawobble_entrypoint_6",
+  "bawobble_entrypoint_7",
+  "bawobble_entrypoint_8",
+]
+
+[[overlay]] # Overlay 163
+name = "bamotor"
+entrypoints = [
+  "bamotor_entrypoint_0",
+  "bamotor_entrypoint_1",
+  "bamotor_entrypoint_2",
+  "bamotor_entrypoint_3",
+]
+
+[[overlay]] # Overlay 164
+name = "bainvisible"
+entrypoints = [
+  "bainvisible_entrypoint_0",
+  "bainvisible_entrypoint_1",
+  "bainvisible_entrypoint_2",
+  "bainvisible_entrypoint_3",
+  "bainvisible_entrypoint_4",
+  "bainvisible_entrypoint_5",
+  "bainvisible_entrypoint_6",
+  "bainvisible_entrypoint_7",
+  "bainvisible_entrypoint_8",
+  "bainvisible_entrypoint_9",
+]
+
+[[overlay]] # Overlay 165
+name = "badeathmatch"
+entrypoints = [
+  "badeathmatch_entrypoint_0",
+  "badeathmatch_entrypoint_1",
+  "badeathmatch_entrypoint_2",
+  "badeathmatch_entrypoint_3",
+  "badeathmatch_entrypoint_4",
+  "badeathmatch_entrypoint_5",
+  "badeathmatch_entrypoint_6",
+  "badeathmatch_entrypoint_7",
+  "badeathmatch_entrypoint_8",
+  "badeathmatch_entrypoint_9",
+  "badeathmatch_entrypoint_10",
+  "badeathmatch_entrypoint_11",
+]
+
+[[overlay]] # Overlay 166
+name = "baairbar"
+entrypoints = [
+  "baairbar_entrypoint_0",
+]
+
+[[overlay]] # Overlay 167
+name = "cadbmgrDll"
+entrypoints = [
+  "cadbmgrDll_entrypoint_0",
+  "cadbmgrDll_entrypoint_1",
+  "cadbmgrDll_entrypoint_2",
+]
+
+[[overlay]] # Overlay 168
+name = "cadbio"
+entrypoints = [
+  "cadbio_entrypoint_0",
+]
+
+[[overlay]] # Overlay 169
+name = "cadbfunc"
+entrypoints = [
+  "cadbfunc_entrypoint_0",
+  "cadbfunc_entrypoint_1",
+  "cadbfunc_entrypoint_2",
+  "cadbfunc_entrypoint_3",
+  "cadbfunc_entrypoint_4",
+  "cadbfunc_entrypoint_5",
+  "cadbfunc_entrypoint_6",
+  "cadbfunc_entrypoint_7",
+  "cadbfunc_entrypoint_8",
+  "cadbfunc_entrypoint_9",
+  "cadbfunc_entrypoint_10",
+  "cadbfunc_entrypoint_11",
+  "cadbfunc_entrypoint_12",
+  "cadbfunc_entrypoint_13",
+  "cadbfunc_entrypoint_14",
+  "cadbfunc_entrypoint_15",
+  "cadbfunc_entrypoint_16",
+  "cadbfunc_entrypoint_17",
+  "cadbfunc_entrypoint_18",
+  "cadbfunc_entrypoint_19",
+  "cadbfunc_entrypoint_20",
+  "cadbfunc_entrypoint_21",
+  "cadbfunc_entrypoint_22",
+  "cadbfunc_entrypoint_23",
+  "cadbfunc_entrypoint_24",
+  "cadbfunc_entrypoint_25",
+  "cadbfunc_entrypoint_26",
+  "cadbfunc_entrypoint_27",
+  "cadbfunc_entrypoint_28",
+  "cadbfunc_entrypoint_29",
+  "cadbfunc_entrypoint_30",
+  "cadbfunc_entrypoint_31",
+  "cadbfunc_entrypoint_32",
+  "cadbfunc_entrypoint_33",
+  "cadbfunc_entrypoint_34",
+  "cadbfunc_entrypoint_35",
+]
+
+[[overlay]] # Overlay 170
+empty = true
+
+[[overlay]] # Overlay 171
+name = "capod"
+entrypoints = [
+  "capod_entrypoint_0",
+  "capod_entrypoint_1",
+  "capod_entrypoint_2",
+  "capod_entrypoint_3",
+  "capod_entrypoint_4",
+  "capod_entrypoint_5",
+  "capod_entrypoint_6",
+  "capod_entrypoint_7",
+  "capod_entrypoint_8",
+  "capod_entrypoint_9",
+  "capod_entrypoint_10",
+  "capod_entrypoint_11",
+  "capod_entrypoint_12",
+  "capod_entrypoint_13",
+  "capod_entrypoint_14",
+  "capod_entrypoint_15",
+  "capod_entrypoint_16",
+  "capod_entrypoint_17",
+  "capod_entrypoint_18",
+  "capod_entrypoint_19",
+  "capod_entrypoint_20",
+  "capod_entrypoint_21",
+  "capod_entrypoint_22",
+]
+
+[[overlay]] # Overlay 172
+name = "chclimbbase"
+entrypoints = [
+  "chclimbbase_entrypoint_0",
+  "chclimbbase_entrypoint_1",
+]
+
+[[overlay]] # Overlay 173
+name = "chbadshad"
+entrypoints = [
+  "chbadshad_entrypoint_0",
+  "chbadshad_entrypoint_1",
+  "chbadshad_entrypoint_2",
+  "chbadshad_entrypoint_3",
+  "chbadshad_entrypoint_4",
+]
+
+[[overlay]] # Overlay 174
+name = "chshockjump"
+entrypoints = [
+  "chshockjump_entrypoint_0",
+  "chshockjump_entrypoint_1",
+  "chshockjump_entrypoint_2",
+]
+
+[[overlay]] # Overlay 175
+name = "chblink"
+entrypoints = [
+  "chblink_entrypoint_0",
+  "chblink_entrypoint_1",
+  "chblink_entrypoint_2",
+  "chblink_entrypoint_3",
+  "chblink_entrypoint_4",
+]
+
+[[overlay]] # Overlay 176
+name = "chswitch"
+entrypoints = [
+  "chswitch_entrypoint_0",
+  "chswitch_entrypoint_1",
+  "chswitch_entrypoint_2",
+  "chswitch_entrypoint_3",
+  "chswitch_entrypoint_4",
+  "chswitch_entrypoint_5",
+  "chswitch_entrypoint_6",
+  "chswitch_entrypoint_7",
+  "chswitch_entrypoint_8",
+  "chswitch_entrypoint_9",
+  "chswitch_entrypoint_10",
+  "chswitch_entrypoint_11",
+  "chswitch_entrypoint_12",
+  "chswitch_entrypoint_13",
+  "chswitch_entrypoint_14",
+]
+
+[[overlay]] # Overlay 177
+name = "chpickups"
+entrypoints = [
+  "chpickups_entrypoint_0",
+  "chpickups_entrypoint_1",
+  "chpickups_entrypoint_2",
+  "chpickups_entrypoint_3",
+  "chpickups_entrypoint_4",
+  "chpickups_entrypoint_5",
+  "chpickups_entrypoint_6",
+  "chpickups_entrypoint_7",
+  "chpickups_entrypoint_8",
+  "chpickups_entrypoint_9",
+  "chpickups_entrypoint_10",
+]
+
+[[overlay]] # Overlay 178
+name = "chjigsaw"
+entrypoints = [
+  "chjigsaw_entrypoint_0",
+  "chjigsaw_entrypoint_1",
+]
+
+[[overlay]] # Overlay 179
+name = "chjigsawdance"
+entrypoints = [
+  "chjigsawdance_entrypoint_0",
+  "chjigsawdance_entrypoint_1",
+  "chjigsawdance_entrypoint_2",
+]
+
+[[overlay]] # Overlay 180
+name = "chbounce"
+entrypoints = [
+  "chbounce_entrypoint_0",
+  "chbounce_entrypoint_1",
+  "chbounce_entrypoint_2",
+  "chbounce_entrypoint_3",
+  "chbounce_entrypoint_4",
+  "chbounce_entrypoint_5",
+  "chbounce_entrypoint_6",
+  "chbounce_entrypoint_7",
+  "chbounce_entrypoint_8",
+  "chbounce_entrypoint_9",
+  "chbounce_entrypoint_10",
+]
+
+[[overlay]] # Overlay 181
+name = "chbaddieDll"
+entrypoints = [
+  "chbaddieDll_entrypoint_0",
+  "chbaddieDll_entrypoint_1",
+  "chbaddieDll_entrypoint_2",
+  "chbaddieDll_entrypoint_3",
+]
+
+[[overlay]] # Overlay 182
+name = "chusefeather"
+entrypoints = [
+  "chusefeather_entrypoint_0",
+  "chusefeather_entrypoint_1",
+  "chusefeather_entrypoint_2",
+  "chusefeather_entrypoint_3",
+]
+
+[[overlay]] # Overlay 183
+name = "chgoldsnakehead"
+entrypoints = [
+  "chgoldsnakehead_entrypoint_0",
+  "chgoldsnakehead_entrypoint_1",
+  "chgoldsnakehead_entrypoint_2",
+]
+
+[[overlay]] # Overlay 184
+name = "chanim"
+entrypoints = [
+  "chanim_entrypoint_0",
+  "chanim_entrypoint_1",
+  "chanim_entrypoint_2",
+  "chanim_entrypoint_3",
+  "chanim_entrypoint_4",
+  "chanim_entrypoint_5",
+  "chanim_entrypoint_6",
+  "chanim_entrypoint_7",
+  "chanim_entrypoint_8",
+  "chanim_entrypoint_9",
+]
+
+[[overlay]] # Overlay 185
+name = "chweather"
+entrypoints = [
+  "chweather_entrypoint_0",
+  "chweather_entrypoint_1",
+  "chweather_entrypoint_2",
+  "chweather_entrypoint_3",
+  "chweather_entrypoint_4",
+  "chweather_entrypoint_5",
+  "chweather_entrypoint_6",
+  "chweather_entrypoint_7",
+]
+
+[[overlay]] # Overlay 186
+empty = true
+
+[[overlay]] # Overlay 187
+name = "chidgoldhorde"
+entrypoints = [
+  "chidgoldhorde_entrypoint_0",
+  "chidgoldhorde_entrypoint_1",
+]
+
+[[overlay]] # Overlay 188
+name = "chfishshootgame"
+entrypoints = [
+  "chfishshootgame_entrypoint_0",
+  "chfishshootgame_entrypoint_1",
+  "chfishshootgame_entrypoint_2",
+]
+
+[[overlay]] # Overlay 189
+name = "chlagoonufoext"
+entrypoints = [
+  "chlagoonufoext_entrypoint_0",
+]
+
+[[overlay]] # Overlay 190
+name = "chlagoonufoint"
+entrypoints = [
+  "chlagoonufoint_entrypoint_0",
+  "chlagoonufoint_entrypoint_1",
+  "chlagoonufoint_entrypoint_2",
+  "chlagoonufoint_entrypoint_3",
+  "chlagoonufoint_entrypoint_4",
+  "chlagoonufoint_entrypoint_5",
+  "chlagoonufoint_entrypoint_6",
+]
+
+[[overlay]] # Overlay 191
+name = "chnests"
+entrypoints = [
+  "chnests_entrypoint_0",
+  "chnests_entrypoint_1",
+  "chnests_entrypoint_2",
+  "chnests_entrypoint_3",
+  "chnests_entrypoint_4",
+  "chnests_entrypoint_5",
+  "chnests_entrypoint_6",
+  "chnests_entrypoint_7",
+  "chnests_entrypoint_8",
+  "chnests_entrypoint_9",
+  "chnests_entrypoint_10",
+  "chnests_entrypoint_11",
+  "chnests_entrypoint_12",
+  "chnests_entrypoint_13",
+]
+
+[[overlay]] # Overlay 192
+name = "chbanjocurrent"
+entrypoints = [
+  "chbanjocurrent_entrypoint_0",
+  "chbanjocurrent_entrypoint_1",
+]
+
+[[overlay]] # Overlay 193
+name = "chnastycavemen"
+entrypoints = [
+  "chnastycavemen_entrypoint_0",
+  "chnastycavemen_entrypoint_1",
+]
+
+[[overlay]] # Overlay 194
+empty = true
+
+[[overlay]] # Overlay 195
+name = "chcamwaypoint"
+entrypoints = [
+  "chcamwaypoint_entrypoint_0",
+]
+
+[[overlay]] # Overlay 196
+name = "chmasterjiggy"
+entrypoints = [
+  "chmasterjiggy_entrypoint_0",
+  "chmasterjiggy_entrypoint_1",
+  "chmasterjiggy_entrypoint_2",
+]
+
+[[overlay]] # Overlay 197
+name = "chjiggygamenew"
+entrypoints = [
+  "chjiggygamenew_entrypoint_0",
+  "chjiggygamenew_entrypoint_1",
+  "chjiggygamenew_entrypoint_2",
+  "chjiggygamenew_entrypoint_3",
+  "chjiggygamenew_entrypoint_4",
+]
+
+[[overlay]] # Overlay 198
+name = "chwaspnestgame"
+entrypoints = [
+  "chwaspnestgame_entrypoint_0",
+  "chwaspnestgame_entrypoint_1",
+]
+
+[[overlay]] # Overlay 199
+name = "chwarppad"
+entrypoints = [
+  "chwarppad_entrypoint_0",
+]
+
+[[overlay]] # Overlay 200
+name = "chjiggytemple"
+entrypoints = [
+  "chjiggytemple_entrypoint_0",
+  "chjiggytemple_entrypoint_1",
+  "chjiggytemple_entrypoint_2",
+]
+
+[[overlay]] # Overlay 201
+name = "chscreenadjust"
+entrypoints = [
+  "chscreenadjust_entrypoint_0",
+]
+
+[[overlay]] # Overlay 202
+name = "chminisubgame"
+entrypoints = [
+  "chminisubgame_entrypoint_0",
+  "chminisubgame_entrypoint_1",
+]
+
+[[overlay]] # Overlay 203
+name = "chjiggypost"
+entrypoints = [
+  "chjiggypost_entrypoint_0",
+]
+
+[[overlay]] # Overlay 204
+name = "chhoneyb"
+entrypoints = [
+  "chhoneyb_entrypoint_0",
+  "chhoneyb_entrypoint_1",
+  "chhoneyb_entrypoint_2",
+]
+
+[[overlay]] # Overlay 205
+name = "chgameselect"
+entrypoints = [
+  "chgameselect_entrypoint_0",
+  "chgameselect_entrypoint_1",
+  "chgameselect_entrypoint_2",
+  "chgameselect_entrypoint_3",
+  "chgameselect_entrypoint_4",
+  "chgameselect_entrypoint_5",
+  "chgameselect_entrypoint_6",
+  "chgameselect_entrypoint_7",
+]
+
+[[overlay]] # Overlay 206
+name = "chjiggybeam"
+entrypoints = [
+  "chjiggybeam_entrypoint_0",
+]
+
+[[overlay]] # Overlay 207
+empty = true
+
+[[overlay]] # Overlay 208
+name = "chattract"
+entrypoints = [
+  "chattract_entrypoint_0",
+  "chattract_entrypoint_1",
+  "chattract_entrypoint_2",
+]
+
+[[overlay]] # Overlay 209
+name = "chwitchytents"
+entrypoints = [
+  "chwitchytents_entrypoint_0",
+  "chwitchytents_entrypoint_1",
+]
+
+[[overlay]] # Overlay 210
+name = "chfantasybounce"
+entrypoints = [
+  "chfantasybounce_entrypoint_0",
+  "chfantasybounce_entrypoint_1",
+]
+
+[[overlay]] # Overlay 211
+name = "chcactusofstrength"
+entrypoints = [
+  "chcactusofstrength_entrypoint_0",
+  "chcactusofstrength_entrypoint_1",
+  "chcactusofstrength_entrypoint_2",
+]
+
+[[overlay]] # Overlay 212
+name = "chcaveofhorrorsdoors"
+entrypoints = [
+  "chcaveofhorrorsdoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 213
+name = "chinflatableboss"
+entrypoints = [
+  "chinflatableboss_entrypoint_0",
+]
+
+[[overlay]] # Overlay 214
+name = "chballoonbomb"
+entrypoints = [
+  "chballoonbomb_entrypoint_0",
+]
+
+[[overlay]] # Overlay 215
+name = "chfairgroundworker"
+entrypoints = [
+  "chfairgroundworker_entrypoint_0",
+  "chfairgroundworker_entrypoint_1",
+  "chfairgroundworker_entrypoint_2",
+  "chfairgroundworker_entrypoint_3",
+]
+
+[[overlay]] # Overlay 216
+name = "chgobiwitchy"
+entrypoints = [
+  "chgobiwitchy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 217
+name = "chbabydino"
+entrypoints = [
+  "chbabydino_entrypoint_0",
+]
+
+[[overlay]] # Overlay 218
+name = "chhillbilly"
+entrypoints = [
+  "chhillbilly_entrypoint_0",
+]
+
+[[overlay]] # Overlay 219
+name = "chdiggerground"
+entrypoints = [
+  "chdiggerground_entrypoint_0",
+]
+
+[[overlay]] # Overlay 220
+name = "chdiggergroundgen"
+entrypoints = [
+  "chdiggergroundgen_entrypoint_0",
+]
+
+[[overlay]] # Overlay 221
+name = "chdiggerfly"
+entrypoints = [
+  "chdiggerfly_entrypoint_0",
+  "chdiggerfly_entrypoint_1",
+]
+
+[[overlay]] # Overlay 222
+name = "chcheato"
+entrypoints = [
+  "chcheato_entrypoint_0",
+]
+
+[[overlay]] # Overlay 223
+name = "chcheatopage"
+entrypoints = [
+  "chcheatopage_entrypoint_0",
+]
+
+[[overlay]] # Overlay 224
+name = "chwarriorbaddy"
+entrypoints = [
+  "chwarriorbaddy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 225
+name = "chstonepillar"
+entrypoints = [
+  "chstonepillar_entrypoint_0",
+  "chstonepillar_entrypoint_1",
+]
+
+[[overlay]] # Overlay 226
+name = "chboggykids"
+entrypoints = [
+  "chboggykids_entrypoint_0",
+]
+
+[[overlay]] # Overlay 227
+name = "chmrsboggy"
+entrypoints = [
+  "chmrsboggy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 228
+name = "chmineprospector"
+entrypoints = [
+  "chmineprospector_entrypoint_0",
+  "chmineprospector_entrypoint_1",
+  "chmineprospector_entrypoint_2",
+]
+
+[[overlay]] # Overlay 229
+name = "chonearmbandit"
+entrypoints = [
+  "chonearmbandit_entrypoint_0",
+  "chonearmbandit_entrypoint_1",
+]
+
+[[overlay]] # Overlay 230
+name = "chtntblockage"
+entrypoints = [
+  "chtntblockage_entrypoint_0",
+]
+
+[[overlay]] # Overlay 231
+name = "chtntdetonator"
+entrypoints = [
+  "chtntdetonator_entrypoint_0",
+  "chtntdetonator_entrypoint_1",
+]
+
+[[overlay]] # Overlay 232
+name = "chtnthut"
+entrypoints = [
+  "chtnthut_entrypoint_0",
+]
+
+[[overlay]] # Overlay 233
+name = "chtntminecelldoor"
+entrypoints = [
+  "chtntminecelldoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 234
+name = "chmadamegrunty"
+entrypoints = [
+  "chmadamegrunty_entrypoint_0",
+  "chmadamegrunty_entrypoint_1",
+]
+
+[[overlay]] # Overlay 235
+name = "chlightdemon"
+entrypoints = [
+  "chlightdemon_entrypoint_0",
+  "chlightdemon_entrypoint_1",
+]
+
+[[overlay]] # Overlay 236
+name = "chevilspirit"
+entrypoints = [
+  "chevilspirit_entrypoint_0",
+]
+
+[[overlay]] # Overlay 237
+name = "chhotfloorsmoke"
+entrypoints = [
+  "chhotfloorsmoke_entrypoint_0",
+]
+
+[[overlay]] # Overlay 238
+name = "chboilerboss"
+entrypoints = [
+  "chboilerboss_entrypoint_0",
+  "chboilerboss_entrypoint_1",
+  "chboilerboss_entrypoint_2",
+  "chboilerboss_entrypoint_3",
+]
+
+[[overlay]] # Overlay 239
+name = "chburgerstand"
+entrypoints = [
+  "chburgerstand_entrypoint_0",
+  "chburgerstand_entrypoint_1",
+  "chburgerstand_entrypoint_2",
+  "chburgerstand_entrypoint_3",
+]
+
+[[overlay]] # Overlay 240
+name = "chfriesstand"
+entrypoints = [
+  "chfriesstand_entrypoint_0",
+  "chfriesstand_entrypoint_1",
+  "chfriesstand_entrypoint_2",
+  "chfriesstand_entrypoint_3",
+]
+
+[[overlay]] # Overlay 241
+name = "chboxingglove"
+entrypoints = [
+  "chboxingglove_entrypoint_0",
+  "chboxingglove_entrypoint_1",
+]
+
+[[overlay]] # Overlay 242
+name = "chconga"
+entrypoints = [
+  "chconga_entrypoint_0",
+]
+
+[[overlay]] # Overlay 243
+name = "chstarspinnerplanet"
+entrypoints = [
+  "chstarspinnerplanet_entrypoint_0",
+  "chstarspinnerplanet_entrypoint_1",
+]
+
+[[overlay]] # Overlay 244
+name = "chstarspinnerstar"
+entrypoints = [
+  "chstarspinnerstar_entrypoint_0",
+]
+
+[[overlay]] # Overlay 245
+name = "chstarspinnerctrl"
+entrypoints = [
+  "chstarspinnerctrl_entrypoint_0",
+  "chstarspinnerctrl_entrypoint_1",
+  "chstarspinnerctrl_entrypoint_2",
+  "chstarspinnerctrl_entrypoint_3",
+  "chstarspinnerctrl_entrypoint_4",
+]
+
+[[overlay]] # Overlay 246
+name = "chhellterskelter"
+entrypoints = [
+  "chhellterskelter_entrypoint_0",
+  "chhellterskelter_entrypoint_1",
+  "chhellterskelter_entrypoint_2",
+]
+
+[[overlay]] # Overlay 247
+name = "chcablespark"
+entrypoints = [
+  "chcablespark_entrypoint_0",
+]
+
+[[overlay]] # Overlay 248
+name = "chcablecar"
+entrypoints = [
+  "chcablecar_entrypoint_0",
+  "chcablecar_entrypoint_1",
+]
+
+[[overlay]] # Overlay 249
+name = "chhellterskeltermouth"
+entrypoints = [
+  "chhellterskeltermouth_entrypoint_0",
+]
+
+[[overlay]] # Overlay 250
+name = "charea51gate"
+entrypoints = [
+  "charea51gate_entrypoint_0",
+]
+
+[[overlay]] # Overlay 251
+name = "chghostdoor"
+entrypoints = [
+  "chghostdoor_entrypoint_0",
+  "chghostdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 252
+name = "chfloater"
+entrypoints = [
+  "chfloater_entrypoint_0",
+]
+
+[[overlay]] # Overlay 253
+name = "chpumproomgrill"
+entrypoints = [
+  "chpumproomgrill_entrypoint_0",
+]
+
+[[overlay]] # Overlay 254
+name = "chpumproomswitch"
+entrypoints = [
+  "chpumproomswitch_entrypoint_0",
+  "chpumproomswitch_entrypoint_1",
+]
+
+[[overlay]] # Overlay 255
+name = "chbouncycastle"
+entrypoints = [
+  "chbouncycastle_entrypoint_0",
+  "chbouncycastle_entrypoint_1",
+  "chbouncycastle_entrypoint_2",
+  "chbouncycastle_entrypoint_3",
+  "chbouncycastle_entrypoint_4",
+]
+
+[[overlay]] # Overlay 256
+name = "chspotlight"
+entrypoints = [
+  "chspotlight_entrypoint_0",
+]
+
+[[overlay]] # Overlay 257
+name = "chballoonburst"
+entrypoints = [
+  "chballoonburst_entrypoint_0",
+  "chballoonburst_entrypoint_1",
+  "chballoonburst_entrypoint_2",
+]
+
+[[overlay]] # Overlay 258
+name = "chpawnbroker"
+entrypoints = [
+  "chpawnbroker_entrypoint_0",
+  "chpawnbroker_entrypoint_1",
+  "chpawnbroker_entrypoint_2",
+]
+
+[[overlay]] # Overlay 259
+name = "chhoopswoop"
+entrypoints = [
+  "chhoopswoop_entrypoint_0",
+  "chhoopswoop_entrypoint_1",
+  "chhoopswoop_entrypoint_2",
+]
+
+[[overlay]] # Overlay 260
+name = "chtiptup"
+entrypoints = [
+  "chtiptup_entrypoint_0",
+  "chtiptup_entrypoint_1",
+  "chtiptup_entrypoint_2",
+]
+
+[[overlay]] # Overlay 261
+name = "chseaweedbaddy"
+entrypoints = [
+  "chseaweedbaddy_entrypoint_0",
+  "chseaweedbaddy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 262
+name = "choctopus"
+entrypoints = [
+  "choctopus_entrypoint_0",
+  "choctopus_entrypoint_1",
+]
+
+[[overlay]] # Overlay 263
+name = "chanemone"
+entrypoints = [
+  "chanemone_entrypoint_0",
+  "chanemone_entrypoint_1",
+]
+
+[[overlay]] # Overlay 264
+name = "chjollyroger"
+entrypoints = [
+  "chjollyroger_entrypoint_0",
+  "chjollyroger_entrypoint_1",
+  "chjollyroger_entrypoint_2",
+]
+
+[[overlay]] # Overlay 265
+name = "chdinofoot"
+entrypoints = [
+  "chdinofoot_entrypoint_0",
+]
+
+[[overlay]] # Overlay 266
+name = "chfreezy"
+entrypoints = [
+  "chfreezy_entrypoint_0",
+  "chfreezy_entrypoint_1",
+  "chfreezy_entrypoint_2",
+]
+
+[[overlay]] # Overlay 267
+name = "chdinoswitches"
+entrypoints = [
+  "chdinoswitches_entrypoint_0",
+  "chdinoswitches_entrypoint_1",
+  "chdinoswitches_entrypoint_2",
+  "chdinoswitches_entrypoint_3",
+  "chdinoswitches_entrypoint_4",
+]
+
+[[overlay]] # Overlay 268
+name = "chlagoonbits"
+entrypoints = [
+  "chlagoonbits_entrypoint_0",
+  "chlagoonbits_entrypoint_1",
+  "chlagoonbits_entrypoint_2",
+  "chlagoonbits_entrypoint_3",
+  "chlagoonbits_entrypoint_4",
+  "chlagoonbits_entrypoint_5",
+]
+
+[[overlay]] # Overlay 269
+name = "chbigterrysbits"
+entrypoints = [
+  "chbigterrysbits_entrypoint_0",
+  "chbigterrysbits_entrypoint_1",
+  "chbigterrysbits_entrypoint_2",
+]
+
+[[overlay]] # Overlay 270
+name = "chdinoboss"
+entrypoints = [
+  "chdinoboss_entrypoint_0",
+  "chdinoboss_entrypoint_1",
+]
+
+[[overlay]] # Overlay 271
+name = "chphlegm"
+entrypoints = [
+  "chphlegm_entrypoint_0",
+  "chphlegm_entrypoint_1",
+  "chphlegm_entrypoint_2",
+]
+
+[[overlay]] # Overlay 272
+name = "chlilterry"
+entrypoints = [
+  "chlilterry_entrypoint_0",
+]
+
+[[overlay]] # Overlay 273
+name = "chdinocoaster"
+entrypoints = [
+  "chdinocoaster_entrypoint_0",
+]
+
+[[overlay]] # Overlay 274
+name = "chpowerhut"
+entrypoints = [
+  "chpowerhut_entrypoint_0",
+  "chpowerhut_entrypoint_1",
+  "chpowerhut_entrypoint_2",
+  "chpowerhut_entrypoint_3",
+  "chpowerhut_entrypoint_4",
+]
+
+[[overlay]] # Overlay 275
+name = "chpowerhutwitchy"
+entrypoints = [
+  "chpowerhutwitchy_entrypoint_0",
+  "chpowerhutwitchy_entrypoint_1",
+  "chpowerhutwitchy_entrypoint_2",
+  "chpowerhutwitchy_entrypoint_3",
+  "chpowerhutwitchy_entrypoint_4",
+  "chpowerhutwitchy_entrypoint_5",
+]
+
+[[overlay]] # Overlay 276
+name = "chboilerid"
+entrypoints = [
+  "chboilerid_entrypoint_0",
+  "chboilerid_entrypoint_1",
+  "chboilerid_entrypoint_2",
+  "chboilerid_entrypoint_3",
+  "chboilerid_entrypoint_4",
+  "chboilerid_entrypoint_5",
+  "chboilerid_entrypoint_6",
+]
+
+[[overlay]] # Overlay 277
+name = "chflamer"
+entrypoints = [
+  "chflamer_entrypoint_0",
+  "chflamer_entrypoint_1",
+  "chflamer_entrypoint_2",
+]
+
+[[overlay]] # Overlay 278
+name = "chpoolkids"
+entrypoints = [
+  "chpoolkids_entrypoint_0",
+  "chpoolkids_entrypoint_1",
+  "chpoolkids_entrypoint_2",
+  "chpoolkids_entrypoint_3",
+]
+
+[[overlay]] # Overlay 279
+name = "chnicecavemen"
+entrypoints = [
+  "chnicecavemen_entrypoint_0",
+  "chnicecavemen_entrypoint_1",
+  "chnicecavemen_entrypoint_2",
+  "chnicecavemen_entrypoint_3",
+]
+
+[[overlay]] # Overlay 280
+name = "chfactorylight"
+entrypoints = [
+  "chfactorylight_entrypoint_0",
+  "chfactorylight_entrypoint_1",
+]
+
+[[overlay]] # Overlay 281
+name = "chfirefx"
+entrypoints = [
+  "chfirefx_entrypoint_0",
+  "chfirefx_entrypoint_1",
+  "chfirefx_entrypoint_2",
+  "chfirefx_entrypoint_3",
+  "chfirefx_entrypoint_4",
+  "chfirefx_entrypoint_5",
+  "chfirefx_entrypoint_6",
+]
+
+[[overlay]] # Overlay 282
+name = "chbonfirecavern"
+entrypoints = [
+  "chbonfirecavern_entrypoint_0",
+]
+
+[[overlay]] # Overlay 283
+name = "chterryegg"
+entrypoints = [
+  "chterryegg_entrypoint_0",
+  "chterryegg_entrypoint_1",
+  "chterryegg_entrypoint_2",
+  "chterryegg_entrypoint_3",
+]
+
+[[overlay]] # Overlay 284
+name = "charmouredcaveman"
+entrypoints = [
+  "charmouredcaveman_entrypoint_0",
+]
+
+[[overlay]] # Overlay 285
+name = "chintrotext"
+entrypoints = [
+  "chintrotext_entrypoint_0",
+  "chintrotext_entrypoint_1",
+  "chintrotext_entrypoint_2",
+  "chintrotext_entrypoint_3",
+]
+
+[[overlay]] # Overlay 286
+empty = true
+
+[[overlay]] # Overlay 287
+name = "chfactoryprop"
+entrypoints = [
+  "chfactoryprop_entrypoint_0",
+  "chfactoryprop_entrypoint_1",
+  "chfactoryprop_entrypoint_2",
+  "chfactoryprop_entrypoint_3",
+]
+
+[[overlay]] # Overlay 288
+name = "chtrashcompactor"
+entrypoints = [
+  "chtrashcompactor_entrypoint_0",
+  "chtrashcompactor_entrypoint_1",
+  "chtrashcompactor_entrypoint_2",
+  "chtrashcompactor_entrypoint_3",
+]
+
+[[overlay]] # Overlay 289
+name = "chfactoryliftdoor"
+entrypoints = [
+  "chfactoryliftdoor_entrypoint_0",
+  "chfactoryliftdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 290
+name = "chfactorycrusher"
+entrypoints = [
+  "chfactorycrusher_entrypoint_0",
+  "chfactorycrusher_entrypoint_1",
+]
+
+[[overlay]] # Overlay 291
+name = "chfactoryrobot"
+entrypoints = [
+  "chfactoryrobot_entrypoint_0",
+  "chfactoryrobot_entrypoint_1",
+  "chfactoryrobot_entrypoint_2",
+]
+
+[[overlay]] # Overlay 292
+name = "chmermaidstatue"
+entrypoints = [
+  "chmermaidstatue_entrypoint_0",
+  "chmermaidstatue_entrypoint_1",
+]
+
+[[overlay]] # Overlay 293
+name = "chdoor"
+entrypoints = [
+  "chdoor_entrypoint_0",
+  "chdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 294
+name = "chfactorygoblin"
+entrypoints = [
+  "chfactorygoblin_entrypoint_0",
+]
+
+[[overlay]] # Overlay 295
+name = "chfactorytoxicpools"
+entrypoints = [
+  "chfactorytoxicpools_entrypoint_0",
+  "chfactorytoxicpools_entrypoint_1",
+  "chfactorytoxicpools_entrypoint_2",
+  "chfactorytoxicpools_entrypoint_3",
+]
+
+[[overlay]] # Overlay 296
+name = "chbigtopticket"
+entrypoints = [
+  "chbigtopticket_entrypoint_0",
+]
+
+[[overlay]] # Overlay 297
+name = "chlagoonpirate"
+entrypoints = [
+  "chlagoonpirate_entrypoint_0",
+]
+
+[[overlay]] # Overlay 298
+name = "chvandoor"
+entrypoints = [
+  "chvandoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 299
+name = "chcoderoombits"
+entrypoints = [
+  "chcoderoombits_entrypoint_0",
+  "chcoderoombits_entrypoint_1",
+  "chcoderoombits_entrypoint_2",
+]
+
+[[overlay]] # Overlay 300
+name = "chdingpot"
+entrypoints = [
+  "chdingpot_entrypoint_0",
+]
+
+[[overlay]] # Overlay 301
+name = "chelectricfence"
+entrypoints = [
+  "chelectricfence_entrypoint_0",
+  "chelectricfence_entrypoint_1",
+  "chelectricfence_entrypoint_2",
+]
+
+[[overlay]] # Overlay 302
+name = "chfactorysmoke"
+entrypoints = [
+  "chfactorysmoke_entrypoint_0",
+]
+
+[[overlay]] # Overlay 303
+name = "chappearfx"
+entrypoints = [
+  "chappearfx_entrypoint_0",
+  "chappearfx_entrypoint_1",
+  "chappearfx_entrypoint_2",
+  "chappearfx_entrypoint_3",
+]
+
+[[overlay]] # Overlay 304
+name = "chbilldrillplate"
+entrypoints = [
+  "chbilldrillplate_entrypoint_0",
+  "chbilldrillplate_entrypoint_1",
+  "chbilldrillplate_entrypoint_2",
+]
+
+[[overlay]] # Overlay 305
+name = "chrainripples"
+entrypoints = [
+  "chrainripples_entrypoint_0",
+]
+
+[[overlay]] # Overlay 306
+name = "chdumbwaiterlift"
+entrypoints = [
+  "chdumbwaiterlift_entrypoint_0",
+]
+
+[[overlay]] # Overlay 307
+name = "chmrsicecube"
+entrypoints = [
+  "chmrsicecube_entrypoint_0",
+  "chmrsicecube_entrypoint_1",
+]
+
+[[overlay]] # Overlay 308
+name = "chgobihailfire"
+entrypoints = [
+  "chgobihailfire_entrypoint_0",
+  "chgobihailfire_entrypoint_1",
+]
+
+[[overlay]] # Overlay 309
+name = "chbigfoot"
+entrypoints = [
+  "chbigfoot_entrypoint_0",
+]
+
+[[overlay]] # Overlay 310
+name = "chbiggafoot"
+entrypoints = [
+  "chbiggafoot_entrypoint_0",
+  "chbiggafoot_entrypoint_1",
+]
+
+[[overlay]] # Overlay 311
+name = "chicestationbits"
+entrypoints = [
+  "chicestationbits_entrypoint_0",
+  "chicestationbits_entrypoint_1",
+]
+
+[[overlay]] # Overlay 312
+name = "chmricecube"
+entrypoints = [
+  "chmricecube_entrypoint_0",
+]
+
+[[overlay]] # Overlay 313
+name = "chiciclebits"
+entrypoints = [
+  "chiciclebits_entrypoint_0",
+]
+
+[[overlay]] # Overlay 314
+name = "chsabreman"
+entrypoints = [
+  "chsabreman_entrypoint_0",
+  "chsabreman_entrypoint_1",
+  "chsabreman_entrypoint_2",
+  "chsabreman_entrypoint_3",
+]
+
+[[overlay]] # Overlay 315
+name = "chbanjoctrl"
+entrypoints = [
+  "chbanjoctrl_entrypoint_0",
+  "chbanjoctrl_entrypoint_1",
+  "chbanjoctrl_entrypoint_2",
+]
+
+[[overlay]] # Overlay 316
+name = "chklungo"
+entrypoints = [
+  "chklungo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 317
+name = "chklungophial"
+entrypoints = [
+  "chklungophial_entrypoint_0",
+  "chklungophial_entrypoint_1",
+]
+
+[[overlay]] # Overlay 318
+name = "chklungoforcefield"
+entrypoints = [
+  "chklungoforcefield_entrypoint_0",
+]
+
+[[overlay]] # Overlay 319
+name = "chklungodoors"
+entrypoints = [
+  "chklungodoors_entrypoint_0",
+  "chklungodoors_entrypoint_1",
+]
+
+[[overlay]] # Overlay 320
+name = "chklungoleave"
+entrypoints = [
+  "chklungoleave_entrypoint_0",
+]
+
+[[overlay]] # Overlay 321
+name = "chlightfader"
+entrypoints = [
+  "chlightfader_entrypoint_0",
+  "chlightfader_entrypoint_1",
+  "chlightfader_entrypoint_2",
+]
+
+[[overlay]] # Overlay 322
+name = "chvolcanobits"
+entrypoints = [
+  "chvolcanobits_entrypoint_0",
+  "chvolcanobits_entrypoint_1",
+  "chvolcanobits_entrypoint_2",
+  "chvolcanobits_entrypoint_3",
+  "chvolcanobits_entrypoint_4",
+]
+
+[[overlay]] # Overlay 323
+name = "chhotwaterpoolbits"
+entrypoints = [
+  "chhotwaterpoolbits_entrypoint_0",
+  "chhotwaterpoolbits_entrypoint_1",
+  "chhotwaterpoolbits_entrypoint_2",
+  "chhotwaterpoolbits_entrypoint_3",
+  "chhotwaterpoolbits_entrypoint_4",
+  "chhotwaterpoolbits_entrypoint_5",
+]
+
+[[overlay]] # Overlay 324
+name = "chnicecavemenguard"
+entrypoints = [
+  "chnicecavemenguard_entrypoint_0",
+]
+
+[[overlay]] # Overlay 325
+name = "chscorepoints"
+entrypoints = [
+  "chscorepoints_entrypoint_0",
+  "chscorepoints_entrypoint_1",
+  "chscorepoints_entrypoint_2",
+]
+
+[[overlay]] # Overlay 326
+name = "chicywind"
+entrypoints = [
+  "chicywind_entrypoint_0",
+]
+
+[[overlay]] # Overlay 327
+name = "chdippy"
+entrypoints = [
+  "chdippy_entrypoint_0",
+  "chdippy_entrypoint_1",
+  "chdippy_entrypoint_2",
+  "chdippy_entrypoint_3",
+]
+
+[[overlay]] # Overlay 328
+name = "chfactoryflypad"
+entrypoints = [
+  "chfactoryflypad_entrypoint_0",
+  "chfactoryflypad_entrypoint_1",
+]
+
+[[overlay]] # Overlay 329
+name = "chloggo"
+entrypoints = [
+  "chloggo_entrypoint_0",
+  "chloggo_entrypoint_1",
+]
+
+[[overlay]] # Overlay 330
+name = "chkingjinjo"
+entrypoints = [
+  "chkingjinjo_entrypoint_0",
+  "chkingjinjo_entrypoint_1",
+]
+
+[[overlay]] # Overlay 331
+name = "chbottlesfamily"
+entrypoints = [
+  "chbottlesfamily_entrypoint_0",
+  "chbottlesfamily_entrypoint_1",
+  "chbottlesfamily_entrypoint_2",
+]
+
+[[overlay]] # Overlay 332
+name = "chnutsnbolts"
+entrypoints = [
+  "chnutsnbolts_entrypoint_0",
+  "chnutsnbolts_entrypoint_1",
+  "chnutsnbolts_entrypoint_2",
+]
+
+[[overlay]] # Overlay 333
+name = "chfactorytwinklies"
+entrypoints = [
+  "chfactorytwinklies_entrypoint_0",
+  "chfactorytwinklies_entrypoint_1",
+  "chfactorytwinklies_entrypoint_2",
+  "chfactorytwinklies_entrypoint_3",
+  "chfactorytwinklies_entrypoint_4",
+  "chfactorytwinklies_entrypoint_5",
+]
+
+[[overlay]] # Overlay 334
+name = "chstatueboss"
+entrypoints = [
+  "chstatueboss_entrypoint_0",
+  "chstatueboss_entrypoint_1",
+]
+
+[[overlay]] # Overlay 335
+name = "chproplighter"
+entrypoints = [
+  "chproplighter_entrypoint_0",
+]
+
+[[overlay]] # Overlay 336
+name = "chmonsterinterior"
+entrypoints = [
+  "chmonsterinterior_entrypoint_0",
+  "chmonsterinterior_entrypoint_1",
+  "chmonsterinterior_entrypoint_2",
+  "chmonsterinterior_entrypoint_3",
+  "chmonsterinterior_entrypoint_4",
+]
+
+[[overlay]] # Overlay 337
+name = "chalienkids"
+entrypoints = [
+  "chalienkids_entrypoint_0",
+  "chalienkids_entrypoint_1",
+  "chalienkids_entrypoint_2",
+  "chalienkids_entrypoint_3",
+]
+
+[[overlay]] # Overlay 338
+name = "chlifeforcespell"
+entrypoints = [
+  "chlifeforcespell_entrypoint_0",
+  "chlifeforcespell_entrypoint_1",
+  "chlifeforcespell_entrypoint_2",
+]
+
+[[overlay]] # Overlay 339
+name = "changlerboss"
+entrypoints = [
+  "changlerboss_entrypoint_0",
+  "changlerboss_entrypoint_1",
+]
+
+[[overlay]] # Overlay 340
+name = "changlerbossflare"
+entrypoints = [
+  "changlerbossflare_entrypoint_0",
+]
+
+[[overlay]] # Overlay 341
+name = "changlerbossbubble"
+entrypoints = [
+  "changlerbossbubble_entrypoint_0",
+]
+
+[[overlay]] # Overlay 342
+name = "chzubba"
+entrypoints = [
+  "chzubba_entrypoint_0",
+]
+
+[[overlay]] # Overlay 343
+name = "chfireimp"
+entrypoints = [
+  "chfireimp_entrypoint_0",
+]
+
+[[overlay]] # Overlay 344
+name = "chmumboskulls"
+entrypoints = [
+  "chmumboskulls_entrypoint_0",
+]
+
+[[overlay]] # Overlay 345
+name = "ch2dbaddy"
+entrypoints = [
+  "ch2dbaddy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 346
+name = "chweldarboss"
+entrypoints = [
+  "chweldarboss_entrypoint_0",
+  "chweldarboss_entrypoint_1",
+  "chweldarboss_entrypoint_2",
+]
+
+[[overlay]] # Overlay 347
+name = "chaliendad"
+entrypoints = [
+  "chaliendad_entrypoint_0",
+  "chaliendad_entrypoint_1",
+  "chaliendad_entrypoint_2",
+]
+
+[[overlay]] # Overlay 348
+name = "chalienbeam"
+entrypoints = [
+  "chalienbeam_entrypoint_0",
+]
+
+[[overlay]] # Overlay 349
+name = "chweldarbossdoors"
+entrypoints = [
+  "chweldarbossdoors_entrypoint_0",
+  "chweldarbossdoors_entrypoint_1",
+]
+
+[[overlay]] # Overlay 350
+name = "chweldarbossfireball"
+entrypoints = [
+  "chweldarbossfireball_entrypoint_0",
+]
+
+[[overlay]] # Overlay 351
+name = "chweldarbossfusebox"
+entrypoints = [
+  "chweldarbossfusebox_entrypoint_0",
+  "chweldarbossfusebox_entrypoint_1",
+  "chweldarbossfusebox_entrypoint_2",
+]
+
+[[overlay]] # Overlay 352
+name = "chcrystalbaddie"
+entrypoints = [
+  "chcrystalbaddie_entrypoint_0",
+]
+
+[[overlay]] # Overlay 353
+name = "chflowerbaddie"
+entrypoints = [
+  "chflowerbaddie_entrypoint_0",
+]
+
+[[overlay]] # Overlay 354
+name = "chexploder"
+entrypoints = [
+  "chexploder_entrypoint_0",
+  "chexploder_entrypoint_1",
+  "chexploder_entrypoint_2",
+  "chexploder_entrypoint_3",
+  "chexploder_entrypoint_4",
+  "chexploder_entrypoint_5",
+  "chexploder_entrypoint_6",
+  "chexploder_entrypoint_7",
+  "chexploder_entrypoint_8",
+  "chexploder_entrypoint_9",
+  "chexploder_entrypoint_10",
+  "chexploder_entrypoint_11",
+  "chexploder_entrypoint_12",
+  "chexploder_entrypoint_13",
+  "chexploder_entrypoint_14",
+  "chexploder_entrypoint_15",
+  "chexploder_entrypoint_16",
+]
+
+[[overlay]] # Overlay 355
+name = "chboggykidshome"
+entrypoints = [
+  "chboggykidshome_entrypoint_0",
+  "chboggykidshome_entrypoint_1",
+  "chboggykidshome_entrypoint_2",
+]
+
+[[overlay]] # Overlay 356
+name = "chmrsboggyhome"
+entrypoints = [
+  "chmrsboggyhome_entrypoint_0",
+]
+
+[[overlay]] # Overlay 357
+name = "chweldarhead"
+entrypoints = [
+  "chweldarhead_entrypoint_0",
+]
+
+[[overlay]] # Overlay 358
+name = "chcamerawibble"
+entrypoints = [
+  "chcamerawibble_entrypoint_0",
+]
+
+[[overlay]] # Overlay 359
+name = "changlerbossdoor"
+entrypoints = [
+  "changlerbossdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 360
+name = "chboilerbossdoor"
+entrypoints = [
+  "chboilerbossdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 361
+name = "chinflatablebossdoor"
+entrypoints = [
+  "chinflatablebossdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 362
+name = "chstatuebossbits"
+entrypoints = [
+  "chstatuebossbits_entrypoint_0",
+  "chstatuebossbits_entrypoint_1",
+  "chstatuebossbits_entrypoint_2",
+  "chstatuebossbits_entrypoint_3",
+]
+
+[[overlay]] # Overlay 363
+name = "chhotwatersteam"
+entrypoints = [
+  "chhotwatersteam_entrypoint_0",
+]
+
+[[overlay]] # Overlay 364
+name = "chcastleshockpadswitch"
+entrypoints = [
+  "chcastleshockpadswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 365
+name = "chtalontorpedoboulder"
+entrypoints = [
+  "chtalontorpedoboulder_entrypoint_0",
+]
+
+[[overlay]] # Overlay 366
+name = "chexplodingchainlinks"
+entrypoints = [
+  "chexplodingchainlinks_entrypoint_0",
+]
+
+[[overlay]] # Overlay 367
+name = "chlagoonbilldrillcover"
+entrypoints = [
+  "chlagoonbilldrillcover_entrypoint_0",
+]
+
+[[overlay]] # Overlay 368
+name = "chgobicommon"
+entrypoints = [
+  "chgobicommon_entrypoint_0",
+]
+
+[[overlay]] # Overlay 369
+name = "chwitchyshockpadswitch"
+entrypoints = [
+  "chwitchyshockpadswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 370
+name = "chsquits"
+entrypoints = [
+  "chsquits_entrypoint_0",
+]
+
+[[overlay]] # Overlay 371
+name = "chbottlesplantgrill"
+entrypoints = [
+  "chbottlesplantgrill_entrypoint_0",
+]
+
+[[overlay]] # Overlay 372
+name = "chkingjinjobits"
+entrypoints = [
+  "chkingjinjobits_entrypoint_0",
+  "chkingjinjobits_entrypoint_1",
+]
+
+[[overlay]] # Overlay 373
+name = "chklungospiral"
+entrypoints = [
+  "chklungospiral_entrypoint_0",
+]
+
+[[overlay]] # Overlay 374
+name = "chfactoryposter"
+entrypoints = [
+  "chfactoryposter_entrypoint_0",
+]
+
+[[overlay]] # Overlay 375
+empty = true
+
+[[overlay]] # Overlay 376
+name = "chjigsawcollect"
+entrypoints = [
+  "chjigsawcollect_entrypoint_0",
+  "chjigsawcollect_entrypoint_1",
+]
+
+[[overlay]] # Overlay 377
+name = "chdiggerboss"
+entrypoints = [
+  "chdiggerboss_entrypoint_0",
+  "chdiggerboss_entrypoint_1",
+  "chdiggerboss_entrypoint_2",
+  "chdiggerboss_entrypoint_3",
+]
+
+[[overlay]] # Overlay 378
+name = "chdiggerbossdoor"
+entrypoints = [
+  "chdiggerbossdoor_entrypoint_0",
+  "chdiggerbossdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 379
+name = "chgruntyfireball"
+entrypoints = [
+  "chgruntyfireball_entrypoint_0",
+]
+
+[[overlay]] # Overlay 380
+name = "chdiggerbossshell"
+entrypoints = [
+  "chdiggerbossshell_entrypoint_0",
+  "chdiggerbossshell_entrypoint_1",
+]
+
+[[overlay]] # Overlay 381
+name = "chdiggerbossbattery"
+entrypoints = [
+  "chdiggerbossbattery_entrypoint_0",
+]
+
+[[overlay]] # Overlay 382
+name = "chgruntyfireballbig"
+entrypoints = [
+  "chgruntyfireballbig_entrypoint_0",
+]
+
+[[overlay]] # Overlay 383
+name = "chdiggerbossinterior"
+entrypoints = [
+  "chdiggerbossinterior_entrypoint_0",
+]
+
+[[overlay]] # Overlay 384
+name = "chbottlesparty"
+entrypoints = [
+  "chbottlesparty_entrypoint_0",
+  "chbottlesparty_entrypoint_1",
+]
+
+[[overlay]] # Overlay 385
+name = "chlavafall"
+entrypoints = [
+  "chlavafall_entrypoint_0",
+]
+
+[[overlay]] # Overlay 386
+name = "chnewshovel"
+entrypoints = [
+  "chnewshovel_entrypoint_0",
+]
+
+[[overlay]] # Overlay 387
+name = "chspiralgrill"
+entrypoints = [
+  "chspiralgrill_entrypoint_0",
+]
+
+[[overlay]] # Overlay 388
+name = "chwaterfallfx"
+entrypoints = [
+  "chwaterfallfx_entrypoint_0",
+]
+
+[[overlay]] # Overlay 389
+name = "chfireicestorm"
+entrypoints = [
+  "chfireicestorm_entrypoint_0",
+  "chfireicestorm_entrypoint_1",
+]
+
+[[overlay]] # Overlay 390
+name = "chboggyboy"
+entrypoints = [
+  "chboggyboy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 391
+name = "chboggygirl"
+entrypoints = [
+  "chboggygirl_entrypoint_0",
+]
+
+[[overlay]] # Overlay 392
+name = "chboggyfatboy"
+entrypoints = [
+  "chboggyfatboy_entrypoint_0",
+  "chboggyfatboy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 393
+name = "chdoormake"
+entrypoints = [
+  "chdoormake_entrypoint_0",
+  "chdoormake_entrypoint_1",
+  "chdoormake_entrypoint_2",
+  "chdoormake_entrypoint_3",
+  "chdoormake_entrypoint_4",
+  "chdoormake_entrypoint_5",
+  "chdoormake_entrypoint_6",
+  "chdoormake_entrypoint_7",
+  "chdoormake_entrypoint_8",
+  "chdoormake_entrypoint_9",
+  "chdoormake_entrypoint_10",
+  "chdoormake_entrypoint_11",
+  "chdoormake_entrypoint_12",
+]
+
+[[overlay]] # Overlay 394
+name = "chchompaslunch"
+entrypoints = [
+  "chchompaslunch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 395
+name = "chdiggerbossdeflect"
+entrypoints = [
+  "chdiggerbossdeflect_entrypoint_0",
+]
+
+[[overlay]] # Overlay 396
+name = "chmoley"
+entrypoints = [
+  "chmoley_entrypoint_0",
+  "chmoley_entrypoint_1",
+  "chmoley_entrypoint_2",
+]
+
+[[overlay]] # Overlay 397
+name = "chmolehill"
+entrypoints = [
+  "chmolehill_entrypoint_0",
+  "chmolehill_entrypoint_1",
+  "chmolehill_entrypoint_2",
+  "chmolehill_entrypoint_3",
+  "chmolehill_entrypoint_4",
+  "chmolehill_entrypoint_5",
+  "chmolehill_entrypoint_6",
+]
+
+[[overlay]] # Overlay 398
+name = "chclockworkmouse"
+entrypoints = [
+  "chclockworkmouse_entrypoint_0",
+  "chclockworkmouse_entrypoint_1",
+]
+
+[[overlay]] # Overlay 399
+name = "chjamjarsdummy"
+entrypoints = [
+  "chjamjarsdummy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 400
+name = "chcanarymarycage"
+entrypoints = [
+  "chcanarymarycage_entrypoint_0",
+]
+
+[[overlay]] # Overlay 401
+name = "chbadjinjo"
+entrypoints = [
+  "chbadjinjo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 402
+name = "chmineproplight"
+entrypoints = [
+  "chmineproplight_entrypoint_0",
+]
+
+[[overlay]] # Overlay 403
+name = "chnewmumbo"
+entrypoints = [
+  "chnewmumbo_entrypoint_0",
+  "chnewmumbo_entrypoint_1",
+]
+
+[[overlay]] # Overlay 404
+name = "chfiregen"
+entrypoints = [
+  "chfiregen_entrypoint_0",
+  "chfiregen_entrypoint_1",
+  "chfiregen_entrypoint_2",
+  "chfiregen_entrypoint_3",
+  "chfiregen_entrypoint_4",
+  "chfiregen_entrypoint_5",
+  "chfiregen_entrypoint_6",
+  "chfiregen_entrypoint_7",
+  "chfiregen_entrypoint_8",
+  "chfiregen_entrypoint_9",
+  "chfiregen_entrypoint_10",
+  "chfiregen_entrypoint_11",
+  "chfiregen_entrypoint_12",
+  "chfiregen_entrypoint_13",
+  "chfiregen_entrypoint_14",
+  "chfiregen_entrypoint_15",
+  "chfiregen_entrypoint_16",
+  "chfiregen_entrypoint_17",
+]
+
+[[overlay]] # Overlay 405
+name = "chtimetable"
+entrypoints = [
+  "chtimetable_entrypoint_0",
+]
+
+[[overlay]] # Overlay 406
+name = "chmole_maya"
+entrypoints = [
+  "chmole_maya_entrypoint_0",
+  "chmole_maya_entrypoint_1",
+]
+
+[[overlay]] # Overlay 407
+name = "chmole_mine"
+entrypoints = [
+  "chmole_mine_entrypoint_0",
+]
+
+[[overlay]] # Overlay 408
+name = "chmole_training"
+entrypoints = [
+  "chmole_training_entrypoint_0",
+  "chmole_training_entrypoint_1",
+]
+
+[[overlay]] # Overlay 409
+name = "chstoneballcontrol"
+entrypoints = [
+  "chstoneballcontrol_entrypoint_0",
+  "chstoneballcontrol_entrypoint_1",
+  "chstoneballcontrol_entrypoint_2",
+  "chstoneballcontrol_entrypoint_3",
+  "chstoneballcontrol_entrypoint_4",
+  "chstoneballcontrol_entrypoint_5",
+]
+
+[[overlay]] # Overlay 410
+name = "chmayafarmer"
+entrypoints = [
+  "chmayafarmer_entrypoint_0",
+  "chmayafarmer_entrypoint_1",
+]
+
+[[overlay]] # Overlay 411
+name = "chstoneballcoach"
+entrypoints = [
+  "chstoneballcoach_entrypoint_0",
+]
+
+[[overlay]] # Overlay 412
+name = "chfog"
+entrypoints = [
+  "chfog_entrypoint_0",
+]
+
+[[overlay]] # Overlay 413
+name = "chcrusher"
+entrypoints = [
+  "chcrusher_entrypoint_0",
+  "chcrusher_entrypoint_1",
+  "chcrusher_entrypoint_2",
+  "chcrusher_entrypoint_3",
+  "chcrusher_entrypoint_4",
+]
+
+[[overlay]] # Overlay 414
+name = "chglowbo"
+entrypoints = [
+  "chglowbo_entrypoint_0",
+  "chglowbo_entrypoint_1",
+  "chglowbo_entrypoint_2",
+  "chglowbo_entrypoint_3",
+  "chglowbo_entrypoint_4",
+  "chglowbo_entrypoint_5",
+  "chglowbo_entrypoint_6",
+]
+
+[[overlay]] # Overlay 415
+name = "chhandcart"
+entrypoints = [
+  "chhandcart_entrypoint_0",
+  "chhandcart_entrypoint_1",
+  "chhandcart_entrypoint_2",
+]
+
+[[overlay]] # Overlay 416
+name = "chcredits"
+entrypoints = [
+  "chcredits_entrypoint_0",
+  "chcredits_entrypoint_1",
+  "chcredits_entrypoint_2",
+]
+
+[[overlay]] # Overlay 417
+name = "chcrusherboulder"
+entrypoints = [
+  "chcrusherboulder_entrypoint_0",
+]
+
+[[overlay]] # Overlay 418
+name = "chjigsawbitcont"
+entrypoints = [
+  "chjigsawbitcont_entrypoint_0",
+  "chjigsawbitcont_entrypoint_1",
+]
+
+[[overlay]] # Overlay 419
+name = "chintroticker"
+entrypoints = [
+  "chintroticker_entrypoint_0",
+]
+
+[[overlay]] # Overlay 420
+name = "chstadiumdoors"
+entrypoints = [
+  "chstadiumdoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 421
+name = "chsignpost"
+entrypoints = [
+  "chsignpost_entrypoint_0",
+]
+
+[[overlay]] # Overlay 422
+name = "chmrtannoy"
+entrypoints = [
+  "chmrtannoy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 423
+name = "chbeehive"
+entrypoints = [
+  "chbeehive_entrypoint_0",
+]
+
+[[overlay]] # Overlay 424
+name = "chhoney"
+entrypoints = [
+  "chhoney_entrypoint_0",
+  "chhoney_entrypoint_1",
+  "chhoney_entrypoint_2",
+]
+
+[[overlay]] # Overlay 425
+name = "chjinjo"
+entrypoints = [
+  "chjinjo_entrypoint_0",
+  "chjinjo_entrypoint_1",
+  "chjinjo_entrypoint_2",
+  "chjinjo_entrypoint_3",
+  "chjinjo_entrypoint_4",
+  "chjinjo_entrypoint_5",
+  "chjinjo_entrypoint_6",
+]
+
+[[overlay]] # Overlay 426
+name = "chevilmumbo"
+entrypoints = [
+  "chevilmumbo_entrypoint_0",
+  "chevilmumbo_entrypoint_1",
+  "chevilmumbo_entrypoint_2",
+  "chevilmumbo_entrypoint_3",
+]
+
+[[overlay]] # Overlay 427
+name = "chmole_witchy"
+entrypoints = [
+  "chmole_witchy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 428
+name = "chsounder"
+entrypoints = [
+  "chsounder_entrypoint_0",
+]
+
+[[overlay]] # Overlay 429
+name = "chhumba"
+entrypoints = [
+  "chhumba_entrypoint_0",
+  "chhumba_entrypoint_1",
+]
+
+[[overlay]] # Overlay 430
+name = "chflysaucer"
+entrypoints = [
+  "chflysaucer_entrypoint_0",
+  "chflysaucer_entrypoint_1",
+  "chflysaucer_entrypoint_2",
+]
+
+[[overlay]] # Overlay 431
+name = "chflysaucercrate"
+entrypoints = [
+  "chflysaucercrate_entrypoint_0",
+]
+
+[[overlay]] # Overlay 432
+name = "chchuffy"
+entrypoints = [
+  "chchuffy_entrypoint_0",
+  "chchuffy_entrypoint_1",
+  "chchuffy_entrypoint_2",
+]
+
+[[overlay]] # Overlay 433
+name = "chchuffycont"
+entrypoints = [
+  "chchuffycont_entrypoint_0",
+  "chchuffycont_entrypoint_1",
+  "chchuffycont_entrypoint_2",
+  "chchuffycont_entrypoint_3",
+]
+
+[[overlay]] # Overlay 434
+name = "chcheatomenu"
+entrypoints = [
+  "chcheatomenu_entrypoint_0",
+]
+
+[[overlay]] # Overlay 435
+name = "chstatictorch"
+entrypoints = [
+  "chstatictorch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 436
+name = "chfloorbubbles"
+entrypoints = [
+  "chfloorbubbles_entrypoint_0",
+]
+
+[[overlay]] # Overlay 437
+name = "chmumbopad"
+entrypoints = [
+  "chmumbopad_entrypoint_0",
+  "chmumbopad_entrypoint_1",
+]
+
+[[overlay]] # Overlay 438
+name = "chhoneycarrier"
+entrypoints = [
+  "chhoneycarrier_entrypoint_0",
+]
+
+[[overlay]] # Overlay 439
+name = "chjujubagfx"
+entrypoints = [
+  "chjujubagfx_entrypoint_0",
+  "chjujubagfx_entrypoint_1",
+  "chjujubagfx_entrypoint_2",
+]
+
+[[overlay]] # Overlay 440
+name = "chintrochar"
+entrypoints = [
+  "chintrochar_entrypoint_0",
+  "chintrochar_entrypoint_1",
+]
+
+[[overlay]] # Overlay 441
+name = "chintrocam"
+entrypoints = [
+  "chintrocam_entrypoint_0",
+]
+
+[[overlay]] # Overlay 442
+name = "chminelightswitch"
+entrypoints = [
+  "chminelightswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 443
+name = "chminelight"
+entrypoints = [
+  "chminelight_entrypoint_0",
+]
+
+[[overlay]] # Overlay 444
+name = "chlakemonster"
+entrypoints = [
+  "chlakemonster_entrypoint_0",
+  "chlakemonster_entrypoint_1",
+  "chlakemonster_entrypoint_2",
+  "chlakemonster_entrypoint_3",
+  "chlakemonster_entrypoint_4",
+  "chlakemonster_entrypoint_5",
+]
+
+[[overlay]] # Overlay 445
+name = "chdodgemcontrol"
+entrypoints = [
+  "chdodgemcontrol_entrypoint_0",
+  "chdodgemcontrol_entrypoint_1",
+  "chdodgemcontrol_entrypoint_2",
+]
+
+[[overlay]] # Overlay 446
+name = "chdodgemdoors"
+entrypoints = [
+  "chdodgemdoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 447
+name = "chbadbeehive"
+entrypoints = [
+  "chbadbeehive_entrypoint_0",
+]
+
+[[overlay]] # Overlay 448
+name = "chflysaucerdoor"
+entrypoints = [
+  "chflysaucerdoor_entrypoint_0",
+  "chflysaucerdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 449
+name = "chbaddiesetup"
+entrypoints = [
+  "chbaddiesetup_entrypoint_0",
+  "chbaddiesetup_entrypoint_1",
+  "chbaddiesetup_entrypoint_2",
+  "chbaddiesetup_entrypoint_3",
+  "chbaddiesetup_entrypoint_4",
+  "chbaddiesetup_entrypoint_5",
+  "chbaddiesetup_entrypoint_6",
+  "chbaddiesetup_entrypoint_7",
+  "chbaddiesetup_entrypoint_8",
+  "chbaddiesetup_entrypoint_9",
+  "chbaddiesetup_entrypoint_10",
+]
+
+[[overlay]] # Overlay 450
+name = "chchuffyglow"
+entrypoints = [
+  "chchuffyglow_entrypoint_0",
+  "chchuffyglow_entrypoint_1",
+]
+
+[[overlay]] # Overlay 451
+name = "chtoothyfish"
+entrypoints = [
+  "chtoothyfish_entrypoint_0",
+  "chtoothyfish_entrypoint_1",
+]
+
+[[overlay]] # Overlay 452
+name = "chmole_lagoon"
+entrypoints = [
+  "chmole_lagoon_entrypoint_0",
+]
+
+[[overlay]] # Overlay 453
+name = "chmole_overworld"
+entrypoints = [
+  "chmole_overworld_entrypoint_0",
+]
+
+[[overlay]] # Overlay 454
+name = "chquizremotectrl"
+entrypoints = [
+  "chquizremotectrl_entrypoint_0",
+]
+
+[[overlay]] # Overlay 455
+name = "cheel"
+entrypoints = [
+  "cheel_entrypoint_0",
+]
+
+[[overlay]] # Overlay 456
+name = "chblackeye"
+entrypoints = [
+  "chblackeye_entrypoint_0",
+]
+
+[[overlay]] # Overlay 457
+name = "chlagoonfish"
+entrypoints = [
+  "chlagoonfish_entrypoint_0",
+]
+
+[[overlay]] # Overlay 458
+name = "chpiranha"
+entrypoints = [
+  "chpiranha_entrypoint_0",
+  "chpiranha_entrypoint_1",
+  "chpiranha_entrypoint_2",
+]
+
+[[overlay]] # Overlay 459
+name = "chskeletonexplode"
+entrypoints = [
+  "chskeletonexplode_entrypoint_0",
+  "chskeletonexplode_entrypoint_1",
+  "chskeletonexplode_entrypoint_2",
+  "chskeletonexplode_entrypoint_3",
+  "chskeletonexplode_entrypoint_4",
+  "chskeletonexplode_entrypoint_5",
+  "chskeletonexplode_entrypoint_6",
+  "chskeletonexplode_entrypoint_7",
+  "chskeletonexplode_entrypoint_8",
+  "chskeletonexplode_entrypoint_9",
+]
+
+[[overlay]] # Overlay 460
+name = "chnewfreezy"
+entrypoints = [
+  "chnewfreezy_entrypoint_0",
+  "chnewfreezy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 461
+name = "chdrips"
+entrypoints = [
+  "chdrips_entrypoint_0",
+  "chdrips_entrypoint_1",
+  "chdrips_entrypoint_2",
+]
+
+[[overlay]] # Overlay 462
+name = "chsilo"
+entrypoints = [
+  "chsilo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 463
+name = "chmusicmenu"
+entrypoints = [
+  "chmusicmenu_entrypoint_0",
+  "chmusicmenu_entrypoint_1",
+  "chmusicmenu_entrypoint_2",
+]
+
+[[overlay]] # Overlay 464
+name = "chmole_hailfire"
+entrypoints = [
+  "chmole_hailfire_entrypoint_0",
+]
+
+[[overlay]] # Overlay 465
+name = "chmole_factory"
+entrypoints = [
+  "chmole_factory_entrypoint_0",
+]
+
+[[overlay]] # Overlay 466
+name = "chmole_prehist"
+entrypoints = [
+  "chmole_prehist_entrypoint_0",
+]
+
+[[overlay]] # Overlay 467
+name = "chcollballcontrol"
+entrypoints = [
+  "chcollballcontrol_entrypoint_0",
+  "chcollballcontrol_entrypoint_1",
+  "chcollballcontrol_entrypoint_2",
+  "chcollballcontrol_entrypoint_3",
+  "chcollballcontrol_entrypoint_4",
+  "chcollballcontrol_entrypoint_5",
+]
+
+[[overlay]] # Overlay 468
+name = "chcolldoors"
+entrypoints = [
+  "chcolldoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 469
+name = "chmole_cuckoo"
+entrypoints = [
+  "chmole_cuckoo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 470
+name = "chdragonbrothers"
+entrypoints = [
+  "chdragonbrothers_entrypoint_0",
+  "chdragonbrothers_entrypoint_1",
+  "chdragonbrothers_entrypoint_2",
+  "chdragonbrothers_entrypoint_3",
+  "chdragonbrothers_entrypoint_4",
+]
+
+[[overlay]] # Overlay 471
+name = "chwallsnakebaddy"
+entrypoints = [
+  "chwallsnakebaddy_entrypoint_0",
+]
+
+[[overlay]] # Overlay 472
+name = "chamazongoldhordeofficial"
+entrypoints = [
+  "chamazongoldhordeofficial_entrypoint_0",
+]
+
+[[overlay]] # Overlay 473
+name = "chlavatraindoor"
+entrypoints = [
+  "chlavatraindoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 474
+name = "chjadesnake"
+entrypoints = [
+  "chjadesnake_entrypoint_0",
+]
+
+[[overlay]] # Overlay 475
+name = "chstonedartgunhead"
+entrypoints = [
+  "chstonedartgunhead_entrypoint_0",
+  "chstonedartgunhead_entrypoint_1",
+]
+
+[[overlay]] # Overlay 476
+name = "chfriendlystonehead"
+entrypoints = [
+  "chfriendlystonehead_entrypoint_0",
+]
+
+[[overlay]] # Overlay 477
+name = "chlavacolumnswitch"
+entrypoints = [
+  "chlavacolumnswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 478
+empty = true
+
+[[overlay]] # Overlay 479
+name = "chlavaslabswitch"
+entrypoints = [
+  "chlavaslabswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 480
+name = "chcrackarchwall"
+entrypoints = [
+  "chcrackarchwall_entrypoint_0",
+]
+
+[[overlay]] # Overlay 481
+name = "chtntbox"
+entrypoints = [
+  "chtntbox_entrypoint_0",
+  "chtntbox_entrypoint_1",
+]
+
+[[overlay]] # Overlay 482
+name = "chquicksandbaddy"
+entrypoints = [
+  "chquicksandbaddy_entrypoint_0",
+  "chquicksandbaddy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 483
+name = "chamazonstadiumguard"
+entrypoints = [
+  "chamazonstadiumguard_entrypoint_0",
+]
+
+[[overlay]] # Overlay 484
+name = "chlavatraindoorswitch"
+entrypoints = [
+  "chlavatraindoorswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 485
+name = "chbilldrillboulder"
+entrypoints = [
+  "chbilldrillboulder_entrypoint_0",
+  "chbilldrillboulder_entrypoint_1",
+  "chbilldrillboulder_entrypoint_2",
+]
+
+[[overlay]] # Overlay 486
+name = "chcrate"
+entrypoints = [
+  "chcrate_entrypoint_0",
+  "chcrate_entrypoint_1",
+  "chcrate_entrypoint_2",
+  "chcrate_entrypoint_3",
+]
+
+[[overlay]] # Overlay 487
+name = "chgate1doors"
+entrypoints = [
+  "chgate1doors_entrypoint_0",
+  "chgate1doors_entrypoint_1",
+]
+
+[[overlay]] # Overlay 488
+name = "chmumbopadstatue"
+entrypoints = [
+  "chmumbopadstatue_entrypoint_0",
+]
+
+[[overlay]] # Overlay 489
+name = "chtemplebrokendoorpiece"
+entrypoints = [
+  "chtemplebrokendoorpiece_entrypoint_0",
+]
+
+[[overlay]] # Overlay 490
+name = "chlavaarchgrillswitch"
+entrypoints = [
+  "chlavaarchgrillswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 491
+name = "chprisonbits"
+entrypoints = [
+  "chprisonbits_entrypoint_0",
+  "chprisonbits_entrypoint_1",
+  "chprisonbits_entrypoint_2",
+  "chprisonbits_entrypoint_3",
+  "chprisonbits_entrypoint_4",
+  "chprisonbits_entrypoint_5",
+]
+
+[[overlay]] # Overlay 492
+name = "chwaterfallgrillswitch"
+entrypoints = [
+  "chwaterfallgrillswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 493
+name = "chwaterfallgrill"
+entrypoints = [
+  "chwaterfallgrill_entrypoint_0",
+  "chwaterfallgrill_entrypoint_1",
+]
+
+[[overlay]] # Overlay 494
+name = "chlavacolumns"
+entrypoints = [
+  "chlavacolumns_entrypoint_0",
+]
+
+[[overlay]] # Overlay 495
+name = "chcoderoomdoor"
+entrypoints = [
+  "chcoderoomdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 496
+name = "chlavaslab"
+entrypoints = [
+  "chlavaslab_entrypoint_0",
+]
+
+[[overlay]] # Overlay 497
+name = "chlavaarchgrill"
+entrypoints = [
+  "chlavaarchgrill_entrypoint_0",
+]
+
+[[overlay]] # Overlay 498
+name = "chmumboskullfakearchpanellava"
+entrypoints = [
+  "chmumboskullfakearchpanellava_entrypoint_0",
+  "chmumboskullfakearchpanellava_entrypoint_1",
+]
+
+[[overlay]] # Overlay 499
+name = "chgruntylairexttowerwindow"
+entrypoints = [
+  "chgruntylairexttowerwindow_entrypoint_0",
+]
+
+[[overlay]] # Overlay 500
+name = "chlagoonentrygate"
+entrypoints = [
+  "chlagoonentrygate_entrypoint_0",
+]
+
+[[overlay]] # Overlay 501
+name = "chhagstraindoor"
+entrypoints = [
+  "chhagstraindoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 502
+name = "chhagstraindoorswitch"
+entrypoints = [
+  "chhagstraindoorswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 503
+name = "chlavaentrancebridge"
+entrypoints = [
+  "chlavaentrancebridge_entrypoint_0",
+]
+
+[[overlay]] # Overlay 504
+name = "chlavaentrancebridgeswitch"
+entrypoints = [
+  "chlavaentrancebridgeswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 505
+name = "chmayaentrydoor"
+entrypoints = [
+  "chmayaentrydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 506
+name = "chbottlesdead"
+entrypoints = [
+  "chbottlesdead_entrypoint_0",
+]
+
+[[overlay]] # Overlay 507
+name = "chmineentrygrille"
+entrypoints = [
+  "chmineentrygrille_entrypoint_0",
+]
+
+[[overlay]] # Overlay 508
+name = "chlavaentrydoor"
+entrypoints = [
+  "chlavaentrydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 509
+name = "chcauldronentrydoor"
+entrypoints = [
+  "chcauldronentrydoor_entrypoint_0",
+  "chcauldronentrydoor_entrypoint_1",
+  "chcauldronentrydoor_entrypoint_2",
+]
+
+[[overlay]] # Overlay 510
+name = "chterryteeth"
+entrypoints = [
+  "chterryteeth_entrypoint_0",
+]
+
+[[overlay]] # Overlay 511
+name = "chwitchyentrygates"
+entrypoints = [
+  "chwitchyentrygates_entrypoint_0",
+]
+
+[[overlay]] # Overlay 512
+name = "chfactoryentrydoors"
+entrypoints = [
+  "chfactoryentrydoors_entrypoint_0",
+  "chfactoryentrydoors_entrypoint_1",
+]
+
+[[overlay]] # Overlay 513
+name = "chLagoonInnBlockedWall"
+entrypoints = [
+  "chLagoonInnBlockedWall_entrypoint_0",
+  "chLagoonInnBlockedWall_entrypoint_1",
+]
+
+[[overlay]] # Overlay 514
+name = "chcauldronenergybars"
+entrypoints = [
+  "chcauldronenergybars_entrypoint_0",
+]
+
+[[overlay]] # Overlay 515
+name = "chjinjovillagecamera1"
+entrypoints = [
+  "chjinjovillagecamera1_entrypoint_0",
+]
+
+[[overlay]] # Overlay 516
+name = "chlagoonlockerdoorhits"
+entrypoints = [
+  "chlagoonlockerdoorhits_entrypoint_0",
+]
+
+[[overlay]] # Overlay 517
+name = "chlavaarchgrill3switches"
+entrypoints = [
+  "chlavaarchgrill3switches_entrypoint_0",
+  "chlavaarchgrill3switches_entrypoint_1",
+  "chlavaarchgrill3switches_entrypoint_2",
+]
+
+[[overlay]] # Overlay 518
+name = "chTalTorpWall"
+entrypoints = [
+  "chTalTorpWall_entrypoint_0",
+]
+
+[[overlay]] # Overlay 519
+name = "chufoextdoor"
+entrypoints = [
+  "chufoextdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 520
+name = "chdinotraindoor"
+entrypoints = [
+  "chdinotraindoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 521
+name = "chdinotraindoorswitch"
+entrypoints = [
+  "chdinotraindoorswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 522
+name = "chminegrill2switches"
+entrypoints = [
+  "chminegrill2switches_entrypoint_0",
+  "chminegrill2switches_entrypoint_1",
+]
+
+[[overlay]] # Overlay 523
+name = "chdrawbridgeswitches"
+entrypoints = [
+  "chdrawbridgeswitches_entrypoint_0",
+  "chdrawbridgeswitches_entrypoint_1",
+  "chdrawbridgeswitches_entrypoint_2",
+]
+
+[[overlay]] # Overlay 524
+name = "chdinoroargrill"
+entrypoints = [
+  "chdinoroargrill_entrypoint_0",
+]
+
+[[overlay]] # Overlay 525
+name = "chlavaexplodbuild"
+entrypoints = [
+  "chlavaexplodbuild_entrypoint_0",
+]
+
+[[overlay]] # Overlay 526
+name = "chboggy"
+entrypoints = [
+  "chboggy_entrypoint_0",
+  "chboggy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 527
+name = "chboggyfish"
+entrypoints = [
+  "chboggyfish_entrypoint_0",
+]
+
+[[overlay]] # Overlay 528
+name = "chjrinnlight"
+entrypoints = [
+  "chjrinnlight_entrypoint_0",
+]
+
+[[overlay]] # Overlay 529
+name = "chfoodwarn"
+entrypoints = [
+  "chfoodwarn_entrypoint_0",
+]
+
+[[overlay]] # Overlay 530
+name = "chperspexbox"
+entrypoints = [
+  "chperspexbox_entrypoint_0",
+]
+
+[[overlay]] # Overlay 531
+name = "chperspexboxswitch"
+entrypoints = [
+  "chperspexboxswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 532
+name = "chminegrilldoor"
+entrypoints = [
+  "chminegrilldoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 533
+name = "chsparkle"
+entrypoints = [
+  "chsparkle_entrypoint_0",
+]
+
+[[overlay]] # Overlay 534
+name = "cheggclockwork"
+entrypoints = [
+  "cheggclockwork_entrypoint_0",
+  "cheggclockwork_entrypoint_1",
+  "cheggclockwork_entrypoint_2",
+  "cheggclockwork_entrypoint_3",
+]
+
+[[overlay]] # Overlay 535
+name = "cheggfire"
+entrypoints = [
+  "cheggfire_entrypoint_0",
+  "cheggfire_entrypoint_1",
+  "cheggfire_entrypoint_2",
+]
+
+[[overlay]] # Overlay 536
+name = "chegggolden"
+entrypoints = [
+  "chegggolden_entrypoint_0",
+  "chegggolden_entrypoint_1",
+  "chegggolden_entrypoint_2",
+]
+
+[[overlay]] # Overlay 537
+name = "chegggrenade"
+entrypoints = [
+  "chegggrenade_entrypoint_0",
+  "chegggrenade_entrypoint_1",
+  "chegggrenade_entrypoint_2",
+  "chegggrenade_entrypoint_3",
+]
+
+[[overlay]] # Overlay 538
+name = "cheggice"
+entrypoints = [
+  "cheggice_entrypoint_0",
+  "cheggice_entrypoint_1",
+  "cheggice_entrypoint_2",
+]
+
+[[overlay]] # Overlay 539
+name = "cheggnormal"
+entrypoints = [
+  "cheggnormal_entrypoint_0",
+  "cheggnormal_entrypoint_1",
+  "cheggnormal_entrypoint_2",
+]
+
+[[overlay]] # Overlay 540
+name = "chfaircoin"
+entrypoints = [
+  "chfaircoin_entrypoint_0",
+  "chfaircoin_entrypoint_1",
+]
+
+[[overlay]] # Overlay 541
+name = "chfaircoinbox"
+entrypoints = [
+  "chfaircoinbox_entrypoint_0",
+  "chfaircoinbox_entrypoint_1",
+  "chfaircoinbox_entrypoint_2",
+]
+
+[[overlay]] # Overlay 542
+name = "chgoldstatue"
+entrypoints = [
+  "chgoldstatue_entrypoint_0",
+]
+
+[[overlay]] # Overlay 543
+name = "chlaundry"
+entrypoints = [
+  "chlaundry_entrypoint_0",
+  "chlaundry_entrypoint_1",
+]
+
+[[overlay]] # Overlay 544
+name = "chping"
+entrypoints = [
+  "chping_entrypoint_0",
+  "chping_entrypoint_1",
+]
+
+[[overlay]] # Overlay 545
+name = "chpodiumbankaz"
+entrypoints = [
+  "chpodiumbankaz_entrypoint_0",
+  "chpodiumbankaz_entrypoint_1",
+]
+
+[[overlay]] # Overlay 546
+name = "chstinger"
+entrypoints = [
+  "chstinger_entrypoint_0",
+  "chstinger_entrypoint_1",
+]
+
+[[overlay]] # Overlay 547
+name = "chswappy"
+entrypoints = [
+  "chswappy_entrypoint_0",
+  "chswappy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 548
+name = "chtorpedo"
+entrypoints = [
+  "chtorpedo_entrypoint_0",
+  "chtorpedo_entrypoint_1",
+]
+
+[[overlay]] # Overlay 549
+name = "chwandglow"
+entrypoints = [
+  "chwandglow_entrypoint_0",
+  "chwandglow_entrypoint_1",
+  "chwandglow_entrypoint_2",
+  "chwandglow_entrypoint_3",
+]
+
+[[overlay]] # Overlay 550
+name = "chfactoryworkerdirty"
+entrypoints = [
+  "chfactoryworkerdirty_entrypoint_0",
+  "chfactoryworkerdirty_entrypoint_1",
+  "chfactoryworkerdirty_entrypoint_2",
+  "chfactoryworkerdirty_entrypoint_3",
+]
+
+[[overlay]] # Overlay 551
+name = "chfactoryworkerwear"
+entrypoints = [
+  "chfactoryworkerwear_entrypoint_0",
+]
+
+[[overlay]] # Overlay 552
+name = "cheggsplode"
+entrypoints = [
+  "cheggsplode_entrypoint_0",
+  "cheggsplode_entrypoint_1",
+  "cheggsplode_entrypoint_2",
+]
+
+[[overlay]] # Overlay 553
+name = "chjadestatue"
+entrypoints = [
+  "chjadestatue_entrypoint_0",
+  "chjadestatue_entrypoint_1",
+]
+
+[[overlay]] # Overlay 554
+name = "chtemplebossdoor"
+entrypoints = [
+  "chtemplebossdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 555
+name = "chtempleinternaldoor"
+entrypoints = [
+  "chtempleinternaldoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 556
+name = "chtemplelobbydoor"
+entrypoints = [
+  "chtemplelobbydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 557
+name = "chminelobbydoor"
+entrypoints = [
+  "chminelobbydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 558
+name = "chtransparencypot"
+entrypoints = [
+  "chtransparencypot_entrypoint_0",
+]
+
+[[overlay]] # Overlay 559
+name = "chtntmineshoot"
+entrypoints = [
+  "chtntmineshoot_entrypoint_0",
+  "chtntmineshoot_entrypoint_1",
+  "chtntmineshoot_entrypoint_2",
+  "chtntmineshoot_entrypoint_3",
+]
+
+[[overlay]] # Overlay 560
+name = "chclinker"
+entrypoints = [
+  "chclinker_entrypoint_0",
+  "chclinker_entrypoint_1",
+  "chclinker_entrypoint_2",
+]
+
+[[overlay]] # Overlay 561
+name = "chfactorylobbydoor"
+entrypoints = [
+  "chfactorylobbydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 562
+name = "chfpsgame"
+entrypoints = [
+  "chfpsgame_entrypoint_0",
+]
+
+[[overlay]] # Overlay 563
+name = "cheggproximity"
+entrypoints = [
+  "cheggproximity_entrypoint_0",
+  "cheggproximity_entrypoint_1",
+  "cheggproximity_entrypoint_2",
+]
+
+[[overlay]] # Overlay 564
+name = "ch1pfreeze"
+entrypoints = [
+  "ch1pfreeze_entrypoint_0",
+  "ch1pfreeze_entrypoint_1",
+]
+
+[[overlay]] # Overlay 565
+name = "chcaptainblubber"
+entrypoints = [
+  "chcaptainblubber_entrypoint_0",
+]
+
+[[overlay]] # Overlay 566
+name = "chtransparentfish"
+entrypoints = [
+  "chtransparentfish_entrypoint_0",
+]
+
+[[overlay]] # Overlay 567
+name = "chdummyjigsaw"
+entrypoints = [
+  "chdummyjigsaw_entrypoint_0",
+]
+
+[[overlay]] # Overlay 568
+name = "chpufferfish"
+entrypoints = [
+  "chpufferfish_entrypoint_0",
+]
+
+[[overlay]] # Overlay 569
+name = "chsunlightspell"
+entrypoints = [
+  "chsunlightspell_entrypoint_0",
+]
+
+[[overlay]] # Overlay 570
+name = "chlinkpipefan"
+entrypoints = [
+  "chlinkpipefan_entrypoint_0",
+  "chlinkpipefan_entrypoint_1",
+]
+
+[[overlay]] # Overlay 571
+name = "chfactorydrums"
+entrypoints = [
+  "chfactorydrums_entrypoint_0",
+  "chfactorydrums_entrypoint_1",
+  "chfactorydrums_entrypoint_2",
+]
+
+[[overlay]] # Overlay 572
+name = "chdoubloon"
+entrypoints = [
+  "chdoubloon_entrypoint_0",
+  "chdoubloon_entrypoint_1",
+  "chdoubloon_entrypoint_2",
+]
+
+[[overlay]] # Overlay 573
+name = "chdinofamilymissing"
+entrypoints = [
+  "chdinofamilymissing_entrypoint_0",
+]
+
+[[overlay]] # Overlay 574
+name = "chsmalltrexdoor"
+entrypoints = [
+  "chsmalltrexdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 575
+name = "chswampplatform"
+entrypoints = [
+  "chswampplatform_entrypoint_0",
+]
+
+[[overlay]] # Overlay 576
+name = "chwumbawigwam"
+entrypoints = [
+  "chwumbawigwam_entrypoint_0",
+]
+
+[[overlay]] # Overlay 577
+name = "chfactorybattery"
+entrypoints = [
+  "chfactorybattery_entrypoint_0",
+  "chfactorybattery_entrypoint_1",
+  "chfactorybattery_entrypoint_2",
+]
+
+[[overlay]] # Overlay 578
+name = "chfactoryroofbits"
+entrypoints = [
+  "chfactoryroofbits_entrypoint_0",
+  "chfactoryroofbits_entrypoint_1",
+  "chfactoryroofbits_entrypoint_2",
+  "chfactoryroofbits_entrypoint_3",
+  "chfactoryroofbits_entrypoint_4",
+  "chfactoryroofbits_entrypoint_5",
+]
+
+[[overlay]] # Overlay 579
+name = "chfactorymagnet"
+entrypoints = [
+  "chfactorymagnet_entrypoint_0",
+  "chfactorymagnet_entrypoint_1",
+  "chfactorymagnet_entrypoint_2",
+  "chfactorymagnet_entrypoint_3",
+  "chfactorymagnet_entrypoint_4",
+]
+
+[[overlay]] # Overlay 580
+name = "chfactorybtwmdoor"
+entrypoints = [
+  "chfactorybtwmdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 581
+name = "chbosskogsdoor"
+entrypoints = [
+  "chbosskogsdoor_entrypoint_0",
+  "chbosskogsdoor_entrypoint_1",
+]
+
+[[overlay]] # Overlay 582
+name = "chlensflare"
+entrypoints = [
+  "chlensflare_entrypoint_0",
+  "chlensflare_entrypoint_1",
+]
+
+[[overlay]] # Overlay 583
+name = "chfactorytoxiccloud"
+entrypoints = [
+  "chfactorytoxiccloud_entrypoint_0",
+]
+
+[[overlay]] # Overlay 584
+name = "chfactoryempspell"
+entrypoints = [
+  "chfactoryempspell_entrypoint_0",
+  "chfactoryempspell_entrypoint_1",
+]
+
+[[overlay]] # Overlay 585
+name = "chtoxicroombits"
+entrypoints = [
+  "chtoxicroombits_entrypoint_0",
+  "chtoxicroombits_entrypoint_1",
+]
+
+[[overlay]] # Overlay 586
+name = "chgoldfish"
+entrypoints = [
+  "chgoldfish_entrypoint_0",
+]
+
+[[overlay]] # Overlay 587
+name = "chfactorylinkgrill"
+entrypoints = [
+  "chfactorylinkgrill_entrypoint_0",
+  "chfactorylinkgrill_entrypoint_1",
+  "chfactorylinkgrill_entrypoint_2",
+]
+
+[[overlay]] # Overlay 588
+name = "chfactorymaindoor"
+entrypoints = [
+  "chfactorymaindoor_entrypoint_0",
+  "chfactorymaindoor_entrypoint_1",
+  "chfactorymaindoor_entrypoint_2",
+]
+
+[[overlay]] # Overlay 589
+name = "chlavagargoyle"
+entrypoints = [
+  "chlavagargoyle_entrypoint_0",
+  "chlavagargoyle_entrypoint_1",
+  "chlavagargoyle_entrypoint_2",
+]
+
+[[overlay]] # Overlay 590
+name = "chfactorytrashbelt"
+entrypoints = [
+  "chfactorytrashbelt_entrypoint_0",
+]
+
+[[overlay]] # Overlay 591
+name = "chlavahand"
+entrypoints = [
+  "chlavahand_entrypoint_0",
+  "chlavahand_entrypoint_1",
+]
+
+[[overlay]] # Overlay 592
+name = "chpotogoldgame"
+entrypoints = [
+  "chpotogoldgame_entrypoint_0",
+  "chpotogoldgame_entrypoint_1",
+  "chpotogoldgame_entrypoint_2",
+  "chpotogoldgame_entrypoint_3",
+  "chpotogoldgame_entrypoint_4",
+]
+
+[[overlay]] # Overlay 593
+name = "chfactorystationdoors"
+entrypoints = [
+  "chfactorystationdoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 594
+name = "chpotogoldbits"
+entrypoints = [
+  "chpotogoldbits_entrypoint_0",
+  "chpotogoldbits_entrypoint_1",
+  "chpotogoldbits_entrypoint_2",
+  "chpotogoldbits_entrypoint_3",
+]
+
+[[overlay]] # Overlay 595
+name = "chfantasydrillfield"
+entrypoints = [
+  "chfantasydrillfield_entrypoint_0",
+]
+
+[[overlay]] # Overlay 596
+name = "chfantasytrashcanbits"
+entrypoints = [
+  "chfantasytrashcanbits_entrypoint_0",
+  "chfantasytrashcanbits_entrypoint_1",
+]
+
+[[overlay]] # Overlay 597
+name = "chbeanstalkseed"
+entrypoints = [
+  "chbeanstalkseed_entrypoint_0",
+  "chbeanstalkseed_entrypoint_1",
+]
+
+[[overlay]] # Overlay 598
+name = "chrainbow"
+entrypoints = [
+  "chrainbow_entrypoint_0",
+  "chrainbow_entrypoint_1",
+]
+
+[[overlay]] # Overlay 599
+name = "chwaspstatue"
+entrypoints = [
+  "chwaspstatue_entrypoint_0",
+  "chwaspstatue_entrypoint_1",
+  "chwaspstatue_entrypoint_2",
+]
+
+[[overlay]] # Overlay 600
+name = "chbubbleelevator"
+entrypoints = [
+  "chbubbleelevator_entrypoint_0",
+]
+
+[[overlay]] # Overlay 601
+name = "chfactorysparkroom"
+entrypoints = [
+  "chfactorysparkroom_entrypoint_0",
+  "chfactorysparkroom_entrypoint_1",
+]
+
+[[overlay]] # Overlay 602
+name = "chfantasylakebits"
+entrypoints = [
+  "chfantasylakebits_entrypoint_0",
+  "chfantasylakebits_entrypoint_1",
+  "chfantasylakebits_entrypoint_2",
+]
+
+[[overlay]] # Overlay 603
+name = "chfantasysafe"
+entrypoints = [
+  "chfantasysafe_entrypoint_0",
+  "chfantasysafe_entrypoint_1",
+]
+
+[[overlay]] # Overlay 604
+name = "chtrashcangame"
+entrypoints = [
+  "chtrashcangame_entrypoint_0",
+  "chtrashcangame_entrypoint_1",
+  "chtrashcangame_entrypoint_2",
+  "chtrashcangame_entrypoint_3",
+  "chtrashcangame_entrypoint_4",
+]
+
+[[overlay]] # Overlay 605
+name = "chfantasyathlete"
+entrypoints = [
+  "chfantasyathlete_entrypoint_0",
+]
+
+[[overlay]] # Overlay 606
+name = "chfantasycannon"
+entrypoints = [
+  "chfantasycannon_entrypoint_0",
+  "chfantasycannon_entrypoint_1",
+]
+
+[[overlay]] # Overlay 607
+name = "chfantasyonion"
+entrypoints = [
+  "chfantasyonion_entrypoint_0",
+]
+
+[[overlay]] # Overlay 608
+name = "chfantasyeyeball"
+entrypoints = [
+  "chfantasyeyeball_entrypoint_0",
+  "chfantasyeyeball_entrypoint_1",
+]
+
+[[overlay]] # Overlay 609
+name = "chdinofamilysmall"
+entrypoints = [
+  "chdinofamilysmall_entrypoint_0",
+]
+
+[[overlay]] # Overlay 610
+name = "chdinofamilysick"
+entrypoints = [
+  "chdinofamilysick_entrypoint_0",
+  "chdinofamilysick_entrypoint_1",
+  "chdinofamilysick_entrypoint_2",
+]
+
+[[overlay]] # Overlay 611
+name = "choildrill"
+entrypoints = [
+  "choildrill_entrypoint_0",
+  "choildrill_entrypoint_1",
+  "choildrill_entrypoint_2",
+]
+
+[[overlay]] # Overlay 612
+name = "chfloaty"
+entrypoints = [
+  "chfloaty_entrypoint_0",
+  "chfloaty_entrypoint_1",
+]
+
+[[overlay]] # Overlay 613
+name = "chdinofamilymother"
+entrypoints = [
+  "chdinofamilymother_entrypoint_0",
+]
+
+[[overlay]] # Overlay 614
+name = "chmumbohealspell"
+entrypoints = [
+  "chmumbohealspell_entrypoint_0",
+]
+
+[[overlay]] # Overlay 615
+name = "chdinofamilyfx"
+entrypoints = [
+  "chdinofamilyfx_entrypoint_0",
+]
+
+[[overlay]] # Overlay 616
+name = "chlighthalo"
+entrypoints = [
+  "chlighthalo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 617
+name = "chbubble"
+entrypoints = [
+  "chbubble_entrypoint_0",
+]
+
+[[overlay]] # Overlay 618
+name = "chcrashmat"
+entrypoints = [
+  "chcrashmat_entrypoint_0",
+]
+
+[[overlay]] # Overlay 619
+name = "chjellycastle"
+entrypoints = [
+  "chjellycastle_entrypoint_0",
+]
+
+[[overlay]] # Overlay 620
+name = "chfootwear"
+entrypoints = [
+  "chfootwear_entrypoint_0",
+  "chfootwear_entrypoint_1",
+  "chfootwear_entrypoint_2",
+  "chfootwear_entrypoint_3",
+  "chfootwear_entrypoint_4",
+]
+
+[[overlay]] # Overlay 621
+name = "chicekey"
+entrypoints = [
+  "chicekey_entrypoint_0",
+]
+
+[[overlay]] # Overlay 622
+name = "chheggy"
+entrypoints = [
+  "chheggy_entrypoint_0",
+  "chheggy_entrypoint_1",
+]
+
+[[overlay]] # Overlay 623
+name = "chplatuegrill"
+entrypoints = [
+  "chplatuegrill_entrypoint_0",
+  "chplatuegrill_entrypoint_1",
+]
+
+[[overlay]] # Overlay 624
+name = "chbkcart"
+entrypoints = [
+  "chbkcart_entrypoint_0",
+]
+
+[[overlay]] # Overlay 625
+name = "chicekeydoor"
+entrypoints = [
+  "chicekeydoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 626
+name = "chsecreteggs"
+entrypoints = [
+  "chsecreteggs_entrypoint_0",
+]
+
+[[overlay]] # Overlay 627
+name = "chworlddoors"
+entrypoints = [
+  "chworlddoors_entrypoint_0",
+]
+
+[[overlay]] # Overlay 628
+name = "chfantasysafeswitch"
+entrypoints = [
+  "chfantasysafeswitch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 629
+name = "chquiz"
+entrypoints = [
+  "chquiz_entrypoint_0",
+  "chquiz_entrypoint_1",
+  "chquiz_entrypoint_2",
+  "chquiz_entrypoint_3",
+  "chquiz_entrypoint_4",
+]
+
+[[overlay]] # Overlay 630
+name = "chquizexitdoor"
+entrypoints = [
+  "chquizexitdoor_entrypoint_0",
+]
+
+[[overlay]] # Overlay 631
+name = "chtoxicroomprops"
+entrypoints = [
+  "chtoxicroomprops_entrypoint_0",
+  "chtoxicroomprops_entrypoint_1",
+  "chtoxicroomprops_entrypoint_2",
+]
+
+[[overlay]] # Overlay 632
+name = "chbobpanel"
+entrypoints = [
+  "chbobpanel_entrypoint_0",
+]
+
+[[overlay]] # Overlay 633
+name = "chdeflect"
+entrypoints = [
+  "chdeflect_entrypoint_0",
+]
+
+[[overlay]] # Overlay 634
+name = "cosectionstor"
+entrypoints = [
+  "cosectionstor_entrypoint_0",
+  "cosectionstor_entrypoint_1",
+  "cosectionstor_entrypoint_2",
+  "cosectionstor_entrypoint_3",
+  "cosectionstor_entrypoint_4",
+]
+
+[[overlay]] # Overlay 635
+name = "cothemedll"
+entrypoints = [
+  "cothemedll_entrypoint_0",
+  "cothemedll_entrypoint_1",
+  "cothemedll_entrypoint_2",
+  "cothemedll_entrypoint_3",
+  "cothemedll_entrypoint_4",
+  "cothemedll_entrypoint_5",
+]
+
+[[overlay]] # Overlay 636
+empty = true
+
+[[overlay]] # Overlay 637
+name = "cosection"
+entrypoints = [
+  "cosection_entrypoint_0",
+  "cosection_entrypoint_1",
+]
+
+[[overlay]] # Overlay 638
+name = "plsu"
+entrypoints = [
+  "plsu_entrypoint_0",
+  "plsu_entrypoint_1",
+  "plsu_entrypoint_2",
+  "plsu_entrypoint_3",
+]
+
+[[overlay]] # Overlay 639
+name = "plcamera"
+entrypoints = [
+  "plcamera_entrypoint_0",
+  "plcamera_entrypoint_1",
+  "plcamera_entrypoint_2",
+  "plcamera_entrypoint_3",
+  "plcamera_entrypoint_4",
+  "plcamera_entrypoint_5",
+  "plcamera_entrypoint_6",
+  "plcamera_entrypoint_7",
+  "plcamera_entrypoint_8",
+  "plcamera_entrypoint_9",
+  "plcamera_entrypoint_10",
+  "plcamera_entrypoint_11",
+  "plcamera_entrypoint_12",
+  "plcamera_entrypoint_13",
+  "plcamera_entrypoint_14",
+]
+
+[[overlay]] # Overlay 640
+name = "dbzone"
+entrypoints = [
+  "dbzone_entrypoint_0",
+  "dbzone_entrypoint_1",
+  "dbzone_entrypoint_2",
+  "dbzone_entrypoint_3",
+  "dbzone_entrypoint_4",
+]
+
+[[overlay]] # Overlay 641
+name = "dbpalette"
+entrypoints = [
+  "dbpalette_entrypoint_0",
+  "dbpalette_entrypoint_1",
+]
+
+[[overlay]] # Overlay 642
+name = "dbshift"
+entrypoints = [
+  "dbshift_entrypoint_0",
+  "dbshift_entrypoint_1",
+]
+
+[[overlay]] # Overlay 643
+name = "dbmorph"
+entrypoints = [
+  "dbmorph_entrypoint_0",
+  "dbmorph_entrypoint_1",
+  "dbmorph_entrypoint_2",
+  "dbmorph_entrypoint_3",
+  "dbmorph_entrypoint_4",
+]
+
+[[overlay]] # Overlay 644
+name = "dbvpl"
+entrypoints = [
+  "dbvpl_entrypoint_0",
+  "dbvpl_entrypoint_1",
+]
+
+[[overlay]] # Overlay 645
+name = "dbanim"
+entrypoints = [
+  "dbanim_entrypoint_0",
+  "dbanim_entrypoint_1",
+]
+
+[[overlay]] # Overlay 646
+name = "dbid"
+entrypoints = [
+  "dbid_entrypoint_0",
+  "dbid_entrypoint_1",
+  "dbid_entrypoint_2",
+  "dbid_entrypoint_3",
+]
+
+[[overlay]] # Overlay 647
+name = "dblight"
+entrypoints = [
+  "dblight_entrypoint_0",
+  "dblight_entrypoint_1",
+]
+
+[[overlay]] # Overlay 648
+name = "dbvtxnormal"
+entrypoints = [
+  "dbvtxnormal_entrypoint_0",
+  "dbvtxnormal_entrypoint_1",
+  "dbvtxnormal_entrypoint_2",
+]
+
+[[overlay]] # Overlay 649
+name = "dbskeleton"
+entrypoints = [
+  "dbskeleton_entrypoint_0",
+  "dbskeleton_entrypoint_1",
+  "dbskeleton_entrypoint_2",
+  "dbskeleton_entrypoint_3",
+  "dbskeleton_entrypoint_4",
+]
+
+[[overlay]] # Overlay 650
+name = "dbtex"
+entrypoints = [
+  "dbtex_entrypoint_0",
+  "dbtex_entrypoint_1",
+]
+
+[[overlay]] # Overlay 651
+name = "gcgame"
+entrypoints = [
+  "gcgame_entrypoint_0",
+  "gcgame_entrypoint_1",
+]
+
+[[overlay]] # Overlay 652
+name = "gcgoto"
+entrypoints = [
+  "gcgoto_entrypoint_0",
+  "gcgoto_entrypoint_1",
+  "gcgoto_entrypoint_2",
+  "gcgoto_entrypoint_3",
+  "gcgoto_entrypoint_4",
+  "gcgoto_entrypoint_5",
+  "gcgoto_entrypoint_6",
+  "gcgoto_entrypoint_7",
+  "gcgoto_entrypoint_8",
+  "gcgoto_entrypoint_9",
+  "gcgoto_entrypoint_10",
+  "gcgoto_entrypoint_11",
+  "gcgoto_entrypoint_12",
+  "gcgoto_entrypoint_13",
+  "gcgoto_entrypoint_14",
+  "gcgoto_entrypoint_15",
+]
+
+[[overlay]] # Overlay 653
+name = "gcsectionskip"
+entrypoints = [
+  "gcsectionskip_entrypoint_0",
+  "gcsectionskip_entrypoint_1",
+]
+
+[[overlay]] # Overlay 654
+name = "gczoombox"
+entrypoints = [
+  "gczoombox_entrypoint_0",
+  "gczoombox_entrypoint_1",
+  "gczoombox_entrypoint_2",
+  "gczoombox_entrypoint_3",
+  "gczoombox_entrypoint_4",
+  "gczoombox_entrypoint_5",
+  "gczoombox_entrypoint_6",
+  "gczoombox_entrypoint_7",
+  "gczoombox_entrypoint_8",
+  "gczoombox_entrypoint_9",
+  "gczoombox_entrypoint_10",
+  "gczoombox_entrypoint_11",
+  "gczoombox_entrypoint_12",
+  "gczoombox_entrypoint_13",
+  "gczoombox_entrypoint_14",
+  "gczoombox_entrypoint_15",
+  "gczoombox_entrypoint_16",
+  "gczoombox_entrypoint_17",
+  "gczoombox_entrypoint_18",
+  "gczoombox_entrypoint_19",
+  "gczoombox_entrypoint_20",
+  "gczoombox_entrypoint_21",
+  "gczoombox_entrypoint_22",
+  "gczoombox_entrypoint_23",
+  "gczoombox_entrypoint_24",
+  "gczoombox_entrypoint_25",
+  "gczoombox_entrypoint_26",
+  "gczoombox_entrypoint_27",
+  "gczoombox_entrypoint_28",
+  "gczoombox_entrypoint_29",
+  "gczoombox_entrypoint_30",
+  "gczoombox_entrypoint_31",
+  "gczoombox_entrypoint_32",
+  "gczoombox_entrypoint_33",
+  "gczoombox_entrypoint_34",
+  "gczoombox_entrypoint_35",
+  "gczoombox_entrypoint_36",
+  "gczoombox_entrypoint_37",
+  "gczoombox_entrypoint_38",
+  "gczoombox_entrypoint_39",
+  "gczoombox_entrypoint_40",
+  "gczoombox_entrypoint_41",
+  "gczoombox_entrypoint_42",
+  "gczoombox_entrypoint_43",
+  "gczoombox_entrypoint_44",
+  "gczoombox_entrypoint_45",
+]
+
+[[overlay]] # Overlay 655
+name = "gccubeDll"
+entrypoints = [
+  "gccubeDll_entrypoint_0",
+  "gccubeDll_entrypoint_1",
+  "gccubeDll_entrypoint_2",
+  "gccubeDll_entrypoint_3",
+  "gccubeDll_entrypoint_4",
+  "gccubeDll_entrypoint_5",
+  "gccubeDll_entrypoint_6",
+  "gccubeDll_entrypoint_7",
+]
+
+[[overlay]] # Overlay 656
+name = "gcdialogDll"
+entrypoints = [
+  "gcdialogDll_entrypoint_0",
+]
+
+[[overlay]] # Overlay 657
+name = "gcnewoption"
+entrypoints = [
+  "gcnewoption_entrypoint_0",
+  "gcnewoption_entrypoint_1",
+  "gcnewoption_entrypoint_2",
+  "gcnewoption_entrypoint_3",
+  "gcnewoption_entrypoint_4",
+  "gcnewoption_entrypoint_5",
+  "gcnewoption_entrypoint_6",
+  "gcnewoption_entrypoint_7",
+  "gcnewoption_entrypoint_8",
+  "gcnewoption_entrypoint_9",
+  "gcnewoption_entrypoint_10",
+  "gcnewoption_entrypoint_11",
+  "gcnewoption_entrypoint_12",
+  "gcnewoption_entrypoint_13",
+  "gcnewoption_entrypoint_14",
+  "gcnewoption_entrypoint_15",
+  "gcnewoption_entrypoint_16",
+  "gcnewoption_entrypoint_17",
+  "gcnewoption_entrypoint_18",
+  "gcnewoption_entrypoint_19",
+  "gcnewoption_entrypoint_20",
+  "gcnewoption_entrypoint_21",
+  "gcnewoption_entrypoint_22",
+  "gcnewoption_entrypoint_23",
+  "gcnewoption_entrypoint_24",
+  "gcnewoption_entrypoint_25",
+  "gcnewoption_entrypoint_26",
+  "gcnewoption_entrypoint_27",
+  "gcnewoption_entrypoint_28",
+  "gcnewoption_entrypoint_29",
+  "gcnewoption_entrypoint_30",
+  "gcnewoption_entrypoint_31",
+  "gcnewoption_entrypoint_32",
+  "gcnewoption_entrypoint_33",
+  "gcnewoption_entrypoint_34",
+  "gcnewoption_entrypoint_35",
+  "gcnewoption_entrypoint_36",
+  "gcnewoption_entrypoint_37",
+  "gcnewoption_entrypoint_38",
+  "gcnewoption_entrypoint_39",
+  "gcnewoption_entrypoint_40",
+  "gcnewoption_entrypoint_41",
+  "gcnewoption_entrypoint_42",
+  "gcnewoption_entrypoint_43",
+  "gcnewoption_entrypoint_44",
+  "gcnewoption_entrypoint_45",
+  "gcnewoption_entrypoint_46",
+  "gcnewoption_entrypoint_47",
+  "gcnewoption_entrypoint_48",
+  "gcnewoption_entrypoint_49",
+]
+
+[[overlay]] # Overlay 658
+name = "gcdialogexec"
+entrypoints = [
+  "gcdialogexec_entrypoint_0",
+  "gcdialogexec_entrypoint_1",
+  "gcdialogexec_entrypoint_2",
+  "gcdialogexec_entrypoint_3",
+  "gcdialogexec_entrypoint_4",
+  "gcdialogexec_entrypoint_5",
+  "gcdialogexec_entrypoint_6",
+  "gcdialogexec_entrypoint_7",
+  "gcdialogexec_entrypoint_8",
+  "gcdialogexec_entrypoint_9",
+  "gcdialogexec_entrypoint_10",
+]
+
+[[overlay]] # Overlay 659
+name = "gcwater"
+entrypoints = [
+  "gcwater_entrypoint_0",
+]
+
+[[overlay]] # Overlay 660
+name = "gclightsDll"
+entrypoints = [
+  "gclightsDll_entrypoint_0",
+  "gclightsDll_entrypoint_1",
+  "gclightsDll_entrypoint_2",
+  "gclightsDll_entrypoint_3",
+  "gclightsDll_entrypoint_4",
+  "gclightsDll_entrypoint_5",
+]
+
+[[overlay]] # Overlay 661
+name = "gcboundDll"
+entrypoints = [
+  "gcboundDll_entrypoint_0",
+  "gcboundDll_entrypoint_1",
+  "gcboundDll_entrypoint_2",
+  "gcboundDll_entrypoint_3",
+  "gcboundDll_entrypoint_4",
+  "gcboundDll_entrypoint_5",
+  "gcboundDll_entrypoint_6",
+  "gcboundDll_entrypoint_7",
+  "gcboundDll_entrypoint_8",
+]
+
+[[overlay]] # Overlay 662
+name = "gcmapsects"
+entrypoints = [
+  "gcmapsects_entrypoint_0",
+  "gcmapsects_entrypoint_1",
+  "gcmapsects_entrypoint_2",
+  "gcmapsects_entrypoint_3",
+  "gcmapsects_entrypoint_4",
+  "gcmapsects_entrypoint_5",
+  "gcmapsects_entrypoint_6",
+  "gcmapsects_entrypoint_7",
+  "gcmapsects_entrypoint_8",
+  "gcmapsects_entrypoint_9",
+  "gcmapsects_entrypoint_10",
+  "gcmapsects_entrypoint_11",
+  "gcmapsects_entrypoint_12",
+  "gcmapsects_entrypoint_13",
+  "gcmapsects_entrypoint_14",
+  "gcmapsects_entrypoint_15",
+  "gcmapsects_entrypoint_16",
+  "gcmapsects_entrypoint_17",
+  "gcmapsects_entrypoint_18",
+  "gcmapsects_entrypoint_19",
+  "gcmapsects_entrypoint_20",
+  "gcmapsects_entrypoint_21",
+  "gcmapsects_entrypoint_22",
+  "gcmapsects_entrypoint_23",
+  "gcmapsects_entrypoint_24",
+  "gcmapsects_entrypoint_25",
+  "gcmapsects_entrypoint_26",
+  "gcmapsects_entrypoint_27",
+]
+
+[[overlay]] # Overlay 663
+name = "gcmapsects_lagoontop"
+entrypoints = [
+  "gcmapsects_lagoontop_entrypoint_0",
+  "gcmapsects_lagoontop_entrypoint_1",
+]
+
+[[overlay]] # Overlay 664
+name = "gcmapsects_lagoonmid"
+entrypoints = [
+  "gcmapsects_lagoonmid_entrypoint_0",
+  "gcmapsects_lagoonmid_entrypoint_1",
+]
+
+[[overlay]] # Overlay 665
+name = "gcmapsects_lagoonbot"
+entrypoints = [
+  "gcmapsects_lagoonbot_entrypoint_0",
+  "gcmapsects_lagoonbot_entrypoint_1",
+]
+
+[[overlay]] # Overlay 666
+name = "gccollectDll"
+entrypoints = [
+  "gccollectDll_entrypoint_0",
+  "gccollectDll_entrypoint_1",
+  "gccollectDll_entrypoint_2",
+  "gccollectDll_entrypoint_3",
+  "gccollectDll_entrypoint_4",
+  "gccollectDll_entrypoint_5",
+  "gccollectDll_entrypoint_6",
+  "gccollectDll_entrypoint_7",
+  "gccollectDll_entrypoint_8",
+]
+
+[[overlay]] # Overlay 667
+name = "gcskyDll"
+entrypoints = [
+  "gcskyDll_entrypoint_0",
+  "gcskyDll_entrypoint_1",
+  "gcskyDll_entrypoint_2",
+  "gcskyDll_entrypoint_3",
+]
+
+[[overlay]] # Overlay 668
+empty = true
+
+[[overlay]] # Overlay 669
+name = "gcdialogcamera"
+entrypoints = [
+  "gcdialogcamera_entrypoint_0",
+  "gcdialogcamera_entrypoint_1",
+  "gcdialogcamera_entrypoint_2",
+  "gcdialogcamera_entrypoint_3",
+  "gcdialogcamera_entrypoint_4",
+  "gcdialogcamera_entrypoint_5",
+  "gcdialogcamera_entrypoint_6",
+  "gcdialogcamera_entrypoint_7",
+  "gcdialogcamera_entrypoint_8",
+  "gcdialogcamera_entrypoint_9",
+  "gcdialogcamera_entrypoint_10",
+]
+
+[[overlay]] # Overlay 670
+name = "gcaudiolist"
+entrypoints = [
+  "gcaudiolist_entrypoint_0",
+  "gcaudiolist_entrypoint_1",
+]
+
+[[overlay]] # Overlay 671
+name = "gcintrotext"
+entrypoints = [
+  "gcintrotext_entrypoint_0",
+  "gcintrotext_entrypoint_1",
+  "gcintrotext_entrypoint_2",
+]
+
+[[overlay]] # Overlay 672
+name = "gcmapDll"
+entrypoints = [
+  "gcmapDll_entrypoint_0",
+  "gcmapDll_entrypoint_1",
+  "gcmapDll_entrypoint_2",
+  "gcmapDll_entrypoint_3",
+  "gcmapDll_entrypoint_4",
+  "gcmapDll_entrypoint_5",
+  "gcmapDll_entrypoint_6",
+]
+
+[[overlay]] # Overlay 673
+name = "gcfrontend"
+entrypoints = [
+  "gcfrontend_entrypoint_0",
+  "gcfrontend_entrypoint_1",
+  "gcfrontend_entrypoint_2",
+  "gcfrontend_entrypoint_3",
+  "gcfrontend_entrypoint_4",
+  "gcfrontend_entrypoint_5",
+  "gcfrontend_entrypoint_6",
+  "gcfrontend_entrypoint_7",
+  "gcfrontend_entrypoint_8",
+  "gcfrontend_entrypoint_9",
+  "gcfrontend_entrypoint_10",
+  "gcfrontend_entrypoint_11",
+  "gcfrontend_entrypoint_12",
+  "gcfrontend_entrypoint_13",
+  "gcfrontend_entrypoint_14",
+]
+
+[[overlay]] # Overlay 674
+name = "gctransitionDll"
+entrypoints = [
+  "gctransitionDll_entrypoint_0",
+  "gctransitionDll_entrypoint_1",
+  "gctransitionDll_entrypoint_2",
+  "gctransitionDll_entrypoint_3",
+  "gctransitionDll_entrypoint_4",
+  "gctransitionDll_entrypoint_5",
+  "gctransitionDll_entrypoint_6",
+  "gctransitionDll_entrypoint_7",
+  "gctransitionDll_entrypoint_8",
+  "gctransitionDll_entrypoint_9",
+]
+
+[[overlay]] # Overlay 675
+name = "gcnewpause"
+entrypoints = [
+  "gcnewpause_entrypoint_0",
+  "gcnewpause_entrypoint_1",
+  "gcnewpause_entrypoint_2",
+  "gcnewpause_entrypoint_3",
+  "gcnewpause_entrypoint_4",
+]
+
+[[overlay]] # Overlay 676
+name = "gclevel"
+entrypoints = [
+  "gclevel_entrypoint_0",
+  "gclevel_entrypoint_1",
+  "gclevel_entrypoint_2",
+  "gclevel_entrypoint_3",
+  "gclevel_entrypoint_4",
+]
+
+[[overlay]] # Overlay 677
+name = "gcsectionDll"
+entrypoints = [
+  "gcsectionDll_entrypoint_0",
+  "gcsectionDll_entrypoint_1",
+  "gcsectionDll_entrypoint_2",
+  "gcsectionDll_entrypoint_3",
+  "gcsectionDll_entrypoint_4",
+  "gcsectionDll_entrypoint_5",
+]
+
+[[overlay]] # Overlay 678
+name = "gccubesearch"
+entrypoints = [
+  "gccubesearch_entrypoint_0",
+  "gccubesearch_entrypoint_1",
+  "gccubesearch_entrypoint_2",
+  "gccubesearch_entrypoint_3",
+  "gccubesearch_entrypoint_4",
+  "gccubesearch_entrypoint_5",
+  "gccubesearch_entrypoint_6",
+  "gccubesearch_entrypoint_7",
+  "gccubesearch_entrypoint_8",
+  "gccubesearch_entrypoint_9",
+  "gccubesearch_entrypoint_10",
+  "gccubesearch_entrypoint_11",
+  "gccubesearch_entrypoint_12",
+  "gccubesearch_entrypoint_13",
+  "gccubesearch_entrypoint_14",
+  "gccubesearch_entrypoint_15",
+  "gccubesearch_entrypoint_16",
+  "gccubesearch_entrypoint_17",
+  "gccubesearch_entrypoint_18",
+]
+
+[[overlay]] # Overlay 679
+name = "gcstatusDll"
+entrypoints = [
+  "gcstatusDll_entrypoint_0",
+  "gcstatusDll_entrypoint_1",
+  "gcstatusDll_entrypoint_2",
+  "gcstatusDll_entrypoint_3",
+  "gcstatusDll_entrypoint_4",
+  "gcstatusDll_entrypoint_5",
+  "gcstatusDll_entrypoint_6",
+  "gcstatusDll_entrypoint_7",
+  "gcstatusDll_entrypoint_8",
+  "gcstatusDll_entrypoint_9",
+  "gcstatusDll_entrypoint_10",
+  "gcstatusDll_entrypoint_11",
+  "gcstatusDll_entrypoint_12",
+  "gcstatusDll_entrypoint_13",
+  "gcstatusDll_entrypoint_14",
+  "gcstatusDll_entrypoint_15",
+  "gcstatusDll_entrypoint_16",
+  "gcstatusDll_entrypoint_17",
+  "gcstatusDll_entrypoint_18",
+  "gcstatusDll_entrypoint_19",
+  "gcstatusDll_entrypoint_20",
+]
+
+[[overlay]] # Overlay 680
+name = "gcegg"
+entrypoints = [
+  "gcegg_entrypoint_0",
+  "gcegg_entrypoint_1",
+  "gcegg_entrypoint_2",
+  "gcegg_entrypoint_3",
+  "gcegg_entrypoint_4",
+  "gcegg_entrypoint_5",
+  "gcegg_entrypoint_6",
+  "gcegg_entrypoint_7",
+]
+
+[[overlay]] # Overlay 681
+name = "gcextra"
+entrypoints = [
+  "gcextra_entrypoint_0",
+  "gcextra_entrypoint_1",
+  "gcextra_entrypoint_2",
+]
+
+[[overlay]] # Overlay 682
+name = "gczoomboxdata"
+entrypoints = [
+  "gczoomboxdata_entrypoint_0",
+  "gczoomboxdata_entrypoint_1",
+  "gczoomboxdata_entrypoint_2",
+  "gczoomboxdata_entrypoint_3",
+  "gczoomboxdata_entrypoint_4",
+  "gczoomboxdata_entrypoint_5",
+  "gczoomboxdata_entrypoint_6",
+]
+
+[[overlay]] # Overlay 683
+name = "gcgamefix"
+entrypoints = [
+  "gcgamefix_entrypoint_0",
+  "gcgamefix_entrypoint_1",
+]
+
+[[overlay]] # Overlay 684
+name = "glreflight"
+entrypoints = [
+  "glreflight_entrypoint_0",
+]
+
+[[overlay]] # Overlay 685
+name = "glsplinecs"
+entrypoints = [
+  "glsplinecs_entrypoint_0",
+  "glsplinecs_entrypoint_1",
+]
+
+[[overlay]] # Overlay 686
+name = "glsplinefuncs"
+entrypoints = [
+  "glsplinefuncs_entrypoint_0",
+  "glsplinefuncs_entrypoint_1",
+]
+
+[[overlay]] # Overlay 687
+name = "glsplinefind"
+entrypoints = [
+  "glsplinefind_entrypoint_0",
+  "glsplinefind_entrypoint_1",
+  "glsplinefind_entrypoint_2",
+  "glsplinefind_entrypoint_3",
+  "glsplinefind_entrypoint_4",
+]
+
+[[overlay]] # Overlay 688
+name = "glgamestore"
+entrypoints = [
+  "glgamestore_entrypoint_0",
+  "glgamestore_entrypoint_1",
+  "glgamestore_entrypoint_2",
+  "glgamestore_entrypoint_3",
+  "glgamestore_entrypoint_4",
+  "glgamestore_entrypoint_5",
+]
+
+[[overlay]] # Overlay 689
+name = "glsplineDll"
+entrypoints = [
+  "glsplineDll_entrypoint_0",
+  "glsplineDll_entrypoint_1",
+  "glsplineDll_entrypoint_2",
+]
+
+[[overlay]] # Overlay 690
+name = "glsplinenode"
+entrypoints = [
+  "glsplinenode_entrypoint_0",
+  "glsplinenode_entrypoint_1",
+]
+
+[[overlay]] # Overlay 691
+name = "gleeprom"
+entrypoints = [
+  "gleeprom_entrypoint_0",
+  "gleeprom_entrypoint_1",
+  "gleeprom_entrypoint_2",
+]
+
+[[overlay]] # Overlay 692
+name = "glsavegame"
+entrypoints = [
+  "glsavegame_entrypoint_0",
+  "glsavegame_entrypoint_1",
+  "glsavegame_entrypoint_2",
+  "glsavegame_entrypoint_3",
+  "glsavegame_entrypoint_4",
+  "glsavegame_entrypoint_5",
+  "glsavegame_entrypoint_6",
+  "glsavegame_entrypoint_7",
+  "glsavegame_entrypoint_8",
+  "glsavegame_entrypoint_9",
+  "glsavegame_entrypoint_10",
+]
+
+[[overlay]] # Overlay 693
+name = "glgamedata"
+entrypoints = [
+  "glgamedata_entrypoint_0",
+  "glgamedata_entrypoint_1",
+  "glgamedata_entrypoint_2",
+  "glgamedata_entrypoint_3",
+  "glgamedata_entrypoint_4",
+  "glgamedata_entrypoint_5",
+  "glgamedata_entrypoint_6",
+]
+
+[[overlay]] # Overlay 694
+name = "glglobaldata"
+entrypoints = [
+  "glglobaldata_entrypoint_0",
+  "glglobaldata_entrypoint_1",
+  "glglobaldata_entrypoint_2",
+  "glglobaldata_entrypoint_3",
+  "glglobaldata_entrypoint_4",
+]
+
+[[overlay]] # Overlay 695
+name = "glintrosyncDll"
+entrypoints = [
+  "glintrosyncDll_entrypoint_0",
+  "glintrosyncDll_entrypoint_1",
+  "glintrosyncDll_entrypoint_2",
+  "glintrosyncDll_entrypoint_3",
+  "glintrosyncDll_entrypoint_4",
+  "glintrosyncDll_entrypoint_5",
+  "glintrosyncDll_entrypoint_6",
+]
+
+[[overlay]] # Overlay 696
+name = "glhittableDll"
+entrypoints = [
+  "glhittableDll_entrypoint_0",
+  "glhittableDll_entrypoint_1",
+  "glhittableDll_entrypoint_2",
+  "glhittableDll_entrypoint_3",
+  "glhittableDll_entrypoint_4",
+  "glhittableDll_entrypoint_5",
+  "glhittableDll_entrypoint_6",
+  "glhittableDll_entrypoint_7",
+  "glhittableDll_entrypoint_8",
+  "glhittableDll_entrypoint_9",
+  "glhittableDll_entrypoint_10",
+]
+
+[[overlay]] # Overlay 697
+name = "glid"
+entrypoints = [
+  "glid_entrypoint_0",
+  "glid_entrypoint_1",
+  "glid_entrypoint_2",
+  "glid_entrypoint_3",
+  "glid_entrypoint_4",
+  "glid_entrypoint_5",
+  "glid_entrypoint_6",
+]
+
+[[overlay]] # Overlay 698
+name = "glrecord"
+entrypoints = [
+  "glrecord_entrypoint_0",
+  "glrecord_entrypoint_1",
+  "glrecord_entrypoint_2",
+  "glrecord_entrypoint_3",
+  "glrecord_entrypoint_4",
+]
+
+[[overlay]] # Overlay 699
+name = "glglobalsettings"
+entrypoints = [
+  "glglobalsettings_entrypoint_0",
+  "glglobalsettings_entrypoint_1",
+  "glglobalsettings_entrypoint_2",
+  "glglobalsettings_entrypoint_3",
+  "glglobalsettings_entrypoint_4",
+  "glglobalsettings_entrypoint_5",
+  "glglobalsettings_entrypoint_6",
+  "glglobalsettings_entrypoint_7",
+  "glglobalsettings_entrypoint_8",
+]
+
+[[overlay]] # Overlay 700
+name = "glcrc"
+entrypoints = [
+  "glcrc_entrypoint_0",
+  "glcrc_entrypoint_1",
+]
+
+[[overlay]] # Overlay 701
+name = "gldbstring"
+entrypoints = [
+  "gldbstring_entrypoint_0",
+  "gldbstring_entrypoint_1",
+  "gldbstring_entrypoint_2",
+]
+
+[[overlay]] # Overlay 702
+name = "gldialog"
+entrypoints = [
+  "gldialog_entrypoint_0",
+  "gldialog_entrypoint_1",
+  "gldialog_entrypoint_2",
+  "gldialog_entrypoint_3",
+  "gldialog_entrypoint_4",
+  "gldialog_entrypoint_5",
+]
+
+[[overlay]] # Overlay 703
+name = "glzone"
+entrypoints = [
+  "glzone_entrypoint_0",
+  "glzone_entrypoint_1",
+  "glzone_entrypoint_2",
+  "glzone_entrypoint_3",
+  "glzone_entrypoint_4",
+  "glzone_entrypoint_5",
+  "glzone_entrypoint_6",
+]
+
+[[overlay]] # Overlay 704
+name = "glpackvtx"
+entrypoints = [
+  "glpackvtx_entrypoint_0",
+  "glpackvtx_entrypoint_1",
+]
+
+[[overlay]] # Overlay 705
+name = "glcutDll"
+entrypoints = [
+  "glcutDll_entrypoint_0",
+  "glcutDll_entrypoint_1",
+  "glcutDll_entrypoint_2",
+  "glcutDll_entrypoint_3",
+  "glcutDll_entrypoint_4",
+  "glcutDll_entrypoint_5",
+  "glcutDll_entrypoint_6",
+  "glcutDll_entrypoint_7",
+  "glcutDll_entrypoint_8",
+  "glcutDll_entrypoint_9",
+  "glcutDll_entrypoint_10",
+  "glcutDll_entrypoint_11",
+  "glcutDll_entrypoint_12",
+  "glcutDll_entrypoint_13",
+  "glcutDll_entrypoint_14",
+  "glcutDll_entrypoint_15",
+  "glcutDll_entrypoint_16",
+  "glcutDll_entrypoint_17",
+  "glcutDll_entrypoint_18",
+  "glcutDll_entrypoint_19",
+  "glcutDll_entrypoint_20",
+  "glcutDll_entrypoint_21",
+  "glcutDll_entrypoint_22",
+  "glcutDll_entrypoint_23",
+  "glcutDll_entrypoint_24",
+]
+
+[[overlay]] # Overlay 706
+name = "glrtc"
+entrypoints = [
+  "glrtc_entrypoint_0",
+]
+
+[[overlay]] # Overlay 707
+name = "glidmake"
+entrypoints = [
+  "glidmake_entrypoint_0",
+  "glidmake_entrypoint_1",
+  "glidmake_entrypoint_2",
+  "glidmake_entrypoint_3",
+  "glidmake_entrypoint_4",
+  "glidmake_entrypoint_5",
+]
+
+[[overlay]] # Overlay 708
+name = "gldbDll"
+entrypoints = [
+  "gldbDll_entrypoint_0",
+  "gldbDll_entrypoint_1",
+  "gldbDll_entrypoint_2",
+]
+
+[[overlay]] # Overlay 709
+name = "fxsparkle"
+entrypoints = [
+  "fxsparkle_entrypoint_0",
+  "fxsparkle_entrypoint_1",
+  "fxsparkle_entrypoint_2",
+  "fxsparkle_entrypoint_3",
+]
+
+[[overlay]] # Overlay 710
+name = "fxrain"
+entrypoints = [
+  "fxrain_entrypoint_0",
+  "fxrain_entrypoint_1",
+  "fxrain_entrypoint_2",
+  "fxrain_entrypoint_3",
+  "fxrain_entrypoint_4",
+  "fxrain_entrypoint_5",
+  "fxrain_entrypoint_6",
+  "fxrain_entrypoint_7",
+  "fxrain_entrypoint_8",
+  "fxrain_entrypoint_9",
+]
+
+[[overlay]] # Overlay 711
+name = "fxleaves"
+entrypoints = [
+  "fxleaves_entrypoint_0",
+  "fxleaves_entrypoint_1",
+  "fxleaves_entrypoint_2",
+  "fxleaves_entrypoint_3",
+  "fxleaves_entrypoint_4",
+  "fxleaves_entrypoint_5",
+  "fxleaves_entrypoint_6",
+  "fxleaves_entrypoint_7",
+]
+
+[[overlay]] # Overlay 712
+name = "fxdlsmoke"
+entrypoints = [
+  "fxdlsmoke_entrypoint_0",
+]
+
+[[overlay]] # Overlay 713
+name = "fxfontstring"
+entrypoints = [
+  "fxfontstring_entrypoint_0",
+  "fxfontstring_entrypoint_1",
+  "fxfontstring_entrypoint_2",
+  "fxfontstring_entrypoint_3",
+]
+
+[[overlay]] # Overlay 714
+name = "fxmumbo"
+entrypoints = [
+  "fxmumbo_entrypoint_0",
+]
+
+[[overlay]] # Overlay 715
+name = "fxripple"
+entrypoints = [
+  "fxripple_entrypoint_0",
+  "fxripple_entrypoint_1",
+  "fxripple_entrypoint_2",
+  "fxripple_entrypoint_3",
+  "fxripple_entrypoint_4",
+]
+
+[[overlay]] # Overlay 716
+name = "fxairbub"
+entrypoints = [
+  "fxairbub_entrypoint_0",
+  "fxairbub_entrypoint_1",
+]
+
+[[overlay]] # Overlay 717
+name = "fxsplash25d"
+entrypoints = [
+  "fxsplash25d_entrypoint_0",
+]
+
+[[overlay]] # Overlay 718
+name = "fxstep"
+entrypoints = [
+  "fxstep_entrypoint_0",
+  "fxstep_entrypoint_1",
+  "fxstep_entrypoint_2",
+  "fxstep_entrypoint_3",
+  "fxstep_entrypoint_4",
+  "fxstep_entrypoint_5",
+  "fxstep_entrypoint_6",
+  "fxstep_entrypoint_7",
+  "fxstep_entrypoint_8",
+  "fxstep_entrypoint_9",
+  "fxstep_entrypoint_10",
+  "fxstep_entrypoint_11",
+  "fxstep_entrypoint_12",
+  "fxstep_entrypoint_13",
+  "fxstep_entrypoint_14",
+  "fxstep_entrypoint_15",
+]
+
+[[overlay]] # Overlay 719
+name = "fxegg"
+entrypoints = [
+  "fxegg_entrypoint_0",
+  "fxegg_entrypoint_1",
+  "fxegg_entrypoint_2",
+  "fxegg_entrypoint_3",
+  "fxegg_entrypoint_4",
+  "fxegg_entrypoint_5",
+  "fxegg_entrypoint_6",
+  "fxegg_entrypoint_7",
+  "fxegg_entrypoint_8",
+]
+
+[[overlay]] # Overlay 720
+name = "fxtwinkle"
+entrypoints = [
+  "fxtwinkle_entrypoint_0",
+  "fxtwinkle_entrypoint_1",
+  "fxtwinkle_entrypoint_2",
+]
+
+[[overlay]] # Overlay 721
+name = "fxspgold"
+entrypoints = [
+  "fxspgold_entrypoint_0",
+  "fxspgold_entrypoint_1",
+  "fxspgold_entrypoint_2",
+]
+
+[[overlay]] # Overlay 722
+name = "fxsplash"
+entrypoints = [
+  "fxsplash_entrypoint_0",
+  "fxsplash_entrypoint_1",
+  "fxsplash_entrypoint_2",
+]
+
+[[overlay]] # Overlay 723
+name = "fxgenlist"
+entrypoints = [
+  "fxgenlist_entrypoint_0",
+  "fxgenlist_entrypoint_1",
+  "fxgenlist_entrypoint_2",
+  "fxgenlist_entrypoint_3",
+]
+
+[[overlay]] # Overlay 724
+name = "fxkern"
+entrypoints = [
+  "fxkern_entrypoint_0",
+  "fxkern_entrypoint_1",
+  "fxkern_entrypoint_2",
+  "fxkern_entrypoint_3",
+]
+
+[[overlay]] # Overlay 725
+name = "fxdialog"
+entrypoints = [
+  "fxdialog_entrypoint_0",
+  "fxdialog_entrypoint_1",
+  "fxdialog_entrypoint_2",
+  "fxdialog_entrypoint_3",
+  "fxdialog_entrypoint_4",
+]
+
+[[overlay]] # Overlay 726
+name = "gsworldDll"
+entrypoints = [
+  "gsworldDll_entrypoint_0",
+  "gsworldDll_entrypoint_1",
+  "gsworldDll_entrypoint_2",
+  "gsworldDll_entrypoint_3",
+  "gsworldDll_entrypoint_4",
+]
+
+[[overlay]] # Overlay 727
+name = "gspropsDll"
+entrypoints = [
+  "gspropsDll_entrypoint_0",
+  "gspropsDll_entrypoint_1",
+  "gspropsDll_entrypoint_2",
+  "gspropsDll_entrypoint_3",
+  "gspropsDll_entrypoint_4",
+]
+
+[[overlay]] # Overlay 728
+name = "gspropctrl"
+entrypoints = [
+  "gspropctrl_entrypoint_0",
+  "gspropctrl_entrypoint_1",
+  "gspropctrl_entrypoint_2",
+  "gspropctrl_entrypoint_3",
+  "gspropctrl_entrypoint_4",
+  "gspropctrl_entrypoint_5",
+  "gspropctrl_entrypoint_6",
+  "gspropctrl_entrypoint_7",
+  "gspropctrl_entrypoint_8",
+  "gspropctrl_entrypoint_9",
+  "gspropctrl_entrypoint_10",
+  "gspropctrl_entrypoint_11",
+  "gspropctrl_entrypoint_12",
+  "gspropctrl_entrypoint_13",
+]
+
+[[overlay]] # Overlay 729
+name = "gspropprop"
+entrypoints = [
+  "gspropprop_entrypoint_0",
+  "gspropprop_entrypoint_1",
+  "gspropprop_entrypoint_2",
+  "gspropprop_entrypoint_3",
+]
+
+[[overlay]] # Overlay 730
+name = "gspropmarker"
+entrypoints = [
+  "gspropmarker_entrypoint_0",
+  "gspropmarker_entrypoint_1",
+  "gspropmarker_entrypoint_2",
+  "gspropmarker_entrypoint_3",
+]
+
+[[overlay]] # Overlay 731
+name = "gsattract"
+entrypoints = [
+  "gsattract_entrypoint_0",
+  "gsattract_entrypoint_1",
+  "gsattract_entrypoint_2",
+  "gsattract_entrypoint_3",
+  "gsattract_entrypoint_4",
+  "gsattract_entrypoint_5",
+]
+
+[[overlay]] # Overlay 732
+name = "gsproplookup"
+entrypoints = [
+  "gsproplookup_entrypoint_0",
+  "gsproplookup_entrypoint_1",
+]
+
+[[overlay]] # Overlay 733
+name = "idbounce"
+entrypoints = [
+  "idbounce_entrypoint_0",
+  "idbounce_entrypoint_1",
+  "idbounce_entrypoint_2",
+  "idbounce_entrypoint_3",
+  "idbounce_entrypoint_4",
+  "idbounce_entrypoint_5",
+  "idbounce_entrypoint_6",
+  "idbounce_entrypoint_7",
+]
+
+[[overlay]] # Overlay 734
+name = "idglow"
+entrypoints = [
+  "idglow_entrypoint_0",
+  "idglow_entrypoint_1",
+  "idglow_entrypoint_2",
+  "idglow_entrypoint_3",
+]
+
+[[overlay]] # Overlay 735
+name = "idlight"
+entrypoints = [
+  "idlight_entrypoint_0",
+  "idlight_entrypoint_1",
+  "idlight_entrypoint_2",
+  "idlight_entrypoint_3",
+]
+
+[[overlay]] # Overlay 736
+name = "idwave"
+entrypoints = [
+  "idwave_entrypoint_0",
+  "idwave_entrypoint_1",
+  "idwave_entrypoint_2",
+  "idwave_entrypoint_3",
+]
+
+[[overlay]] # Overlay 737
+name = "idflash"
+entrypoints = [
+  "idflash_entrypoint_0",
+  "idflash_entrypoint_1",
+  "idflash_entrypoint_2",
+  "idflash_entrypoint_3",
+]
+
+[[overlay]] # Overlay 738
+name = "idflasha"
+entrypoints = [
+  "idflasha_entrypoint_0",
+  "idflasha_entrypoint_1",
+  "idflasha_entrypoint_2",
+  "idflasha_entrypoint_3",
+  "idflasha_entrypoint_4",
+]
+
+[[overlay]] # Overlay 739
+name = "idglowa"
+entrypoints = [
+  "idglowa_entrypoint_0",
+  "idglowa_entrypoint_1",
+  "idglowa_entrypoint_2",
+  "idglowa_entrypoint_3",
+  "idglowa_entrypoint_4",
+]
+
+[[overlay]] # Overlay 740
+name = "idscroll"
+entrypoints = [
+  "idscroll_entrypoint_0",
+  "idscroll_entrypoint_1",
+  "idscroll_entrypoint_2",
+  "idscroll_entrypoint_3",
+]
+
+[[overlay]] # Overlay 741
+name = "idflashbaddie"
+entrypoints = [
+  "idflashbaddie_entrypoint_0",
+  "idflashbaddie_entrypoint_1",
+  "idflashbaddie_entrypoint_2",
+  "idflashbaddie_entrypoint_3",
+]
+
+[[overlay]] # Overlay 742
+name = "idtwinkle"
+entrypoints = [
+  "idtwinkle_entrypoint_0",
+  "idtwinkle_entrypoint_1",
+  "idtwinkle_entrypoint_2",
+  "idtwinkle_entrypoint_3",
+  "idtwinkle_entrypoint_4",
+  "idtwinkle_entrypoint_5",
+  "idtwinkle_entrypoint_6",
+]
+
+[[overlay]] # Overlay 743
+name = "idflame"
+entrypoints = [
+  "idflame_entrypoint_0",
+  "idflame_entrypoint_1",
+  "idflame_entrypoint_2",
+  "idflame_entrypoint_3",
+  "idflame_entrypoint_4",
+]
+
+[[overlay]] # Overlay 744
+name = "idwater"
+entrypoints = [
+  "idwater_entrypoint_0",
+  "idwater_entrypoint_1",
+  "idwater_entrypoint_2",
+  "idwater_entrypoint_3",
+  "idwater_entrypoint_4",
+]
+
+[[overlay]] # Overlay 745
+name = "idwibble"
+entrypoints = [
+  "idwibble_entrypoint_0",
+  "idwibble_entrypoint_1",
+  "idwibble_entrypoint_2",
+  "idwibble_entrypoint_3",
+  "idwibble_entrypoint_4",
+  "idwibble_entrypoint_5",
+]
+
+[[overlay]] # Overlay 746
+name = "idtwinklea"
+entrypoints = [
+  "idtwinklea_entrypoint_0",
+  "idtwinklea_entrypoint_1",
+  "idtwinklea_entrypoint_2",
+  "idtwinklea_entrypoint_3",
+]
+
+[[overlay]] # Overlay 747
+name = "idtwinklecolour"
+entrypoints = [
+  "idtwinklecolour_entrypoint_0",
+  "idtwinklecolour_entrypoint_1",
+  "idtwinklecolour_entrypoint_2",
+  "idtwinklecolour_entrypoint_3",
+  "idtwinklecolour_entrypoint_4",
+  "idtwinklecolour_entrypoint_5",
+]
+
+[[overlay]] # Overlay 748
+name = "idworld"
+entrypoints = [
+  "idworld_entrypoint_0",
+  "idworld_entrypoint_1",
+  "idworld_entrypoint_2",
+  "idworld_entrypoint_3",
+  "idworld_entrypoint_4",
+  "idworld_entrypoint_5",
+]
+
+[[overlay]] # Overlay 749
+name = "idworldmake"
+entrypoints = [
+  "idworldmake_entrypoint_0",
+  "idworldmake_entrypoint_1",
+  "idworldmake_entrypoint_2",
+  "idworldmake_entrypoint_3",
+  "idworldmake_entrypoint_4",
+  "idworldmake_entrypoint_5",
+  "idworldmake_entrypoint_6",
+  "idworldmake_entrypoint_7",
+]
+
+[[overlay]] # Overlay 750
+name = "inantab"
+entrypoints = [
+  "inantab_entrypoint_0",
+  "inantab_entrypoint_1",
+  "inantab_entrypoint_2",
+  "inantab_entrypoint_3",
+  "inantab_entrypoint_4",
+]
+
+[[overlay]] # Overlay 751
+name = "indrv_lights"
+entrypoints = [
+  "indrv_lights_entrypoint_0",
+]
+
+[[overlay]] # Overlay 752
+name = "indrv_fx"
+entrypoints = [
+  "indrv_fx_entrypoint_0",
+]
+
+[[overlay]] # Overlay 753
+name = "indrv_audio"
+entrypoints = [
+  "indrv_audio_entrypoint_0",
+]
+
+[[overlay]] # Overlay 754
+name = "mlwave"
+entrypoints = [
+  "mlwave_entrypoint_0",
+  "mlwave_entrypoint_1",
+  "mlwave_entrypoint_2",
+  "mlwave_entrypoint_3",
+  "mlwave_entrypoint_4",
+  "mlwave_entrypoint_5",
+  "mlwave_entrypoint_6",
+  "mlwave_entrypoint_7",
+  "mlwave_entrypoint_8",
+  "mlwave_entrypoint_9",
+]
+
+[[overlay]] # Overlay 755
+name = "vplight"
+entrypoints = [
+  "vplight_entrypoint_0",
+  "vplight_entrypoint_1",
+  "vplight_entrypoint_2",
+  "vplight_entrypoint_3",
+  "vplight_entrypoint_4",
+]
+
+[[overlay]] # Overlay 756
+name = "vpwibble"
+entrypoints = [
+  "vpwibble_entrypoint_0",
+  "vpwibble_entrypoint_1",
+  "vpwibble_entrypoint_2",
+  "vpwibble_entrypoint_3",
+]
+
+[[overlay]] # Overlay 757
+name = "vpflicker"
+entrypoints = [
+  "vpflicker_entrypoint_0",
+  "vpflicker_entrypoint_1",
+  "vpflicker_entrypoint_2",
+  "vpflicker_entrypoint_3",
+]
+
+[[overlay]] # Overlay 758
+name = "vpglow"
+entrypoints = [
+  "vpglow_entrypoint_0",
+  "vpglow_entrypoint_1",
+  "vpglow_entrypoint_2",
+  "vpglow_entrypoint_3",
+]
+
+[[overlay]] # Overlay 759
+name = "vpscroll"
+entrypoints = [
+  "vpscroll_entrypoint_0",
+  "vpscroll_entrypoint_1",
+  "vpscroll_entrypoint_2",
+  "vpscroll_entrypoint_3",
+]
+
+[[overlay]] # Overlay 760
+name = "rtlight"
+entrypoints = [
+  "rtlight_entrypoint_0",
+  "rtlight_entrypoint_1",
+  "rtlight_entrypoint_2",
+]
+
+[[overlay]] # Overlay 761
+name = "vpmodule"
+entrypoints = [
+  "vpmodule_entrypoint_0",
+  "vpmodule_entrypoint_1",
+  "vpmodule_entrypoint_2",
+  "vpmodule_entrypoint_3",
+  "vpmodule_entrypoint_4",
+]
+
+[[overlay]] # Overlay 762
+name = "mlspline"
+entrypoints = [
+  "mlspline_entrypoint_0",
+  "mlspline_entrypoint_1",
+  "mlspline_entrypoint_2",
+  "mlspline_entrypoint_3",
+  "mlspline_entrypoint_4",
+  "mlspline_entrypoint_5",
+  "mlspline_entrypoint_6",
+  "mlspline_entrypoint_7",
+  "mlspline_entrypoint_8",
+  "mlspline_entrypoint_9",
+  "mlspline_entrypoint_10",
+  "mlspline_entrypoint_11",
+  "mlspline_entrypoint_12",
+  "mlspline_entrypoint_13",
+]
+
+[[overlay]] # Overlay 763
+name = "ncbastring"
+entrypoints = [
+  "ncbastring_entrypoint_0",
+  "ncbastring_entrypoint_1",
+  "ncbastring_entrypoint_2",
+  "ncbastring_entrypoint_3",
+  "ncbastring_entrypoint_4",
+]
+
+[[overlay]] # Overlay 764
+name = "ncbaspiral"
+entrypoints = [
+  "ncbaspiral_entrypoint_0",
+  "ncbaspiral_entrypoint_1",
+  "ncbaspiral_entrypoint_2",
+  "ncbaspiral_entrypoint_3",
+  "ncbaspiral_entrypoint_4",
+  "ncbaspiral_entrypoint_5",
+]
+
+[[overlay]] # Overlay 765
+name = "ncbapan"
+entrypoints = [
+  "ncbapan_entrypoint_0",
+  "ncbapan_entrypoint_1",
+  "ncbapan_entrypoint_2",
+  "ncbapan_entrypoint_3",
+]
+
+[[overlay]] # Overlay 766
+name = "ncbaledge"
+entrypoints = [
+  "ncbaledge_entrypoint_0",
+  "ncbaledge_entrypoint_1",
+  "ncbaledge_entrypoint_2",
+]
+
+[[overlay]] # Overlay 767
+name = "ncfixposrot"
+entrypoints = [
+  "ncfixposrot_entrypoint_0",
+  "ncfixposrot_entrypoint_1",
+  "ncfixposrot_entrypoint_2",
+  "ncfixposrot_entrypoint_3",
+  "ncfixposrot_entrypoint_4",
+  "ncfixposrot_entrypoint_5",
+  "ncfixposrot_entrypoint_6",
+  "ncfixposrot_entrypoint_7",
+  "ncfixposrot_entrypoint_8",
+  "ncfixposrot_entrypoint_9",
+  "ncfixposrot_entrypoint_10",
+  "ncfixposrot_entrypoint_11",
+  "ncfixposrot_entrypoint_12",
+  "ncfixposrot_entrypoint_13",
+  "ncfixposrot_entrypoint_14",
+]
+
+[[overlay]] # Overlay 768
+name = "ncbaclimb"
+entrypoints = [
+  "ncbaclimb_entrypoint_0",
+  "ncbaclimb_entrypoint_1",
+  "ncbaclimb_entrypoint_2",
+  "ncbaclimb_entrypoint_3",
+]
+
+[[overlay]] # Overlay 769
+name = "ncbadie"
+entrypoints = [
+  "ncbadie_entrypoint_0",
+  "ncbadie_entrypoint_1",
+  "ncbadie_entrypoint_2",
+  "ncbadie_entrypoint_3",
+  "ncbadie_entrypoint_4",
+]
+
+[[overlay]] # Overlay 770
+name = "ncbadive"
+entrypoints = [
+  "ncbadive_entrypoint_0",
+  "ncbadive_entrypoint_1",
+  "ncbadive_entrypoint_2",
+  "ncbadive_entrypoint_3",
+  "ncbadive_entrypoint_4",
+]
+
+[[overlay]] # Overlay 771
+name = "ncbafly"
+entrypoints = [
+  "ncbafly_entrypoint_0",
+  "ncbafly_entrypoint_1",
+  "ncbafly_entrypoint_2",
+  "ncbafly_entrypoint_3",
+  "ncbafly_entrypoint_4",
+  "ncbafly_entrypoint_5",
+]
+
+[[overlay]] # Overlay 772
+name = "ncbajig"
+entrypoints = [
+  "ncbajig_entrypoint_0",
+  "ncbajig_entrypoint_1",
+  "ncbajig_entrypoint_2",
+  "ncbajig_entrypoint_3",
+]
+
+[[overlay]] # Overlay 773
+name = "ncbaswim"
+entrypoints = [
+  "ncbaswim_entrypoint_0",
+  "ncbaswim_entrypoint_1",
+  "ncbaswim_entrypoint_2",
+  "ncbaswim_entrypoint_3",
+]
+
+[[overlay]] # Overlay 774
+name = "ncbafixpos"
+entrypoints = [
+  "ncbafixpos_entrypoint_0",
+  "ncbafixpos_entrypoint_1",
+  "ncbafixpos_entrypoint_2",
+  "ncbafixpos_entrypoint_3",
+  "ncbafixpos_entrypoint_4",
+]
+
+[[overlay]] # Overlay 775
+name = "ncbadolly"
+entrypoints = [
+  "ncbadolly_entrypoint_0",
+  "ncbadolly_entrypoint_1",
+  "ncbadolly_entrypoint_2",
+  "ncbadolly_entrypoint_3",
+  "ncbadolly_entrypoint_4",
+]
+
+[[overlay]] # Overlay 776
+name = "ncbaspline"
+entrypoints = [
+  "ncbaspline_entrypoint_0",
+  "ncbaspline_entrypoint_1",
+  "ncbaspline_entrypoint_2",
+  "ncbaspline_entrypoint_3",
+  "ncbaspline_entrypoint_4",
+  "ncbaspline_entrypoint_5",
+  "ncbaspline_entrypoint_6",
+  "ncbaspline_entrypoint_7",
+  "ncbaspline_entrypoint_8",
+]
+
+[[overlay]] # Overlay 777
+name = "ncba1p"
+entrypoints = [
+  "ncba1p_entrypoint_0",
+  "ncba1p_entrypoint_1",
+  "ncba1p_entrypoint_2",
+  "ncba1p_entrypoint_3",
+  "ncba1p_entrypoint_4",
+  "ncba1p_entrypoint_5",
+  "ncba1p_entrypoint_6",
+  "ncba1p_entrypoint_7",
+  "ncba1p_entrypoint_8",
+  "ncba1p_entrypoint_9",
+  "ncba1p_entrypoint_10",
+  "ncba1p_entrypoint_11",
+  "ncba1p_entrypoint_12",
+  "ncba1p_entrypoint_13",
+]
+
+[[overlay]] # Overlay 778
+name = "ncstart"
+entrypoints = [
+  "ncstart_entrypoint_0",
+]
+
+[[overlay]] # Overlay 779
+name = "ncbadeflect"
+entrypoints = [
+  "ncbadeflect_entrypoint_0",
+  "ncbadeflect_entrypoint_1",
+]
+
+[[overlay]] # Overlay 780
+name = "ncbawaypoint"
+entrypoints = [
+  "ncbawaypoint_entrypoint_0",
+  "ncbawaypoint_entrypoint_1",
+  "ncbawaypoint_entrypoint_2",
+  "ncbawaypoint_entrypoint_3",
+]
+
+[[overlay]] # Overlay 781
+name = "ncbapivot"
+entrypoints = [
+  "ncbapivot_entrypoint_0",
+  "ncbapivot_entrypoint_1",
+  "ncbapivot_entrypoint_2",
+  "ncbapivot_entrypoint_3",
+]
+
+[[overlay]] # Overlay 782
+name = "ncbatarget"
+entrypoints = [
+  "ncbatarget_entrypoint_0",
+  "ncbatarget_entrypoint_1",
+  "ncbatarget_entrypoint_2",
+  "ncbatarget_entrypoint_3",
+  "ncbatarget_entrypoint_4",
+  "ncbatarget_entrypoint_5",
+]
+
+[[overlay]] # Overlay 783
+name = "ncpod"
+entrypoints = [
+  "ncpod_entrypoint_0",
+  "ncpod_entrypoint_1",
+  "ncpod_entrypoint_2",
+  "ncpod_entrypoint_3",
+  "ncpod_entrypoint_4",
+  "ncpod_entrypoint_5",
+  "ncpod_entrypoint_6",
+  "ncpod_entrypoint_7",
+  "ncpod_entrypoint_8",
+  "ncpod_entrypoint_9",
+  "ncpod_entrypoint_10",
+  "ncpod_entrypoint_11",
+  "ncpod_entrypoint_12",
+  "ncpod_entrypoint_13",
+  "ncpod_entrypoint_14",
+  "ncpod_entrypoint_15",
+  "ncpod_entrypoint_16",
+  "ncpod_entrypoint_17",
+  "ncpod_entrypoint_18",
+  "ncpod_entrypoint_19",
+  "ncpod_entrypoint_20",
+  "ncpod_entrypoint_21",
+  "ncpod_entrypoint_22",
+  "ncpod_entrypoint_23",
+  "ncpod_entrypoint_24",
+  "ncpod_entrypoint_25",
+  "ncpod_entrypoint_26",
+  "ncpod_entrypoint_27",
+  "ncpod_entrypoint_28",
+  "ncpod_entrypoint_29",
+  "ncpod_entrypoint_30",
+  "ncpod_entrypoint_31",
+  "ncpod_entrypoint_32",
+  "ncpod_entrypoint_33",
+]
+
+[[overlay]] # Overlay 784
+name = "ncpoddialog"
+entrypoints = [
+  "ncpoddialog_entrypoint_0",
+  "ncpoddialog_entrypoint_1",
+  "ncpoddialog_entrypoint_2",
+  "ncpoddialog_entrypoint_3",
+  "ncpoddialog_entrypoint_4",
+  "ncpoddialog_entrypoint_5",
+  "ncpoddialog_entrypoint_6",
+  "ncpoddialog_entrypoint_7",
+  "ncpoddialog_entrypoint_8",
+  "ncpoddialog_entrypoint_9",
+  "ncpoddialog_entrypoint_10",
+  "ncpoddialog_entrypoint_11",
+]
+
+[[overlay]] # Overlay 785
+name = "ncpoducam"
+entrypoints = [
+  "ncpoducam_entrypoint_0",
+  "ncpoducam_entrypoint_1",
+  "ncpoducam_entrypoint_2",
+  "ncpoducam_entrypoint_3",
+  "ncpoducam_entrypoint_4",
+  "ncpoducam_entrypoint_5",
+  "ncpoducam_entrypoint_6",
+  "ncpoducam_entrypoint_7",
+  "ncpoducam_entrypoint_8",
+  "ncpoducam_entrypoint_9",
+  "ncpoducam_entrypoint_10",
+  "ncpoducam_entrypoint_11",
+]
+
+[[overlay]] # Overlay 786
+name = "ncpodfixpos"
+entrypoints = [
+  "ncpodfixpos_entrypoint_0",
+  "ncpodfixpos_entrypoint_1",
+  "ncpodfixpos_entrypoint_2",
+  "ncpodfixpos_entrypoint_3",
+  "ncpodfixpos_entrypoint_4",
+  "ncpodfixpos_entrypoint_5",
+  "ncpodfixpos_entrypoint_6",
+]
+
+[[overlay]] # Overlay 787
+name = "ncbabee"
+entrypoints = [
+  "ncbabee_entrypoint_0",
+  "ncbabee_entrypoint_1",
+  "ncbabee_entrypoint_2",
+]
+
+[[overlay]] # Overlay 788
+name = "ncbaglide"
+entrypoints = [
+  "ncbaglide_entrypoint_0",
+  "ncbaglide_entrypoint_1",
+  "ncbaglide_entrypoint_2",
+]
+
+[[overlay]] # Overlay 789
+name = "ncbasub"
+entrypoints = [
+  "ncbasub_entrypoint_0",
+  "ncbasub_entrypoint_1",
+  "ncbasub_entrypoint_2",
+]
+
+[[overlay]] # Overlay 790
+name = "ncbasuck"
+entrypoints = [
+  "ncbasuck_entrypoint_0",
+  "ncbasuck_entrypoint_1",
+  "ncbasuck_entrypoint_2",
+]
+
+[[overlay]] # Overlay 791
+name = "ncbakaztorp"
+entrypoints = [
+  "ncbakaztorp_entrypoint_0",
+  "ncbakaztorp_entrypoint_1",
+  "ncbakaztorp_entrypoint_2",
+]
+
+[[overlay]] # Overlay 792
+name = "scradar"
+entrypoints = [
+  "scradar_entrypoint_0",
+  "scradar_entrypoint_1",
+]
+
+[[overlay]] # Overlay 793
+name = "gemarkersDll"
+entrypoints = [
+  "gemarkersDll_entrypoint_0",
+  "gemarkersDll_entrypoint_1",
+]
+
+[[overlay]] # Overlay 794
+name = "suexpressjoint"
+entrypoints = [
+  "suexpressjoint_entrypoint_0",
+  "suexpressjoint_entrypoint_1",
+  "suexpressjoint_entrypoint_2",
+  "suexpressjoint_entrypoint_3",
+  "suexpressjoint_entrypoint_4",
+]
+
+[[overlay]] # Overlay 795
+name = "suexpression"
+entrypoints = [
+  "suexpression_entrypoint_0",
+  "suexpression_entrypoint_1",
+  "suexpression_entrypoint_2",
+  "suexpression_entrypoint_3",
+  "suexpression_entrypoint_4",
+  "suexpression_entrypoint_5",
+  "suexpression_entrypoint_6",
+  "suexpression_entrypoint_7",
+  "suexpression_entrypoint_8",
+  "suexpression_entrypoint_9",
+  "suexpression_entrypoint_10",
+  "suexpression_entrypoint_11",
+  "suexpression_entrypoint_12",
+  "suexpression_entrypoint_13",
+  "suexpression_entrypoint_14",
+  "suexpression_entrypoint_15",
+  "suexpression_entrypoint_16",
+  "suexpression_entrypoint_17",
+  "suexpression_entrypoint_18",
+  "suexpression_entrypoint_19",
+  "suexpression_entrypoint_20",
+]
+
+[[overlay]] # Overlay 796
+name = "subaddie3d"
+entrypoints = [
+  "subaddie3d_entrypoint_0",
+  "subaddie3d_entrypoint_1",
+]
+
+[[overlay]] # Overlay 797
+name = "sumumbofx"
+entrypoints = [
+  "sumumbofx_entrypoint_0",
+  "sumumbofx_entrypoint_1",
+  "sumumbofx_entrypoint_2",
+  "sumumbofx_entrypoint_3",
+  "sumumbofx_entrypoint_4",
+  "sumumbofx_entrypoint_5",
+  "sumumbofx_entrypoint_6",
+  "sumumbofx_entrypoint_7",
+  "sumumbofx_entrypoint_8",
+  "sumumbofx_entrypoint_9",
+  "sumumbofx_entrypoint_10",
+  "sumumbofx_entrypoint_11",
+  "sumumbofx_entrypoint_12",
+  "sumumbofx_entrypoint_13",
+  "sumumbofx_entrypoint_14",
+  "sumumbofx_entrypoint_15",
+  "sumumbofx_entrypoint_16",
+  "sumumbofx_entrypoint_17",
+  "sumumbofx_entrypoint_18",
+  "sumumbofx_entrypoint_19",
+  "sumumbofx_entrypoint_20",
+  "sumumbofx_entrypoint_21",
+  "sumumbofx_entrypoint_22",
+  "sumumbofx_entrypoint_23",
+  "sumumbofx_entrypoint_24",
+  "sumumbofx_entrypoint_25",
+  "sumumbofx_entrypoint_26",
+  "sumumbofx_entrypoint_27",
+  "sumumbofx_entrypoint_28",
+]
+
+[[overlay]] # Overlay 798
+name = "suflamefx"
+entrypoints = [
+  "suflamefx_entrypoint_0",
+  "suflamefx_entrypoint_1",
+  "suflamefx_entrypoint_2",
+  "suflamefx_entrypoint_3",
+  "suflamefx_entrypoint_4",
+  "suflamefx_entrypoint_5",
+  "suflamefx_entrypoint_6",
+  "suflamefx_entrypoint_7",
+]
+
+[[overlay]] # Overlay 799
+name = "sumultiscore"
+entrypoints = [
+  "sumultiscore_entrypoint_0",
+  "sumultiscore_entrypoint_1",
+  "sumultiscore_entrypoint_2",
+  "sumultiscore_entrypoint_3",
+  "sumultiscore_entrypoint_4",
+  "sumultiscore_entrypoint_5",
+  "sumultiscore_entrypoint_6",
+  "sumultiscore_entrypoint_7",
+  "sumultiscore_entrypoint_8",
+  "sumultiscore_entrypoint_9",
+  "sumultiscore_entrypoint_10",
+  "sumultiscore_entrypoint_11",
+  "sumultiscore_entrypoint_12",
+]
+
+[[overlay]] # Overlay 800
+name = "sumole"
+entrypoints = [
+  "sumole_entrypoint_0",
+  "sumole_entrypoint_1",
+  "sumole_entrypoint_2",
+  "sumole_entrypoint_3",
+  "sumole_entrypoint_4",
+  "sumole_entrypoint_5",
+  "sumole_entrypoint_6",
+  "sumole_entrypoint_7",
+  "sumole_entrypoint_8",
+  "sumole_entrypoint_9",
+  "sumole_entrypoint_10",
+  "sumole_entrypoint_11",
+  "sumole_entrypoint_12",
+  "sumole_entrypoint_13",
+  "sumole_entrypoint_14",
+  "sumole_entrypoint_15",
+  "sumole_entrypoint_16",
+  "sumole_entrypoint_17",
+  "sumole_entrypoint_18",
+  "sumole_entrypoint_19",
+  "sumole_entrypoint_20",
+  "sumole_entrypoint_21",
+]
+
+[[overlay]] # Overlay 801
+name = "subaddiebounce"
+entrypoints = [
+  "subaddiebounce_entrypoint_0",
+  "subaddiebounce_entrypoint_1",
+  "subaddiebounce_entrypoint_2",
+]
+
+[[overlay]] # Overlay 802
+name = "sukickball"
+entrypoints = [
+  "sukickball_entrypoint_0",
+  "sukickball_entrypoint_1",
+  "sukickball_entrypoint_2",
+  "sukickball_entrypoint_3",
+  "sukickball_entrypoint_4",
+  "sukickball_entrypoint_5",
+  "sukickball_entrypoint_6",
+  "sukickball_entrypoint_7",
+  "sukickball_entrypoint_8",
+  "sukickball_entrypoint_9",
+  "sukickball_entrypoint_10",
+  "sukickball_entrypoint_11",
+  "sukickball_entrypoint_12",
+  "sukickball_entrypoint_13",
+  "sukickball_entrypoint_14",
+  "sukickball_entrypoint_15",
+  "sukickball_entrypoint_16",
+  "sukickball_entrypoint_17",
+  "sukickball_entrypoint_18",
+  "sukickball_entrypoint_19",
+]
+
+[[overlay]] # Overlay 803
+name = "suexpressmorph"
+entrypoints = [
+  "suexpressmorph_entrypoint_0",
+  "suexpressmorph_entrypoint_1",
+  "suexpressmorph_entrypoint_2",
+  "suexpressmorph_entrypoint_3",
+  "suexpressmorph_entrypoint_4",
+  "suexpressmorph_entrypoint_5",
+]
+
+[[overlay]] # Overlay 804
+name = "sufreezy"
+entrypoints = [
+  "sufreezy_entrypoint_0",
+  "sufreezy_entrypoint_1",
+  "sufreezy_entrypoint_2",
+  "sufreezy_entrypoint_3",
+  "sufreezy_entrypoint_4",
+  "sufreezy_entrypoint_5",
+  "sufreezy_entrypoint_6",
+  "sufreezy_entrypoint_7",
+]
+
+[[overlay]] # Overlay 805
+name = "subaddiejoy"
+entrypoints = [
+  "subaddiejoy_entrypoint_0",
+  "subaddiejoy_entrypoint_1",
+  "subaddiejoy_entrypoint_2",
+  "subaddiejoy_entrypoint_3",
+  "subaddiejoy_entrypoint_4",
+  "subaddiejoy_entrypoint_5",
+  "subaddiejoy_entrypoint_6",
+  "subaddiejoy_entrypoint_7",
+  "subaddiejoy_entrypoint_8",
+  "subaddiejoy_entrypoint_9",
+  "subaddiejoy_entrypoint_10",
+]
+
+[[overlay]] # Overlay 806
+name = "subaddiedraw25d"
+entrypoints = [
+  "subaddiedraw25d_entrypoint_0",
+  "subaddiedraw25d_entrypoint_1",
+  "subaddiedraw25d_entrypoint_2",
+  "subaddiedraw25d_entrypoint_3",
+]
+
+[[overlay]] # Overlay 807
+name = "subaddiefind"
+entrypoints = [
+  "subaddiefind_entrypoint_0",
+  "subaddiefind_entrypoint_1",
+  "subaddiefind_entrypoint_2",
+  "subaddiefind_entrypoint_3",
+  "subaddiefind_entrypoint_4",
+  "subaddiefind_entrypoint_5",
+  "subaddiefind_entrypoint_6",
+  "subaddiefind_entrypoint_7",
+  "subaddiefind_entrypoint_8",
+  "subaddiefind_entrypoint_9",
+  "subaddiefind_entrypoint_10",
+  "subaddiefind_entrypoint_11",
+  "subaddiefind_entrypoint_12",
+  "subaddiefind_entrypoint_13",
+]
+
+[[overlay]] # Overlay 808
+name = "subaddiefade"
+entrypoints = [
+  "subaddiefade_entrypoint_0",
+  "subaddiefade_entrypoint_1",
+  "subaddiefade_entrypoint_2",
+  "subaddiefade_entrypoint_3",
+  "subaddiefade_entrypoint_4",
+  "subaddiefade_entrypoint_5",
+  "subaddiefade_entrypoint_6",
+  "subaddiefade_entrypoint_7",
+  "subaddiefade_entrypoint_8",
+  "subaddiefade_entrypoint_9",
+  "subaddiefade_entrypoint_10",
+  "subaddiefade_entrypoint_11",
+  "subaddiefade_entrypoint_12",
+  "subaddiefade_entrypoint_13",
+  "subaddiefade_entrypoint_14",
+]
+
+[[overlay]] # Overlay 809
+name = "subaddieaudioquick"
+entrypoints = [
+  "subaddieaudioquick_entrypoint_0",
+  "subaddieaudioquick_entrypoint_1",
+  "subaddieaudioquick_entrypoint_2",
+  "subaddieaudioquick_entrypoint_3",
+  "subaddieaudioquick_entrypoint_4",
+]
+
+[[overlay]] # Overlay 810
+name = "subaddieaudioloop"
+entrypoints = [
+  "subaddieaudioloop_entrypoint_0",
+  "subaddieaudioloop_entrypoint_1",
+  "subaddieaudioloop_entrypoint_2",
+  "subaddieaudioloop_entrypoint_3",
+  "subaddieaudioloop_entrypoint_4",
+  "subaddieaudioloop_entrypoint_5",
+  "subaddieaudioloop_entrypoint_6",
+  "subaddieaudioloop_entrypoint_7",
+  "subaddieaudioloop_entrypoint_8",
+]
+
+[[overlay]] # Overlay 811
+name = "suspline"
+entrypoints = [
+  "suspline_entrypoint_0",
+  "suspline_entrypoint_1",
+  "suspline_entrypoint_2",
+  "suspline_entrypoint_3",
+  "suspline_entrypoint_4",
+  "suspline_entrypoint_5",
+  "suspline_entrypoint_6",
+  "suspline_entrypoint_7",
+  "suspline_entrypoint_8",
+  "suspline_entrypoint_9",
+  "suspline_entrypoint_10",
+  "suspline_entrypoint_11",
+  "suspline_entrypoint_12",
+  "suspline_entrypoint_13",
+  "suspline_entrypoint_14",
+  "suspline_entrypoint_15",
+  "suspline_entrypoint_16",
+  "suspline_entrypoint_17",
+  "suspline_entrypoint_18",
+  "suspline_entrypoint_19",
+  "suspline_entrypoint_20",
+]
+
+[[overlay]] # Overlay 812
+name = "susplinet"
+entrypoints = [
+  "susplinet_entrypoint_0",
+  "susplinet_entrypoint_1",
+  "susplinet_entrypoint_2",
+  "susplinet_entrypoint_3",
+  "susplinet_entrypoint_4",
+  "susplinet_entrypoint_5",
+  "susplinet_entrypoint_6",
+  "susplinet_entrypoint_7",
+  "susplinet_entrypoint_8",
+  "susplinet_entrypoint_9",
+  "susplinet_entrypoint_10",
+  "susplinet_entrypoint_11",
+  "susplinet_entrypoint_12",
+  "susplinet_entrypoint_13",
+  "susplinet_entrypoint_14",
+  "susplinet_entrypoint_15",
+  "susplinet_entrypoint_16",
+  "susplinet_entrypoint_17",
+  "susplinet_entrypoint_18",
+  "susplinet_entrypoint_19",
+]
+
+[[overlay]] # Overlay 813
+name = "sucoasterfly"
+entrypoints = [
+  "sucoasterfly_entrypoint_0",
+  "sucoasterfly_entrypoint_1",
+  "sucoasterfly_entrypoint_2",
+  "sucoasterfly_entrypoint_3",
+  "sucoasterfly_entrypoint_4",
+  "sucoasterfly_entrypoint_5",
+  "sucoasterfly_entrypoint_6",
+]
+
+[[overlay]] # Overlay 814
+name = "suchase"
+entrypoints = [
+  "suchase_entrypoint_0",
+  "suchase_entrypoint_1",
+]
+
+[[overlay]] # Overlay 815
+name = "subaddiestore"
+entrypoints = [
+  "subaddiestore_entrypoint_0",
+  "subaddiestore_entrypoint_1",
+]
+
+[[overlay]] # Overlay 816
+name = "sudeflect"
+entrypoints = [
+  "sudeflect_entrypoint_0",
+  "sudeflect_entrypoint_1",
+  "sudeflect_entrypoint_2",
+  "sudeflect_entrypoint_3",
+  "sudeflect_entrypoint_4",
+]
+
+[[overlay]] # Overlay 817
+name = "subaddiesect"
+entrypoints = [
+  "subaddiesect_entrypoint_0",
+  "subaddiesect_entrypoint_1",
+  "subaddiesect_entrypoint_2",
+]
+
+[[overlay]] # Overlay 818
+name = "subaddierouteDll"
+entrypoints = [
+  "subaddierouteDll_entrypoint_0",
+  "subaddierouteDll_entrypoint_1",
+  "subaddierouteDll_entrypoint_2",
+  "subaddierouteDll_entrypoint_3",
+  "subaddierouteDll_entrypoint_4",
+  "subaddierouteDll_entrypoint_5",
+  "subaddierouteDll_entrypoint_6",
+  "subaddierouteDll_entrypoint_7",
+  "subaddierouteDll_entrypoint_8",
+  "subaddierouteDll_entrypoint_9",
+]
+
+[[overlay]] # Overlay 819
+name = "subaddievolume"
+entrypoints = [
+  "subaddievolume_entrypoint_0",
+]
+
+[[overlay]] # Overlay 820
+name = "suautobaddies"
+entrypoints = [
+  "suautobaddies_entrypoint_0",
+  "suautobaddies_entrypoint_1",
+  "suautobaddies_entrypoint_2",
+  "suautobaddies_entrypoint_3",
+]
+
+[[overlay]] # Overlay 821
+name = "subaddieitem"
+entrypoints = [
+  "subaddieitem_entrypoint_0",
+  "subaddieitem_entrypoint_1",
+  "subaddieitem_entrypoint_2",
+  "subaddieitem_entrypoint_3",
+]
+
+[[overlay]] # Overlay 822
+name = "subaddiecustomhits"
+entrypoints = [
+  "subaddiecustomhits_entrypoint_0",
+  "subaddiecustomhits_entrypoint_1",
+  "subaddiecustomhits_entrypoint_2",
+  "subaddiecustomhits_entrypoint_3",
+  "subaddiecustomhits_entrypoint_4",
+  "subaddiecustomhits_entrypoint_5",
+]
+
+[[overlay]] # Overlay 823
+name = "subaddielink"
+entrypoints = [
+  "subaddielink_entrypoint_0",
+  "subaddielink_entrypoint_1",
+  "subaddielink_entrypoint_2",
+  "subaddielink_entrypoint_3",
+  "subaddielink_entrypoint_4",
+  "subaddielink_entrypoint_5",
+]
+
+[[overlay]] # Overlay 824
+name = "subaddiefx"
+entrypoints = [
+  "subaddiefx_entrypoint_0",
+  "subaddiefx_entrypoint_1",
+]
+
+[[overlay]] # Overlay 825
+name = "subaddiepalette"
+entrypoints = [
+  "subaddiepalette_entrypoint_0",
+  "subaddiepalette_entrypoint_1",
+  "subaddiepalette_entrypoint_2",
+  "subaddiepalette_entrypoint_3",
+  "subaddiepalette_entrypoint_4",
+]
+
+[[overlay]] # Overlay 826
+name = "subaddiemulti"
+entrypoints = [
+  "subaddiemulti_entrypoint_0",
+  "subaddiemulti_entrypoint_1",
+  "subaddiemulti_entrypoint_2",
+  "subaddiemulti_entrypoint_3",
+  "subaddiemulti_entrypoint_4",
+  "subaddiemulti_entrypoint_5",
+  "subaddiemulti_entrypoint_6",
+]
+
+[[overlay]] # Overlay 827
+name = "subaddiemarker"
+entrypoints = [
+  "subaddiemarker_entrypoint_0",
+  "subaddiemarker_entrypoint_1",
+]
+
+[[overlay]] # Overlay 828
+name = "subaddieskeleton"
+entrypoints = [
+  "subaddieskeleton_entrypoint_0",
+  "subaddieskeleton_entrypoint_1",
+  "subaddieskeleton_entrypoint_2",
+  "subaddieskeleton_entrypoint_3",
+  "subaddieskeleton_entrypoint_4",
+]
+
+[[overlay]] # Overlay 829
+name = "sucoaster"
+entrypoints = [
+  "sucoaster_entrypoint_0",
+  "sucoaster_entrypoint_1",
+  "sucoaster_entrypoint_2",
+  "sucoaster_entrypoint_3",
+  "sucoaster_entrypoint_4",
+  "sucoaster_entrypoint_5",
+  "sucoaster_entrypoint_6",
+  "sucoaster_entrypoint_7",
+  "sucoaster_entrypoint_8",
+  "sucoaster_entrypoint_9",
+  "sucoaster_entrypoint_10",
+  "sucoaster_entrypoint_11",
+  "sucoaster_entrypoint_12",
+  "sucoaster_entrypoint_13",
+  "sucoaster_entrypoint_14",
+  "sucoaster_entrypoint_15",
+  "sucoaster_entrypoint_16",
+  "sucoaster_entrypoint_17",
+  "sucoaster_entrypoint_18",
+  "sucoaster_entrypoint_19",
+  "sucoaster_entrypoint_20",
+  "sucoaster_entrypoint_21",
+  "sucoaster_entrypoint_22",
+]
+
+[[overlay]] # Overlay 830
+name = "subaddiedialog"
+entrypoints = [
+  "subaddiedialog_entrypoint_0",
+  "subaddiedialog_entrypoint_1",
+  "subaddiedialog_entrypoint_2",
+  "subaddiedialog_entrypoint_3",
+  "subaddiedialog_entrypoint_4",
+  "subaddiedialog_entrypoint_5",
+  "subaddiedialog_entrypoint_6",
+  "subaddiedialog_entrypoint_7",
+  "subaddiedialog_entrypoint_8",
+  "subaddiedialog_entrypoint_9",
+  "subaddiedialog_entrypoint_10",
+  "subaddiedialog_entrypoint_11",
+  "subaddiedialog_entrypoint_12",
+  "subaddiedialog_entrypoint_13",
+  "subaddiedialog_entrypoint_14",
+  "subaddiedialog_entrypoint_15",
+  "subaddiedialog_entrypoint_16",
+]
+
+[[overlay]] # Overlay 831
+name = "sucoasterdata"
+entrypoints = [
+  "sucoasterdata_entrypoint_0",
+  "sucoasterdata_entrypoint_1",
+  "sucoasterdata_entrypoint_2",
+  "sucoasterdata_entrypoint_3",
+  "sucoasterdata_entrypoint_4",
+  "sucoasterdata_entrypoint_5",
+]
+
+[[overlay]] # Overlay 832
+name = "sucoasterflydata"
+entrypoints = [
+  "sucoasterflydata_entrypoint_0",
+  "sucoasterflydata_entrypoint_1",
+  "sucoasterflydata_entrypoint_2",
+  "sucoasterflydata_entrypoint_3",
+  "sucoasterflydata_entrypoint_4",
+  "sucoasterflydata_entrypoint_5",
+]
+
+[[overlay]] # Overlay 833
+name = "sudialog"
+entrypoints = [
+  "sudialog_entrypoint_0",
+]
+
+[[overlay]] # Overlay 834
+name = "susubgame"
+entrypoints = [
+  "susubgame_entrypoint_0",
+  "susubgame_entrypoint_1",
+  "susubgame_entrypoint_2",
+  "susubgame_entrypoint_3",
+  "susubgame_entrypoint_4",
+  "susubgame_entrypoint_5",
+  "susubgame_entrypoint_6",
+  "susubgame_entrypoint_7",
+  "susubgame_entrypoint_8",
+  "susubgame_entrypoint_9",
+  "susubgame_entrypoint_10",
+  "susubgame_entrypoint_11",
+  "susubgame_entrypoint_12",
+]
+
+[[overlay]] # Overlay 835
+name = "sucoasterplayer"
+entrypoints = [
+  "sucoasterplayer_entrypoint_0",
+  "sucoasterplayer_entrypoint_1",
+  "sucoasterplayer_entrypoint_2",
+  "sucoasterplayer_entrypoint_3",
+]
+
+[[overlay]] # Overlay 836
+name = "sucoasterhit"
+entrypoints = [
+  "sucoasterhit_entrypoint_0",
+  "sucoasterhit_entrypoint_1",
+  "sucoasterhit_entrypoint_2",
+]
+
+[[overlay]] # Overlay 837
+name = "sueggmisc"
+entrypoints = [
+  "sueggmisc_entrypoint_0",
+  "sueggmisc_entrypoint_1",
+  "sueggmisc_entrypoint_2",
+  "sueggmisc_entrypoint_3",
+]
+
+[[overlay]] # Overlay 838
+name = "trangler"
+entrypoints = [
+  "trangler_entrypoint_0",
+]
+
+[[overlay]] # Overlay 839
+name = "sutempleboss"
+entrypoints = [
+  "sutempleboss_entrypoint_0",
+]
+
+[[overlay]] # Overlay 840
+name = "sudeathmatch"
+entrypoints = [
+  "sudeathmatch_entrypoint_0",
+]
+
+[[overlay]] # Overlay 841
+name = "suegg"
+entrypoints = [
+  "suegg_entrypoint_0",
+  "suegg_entrypoint_1",
+  "suegg_entrypoint_2",
+  "suegg_entrypoint_3",
+  "suegg_entrypoint_4",
+  "suegg_entrypoint_5",
+  "suegg_entrypoint_6",
+  "suegg_entrypoint_7",
+  "suegg_entrypoint_8",
+  "suegg_entrypoint_9",
+  "suegg_entrypoint_10",
+  "suegg_entrypoint_11",
+  "suegg_entrypoint_12",
+  "suegg_entrypoint_13",
+  "suegg_entrypoint_14",
+  "suegg_entrypoint_15",
+  "suegg_entrypoint_16",
+  "suegg_entrypoint_17",
+  "suegg_entrypoint_18",
+  "suegg_entrypoint_19",
+  "suegg_entrypoint_20",
+  "suegg_entrypoint_21",
+  "suegg_entrypoint_22",
+  "suegg_entrypoint_23",
+]
+
+[[overlay]] # Overlay 842
+name = "sueggmove"
+entrypoints = [
+  "sueggmove_entrypoint_0",
+  "sueggmove_entrypoint_1",
+  "sueggmove_entrypoint_2",
+  "sueggmove_entrypoint_3",
+  "sueggmove_entrypoint_4",
+  "sueggmove_entrypoint_5",
+  "sueggmove_entrypoint_6",
+  "sueggmove_entrypoint_7",
+  "sueggmove_entrypoint_8",
+  "sueggmove_entrypoint_9",
+  "sueggmove_entrypoint_10",
+]
+
+[[overlay]] # Overlay 843
+name = "subaddieDll"
+entrypoints = [
+  "subaddieDll_entrypoint_0",
+  "subaddieDll_entrypoint_1",
+  "subaddieDll_entrypoint_2",
+  "subaddieDll_entrypoint_3",
+  "subaddieDll_entrypoint_4",
+  "subaddieDll_entrypoint_5",
+  "subaddieDll_entrypoint_6",
+  "subaddieDll_entrypoint_7",
+  "subaddieDll_entrypoint_8",
+  "subaddieDll_entrypoint_9",
+  "subaddieDll_entrypoint_10",
+  "subaddieDll_entrypoint_11",
+  "subaddieDll_entrypoint_12",
+]
+
+[[overlay]] # Overlay 844
+name = "subaddietaxi"
+entrypoints = [
+  "subaddietaxi_entrypoint_0",
+  "subaddietaxi_entrypoint_1",
+  "subaddietaxi_entrypoint_2",
+  "subaddietaxi_entrypoint_3",
+  "subaddietaxi_entrypoint_4",
+  "subaddietaxi_entrypoint_5",
+  "subaddietaxi_entrypoint_6",
+  "subaddietaxi_entrypoint_7",
+  "subaddietaxi_entrypoint_8",
+  "subaddietaxi_entrypoint_9",
+  "subaddietaxi_entrypoint_10",
+  "subaddietaxi_entrypoint_11",
+  "subaddietaxi_entrypoint_12",
+  "subaddietaxi_entrypoint_13",
+  "subaddietaxi_entrypoint_14",
+  "subaddietaxi_entrypoint_15",
+  "subaddietaxi_entrypoint_16",
+]
+
+[[overlay]] # Overlay 845
+name = "scinfobar"
+entrypoints = [
+  "scinfobar_entrypoint_0",
+  "scinfobar_entrypoint_1",
+  "scinfobar_entrypoint_2",
+  "scinfobar_entrypoint_3",
+  "scinfobar_entrypoint_4",
+  "scinfobar_entrypoint_5",
+  "scinfobar_entrypoint_6",
+  "scinfobar_entrypoint_7",
+  "scinfobar_entrypoint_8",
+  "scinfobar_entrypoint_9",
+  "scinfobar_entrypoint_10",
+  "scinfobar_entrypoint_11",
+  "scinfobar_entrypoint_12",
+  "scinfobar_entrypoint_13",
+  "scinfobar_entrypoint_14",
+  "scinfobar_entrypoint_15",
+  "scinfobar_entrypoint_16",
+  "scinfobar_entrypoint_17",
+  "scinfobar_entrypoint_18",
+  "scinfobar_entrypoint_19",
+  "scinfobar_entrypoint_20",
+  "scinfobar_entrypoint_21",
+  "scinfobar_entrypoint_22",
+  "scinfobar_entrypoint_23",
+  "scinfobar_entrypoint_24",
+]
+
+[[overlay]] # Overlay 846
+name = "sccustom"
+entrypoints = [
+  "sccustom_entrypoint_0",
+  "sccustom_entrypoint_1",
+  "sccustom_entrypoint_2",
+  "sccustom_entrypoint_3",
+  "sccustom_entrypoint_4",
+  "sccustom_entrypoint_5",
+  "sccustom_entrypoint_6",
+  "sccustom_entrypoint_7",
+]
+
+[[overlay]] # Overlay 847
+name = "seqdat"
+entrypoints = [
+  "seqdat_entrypoint_0",
+]
+
+[[overlay]] # Overlay 848
+name = "suinv"
+entrypoints = [
+  "suinv_entrypoint_0",
+]
+
+[[overlay]] # Overlay 849
+name = "sujiggy"
+entrypoints = [
+  "sujiggy_entrypoint_0",
+  "sujiggy_entrypoint_1",
+  "sujiggy_entrypoint_2",
+  "sujiggy_entrypoint_3",
+  "sujiggy_entrypoint_4",
+  "sujiggy_entrypoint_5",
+  "sujiggy_entrypoint_6",
+  "sujiggy_entrypoint_7",
+  "sujiggy_entrypoint_8",
+  "sujiggy_entrypoint_9",
+  "sujiggy_entrypoint_10",
+  "sujiggy_entrypoint_11",
+  "sujiggy_entrypoint_12",
+  "sujiggy_entrypoint_13",
+  "sujiggy_entrypoint_14",
+  "sujiggy_entrypoint_15",
+  "sujiggy_entrypoint_16",
+  "sujiggy_entrypoint_17",
+  "sujiggy_entrypoint_18",
+  "sujiggy_entrypoint_19",
+  "sujiggy_entrypoint_20",
+  "sujiggy_entrypoint_21",
+  "sujiggy_entrypoint_22",
+  "sujiggy_entrypoint_23",
+  "sujiggy_entrypoint_24",
+  "sujiggy_entrypoint_25",
+]
+
+[[overlay]] # Overlay 850
+name = "sumissilehome"
+entrypoints = [
+  "sumissilehome_entrypoint_0",
+  "sumissilehome_entrypoint_1",
+  "sumissilehome_entrypoint_2",
+  "sumissilehome_entrypoint_3",
+  "sumissilehome_entrypoint_4",
+  "sumissilehome_entrypoint_5",
+  "sumissilehome_entrypoint_6",
+]
+
+[[overlay]] # Overlay 851
+name = "surestart"
+entrypoints = [
+  "surestart_entrypoint_0",
+]
+
+[[overlay]] # Overlay 852
+name = "subaddiezone"
+entrypoints = [
+  "subaddiezone_entrypoint_0",
+  "subaddiezone_entrypoint_1",
+]
+
+[[overlay]] # Overlay 853
+name = "suquiz"
+entrypoints = [
+  "suquiz_entrypoint_0",
+  "suquiz_entrypoint_1",
+  "suquiz_entrypoint_2",
+  "suquiz_entrypoint_3",
+  "suquiz_entrypoint_4",
+  "suquiz_entrypoint_5",
+  "suquiz_entrypoint_6",
+  "suquiz_entrypoint_7",
+  "suquiz_entrypoint_8",
+  "suquiz_entrypoint_9",
+  "suquiz_entrypoint_10",
+  "suquiz_entrypoint_11",
+  "suquiz_entrypoint_12",
+  "suquiz_entrypoint_13",
+  "suquiz_entrypoint_14",
+  "suquiz_entrypoint_15",
+  "suquiz_entrypoint_16",
+  "suquiz_entrypoint_17",
+  "suquiz_entrypoint_18",
+  "suquiz_entrypoint_19",
+  "suquiz_entrypoint_20",
+  "suquiz_entrypoint_21",
+  "suquiz_entrypoint_22",
+  "suquiz_entrypoint_23",
+  "suquiz_entrypoint_24",
+  "suquiz_entrypoint_25",
+  "suquiz_entrypoint_26",
+  "suquiz_entrypoint_27",
+  "suquiz_entrypoint_28",
+]
+
+[[overlay]] # Overlay 854
+name = "sulights"
+entrypoints = [
+  "sulights_entrypoint_0",
+  "sulights_entrypoint_1",
+  "sulights_entrypoint_2",
+  "sulights_entrypoint_3",
+  "sulights_entrypoint_4",
+  "sulights_entrypoint_5",
+  "sulights_entrypoint_6",
+  "sulights_entrypoint_7",
+  "sulights_entrypoint_8",
+  "sulights_entrypoint_9",
+]
+
+[[overlay]] # Overlay 855
+name = "sufade"
+entrypoints = [
+  "sufade_entrypoint_0",
+  "sufade_entrypoint_1",
+  "sufade_entrypoint_2",
+]
+
+[[overlay]] # Overlay 856
+name = "sccustom_big"
+entrypoints = [
+  "sccustom_big_entrypoint_0",
+  "sccustom_big_entrypoint_1",
+  "sccustom_big_entrypoint_2",
+  "sccustom_big_entrypoint_3",
+]
+
+[[overlay]] # Overlay 857
+name = "sccustom_banjo"
+entrypoints = [
+  "sccustom_banjo_entrypoint_0",
+  "sccustom_banjo_entrypoint_1",
+  "sccustom_banjo_entrypoint_2",
+  "sccustom_banjo_entrypoint_3",
+]
+
+[[overlay]] # Overlay 858
+empty = true
+
+[[overlay]] # Overlay 859
+empty = true
+
+[[overlay]] # Overlay 860
+empty = true
+
+[[overlay]] # Overlay 861
+empty = true
+
+[[overlay]] # Overlay 862
+empty = true
+
+[[overlay]] # Overlay 863
+empty = true
+
+[[overlay]] # Overlay 864
+empty = true
+
+[[overlay]] # Overlay 865
+empty = true
+
+[[overlay]] # Overlay 866
+empty = true
+
+[[overlay]] # Overlay 867
+empty = true
+
+[[overlay]] # Overlay 868
+empty = true
+
+[[overlay]] # Overlay 869
+empty = true
+
+[[overlay]] # Overlay 870
+empty = true
+
+[[overlay]] # Overlay 871
+empty = true
+
+[[overlay]] # Overlay 872
+empty = true
+
+[[overlay]] # Overlay 873
+empty = true
+
+[[overlay]] # Overlay 874
+empty = true
+
+[[overlay]] # Overlay 875
+empty = true
+
+[[overlay]] # Overlay 876
+empty = true
+
+[[overlay]] # Overlay 877
+empty = true
+
+[[overlay]] # Overlay 878
+name = "gztrace"
+entrypoints = [
+  "gztrace_entrypoint_0",
+  "gztrace_entrypoint_1",
+]
+
+[[overlay]] # Overlay 879
+empty = true
+
+[[overlay]] # Overlay 880
+name = "gzreg"
+entrypoints = [
+  "gzreg_entrypoint_0",
+  "gzreg_entrypoint_1",
+  "gzreg_entrypoint_2",
+]
+
+[[overlay]] # Overlay 881
+name = "gzthread"
+entrypoints = [
+  "gzthread_entrypoint_0",
+  "gzthread_entrypoint_1",
+]
+
+[[overlay]] # Overlay 882
+name = "gzpublic"
+entrypoints = [
+  "gzpublic_entrypoint_0",
+]
+
+[[overlay]] # Overlay 883
+empty = true
+
+[[overlay]] # Overlay 884
+empty = true
+

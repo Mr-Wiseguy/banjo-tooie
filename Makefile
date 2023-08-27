@@ -85,10 +85,8 @@ $(OVERLAY_HEADER_OBJS): $(BUILD_ROOT)/%.bin.o: $(BUILD_ROOT)/%.s
 $(OVERLAY_TABLE_OBJ): $(OVERLAY_TABLE_SRC)
 	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(OVERLAY_HEADER_SRCS): $(OVERLAY_TABLE_SRC)
-
-$(OVERLAY_TABLE_SRC): $(PRELIM_ELF)
-	tools/overlay_processor $(PRELIM_ELF) $(BUILD_ROOT)/assets
+$(OVERLAY_HEADER_SRCS) $(OVERLAY_TABLE_SRC) &: $(PRELIM_ELF)
+	tools/overlay_processor $(PRELIM_ELF) $(BUILD_ROOT)/assets > ovlproc.txt
 
 $(BIN_OBJS): $(BUILD_ROOT)/%.bin.o: %.bin | $(BIN_BUILD_DIRS)
 	$(OBJCOPY) $(BINOFLAGS) $< $@

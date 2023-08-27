@@ -12,8 +12,8 @@
 
 // Relocate overlays to this address for easier disassembly
 constexpr uint32_t overlay_vram = 0x80800000;
-constexpr bool generate_splat_files = true;
-constexpr bool generate_overlay_toml = true;
+constexpr bool generate_splat_files = false;
+constexpr bool generate_overlay_toml = false;
 constexpr bool generate_any_files = generate_splat_files | generate_overlay_toml;
 
 static inline uint32_t byteswap32(uint32_t in) {
@@ -47,6 +47,13 @@ const char* reloc_names[] = {
     "MIPS_LO16"
 };
 
+enum class Section {
+    Text,
+    Rodata,
+    Data,
+    Bss
+};
+
 struct Symbol {
     std::string ovl_name;
     uint32_t address;
@@ -67,6 +74,7 @@ struct Reloc {
     Symbol symbol;
     uint32_t rom_address;
     RelocType type;
+    Section section;
 };
 
 struct Overlay {
@@ -96,11 +104,12 @@ std::string symbol_name(const Symbol& symbol, SymbolType type) {
     const char* type_name;
     switch (type) {
         case SymbolType::Function:
+        case SymbolType::Text: // Temporary fix that may end up permanent, treat all .text symbols as functions
             type_name = "func";
             break;
-        case SymbolType::Text:
-            type_name = "T";
-            break;
+        // case SymbolType::Text:
+        //     type_name = "T";
+        //     break;
         case SymbolType::Rodata:
             type_name = "R";
             break;
@@ -140,15 +149,45 @@ public:
             rejected_symbols.insert(Symbol{.ovl_name = "badeathmatch", .address = 0x8080054F});
             rejected_symbols.insert(Symbol{.ovl_name = "chlagoonufoint", .address = 0x8080193E});
             rejected_symbols.insert(Symbol{.ovl_name = "gemarkersDll", .address = 0xFFFFFDB8});
+            rejected_symbols.insert(Symbol{.ovl_name = "bsfirstp", .address = 0x8080AC02});
+            rejected_symbols.insert(Symbol{.ovl_name = "chdiggerbossbattery", .address = 0x808002E8});
+            rejected_symbols.insert(Symbol{.ovl_name = "chtransparentfish", .address = 0x808011D0});
+            rejected_symbols.insert(Symbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A50});
+            rejected_symbols.insert(Symbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A58});
+            rejected_symbols.insert(Symbol{.ovl_name = "gczoombox", .address = 0x80803E80});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcintrotext", .address = 0x808005A0});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800E30});
+            rejected_symbols.insert(Symbol{.ovl_name = "gclevel", .address = 0x808003B3});
+            rejected_symbols.insert(Symbol{.ovl_name = "gclevel", .address = 0x80800420});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcegg", .address = 0x80800270});
+            rejected_symbols.insert(Symbol{.ovl_name = "glintrosyncDll", .address = 0x808005D0});
+            rejected_symbols.insert(Symbol{.ovl_name = "inantab", .address = 0x80807780});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D81});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D8D});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D99});
+            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800DA5});
+            rejected_symbols.insert(Symbol{.ovl_name = "chwarppad", .address = 0x80800E60});
+            rejected_symbols.insert(Symbol{.ovl_name = "chwarppad", .address = 0x80800E5C});
+            rejected_symbols.insert(Symbol{.ovl_name = "gczoombox", .address = 0x80803F3E});
         }
         if constexpr (generate_overlay_toml) {
             overlay_toml_file = std::ofstream("overlays.us.v10.toml");
         }
     }
 
-    void add_reloc(const char* ovl_name, uint32_t symbol_address, uint32_t rom_addr, RelocType reloc_type) {
+    void add_reloc(const char* ovl_name, uint32_t symbol_address, uint32_t rom_addr, RelocType reloc_type, size_t reloc_offset, size_t text_size, size_t rodata_size, size_t data_size) {
         if constexpr (generate_any_files) {
-            relocs.emplace_back(Reloc{.symbol = Symbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type});
+            Section section = Section::Text;
+            if (reloc_offset >= text_size + rodata_size + data_size) {
+                section = Section::Bss;
+            }
+            else if (reloc_offset >= text_size + rodata_size) {
+                section = Section::Data;
+            }
+            else if (reloc_offset >= text_size) {
+                section = Section::Rodata;
+            }
+            relocs.emplace_back(Reloc{.symbol = Symbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type, .section = section});
         }
     }
 
@@ -204,8 +243,8 @@ public:
             for (const auto& reloc : relocs) {
                 const auto& symbol_details = symbols[reloc.symbol];
                 const std::string& sym_name = symbol_details.name;
-                // Don't emit reloc_addrs entries for generic text relocs
-                if (symbol_details.type != SymbolType::Text) {
+                // Don't emit reloc_addrs entries for generic text relocs in rodata
+                if (!(symbol_details.type == SymbolType::Text && reloc.section == Section::Rodata)) {
                     fmt::print(reloc_addrs_file, "rom:0x{:08X} symbol:{} reloc:{}\n",
                         reloc.rom_address, sym_name.empty() ? symbol_name(reloc.symbol, symbol_details.type) : sym_name, reloc_names[(size_t)reloc.type]);
                 }
@@ -482,6 +521,7 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
 
         // Skip rejected symbols
         if (output_files.is_rejected(ovl_name, symbol_address)) {
+            fmt::print(stderr, "Rejected: 0x{:08X} in {}\n", symbol_address, ovl_name);
             continue;
         }
         
@@ -492,7 +532,7 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
         else {
             output_files.add_symbol(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_addend);
         }
-        output_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type);
+        output_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type, reloc_offset, text_size, rodata_size, data_size);
 
         if (symbol_address < text_end) {
             if (reloc_type == RelocType::R_MIPS_26) {

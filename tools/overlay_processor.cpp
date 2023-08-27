@@ -102,6 +102,51 @@ std::vector<Overlay> read_config(const char* path) {
     return {};
 }
 
+// Sorts relocs by their offset, but keeps HI16/LO16 pairs together
+void sort_relocs(std::vector<uint16_t>& relocs) {
+    // Group every reloc up so that HI16 and subsequent LO16 are paired together
+    struct RelocGroup {
+        size_t start_index;
+        size_t count;
+        RelocGroup(size_t start_index_, size_t count_) : start_index(start_index_), count(count_) {}
+    };
+    std::vector<RelocGroup> reloc_groups;
+    reloc_groups.reserve(relocs.size());
+
+    // Build the groups
+    for (size_t i = 0; i < relocs.size(); i++) {
+        size_t start_index = i;
+        size_t count = 1;
+        if (TooieRelocType(relocs[i] & 0x3) == TooieRelocType::R_MIPS_HI16) {
+            while ((i + 1) < relocs.size() && TooieRelocType(relocs[i + 1] & 0x3) == TooieRelocType::R_MIPS_LO16) {
+                count++;
+                i++;
+            }
+        }
+        reloc_groups.emplace_back(start_index, count);
+    }
+
+    // Sort the groups by the offset of the last reloc in the group
+    std::sort(reloc_groups.begin(), reloc_groups.end(), [&](const RelocGroup& lhs, const RelocGroup& rhs) -> bool {
+        if (lhs.count == 1 || rhs.count == 1) {
+            return relocs[lhs.start_index] < relocs[rhs.start_index];
+        }
+        return relocs[lhs.start_index + lhs.count - 1] < relocs[rhs.start_index + rhs.count - 1];
+    });
+    
+    // Reorder the relocs using the sorted groups
+    std::vector<uint16_t> relocs_sorted;
+    relocs_sorted.resize(relocs.size());
+    size_t cur_reloc_index = 0;
+    for (const auto& group : reloc_groups) {
+        std::copy_n(relocs.begin() + group.start_index, group.count, relocs_sorted.begin() + cur_reloc_index);
+        cur_reloc_index += group.count;
+    }
+    
+    // Replace the original reloc vector with the sorted one
+    std::swap(relocs, relocs_sorted);
+}
+
 int main(int argc, const char **argv) {
     if (argc != 3) {
         fmt::print(stderr,
@@ -279,7 +324,9 @@ int main(int argc, const char **argv) {
     const char* prev_overlay_name = "overlay_table";
     for (const auto& ovl : overlays) {
         if (!ovl.name.empty()) {
+            std::filesystem::create_directories(output_path + "overlays/" + ovl.name);
             std::ofstream header{output_path + "overlays/" + ovl.name + "/" + ovl.name + "_header.s"};
+            fmt::print("{} (section {},bss section {})\n", ovl.name, ovl.section->get_index(), ovl.bss_section->get_index());
             prev_overlay_name = ovl.name.c_str();
             // const char* ovl_data = ovl.section->get_data();
             
@@ -309,6 +356,7 @@ int main(int argc, const char **argv) {
                     unsigned char sym_other;
 
                     symbols.get_symbol(symbol, sym_name, sym_value, sym_size, sym_bind, sym_type, sym_section_index, sym_other);
+                    fmt::print("  Reloc at 0x{:04X} type {} for {} in {}\n", (uint16_t)offset, type, sym_name, sym_section_index);
                     if (sym_section_index == ovl.section->get_index() || sym_section_index == ovl.bss_section->get_index()) {
                         uint16_t reloc_value = (uint16_t)offset;
 
@@ -321,8 +369,12 @@ int main(int argc, const char **argv) {
 
                         reloc_values.push_back(reloc_value);
                     }
+                    else {
+                        fmt::print("    Skipped\n");
+                    }
                 }
             }
+            sort_relocs(reloc_values);
 
             fmt::print(header, 
                 ".data\n"
@@ -348,8 +400,14 @@ int main(int argc, const char **argv) {
                 reloc_values.size());
             
             fmt::print(header, 
-                "  /* Flags */\n"
-                "  .word 0x{:08X}\n", 0x00000802);
+                "  /* Unk */\n"
+                "  .byte 0x00\n"
+                "  .byte 0x00\n"
+                "  /* Overlay name length */\n"
+                "  .byte 0x{:02X}\n"
+                "  /* Unk */\n"
+                "  .byte 0x02\n",
+                    ovl.name.size() + 1);
             
             fmt::print(header,
                 "  /* Unknown */\n"

@@ -1,9 +1,57 @@
 rom:0x01FD10E4 symbol:R_80801228_chterryegg reloc:MIPS_HI16 addend:0xE // TODO wrong symbol
 rom:0x01FD1108 symbol:R_80801228_chterryegg reloc:MIPS_LO16 addend:0xE // TODO wrong symbol
+rom:0x01F4E894 symbol:D_8080AC94_bsfirstp reloc:MIPS_HI16 addend:-0x92 // TODO wrong symbol?
+rom:0x01F4E89C symbol:D_8080AC94_bsfirstp reloc:MIPS_LO16 addend:-0x92 // TODO wrong symbol?
+rom:0x01F895A4 symbol:D_80801080_chwarppad reloc:MIPS_HI16 addend:-0x220 // TODO wrong symbol?
+rom:0x01F895D0 symbol:D_80801080_chwarppad reloc:MIPS_LO16 addend:-0x220 // TODO wrong symbol?
+rom:0x01F8964C symbol:D_80801080_chwarppad reloc:MIPS_HI16 addend:-0x220 // TODO wrong symbol?
+rom:0x01F89674 symbol:D_80801080_chwarppad reloc:MIPS_LO16 addend:-0x220 // TODO wrong symbol?
+rom:0x01F89B20 symbol:D_80801080_chwarppad reloc:MIPS_HI16 addend:-0x224 // TODO wrong symbol?
+rom:0x01F89B48 symbol:D_80801080_chwarppad reloc:MIPS_LO16 addend:-0x224 // TODO wrong symbol?
+rom:0x020240A0 symbol:D_808002F0_chdiggerbossbattery reloc:MIPS_HI16 addend:-0x8
+rom:0x020240B8 symbol:D_808002F0_chdiggerbossbattery reloc:MIPS_LO16 addend:-0x8
 rom:0x01F6FE58 symbol:D_80800550_badeathmatch reloc:MIPS_HI16 addend:-0x1
 rom:0x01F6FE64 symbol:D_80800550_badeathmatch reloc:MIPS_LO16 addend:-0x1
 rom:0x01F7D184 symbol:D_80801940_chlagoonufoint reloc:MIPS_HI16 addend:-0x2
 rom:0x01F7D1A4 symbol:D_80801940_chlagoonufoint reloc:MIPS_LO16 addend:-0x2
 rom:0x0214CDDC symbol:D_80800090_gemarkersDll reloc:MIPS_HI16 addend:-0x2D8
 rom:0x0214CDE4 symbol:D_80800090_gemarkersDll reloc:MIPS_LO16 addend:-0x2D8
+rom:0x020B34EC symbol:B_808010E0_chtransparentfish reloc:MIPS_HI16 addend:0xF0
+rom:0x020B3504 symbol:B_808010E0_chtransparentfish reloc:MIPS_LO16 addend:0xF0
+rom:0x020B3864 symbol:B_808010E0_chtransparentfish reloc:MIPS_HI16 addend:0xF0
+rom:0x020B3868 symbol:B_808010E0_chtransparentfish reloc:MIPS_LO16 addend:0xF0
+rom:0x020CE3D4 symbol:B_80800A18_chfantasydrillfield reloc:MIPS_HI16 addend:0x38
+rom:0x020CE3DC symbol:B_80800A18_chfantasydrillfield reloc:MIPS_LO16 addend:0x38
+rom:0x020CE440 symbol:B_80800A18_chfantasydrillfield reloc:MIPS_HI16 addend:0x38
+rom:0x020CE44C symbol:B_80800A18_chfantasydrillfield reloc:MIPS_LO16 addend:0x38
+rom:0x020CE488 symbol:B_80800A18_chfantasydrillfield reloc:MIPS_HI16 addend:0x40
+rom:0x020CE494 symbol:B_80800A18_chfantasydrillfield reloc:MIPS_LO16 addend:0x40
+rom:0x020FC80C symbol:D_80803E80_gczoombox reloc:MIPS_HI16 addend:0xBE
+rom:0x020FC814 symbol:D_80803E80_gczoombox reloc:MIPS_LO16 addend:0xBE
+rom:0x0210E5A8 symbol:D_80800570_gcintrotext reloc:MIPS_HI16 addend:0x30
+rom:0x0210E5B4 symbol:D_80800570_gcintrotext reloc:MIPS_LO16 addend:0x30
+rom:0x02110FE8 symbol:D_80800DB0_gcfrontend reloc:MIPS_HI16 addend:0x80
+rom:0x02110FF0 symbol:D_80800DB0_gcfrontend reloc:MIPS_LO16 addend:0x80
+rom:0x02114FB4 symbol:D_808003C0_gclevel reloc:MIPS_HI16 addend:-0xD
+rom:0x02114FBC symbol:D_808003C0_gclevel reloc:MIPS_LO16 addend:-0xD
+rom:0x021150A4 symbol:D_808003E0_gclevel reloc:MIPS_HI16 addend:0x50
+rom:0x021150B4 symbol:D_808003E0_gclevel reloc:MIPS_LO16 addend:0x50
+rom:0x02116C84 symbol:D_8080020C_gcegg reloc:MIPS_HI16 addend:0x64
+rom:0x02116C88 symbol:D_8080020C_gcegg reloc:MIPS_LO16 addend:0x64
+rom:0x02116CFC symbol:D_8080020C_gcegg reloc:MIPS_HI16 addend:0x64
+rom:0x02116D00 symbol:D_8080020C_gcegg reloc:MIPS_LO16 addend:0x64
+rom:0x0211DC44 symbol:D_808004F8_glintrosyncDll reloc:MIPS_HI16 addend:0xD8
+rom:0x0211DC48 symbol:D_808004F8_glintrosyncDll reloc:MIPS_LO16 addend:0xD8
+rom:0x02137598 symbol:D_8080777C_inantab reloc:MIPS_HI16 addend:0x4
+rom:0x0213759C symbol:D_8080777C_inantab reloc:MIPS_LO16 addend:0x4
+rom:0x02110AB4 symbol:D_80800D80_gcfrontend reloc:MIPS_HI16 addend:0x1
+rom:0x02110AC0 symbol:D_80800D80_gcfrontend reloc:MIPS_LO16 addend:0x1
+rom:0x02110D7C symbol:D_80800D80_gcfrontend reloc:MIPS_HI16 addend:0x1
+rom:0x02110D8C symbol:D_80800D80_gcfrontend reloc:MIPS_LO16 addend:0x1
+rom:0x02110DAC symbol:D_80800D8C_gcfrontend reloc:MIPS_HI16 addend:0x1
+rom:0x02110DB0 symbol:D_80800D8C_gcfrontend reloc:MIPS_LO16 addend:0x1
+rom:0x02110DDC symbol:D_80800D98_gcfrontend reloc:MIPS_HI16 addend:0x1
+rom:0x02110DE0 symbol:D_80800D98_gcfrontend reloc:MIPS_LO16 addend:0x1
+rom:0x02110E0C symbol:D_80800DA4_gcfrontend reloc:MIPS_HI16 addend:0x1
+rom:0x02110E10 symbol:D_80800DA4_gcfrontend reloc:MIPS_LO16 addend:0x1
 rom:0x01FE18C0 symbol:D_80802800 reloc:MIPS_NONE
