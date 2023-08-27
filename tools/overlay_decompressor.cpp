@@ -12,7 +12,9 @@
 
 // Relocate overlays to this address for easier disassembly
 constexpr uint32_t overlay_vram = 0x80800000;
-constexpr bool generate_splat_fies = true;
+constexpr bool generate_splat_files = true;
+constexpr bool generate_overlay_toml = true;
+constexpr bool generate_any_files = generate_splat_files | generate_overlay_toml;
 
 static inline uint32_t byteswap32(uint32_t in) {
     return __builtin_bswap32(in);
@@ -75,8 +77,8 @@ struct Overlay {
     uint32_t rodata_size;
     uint32_t data_size;
     uint32_t bss_size;
-    uint32_t num_entrypoints;
     uint32_t num_relocs;
+    std::vector<std::string> entrypoints;
 };
 
 namespace std {
@@ -115,19 +117,21 @@ std::string symbol_name(const Symbol& symbol, SymbolType type) {
     return fmt::format("{}_{:08X}_{}", type_name, symbol.address, symbol.ovl_name);
 }
 
-class splat_file_state {
+class output_file_state {
 private:
     std::ofstream symbol_addrs_file;
     std::ofstream reloc_addrs_file;
     std::ofstream yaml_file;
+    std::ofstream overlay_toml_file;
     std::unordered_map<Symbol, SymbolDetails> symbols;
     std::vector<Reloc> relocs;
     std::vector<Overlay> overlays;
+    std::vector<size_t> all_overlays; // Indexes into the overlays array, includes empty ones as size_t(-1)
     std::unordered_set<Symbol> rejected_symbols;
     size_t overlay_table_rom_start_;
 public:
-    splat_file_state(size_t overlay_table_rom_start) : overlay_table_rom_start_(overlay_table_rom_start) {
-        if constexpr (generate_splat_fies) {
+    output_file_state(size_t overlay_table_rom_start) : overlay_table_rom_start_(overlay_table_rom_start) {
+        if constexpr (generate_splat_files) {
             symbol_addrs_file = std::ofstream{"ovl_symbol_addrs.us.v10.txt"};
             reloc_addrs_file = std::ofstream{"ovl_reloc_addrs.us.v10.txt"};
             yaml_file = std::ofstream{"ovl.us.v10.yaml"};
@@ -137,16 +141,19 @@ public:
             rejected_symbols.insert(Symbol{.ovl_name = "chlagoonufoint", .address = 0x8080193E});
             rejected_symbols.insert(Symbol{.ovl_name = "gemarkersDll", .address = 0xFFFFFDB8});
         }
+        if constexpr (generate_overlay_toml) {
+            overlay_toml_file = std::ofstream("overlays.us.v10.toml");
+        }
     }
 
     void add_reloc(const char* ovl_name, uint32_t symbol_address, uint32_t rom_addr, RelocType reloc_type) {
-        if constexpr (generate_splat_fies) {
+        if constexpr (generate_any_files) {
             relocs.emplace_back(Reloc{.symbol = Symbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type});
         }
     }
 
     void add_symbol(const char* ovl_name, uint32_t addr, uint32_t rom_addr) {
-        if constexpr (generate_splat_fies) {
+        if constexpr (generate_any_files) {
             Symbol sym{.ovl_name = ovl_name, .address = addr};
             if (!symbols.contains(sym)) {
                 symbols[sym] = SymbolDetails{.rom_address = rom_addr, .type = SymbolType::None, .name = ""};
@@ -158,12 +165,16 @@ public:
         symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type = type;
     }
 
+    void set_symbol_name(const char* ovl_name, uint32_t addr, const std::string& sym_name) {
+        symbols[Symbol{.ovl_name = ovl_name, .address = addr}].name = sym_name;
+    }
+
     SymbolType get_symbol_type(const char* ovl_name, uint32_t addr) {
         return symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type;
     }
 
     void add_bss_symbol(const char* ovl_name, uint32_t addr) {
-        if constexpr (generate_splat_fies) {
+        if constexpr (generate_any_files) {
             Symbol sym{.ovl_name = ovl_name, .address = addr};
             if (!symbols.contains(sym)) {
                 symbols[sym] = SymbolDetails{0, SymbolType::Bss, ""};
@@ -172,7 +183,7 @@ public:
     }
 
     void print_symbols() {
-        if constexpr (generate_splat_fies) {
+        if constexpr (generate_splat_files) {
             for (const auto& [s, details] : symbols) {
                 uint32_t rom_addr = details.rom_address;
                 const std::string& sym_name = details.name;
@@ -202,8 +213,9 @@ public:
         }
     }
 
-    void add_overlay(const char* name, uint32_t rom_start, uint32_t code_rom_start, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size, uint32_t num_entrypoints, uint32_t num_relocs) {
-        if constexpr (generate_splat_fies) {
+    void add_overlay(const char* name, uint32_t rom_start, uint32_t code_rom_start, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size, uint32_t num_relocs, std::vector<std::string>&& entrypoints) {
+        if constexpr (generate_any_files) {
+            all_overlays.push_back(overlays.size());
             overlays.emplace_back(Overlay{
                 .name = name,
                 .rom_start = rom_start,
@@ -212,18 +224,25 @@ public:
                 .rodata_size = rodata_size,
                 .data_size = data_size,
                 .bss_size = bss_size,
-                .num_entrypoints = num_entrypoints,
-                .num_relocs = num_relocs
+                .num_relocs = num_relocs,
+                .entrypoints = std::move(entrypoints)
             });
         }
     }
 
+    void add_empty_overlay() {
+        if constexpr (generate_any_files) {
+            all_overlays.push_back((size_t)-1);
+        }
+    }
+
     void print_overlays() {
-        if constexpr (generate_splat_fies) {
+        if constexpr (generate_splat_files) {
             uint32_t rom_end = 0;
             fmt::print(yaml_file,
                 "  - name: overlay_table\n"
                 "    type: bin\n"
+                "    extract: False\n"
                 "    start: 0x{0:08X}\n",
                 overlay_table_rom_start_);
             for (const auto& overlay : overlays) {
@@ -236,6 +255,7 @@ public:
                     "    dir: overlays/{0}\n"
                     "    type: bin\n"
                     "    start: 0x{1:08X}\n"
+                    "    extract: False\n"
                     "  - name: {0}\n"
                     "    dir: overlays/{0}\n"
                     "    type: code\n"
@@ -254,6 +274,32 @@ public:
                 rom_end = data_end;
             }
             fmt::print(yaml_file, "  - [0x{:08X}]\n", rom_end);
+        }
+
+        if constexpr (generate_overlay_toml) {
+            for (size_t i = 0; i < all_overlays.size(); i++) {
+                size_t overlay_index = all_overlays[i];
+                if (overlay_index != (size_t)-1) {
+                    const auto& overlay = overlays[overlay_index];
+                    fmt::print(overlay_toml_file,
+                        "[[overlay]] # Overlay {}\n"
+                        "name = \"{}\"\n"
+                        "entrypoints = [\n",
+                        i + 1, overlay.name);
+                    for (const std::string& entrypoint : overlay.entrypoints) {
+                        fmt::print(overlay_toml_file,
+                        "  \"{}\",\n", entrypoint);
+                    }
+                    fmt::print(overlay_toml_file, "]\n\n");
+                }
+                // Empty overlay
+                else {
+                    fmt::print(overlay_toml_file,
+                        "[[overlay]] # Overlay {}\n"
+                        "empty = true\n\n",
+                        i + 1);
+                }
+            }
         }
     }
 
@@ -341,7 +387,7 @@ void undo_xors(size_t overlay_index, char* rom_start, std::vector<char>& overlay
     }
 }
 
-void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const char* ovl_name, char* overlay_header, char* overlay_contents, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size) {
+void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, const char* ovl_name, char* overlay_header, char* overlay_contents, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size) {
     // Get the pointer to the relocs and the number of relocs
     uint16_t num_entrypoints;
     uint16_t num_relocs;
@@ -435,38 +481,38 @@ void parse_relocs(splat_file_state& splat_files, uint32_t ovl_rom_address, const
         fmt::print("      0x{:08X}\n", symbol_address);
 
         // Skip rejected symbols
-        if (splat_files.is_rejected(ovl_name, symbol_address)) {
+        if (output_files.is_rejected(ovl_name, symbol_address)) {
             continue;
         }
         
         if (symbol_address >= data_end) {
             printf("      bss\n");
-            splat_files.add_bss_symbol(ovl_name, symbol_address);
+            output_files.add_bss_symbol(ovl_name, symbol_address);
         }
         else {
-            splat_files.add_symbol(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_addend);
+            output_files.add_symbol(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_addend);
         }
-        splat_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type);
+        output_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type);
 
         if (symbol_address < text_end) {
             if (reloc_type == RelocType::R_MIPS_26) {
-                splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Function);
+                output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Function);
             } else {
                 // Don't override functions with generic text symbols
-                SymbolType cur_type = splat_files.get_symbol_type(ovl_name, symbol_address);
+                SymbolType cur_type = output_files.get_symbol_type(ovl_name, symbol_address);
                 if (cur_type != SymbolType::Function) {
-                    splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Text);
+                    output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Text);
                 }
             }
         }
         else if (symbol_address < rodata_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Rodata);
+            output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Rodata);
         }
         else if (symbol_address < data_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Data);
+            output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Data);
         }
         else if (symbol_address < bss_end) {
-            splat_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Bss);
+            output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Bss);
         }
         else {
             fmt::print(stderr, "Symbol in reloc {} in {} is beyond the end of bss\n", reloc_index, ovl_name);
@@ -519,7 +565,7 @@ int main(int argc, const char** argv) {
     char rom_start[0x1000];
     std::ifstream rom_file{baserom_path, std::ios::binary};
 
-    splat_file_state splat_files{(size_t)output_rom_file.tellp()};
+    output_file_state output_files{(size_t)output_rom_file.tellp()};
     
     rom_file.seekg(0);
     rom_file.read(rom_start, sizeof(rom_start));
@@ -654,11 +700,23 @@ int main(int argc, const char** argv) {
             size_t ovl_relocs_end_offset = ovl_relocs_end - overlay_contents;
             // Align the overlay offset to 16 bytes to get the location of code
             size_t ovl_code_offset = ((ovl_relocs_end_offset + 16 - 1) & -16);
-            const char* ovl_name = overlay_contents + num_entrypoints * sizeof(uint32_t) + 0x28;
+            const char* ovl_entrypoints = overlay_contents + 0x28;
+            const char* ovl_name = ovl_entrypoints + num_entrypoints * sizeof(uint32_t);
             printf("  Name: %s\n", ovl_name);
 
             size_t before = output_rom_file.tellp();
             size_t pad_amount = 16 - (before & (16 - 1));
+
+            std::vector<std::string> entrypoints{};
+            entrypoints.reserve(num_entrypoints);
+
+            for (size_t i = 0; i < num_entrypoints; i++) {
+                uint32_t entrypoint_offset = byteswap32(*reinterpret_cast<const uint32_t*>(ovl_entrypoints + i * sizeof(uint32_t)));
+                output_files.add_symbol(ovl_name, entrypoint_offset | overlay_vram, before + 0x10 + ovl_code_offset + entrypoint_offset);
+                std::string entrypoint_name = ovl_name + std::string{"_entrypoint_"} + std::to_string(i);
+                output_files.set_symbol_name(ovl_name, entrypoint_offset | overlay_vram, entrypoint_name);
+                entrypoints.emplace_back(std::move(entrypoint_name));
+            }
 
             if (pad_amount != 16) {
                 output_rom_file.write(zeroes, pad_amount);
@@ -666,7 +724,7 @@ int main(int argc, const char** argv) {
                 byteswapped_overlay_offsets[overlay_index - 1] = byteswap32((uint32_t)before - output_overlay_table_pos);
             }
             
-            parse_relocs(splat_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
+            parse_relocs(output_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
 
             output_rom_file.write(overlay_header.data(), 0x10);
             output_rom_file.write(overlay_contents, overlay_contents_length);
@@ -681,14 +739,15 @@ int main(int argc, const char** argv) {
 
             printf("  Code Size: 0x%08lX Total Size: 0x%08lX From: 0x%08lX to 0x%08lX\n", after - before - ovl_code_offset - 0x10, after - before, before, after);
             printf("  Num Entrypoints: %u\n", num_entrypoints);
-            splat_files.add_overlay(ovl_name, before, before + ovl_code_offset + 0x10, text_size, rodata_size, data_size, bss_size, num_entrypoints, num_relocs);
+            output_files.add_overlay(ovl_name, before, before + ovl_code_offset + 0x10, text_size, rodata_size, data_size, bss_size, num_relocs, std::move(entrypoints));
         } else {
             printf("  Empty overlay\n");
+            output_files.add_empty_overlay();
         }
     }
 
-    splat_files.print_symbols();
-    splat_files.print_overlays();
+    output_files.print_symbols();
+    output_files.print_overlays();
 
     printf("Compression ratio: %5.3f\n", (float)total_compressed / total_decompressed);
     byteswapped_overlay_offsets[overlay_count] = byteswap32((uint32_t)output_rom_file.tellp() - output_overlay_table_pos);

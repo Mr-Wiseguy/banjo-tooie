@@ -491,11 +491,13 @@ segments:
   # Generated from overlay decompression tool
   - name: overlay_table
     type: bin
+    extract: False
     start: 0x01F00020
   - name: gsmaker_header
     dir: overlays/gsmaker
     type: bin
     start: 0x01F00E00
+    extract: False
   - name: gsmaker
     dir: overlays/gsmaker
     type: code
@@ -514,6 +516,7 @@ segments:
     dir: overlays/anseq
     type: bin
     start: 0x01F01720
+    extract: False
   - name: anseq
     dir: overlays/anseq
     type: code
@@ -532,6 +535,7 @@ segments:
     dir: overlays/seqdefine
     type: bin
     start: 0x01F01C50
+    extract: False
   - name: seqdefine
     dir: overlays/seqdefine
     type: code
@@ -550,6 +554,7 @@ segments:
     dir: overlays/bsbanbflip
     type: bin
     start: 0x01F01D50
+    extract: False
   - name: bsbanbflip
     dir: overlays/bsbanbflip
     type: code
@@ -568,6 +573,7 @@ segments:
     dir: overlays/bsbanpackwhack
     type: bin
     start: 0x01F022D0
+    extract: False
   - name: bsbanpackwhack
     dir: overlays/bsbanpackwhack
     type: code
@@ -586,6 +592,7 @@ segments:
     dir: overlays/bsbansack
     type: bin
     start: 0x01F02870
+    extract: False
   - name: bsbansack
     dir: overlays/bsbansack
     type: code
@@ -604,6 +611,7 @@ segments:
     dir: overlays/bsbanshack
     type: bin
     start: 0x01F04910
+    extract: False
   - name: bsbanshack
     dir: overlays/bsbanshack
     type: code
@@ -622,6 +630,7 @@ segments:
     dir: overlays/bsbansnooze
     type: bin
     start: 0x01F05710
+    extract: False
   - name: bsbansnooze
     dir: overlays/bsbansnooze
     type: code
@@ -640,6 +649,7 @@ segments:
     dir: overlays/bsbanswim
     type: bin
     start: 0x01F062A0
+    extract: False
   - name: bsbanswim
     dir: overlays/bsbanswim
     type: code
@@ -658,6 +668,7 @@ segments:
     dir: overlays/bsbbarge
     type: bin
     start: 0x01F06DB0
+    extract: False
   - name: bsbbarge
     dir: overlays/bsbbarge
     type: code
@@ -676,6 +687,7 @@ segments:
     dir: overlays/bsbbilldrill
     type: bin
     start: 0x01F07470
+    extract: False
   - name: bsbbilldrill
     dir: overlays/bsbbilldrill
     type: code
@@ -694,6 +706,7 @@ segments:
     dir: overlays/bsbbuster
     type: bin
     start: 0x01F080D0
+    extract: False
   - name: bsbbuster
     dir: overlays/bsbbuster
     type: code
@@ -712,6 +725,7 @@ segments:
     dir: overlays/bsbabykaz
     type: bin
     start: 0x01F08890
+    extract: False
   - name: bsbabykaz
     dir: overlays/bsbabykaz
     type: code
@@ -730,6 +744,7 @@ segments:
     dir: overlays/bsbee
     type: bin
     start: 0x01F0A210
+    extract: False
   - name: bsbee
     dir: overlays/bsbee
     type: code
@@ -748,6 +763,7 @@ segments:
     dir: overlays/bsbeefly
     type: bin
     start: 0x01F0A450
+    extract: False
   - name: bsbeefly
     dir: overlays/bsbeefly
     type: code
@@ -766,6 +782,7 @@ segments:
     dir: overlays/bsbeemain
     type: bin
     start: 0x01F0B3C0
+    extract: False
   - name: bsbeemain
     dir: overlays/bsbeemain
     type: code
@@ -784,6 +801,7 @@ segments:
     dir: overlays/bsbeggass
     type: bin
     start: 0x01F0C790
+    extract: False
   - name: bsbeggass
     dir: overlays/bsbeggass
     type: code
@@ -802,6 +820,7 @@ segments:
     dir: overlays/bsbegghead
     type: bin
     start: 0x01F0CAA0
+    extract: False
   - name: bsbegghead
     dir: overlays/bsbegghead
     type: code
@@ -820,6 +839,7 @@ segments:
     dir: overlays/bsbflap
     type: bin
     start: 0x01F0CDF0
+    extract: False
   - name: bsbflap
     dir: overlays/bsbflap
     type: code
@@ -838,6 +858,7 @@ segments:
     dir: overlays/bsbflip
     type: bin
     start: 0x01F0D610
+    extract: False
   - name: bsbflip
     dir: overlays/bsbflip
     type: code
@@ -856,6 +877,7 @@ segments:
     dir: overlays/bsbfly
     type: bin
     start: 0x01F0DCB0
+    extract: False
   - name: bsbfly
     dir: overlays/bsbfly
     type: code
@@ -874,6 +896,7 @@ segments:
     dir: overlays/bsbkflamethrower
     type: bin
     start: 0x01F0FBE0
+    extract: False
   - name: bsbkflamethrower
     dir: overlays/bsbkflamethrower
     type: code
@@ -892,6 +915,7 @@ segments:
     dir: overlays/bsblongleg
     type: bin
     start: 0x01F100D0
+    extract: False
   - name: bsblongleg
     dir: overlays/bsblongleg
     type: code
@@ -910,6 +934,7 @@ segments:
     dir: overlays/bsbpeck
     type: bin
     start: 0x01F11700
+    extract: False
   - name: bsbpeck
     dir: overlays/bsbpeck
     type: code
@@ -928,6 +953,7 @@ segments:
     dir: overlays/bsbreegullbash
     type: bin
     start: 0x01F11C20
+    extract: False
   - name: bsbreegullbash
     dir: overlays/bsbreegullbash
     type: code
@@ -946,6 +972,7 @@ segments:
     dir: overlays/bsbshock
     type: bin
     start: 0x01F12210
+    extract: False
   - name: bsbshock
     dir: overlays/bsbshock
     type: code
@@ -964,6 +991,7 @@ segments:
     dir: overlays/bsbswim
     type: bin
     start: 0x01F12B10
+    extract: False
   - name: bsbswim
     dir: overlays/bsbswim
     type: code
@@ -982,6 +1010,7 @@ segments:
     dir: overlays/bsbtrot
     type: bin
     start: 0x01F14CB0
+    extract: False
   - name: bsbtrot
     dir: overlays/bsbtrot
     type: code
@@ -1000,6 +1029,7 @@ segments:
     dir: overlays/bsbwhirl
     type: bin
     start: 0x01F17E80
+    extract: False
   - name: bsbwhirl
     dir: overlays/bsbwhirl
     type: code
@@ -1018,6 +1048,7 @@ segments:
     dir: overlays/bscarry
     type: bin
     start: 0x01F18FB0
+    extract: False
   - name: bscarry
     dir: overlays/bscarry
     type: code
@@ -1036,6 +1067,7 @@ segments:
     dir: overlays/bschokedie
     type: bin
     start: 0x01F19870
+    extract: False
   - name: bschokedie
     dir: overlays/bschokedie
     type: code
@@ -1054,6 +1086,7 @@ segments:
     dir: overlays/bsclaw
     type: bin
     start: 0x01F19B90
+    extract: False
   - name: bsclaw
     dir: overlays/bsclaw
     type: code
@@ -1072,6 +1105,7 @@ segments:
     dir: overlays/bsclimb
     type: bin
     start: 0x01F1A010
+    extract: False
   - name: bsclimb
     dir: overlays/bsclimb
     type: code
@@ -1090,6 +1124,7 @@ segments:
     dir: overlays/bscrashout
     type: bin
     start: 0x01F1A9F0
+    extract: False
   - name: bscrashout
     dir: overlays/bscrashout
     type: code
@@ -1108,6 +1143,7 @@ segments:
     dir: overlays/bscrouch
     type: bin
     start: 0x01F1AE40
+    extract: False
   - name: bscrouch
     dir: overlays/bscrouch
     type: code
@@ -1126,6 +1162,7 @@ segments:
     dir: overlays/bsdie
     type: bin
     start: 0x01F1B870
+    extract: False
   - name: bsdie
     dir: overlays/bsdie
     type: code
@@ -1144,6 +1181,7 @@ segments:
     dir: overlays/bsdrone
     type: bin
     start: 0x01F1C290
+    extract: False
   - name: bsdrone
     dir: overlays/bsdrone
     type: code
@@ -1162,6 +1200,7 @@ segments:
     dir: overlays/bsdronebitten
     type: bin
     start: 0x01F1C5C0
+    extract: False
   - name: bsdronebitten
     dir: overlays/bsdronebitten
     type: code
@@ -1180,6 +1219,7 @@ segments:
     dir: overlays/bsdronebubbled
     type: bin
     start: 0x01F1CCD0
+    extract: False
   - name: bsdronebubbled
     dir: overlays/bsdronebubbled
     type: code
@@ -1198,6 +1238,7 @@ segments:
     dir: overlays/bsdronefalldie
     type: bin
     start: 0x01F1D040
+    extract: False
   - name: bsdronefalldie
     dir: overlays/bsdronefalldie
     type: code
@@ -1216,6 +1257,7 @@ segments:
     dir: overlays/bsdronefired
     type: bin
     start: 0x01F1D310
+    extract: False
   - name: bsdronefired
     dir: overlays/bsdronefired
     type: code
@@ -1234,6 +1276,7 @@ segments:
     dir: overlays/bsdronegoto
     type: bin
     start: 0x01F1D4E0
+    extract: False
   - name: bsdronegoto
     dir: overlays/bsdronegoto
     type: code
@@ -1252,6 +1295,7 @@ segments:
     dir: overlays/bsdronejump
     type: bin
     start: 0x01F1DAE0
+    extract: False
   - name: bsdronejump
     dir: overlays/bsdronejump
     type: code
@@ -1270,6 +1314,7 @@ segments:
     dir: overlays/bsdronelook
     type: bin
     start: 0x01F1DD70
+    extract: False
   - name: bsdronelook
     dir: overlays/bsdronelook
     type: code
@@ -1288,6 +1333,7 @@ segments:
     dir: overlays/bsdroneslide
     type: bin
     start: 0x01F1E070
+    extract: False
   - name: bsdroneslide
     dir: overlays/bsdroneslide
     type: code
@@ -1306,6 +1352,7 @@ segments:
     dir: overlays/bsdronesuckunder
     type: bin
     start: 0x01F1E540
+    extract: False
   - name: bsdronesuckunder
     dir: overlays/bsdronesuckunder
     type: code
@@ -1324,6 +1371,7 @@ segments:
     dir: overlays/bsdronevanish
     type: bin
     start: 0x01F1E750
+    extract: False
   - name: bsdronevanish
     dir: overlays/bsdronevanish
     type: code
@@ -1342,6 +1390,7 @@ segments:
     dir: overlays/bsdronewaitbabykaz
     type: bin
     start: 0x01F1ED70
+    extract: False
   - name: bsdronewaitbabykaz
     dir: overlays/bsdronewaitbabykaz
     type: code
@@ -1360,6 +1409,7 @@ segments:
     dir: overlays/bsdronexform
     type: bin
     start: 0x01F1F0B0
+    extract: False
   - name: bsdronexform
     dir: overlays/bsdronexform
     type: code
@@ -1378,6 +1428,7 @@ segments:
     dir: overlays/bsjig
     type: bin
     start: 0x01F20570
+    extract: False
   - name: bsjig
     dir: overlays/bsjig
     type: code
@@ -1396,6 +1447,7 @@ segments:
     dir: overlays/bsjump
     type: bin
     start: 0x01F20BC0
+    extract: False
   - name: bsjump
     dir: overlays/bsjump
     type: code
@@ -1414,6 +1466,7 @@ segments:
     dir: overlays/bskaz
     type: bin
     start: 0x01F21DD0
+    extract: False
   - name: bskaz
     dir: overlays/bskaz
     type: code
@@ -1432,6 +1485,7 @@ segments:
     dir: overlays/bskazcrouch
     type: bin
     start: 0x01F21FB0
+    extract: False
   - name: bskazcrouch
     dir: overlays/bskazcrouch
     type: code
@@ -1450,6 +1504,7 @@ segments:
     dir: overlays/bskazeggass
     type: bin
     start: 0x01F22810
+    extract: False
   - name: bskazeggass
     dir: overlays/bskazeggass
     type: code
@@ -1468,6 +1523,7 @@ segments:
     dir: overlays/bskazflamethrower
     type: bin
     start: 0x01F22B40
+    extract: False
   - name: bskazflamethrower
     dir: overlays/bskazflamethrower
     type: code
@@ -1486,6 +1542,7 @@ segments:
     dir: overlays/bskazfly
     type: bin
     start: 0x01F22F80
+    extract: False
   - name: bskazfly
     dir: overlays/bskazfly
     type: code
@@ -1504,6 +1561,7 @@ segments:
     dir: overlays/bskazdie
     type: bin
     start: 0x01F24DA0
+    extract: False
   - name: bskazdie
     dir: overlays/bskazdie
     type: code
@@ -1522,6 +1580,7 @@ segments:
     dir: overlays/bskazglide
     type: bin
     start: 0x01F25270
+    extract: False
   - name: bskazglide
     dir: overlays/bskazglide
     type: code
@@ -1540,6 +1599,7 @@ segments:
     dir: overlays/bskazhatch
     type: bin
     start: 0x01F25E30
+    extract: False
   - name: bskazhatch
     dir: overlays/bskazhatch
     type: code
@@ -1558,6 +1618,7 @@ segments:
     dir: overlays/bskazegghead
     type: bin
     start: 0x01F263B0
+    extract: False
   - name: bskazegghead
     dir: overlays/bskazegghead
     type: code
@@ -1576,6 +1637,7 @@ segments:
     dir: overlays/bskazjump
     type: bin
     start: 0x01F26710
+    extract: False
   - name: bskazjump
     dir: overlays/bskazjump
     type: code
@@ -1594,6 +1656,7 @@ segments:
     dir: overlays/bskazmove
     type: bin
     start: 0x01F27430
+    extract: False
   - name: bskazmove
     dir: overlays/bskazmove
     type: code
@@ -1612,6 +1675,7 @@ segments:
     dir: overlays/bskazow
     type: bin
     start: 0x01F28180
+    extract: False
   - name: bskazow
     dir: overlays/bskazow
     type: code
@@ -1630,6 +1694,7 @@ segments:
     dir: overlays/bskazpaddle
     type: bin
     start: 0x01F284E0
+    extract: False
   - name: bskazpaddle
     dir: overlays/bskazpaddle
     type: code
@@ -1648,6 +1713,7 @@ segments:
     dir: overlays/bskazshock
     type: bin
     start: 0x01F29050
+    extract: False
   - name: bskazshock
     dir: overlays/bskazshock
     type: code
@@ -1666,6 +1732,7 @@ segments:
     dir: overlays/bskazshoesspringjump
     type: bin
     start: 0x01F298A0
+    extract: False
   - name: bskazshoesspringjump
     dir: overlays/bskazshoesspringjump
     type: code
@@ -1684,6 +1751,7 @@ segments:
     dir: overlays/bskazshoessuckspline
     type: bin
     start: 0x01F29B90
+    extract: False
   - name: bskazshoessuckspline
     dir: overlays/bskazshoessuckspline
     type: code
@@ -1702,6 +1770,7 @@ segments:
     dir: overlays/bskazspring
     type: bin
     start: 0x01F2A0B0
+    extract: False
   - name: bskazspring
     dir: overlays/bskazspring
     type: code
@@ -1720,6 +1789,7 @@ segments:
     dir: overlays/bskazstill
     type: bin
     start: 0x01F2A560
+    extract: False
   - name: bskazstill
     dir: overlays/bskazstill
     type: code
@@ -1738,6 +1808,7 @@ segments:
     dir: overlays/bskazstilt
     type: bin
     start: 0x01F2AF10
+    extract: False
   - name: bskazstilt
     dir: overlays/bskazstilt
     type: code
@@ -1756,6 +1827,7 @@ segments:
     dir: overlays/bskaztorpedo
     type: bin
     start: 0x01F2C2D0
+    extract: False
   - name: bskaztorpedo
     dir: overlays/bskaztorpedo
     type: code
@@ -1774,6 +1846,7 @@ segments:
     dir: overlays/bskazwingwhack
     type: bin
     start: 0x01F2DD20
+    extract: False
   - name: bskazwingwhack
     dir: overlays/bskazwingwhack
     type: code
@@ -1792,6 +1865,7 @@ segments:
     dir: overlays/bsledge
     type: bin
     start: 0x01F2E8A0
+    extract: False
   - name: bsledge
     dir: overlays/bsledge
     type: code
@@ -1810,6 +1884,7 @@ segments:
     dir: overlays/bsmum
     type: bin
     start: 0x01F2FDA0
+    extract: False
   - name: bsmum
     dir: overlays/bsmum
     type: code
@@ -1828,6 +1903,7 @@ segments:
     dir: overlays/bsmumattack
     type: bin
     start: 0x01F31080
+    extract: False
   - name: bsmumattack
     dir: overlays/bsmumattack
     type: code
@@ -1846,6 +1922,7 @@ segments:
     dir: overlays/bsmumcast
     type: bin
     start: 0x01F31800
+    extract: False
   - name: bsmumcast
     dir: overlays/bsmumcast
     type: code
@@ -1864,6 +1941,7 @@ segments:
     dir: overlays/bsmummove
     type: bin
     start: 0x01F31D60
+    extract: False
   - name: bsmummove
     dir: overlays/bsmummove
     type: code
@@ -1882,6 +1960,7 @@ segments:
     dir: overlays/bsmumsplat
     type: bin
     start: 0x01F323A0
+    extract: False
   - name: bsmumsplat
     dir: overlays/bsmumsplat
     type: code
@@ -1900,6 +1979,7 @@ segments:
     dir: overlays/bsmumstill
     type: bin
     start: 0x01F325F0
+    extract: False
   - name: bsmumstill
     dir: overlays/bsmumstill
     type: code
@@ -1918,6 +1998,7 @@ segments:
     dir: overlays/bsmumswim
     type: bin
     start: 0x01F32A90
+    extract: False
   - name: bsmumswim
     dir: overlays/bsmumswim
     type: code
@@ -1936,6 +2017,7 @@ segments:
     dir: overlays/bsow
     type: bin
     start: 0x01F336C0
+    extract: False
   - name: bsow
     dir: overlays/bsow
     type: code
@@ -1954,6 +2036,7 @@ segments:
     dir: overlays/bsrebound
     type: bin
     start: 0x01F33880
+    extract: False
   - name: bsrebound
     dir: overlays/bsrebound
     type: code
@@ -1972,6 +2055,7 @@ segments:
     dir: overlays/bsrest
     type: bin
     start: 0x01F33A10
+    extract: False
   - name: bsrest
     dir: overlays/bsrest
     type: code
@@ -1990,6 +2074,7 @@ segments:
     dir: overlays/bsride
     type: bin
     start: 0x01F34430
+    extract: False
   - name: bsride
     dir: overlays/bsride
     type: code
@@ -2008,6 +2093,7 @@ segments:
     dir: overlays/bssilowait
     type: bin
     start: 0x01F34F80
+    extract: False
   - name: bssilowait
     dir: overlays/bssilowait
     type: code
@@ -2026,6 +2112,7 @@ segments:
     dir: overlays/bssnowball
     type: bin
     start: 0x01F35130
+    extract: False
   - name: bssnowball
     dir: overlays/bssnowball
     type: code
@@ -2044,6 +2131,7 @@ segments:
     dir: overlays/bssplat
     type: bin
     start: 0x01F36370
+    extract: False
   - name: bssplat
     dir: overlays/bssplat
     type: code
@@ -2062,6 +2150,7 @@ segments:
     dir: overlays/bssplitup
     type: bin
     start: 0x01F36690
+    extract: False
   - name: bssplitup
     dir: overlays/bssplitup
     type: code
@@ -2080,6 +2169,7 @@ segments:
     dir: overlays/bsstand
     type: bin
     start: 0x01F36EA0
+    extract: False
   - name: bsstand
     dir: overlays/bsstand
     type: code
@@ -2098,6 +2188,7 @@ segments:
     dir: overlays/bsstatue
     type: bin
     start: 0x01F37D10
+    extract: False
   - name: bsstatue
     dir: overlays/bsstatue
     type: code
@@ -2116,6 +2207,7 @@ segments:
     dir: overlays/bsstonehead
     type: bin
     start: 0x01F394C0
+    extract: False
   - name: bsstonehead
     dir: overlays/bsstonehead
     type: code
@@ -2134,6 +2226,7 @@ segments:
     dir: overlays/bssub
     type: bin
     start: 0x01F3AD40
+    extract: False
   - name: bssub
     dir: overlays/bssub
     type: code
@@ -2152,6 +2245,7 @@ segments:
     dir: overlays/bsswim
     type: bin
     start: 0x01F3C7C0
+    extract: False
   - name: bsswim
     dir: overlays/bsswim
     type: code
@@ -2170,6 +2264,7 @@ segments:
     dir: overlays/bstalk
     type: bin
     start: 0x01F3D460
+    extract: False
   - name: bstalk
     dir: overlays/bstalk
     type: code
@@ -2188,6 +2283,7 @@ segments:
     dir: overlays/bstaxi
     type: bin
     start: 0x01F3D640
+    extract: False
   - name: bstaxi
     dir: overlays/bstaxi
     type: code
@@ -2206,6 +2302,7 @@ segments:
     dir: overlays/bsthrow
     type: bin
     start: 0x01F3FB50
+    extract: False
   - name: bsthrow
     dir: overlays/bsthrow
     type: code
@@ -2224,6 +2321,7 @@ segments:
     dir: overlays/bstimeout
     type: bin
     start: 0x01F3FEE0
+    extract: False
   - name: bstimeout
     dir: overlays/bstimeout
     type: code
@@ -2242,6 +2340,7 @@ segments:
     dir: overlays/bstnt
     type: bin
     start: 0x01F402A0
+    extract: False
   - name: bstnt
     dir: overlays/bstnt
     type: code
@@ -2260,6 +2359,7 @@ segments:
     dir: overlays/bstntswim
     type: bin
     start: 0x01F42A70
+    extract: False
   - name: bstntswim
     dir: overlays/bstntswim
     type: code
@@ -2278,6 +2378,7 @@ segments:
     dir: overlays/bstrexlarge
     type: bin
     start: 0x01F43520
+    extract: False
   - name: bstrexlarge
     dir: overlays/bstrexlarge
     type: code
@@ -2296,6 +2397,7 @@ segments:
     dir: overlays/bstrexsmall
     type: bin
     start: 0x01F45160
+    extract: False
   - name: bstrexsmall
     dir: overlays/bstrexsmall
     type: code
@@ -2314,6 +2416,7 @@ segments:
     dir: overlays/bsturn
     type: bin
     start: 0x01F46EE0
+    extract: False
   - name: bsturn
     dir: overlays/bsturn
     type: code
@@ -2332,6 +2435,7 @@ segments:
     dir: overlays/bstwirl
     type: bin
     start: 0x01F472B0
+    extract: False
   - name: bstwirl
     dir: overlays/bstwirl
     type: code
@@ -2350,6 +2454,7 @@ segments:
     dir: overlays/bsvan
     type: bin
     start: 0x01F475E0
+    extract: False
   - name: bsvan
     dir: overlays/bsvan
     type: code
@@ -2368,6 +2473,7 @@ segments:
     dir: overlays/bsvanswim
     type: bin
     start: 0x01F49570
+    extract: False
   - name: bsvanswim
     dir: overlays/bsvanswim
     type: code
@@ -2386,6 +2492,7 @@ segments:
     dir: overlays/bswalk
     type: bin
     start: 0x01F49FF0
+    extract: False
   - name: bswalk
     dir: overlays/bswalk
     type: code
@@ -2404,6 +2511,7 @@ segments:
     dir: overlays/bsfirstp
     type: bin
     start: 0x01F4B680
+    extract: False
   - name: bsfirstp
     dir: overlays/bsfirstp
     type: code
@@ -2422,6 +2530,7 @@ segments:
     dir: overlays/bswasher
     type: bin
     start: 0x01F57470
+    extract: False
   - name: bswasher
     dir: overlays/bswasher
     type: code
@@ -2440,6 +2549,7 @@ segments:
     dir: overlays/baalarm
     type: bin
     start: 0x01F59530
+    extract: False
   - name: baalarm
     dir: overlays/baalarm
     type: code
@@ -2458,6 +2568,7 @@ segments:
     dir: overlays/baattach
     type: bin
     start: 0x01F59880
+    extract: False
   - name: baattach
     dir: overlays/baattach
     type: code
@@ -2476,6 +2587,7 @@ segments:
     dir: overlays/bababykaz
     type: bin
     start: 0x01F599C0
+    extract: False
   - name: bababykaz
     dir: overlays/bababykaz
     type: code
@@ -2494,6 +2606,7 @@ segments:
     dir: overlays/babackpack
     type: bin
     start: 0x01F59ED0
+    extract: False
   - name: babackpack
     dir: overlays/babackpack
     type: code
@@ -2512,6 +2625,7 @@ segments:
     dir: overlays/babee
     type: bin
     start: 0x01F5A6E0
+    extract: False
   - name: babee
     dir: overlays/babee
     type: code
@@ -2530,6 +2644,7 @@ segments:
     dir: overlays/baboost
     type: bin
     start: 0x01F5AB30
+    extract: False
   - name: baboost
     dir: overlays/baboost
     type: code
@@ -2548,6 +2663,7 @@ segments:
     dir: overlays/babounce
     type: bin
     start: 0x01F5AF30
+    extract: False
   - name: babounce
     dir: overlays/babounce
     type: code
@@ -2566,6 +2682,7 @@ segments:
     dir: overlays/bacough
     type: bin
     start: 0x01F5B680
+    extract: False
   - name: bacough
     dir: overlays/bacough
     type: code
@@ -2584,6 +2701,7 @@ segments:
     dir: overlays/badata
     type: bin
     start: 0x01F5B9F0
+    extract: False
   - name: badata
     dir: overlays/badata
     type: code
@@ -2602,6 +2720,7 @@ segments:
     dir: overlays/bapackctrl
     type: bin
     start: 0x01F5E480
+    extract: False
   - name: bapackctrl
     dir: overlays/bapackctrl
     type: code
@@ -2620,6 +2739,7 @@ segments:
     dir: overlays/babuzz
     type: bin
     start: 0x01F5E8A0
+    extract: False
   - name: babuzz
     dir: overlays/babuzz
     type: code
@@ -2638,6 +2758,7 @@ segments:
     dir: overlays/badialog
     type: bin
     start: 0x01F5EBF0
+    extract: False
   - name: badialog
     dir: overlays/badialog
     type: code
@@ -2656,6 +2777,7 @@ segments:
     dir: overlays/badrone
     type: bin
     start: 0x01F5EDA0
+    extract: False
   - name: badrone
     dir: overlays/badrone
     type: code
@@ -2674,6 +2796,7 @@ segments:
     dir: overlays/badronemem
     type: bin
     start: 0x01F5F4D0
+    extract: False
   - name: badronemem
     dir: overlays/badronemem
     type: code
@@ -2692,6 +2815,7 @@ segments:
     dir: overlays/baduo
     type: bin
     start: 0x01F5F5A0
+    extract: False
   - name: baduo
     dir: overlays/baduo
     type: code
@@ -2710,6 +2834,7 @@ segments:
     dir: overlays/badust
     type: bin
     start: 0x01F60370
+    extract: False
   - name: badust
     dir: overlays/badust
     type: code
@@ -2728,6 +2853,7 @@ segments:
     dir: overlays/baeggsetup
     type: bin
     start: 0x01F61110
+    extract: False
   - name: baeggsetup
     dir: overlays/baeggsetup
     type: code
@@ -2746,6 +2872,7 @@ segments:
     dir: overlays/baeggaim
     type: bin
     start: 0x01F61A50
+    extract: False
   - name: baeggaim
     dir: overlays/baeggaim
     type: code
@@ -2764,6 +2891,7 @@ segments:
     dir: overlays/baeggcursor
     type: bin
     start: 0x01F61F40
+    extract: False
   - name: baeggcursor
     dir: overlays/baeggcursor
     type: code
@@ -2782,6 +2910,7 @@ segments:
     dir: overlays/baeggfire
     type: bin
     start: 0x01F62690
+    extract: False
   - name: baeggfire
     dir: overlays/baeggfire
     type: code
@@ -2800,6 +2929,7 @@ segments:
     dir: overlays/baflameline
     type: bin
     start: 0x01F62DE0
+    extract: False
   - name: baflameline
     dir: overlays/baflameline
     type: code
@@ -2818,6 +2948,7 @@ segments:
     dir: overlays/baflamethrower
     type: bin
     start: 0x01F63630
+    extract: False
   - name: baflamethrower
     dir: overlays/baflamethrower
     type: code
@@ -2836,6 +2967,7 @@ segments:
     dir: overlays/bafly
     type: bin
     start: 0x01F63950
+    extract: False
   - name: bafly
     dir: overlays/bafly
     type: code
@@ -2854,6 +2986,7 @@ segments:
     dir: overlays/bafpctrl
     type: bin
     start: 0x01F647E0
+    extract: False
   - name: bafpctrl
     dir: overlays/bafpctrl
     type: code
@@ -2872,6 +3005,7 @@ segments:
     dir: overlays/bahold
     type: bin
     start: 0x01F659D0
+    extract: False
   - name: bahold
     dir: overlays/bahold
     type: code
@@ -2890,6 +3024,7 @@ segments:
     dir: overlays/bahitspline
     type: bin
     start: 0x01F65C70
+    extract: False
   - name: bahitspline
     dir: overlays/bahitspline
     type: code
@@ -2908,6 +3043,7 @@ segments:
     dir: overlays/bakaztorpedo
     type: bin
     start: 0x01F65E10
+    extract: False
   - name: bakaztorpedo
     dir: overlays/bakaztorpedo
     type: code
@@ -2926,6 +3062,7 @@ segments:
     dir: overlays/bamovegoto
     type: bin
     start: 0x01F662D0
+    extract: False
   - name: bamovegoto
     dir: overlays/bamovegoto
     type: code
@@ -2944,6 +3081,7 @@ segments:
     dir: overlays/bamovehover
     type: bin
     start: 0x01F66980
+    extract: False
   - name: bamovehover
     dir: overlays/bamovehover
     type: code
@@ -2962,6 +3100,7 @@ segments:
     dir: overlays/bamoveledge
     type: bin
     start: 0x01F66C20
+    extract: False
   - name: bamoveledge
     dir: overlays/bamoveledge
     type: code
@@ -2980,6 +3119,7 @@ segments:
     dir: overlays/bamovespline
     type: bin
     start: 0x01F66D00
+    extract: False
   - name: bamovespline
     dir: overlays/bamovespline
     type: code
@@ -2998,6 +3138,7 @@ segments:
     dir: overlays/bamovethrust
     type: bin
     start: 0x01F67560
+    extract: False
   - name: bamovethrust
     dir: overlays/bamovethrust
     type: code
@@ -3016,6 +3157,7 @@ segments:
     dir: overlays/bamum
     type: bin
     start: 0x01F67780
+    extract: False
   - name: bamum
     dir: overlays/bamum
     type: code
@@ -3034,6 +3176,7 @@ segments:
     dir: overlays/bapreload
     type: bin
     start: 0x01F67AA0
+    extract: False
   - name: bapreload
     dir: overlays/bapreload
     type: code
@@ -3052,6 +3195,7 @@ segments:
     dir: overlays/bapulse
     type: bin
     start: 0x01F67E60
+    extract: False
   - name: bapulse
     dir: overlays/bapulse
     type: code
@@ -3070,6 +3214,7 @@ segments:
     dir: overlays/bareact
     type: bin
     start: 0x01F68010
+    extract: False
   - name: bareact
     dir: overlays/bareact
     type: code
@@ -3088,6 +3233,7 @@ segments:
     dir: overlays/basetup
     type: bin
     start: 0x01F68230
+    extract: False
   - name: basetup
     dir: overlays/basetup
     type: code
@@ -3106,6 +3252,7 @@ segments:
     dir: overlays/bashake
     type: bin
     start: 0x01F68DF0
+    extract: False
   - name: bashake
     dir: overlays/bashake
     type: code
@@ -3124,6 +3271,7 @@ segments:
     dir: overlays/bashoes
     type: bin
     start: 0x01F68FC0
+    extract: False
   - name: bashoes
     dir: overlays/bashoes
     type: code
@@ -3142,6 +3290,7 @@ segments:
     dir: overlays/bashoessuck
     type: bin
     start: 0x01F69CF0
+    extract: False
   - name: bashoessuck
     dir: overlays/bashoessuck
     type: code
@@ -3160,6 +3309,7 @@ segments:
     dir: overlays/basquash
     type: bin
     start: 0x01F6A580
+    extract: False
   - name: basquash
     dir: overlays/basquash
     type: code
@@ -3178,6 +3328,7 @@ segments:
     dir: overlays/basnowball
     type: bin
     start: 0x01F6AD30
+    extract: False
   - name: basnowball
     dir: overlays/basnowball
     type: code
@@ -3196,6 +3347,7 @@ segments:
     dir: overlays/baspin
     type: bin
     start: 0x01F6BF60
+    extract: False
   - name: baspin
     dir: overlays/baspin
     type: code
@@ -3214,6 +3366,7 @@ segments:
     dir: overlays/bastatemem
     type: bin
     start: 0x01F6C370
+    extract: False
   - name: bastatemem
     dir: overlays/bastatemem
     type: code
@@ -3232,6 +3385,7 @@ segments:
     dir: overlays/basub
     type: bin
     start: 0x01F6C440
+    extract: False
   - name: basub
     dir: overlays/basub
     type: code
@@ -3250,6 +3404,7 @@ segments:
     dir: overlays/basudie
     type: bin
     start: 0x01F6D160
+    extract: False
   - name: basudie
     dir: overlays/basudie
     type: code
@@ -3268,6 +3423,7 @@ segments:
     dir: overlays/baswim
     type: bin
     start: 0x01F6D700
+    extract: False
   - name: baswim
     dir: overlays/baswim
     type: code
@@ -3286,6 +3442,7 @@ segments:
     dir: overlays/batimer
     type: bin
     start: 0x01F6DD60
+    extract: False
   - name: batimer
     dir: overlays/batimer
     type: code
@@ -3304,6 +3461,7 @@ segments:
     dir: overlays/batranslate
     type: bin
     start: 0x01F6E0D0
+    extract: False
   - name: batranslate
     dir: overlays/batranslate
     type: code
@@ -3322,6 +3480,7 @@ segments:
     dir: overlays/bavan
     type: bin
     start: 0x01F6E350
+    extract: False
   - name: bavan
     dir: overlays/bavan
     type: code
@@ -3340,6 +3499,7 @@ segments:
     dir: overlays/bawandglow
     type: bin
     start: 0x01F6E6C0
+    extract: False
   - name: bawandglow
     dir: overlays/bawandglow
     type: code
@@ -3358,6 +3518,7 @@ segments:
     dir: overlays/bawasher
     type: bin
     start: 0x01F6E8F0
+    extract: False
   - name: bawasher
     dir: overlays/bawasher
     type: code
@@ -3376,6 +3537,7 @@ segments:
     dir: overlays/bawobble
     type: bin
     start: 0x01F6ED40
+    extract: False
   - name: bawobble
     dir: overlays/bawobble
     type: code
@@ -3394,6 +3556,7 @@ segments:
     dir: overlays/bamotor
     type: bin
     start: 0x01F6F1C0
+    extract: False
   - name: bamotor
     dir: overlays/bamotor
     type: code
@@ -3412,6 +3575,7 @@ segments:
     dir: overlays/bainvisible
     type: bin
     start: 0x01F6F310
+    extract: False
   - name: bainvisible
     dir: overlays/bainvisible
     type: code
@@ -3430,6 +3594,7 @@ segments:
     dir: overlays/badeathmatch
     type: bin
     start: 0x01F6FD90
+    extract: False
   - name: badeathmatch
     dir: overlays/badeathmatch
     type: code
@@ -3448,6 +3613,7 @@ segments:
     dir: overlays/baairbar
     type: bin
     start: 0x01F70390
+    extract: False
   - name: baairbar
     dir: overlays/baairbar
     type: code
@@ -3466,6 +3632,7 @@ segments:
     dir: overlays/cadbmgrDll
     type: bin
     start: 0x01F70480
+    extract: False
   - name: cadbmgrDll
     dir: overlays/cadbmgrDll
     type: code
@@ -3484,6 +3651,7 @@ segments:
     dir: overlays/cadbio
     type: bin
     start: 0x01F70B20
+    extract: False
   - name: cadbio
     dir: overlays/cadbio
     type: code
@@ -3502,6 +3670,7 @@ segments:
     dir: overlays/cadbfunc
     type: bin
     start: 0x01F70FA0
+    extract: False
   - name: cadbfunc
     dir: overlays/cadbfunc
     type: code
@@ -3520,6 +3689,7 @@ segments:
     dir: overlays/capod
     type: bin
     start: 0x01F72130
+    extract: False
   - name: capod
     dir: overlays/capod
     type: code
@@ -3538,6 +3708,7 @@ segments:
     dir: overlays/chclimbbase
     type: bin
     start: 0x01F727D0
+    extract: False
   - name: chclimbbase
     dir: overlays/chclimbbase
     type: code
@@ -3556,6 +3727,7 @@ segments:
     dir: overlays/chbadshad
     type: bin
     start: 0x01F72CA0
+    extract: False
   - name: chbadshad
     dir: overlays/chbadshad
     type: code
@@ -3574,6 +3746,7 @@ segments:
     dir: overlays/chshockjump
     type: bin
     start: 0x01F73780
+    extract: False
   - name: chshockjump
     dir: overlays/chshockjump
     type: code
@@ -3592,6 +3765,7 @@ segments:
     dir: overlays/chblink
     type: bin
     start: 0x01F73B50
+    extract: False
   - name: chblink
     dir: overlays/chblink
     type: code
@@ -3610,6 +3784,7 @@ segments:
     dir: overlays/chswitch
     type: bin
     start: 0x01F74170
+    extract: False
   - name: chswitch
     dir: overlays/chswitch
     type: code
@@ -3628,6 +3803,7 @@ segments:
     dir: overlays/chpickups
     type: bin
     start: 0x01F75010
+    extract: False
   - name: chpickups
     dir: overlays/chpickups
     type: code
@@ -3646,6 +3822,7 @@ segments:
     dir: overlays/chjigsaw
     type: bin
     start: 0x01F75BE0
+    extract: False
   - name: chjigsaw
     dir: overlays/chjigsaw
     type: code
@@ -3664,6 +3841,7 @@ segments:
     dir: overlays/chjigsawdance
     type: bin
     start: 0x01F76450
+    extract: False
   - name: chjigsawdance
     dir: overlays/chjigsawdance
     type: code
@@ -3682,6 +3860,7 @@ segments:
     dir: overlays/chbounce
     type: bin
     start: 0x01F769A0
+    extract: False
   - name: chbounce
     dir: overlays/chbounce
     type: code
@@ -3700,6 +3879,7 @@ segments:
     dir: overlays/chbaddieDll
     type: bin
     start: 0x01F77F30
+    extract: False
   - name: chbaddieDll
     dir: overlays/chbaddieDll
     type: code
@@ -3718,6 +3898,7 @@ segments:
     dir: overlays/chusefeather
     type: bin
     start: 0x01F781E0
+    extract: False
   - name: chusefeather
     dir: overlays/chusefeather
     type: code
@@ -3736,6 +3917,7 @@ segments:
     dir: overlays/chgoldsnakehead
     type: bin
     start: 0x01F78650
+    extract: False
   - name: chgoldsnakehead
     dir: overlays/chgoldsnakehead
     type: code
@@ -3754,6 +3936,7 @@ segments:
     dir: overlays/chanim
     type: bin
     start: 0x01F78CB0
+    extract: False
   - name: chanim
     dir: overlays/chanim
     type: code
@@ -3772,6 +3955,7 @@ segments:
     dir: overlays/chweather
     type: bin
     start: 0x01F790B0
+    extract: False
   - name: chweather
     dir: overlays/chweather
     type: code
@@ -3790,6 +3974,7 @@ segments:
     dir: overlays/chidgoldhorde
     type: bin
     start: 0x01F79800
+    extract: False
   - name: chidgoldhorde
     dir: overlays/chidgoldhorde
     type: code
@@ -3808,6 +3993,7 @@ segments:
     dir: overlays/chfishshootgame
     type: bin
     start: 0x01F79AA0
+    extract: False
   - name: chfishshootgame
     dir: overlays/chfishshootgame
     type: code
@@ -3826,6 +4012,7 @@ segments:
     dir: overlays/chlagoonufoext
     type: bin
     start: 0x01F7B6E0
+    extract: False
   - name: chlagoonufoext
     dir: overlays/chlagoonufoext
     type: code
@@ -3844,6 +4031,7 @@ segments:
     dir: overlays/chlagoonufoint
     type: bin
     start: 0x01F7BD20
+    extract: False
   - name: chlagoonufoint
     dir: overlays/chlagoonufoint
     type: code
@@ -3862,6 +4050,7 @@ segments:
     dir: overlays/chnests
     type: bin
     start: 0x01F7DA50
+    extract: False
   - name: chnests
     dir: overlays/chnests
     type: code
@@ -3880,6 +4069,7 @@ segments:
     dir: overlays/chbanjocurrent
     type: bin
     start: 0x01F7F190
+    extract: False
   - name: chbanjocurrent
     dir: overlays/chbanjocurrent
     type: code
@@ -3898,6 +4088,7 @@ segments:
     dir: overlays/chnastycavemen
     type: bin
     start: 0x01F7FA70
+    extract: False
   - name: chnastycavemen
     dir: overlays/chnastycavemen
     type: code
@@ -3916,6 +4107,7 @@ segments:
     dir: overlays/chcamwaypoint
     type: bin
     start: 0x01F80D90
+    extract: False
   - name: chcamwaypoint
     dir: overlays/chcamwaypoint
     type: code
@@ -3934,6 +4126,7 @@ segments:
     dir: overlays/chmasterjiggy
     type: bin
     start: 0x01F80F70
+    extract: False
   - name: chmasterjiggy
     dir: overlays/chmasterjiggy
     type: code
@@ -3952,6 +4145,7 @@ segments:
     dir: overlays/chjiggygamenew
     type: bin
     start: 0x01F828D0
+    extract: False
   - name: chjiggygamenew
     dir: overlays/chjiggygamenew
     type: code
@@ -3970,6 +4164,7 @@ segments:
     dir: overlays/chwaspnestgame
     type: bin
     start: 0x01F86AD0
+    extract: False
   - name: chwaspnestgame
     dir: overlays/chwaspnestgame
     type: code
@@ -3988,6 +4183,7 @@ segments:
     dir: overlays/chwarppad
     type: bin
     start: 0x01F88CD0
+    extract: False
   - name: chwarppad
     dir: overlays/chwarppad
     type: code
@@ -4006,6 +4202,7 @@ segments:
     dir: overlays/chjiggytemple
     type: bin
     start: 0x01F8A110
+    extract: False
   - name: chjiggytemple
     dir: overlays/chjiggytemple
     type: code
@@ -4024,6 +4221,7 @@ segments:
     dir: overlays/chscreenadjust
     type: bin
     start: 0x01F8AC10
+    extract: False
   - name: chscreenadjust
     dir: overlays/chscreenadjust
     type: code
@@ -4042,6 +4240,7 @@ segments:
     dir: overlays/chminisubgame
     type: bin
     start: 0x01F8B100
+    extract: False
   - name: chminisubgame
     dir: overlays/chminisubgame
     type: code
@@ -4060,6 +4259,7 @@ segments:
     dir: overlays/chjiggypost
     type: bin
     start: 0x01F8C770
+    extract: False
   - name: chjiggypost
     dir: overlays/chjiggypost
     type: code
@@ -4078,6 +4278,7 @@ segments:
     dir: overlays/chhoneyb
     type: bin
     start: 0x01F8CBB0
+    extract: False
   - name: chhoneyb
     dir: overlays/chhoneyb
     type: code
@@ -4096,6 +4297,7 @@ segments:
     dir: overlays/chgameselect
     type: bin
     start: 0x01F8DD70
+    extract: False
   - name: chgameselect
     dir: overlays/chgameselect
     type: code
@@ -4114,6 +4316,7 @@ segments:
     dir: overlays/chjiggybeam
     type: bin
     start: 0x01F968C0
+    extract: False
   - name: chjiggybeam
     dir: overlays/chjiggybeam
     type: code
@@ -4132,6 +4335,7 @@ segments:
     dir: overlays/chattract
     type: bin
     start: 0x01F969F0
+    extract: False
   - name: chattract
     dir: overlays/chattract
     type: code
@@ -4150,6 +4354,7 @@ segments:
     dir: overlays/chwitchytents
     type: bin
     start: 0x01F96FB0
+    extract: False
   - name: chwitchytents
     dir: overlays/chwitchytents
     type: code
@@ -4168,6 +4373,7 @@ segments:
     dir: overlays/chfantasybounce
     type: bin
     start: 0x01F970F0
+    extract: False
   - name: chfantasybounce
     dir: overlays/chfantasybounce
     type: code
@@ -4186,6 +4392,7 @@ segments:
     dir: overlays/chcactusofstrength
     type: bin
     start: 0x01F97240
+    extract: False
   - name: chcactusofstrength
     dir: overlays/chcactusofstrength
     type: code
@@ -4204,6 +4411,7 @@ segments:
     dir: overlays/chcaveofhorrorsdoors
     type: bin
     start: 0x01F98170
+    extract: False
   - name: chcaveofhorrorsdoors
     dir: overlays/chcaveofhorrorsdoors
     type: code
@@ -4222,6 +4430,7 @@ segments:
     dir: overlays/chinflatableboss
     type: bin
     start: 0x01F98400
+    extract: False
   - name: chinflatableboss
     dir: overlays/chinflatableboss
     type: code
@@ -4240,6 +4449,7 @@ segments:
     dir: overlays/chballoonbomb
     type: bin
     start: 0x01F9B6F0
+    extract: False
   - name: chballoonbomb
     dir: overlays/chballoonbomb
     type: code
@@ -4258,6 +4468,7 @@ segments:
     dir: overlays/chfairgroundworker
     type: bin
     start: 0x01F9BD10
+    extract: False
   - name: chfairgroundworker
     dir: overlays/chfairgroundworker
     type: code
@@ -4276,6 +4487,7 @@ segments:
     dir: overlays/chgobiwitchy
     type: bin
     start: 0x01F9C220
+    extract: False
   - name: chgobiwitchy
     dir: overlays/chgobiwitchy
     type: code
@@ -4294,6 +4506,7 @@ segments:
     dir: overlays/chbabydino
     type: bin
     start: 0x01F9C710
+    extract: False
   - name: chbabydino
     dir: overlays/chbabydino
     type: code
@@ -4312,6 +4525,7 @@ segments:
     dir: overlays/chhillbilly
     type: bin
     start: 0x01F9CF80
+    extract: False
   - name: chhillbilly
     dir: overlays/chhillbilly
     type: code
@@ -4330,6 +4544,7 @@ segments:
     dir: overlays/chdiggerground
     type: bin
     start: 0x01F9DDB0
+    extract: False
   - name: chdiggerground
     dir: overlays/chdiggerground
     type: code
@@ -4348,6 +4563,7 @@ segments:
     dir: overlays/chdiggergroundgen
     type: bin
     start: 0x01F9E2A0
+    extract: False
   - name: chdiggergroundgen
     dir: overlays/chdiggergroundgen
     type: code
@@ -4366,6 +4582,7 @@ segments:
     dir: overlays/chdiggerfly
     type: bin
     start: 0x01F9E890
+    extract: False
   - name: chdiggerfly
     dir: overlays/chdiggerfly
     type: code
@@ -4384,6 +4601,7 @@ segments:
     dir: overlays/chcheato
     type: bin
     start: 0x01F9EA80
+    extract: False
   - name: chcheato
     dir: overlays/chcheato
     type: code
@@ -4402,6 +4620,7 @@ segments:
     dir: overlays/chcheatopage
     type: bin
     start: 0x01F9FAC0
+    extract: False
   - name: chcheatopage
     dir: overlays/chcheatopage
     type: code
@@ -4420,6 +4639,7 @@ segments:
     dir: overlays/chwarriorbaddy
     type: bin
     start: 0x01F9FEB0
+    extract: False
   - name: chwarriorbaddy
     dir: overlays/chwarriorbaddy
     type: code
@@ -4438,6 +4658,7 @@ segments:
     dir: overlays/chstonepillar
     type: bin
     start: 0x01FA0080
+    extract: False
   - name: chstonepillar
     dir: overlays/chstonepillar
     type: code
@@ -4456,6 +4677,7 @@ segments:
     dir: overlays/chboggykids
     type: bin
     start: 0x01FA1670
+    extract: False
   - name: chboggykids
     dir: overlays/chboggykids
     type: code
@@ -4474,6 +4696,7 @@ segments:
     dir: overlays/chmrsboggy
     type: bin
     start: 0x01FA17B0
+    extract: False
   - name: chmrsboggy
     dir: overlays/chmrsboggy
     type: code
@@ -4492,6 +4715,7 @@ segments:
     dir: overlays/chmineprospector
     type: bin
     start: 0x01FA23D0
+    extract: False
   - name: chmineprospector
     dir: overlays/chmineprospector
     type: code
@@ -4510,6 +4734,7 @@ segments:
     dir: overlays/chonearmbandit
     type: bin
     start: 0x01FA3720
+    extract: False
   - name: chonearmbandit
     dir: overlays/chonearmbandit
     type: code
@@ -4528,6 +4753,7 @@ segments:
     dir: overlays/chtntblockage
     type: bin
     start: 0x01FA4C50
+    extract: False
   - name: chtntblockage
     dir: overlays/chtntblockage
     type: code
@@ -4546,6 +4772,7 @@ segments:
     dir: overlays/chtntdetonator
     type: bin
     start: 0x01FA4FD0
+    extract: False
   - name: chtntdetonator
     dir: overlays/chtntdetonator
     type: code
@@ -4564,6 +4791,7 @@ segments:
     dir: overlays/chtnthut
     type: bin
     start: 0x01FA5810
+    extract: False
   - name: chtnthut
     dir: overlays/chtnthut
     type: code
@@ -4582,6 +4810,7 @@ segments:
     dir: overlays/chtntminecelldoor
     type: bin
     start: 0x01FA5B70
+    extract: False
   - name: chtntminecelldoor
     dir: overlays/chtntminecelldoor
     type: code
@@ -4600,6 +4829,7 @@ segments:
     dir: overlays/chmadamegrunty
     type: bin
     start: 0x01FA5DA0
+    extract: False
   - name: chmadamegrunty
     dir: overlays/chmadamegrunty
     type: code
@@ -4618,6 +4848,7 @@ segments:
     dir: overlays/chlightdemon
     type: bin
     start: 0x01FA6AE0
+    extract: False
   - name: chlightdemon
     dir: overlays/chlightdemon
     type: code
@@ -4636,6 +4867,7 @@ segments:
     dir: overlays/chevilspirit
     type: bin
     start: 0x01FA6D40
+    extract: False
   - name: chevilspirit
     dir: overlays/chevilspirit
     type: code
@@ -4654,6 +4886,7 @@ segments:
     dir: overlays/chhotfloorsmoke
     type: bin
     start: 0x01FA9210
+    extract: False
   - name: chhotfloorsmoke
     dir: overlays/chhotfloorsmoke
     type: code
@@ -4672,6 +4905,7 @@ segments:
     dir: overlays/chboilerboss
     type: bin
     start: 0x01FA9630
+    extract: False
   - name: chboilerboss
     dir: overlays/chboilerboss
     type: code
@@ -4690,6 +4924,7 @@ segments:
     dir: overlays/chburgerstand
     type: bin
     start: 0x01FAC8D0
+    extract: False
   - name: chburgerstand
     dir: overlays/chburgerstand
     type: code
@@ -4708,6 +4943,7 @@ segments:
     dir: overlays/chfriesstand
     type: bin
     start: 0x01FAD840
+    extract: False
   - name: chfriesstand
     dir: overlays/chfriesstand
     type: code
@@ -4726,6 +4962,7 @@ segments:
     dir: overlays/chboxingglove
     type: bin
     start: 0x01FAEA30
+    extract: False
   - name: chboxingglove
     dir: overlays/chboxingglove
     type: code
@@ -4744,6 +4981,7 @@ segments:
     dir: overlays/chconga
     type: bin
     start: 0x01FAF260
+    extract: False
   - name: chconga
     dir: overlays/chconga
     type: code
@@ -4762,6 +5000,7 @@ segments:
     dir: overlays/chstarspinnerplanet
     type: bin
     start: 0x01FAFA40
+    extract: False
   - name: chstarspinnerplanet
     dir: overlays/chstarspinnerplanet
     type: code
@@ -4780,6 +5019,7 @@ segments:
     dir: overlays/chstarspinnerstar
     type: bin
     start: 0x01FAFDC0
+    extract: False
   - name: chstarspinnerstar
     dir: overlays/chstarspinnerstar
     type: code
@@ -4798,6 +5038,7 @@ segments:
     dir: overlays/chstarspinnerctrl
     type: bin
     start: 0x01FB0550
+    extract: False
   - name: chstarspinnerctrl
     dir: overlays/chstarspinnerctrl
     type: code
@@ -4816,6 +5057,7 @@ segments:
     dir: overlays/chhellterskelter
     type: bin
     start: 0x01FB1110
+    extract: False
   - name: chhellterskelter
     dir: overlays/chhellterskelter
     type: code
@@ -4834,6 +5076,7 @@ segments:
     dir: overlays/chcablespark
     type: bin
     start: 0x01FB1B50
+    extract: False
   - name: chcablespark
     dir: overlays/chcablespark
     type: code
@@ -4852,6 +5095,7 @@ segments:
     dir: overlays/chcablecar
     type: bin
     start: 0x01FB27E0
+    extract: False
   - name: chcablecar
     dir: overlays/chcablecar
     type: code
@@ -4870,6 +5114,7 @@ segments:
     dir: overlays/chhellterskeltermouth
     type: bin
     start: 0x01FB3850
+    extract: False
   - name: chhellterskeltermouth
     dir: overlays/chhellterskeltermouth
     type: code
@@ -4888,6 +5133,7 @@ segments:
     dir: overlays/charea51gate
     type: bin
     start: 0x01FB3C80
+    extract: False
   - name: charea51gate
     dir: overlays/charea51gate
     type: code
@@ -4906,6 +5152,7 @@ segments:
     dir: overlays/chghostdoor
     type: bin
     start: 0x01FB3FD0
+    extract: False
   - name: chghostdoor
     dir: overlays/chghostdoor
     type: code
@@ -4924,6 +5171,7 @@ segments:
     dir: overlays/chfloater
     type: bin
     start: 0x01FB42E0
+    extract: False
   - name: chfloater
     dir: overlays/chfloater
     type: code
@@ -4942,6 +5190,7 @@ segments:
     dir: overlays/chpumproomgrill
     type: bin
     start: 0x01FB4630
+    extract: False
   - name: chpumproomgrill
     dir: overlays/chpumproomgrill
     type: code
@@ -4960,6 +5209,7 @@ segments:
     dir: overlays/chpumproomswitch
     type: bin
     start: 0x01FB47D0
+    extract: False
   - name: chpumproomswitch
     dir: overlays/chpumproomswitch
     type: code
@@ -4978,6 +5228,7 @@ segments:
     dir: overlays/chbouncycastle
     type: bin
     start: 0x01FB4C90
+    extract: False
   - name: chbouncycastle
     dir: overlays/chbouncycastle
     type: code
@@ -4996,6 +5247,7 @@ segments:
     dir: overlays/chspotlight
     type: bin
     start: 0x01FB57B0
+    extract: False
   - name: chspotlight
     dir: overlays/chspotlight
     type: code
@@ -5014,6 +5266,7 @@ segments:
     dir: overlays/chballoonburst
     type: bin
     start: 0x01FB6240
+    extract: False
   - name: chballoonburst
     dir: overlays/chballoonburst
     type: code
@@ -5032,6 +5285,7 @@ segments:
     dir: overlays/chpawnbroker
     type: bin
     start: 0x01FB8170
+    extract: False
   - name: chpawnbroker
     dir: overlays/chpawnbroker
     type: code
@@ -5050,6 +5304,7 @@ segments:
     dir: overlays/chhoopswoop
     type: bin
     start: 0x01FB93F0
+    extract: False
   - name: chhoopswoop
     dir: overlays/chhoopswoop
     type: code
@@ -5068,6 +5323,7 @@ segments:
     dir: overlays/chtiptup
     type: bin
     start: 0x01FBB4E0
+    extract: False
   - name: chtiptup
     dir: overlays/chtiptup
     type: code
@@ -5086,6 +5342,7 @@ segments:
     dir: overlays/chseaweedbaddy
     type: bin
     start: 0x01FBCCD0
+    extract: False
   - name: chseaweedbaddy
     dir: overlays/chseaweedbaddy
     type: code
@@ -5104,6 +5361,7 @@ segments:
     dir: overlays/choctopus
     type: bin
     start: 0x01FBDD80
+    extract: False
   - name: choctopus
     dir: overlays/choctopus
     type: code
@@ -5122,6 +5380,7 @@ segments:
     dir: overlays/chanemone
     type: bin
     start: 0x01FBE820
+    extract: False
   - name: chanemone
     dir: overlays/chanemone
     type: code
@@ -5140,6 +5399,7 @@ segments:
     dir: overlays/chjollyroger
     type: bin
     start: 0x01FBF220
+    extract: False
   - name: chjollyroger
     dir: overlays/chjollyroger
     type: code
@@ -5158,6 +5418,7 @@ segments:
     dir: overlays/chdinofoot
     type: bin
     start: 0x01FC07D0
+    extract: False
   - name: chdinofoot
     dir: overlays/chdinofoot
     type: code
@@ -5176,6 +5437,7 @@ segments:
     dir: overlays/chfreezy
     type: bin
     start: 0x01FC1170
+    extract: False
   - name: chfreezy
     dir: overlays/chfreezy
     type: code
@@ -5194,6 +5456,7 @@ segments:
     dir: overlays/chdinoswitches
     type: bin
     start: 0x01FC1950
+    extract: False
   - name: chdinoswitches
     dir: overlays/chdinoswitches
     type: code
@@ -5212,6 +5475,7 @@ segments:
     dir: overlays/chlagoonbits
     type: bin
     start: 0x01FC2770
+    extract: False
   - name: chlagoonbits
     dir: overlays/chlagoonbits
     type: code
@@ -5230,6 +5494,7 @@ segments:
     dir: overlays/chbigterrysbits
     type: bin
     start: 0x01FC3300
+    extract: False
   - name: chbigterrysbits
     dir: overlays/chbigterrysbits
     type: code
@@ -5248,6 +5513,7 @@ segments:
     dir: overlays/chdinoboss
     type: bin
     start: 0x01FC37F0
+    extract: False
   - name: chdinoboss
     dir: overlays/chdinoboss
     type: code
@@ -5266,6 +5532,7 @@ segments:
     dir: overlays/chphlegm
     type: bin
     start: 0x01FC6740
+    extract: False
   - name: chphlegm
     dir: overlays/chphlegm
     type: code
@@ -5284,6 +5551,7 @@ segments:
     dir: overlays/chlilterry
     type: bin
     start: 0x01FC74E0
+    extract: False
   - name: chlilterry
     dir: overlays/chlilterry
     type: code
@@ -5302,6 +5570,7 @@ segments:
     dir: overlays/chdinocoaster
     type: bin
     start: 0x01FC7640
+    extract: False
   - name: chdinocoaster
     dir: overlays/chdinocoaster
     type: code
@@ -5320,6 +5589,7 @@ segments:
     dir: overlays/chpowerhut
     type: bin
     start: 0x01FC7C10
+    extract: False
   - name: chpowerhut
     dir: overlays/chpowerhut
     type: code
@@ -5338,6 +5608,7 @@ segments:
     dir: overlays/chpowerhutwitchy
     type: bin
     start: 0x01FC86B0
+    extract: False
   - name: chpowerhutwitchy
     dir: overlays/chpowerhutwitchy
     type: code
@@ -5356,6 +5627,7 @@ segments:
     dir: overlays/chboilerid
     type: bin
     start: 0x01FC93B0
+    extract: False
   - name: chboilerid
     dir: overlays/chboilerid
     type: code
@@ -5374,6 +5646,7 @@ segments:
     dir: overlays/chflamer
     type: bin
     start: 0x01FCA270
+    extract: False
   - name: chflamer
     dir: overlays/chflamer
     type: code
@@ -5392,6 +5665,7 @@ segments:
     dir: overlays/chpoolkids
     type: bin
     start: 0x01FCAE80
+    extract: False
   - name: chpoolkids
     dir: overlays/chpoolkids
     type: code
@@ -5410,6 +5684,7 @@ segments:
     dir: overlays/chnicecavemen
     type: bin
     start: 0x01FCC5C0
+    extract: False
   - name: chnicecavemen
     dir: overlays/chnicecavemen
     type: code
@@ -5428,6 +5703,7 @@ segments:
     dir: overlays/chfactorylight
     type: bin
     start: 0x01FCE570
+    extract: False
   - name: chfactorylight
     dir: overlays/chfactorylight
     type: code
@@ -5446,6 +5722,7 @@ segments:
     dir: overlays/chfirefx
     type: bin
     start: 0x01FCF1E0
+    extract: False
   - name: chfirefx
     dir: overlays/chfirefx
     type: code
@@ -5464,6 +5741,7 @@ segments:
     dir: overlays/chbonfirecavern
     type: bin
     start: 0x01FD0550
+    extract: False
   - name: chbonfirecavern
     dir: overlays/chbonfirecavern
     type: code
@@ -5482,6 +5760,7 @@ segments:
     dir: overlays/chterryegg
     type: bin
     start: 0x01FD0870
+    extract: False
   - name: chterryegg
     dir: overlays/chterryegg
     type: code
@@ -5500,6 +5779,7 @@ segments:
     dir: overlays/charmouredcaveman
     type: bin
     start: 0x01FD1DE0
+    extract: False
   - name: charmouredcaveman
     dir: overlays/charmouredcaveman
     type: code
@@ -5518,6 +5798,7 @@ segments:
     dir: overlays/chintrotext
     type: bin
     start: 0x01FD2B20
+    extract: False
   - name: chintrotext
     dir: overlays/chintrotext
     type: code
@@ -5536,6 +5817,7 @@ segments:
     dir: overlays/chfactoryprop
     type: bin
     start: 0x01FD33D0
+    extract: False
   - name: chfactoryprop
     dir: overlays/chfactoryprop
     type: code
@@ -5554,6 +5836,7 @@ segments:
     dir: overlays/chtrashcompactor
     type: bin
     start: 0x01FD41D0
+    extract: False
   - name: chtrashcompactor
     dir: overlays/chtrashcompactor
     type: code
@@ -5572,6 +5855,7 @@ segments:
     dir: overlays/chfactoryliftdoor
     type: bin
     start: 0x01FD4CB0
+    extract: False
   - name: chfactoryliftdoor
     dir: overlays/chfactoryliftdoor
     type: code
@@ -5590,6 +5874,7 @@ segments:
     dir: overlays/chfactorycrusher
     type: bin
     start: 0x01FD4EF0
+    extract: False
   - name: chfactorycrusher
     dir: overlays/chfactorycrusher
     type: code
@@ -5608,6 +5893,7 @@ segments:
     dir: overlays/chfactoryrobot
     type: bin
     start: 0x01FD5AA0
+    extract: False
   - name: chfactoryrobot
     dir: overlays/chfactoryrobot
     type: code
@@ -5626,6 +5912,7 @@ segments:
     dir: overlays/chmermaidstatue
     type: bin
     start: 0x01FD8780
+    extract: False
   - name: chmermaidstatue
     dir: overlays/chmermaidstatue
     type: code
@@ -5644,6 +5931,7 @@ segments:
     dir: overlays/chdoor
     type: bin
     start: 0x01FD8BE0
+    extract: False
   - name: chdoor
     dir: overlays/chdoor
     type: code
@@ -5662,6 +5950,7 @@ segments:
     dir: overlays/chfactorygoblin
     type: bin
     start: 0x01FDA2B0
+    extract: False
   - name: chfactorygoblin
     dir: overlays/chfactorygoblin
     type: code
@@ -5680,6 +5969,7 @@ segments:
     dir: overlays/chfactorytoxicpools
     type: bin
     start: 0x01FDA630
+    extract: False
   - name: chfactorytoxicpools
     dir: overlays/chfactorytoxicpools
     type: code
@@ -5698,6 +5988,7 @@ segments:
     dir: overlays/chbigtopticket
     type: bin
     start: 0x01FDB1C0
+    extract: False
   - name: chbigtopticket
     dir: overlays/chbigtopticket
     type: code
@@ -5716,6 +6007,7 @@ segments:
     dir: overlays/chlagoonpirate
     type: bin
     start: 0x01FDB390
+    extract: False
   - name: chlagoonpirate
     dir: overlays/chlagoonpirate
     type: code
@@ -5734,6 +6026,7 @@ segments:
     dir: overlays/chvandoor
     type: bin
     start: 0x01FDB530
+    extract: False
   - name: chvandoor
     dir: overlays/chvandoor
     type: code
@@ -5752,6 +6045,7 @@ segments:
     dir: overlays/chcoderoombits
     type: bin
     start: 0x01FDBC40
+    extract: False
   - name: chcoderoombits
     dir: overlays/chcoderoombits
     type: code
@@ -5770,6 +6064,7 @@ segments:
     dir: overlays/chdingpot
     type: bin
     start: 0x01FDD060
+    extract: False
   - name: chdingpot
     dir: overlays/chdingpot
     type: code
@@ -5788,6 +6083,7 @@ segments:
     dir: overlays/chelectricfence
     type: bin
     start: 0x01FDD6E0
+    extract: False
   - name: chelectricfence
     dir: overlays/chelectricfence
     type: code
@@ -5806,6 +6102,7 @@ segments:
     dir: overlays/chfactorysmoke
     type: bin
     start: 0x01FDDD50
+    extract: False
   - name: chfactorysmoke
     dir: overlays/chfactorysmoke
     type: code
@@ -5824,6 +6121,7 @@ segments:
     dir: overlays/chappearfx
     type: bin
     start: 0x01FDDF70
+    extract: False
   - name: chappearfx
     dir: overlays/chappearfx
     type: code
@@ -5842,6 +6140,7 @@ segments:
     dir: overlays/chbilldrillplate
     type: bin
     start: 0x01FDE9F0
+    extract: False
   - name: chbilldrillplate
     dir: overlays/chbilldrillplate
     type: code
@@ -5860,6 +6159,7 @@ segments:
     dir: overlays/chrainripples
     type: bin
     start: 0x01FDFD50
+    extract: False
   - name: chrainripples
     dir: overlays/chrainripples
     type: code
@@ -5878,6 +6178,7 @@ segments:
     dir: overlays/chdumbwaiterlift
     type: bin
     start: 0x01FE00B0
+    extract: False
   - name: chdumbwaiterlift
     dir: overlays/chdumbwaiterlift
     type: code
@@ -5896,6 +6197,7 @@ segments:
     dir: overlays/chmrsicecube
     type: bin
     start: 0x01FE0DD0
+    extract: False
   - name: chmrsicecube
     dir: overlays/chmrsicecube
     type: code
@@ -5914,6 +6216,7 @@ segments:
     dir: overlays/chgobihailfire
     type: bin
     start: 0x01FE1970
+    extract: False
   - name: chgobihailfire
     dir: overlays/chgobihailfire
     type: code
@@ -5932,6 +6235,7 @@ segments:
     dir: overlays/chbigfoot
     type: bin
     start: 0x01FE2230
+    extract: False
   - name: chbigfoot
     dir: overlays/chbigfoot
     type: code
@@ -5950,6 +6254,7 @@ segments:
     dir: overlays/chbiggafoot
     type: bin
     start: 0x01FE2390
+    extract: False
   - name: chbiggafoot
     dir: overlays/chbiggafoot
     type: code
@@ -5968,6 +6273,7 @@ segments:
     dir: overlays/chicestationbits
     type: bin
     start: 0x01FE3790
+    extract: False
   - name: chicestationbits
     dir: overlays/chicestationbits
     type: code
@@ -5986,6 +6292,7 @@ segments:
     dir: overlays/chmricecube
     type: bin
     start: 0x01FE3B10
+    extract: False
   - name: chmricecube
     dir: overlays/chmricecube
     type: code
@@ -6004,6 +6311,7 @@ segments:
     dir: overlays/chiciclebits
     type: bin
     start: 0x01FE45D0
+    extract: False
   - name: chiciclebits
     dir: overlays/chiciclebits
     type: code
@@ -6022,6 +6330,7 @@ segments:
     dir: overlays/chsabreman
     type: bin
     start: 0x01FE4B40
+    extract: False
   - name: chsabreman
     dir: overlays/chsabreman
     type: code
@@ -6040,6 +6349,7 @@ segments:
     dir: overlays/chbanjoctrl
     type: bin
     start: 0x01FE6D50
+    extract: False
   - name: chbanjoctrl
     dir: overlays/chbanjoctrl
     type: code
@@ -6058,6 +6368,7 @@ segments:
     dir: overlays/chklungo
     type: bin
     start: 0x01FE8140
+    extract: False
   - name: chklungo
     dir: overlays/chklungo
     type: code
@@ -6076,6 +6387,7 @@ segments:
     dir: overlays/chklungophial
     type: bin
     start: 0x01FEC2D0
+    extract: False
   - name: chklungophial
     dir: overlays/chklungophial
     type: code
@@ -6094,6 +6406,7 @@ segments:
     dir: overlays/chklungoforcefield
     type: bin
     start: 0x01FED180
+    extract: False
   - name: chklungoforcefield
     dir: overlays/chklungoforcefield
     type: code
@@ -6112,6 +6425,7 @@ segments:
     dir: overlays/chklungodoors
     type: bin
     start: 0x01FED670
+    extract: False
   - name: chklungodoors
     dir: overlays/chklungodoors
     type: code
@@ -6130,6 +6444,7 @@ segments:
     dir: overlays/chklungoleave
     type: bin
     start: 0x01FEDC70
+    extract: False
   - name: chklungoleave
     dir: overlays/chklungoleave
     type: code
@@ -6148,6 +6463,7 @@ segments:
     dir: overlays/chlightfader
     type: bin
     start: 0x01FEDE60
+    extract: False
   - name: chlightfader
     dir: overlays/chlightfader
     type: code
@@ -6166,6 +6482,7 @@ segments:
     dir: overlays/chvolcanobits
     type: bin
     start: 0x01FEE2C0
+    extract: False
   - name: chvolcanobits
     dir: overlays/chvolcanobits
     type: code
@@ -6184,6 +6501,7 @@ segments:
     dir: overlays/chhotwaterpoolbits
     type: bin
     start: 0x01FEF6B0
+    extract: False
   - name: chhotwaterpoolbits
     dir: overlays/chhotwaterpoolbits
     type: code
@@ -6202,6 +6520,7 @@ segments:
     dir: overlays/chnicecavemenguard
     type: bin
     start: 0x01FF0270
+    extract: False
   - name: chnicecavemenguard
     dir: overlays/chnicecavemenguard
     type: code
@@ -6220,6 +6539,7 @@ segments:
     dir: overlays/chscorepoints
     type: bin
     start: 0x01FF0D80
+    extract: False
   - name: chscorepoints
     dir: overlays/chscorepoints
     type: code
@@ -6238,6 +6558,7 @@ segments:
     dir: overlays/chicywind
     type: bin
     start: 0x01FF1200
+    extract: False
   - name: chicywind
     dir: overlays/chicywind
     type: code
@@ -6256,6 +6577,7 @@ segments:
     dir: overlays/chdippy
     type: bin
     start: 0x01FF1610
+    extract: False
   - name: chdippy
     dir: overlays/chdippy
     type: code
@@ -6274,6 +6596,7 @@ segments:
     dir: overlays/chfactoryflypad
     type: bin
     start: 0x01FF2F20
+    extract: False
   - name: chfactoryflypad
     dir: overlays/chfactoryflypad
     type: code
@@ -6292,6 +6615,7 @@ segments:
     dir: overlays/chloggo
     type: bin
     start: 0x01FF3270
+    extract: False
   - name: chloggo
     dir: overlays/chloggo
     type: code
@@ -6310,6 +6634,7 @@ segments:
     dir: overlays/chkingjinjo
     type: bin
     start: 0x01FF3A60
+    extract: False
   - name: chkingjinjo
     dir: overlays/chkingjinjo
     type: code
@@ -6328,6 +6653,7 @@ segments:
     dir: overlays/chbottlesfamily
     type: bin
     start: 0x01FF4EF0
+    extract: False
   - name: chbottlesfamily
     dir: overlays/chbottlesfamily
     type: code
@@ -6346,6 +6672,7 @@ segments:
     dir: overlays/chnutsnbolts
     type: bin
     start: 0x01FF5FB0
+    extract: False
   - name: chnutsnbolts
     dir: overlays/chnutsnbolts
     type: code
@@ -6364,6 +6691,7 @@ segments:
     dir: overlays/chfactorytwinklies
     type: bin
     start: 0x01FF7040
+    extract: False
   - name: chfactorytwinklies
     dir: overlays/chfactorytwinklies
     type: code
@@ -6382,6 +6710,7 @@ segments:
     dir: overlays/chstatueboss
     type: bin
     start: 0x01FF9660
+    extract: False
   - name: chstatueboss
     dir: overlays/chstatueboss
     type: code
@@ -6400,6 +6729,7 @@ segments:
     dir: overlays/chproplighter
     type: bin
     start: 0x01FFC180
+    extract: False
   - name: chproplighter
     dir: overlays/chproplighter
     type: code
@@ -6418,6 +6748,7 @@ segments:
     dir: overlays/chmonsterinterior
     type: bin
     start: 0x01FFC3D0
+    extract: False
   - name: chmonsterinterior
     dir: overlays/chmonsterinterior
     type: code
@@ -6436,6 +6767,7 @@ segments:
     dir: overlays/chalienkids
     type: bin
     start: 0x01FFE640
+    extract: False
   - name: chalienkids
     dir: overlays/chalienkids
     type: code
@@ -6454,6 +6786,7 @@ segments:
     dir: overlays/chlifeforcespell
     type: bin
     start: 0x02000B20
+    extract: False
   - name: chlifeforcespell
     dir: overlays/chlifeforcespell
     type: code
@@ -6472,6 +6805,7 @@ segments:
     dir: overlays/changlerboss
     type: bin
     start: 0x02001070
+    extract: False
   - name: changlerboss
     dir: overlays/changlerboss
     type: code
@@ -6490,6 +6824,7 @@ segments:
     dir: overlays/changlerbossflare
     type: bin
     start: 0x02004430
+    extract: False
   - name: changlerbossflare
     dir: overlays/changlerbossflare
     type: code
@@ -6508,6 +6843,7 @@ segments:
     dir: overlays/changlerbossbubble
     type: bin
     start: 0x02004A40
+    extract: False
   - name: changlerbossbubble
     dir: overlays/changlerbossbubble
     type: code
@@ -6526,6 +6862,7 @@ segments:
     dir: overlays/chzubba
     type: bin
     start: 0x02005150
+    extract: False
   - name: chzubba
     dir: overlays/chzubba
     type: code
@@ -6544,6 +6881,7 @@ segments:
     dir: overlays/chfireimp
     type: bin
     start: 0x020053A0
+    extract: False
   - name: chfireimp
     dir: overlays/chfireimp
     type: code
@@ -6562,6 +6900,7 @@ segments:
     dir: overlays/chmumboskulls
     type: bin
     start: 0x02005680
+    extract: False
   - name: chmumboskulls
     dir: overlays/chmumboskulls
     type: code
@@ -6580,6 +6919,7 @@ segments:
     dir: overlays/ch2dbaddy
     type: bin
     start: 0x020057F0
+    extract: False
   - name: ch2dbaddy
     dir: overlays/ch2dbaddy
     type: code
@@ -6598,6 +6938,7 @@ segments:
     dir: overlays/chweldarboss
     type: bin
     start: 0x02006400
+    extract: False
   - name: chweldarboss
     dir: overlays/chweldarboss
     type: code
@@ -6616,6 +6957,7 @@ segments:
     dir: overlays/chaliendad
     type: bin
     start: 0x0200B360
+    extract: False
   - name: chaliendad
     dir: overlays/chaliendad
     type: code
@@ -6634,6 +6976,7 @@ segments:
     dir: overlays/chalienbeam
     type: bin
     start: 0x0200DDA0
+    extract: False
   - name: chalienbeam
     dir: overlays/chalienbeam
     type: code
@@ -6652,6 +6995,7 @@ segments:
     dir: overlays/chweldarbossdoors
     type: bin
     start: 0x0200DFF0
+    extract: False
   - name: chweldarbossdoors
     dir: overlays/chweldarbossdoors
     type: code
@@ -6670,6 +7014,7 @@ segments:
     dir: overlays/chweldarbossfireball
     type: bin
     start: 0x0200E360
+    extract: False
   - name: chweldarbossfireball
     dir: overlays/chweldarbossfireball
     type: code
@@ -6688,6 +7033,7 @@ segments:
     dir: overlays/chweldarbossfusebox
     type: bin
     start: 0x0200E8D0
+    extract: False
   - name: chweldarbossfusebox
     dir: overlays/chweldarbossfusebox
     type: code
@@ -6706,6 +7052,7 @@ segments:
     dir: overlays/chcrystalbaddie
     type: bin
     start: 0x0200F160
+    extract: False
   - name: chcrystalbaddie
     dir: overlays/chcrystalbaddie
     type: code
@@ -6724,6 +7071,7 @@ segments:
     dir: overlays/chflowerbaddie
     type: bin
     start: 0x0200F8F0
+    extract: False
   - name: chflowerbaddie
     dir: overlays/chflowerbaddie
     type: code
@@ -6742,6 +7090,7 @@ segments:
     dir: overlays/chexploder
     type: bin
     start: 0x020106F0
+    extract: False
   - name: chexploder
     dir: overlays/chexploder
     type: code
@@ -6760,6 +7109,7 @@ segments:
     dir: overlays/chboggykidshome
     type: bin
     start: 0x02012400
+    extract: False
   - name: chboggykidshome
     dir: overlays/chboggykidshome
     type: code
@@ -6778,6 +7128,7 @@ segments:
     dir: overlays/chmrsboggyhome
     type: bin
     start: 0x02012AC0
+    extract: False
   - name: chmrsboggyhome
     dir: overlays/chmrsboggyhome
     type: code
@@ -6796,6 +7147,7 @@ segments:
     dir: overlays/chweldarhead
     type: bin
     start: 0x02012D80
+    extract: False
   - name: chweldarhead
     dir: overlays/chweldarhead
     type: code
@@ -6814,6 +7166,7 @@ segments:
     dir: overlays/chcamerawibble
     type: bin
     start: 0x020133A0
+    extract: False
   - name: chcamerawibble
     dir: overlays/chcamerawibble
     type: code
@@ -6832,6 +7185,7 @@ segments:
     dir: overlays/changlerbossdoor
     type: bin
     start: 0x02013530
+    extract: False
   - name: changlerbossdoor
     dir: overlays/changlerbossdoor
     type: code
@@ -6850,6 +7204,7 @@ segments:
     dir: overlays/chboilerbossdoor
     type: bin
     start: 0x020136F0
+    extract: False
   - name: chboilerbossdoor
     dir: overlays/chboilerbossdoor
     type: code
@@ -6868,6 +7223,7 @@ segments:
     dir: overlays/chinflatablebossdoor
     type: bin
     start: 0x02013890
+    extract: False
   - name: chinflatablebossdoor
     dir: overlays/chinflatablebossdoor
     type: code
@@ -6886,6 +7242,7 @@ segments:
     dir: overlays/chstatuebossbits
     type: bin
     start: 0x02013A80
+    extract: False
   - name: chstatuebossbits
     dir: overlays/chstatuebossbits
     type: code
@@ -6904,6 +7261,7 @@ segments:
     dir: overlays/chhotwatersteam
     type: bin
     start: 0x020143B0
+    extract: False
   - name: chhotwatersteam
     dir: overlays/chhotwatersteam
     type: code
@@ -6922,6 +7280,7 @@ segments:
     dir: overlays/chcastleshockpadswitch
     type: bin
     start: 0x020146E0
+    extract: False
   - name: chcastleshockpadswitch
     dir: overlays/chcastleshockpadswitch
     type: code
@@ -6940,6 +7299,7 @@ segments:
     dir: overlays/chtalontorpedoboulder
     type: bin
     start: 0x02014900
+    extract: False
   - name: chtalontorpedoboulder
     dir: overlays/chtalontorpedoboulder
     type: code
@@ -6958,6 +7318,7 @@ segments:
     dir: overlays/chexplodingchainlinks
     type: bin
     start: 0x02014CA0
+    extract: False
   - name: chexplodingchainlinks
     dir: overlays/chexplodingchainlinks
     type: code
@@ -6976,6 +7337,7 @@ segments:
     dir: overlays/chlagoonbilldrillcover
     type: bin
     start: 0x02014F00
+    extract: False
   - name: chlagoonbilldrillcover
     dir: overlays/chlagoonbilldrillcover
     type: code
@@ -6994,6 +7356,7 @@ segments:
     dir: overlays/chgobicommon
     type: bin
     start: 0x02015350
+    extract: False
   - name: chgobicommon
     dir: overlays/chgobicommon
     type: code
@@ -7012,6 +7375,7 @@ segments:
     dir: overlays/chwitchyshockpadswitch
     type: bin
     start: 0x02015660
+    extract: False
   - name: chwitchyshockpadswitch
     dir: overlays/chwitchyshockpadswitch
     type: code
@@ -7030,6 +7394,7 @@ segments:
     dir: overlays/chsquits
     type: bin
     start: 0x02015880
+    extract: False
   - name: chsquits
     dir: overlays/chsquits
     type: code
@@ -7048,6 +7413,7 @@ segments:
     dir: overlays/chbottlesplantgrill
     type: bin
     start: 0x02016050
+    extract: False
   - name: chbottlesplantgrill
     dir: overlays/chbottlesplantgrill
     type: code
@@ -7066,6 +7432,7 @@ segments:
     dir: overlays/chkingjinjobits
     type: bin
     start: 0x020161F0
+    extract: False
   - name: chkingjinjobits
     dir: overlays/chkingjinjobits
     type: code
@@ -7084,6 +7451,7 @@ segments:
     dir: overlays/chklungospiral
     type: bin
     start: 0x02016D90
+    extract: False
   - name: chklungospiral
     dir: overlays/chklungospiral
     type: code
@@ -7102,6 +7470,7 @@ segments:
     dir: overlays/chfactoryposter
     type: bin
     start: 0x02017500
+    extract: False
   - name: chfactoryposter
     dir: overlays/chfactoryposter
     type: code
@@ -7120,6 +7489,7 @@ segments:
     dir: overlays/chjigsawcollect
     type: bin
     start: 0x020176C0
+    extract: False
   - name: chjigsawcollect
     dir: overlays/chjigsawcollect
     type: code
@@ -7138,6 +7508,7 @@ segments:
     dir: overlays/chdiggerboss
     type: bin
     start: 0x02017E40
+    extract: False
   - name: chdiggerboss
     dir: overlays/chdiggerboss
     type: code
@@ -7156,6 +7527,7 @@ segments:
     dir: overlays/chdiggerbossdoor
     type: bin
     start: 0x02022B60
+    extract: False
   - name: chdiggerbossdoor
     dir: overlays/chdiggerbossdoor
     type: code
@@ -7174,6 +7546,7 @@ segments:
     dir: overlays/chgruntyfireball
     type: bin
     start: 0x02023060
+    extract: False
   - name: chgruntyfireball
     dir: overlays/chgruntyfireball
     type: code
@@ -7192,6 +7565,7 @@ segments:
     dir: overlays/chdiggerbossshell
     type: bin
     start: 0x020236D0
+    extract: False
   - name: chdiggerbossshell
     dir: overlays/chdiggerbossshell
     type: code
@@ -7210,6 +7584,7 @@ segments:
     dir: overlays/chdiggerbossbattery
     type: bin
     start: 0x02023DA0
+    extract: False
   - name: chdiggerbossbattery
     dir: overlays/chdiggerbossbattery
     type: code
@@ -7228,6 +7603,7 @@ segments:
     dir: overlays/chgruntyfireballbig
     type: bin
     start: 0x02024160
+    extract: False
   - name: chgruntyfireballbig
     dir: overlays/chgruntyfireballbig
     type: code
@@ -7246,6 +7622,7 @@ segments:
     dir: overlays/chdiggerbossinterior
     type: bin
     start: 0x020249D0
+    extract: False
   - name: chdiggerbossinterior
     dir: overlays/chdiggerbossinterior
     type: code
@@ -7264,6 +7641,7 @@ segments:
     dir: overlays/chbottlesparty
     type: bin
     start: 0x02024CD0
+    extract: False
   - name: chbottlesparty
     dir: overlays/chbottlesparty
     type: code
@@ -7282,6 +7660,7 @@ segments:
     dir: overlays/chlavafall
     type: bin
     start: 0x02025280
+    extract: False
   - name: chlavafall
     dir: overlays/chlavafall
     type: code
@@ -7300,6 +7679,7 @@ segments:
     dir: overlays/chnewshovel
     type: bin
     start: 0x020253D0
+    extract: False
   - name: chnewshovel
     dir: overlays/chnewshovel
     type: code
@@ -7318,6 +7698,7 @@ segments:
     dir: overlays/chspiralgrill
     type: bin
     start: 0x02026630
+    extract: False
   - name: chspiralgrill
     dir: overlays/chspiralgrill
     type: code
@@ -7336,6 +7717,7 @@ segments:
     dir: overlays/chwaterfallfx
     type: bin
     start: 0x02026870
+    extract: False
   - name: chwaterfallfx
     dir: overlays/chwaterfallfx
     type: code
@@ -7354,6 +7736,7 @@ segments:
     dir: overlays/chfireicestorm
     type: bin
     start: 0x02026DA0
+    extract: False
   - name: chfireicestorm
     dir: overlays/chfireicestorm
     type: code
@@ -7372,6 +7755,7 @@ segments:
     dir: overlays/chboggyboy
     type: bin
     start: 0x02027EA0
+    extract: False
   - name: chboggyboy
     dir: overlays/chboggyboy
     type: code
@@ -7390,6 +7774,7 @@ segments:
     dir: overlays/chboggygirl
     type: bin
     start: 0x02028CF0
+    extract: False
   - name: chboggygirl
     dir: overlays/chboggygirl
     type: code
@@ -7408,6 +7793,7 @@ segments:
     dir: overlays/chboggyfatboy
     type: bin
     start: 0x02029B50
+    extract: False
   - name: chboggyfatboy
     dir: overlays/chboggyfatboy
     type: code
@@ -7426,6 +7812,7 @@ segments:
     dir: overlays/chdoormake
     type: bin
     start: 0x0202AFA0
+    extract: False
   - name: chdoormake
     dir: overlays/chdoormake
     type: code
@@ -7444,6 +7831,7 @@ segments:
     dir: overlays/chchompaslunch
     type: bin
     start: 0x0202BBD0
+    extract: False
   - name: chchompaslunch
     dir: overlays/chchompaslunch
     type: code
@@ -7462,6 +7850,7 @@ segments:
     dir: overlays/chdiggerbossdeflect
     type: bin
     start: 0x0202C130
+    extract: False
   - name: chdiggerbossdeflect
     dir: overlays/chdiggerbossdeflect
     type: code
@@ -7480,6 +7869,7 @@ segments:
     dir: overlays/chmoley
     type: bin
     start: 0x0202C220
+    extract: False
   - name: chmoley
     dir: overlays/chmoley
     type: code
@@ -7498,6 +7888,7 @@ segments:
     dir: overlays/chmolehill
     type: bin
     start: 0x0202CF70
+    extract: False
   - name: chmolehill
     dir: overlays/chmolehill
     type: code
@@ -7516,6 +7907,7 @@ segments:
     dir: overlays/chclockworkmouse
     type: bin
     start: 0x0202DC20
+    extract: False
   - name: chclockworkmouse
     dir: overlays/chclockworkmouse
     type: code
@@ -7534,6 +7926,7 @@ segments:
     dir: overlays/chjamjarsdummy
     type: bin
     start: 0x02031F40
+    extract: False
   - name: chjamjarsdummy
     dir: overlays/chjamjarsdummy
     type: code
@@ -7552,6 +7945,7 @@ segments:
     dir: overlays/chcanarymarycage
     type: bin
     start: 0x02032330
+    extract: False
   - name: chcanarymarycage
     dir: overlays/chcanarymarycage
     type: code
@@ -7570,6 +7964,7 @@ segments:
     dir: overlays/chbadjinjo
     type: bin
     start: 0x02032A70
+    extract: False
   - name: chbadjinjo
     dir: overlays/chbadjinjo
     type: code
@@ -7588,6 +7983,7 @@ segments:
     dir: overlays/chmineproplight
     type: bin
     start: 0x02033F40
+    extract: False
   - name: chmineproplight
     dir: overlays/chmineproplight
     type: code
@@ -7606,6 +8002,7 @@ segments:
     dir: overlays/chnewmumbo
     type: bin
     start: 0x02034230
+    extract: False
   - name: chnewmumbo
     dir: overlays/chnewmumbo
     type: code
@@ -7624,6 +8021,7 @@ segments:
     dir: overlays/chfiregen
     type: bin
     start: 0x02035F80
+    extract: False
   - name: chfiregen
     dir: overlays/chfiregen
     type: code
@@ -7642,6 +8040,7 @@ segments:
     dir: overlays/chtimetable
     type: bin
     start: 0x02037D20
+    extract: False
   - name: chtimetable
     dir: overlays/chtimetable
     type: code
@@ -7660,6 +8059,7 @@ segments:
     dir: overlays/chmole_maya
     type: bin
     start: 0x02038610
+    extract: False
   - name: chmole_maya
     dir: overlays/chmole_maya
     type: code
@@ -7678,6 +8078,7 @@ segments:
     dir: overlays/chmole_mine
     type: bin
     start: 0x02038920
+    extract: False
   - name: chmole_mine
     dir: overlays/chmole_mine
     type: code
@@ -7696,6 +8097,7 @@ segments:
     dir: overlays/chmole_training
     type: bin
     start: 0x02038AB0
+    extract: False
   - name: chmole_training
     dir: overlays/chmole_training
     type: code
@@ -7714,6 +8116,7 @@ segments:
     dir: overlays/chstoneballcontrol
     type: bin
     start: 0x02039BA0
+    extract: False
   - name: chstoneballcontrol
     dir: overlays/chstoneballcontrol
     type: code
@@ -7732,6 +8135,7 @@ segments:
     dir: overlays/chmayafarmer
     type: bin
     start: 0x0203F3C0
+    extract: False
   - name: chmayafarmer
     dir: overlays/chmayafarmer
     type: code
@@ -7750,6 +8154,7 @@ segments:
     dir: overlays/chstoneballcoach
     type: bin
     start: 0x02040840
+    extract: False
   - name: chstoneballcoach
     dir: overlays/chstoneballcoach
     type: code
@@ -7768,6 +8173,7 @@ segments:
     dir: overlays/chfog
     type: bin
     start: 0x02040CD0
+    extract: False
   - name: chfog
     dir: overlays/chfog
     type: code
@@ -7786,6 +8192,7 @@ segments:
     dir: overlays/chcrusher
     type: bin
     start: 0x02041850
+    extract: False
   - name: chcrusher
     dir: overlays/chcrusher
     type: code
@@ -7804,6 +8211,7 @@ segments:
     dir: overlays/chglowbo
     type: bin
     start: 0x020426D0
+    extract: False
   - name: chglowbo
     dir: overlays/chglowbo
     type: code
@@ -7822,6 +8230,7 @@ segments:
     dir: overlays/chhandcart
     type: bin
     start: 0x02043E20
+    extract: False
   - name: chhandcart
     dir: overlays/chhandcart
     type: code
@@ -7840,6 +8249,7 @@ segments:
     dir: overlays/chcredits
     type: bin
     start: 0x02049120
+    extract: False
   - name: chcredits
     dir: overlays/chcredits
     type: code
@@ -7858,6 +8268,7 @@ segments:
     dir: overlays/chcrusherboulder
     type: bin
     start: 0x0204A840
+    extract: False
   - name: chcrusherboulder
     dir: overlays/chcrusherboulder
     type: code
@@ -7876,6 +8287,7 @@ segments:
     dir: overlays/chjigsawbitcont
     type: bin
     start: 0x0204BF10
+    extract: False
   - name: chjigsawbitcont
     dir: overlays/chjigsawbitcont
     type: code
@@ -7894,6 +8306,7 @@ segments:
     dir: overlays/chintroticker
     type: bin
     start: 0x0204CA40
+    extract: False
   - name: chintroticker
     dir: overlays/chintroticker
     type: code
@@ -7912,6 +8325,7 @@ segments:
     dir: overlays/chstadiumdoors
     type: bin
     start: 0x0204D500
+    extract: False
   - name: chstadiumdoors
     dir: overlays/chstadiumdoors
     type: code
@@ -7930,6 +8344,7 @@ segments:
     dir: overlays/chsignpost
     type: bin
     start: 0x0204D830
+    extract: False
   - name: chsignpost
     dir: overlays/chsignpost
     type: code
@@ -7948,6 +8363,7 @@ segments:
     dir: overlays/chmrtannoy
     type: bin
     start: 0x0204DBD0
+    extract: False
   - name: chmrtannoy
     dir: overlays/chmrtannoy
     type: code
@@ -7966,6 +8382,7 @@ segments:
     dir: overlays/chbeehive
     type: bin
     start: 0x0204DC80
+    extract: False
   - name: chbeehive
     dir: overlays/chbeehive
     type: code
@@ -7984,6 +8401,7 @@ segments:
     dir: overlays/chhoney
     type: bin
     start: 0x0204E0B0
+    extract: False
   - name: chhoney
     dir: overlays/chhoney
     type: code
@@ -8002,6 +8420,7 @@ segments:
     dir: overlays/chjinjo
     type: bin
     start: 0x0204F300
+    extract: False
   - name: chjinjo
     dir: overlays/chjinjo
     type: code
@@ -8020,6 +8439,7 @@ segments:
     dir: overlays/chevilmumbo
     type: bin
     start: 0x020508A0
+    extract: False
   - name: chevilmumbo
     dir: overlays/chevilmumbo
     type: code
@@ -8038,6 +8458,7 @@ segments:
     dir: overlays/chmole_witchy
     type: bin
     start: 0x02055310
+    extract: False
   - name: chmole_witchy
     dir: overlays/chmole_witchy
     type: code
@@ -8056,6 +8477,7 @@ segments:
     dir: overlays/chsounder
     type: bin
     start: 0x020554B0
+    extract: False
   - name: chsounder
     dir: overlays/chsounder
     type: code
@@ -8074,6 +8496,7 @@ segments:
     dir: overlays/chhumba
     type: bin
     start: 0x02055620
+    extract: False
   - name: chhumba
     dir: overlays/chhumba
     type: code
@@ -8092,6 +8515,7 @@ segments:
     dir: overlays/chflysaucer
     type: bin
     start: 0x02058110
+    extract: False
   - name: chflysaucer
     dir: overlays/chflysaucer
     type: code
@@ -8110,6 +8534,7 @@ segments:
     dir: overlays/chflysaucercrate
     type: bin
     start: 0x0205CD10
+    extract: False
   - name: chflysaucercrate
     dir: overlays/chflysaucercrate
     type: code
@@ -8128,6 +8553,7 @@ segments:
     dir: overlays/chchuffy
     type: bin
     start: 0x0205DCB0
+    extract: False
   - name: chchuffy
     dir: overlays/chchuffy
     type: code
@@ -8146,6 +8572,7 @@ segments:
     dir: overlays/chchuffycont
     type: bin
     start: 0x020605F0
+    extract: False
   - name: chchuffycont
     dir: overlays/chchuffycont
     type: code
@@ -8164,6 +8591,7 @@ segments:
     dir: overlays/chcheatomenu
     type: bin
     start: 0x02061290
+    extract: False
   - name: chcheatomenu
     dir: overlays/chcheatomenu
     type: code
@@ -8182,6 +8610,7 @@ segments:
     dir: overlays/chstatictorch
     type: bin
     start: 0x02061C20
+    extract: False
   - name: chstatictorch
     dir: overlays/chstatictorch
     type: code
@@ -8200,6 +8629,7 @@ segments:
     dir: overlays/chfloorbubbles
     type: bin
     start: 0x02061F20
+    extract: False
   - name: chfloorbubbles
     dir: overlays/chfloorbubbles
     type: code
@@ -8218,6 +8648,7 @@ segments:
     dir: overlays/chmumbopad
     type: bin
     start: 0x020622B0
+    extract: False
   - name: chmumbopad
     dir: overlays/chmumbopad
     type: code
@@ -8236,6 +8667,7 @@ segments:
     dir: overlays/chhoneycarrier
     type: bin
     start: 0x020635C0
+    extract: False
   - name: chhoneycarrier
     dir: overlays/chhoneycarrier
     type: code
@@ -8254,6 +8686,7 @@ segments:
     dir: overlays/chjujubagfx
     type: bin
     start: 0x02063A70
+    extract: False
   - name: chjujubagfx
     dir: overlays/chjujubagfx
     type: code
@@ -8272,6 +8705,7 @@ segments:
     dir: overlays/chintrochar
     type: bin
     start: 0x02063FB0
+    extract: False
   - name: chintrochar
     dir: overlays/chintrochar
     type: code
@@ -8290,6 +8724,7 @@ segments:
     dir: overlays/chintrocam
     type: bin
     start: 0x020696A0
+    extract: False
   - name: chintrocam
     dir: overlays/chintrocam
     type: code
@@ -8308,6 +8743,7 @@ segments:
     dir: overlays/chminelightswitch
     type: bin
     start: 0x0206A230
+    extract: False
   - name: chminelightswitch
     dir: overlays/chminelightswitch
     type: code
@@ -8326,6 +8762,7 @@ segments:
     dir: overlays/chminelight
     type: bin
     start: 0x0206A3A0
+    extract: False
   - name: chminelight
     dir: overlays/chminelight
     type: code
@@ -8344,6 +8781,7 @@ segments:
     dir: overlays/chlakemonster
     type: bin
     start: 0x0206AB30
+    extract: False
   - name: chlakemonster
     dir: overlays/chlakemonster
     type: code
@@ -8362,6 +8800,7 @@ segments:
     dir: overlays/chdodgemcontrol
     type: bin
     start: 0x0206D070
+    extract: False
   - name: chdodgemcontrol
     dir: overlays/chdodgemcontrol
     type: code
@@ -8380,6 +8819,7 @@ segments:
     dir: overlays/chdodgemdoors
     type: bin
     start: 0x02072490
+    extract: False
   - name: chdodgemdoors
     dir: overlays/chdodgemdoors
     type: code
@@ -8398,6 +8838,7 @@ segments:
     dir: overlays/chbadbeehive
     type: bin
     start: 0x020728C0
+    extract: False
   - name: chbadbeehive
     dir: overlays/chbadbeehive
     type: code
@@ -8416,6 +8857,7 @@ segments:
     dir: overlays/chflysaucerdoor
     type: bin
     start: 0x020735C0
+    extract: False
   - name: chflysaucerdoor
     dir: overlays/chflysaucerdoor
     type: code
@@ -8434,6 +8876,7 @@ segments:
     dir: overlays/chbaddiesetup
     type: bin
     start: 0x02073810
+    extract: False
   - name: chbaddiesetup
     dir: overlays/chbaddiesetup
     type: code
@@ -8452,6 +8895,7 @@ segments:
     dir: overlays/chchuffyglow
     type: bin
     start: 0x02073F40
+    extract: False
   - name: chchuffyglow
     dir: overlays/chchuffyglow
     type: code
@@ -8470,6 +8914,7 @@ segments:
     dir: overlays/chtoothyfish
     type: bin
     start: 0x020745C0
+    extract: False
   - name: chtoothyfish
     dir: overlays/chtoothyfish
     type: code
@@ -8488,6 +8933,7 @@ segments:
     dir: overlays/chmole_lagoon
     type: bin
     start: 0x020760C0
+    extract: False
   - name: chmole_lagoon
     dir: overlays/chmole_lagoon
     type: code
@@ -8506,6 +8952,7 @@ segments:
     dir: overlays/chmole_overworld
     type: bin
     start: 0x02076260
+    extract: False
   - name: chmole_overworld
     dir: overlays/chmole_overworld
     type: code
@@ -8524,6 +8971,7 @@ segments:
     dir: overlays/chquizremotectrl
     type: bin
     start: 0x02076520
+    extract: False
   - name: chquizremotectrl
     dir: overlays/chquizremotectrl
     type: code
@@ -8542,6 +8990,7 @@ segments:
     dir: overlays/cheel
     type: bin
     start: 0x02076C80
+    extract: False
   - name: cheel
     dir: overlays/cheel
     type: code
@@ -8560,6 +9009,7 @@ segments:
     dir: overlays/chblackeye
     type: bin
     start: 0x02078420
+    extract: False
   - name: chblackeye
     dir: overlays/chblackeye
     type: code
@@ -8578,6 +9028,7 @@ segments:
     dir: overlays/chlagoonfish
     type: bin
     start: 0x020795C0
+    extract: False
   - name: chlagoonfish
     dir: overlays/chlagoonfish
     type: code
@@ -8596,6 +9047,7 @@ segments:
     dir: overlays/chpiranha
     type: bin
     start: 0x0207A210
+    extract: False
   - name: chpiranha
     dir: overlays/chpiranha
     type: code
@@ -8614,6 +9066,7 @@ segments:
     dir: overlays/chskeletonexplode
     type: bin
     start: 0x0207BFA0
+    extract: False
   - name: chskeletonexplode
     dir: overlays/chskeletonexplode
     type: code
@@ -8632,6 +9085,7 @@ segments:
     dir: overlays/chnewfreezy
     type: bin
     start: 0x0207D1F0
+    extract: False
   - name: chnewfreezy
     dir: overlays/chnewfreezy
     type: code
@@ -8650,6 +9104,7 @@ segments:
     dir: overlays/chdrips
     type: bin
     start: 0x0207EC70
+    extract: False
   - name: chdrips
     dir: overlays/chdrips
     type: code
@@ -8668,6 +9123,7 @@ segments:
     dir: overlays/chsilo
     type: bin
     start: 0x0207F3B0
+    extract: False
   - name: chsilo
     dir: overlays/chsilo
     type: code
@@ -8686,6 +9142,7 @@ segments:
     dir: overlays/chmusicmenu
     type: bin
     start: 0x020808B0
+    extract: False
   - name: chmusicmenu
     dir: overlays/chmusicmenu
     type: code
@@ -8704,6 +9161,7 @@ segments:
     dir: overlays/chmole_hailfire
     type: bin
     start: 0x02082030
+    extract: False
   - name: chmole_hailfire
     dir: overlays/chmole_hailfire
     type: code
@@ -8722,6 +9180,7 @@ segments:
     dir: overlays/chmole_factory
     type: bin
     start: 0x020821C0
+    extract: False
   - name: chmole_factory
     dir: overlays/chmole_factory
     type: code
@@ -8740,6 +9199,7 @@ segments:
     dir: overlays/chmole_prehist
     type: bin
     start: 0x02082360
+    extract: False
   - name: chmole_prehist
     dir: overlays/chmole_prehist
     type: code
@@ -8758,6 +9218,7 @@ segments:
     dir: overlays/chcollballcontrol
     type: bin
     start: 0x02082500
+    extract: False
   - name: chcollballcontrol
     dir: overlays/chcollballcontrol
     type: code
@@ -8776,6 +9237,7 @@ segments:
     dir: overlays/chcolldoors
     type: bin
     start: 0x02087960
+    extract: False
   - name: chcolldoors
     dir: overlays/chcolldoors
     type: code
@@ -8794,6 +9256,7 @@ segments:
     dir: overlays/chmole_cuckoo
     type: bin
     start: 0x02087C90
+    extract: False
   - name: chmole_cuckoo
     dir: overlays/chmole_cuckoo
     type: code
@@ -8812,6 +9275,7 @@ segments:
     dir: overlays/chdragonbrothers
     type: bin
     start: 0x02087E10
+    extract: False
   - name: chdragonbrothers
     dir: overlays/chdragonbrothers
     type: code
@@ -8830,6 +9294,7 @@ segments:
     dir: overlays/chwallsnakebaddy
     type: bin
     start: 0x0208DDD0
+    extract: False
   - name: chwallsnakebaddy
     dir: overlays/chwallsnakebaddy
     type: code
@@ -8848,6 +9313,7 @@ segments:
     dir: overlays/chamazongoldhordeofficial
     type: bin
     start: 0x0208E680
+    extract: False
   - name: chamazongoldhordeofficial
     dir: overlays/chamazongoldhordeofficial
     type: code
@@ -8866,6 +9332,7 @@ segments:
     dir: overlays/chlavatraindoor
     type: bin
     start: 0x0208FB70
+    extract: False
   - name: chlavatraindoor
     dir: overlays/chlavatraindoor
     type: code
@@ -8884,6 +9351,7 @@ segments:
     dir: overlays/chjadesnake
     type: bin
     start: 0x0208FD10
+    extract: False
   - name: chjadesnake
     dir: overlays/chjadesnake
     type: code
@@ -8902,6 +9370,7 @@ segments:
     dir: overlays/chstonedartgunhead
     type: bin
     start: 0x02090800
+    extract: False
   - name: chstonedartgunhead
     dir: overlays/chstonedartgunhead
     type: code
@@ -8920,6 +9389,7 @@ segments:
     dir: overlays/chfriendlystonehead
     type: bin
     start: 0x02091900
+    extract: False
   - name: chfriendlystonehead
     dir: overlays/chfriendlystonehead
     type: code
@@ -8938,6 +9408,7 @@ segments:
     dir: overlays/chlavacolumnswitch
     type: bin
     start: 0x020923E0
+    extract: False
   - name: chlavacolumnswitch
     dir: overlays/chlavacolumnswitch
     type: code
@@ -8956,6 +9427,7 @@ segments:
     dir: overlays/chlavaslabswitch
     type: bin
     start: 0x02092510
+    extract: False
   - name: chlavaslabswitch
     dir: overlays/chlavaslabswitch
     type: code
@@ -8974,6 +9446,7 @@ segments:
     dir: overlays/chcrackarchwall
     type: bin
     start: 0x02092660
+    extract: False
   - name: chcrackarchwall
     dir: overlays/chcrackarchwall
     type: code
@@ -8992,6 +9465,7 @@ segments:
     dir: overlays/chtntbox
     type: bin
     start: 0x02092850
+    extract: False
   - name: chtntbox
     dir: overlays/chtntbox
     type: code
@@ -9010,6 +9484,7 @@ segments:
     dir: overlays/chquicksandbaddy
     type: bin
     start: 0x020933F0
+    extract: False
   - name: chquicksandbaddy
     dir: overlays/chquicksandbaddy
     type: code
@@ -9028,6 +9503,7 @@ segments:
     dir: overlays/chamazonstadiumguard
     type: bin
     start: 0x020948F0
+    extract: False
   - name: chamazonstadiumguard
     dir: overlays/chamazonstadiumguard
     type: code
@@ -9046,6 +9522,7 @@ segments:
     dir: overlays/chlavatraindoorswitch
     type: bin
     start: 0x02095190
+    extract: False
   - name: chlavatraindoorswitch
     dir: overlays/chlavatraindoorswitch
     type: code
@@ -9064,6 +9541,7 @@ segments:
     dir: overlays/chbilldrillboulder
     type: bin
     start: 0x020952C0
+    extract: False
   - name: chbilldrillboulder
     dir: overlays/chbilldrillboulder
     type: code
@@ -9082,6 +9560,7 @@ segments:
     dir: overlays/chcrate
     type: bin
     start: 0x02095A70
+    extract: False
   - name: chcrate
     dir: overlays/chcrate
     type: code
@@ -9100,6 +9579,7 @@ segments:
     dir: overlays/chgate1doors
     type: bin
     start: 0x02096060
+    extract: False
   - name: chgate1doors
     dir: overlays/chgate1doors
     type: code
@@ -9118,6 +9598,7 @@ segments:
     dir: overlays/chmumbopadstatue
     type: bin
     start: 0x02096630
+    extract: False
   - name: chmumbopadstatue
     dir: overlays/chmumbopadstatue
     type: code
@@ -9136,6 +9617,7 @@ segments:
     dir: overlays/chtemplebrokendoorpiece
     type: bin
     start: 0x02096800
+    extract: False
   - name: chtemplebrokendoorpiece
     dir: overlays/chtemplebrokendoorpiece
     type: code
@@ -9154,6 +9636,7 @@ segments:
     dir: overlays/chlavaarchgrillswitch
     type: bin
     start: 0x02096A20
+    extract: False
   - name: chlavaarchgrillswitch
     dir: overlays/chlavaarchgrillswitch
     type: code
@@ -9172,6 +9655,7 @@ segments:
     dir: overlays/chprisonbits
     type: bin
     start: 0x02096B00
+    extract: False
   - name: chprisonbits
     dir: overlays/chprisonbits
     type: code
@@ -9190,6 +9674,7 @@ segments:
     dir: overlays/chwaterfallgrillswitch
     type: bin
     start: 0x02097D50
+    extract: False
   - name: chwaterfallgrillswitch
     dir: overlays/chwaterfallgrillswitch
     type: code
@@ -9208,6 +9693,7 @@ segments:
     dir: overlays/chwaterfallgrill
     type: bin
     start: 0x02097E90
+    extract: False
   - name: chwaterfallgrill
     dir: overlays/chwaterfallgrill
     type: code
@@ -9226,6 +9712,7 @@ segments:
     dir: overlays/chlavacolumns
     type: bin
     start: 0x02098270
+    extract: False
   - name: chlavacolumns
     dir: overlays/chlavacolumns
     type: code
@@ -9244,6 +9731,7 @@ segments:
     dir: overlays/chcoderoomdoor
     type: bin
     start: 0x02098590
+    extract: False
   - name: chcoderoomdoor
     dir: overlays/chcoderoomdoor
     type: code
@@ -9262,6 +9750,7 @@ segments:
     dir: overlays/chlavaslab
     type: bin
     start: 0x02098770
+    extract: False
   - name: chlavaslab
     dir: overlays/chlavaslab
     type: code
@@ -9280,6 +9769,7 @@ segments:
     dir: overlays/chlavaarchgrill
     type: bin
     start: 0x020988B0
+    extract: False
   - name: chlavaarchgrill
     dir: overlays/chlavaarchgrill
     type: code
@@ -9298,6 +9788,7 @@ segments:
     dir: overlays/chmumboskullfakearchpanellava
     type: bin
     start: 0x02099050
+    extract: False
   - name: chmumboskullfakearchpanellava
     dir: overlays/chmumboskullfakearchpanellava
     type: code
@@ -9316,6 +9807,7 @@ segments:
     dir: overlays/chgruntylairexttowerwindow
     type: bin
     start: 0x02099340
+    extract: False
   - name: chgruntylairexttowerwindow
     dir: overlays/chgruntylairexttowerwindow
     type: code
@@ -9334,6 +9826,7 @@ segments:
     dir: overlays/chlagoonentrygate
     type: bin
     start: 0x02099550
+    extract: False
   - name: chlagoonentrygate
     dir: overlays/chlagoonentrygate
     type: code
@@ -9352,6 +9845,7 @@ segments:
     dir: overlays/chhagstraindoor
     type: bin
     start: 0x02099750
+    extract: False
   - name: chhagstraindoor
     dir: overlays/chhagstraindoor
     type: code
@@ -9370,6 +9864,7 @@ segments:
     dir: overlays/chhagstraindoorswitch
     type: bin
     start: 0x02099950
+    extract: False
   - name: chhagstraindoorswitch
     dir: overlays/chhagstraindoorswitch
     type: code
@@ -9388,6 +9883,7 @@ segments:
     dir: overlays/chlavaentrancebridge
     type: bin
     start: 0x02099A80
+    extract: False
   - name: chlavaentrancebridge
     dir: overlays/chlavaentrancebridge
     type: code
@@ -9406,6 +9902,7 @@ segments:
     dir: overlays/chlavaentrancebridgeswitch
     type: bin
     start: 0x02099D80
+    extract: False
   - name: chlavaentrancebridgeswitch
     dir: overlays/chlavaentrancebridgeswitch
     type: code
@@ -9424,6 +9921,7 @@ segments:
     dir: overlays/chmayaentrydoor
     type: bin
     start: 0x02099ED0
+    extract: False
   - name: chmayaentrydoor
     dir: overlays/chmayaentrydoor
     type: code
@@ -9442,6 +9940,7 @@ segments:
     dir: overlays/chbottlesdead
     type: bin
     start: 0x0209A060
+    extract: False
   - name: chbottlesdead
     dir: overlays/chbottlesdead
     type: code
@@ -9460,6 +9959,7 @@ segments:
     dir: overlays/chmineentrygrille
     type: bin
     start: 0x0209A1D0
+    extract: False
   - name: chmineentrygrille
     dir: overlays/chmineentrygrille
     type: code
@@ -9478,6 +9978,7 @@ segments:
     dir: overlays/chlavaentrydoor
     type: bin
     start: 0x0209A410
+    extract: False
   - name: chlavaentrydoor
     dir: overlays/chlavaentrydoor
     type: code
@@ -9496,6 +9997,7 @@ segments:
     dir: overlays/chcauldronentrydoor
     type: bin
     start: 0x0209A660
+    extract: False
   - name: chcauldronentrydoor
     dir: overlays/chcauldronentrydoor
     type: code
@@ -9514,6 +10016,7 @@ segments:
     dir: overlays/chterryteeth
     type: bin
     start: 0x0209ACD0
+    extract: False
   - name: chterryteeth
     dir: overlays/chterryteeth
     type: code
@@ -9532,6 +10035,7 @@ segments:
     dir: overlays/chwitchyentrygates
     type: bin
     start: 0x0209AF20
+    extract: False
   - name: chwitchyentrygates
     dir: overlays/chwitchyentrygates
     type: code
@@ -9550,6 +10054,7 @@ segments:
     dir: overlays/chfactoryentrydoors
     type: bin
     start: 0x0209B1C0
+    extract: False
   - name: chfactoryentrydoors
     dir: overlays/chfactoryentrydoors
     type: code
@@ -9568,6 +10073,7 @@ segments:
     dir: overlays/chLagoonInnBlockedWall
     type: bin
     start: 0x0209B620
+    extract: False
   - name: chLagoonInnBlockedWall
     dir: overlays/chLagoonInnBlockedWall
     type: code
@@ -9586,6 +10092,7 @@ segments:
     dir: overlays/chcauldronenergybars
     type: bin
     start: 0x0209BC80
+    extract: False
   - name: chcauldronenergybars
     dir: overlays/chcauldronenergybars
     type: code
@@ -9604,6 +10111,7 @@ segments:
     dir: overlays/chjinjovillagecamera1
     type: bin
     start: 0x0209C010
+    extract: False
   - name: chjinjovillagecamera1
     dir: overlays/chjinjovillagecamera1
     type: code
@@ -9622,6 +10130,7 @@ segments:
     dir: overlays/chlagoonlockerdoorhits
     type: bin
     start: 0x0209C570
+    extract: False
   - name: chlagoonlockerdoorhits
     dir: overlays/chlagoonlockerdoorhits
     type: code
@@ -9640,6 +10149,7 @@ segments:
     dir: overlays/chlavaarchgrill3switches
     type: bin
     start: 0x0209CAA0
+    extract: False
   - name: chlavaarchgrill3switches
     dir: overlays/chlavaarchgrill3switches
     type: code
@@ -9658,6 +10168,7 @@ segments:
     dir: overlays/chTalTorpWall
     type: bin
     start: 0x0209CE00
+    extract: False
   - name: chTalTorpWall
     dir: overlays/chTalTorpWall
     type: code
@@ -9676,6 +10187,7 @@ segments:
     dir: overlays/chufoextdoor
     type: bin
     start: 0x0209CF40
+    extract: False
   - name: chufoextdoor
     dir: overlays/chufoextdoor
     type: code
@@ -9694,6 +10206,7 @@ segments:
     dir: overlays/chdinotraindoor
     type: bin
     start: 0x0209D130
+    extract: False
   - name: chdinotraindoor
     dir: overlays/chdinotraindoor
     type: code
@@ -9712,6 +10225,7 @@ segments:
     dir: overlays/chdinotraindoorswitch
     type: bin
     start: 0x0209D3B0
+    extract: False
   - name: chdinotraindoorswitch
     dir: overlays/chdinotraindoorswitch
     type: code
@@ -9730,6 +10244,7 @@ segments:
     dir: overlays/chminegrill2switches
     type: bin
     start: 0x0209D4E0
+    extract: False
   - name: chminegrill2switches
     dir: overlays/chminegrill2switches
     type: code
@@ -9748,6 +10263,7 @@ segments:
     dir: overlays/chdrawbridgeswitches
     type: bin
     start: 0x0209D730
+    extract: False
   - name: chdrawbridgeswitches
     dir: overlays/chdrawbridgeswitches
     type: code
@@ -9766,6 +10282,7 @@ segments:
     dir: overlays/chdinoroargrill
     type: bin
     start: 0x0209DAA0
+    extract: False
   - name: chdinoroargrill
     dir: overlays/chdinoroargrill
     type: code
@@ -9784,6 +10301,7 @@ segments:
     dir: overlays/chlavaexplodbuild
     type: bin
     start: 0x0209DDB0
+    extract: False
   - name: chlavaexplodbuild
     dir: overlays/chlavaexplodbuild
     type: code
@@ -9802,6 +10320,7 @@ segments:
     dir: overlays/chboggy
     type: bin
     start: 0x0209E150
+    extract: False
   - name: chboggy
     dir: overlays/chboggy
     type: code
@@ -9820,6 +10339,7 @@ segments:
     dir: overlays/chboggyfish
     type: bin
     start: 0x0209EAE0
+    extract: False
   - name: chboggyfish
     dir: overlays/chboggyfish
     type: code
@@ -9838,6 +10358,7 @@ segments:
     dir: overlays/chjrinnlight
     type: bin
     start: 0x0209EDB0
+    extract: False
   - name: chjrinnlight
     dir: overlays/chjrinnlight
     type: code
@@ -9856,6 +10377,7 @@ segments:
     dir: overlays/chfoodwarn
     type: bin
     start: 0x0209EF50
+    extract: False
   - name: chfoodwarn
     dir: overlays/chfoodwarn
     type: code
@@ -9874,6 +10396,7 @@ segments:
     dir: overlays/chperspexbox
     type: bin
     start: 0x0209F2A0
+    extract: False
   - name: chperspexbox
     dir: overlays/chperspexbox
     type: code
@@ -9892,6 +10415,7 @@ segments:
     dir: overlays/chperspexboxswitch
     type: bin
     start: 0x0209F480
+    extract: False
   - name: chperspexboxswitch
     dir: overlays/chperspexboxswitch
     type: code
@@ -9910,6 +10434,7 @@ segments:
     dir: overlays/chminegrilldoor
     type: bin
     start: 0x0209F600
+    extract: False
   - name: chminegrilldoor
     dir: overlays/chminegrilldoor
     type: code
@@ -9928,6 +10453,7 @@ segments:
     dir: overlays/chsparkle
     type: bin
     start: 0x0209F840
+    extract: False
   - name: chsparkle
     dir: overlays/chsparkle
     type: code
@@ -9946,6 +10472,7 @@ segments:
     dir: overlays/cheggclockwork
     type: bin
     start: 0x0209FA50
+    extract: False
   - name: cheggclockwork
     dir: overlays/cheggclockwork
     type: code
@@ -9964,6 +10491,7 @@ segments:
     dir: overlays/cheggfire
     type: bin
     start: 0x020A0520
+    extract: False
   - name: cheggfire
     dir: overlays/cheggfire
     type: code
@@ -9982,6 +10510,7 @@ segments:
     dir: overlays/chegggolden
     type: bin
     start: 0x020A09A0
+    extract: False
   - name: chegggolden
     dir: overlays/chegggolden
     type: code
@@ -10000,6 +10529,7 @@ segments:
     dir: overlays/chegggrenade
     type: bin
     start: 0x020A0E50
+    extract: False
   - name: chegggrenade
     dir: overlays/chegggrenade
     type: code
@@ -10018,6 +10548,7 @@ segments:
     dir: overlays/cheggice
     type: bin
     start: 0x020A1360
+    extract: False
   - name: cheggice
     dir: overlays/cheggice
     type: code
@@ -10036,6 +10567,7 @@ segments:
     dir: overlays/cheggnormal
     type: bin
     start: 0x020A1800
+    extract: False
   - name: cheggnormal
     dir: overlays/cheggnormal
     type: code
@@ -10054,6 +10586,7 @@ segments:
     dir: overlays/chfaircoin
     type: bin
     start: 0x020A1D90
+    extract: False
   - name: chfaircoin
     dir: overlays/chfaircoin
     type: code
@@ -10072,6 +10605,7 @@ segments:
     dir: overlays/chfaircoinbox
     type: bin
     start: 0x020A1FA0
+    extract: False
   - name: chfaircoinbox
     dir: overlays/chfaircoinbox
     type: code
@@ -10090,6 +10624,7 @@ segments:
     dir: overlays/chgoldstatue
     type: bin
     start: 0x020A2560
+    extract: False
   - name: chgoldstatue
     dir: overlays/chgoldstatue
     type: code
@@ -10108,6 +10643,7 @@ segments:
     dir: overlays/chlaundry
     type: bin
     start: 0x020A3010
+    extract: False
   - name: chlaundry
     dir: overlays/chlaundry
     type: code
@@ -10126,6 +10662,7 @@ segments:
     dir: overlays/chping
     type: bin
     start: 0x020A3530
+    extract: False
   - name: chping
     dir: overlays/chping
     type: code
@@ -10144,6 +10681,7 @@ segments:
     dir: overlays/chpodiumbankaz
     type: bin
     start: 0x020A39F0
+    extract: False
   - name: chpodiumbankaz
     dir: overlays/chpodiumbankaz
     type: code
@@ -10162,6 +10700,7 @@ segments:
     dir: overlays/chstinger
     type: bin
     start: 0x020A3FF0
+    extract: False
   - name: chstinger
     dir: overlays/chstinger
     type: code
@@ -10180,6 +10719,7 @@ segments:
     dir: overlays/chswappy
     type: bin
     start: 0x020A4930
+    extract: False
   - name: chswappy
     dir: overlays/chswappy
     type: code
@@ -10198,6 +10738,7 @@ segments:
     dir: overlays/chtorpedo
     type: bin
     start: 0x020A50D0
+    extract: False
   - name: chtorpedo
     dir: overlays/chtorpedo
     type: code
@@ -10216,6 +10757,7 @@ segments:
     dir: overlays/chwandglow
     type: bin
     start: 0x020A5B00
+    extract: False
   - name: chwandglow
     dir: overlays/chwandglow
     type: code
@@ -10234,6 +10776,7 @@ segments:
     dir: overlays/chfactoryworkerdirty
     type: bin
     start: 0x020A5FE0
+    extract: False
   - name: chfactoryworkerdirty
     dir: overlays/chfactoryworkerdirty
     type: code
@@ -10252,6 +10795,7 @@ segments:
     dir: overlays/chfactoryworkerwear
     type: bin
     start: 0x020A71B0
+    extract: False
   - name: chfactoryworkerwear
     dir: overlays/chfactoryworkerwear
     type: code
@@ -10270,6 +10814,7 @@ segments:
     dir: overlays/cheggsplode
     type: bin
     start: 0x020A76E0
+    extract: False
   - name: cheggsplode
     dir: overlays/cheggsplode
     type: code
@@ -10288,6 +10833,7 @@ segments:
     dir: overlays/chjadestatue
     type: bin
     start: 0x020A81A0
+    extract: False
   - name: chjadestatue
     dir: overlays/chjadestatue
     type: code
@@ -10306,6 +10852,7 @@ segments:
     dir: overlays/chtemplebossdoor
     type: bin
     start: 0x020A85B0
+    extract: False
   - name: chtemplebossdoor
     dir: overlays/chtemplebossdoor
     type: code
@@ -10324,6 +10871,7 @@ segments:
     dir: overlays/chtempleinternaldoor
     type: bin
     start: 0x020A8820
+    extract: False
   - name: chtempleinternaldoor
     dir: overlays/chtempleinternaldoor
     type: code
@@ -10342,6 +10890,7 @@ segments:
     dir: overlays/chtemplelobbydoor
     type: bin
     start: 0x020A8B00
+    extract: False
   - name: chtemplelobbydoor
     dir: overlays/chtemplelobbydoor
     type: code
@@ -10360,6 +10909,7 @@ segments:
     dir: overlays/chminelobbydoor
     type: bin
     start: 0x020A8F80
+    extract: False
   - name: chminelobbydoor
     dir: overlays/chminelobbydoor
     type: code
@@ -10378,6 +10928,7 @@ segments:
     dir: overlays/chtransparencypot
     type: bin
     start: 0x020A9250
+    extract: False
   - name: chtransparencypot
     dir: overlays/chtransparencypot
     type: code
@@ -10396,6 +10947,7 @@ segments:
     dir: overlays/chtntmineshoot
     type: bin
     start: 0x020A94D0
+    extract: False
   - name: chtntmineshoot
     dir: overlays/chtntmineshoot
     type: code
@@ -10414,6 +10966,7 @@ segments:
     dir: overlays/chclinker
     type: bin
     start: 0x020ABFF0
+    extract: False
   - name: chclinker
     dir: overlays/chclinker
     type: code
@@ -10432,6 +10985,7 @@ segments:
     dir: overlays/chfactorylobbydoor
     type: bin
     start: 0x020AD730
+    extract: False
   - name: chfactorylobbydoor
     dir: overlays/chfactorylobbydoor
     type: code
@@ -10450,6 +11004,7 @@ segments:
     dir: overlays/chfpsgame
     type: bin
     start: 0x020AD960
+    extract: False
   - name: chfpsgame
     dir: overlays/chfpsgame
     type: code
@@ -10468,6 +11023,7 @@ segments:
     dir: overlays/cheggproximity
     type: bin
     start: 0x020AFCA0
+    extract: False
   - name: cheggproximity
     dir: overlays/cheggproximity
     type: code
@@ -10486,6 +11042,7 @@ segments:
     dir: overlays/ch1pfreeze
     type: bin
     start: 0x020B0AA0
+    extract: False
   - name: ch1pfreeze
     dir: overlays/ch1pfreeze
     type: code
@@ -10504,6 +11061,7 @@ segments:
     dir: overlays/chcaptainblubber
     type: bin
     start: 0x020B0F70
+    extract: False
   - name: chcaptainblubber
     dir: overlays/chcaptainblubber
     type: code
@@ -10522,6 +11080,7 @@ segments:
     dir: overlays/chtransparentfish
     type: bin
     start: 0x020B28B0
+    extract: False
   - name: chtransparentfish
     dir: overlays/chtransparentfish
     type: code
@@ -10540,6 +11099,7 @@ segments:
     dir: overlays/chdummyjigsaw
     type: bin
     start: 0x020B3A60
+    extract: False
   - name: chdummyjigsaw
     dir: overlays/chdummyjigsaw
     type: code
@@ -10558,6 +11118,7 @@ segments:
     dir: overlays/chpufferfish
     type: bin
     start: 0x020B3CA0
+    extract: False
   - name: chpufferfish
     dir: overlays/chpufferfish
     type: code
@@ -10576,6 +11137,7 @@ segments:
     dir: overlays/chsunlightspell
     type: bin
     start: 0x020B5090
+    extract: False
   - name: chsunlightspell
     dir: overlays/chsunlightspell
     type: code
@@ -10594,6 +11156,7 @@ segments:
     dir: overlays/chlinkpipefan
     type: bin
     start: 0x020B5A70
+    extract: False
   - name: chlinkpipefan
     dir: overlays/chlinkpipefan
     type: code
@@ -10612,6 +11175,7 @@ segments:
     dir: overlays/chfactorydrums
     type: bin
     start: 0x020B6520
+    extract: False
   - name: chfactorydrums
     dir: overlays/chfactorydrums
     type: code
@@ -10630,6 +11194,7 @@ segments:
     dir: overlays/chdoubloon
     type: bin
     start: 0x020B78F0
+    extract: False
   - name: chdoubloon
     dir: overlays/chdoubloon
     type: code
@@ -10648,6 +11213,7 @@ segments:
     dir: overlays/chdinofamilymissing
     type: bin
     start: 0x020B7C50
+    extract: False
   - name: chdinofamilymissing
     dir: overlays/chdinofamilymissing
     type: code
@@ -10666,6 +11232,7 @@ segments:
     dir: overlays/chsmalltrexdoor
     type: bin
     start: 0x020B8410
+    extract: False
   - name: chsmalltrexdoor
     dir: overlays/chsmalltrexdoor
     type: code
@@ -10684,6 +11251,7 @@ segments:
     dir: overlays/chswampplatform
     type: bin
     start: 0x020B87A0
+    extract: False
   - name: chswampplatform
     dir: overlays/chswampplatform
     type: code
@@ -10702,6 +11270,7 @@ segments:
     dir: overlays/chwumbawigwam
     type: bin
     start: 0x020B9260
+    extract: False
   - name: chwumbawigwam
     dir: overlays/chwumbawigwam
     type: code
@@ -10720,6 +11289,7 @@ segments:
     dir: overlays/chfactorybattery
     type: bin
     start: 0x020BA500
+    extract: False
   - name: chfactorybattery
     dir: overlays/chfactorybattery
     type: code
@@ -10738,6 +11308,7 @@ segments:
     dir: overlays/chfactoryroofbits
     type: bin
     start: 0x020BC370
+    extract: False
   - name: chfactoryroofbits
     dir: overlays/chfactoryroofbits
     type: code
@@ -10756,6 +11327,7 @@ segments:
     dir: overlays/chfactorymagnet
     type: bin
     start: 0x020BCFC0
+    extract: False
   - name: chfactorymagnet
     dir: overlays/chfactorymagnet
     type: code
@@ -10774,6 +11346,7 @@ segments:
     dir: overlays/chfactorybtwmdoor
     type: bin
     start: 0x020BFD20
+    extract: False
   - name: chfactorybtwmdoor
     dir: overlays/chfactorybtwmdoor
     type: code
@@ -10792,6 +11365,7 @@ segments:
     dir: overlays/chbosskogsdoor
     type: bin
     start: 0x020C0120
+    extract: False
   - name: chbosskogsdoor
     dir: overlays/chbosskogsdoor
     type: code
@@ -10810,6 +11384,7 @@ segments:
     dir: overlays/chlensflare
     type: bin
     start: 0x020C0C30
+    extract: False
   - name: chlensflare
     dir: overlays/chlensflare
     type: code
@@ -10828,6 +11403,7 @@ segments:
     dir: overlays/chfactorytoxiccloud
     type: bin
     start: 0x020C1630
+    extract: False
   - name: chfactorytoxiccloud
     dir: overlays/chfactorytoxiccloud
     type: code
@@ -10846,6 +11422,7 @@ segments:
     dir: overlays/chfactoryempspell
     type: bin
     start: 0x020C2CB0
+    extract: False
   - name: chfactoryempspell
     dir: overlays/chfactoryempspell
     type: code
@@ -10864,6 +11441,7 @@ segments:
     dir: overlays/chtoxicroombits
     type: bin
     start: 0x020C5350
+    extract: False
   - name: chtoxicroombits
     dir: overlays/chtoxicroombits
     type: code
@@ -10882,6 +11460,7 @@ segments:
     dir: overlays/chgoldfish
     type: bin
     start: 0x020C64A0
+    extract: False
   - name: chgoldfish
     dir: overlays/chgoldfish
     type: code
@@ -10900,6 +11479,7 @@ segments:
     dir: overlays/chfactorylinkgrill
     type: bin
     start: 0x020C7350
+    extract: False
   - name: chfactorylinkgrill
     dir: overlays/chfactorylinkgrill
     type: code
@@ -10918,6 +11498,7 @@ segments:
     dir: overlays/chfactorymaindoor
     type: bin
     start: 0x020C7700
+    extract: False
   - name: chfactorymaindoor
     dir: overlays/chfactorymaindoor
     type: code
@@ -10936,6 +11517,7 @@ segments:
     dir: overlays/chlavagargoyle
     type: bin
     start: 0x020C7D40
+    extract: False
   - name: chlavagargoyle
     dir: overlays/chlavagargoyle
     type: code
@@ -10954,6 +11536,7 @@ segments:
     dir: overlays/chfactorytrashbelt
     type: bin
     start: 0x020C8D80
+    extract: False
   - name: chfactorytrashbelt
     dir: overlays/chfactorytrashbelt
     type: code
@@ -10972,6 +11555,7 @@ segments:
     dir: overlays/chlavahand
     type: bin
     start: 0x020C9430
+    extract: False
   - name: chlavahand
     dir: overlays/chlavahand
     type: code
@@ -10990,6 +11574,7 @@ segments:
     dir: overlays/chpotogoldgame
     type: bin
     start: 0x020CA990
+    extract: False
   - name: chpotogoldgame
     dir: overlays/chpotogoldgame
     type: code
@@ -11008,6 +11593,7 @@ segments:
     dir: overlays/chfactorystationdoors
     type: bin
     start: 0x020CD1A0
+    extract: False
   - name: chfactorystationdoors
     dir: overlays/chfactorystationdoors
     type: code
@@ -11026,6 +11612,7 @@ segments:
     dir: overlays/chpotogoldbits
     type: bin
     start: 0x020CD4D0
+    extract: False
   - name: chpotogoldbits
     dir: overlays/chpotogoldbits
     type: code
@@ -11044,6 +11631,7 @@ segments:
     dir: overlays/chfantasydrillfield
     type: bin
     start: 0x020CDFC0
+    extract: False
   - name: chfantasydrillfield
     dir: overlays/chfantasydrillfield
     type: code
@@ -11062,6 +11650,7 @@ segments:
     dir: overlays/chfantasytrashcanbits
     type: bin
     start: 0x020CEA80
+    extract: False
   - name: chfantasytrashcanbits
     dir: overlays/chfantasytrashcanbits
     type: code
@@ -11080,6 +11669,7 @@ segments:
     dir: overlays/chbeanstalkseed
     type: bin
     start: 0x020CEDC0
+    extract: False
   - name: chbeanstalkseed
     dir: overlays/chbeanstalkseed
     type: code
@@ -11098,6 +11688,7 @@ segments:
     dir: overlays/chrainbow
     type: bin
     start: 0x020CFB20
+    extract: False
   - name: chrainbow
     dir: overlays/chrainbow
     type: code
@@ -11116,6 +11707,7 @@ segments:
     dir: overlays/chwaspstatue
     type: bin
     start: 0x020D0C60
+    extract: False
   - name: chwaspstatue
     dir: overlays/chwaspstatue
     type: code
@@ -11134,6 +11726,7 @@ segments:
     dir: overlays/chbubbleelevator
     type: bin
     start: 0x020D1540
+    extract: False
   - name: chbubbleelevator
     dir: overlays/chbubbleelevator
     type: code
@@ -11152,6 +11745,7 @@ segments:
     dir: overlays/chfactorysparkroom
     type: bin
     start: 0x020D22C0
+    extract: False
   - name: chfactorysparkroom
     dir: overlays/chfactorysparkroom
     type: code
@@ -11170,6 +11764,7 @@ segments:
     dir: overlays/chfantasylakebits
     type: bin
     start: 0x020D3550
+    extract: False
   - name: chfantasylakebits
     dir: overlays/chfantasylakebits
     type: code
@@ -11188,6 +11783,7 @@ segments:
     dir: overlays/chfantasysafe
     type: bin
     start: 0x020D4160
+    extract: False
   - name: chfantasysafe
     dir: overlays/chfantasysafe
     type: code
@@ -11206,6 +11802,7 @@ segments:
     dir: overlays/chtrashcangame
     type: bin
     start: 0x020D4D30
+    extract: False
   - name: chtrashcangame
     dir: overlays/chtrashcangame
     type: code
@@ -11224,6 +11821,7 @@ segments:
     dir: overlays/chfantasyathlete
     type: bin
     start: 0x020D8520
+    extract: False
   - name: chfantasyathlete
     dir: overlays/chfantasyathlete
     type: code
@@ -11242,6 +11840,7 @@ segments:
     dir: overlays/chfantasycannon
     type: bin
     start: 0x020DBA10
+    extract: False
   - name: chfantasycannon
     dir: overlays/chfantasycannon
     type: code
@@ -11260,6 +11859,7 @@ segments:
     dir: overlays/chfantasyonion
     type: bin
     start: 0x020DC890
+    extract: False
   - name: chfantasyonion
     dir: overlays/chfantasyonion
     type: code
@@ -11278,6 +11878,7 @@ segments:
     dir: overlays/chfantasyeyeball
     type: bin
     start: 0x020DD0A0
+    extract: False
   - name: chfantasyeyeball
     dir: overlays/chfantasyeyeball
     type: code
@@ -11296,6 +11897,7 @@ segments:
     dir: overlays/chdinofamilysmall
     type: bin
     start: 0x020DF2A0
+    extract: False
   - name: chdinofamilysmall
     dir: overlays/chdinofamilysmall
     type: code
@@ -11314,6 +11916,7 @@ segments:
     dir: overlays/chdinofamilysick
     type: bin
     start: 0x020E02E0
+    extract: False
   - name: chdinofamilysick
     dir: overlays/chdinofamilysick
     type: code
@@ -11332,6 +11935,7 @@ segments:
     dir: overlays/choildrill
     type: bin
     start: 0x020E13C0
+    extract: False
   - name: choildrill
     dir: overlays/choildrill
     type: code
@@ -11350,6 +11954,7 @@ segments:
     dir: overlays/chfloaty
     type: bin
     start: 0x020E2A10
+    extract: False
   - name: chfloaty
     dir: overlays/chfloaty
     type: code
@@ -11368,6 +11973,7 @@ segments:
     dir: overlays/chdinofamilymother
     type: bin
     start: 0x020E3A00
+    extract: False
   - name: chdinofamilymother
     dir: overlays/chdinofamilymother
     type: code
@@ -11386,6 +11992,7 @@ segments:
     dir: overlays/chmumbohealspell
     type: bin
     start: 0x020E5030
+    extract: False
   - name: chmumbohealspell
     dir: overlays/chmumbohealspell
     type: code
@@ -11404,6 +12011,7 @@ segments:
     dir: overlays/chdinofamilyfx
     type: bin
     start: 0x020E5A40
+    extract: False
   - name: chdinofamilyfx
     dir: overlays/chdinofamilyfx
     type: code
@@ -11422,6 +12030,7 @@ segments:
     dir: overlays/chlighthalo
     type: bin
     start: 0x020E6790
+    extract: False
   - name: chlighthalo
     dir: overlays/chlighthalo
     type: code
@@ -11440,6 +12049,7 @@ segments:
     dir: overlays/chbubble
     type: bin
     start: 0x020E6F10
+    extract: False
   - name: chbubble
     dir: overlays/chbubble
     type: code
@@ -11458,6 +12068,7 @@ segments:
     dir: overlays/chcrashmat
     type: bin
     start: 0x020E7640
+    extract: False
   - name: chcrashmat
     dir: overlays/chcrashmat
     type: code
@@ -11476,6 +12087,7 @@ segments:
     dir: overlays/chjellycastle
     type: bin
     start: 0x020E7780
+    extract: False
   - name: chjellycastle
     dir: overlays/chjellycastle
     type: code
@@ -11494,6 +12106,7 @@ segments:
     dir: overlays/chfootwear
     type: bin
     start: 0x020E78D0
+    extract: False
   - name: chfootwear
     dir: overlays/chfootwear
     type: code
@@ -11512,6 +12125,7 @@ segments:
     dir: overlays/chicekey
     type: bin
     start: 0x020E82A0
+    extract: False
   - name: chicekey
     dir: overlays/chicekey
     type: code
@@ -11530,6 +12144,7 @@ segments:
     dir: overlays/chheggy
     type: bin
     start: 0x020E8440
+    extract: False
   - name: chheggy
     dir: overlays/chheggy
     type: code
@@ -11548,6 +12163,7 @@ segments:
     dir: overlays/chplatuegrill
     type: bin
     start: 0x020EA5C0
+    extract: False
   - name: chplatuegrill
     dir: overlays/chplatuegrill
     type: code
@@ -11566,6 +12182,7 @@ segments:
     dir: overlays/chbkcart
     type: bin
     start: 0x020EA8B0
+    extract: False
   - name: chbkcart
     dir: overlays/chbkcart
     type: code
@@ -11584,6 +12201,7 @@ segments:
     dir: overlays/chicekeydoor
     type: bin
     start: 0x020EB240
+    extract: False
   - name: chicekeydoor
     dir: overlays/chicekeydoor
     type: code
@@ -11602,6 +12220,7 @@ segments:
     dir: overlays/chsecreteggs
     type: bin
     start: 0x020EBCA0
+    extract: False
   - name: chsecreteggs
     dir: overlays/chsecreteggs
     type: code
@@ -11620,6 +12239,7 @@ segments:
     dir: overlays/chworlddoors
     type: bin
     start: 0x020EC270
+    extract: False
   - name: chworlddoors
     dir: overlays/chworlddoors
     type: code
@@ -11638,6 +12258,7 @@ segments:
     dir: overlays/chfantasysafeswitch
     type: bin
     start: 0x020ECD90
+    extract: False
   - name: chfantasysafeswitch
     dir: overlays/chfantasysafeswitch
     type: code
@@ -11656,6 +12277,7 @@ segments:
     dir: overlays/chquiz
     type: bin
     start: 0x020ED0C0
+    extract: False
   - name: chquiz
     dir: overlays/chquiz
     type: code
@@ -11674,6 +12296,7 @@ segments:
     dir: overlays/chquizexitdoor
     type: bin
     start: 0x020F5020
+    extract: False
   - name: chquizexitdoor
     dir: overlays/chquizexitdoor
     type: code
@@ -11692,6 +12315,7 @@ segments:
     dir: overlays/chtoxicroomprops
     type: bin
     start: 0x020F5260
+    extract: False
   - name: chtoxicroomprops
     dir: overlays/chtoxicroomprops
     type: code
@@ -11710,6 +12334,7 @@ segments:
     dir: overlays/chbobpanel
     type: bin
     start: 0x020F5DF0
+    extract: False
   - name: chbobpanel
     dir: overlays/chbobpanel
     type: code
@@ -11728,6 +12353,7 @@ segments:
     dir: overlays/chdeflect
     type: bin
     start: 0x020F5F50
+    extract: False
   - name: chdeflect
     dir: overlays/chdeflect
     type: code
@@ -11746,6 +12372,7 @@ segments:
     dir: overlays/cosectionstor
     type: bin
     start: 0x020F6080
+    extract: False
   - name: cosectionstor
     dir: overlays/cosectionstor
     type: code
@@ -11764,6 +12391,7 @@ segments:
     dir: overlays/cothemedll
     type: bin
     start: 0x020F6330
+    extract: False
   - name: cothemedll
     dir: overlays/cothemedll
     type: code
@@ -11782,6 +12410,7 @@ segments:
     dir: overlays/cosection
     type: bin
     start: 0x020F71E0
+    extract: False
   - name: cosection
     dir: overlays/cosection
     type: code
@@ -11800,6 +12429,7 @@ segments:
     dir: overlays/plsu
     type: bin
     start: 0x020F7240
+    extract: False
   - name: plsu
     dir: overlays/plsu
     type: code
@@ -11818,6 +12448,7 @@ segments:
     dir: overlays/plcamera
     type: bin
     start: 0x020F74C0
+    extract: False
   - name: plcamera
     dir: overlays/plcamera
     type: code
@@ -11836,6 +12467,7 @@ segments:
     dir: overlays/dbzone
     type: bin
     start: 0x020F7A70
+    extract: False
   - name: dbzone
     dir: overlays/dbzone
     type: code
@@ -11854,6 +12486,7 @@ segments:
     dir: overlays/dbpalette
     type: bin
     start: 0x020F7F50
+    extract: False
   - name: dbpalette
     dir: overlays/dbpalette
     type: code
@@ -11872,6 +12505,7 @@ segments:
     dir: overlays/dbshift
     type: bin
     start: 0x020F8030
+    extract: False
   - name: dbshift
     dir: overlays/dbshift
     type: code
@@ -11890,6 +12524,7 @@ segments:
     dir: overlays/dbmorph
     type: bin
     start: 0x020F82C0
+    extract: False
   - name: dbmorph
     dir: overlays/dbmorph
     type: code
@@ -11908,6 +12543,7 @@ segments:
     dir: overlays/dbvpl
     type: bin
     start: 0x020F8BC0
+    extract: False
   - name: dbvpl
     dir: overlays/dbvpl
     type: code
@@ -11926,6 +12562,7 @@ segments:
     dir: overlays/dbanim
     type: bin
     start: 0x020F8D90
+    extract: False
   - name: dbanim
     dir: overlays/dbanim
     type: code
@@ -11944,6 +12581,7 @@ segments:
     dir: overlays/dbid
     type: bin
     start: 0x020F9160
+    extract: False
   - name: dbid
     dir: overlays/dbid
     type: code
@@ -11962,6 +12600,7 @@ segments:
     dir: overlays/dblight
     type: bin
     start: 0x020F9350
+    extract: False
   - name: dblight
     dir: overlays/dblight
     type: code
@@ -11980,6 +12619,7 @@ segments:
     dir: overlays/dbvtxnormal
     type: bin
     start: 0x020F9890
+    extract: False
   - name: dbvtxnormal
     dir: overlays/dbvtxnormal
     type: code
@@ -11998,6 +12638,7 @@ segments:
     dir: overlays/dbskeleton
     type: bin
     start: 0x020F9960
+    extract: False
   - name: dbskeleton
     dir: overlays/dbskeleton
     type: code
@@ -12016,6 +12657,7 @@ segments:
     dir: overlays/dbtex
     type: bin
     start: 0x020F9AB0
+    extract: False
   - name: dbtex
     dir: overlays/dbtex
     type: code
@@ -12034,6 +12676,7 @@ segments:
     dir: overlays/gcgame
     type: bin
     start: 0x020F9C00
+    extract: False
   - name: gcgame
     dir: overlays/gcgame
     type: code
@@ -12052,6 +12695,7 @@ segments:
     dir: overlays/gcgoto
     type: bin
     start: 0x020F9D70
+    extract: False
   - name: gcgoto
     dir: overlays/gcgoto
     type: code
@@ -12070,6 +12714,7 @@ segments:
     dir: overlays/gcsectionskip
     type: bin
     start: 0x020FA580
+    extract: False
   - name: gcsectionskip
     dir: overlays/gcsectionskip
     type: code
@@ -12088,6 +12733,7 @@ segments:
     dir: overlays/gczoombox
     type: bin
     start: 0x020FB710
+    extract: False
   - name: gczoombox
     dir: overlays/gczoombox
     type: code
@@ -12106,6 +12752,7 @@ segments:
     dir: overlays/gccubeDll
     type: bin
     start: 0x020FF7E0
+    extract: False
   - name: gccubeDll
     dir: overlays/gccubeDll
     type: code
@@ -12124,6 +12771,7 @@ segments:
     dir: overlays/gcdialogDll
     type: bin
     start: 0x021002A0
+    extract: False
   - name: gcdialogDll
     dir: overlays/gcdialogDll
     type: code
@@ -12142,6 +12790,7 @@ segments:
     dir: overlays/gcnewoption
     type: bin
     start: 0x021004D0
+    extract: False
   - name: gcnewoption
     dir: overlays/gcnewoption
     type: code
@@ -12160,6 +12809,7 @@ segments:
     dir: overlays/gcdialogexec
     type: bin
     start: 0x021037D0
+    extract: False
   - name: gcdialogexec
     dir: overlays/gcdialogexec
     type: code
@@ -12178,6 +12828,7 @@ segments:
     dir: overlays/gcwater
     type: bin
     start: 0x021067D0
+    extract: False
   - name: gcwater
     dir: overlays/gcwater
     type: code
@@ -12196,6 +12847,7 @@ segments:
     dir: overlays/gclightsDll
     type: bin
     start: 0x021068C0
+    extract: False
   - name: gclightsDll
     dir: overlays/gclightsDll
     type: code
@@ -12214,6 +12866,7 @@ segments:
     dir: overlays/gcboundDll
     type: bin
     start: 0x02106ED0
+    extract: False
   - name: gcboundDll
     dir: overlays/gcboundDll
     type: code
@@ -12232,6 +12885,7 @@ segments:
     dir: overlays/gcmapsects
     type: bin
     start: 0x021085A0
+    extract: False
   - name: gcmapsects
     dir: overlays/gcmapsects
     type: code
@@ -12250,6 +12904,7 @@ segments:
     dir: overlays/gcmapsects_lagoontop
     type: bin
     start: 0x0210B050
+    extract: False
   - name: gcmapsects_lagoontop
     dir: overlays/gcmapsects_lagoontop
     type: code
@@ -12268,6 +12923,7 @@ segments:
     dir: overlays/gcmapsects_lagoonmid
     type: bin
     start: 0x0210B850
+    extract: False
   - name: gcmapsects_lagoonmid
     dir: overlays/gcmapsects_lagoonmid
     type: code
@@ -12286,6 +12942,7 @@ segments:
     dir: overlays/gcmapsects_lagoonbot
     type: bin
     start: 0x0210BBD0
+    extract: False
   - name: gcmapsects_lagoonbot
     dir: overlays/gcmapsects_lagoonbot
     type: code
@@ -12304,6 +12961,7 @@ segments:
     dir: overlays/gccollectDll
     type: bin
     start: 0x0210BF50
+    extract: False
   - name: gccollectDll
     dir: overlays/gccollectDll
     type: code
@@ -12322,6 +12980,7 @@ segments:
     dir: overlays/gcskyDll
     type: bin
     start: 0x0210CC80
+    extract: False
   - name: gcskyDll
     dir: overlays/gcskyDll
     type: code
@@ -12340,6 +12999,7 @@ segments:
     dir: overlays/gcdialogcamera
     type: bin
     start: 0x0210D810
+    extract: False
   - name: gcdialogcamera
     dir: overlays/gcdialogcamera
     type: code
@@ -12358,6 +13018,7 @@ segments:
     dir: overlays/gcaudiolist
     type: bin
     start: 0x0210E1C0
+    extract: False
   - name: gcaudiolist
     dir: overlays/gcaudiolist
     type: code
@@ -12376,6 +13037,7 @@ segments:
     dir: overlays/gcintrotext
     type: bin
     start: 0x0210E340
+    extract: False
   - name: gcintrotext
     dir: overlays/gcintrotext
     type: code
@@ -12394,6 +13056,7 @@ segments:
     dir: overlays/gcmapDll
     type: bin
     start: 0x0210E970
+    extract: False
   - name: gcmapDll
     dir: overlays/gcmapDll
     type: code
@@ -12412,6 +13075,7 @@ segments:
     dir: overlays/gcfrontend
     type: bin
     start: 0x02110780
+    extract: False
   - name: gcfrontend
     dir: overlays/gcfrontend
     type: code
@@ -12430,6 +13094,7 @@ segments:
     dir: overlays/gctransitionDll
     type: bin
     start: 0x02111750
+    extract: False
   - name: gctransitionDll
     dir: overlays/gctransitionDll
     type: code
@@ -12448,6 +13113,7 @@ segments:
     dir: overlays/gcnewpause
     type: bin
     start: 0x02112920
+    extract: False
   - name: gcnewpause
     dir: overlays/gcnewpause
     type: code
@@ -12466,6 +13132,7 @@ segments:
     dir: overlays/gclevel
     type: bin
     start: 0x02114CE0
+    extract: False
   - name: gclevel
     dir: overlays/gclevel
     type: code
@@ -12484,6 +13151,7 @@ segments:
     dir: overlays/gcsectionDll
     type: bin
     start: 0x02115180
+    extract: False
   - name: gcsectionDll
     dir: overlays/gcsectionDll
     type: code
@@ -12502,6 +13170,7 @@ segments:
     dir: overlays/gccubesearch
     type: bin
     start: 0x02115970
+    extract: False
   - name: gccubesearch
     dir: overlays/gccubesearch
     type: code
@@ -12520,6 +13189,7 @@ segments:
     dir: overlays/gcstatusDll
     type: bin
     start: 0x021168F0
+    extract: False
   - name: gcstatusDll
     dir: overlays/gcstatusDll
     type: code
@@ -12538,6 +13208,7 @@ segments:
     dir: overlays/gcegg
     type: bin
     start: 0x02116BF0
+    extract: False
   - name: gcegg
     dir: overlays/gcegg
     type: code
@@ -12556,6 +13227,7 @@ segments:
     dir: overlays/gcextra
     type: bin
     start: 0x02116EF0
+    extract: False
   - name: gcextra
     dir: overlays/gcextra
     type: code
@@ -12574,6 +13246,7 @@ segments:
     dir: overlays/gczoomboxdata
     type: bin
     start: 0x02116FD0
+    extract: False
   - name: gczoomboxdata
     dir: overlays/gczoomboxdata
     type: code
@@ -12592,6 +13265,7 @@ segments:
     dir: overlays/gcgamefix
     type: bin
     start: 0x02118600
+    extract: False
   - name: gcgamefix
     dir: overlays/gcgamefix
     type: code
@@ -12610,6 +13284,7 @@ segments:
     dir: overlays/glreflight
     type: bin
     start: 0x02118810
+    extract: False
   - name: glreflight
     dir: overlays/glreflight
     type: code
@@ -12628,6 +13303,7 @@ segments:
     dir: overlays/glsplinecs
     type: bin
     start: 0x02118880
+    extract: False
   - name: glsplinecs
     dir: overlays/glsplinecs
     type: code
@@ -12646,6 +13322,7 @@ segments:
     dir: overlays/glsplinefuncs
     type: bin
     start: 0x0211A030
+    extract: False
   - name: glsplinefuncs
     dir: overlays/glsplinefuncs
     type: code
@@ -12664,6 +13341,7 @@ segments:
     dir: overlays/glsplinefind
     type: bin
     start: 0x0211A4A0
+    extract: False
   - name: glsplinefind
     dir: overlays/glsplinefind
     type: code
@@ -12682,6 +13360,7 @@ segments:
     dir: overlays/glgamestore
     type: bin
     start: 0x0211A7A0
+    extract: False
   - name: glgamestore
     dir: overlays/glgamestore
     type: code
@@ -12700,6 +13379,7 @@ segments:
     dir: overlays/glsplineDll
     type: bin
     start: 0x0211AA90
+    extract: False
   - name: glsplineDll
     dir: overlays/glsplineDll
     type: code
@@ -12718,6 +13398,7 @@ segments:
     dir: overlays/glsplinenode
     type: bin
     start: 0x0211BB20
+    extract: False
   - name: glsplinenode
     dir: overlays/glsplinenode
     type: code
@@ -12736,6 +13417,7 @@ segments:
     dir: overlays/gleeprom
     type: bin
     start: 0x0211C560
+    extract: False
   - name: gleeprom
     dir: overlays/gleeprom
     type: code
@@ -12754,6 +13436,7 @@ segments:
     dir: overlays/glsavegame
     type: bin
     start: 0x0211C6B0
+    extract: False
   - name: glsavegame
     dir: overlays/glsavegame
     type: code
@@ -12772,6 +13455,7 @@ segments:
     dir: overlays/glgamedata
     type: bin
     start: 0x0211CED0
+    extract: False
   - name: glgamedata
     dir: overlays/glgamedata
     type: code
@@ -12790,6 +13474,7 @@ segments:
     dir: overlays/glglobaldata
     type: bin
     start: 0x0211D4B0
+    extract: False
   - name: glglobaldata
     dir: overlays/glglobaldata
     type: code
@@ -12808,6 +13493,7 @@ segments:
     dir: overlays/glintrosyncDll
     type: bin
     start: 0x0211D770
+    extract: False
   - name: glintrosyncDll
     dir: overlays/glintrosyncDll
     type: code
@@ -12826,6 +13512,7 @@ segments:
     dir: overlays/glhittableDll
     type: bin
     start: 0x0211DDE0
+    extract: False
   - name: glhittableDll
     dir: overlays/glhittableDll
     type: code
@@ -12844,6 +13531,7 @@ segments:
     dir: overlays/glid
     type: bin
     start: 0x02120DA0
+    extract: False
   - name: glid
     dir: overlays/glid
     type: code
@@ -12862,6 +13550,7 @@ segments:
     dir: overlays/glrecord
     type: bin
     start: 0x021213B0
+    extract: False
   - name: glrecord
     dir: overlays/glrecord
     type: code
@@ -12880,6 +13569,7 @@ segments:
     dir: overlays/glglobalsettings
     type: bin
     start: 0x02121580
+    extract: False
   - name: glglobalsettings
     dir: overlays/glglobalsettings
     type: code
@@ -12898,6 +13588,7 @@ segments:
     dir: overlays/glcrc
     type: bin
     start: 0x02121B90
+    extract: False
   - name: glcrc
     dir: overlays/glcrc
     type: code
@@ -12916,6 +13607,7 @@ segments:
     dir: overlays/gldbstring
     type: bin
     start: 0x02121DB0
+    extract: False
   - name: gldbstring
     dir: overlays/gldbstring
     type: code
@@ -12934,6 +13626,7 @@ segments:
     dir: overlays/gldialog
     type: bin
     start: 0x02121F90
+    extract: False
   - name: gldialog
     dir: overlays/gldialog
     type: code
@@ -12952,6 +13645,7 @@ segments:
     dir: overlays/glzone
     type: bin
     start: 0x02122120
+    extract: False
   - name: glzone
     dir: overlays/glzone
     type: code
@@ -12970,6 +13664,7 @@ segments:
     dir: overlays/glpackvtx
     type: bin
     start: 0x02122360
+    extract: False
   - name: glpackvtx
     dir: overlays/glpackvtx
     type: code
@@ -12988,6 +13683,7 @@ segments:
     dir: overlays/glcutDll
     type: bin
     start: 0x02122590
+    extract: False
   - name: glcutDll
     dir: overlays/glcutDll
     type: code
@@ -13006,6 +13702,7 @@ segments:
     dir: overlays/glrtc
     type: bin
     start: 0x02122E90
+    extract: False
   - name: glrtc
     dir: overlays/glrtc
     type: code
@@ -13024,6 +13721,7 @@ segments:
     dir: overlays/glidmake
     type: bin
     start: 0x02123570
+    extract: False
   - name: glidmake
     dir: overlays/glidmake
     type: code
@@ -13042,6 +13740,7 @@ segments:
     dir: overlays/gldbDll
     type: bin
     start: 0x02123B00
+    extract: False
   - name: gldbDll
     dir: overlays/gldbDll
     type: code
@@ -13060,6 +13759,7 @@ segments:
     dir: overlays/fxsparkle
     type: bin
     start: 0x02124040
+    extract: False
   - name: fxsparkle
     dir: overlays/fxsparkle
     type: code
@@ -13078,6 +13778,7 @@ segments:
     dir: overlays/fxrain
     type: bin
     start: 0x021244D0
+    extract: False
   - name: fxrain
     dir: overlays/fxrain
     type: code
@@ -13096,6 +13797,7 @@ segments:
     dir: overlays/fxleaves
     type: bin
     start: 0x02124E70
+    extract: False
   - name: fxleaves
     dir: overlays/fxleaves
     type: code
@@ -13114,6 +13816,7 @@ segments:
     dir: overlays/fxdlsmoke
     type: bin
     start: 0x02125690
+    extract: False
   - name: fxdlsmoke
     dir: overlays/fxdlsmoke
     type: code
@@ -13132,6 +13835,7 @@ segments:
     dir: overlays/fxfontstring
     type: bin
     start: 0x02125780
+    extract: False
   - name: fxfontstring
     dir: overlays/fxfontstring
     type: code
@@ -13150,6 +13854,7 @@ segments:
     dir: overlays/fxmumbo
     type: bin
     start: 0x021259E0
+    extract: False
   - name: fxmumbo
     dir: overlays/fxmumbo
     type: code
@@ -13168,6 +13873,7 @@ segments:
     dir: overlays/fxripple
     type: bin
     start: 0x02125AE0
+    extract: False
   - name: fxripple
     dir: overlays/fxripple
     type: code
@@ -13186,6 +13892,7 @@ segments:
     dir: overlays/fxairbub
     type: bin
     start: 0x02125EA0
+    extract: False
   - name: fxairbub
     dir: overlays/fxairbub
     type: code
@@ -13204,6 +13911,7 @@ segments:
     dir: overlays/fxsplash25d
     type: bin
     start: 0x02126040
+    extract: False
   - name: fxsplash25d
     dir: overlays/fxsplash25d
     type: code
@@ -13222,6 +13930,7 @@ segments:
     dir: overlays/fxstep
     type: bin
     start: 0x021261D0
+    extract: False
   - name: fxstep
     dir: overlays/fxstep
     type: code
@@ -13240,6 +13949,7 @@ segments:
     dir: overlays/fxegg
     type: bin
     start: 0x02126EB0
+    extract: False
   - name: fxegg
     dir: overlays/fxegg
     type: code
@@ -13258,6 +13968,7 @@ segments:
     dir: overlays/fxtwinkle
     type: bin
     start: 0x021275D0
+    extract: False
   - name: fxtwinkle
     dir: overlays/fxtwinkle
     type: code
@@ -13276,6 +13987,7 @@ segments:
     dir: overlays/fxspgold
     type: bin
     start: 0x02127760
+    extract: False
   - name: fxspgold
     dir: overlays/fxspgold
     type: code
@@ -13294,6 +14006,7 @@ segments:
     dir: overlays/fxsplash
     type: bin
     start: 0x02127880
+    extract: False
   - name: fxsplash
     dir: overlays/fxsplash
     type: code
@@ -13312,6 +14025,7 @@ segments:
     dir: overlays/fxgenlist
     type: bin
     start: 0x02127A60
+    extract: False
   - name: fxgenlist
     dir: overlays/fxgenlist
     type: code
@@ -13330,6 +14044,7 @@ segments:
     dir: overlays/fxkern
     type: bin
     start: 0x02127BF0
+    extract: False
   - name: fxkern
     dir: overlays/fxkern
     type: code
@@ -13348,6 +14063,7 @@ segments:
     dir: overlays/fxdialog
     type: bin
     start: 0x02128100
+    extract: False
   - name: fxdialog
     dir: overlays/fxdialog
     type: code
@@ -13366,6 +14082,7 @@ segments:
     dir: overlays/gsworldDll
     type: bin
     start: 0x02128410
+    extract: False
   - name: gsworldDll
     dir: overlays/gsworldDll
     type: code
@@ -13384,6 +14101,7 @@ segments:
     dir: overlays/gspropsDll
     type: bin
     start: 0x02128A10
+    extract: False
   - name: gspropsDll
     dir: overlays/gspropsDll
     type: code
@@ -13402,6 +14120,7 @@ segments:
     dir: overlays/gspropctrl
     type: bin
     start: 0x02129240
+    extract: False
   - name: gspropctrl
     dir: overlays/gspropctrl
     type: code
@@ -13420,6 +14139,7 @@ segments:
     dir: overlays/gspropprop
     type: bin
     start: 0x02129440
+    extract: False
   - name: gspropprop
     dir: overlays/gspropprop
     type: code
@@ -13438,6 +14158,7 @@ segments:
     dir: overlays/gspropmarker
     type: bin
     start: 0x02129B60
+    extract: False
   - name: gspropmarker
     dir: overlays/gspropmarker
     type: code
@@ -13456,6 +14177,7 @@ segments:
     dir: overlays/gsattract
     type: bin
     start: 0x02129F60
+    extract: False
   - name: gsattract
     dir: overlays/gsattract
     type: code
@@ -13474,6 +14196,7 @@ segments:
     dir: overlays/gsproplookup
     type: bin
     start: 0x0212A4A0
+    extract: False
   - name: gsproplookup
     dir: overlays/gsproplookup
     type: code
@@ -13492,6 +14215,7 @@ segments:
     dir: overlays/idbounce
     type: bin
     start: 0x0212A670
+    extract: False
   - name: idbounce
     dir: overlays/idbounce
     type: code
@@ -13510,6 +14234,7 @@ segments:
     dir: overlays/idglow
     type: bin
     start: 0x0212B730
+    extract: False
   - name: idglow
     dir: overlays/idglow
     type: code
@@ -13528,6 +14253,7 @@ segments:
     dir: overlays/idlight
     type: bin
     start: 0x0212BAC0
+    extract: False
   - name: idlight
     dir: overlays/idlight
     type: code
@@ -13546,6 +14272,7 @@ segments:
     dir: overlays/idwave
     type: bin
     start: 0x0212BE40
+    extract: False
   - name: idwave
     dir: overlays/idwave
     type: code
@@ -13564,6 +14291,7 @@ segments:
     dir: overlays/idflash
     type: bin
     start: 0x0212C490
+    extract: False
   - name: idflash
     dir: overlays/idflash
     type: code
@@ -13582,6 +14310,7 @@ segments:
     dir: overlays/idflasha
     type: bin
     start: 0x0212C640
+    extract: False
   - name: idflasha
     dir: overlays/idflasha
     type: code
@@ -13600,6 +14329,7 @@ segments:
     dir: overlays/idglowa
     type: bin
     start: 0x0212C980
+    extract: False
   - name: idglowa
     dir: overlays/idglowa
     type: code
@@ -13618,6 +14348,7 @@ segments:
     dir: overlays/idscroll
     type: bin
     start: 0x0212CC60
+    extract: False
   - name: idscroll
     dir: overlays/idscroll
     type: code
@@ -13636,6 +14367,7 @@ segments:
     dir: overlays/idflashbaddie
     type: bin
     start: 0x0212CDD0
+    extract: False
   - name: idflashbaddie
     dir: overlays/idflashbaddie
     type: code
@@ -13654,6 +14386,7 @@ segments:
     dir: overlays/idtwinkle
     type: bin
     start: 0x0212CF80
+    extract: False
   - name: idtwinkle
     dir: overlays/idtwinkle
     type: code
@@ -13672,6 +14405,7 @@ segments:
     dir: overlays/idflame
     type: bin
     start: 0x0212D8F0
+    extract: False
   - name: idflame
     dir: overlays/idflame
     type: code
@@ -13690,6 +14424,7 @@ segments:
     dir: overlays/idwater
     type: bin
     start: 0x0212DED0
+    extract: False
   - name: idwater
     dir: overlays/idwater
     type: code
@@ -13708,6 +14443,7 @@ segments:
     dir: overlays/idwibble
     type: bin
     start: 0x0212E360
+    extract: False
   - name: idwibble
     dir: overlays/idwibble
     type: code
@@ -13726,6 +14462,7 @@ segments:
     dir: overlays/idtwinklea
     type: bin
     start: 0x0212EBB0
+    extract: False
   - name: idtwinklea
     dir: overlays/idtwinklea
     type: code
@@ -13744,6 +14481,7 @@ segments:
     dir: overlays/idtwinklecolour
     type: bin
     start: 0x0212EDE0
+    extract: False
   - name: idtwinklecolour
     dir: overlays/idtwinklecolour
     type: code
@@ -13762,6 +14500,7 @@ segments:
     dir: overlays/idworld
     type: bin
     start: 0x0212F7D0
+    extract: False
   - name: idworld
     dir: overlays/idworld
     type: code
@@ -13780,6 +14519,7 @@ segments:
     dir: overlays/idworldmake
     type: bin
     start: 0x0212FB40
+    extract: False
   - name: idworldmake
     dir: overlays/idworldmake
     type: code
@@ -13798,6 +14538,7 @@ segments:
     dir: overlays/inantab
     type: bin
     start: 0x02130730
+    extract: False
   - name: inantab
     dir: overlays/inantab
     type: code
@@ -13816,6 +14557,7 @@ segments:
     dir: overlays/indrv_lights
     type: bin
     start: 0x021388B0
+    extract: False
   - name: indrv_lights
     dir: overlays/indrv_lights
     type: code
@@ -13834,6 +14576,7 @@ segments:
     dir: overlays/indrv_fx
     type: bin
     start: 0x02138BE0
+    extract: False
   - name: indrv_fx
     dir: overlays/indrv_fx
     type: code
@@ -13852,6 +14595,7 @@ segments:
     dir: overlays/indrv_audio
     type: bin
     start: 0x02139C30
+    extract: False
   - name: indrv_audio
     dir: overlays/indrv_audio
     type: code
@@ -13870,6 +14614,7 @@ segments:
     dir: overlays/mlwave
     type: bin
     start: 0x0213B850
+    extract: False
   - name: mlwave
     dir: overlays/mlwave
     type: code
@@ -13888,6 +14633,7 @@ segments:
     dir: overlays/vplight
     type: bin
     start: 0x0213BCF0
+    extract: False
   - name: vplight
     dir: overlays/vplight
     type: code
@@ -13906,6 +14652,7 @@ segments:
     dir: overlays/vpwibble
     type: bin
     start: 0x0213C780
+    extract: False
   - name: vpwibble
     dir: overlays/vpwibble
     type: code
@@ -13924,6 +14671,7 @@ segments:
     dir: overlays/vpflicker
     type: bin
     start: 0x0213CF60
+    extract: False
   - name: vpflicker
     dir: overlays/vpflicker
     type: code
@@ -13942,6 +14690,7 @@ segments:
     dir: overlays/vpglow
     type: bin
     start: 0x0213D3C0
+    extract: False
   - name: vpglow
     dir: overlays/vpglow
     type: code
@@ -13960,6 +14709,7 @@ segments:
     dir: overlays/vpscroll
     type: bin
     start: 0x0213D840
+    extract: False
   - name: vpscroll
     dir: overlays/vpscroll
     type: code
@@ -13978,6 +14728,7 @@ segments:
     dir: overlays/rtlight
     type: bin
     start: 0x0213DAA0
+    extract: False
   - name: rtlight
     dir: overlays/rtlight
     type: code
@@ -13996,6 +14747,7 @@ segments:
     dir: overlays/vpmodule
     type: bin
     start: 0x0213E620
+    extract: False
   - name: vpmodule
     dir: overlays/vpmodule
     type: code
@@ -14014,6 +14766,7 @@ segments:
     dir: overlays/mlspline
     type: bin
     start: 0x0213EFC0
+    extract: False
   - name: mlspline
     dir: overlays/mlspline
     type: code
@@ -14032,6 +14785,7 @@ segments:
     dir: overlays/ncbastring
     type: bin
     start: 0x02140D10
+    extract: False
   - name: ncbastring
     dir: overlays/ncbastring
     type: code
@@ -14050,6 +14804,7 @@ segments:
     dir: overlays/ncbaspiral
     type: bin
     start: 0x021410E0
+    extract: False
   - name: ncbaspiral
     dir: overlays/ncbaspiral
     type: code
@@ -14068,6 +14823,7 @@ segments:
     dir: overlays/ncbapan
     type: bin
     start: 0x02141420
+    extract: False
   - name: ncbapan
     dir: overlays/ncbapan
     type: code
@@ -14086,6 +14842,7 @@ segments:
     dir: overlays/ncbaledge
     type: bin
     start: 0x021416F0
+    extract: False
   - name: ncbaledge
     dir: overlays/ncbaledge
     type: code
@@ -14104,6 +14861,7 @@ segments:
     dir: overlays/ncfixposrot
     type: bin
     start: 0x02141960
+    extract: False
   - name: ncfixposrot
     dir: overlays/ncfixposrot
     type: code
@@ -14122,6 +14880,7 @@ segments:
     dir: overlays/ncbaclimb
     type: bin
     start: 0x02141D30
+    extract: False
   - name: ncbaclimb
     dir: overlays/ncbaclimb
     type: code
@@ -14140,6 +14899,7 @@ segments:
     dir: overlays/ncbadie
     type: bin
     start: 0x02142010
+    extract: False
   - name: ncbadie
     dir: overlays/ncbadie
     type: code
@@ -14158,6 +14918,7 @@ segments:
     dir: overlays/ncbadive
     type: bin
     start: 0x021422C0
+    extract: False
   - name: ncbadive
     dir: overlays/ncbadive
     type: code
@@ -14176,6 +14937,7 @@ segments:
     dir: overlays/ncbafly
     type: bin
     start: 0x021424F0
+    extract: False
   - name: ncbafly
     dir: overlays/ncbafly
     type: code
@@ -14194,6 +14956,7 @@ segments:
     dir: overlays/ncbajig
     type: bin
     start: 0x021427B0
+    extract: False
   - name: ncbajig
     dir: overlays/ncbajig
     type: code
@@ -14212,6 +14975,7 @@ segments:
     dir: overlays/ncbaswim
     type: bin
     start: 0x02142A30
+    extract: False
   - name: ncbaswim
     dir: overlays/ncbaswim
     type: code
@@ -14230,6 +14994,7 @@ segments:
     dir: overlays/ncbafixpos
     type: bin
     start: 0x02142E00
+    extract: False
   - name: ncbafixpos
     dir: overlays/ncbafixpos
     type: code
@@ -14248,6 +15013,7 @@ segments:
     dir: overlays/ncbadolly
     type: bin
     start: 0x02143090
+    extract: False
   - name: ncbadolly
     dir: overlays/ncbadolly
     type: code
@@ -14266,6 +15032,7 @@ segments:
     dir: overlays/ncbaspline
     type: bin
     start: 0x02143350
+    extract: False
   - name: ncbaspline
     dir: overlays/ncbaspline
     type: code
@@ -14284,6 +15051,7 @@ segments:
     dir: overlays/ncba1p
     type: bin
     start: 0x02143E40
+    extract: False
   - name: ncba1p
     dir: overlays/ncba1p
     type: code
@@ -14302,6 +15070,7 @@ segments:
     dir: overlays/ncstart
     type: bin
     start: 0x021447D0
+    extract: False
   - name: ncstart
     dir: overlays/ncstart
     type: code
@@ -14320,6 +15089,7 @@ segments:
     dir: overlays/ncbadeflect
     type: bin
     start: 0x021448F0
+    extract: False
   - name: ncbadeflect
     dir: overlays/ncbadeflect
     type: code
@@ -14338,6 +15108,7 @@ segments:
     dir: overlays/ncbawaypoint
     type: bin
     start: 0x02144C10
+    extract: False
   - name: ncbawaypoint
     dir: overlays/ncbawaypoint
     type: code
@@ -14356,6 +15127,7 @@ segments:
     dir: overlays/ncbapivot
     type: bin
     start: 0x02144F40
+    extract: False
   - name: ncbapivot
     dir: overlays/ncbapivot
     type: code
@@ -14374,6 +15146,7 @@ segments:
     dir: overlays/ncbatarget
     type: bin
     start: 0x02145230
+    extract: False
   - name: ncbatarget
     dir: overlays/ncbatarget
     type: code
@@ -14392,6 +15165,7 @@ segments:
     dir: overlays/ncpod
     type: bin
     start: 0x02145520
+    extract: False
   - name: ncpod
     dir: overlays/ncpod
     type: code
@@ -14410,6 +15184,7 @@ segments:
     dir: overlays/ncpoddialog
     type: bin
     start: 0x02146720
+    extract: False
   - name: ncpoddialog
     dir: overlays/ncpoddialog
     type: code
@@ -14428,6 +15203,7 @@ segments:
     dir: overlays/ncpoducam
     type: bin
     start: 0x02149310
+    extract: False
   - name: ncpoducam
     dir: overlays/ncpoducam
     type: code
@@ -14446,6 +15222,7 @@ segments:
     dir: overlays/ncpodfixpos
     type: bin
     start: 0x0214ABB0
+    extract: False
   - name: ncpodfixpos
     dir: overlays/ncpodfixpos
     type: code
@@ -14464,6 +15241,7 @@ segments:
     dir: overlays/ncbabee
     type: bin
     start: 0x0214B020
+    extract: False
   - name: ncbabee
     dir: overlays/ncbabee
     type: code
@@ -14482,6 +15260,7 @@ segments:
     dir: overlays/ncbaglide
     type: bin
     start: 0x0214B230
+    extract: False
   - name: ncbaglide
     dir: overlays/ncbaglide
     type: code
@@ -14500,6 +15279,7 @@ segments:
     dir: overlays/ncbasub
     type: bin
     start: 0x0214B4B0
+    extract: False
   - name: ncbasub
     dir: overlays/ncbasub
     type: code
@@ -14518,6 +15298,7 @@ segments:
     dir: overlays/ncbasuck
     type: bin
     start: 0x0214B830
+    extract: False
   - name: ncbasuck
     dir: overlays/ncbasuck
     type: code
@@ -14536,6 +15317,7 @@ segments:
     dir: overlays/ncbakaztorp
     type: bin
     start: 0x0214BB40
+    extract: False
   - name: ncbakaztorp
     dir: overlays/ncbakaztorp
     type: code
@@ -14554,6 +15336,7 @@ segments:
     dir: overlays/scradar
     type: bin
     start: 0x0214BE80
+    extract: False
   - name: scradar
     dir: overlays/scradar
     type: code
@@ -14572,6 +15355,7 @@ segments:
     dir: overlays/gemarkersDll
     type: bin
     start: 0x0214CD60
+    extract: False
   - name: gemarkersDll
     dir: overlays/gemarkersDll
     type: code
@@ -14590,6 +15374,7 @@ segments:
     dir: overlays/suexpressjoint
     type: bin
     start: 0x0214E090
+    extract: False
   - name: suexpressjoint
     dir: overlays/suexpressjoint
     type: code
@@ -14608,6 +15393,7 @@ segments:
     dir: overlays/suexpression
     type: bin
     start: 0x0214FB50
+    extract: False
   - name: suexpression
     dir: overlays/suexpression
     type: code
@@ -14626,6 +15412,7 @@ segments:
     dir: overlays/subaddie3d
     type: bin
     start: 0x02150E40
+    extract: False
   - name: subaddie3d
     dir: overlays/subaddie3d
     type: code
@@ -14644,6 +15431,7 @@ segments:
     dir: overlays/sumumbofx
     type: bin
     start: 0x02150FC0
+    extract: False
   - name: sumumbofx
     dir: overlays/sumumbofx
     type: code
@@ -14662,6 +15450,7 @@ segments:
     dir: overlays/suflamefx
     type: bin
     start: 0x021525F0
+    extract: False
   - name: suflamefx
     dir: overlays/suflamefx
     type: code
@@ -14680,6 +15469,7 @@ segments:
     dir: overlays/sumultiscore
     type: bin
     start: 0x02152BA0
+    extract: False
   - name: sumultiscore
     dir: overlays/sumultiscore
     type: code
@@ -14698,6 +15488,7 @@ segments:
     dir: overlays/sumole
     type: bin
     start: 0x02154160
+    extract: False
   - name: sumole
     dir: overlays/sumole
     type: code
@@ -14716,6 +15507,7 @@ segments:
     dir: overlays/subaddiebounce
     type: bin
     start: 0x02156A40
+    extract: False
   - name: subaddiebounce
     dir: overlays/subaddiebounce
     type: code
@@ -14734,6 +15526,7 @@ segments:
     dir: overlays/sukickball
     type: bin
     start: 0x02156D20
+    extract: False
   - name: sukickball
     dir: overlays/sukickball
     type: code
@@ -14752,6 +15545,7 @@ segments:
     dir: overlays/suexpressmorph
     type: bin
     start: 0x02158060
+    extract: False
   - name: suexpressmorph
     dir: overlays/suexpressmorph
     type: code
@@ -14770,6 +15564,7 @@ segments:
     dir: overlays/sufreezy
     type: bin
     start: 0x02159510
+    extract: False
   - name: sufreezy
     dir: overlays/sufreezy
     type: code
@@ -14788,6 +15583,7 @@ segments:
     dir: overlays/subaddiejoy
     type: bin
     start: 0x02159900
+    extract: False
   - name: subaddiejoy
     dir: overlays/subaddiejoy
     type: code
@@ -14806,6 +15602,7 @@ segments:
     dir: overlays/subaddiedraw25d
     type: bin
     start: 0x02159E00
+    extract: False
   - name: subaddiedraw25d
     dir: overlays/subaddiedraw25d
     type: code
@@ -14824,6 +15621,7 @@ segments:
     dir: overlays/subaddiefind
     type: bin
     start: 0x0215A130
+    extract: False
   - name: subaddiefind
     dir: overlays/subaddiefind
     type: code
@@ -14842,6 +15640,7 @@ segments:
     dir: overlays/subaddiefade
     type: bin
     start: 0x0215ABC0
+    extract: False
   - name: subaddiefade
     dir: overlays/subaddiefade
     type: code
@@ -14860,6 +15659,7 @@ segments:
     dir: overlays/subaddieaudioquick
     type: bin
     start: 0x0215B120
+    extract: False
   - name: subaddieaudioquick
     dir: overlays/subaddieaudioquick
     type: code
@@ -14878,6 +15678,7 @@ segments:
     dir: overlays/subaddieaudioloop
     type: bin
     start: 0x0215B370
+    extract: False
   - name: subaddieaudioloop
     dir: overlays/subaddieaudioloop
     type: code
@@ -14896,6 +15697,7 @@ segments:
     dir: overlays/suspline
     type: bin
     start: 0x0215B7F0
+    extract: False
   - name: suspline
     dir: overlays/suspline
     type: code
@@ -14914,6 +15716,7 @@ segments:
     dir: overlays/susplinet
     type: bin
     start: 0x0215C780
+    extract: False
   - name: susplinet
     dir: overlays/susplinet
     type: code
@@ -14932,6 +15735,7 @@ segments:
     dir: overlays/sucoasterfly
     type: bin
     start: 0x0215DB90
+    extract: False
   - name: sucoasterfly
     dir: overlays/sucoasterfly
     type: code
@@ -14950,6 +15754,7 @@ segments:
     dir: overlays/suchase
     type: bin
     start: 0x0215FFE0
+    extract: False
   - name: suchase
     dir: overlays/suchase
     type: code
@@ -14968,6 +15773,7 @@ segments:
     dir: overlays/subaddiestore
     type: bin
     start: 0x02160220
+    extract: False
   - name: subaddiestore
     dir: overlays/subaddiestore
     type: code
@@ -14986,6 +15792,7 @@ segments:
     dir: overlays/sudeflect
     type: bin
     start: 0x021613C0
+    extract: False
   - name: sudeflect
     dir: overlays/sudeflect
     type: code
@@ -15004,6 +15811,7 @@ segments:
     dir: overlays/subaddiesect
     type: bin
     start: 0x02162480
+    extract: False
   - name: subaddiesect
     dir: overlays/subaddiesect
     type: code
@@ -15022,6 +15830,7 @@ segments:
     dir: overlays/subaddierouteDll
     type: bin
     start: 0x02162720
+    extract: False
   - name: subaddierouteDll
     dir: overlays/subaddierouteDll
     type: code
@@ -15040,6 +15849,7 @@ segments:
     dir: overlays/subaddievolume
     type: bin
     start: 0x021640B0
+    extract: False
   - name: subaddievolume
     dir: overlays/subaddievolume
     type: code
@@ -15058,6 +15868,7 @@ segments:
     dir: overlays/suautobaddies
     type: bin
     start: 0x02164850
+    extract: False
   - name: suautobaddies
     dir: overlays/suautobaddies
     type: code
@@ -15076,6 +15887,7 @@ segments:
     dir: overlays/subaddieitem
     type: bin
     start: 0x02164D50
+    extract: False
   - name: subaddieitem
     dir: overlays/subaddieitem
     type: code
@@ -15094,6 +15906,7 @@ segments:
     dir: overlays/subaddiecustomhits
     type: bin
     start: 0x02165080
+    extract: False
   - name: subaddiecustomhits
     dir: overlays/subaddiecustomhits
     type: code
@@ -15112,6 +15925,7 @@ segments:
     dir: overlays/subaddielink
     type: bin
     start: 0x02165450
+    extract: False
   - name: subaddielink
     dir: overlays/subaddielink
     type: code
@@ -15130,6 +15944,7 @@ segments:
     dir: overlays/subaddiefx
     type: bin
     start: 0x02165610
+    extract: False
   - name: subaddiefx
     dir: overlays/subaddiefx
     type: code
@@ -15148,6 +15963,7 @@ segments:
     dir: overlays/subaddiepalette
     type: bin
     start: 0x02165B80
+    extract: False
   - name: subaddiepalette
     dir: overlays/subaddiepalette
     type: code
@@ -15166,6 +15982,7 @@ segments:
     dir: overlays/subaddiemulti
     type: bin
     start: 0x02165EF0
+    extract: False
   - name: subaddiemulti
     dir: overlays/subaddiemulti
     type: code
@@ -15184,6 +16001,7 @@ segments:
     dir: overlays/subaddiemarker
     type: bin
     start: 0x02166320
+    extract: False
   - name: subaddiemarker
     dir: overlays/subaddiemarker
     type: code
@@ -15202,6 +16020,7 @@ segments:
     dir: overlays/subaddieskeleton
     type: bin
     start: 0x02166560
+    extract: False
   - name: subaddieskeleton
     dir: overlays/subaddieskeleton
     type: code
@@ -15220,6 +16039,7 @@ segments:
     dir: overlays/sucoaster
     type: bin
     start: 0x02166830
+    extract: False
   - name: sucoaster
     dir: overlays/sucoaster
     type: code
@@ -15238,6 +16058,7 @@ segments:
     dir: overlays/subaddiedialog
     type: bin
     start: 0x021693F0
+    extract: False
   - name: subaddiedialog
     dir: overlays/subaddiedialog
     type: code
@@ -15256,6 +16077,7 @@ segments:
     dir: overlays/sucoasterdata
     type: bin
     start: 0x0216A9F0
+    extract: False
   - name: sucoasterdata
     dir: overlays/sucoasterdata
     type: code
@@ -15274,6 +16096,7 @@ segments:
     dir: overlays/sucoasterflydata
     type: bin
     start: 0x0216B4D0
+    extract: False
   - name: sucoasterflydata
     dir: overlays/sucoasterflydata
     type: code
@@ -15292,6 +16115,7 @@ segments:
     dir: overlays/sudialog
     type: bin
     start: 0x0216BA20
+    extract: False
   - name: sudialog
     dir: overlays/sudialog
     type: code
@@ -15310,6 +16134,7 @@ segments:
     dir: overlays/susubgame
     type: bin
     start: 0x0216BBB0
+    extract: False
   - name: susubgame
     dir: overlays/susubgame
     type: code
@@ -15328,6 +16153,7 @@ segments:
     dir: overlays/sucoasterplayer
     type: bin
     start: 0x0216C5D0
+    extract: False
   - name: sucoasterplayer
     dir: overlays/sucoasterplayer
     type: code
@@ -15346,6 +16172,7 @@ segments:
     dir: overlays/sucoasterhit
     type: bin
     start: 0x0216CEC0
+    extract: False
   - name: sucoasterhit
     dir: overlays/sucoasterhit
     type: code
@@ -15364,6 +16191,7 @@ segments:
     dir: overlays/sueggmisc
     type: bin
     start: 0x0216DC80
+    extract: False
   - name: sueggmisc
     dir: overlays/sueggmisc
     type: code
@@ -15382,6 +16210,7 @@ segments:
     dir: overlays/trangler
     type: bin
     start: 0x0216DEA0
+    extract: False
   - name: trangler
     dir: overlays/trangler
     type: code
@@ -15400,6 +16229,7 @@ segments:
     dir: overlays/sutempleboss
     type: bin
     start: 0x0216E0F0
+    extract: False
   - name: sutempleboss
     dir: overlays/sutempleboss
     type: code
@@ -15418,6 +16248,7 @@ segments:
     dir: overlays/sudeathmatch
     type: bin
     start: 0x0216E320
+    extract: False
   - name: sudeathmatch
     dir: overlays/sudeathmatch
     type: code
@@ -15436,6 +16267,7 @@ segments:
     dir: overlays/suegg
     type: bin
     start: 0x0216E690
+    extract: False
   - name: suegg
     dir: overlays/suegg
     type: code
@@ -15454,6 +16286,7 @@ segments:
     dir: overlays/sueggmove
     type: bin
     start: 0x0216F5E0
+    extract: False
   - name: sueggmove
     dir: overlays/sueggmove
     type: code
@@ -15472,6 +16305,7 @@ segments:
     dir: overlays/subaddieDll
     type: bin
     start: 0x0216FA90
+    extract: False
   - name: subaddieDll
     dir: overlays/subaddieDll
     type: code
@@ -15490,6 +16324,7 @@ segments:
     dir: overlays/subaddietaxi
     type: bin
     start: 0x02170040
+    extract: False
   - name: subaddietaxi
     dir: overlays/subaddietaxi
     type: code
@@ -15508,6 +16343,7 @@ segments:
     dir: overlays/scinfobar
     type: bin
     start: 0x02170F00
+    extract: False
   - name: scinfobar
     dir: overlays/scinfobar
     type: code
@@ -15526,6 +16362,7 @@ segments:
     dir: overlays/sccustom
     type: bin
     start: 0x02171DB0
+    extract: False
   - name: sccustom
     dir: overlays/sccustom
     type: code
@@ -15544,6 +16381,7 @@ segments:
     dir: overlays/seqdat
     type: bin
     start: 0x021727A0
+    extract: False
   - name: seqdat
     dir: overlays/seqdat
     type: code
@@ -15562,6 +16400,7 @@ segments:
     dir: overlays/suinv
     type: bin
     start: 0x02172A20
+    extract: False
   - name: suinv
     dir: overlays/suinv
     type: code
@@ -15580,6 +16419,7 @@ segments:
     dir: overlays/sujiggy
     type: bin
     start: 0x02172B20
+    extract: False
   - name: sujiggy
     dir: overlays/sujiggy
     type: code
@@ -15598,6 +16438,7 @@ segments:
     dir: overlays/sumissilehome
     type: bin
     start: 0x02173610
+    extract: False
   - name: sumissilehome
     dir: overlays/sumissilehome
     type: code
@@ -15616,6 +16457,7 @@ segments:
     dir: overlays/surestart
     type: bin
     start: 0x021739B0
+    extract: False
   - name: surestart
     dir: overlays/surestart
     type: code
@@ -15634,6 +16476,7 @@ segments:
     dir: overlays/subaddiezone
     type: bin
     start: 0x02173B50
+    extract: False
   - name: subaddiezone
     dir: overlays/subaddiezone
     type: code
@@ -15652,6 +16495,7 @@ segments:
     dir: overlays/suquiz
     type: bin
     start: 0x02173C30
+    extract: False
   - name: suquiz
     dir: overlays/suquiz
     type: code
@@ -15670,6 +16514,7 @@ segments:
     dir: overlays/sulights
     type: bin
     start: 0x02174FD0
+    extract: False
   - name: sulights
     dir: overlays/sulights
     type: code
@@ -15688,6 +16533,7 @@ segments:
     dir: overlays/sufade
     type: bin
     start: 0x02175AB0
+    extract: False
   - name: sufade
     dir: overlays/sufade
     type: code
@@ -15706,6 +16552,7 @@ segments:
     dir: overlays/sccustom_big
     type: bin
     start: 0x02175C60
+    extract: False
   - name: sccustom_big
     dir: overlays/sccustom_big
     type: code
@@ -15724,6 +16571,7 @@ segments:
     dir: overlays/sccustom_banjo
     type: bin
     start: 0x021760E0
+    extract: False
   - name: sccustom_banjo
     dir: overlays/sccustom_banjo
     type: code
@@ -15742,6 +16590,7 @@ segments:
     dir: overlays/gztrace
     type: bin
     start: 0x021765F0
+    extract: False
   - name: gztrace
     dir: overlays/gztrace
     type: code
@@ -15760,6 +16609,7 @@ segments:
     dir: overlays/gzreg
     type: bin
     start: 0x02177120
+    extract: False
   - name: gzreg
     dir: overlays/gzreg
     type: code
@@ -15778,6 +16628,7 @@ segments:
     dir: overlays/gzthread
     type: bin
     start: 0x02178710
+    extract: False
   - name: gzthread
     dir: overlays/gzthread
     type: code
@@ -15796,6 +16647,7 @@ segments:
     dir: overlays/gzpublic
     type: bin
     start: 0x02178B70
+    extract: False
   - name: gzpublic
     dir: overlays/gzpublic
     type: code

@@ -7,3 +7,6 @@
 [submodule "tools/asm-processor"]
 	path = tools/asm-processor
 	url = https://github.com/simonlindholm/asm-processor
+[submodule "tools/elfio"]
+	path = tools/elfio
+	url = https://github.com/serge1/ELFIO

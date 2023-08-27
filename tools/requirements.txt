@@ -1,0 +1,2 @@
+spimdisasm>=1.16.6
+toml>=0.10.2
