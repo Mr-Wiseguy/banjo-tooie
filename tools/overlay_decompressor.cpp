@@ -1,4 +1,5 @@
 #include <fstream>
+#include <filesystem>
 #include <fmt/core.h>
 #include <fmt/ostream.h>
 #include <cstdint>
@@ -427,6 +428,9 @@ void undo_xors(size_t overlay_index, char* rom_start, std::vector<char>& overlay
 }
 
 void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, const char* ovl_name, char* overlay_header, char* overlay_contents, uint32_t text_size, uint32_t rodata_size, uint32_t data_size, uint32_t bss_size) {
+    std::string ovl_asset_dir = std::string{"assets/overlays/"} + ovl_name;
+    std::filesystem::create_directories(ovl_asset_dir);
+    std::ofstream relocs_bin{ovl_asset_dir + "/relocs.bin", std::ios_base::binary};
     // Get the pointer to the relocs and the number of relocs
     uint16_t num_entrypoints;
     uint16_t num_relocs;
@@ -452,6 +456,8 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
     for (uint16_t reloc_index = 0; reloc_index < num_relocs; reloc_index++) {
         // Read the reloc value
         uint16_t reloc_val = byteswap16(*reinterpret_cast<uint16_t*>(ovl_relocs + reloc_index * sizeof(uint16_t)));
+        // Write the reloc value to the overlay's reloc list
+        relocs_bin.write(reinterpret_cast<char*>(&reloc_val), sizeof(reloc_val));
         // Determine the reloc offset and type
         RelocType reloc_type = (RelocType)(reloc_val & 0x3);
         uint16_t reloc_offset = reloc_val & ~0x3;

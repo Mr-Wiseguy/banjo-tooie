@@ -1,2 +1,2 @@
-spimdisasm>=1.16.6
+spimdisasm>=1.17.0
 toml>=0.10.2

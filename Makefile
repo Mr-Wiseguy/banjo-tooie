@@ -14,7 +14,7 @@ NONMATCHINGS := nonmatchings
 
 C_SRCS     := $(shell find $(SRC_ROOT) -type f -iname '*.c' 2> /dev/null)
 S_SRCS     := $(shell find $(ASM_ROOT) -type f -iname "*.s" -not -path "asm/$(NONMATCHINGS)/*" 2> /dev/null)
-BIN_SRCS   := $(shell find $(ASSETS_ROOT) -type f -iname '*.bin' 2> /dev/null)
+BIN_SRCS   := $(shell find $(ASSETS_ROOT) -type f -iname '*.bin' -not -iname "relocs.bin" 2> /dev/null)
 OVERLAYS   := $(shell tools/list_overlays.py overlays.us.v10.toml)
 
 C_OBJS         := $(addprefix $(BUILD_ROOT)/,$(C_SRCS:.c=.c.o))
@@ -86,7 +86,7 @@ $(OVERLAY_TABLE_OBJ): $(OVERLAY_TABLE_SRC)
 	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OVERLAY_HEADER_SRCS) $(OVERLAY_TABLE_SRC) &: $(PRELIM_ELF)
-	tools/overlay_processor $(PRELIM_ELF) $(BUILD_ROOT)/assets > ovlproc.txt
+	tools/overlay_processor $(PRELIM_ELF) $(BUILD_ROOT)/assets > /dev/null
 
 $(BIN_OBJS): $(BUILD_ROOT)/%.bin.o: %.bin | $(BIN_BUILD_DIRS)
 	$(OBJCOPY) $(BINOFLAGS) $< $@

@@ -34,8 +34,8 @@ rom:0x02110FE8 symbol:D_80800DB0_gcfrontend reloc:MIPS_HI16 addend:0x80
 rom:0x02110FF0 symbol:D_80800DB0_gcfrontend reloc:MIPS_LO16 addend:0x80
 rom:0x02114FB4 symbol:D_808003C0_gclevel reloc:MIPS_HI16 addend:-0xD
 rom:0x02114FBC symbol:D_808003C0_gclevel reloc:MIPS_LO16 addend:-0xD
-rom:0x021150A4 symbol:D_808003E0_gclevel reloc:MIPS_HI16 addend:0x50
-rom:0x021150B4 symbol:D_808003E0_gclevel reloc:MIPS_LO16 addend:0x50
+rom:0x021150A4 symbol:D_808003E0_gclevel reloc:MIPS_HI16 addend:0x40
+rom:0x021150B4 symbol:D_808003E0_gclevel reloc:MIPS_LO16 addend:0x40
 rom:0x02116C84 symbol:D_8080020C_gcegg reloc:MIPS_HI16 addend:0x64
 rom:0x02116C88 symbol:D_8080020C_gcegg reloc:MIPS_LO16 addend:0x64
 rom:0x02116CFC symbol:D_8080020C_gcegg reloc:MIPS_HI16 addend:0x64
@@ -55,3 +55,5 @@ rom:0x02110DE0 symbol:D_80800D98_gcfrontend reloc:MIPS_LO16 addend:0x1
 rom:0x02110E0C symbol:D_80800DA4_gcfrontend reloc:MIPS_HI16 addend:0x1
 rom:0x02110E10 symbol:D_80800DA4_gcfrontend reloc:MIPS_LO16 addend:0x1
 rom:0x01FE18C0 symbol:D_80802800 reloc:MIPS_NONE
+rom:0x01FFC064 symbol:D_80800402 reloc:MIPS_NONE
+rom:0x02023CFC symbol:D_80800000 reloc:MIPS_NONE
