@@ -4,6 +4,7 @@ SPLAT_YAML           := baserom.us.v10.yaml
 ELF                  := $(BUILD_ROOT)/banjotooie_decompressed.elf
 UNCOMPRESSED_ROM     := $(ELF:.elf=.z64)
 DECOMPRESSED_BASEROM := decompressed.us.v10.z64
+ROM                  := $(BUILD_ROOT)/banjotooie.z64
 BASEROM              := baserom.us.v10.z64
 TEMPROM              := temp.us.v10.z64
 
@@ -53,11 +54,15 @@ LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-
 BINOFLAGS := -I binary -O elf32-tradbigmips
 Z64OFLAGS := -O binary --gap-fill=0x00
 
-check: $(UNCOMPRESSED_ROM)
+check: $(ROM)
 	@diff $(DECOMPRESSED_BASEROM) $(UNCOMPRESSED_ROM) && printf "OK\n"
 
 $(UNCOMPRESSED_ROM): $(ELF)
 	$(OBJCOPY) $(Z64OFLAGS) $< $@
+
+$(ROM) : $(UNCOMPRESSED_ROM) $(ELF)
+	tools/rom_compressor $(UNCOMPRESSED_ROM) $(ELF) $(ROM) $(BASEROM) $(DECOMPRESSED_BASEROM)
+	tools/n64crc $@ > /dev/null
 
 $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)
 	sed 's/$(subst /,\/,$(BUILD_ROOT))\/assets\/overlay.*$$//' $< > $@
@@ -95,18 +100,16 @@ $(BUILD_DIRS):
 	mkdir -p $@
 
 clean:
-	find $(BUILD_ROOT) -type f -not -name '*.asmproc.d' -delete
+	find $(BUILD_ROOT) -type f -not -name '*.asmproc.d' -not -name '*.eeprom' -delete
 
 setup:
 	make -C tools
-	cargo run --manifest-path tools/bk_rom_compressor/Cargo.toml --bin bk_rom_decompress $(BASEROM) $(TEMPROM)
-	tools/overlay_decompressor baserom.us.v10.z64 temp.us.v10.z64 decompressed.us.v10.z64 > /dev/null
+	tools/rom_decompressor baserom.us.v10.z64 decompressed.us.v10.z64
 	tools/splat/split.py $(SPLAT_YAML)
 
 distclean:
 	rm -rf $(BUILD_ROOT) asm assets $(TEMPROM) $(DECOMPRESSED_BASEROM) undefined_*_auto.us.v10.txt $(LD_SCRIPT)
 	make -C tools distclean
-	cargo clean --manifest-path tools/bk_rom_compressor/Cargo.toml
 
 -include $(ASM_PROC_C_DEPS)
 

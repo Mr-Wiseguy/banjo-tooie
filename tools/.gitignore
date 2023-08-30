@@ -1,3 +1,6 @@
-overlay_decompressor
+rom_decompressor
 overlay_processor
+rom_compressor
+n64crc
 ido/
+*.o

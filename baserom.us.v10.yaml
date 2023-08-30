@@ -94,7 +94,8 @@ segments:
       - [0x4E40, data]
       - { start: 0x50E0, type: bss, vram: 0x800044E0 }
   - name: table_addr
-    type: bin
+    type: data
+    vram: 0x0
     start: 0x50E0
   - [0x50F0, bin, assets]
   - name: core1
@@ -274,10 +275,10 @@ segments:
       - [0x1E4EE10, c, libultra/pfsisplug]
       - [0x1E4F100, hasm, libultra/bcmp]
       - [0x1E4F220, c, libultra/ldiv]
-      - [0x1E4F3B0, bin, ucode_text1]
-      - [0x1E50B80, bin, ucode_text2]
-      - [0x1E50C50, bin, ucode_text3]
-      - [0x1E53370, bin, ucode_text4]
+      - [0x1E4F3B0, textbin, ucode_text1] # audio
+      - [0x1E50B80, textbin, ucode_text2] # rspboot
+      - [0x1E50C50, textbin, ucode_text3] # f3dex2
+      - [0x1E53370, textbin, ucode_text4] # l3dex2
       - [0x1E54500, data]
       - { start: 0x1E5AEB0, type: bss, vram: 0x80043380 }
   - name: core2
@@ -523,6 +524,8 @@ segments:
     vram: 0x80800000
     start: 0x01F017C0
     bss_size: 0x00000010
+    subalign: 8
+    align: 16
     exclusive_ram_id: overlay
     symbol_name_format: $VRAM_$SEG
     symbol_name_format_no_rom: $VRAM_$SEG

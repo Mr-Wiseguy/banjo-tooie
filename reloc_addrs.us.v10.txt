@@ -57,3 +57,48 @@ rom:0x02110E10 symbol:D_80800DA4_gcfrontend reloc:MIPS_LO16 addend:0x1
 rom:0x01FE18C0 symbol:D_80802800 reloc:MIPS_NONE
 rom:0x01FFC064 symbol:D_80800402 reloc:MIPS_NONE
 rom:0x02023CFC symbol:D_80800000 reloc:MIPS_NONE
+rom:0x1E36450 symbol:D_80041194 reloc:MIPS_HI16 addend:0x1
+rom:0x1E36458 symbol:D_80041194 reloc:MIPS_LO16 addend:0x1
+
+rom:0x1074 symbol:core1_compressed_ROM_START reloc:MIPS_HI16
+rom:0x107C symbol:core1_compressed_ROM_START reloc:MIPS_LO16
+rom:0x1078 symbol:core1_compressed_ROM_END reloc:MIPS_HI16
+rom:0x1080 symbol:core1_compressed_ROM_END reloc:MIPS_LO16
+rom:0x1278 symbol:core2_compressed_ROM_END reloc:MIPS_HI16
+rom:0x1284 symbol:core2_compressed_ROM_END reloc:MIPS_LO16
+
+// Physical addresses
+rom:0x1E7FA74 symbol:D_8011A350 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E7FA78 symbol:D_8011A350 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E7F828 symbol:D_8011A2F8 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E7F82C symbol:D_8011A2F8 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E91810 symbol:D_8011A630 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E91814 symbol:D_8011A630 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E91A10 symbol:D_8011A668 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E91A14 symbol:D_8011A668 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E92F54 symbol:D_8011A690 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E92F58 symbol:D_8011A690 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E9328C symbol:D_8011A6E0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E93290 symbol:D_8011A6E0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E93320 symbol:D_8011A6E0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E93324 symbol:D_8011A6E0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E95D68 symbol:D_8011A730 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E95D6C symbol:D_8011A730 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E95EA4 symbol:D_8011A730 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E95EA8 symbol:D_8011A730 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E9A4E8 symbol:D_8011A7E0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E9A4EC symbol:D_8011A7E0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E9A808 symbol:D_8011A840 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E9A80C symbol:D_8011A840 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1EB8B4C symbol:D_80122DB0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1EB8B50 symbol:D_80122DB0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1EBB6EC symbol:D_801231B0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1EBB6F8 symbol:D_801231B0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1EC12E4 symbol:D_80123310 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1EC12E8 symbol:D_80123310 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1EC1484 symbol:D_80123340 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1EC1488 symbol:D_80123340 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E90628 symbol:D_801281B0 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E9062C symbol:D_801281B0 reloc:MIPS_LO16 addend:-0x80000000
+rom:0x1E96588 symbol:D_80128338 reloc:MIPS_HI16 addend:-0x80000000
+rom:0x1E96594 symbol:D_80128338 reloc:MIPS_LO16 addend:-0x80000000

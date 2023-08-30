@@ -4,104 +4,10 @@
 #include <unordered_set>
 #include <fmt/core.h>
 #include <fmt/ostream.h>
-#include <toml.hpp>
-#include "elfio/elfio.hpp"
+#include <fstream>
+#include "tooie_utils.h"
 
-constexpr uint32_t overlay_vram = 0x80800000;
-constexpr uint32_t symbol_not_found = 0xFFFFFFFF;
 constexpr uint32_t section_size_divisor = 0x10;
-
-enum class RelocType {
-    R_MIPS_NONE = 0,
-    R_MIPS_16,
-    R_MIPS_32,
-    R_MIPS_REL32,
-    R_MIPS_26,
-    R_MIPS_HI16,
-    R_MIPS_LO16,
-    R_MIPS_GPREL16,
-};
-
-enum class TooieRelocType {
-    R_MIPS_32 = 0,
-    R_MIPS_26 = 1,
-    R_MIPS_HI16 = 2,
-    R_MIPS_LO16 = 3
-};
-
-const std::unordered_map<RelocType, TooieRelocType> reloc_mapping {
-    { RelocType::R_MIPS_32, TooieRelocType::R_MIPS_32 },
-    { RelocType::R_MIPS_26, TooieRelocType::R_MIPS_26 },
-    { RelocType::R_MIPS_HI16, TooieRelocType::R_MIPS_HI16 },
-    { RelocType::R_MIPS_LO16, TooieRelocType::R_MIPS_LO16 },
-};
-
-struct Symbol {
-    std::string name;
-    uint32_t value;
-    Symbol(const char* name_) : name(name_), value(symbol_not_found) {}
-    Symbol() : name(""), value(symbol_not_found) {}
-};
-
-struct Overlay {
-    std::string name;
-    std::vector<Symbol> entrypoints;
-    Symbol text_size;
-    Symbol rodata_size;
-    Symbol data_size;
-    Symbol bss_size;
-    ELFIO::section* section;
-    ELFIO::section* bss_section;
-    ELFIO::section* reloc_section;
-    Overlay(const std::string& name_, std::vector<Symbol>&& entrypoints_) : name(name_), entrypoints{std::move(entrypoints_)},
-        text_size{}, rodata_size{}, data_size{}, bss_size{},
-        section(nullptr), bss_section(nullptr), reloc_section(nullptr) {}
-    Overlay(const std::string& name_) : name(name_), entrypoints{},
-        text_size{}, rodata_size{}, data_size{}, bss_size{},
-        section(nullptr), bss_section(nullptr), reloc_section(nullptr) {}
-};
-
-std::vector<Overlay> read_config(const char* path) {
-    try {
-		const toml::value config_data = toml::parse(path);
-		const toml::array& overlay_array = toml::find<toml::array>(config_data, "overlay");
-
-        std::vector<Overlay> overlays{};
-        overlays.reserve(overlay_array.size());
-
-        for (const auto& overlay_data : overlay_array) {
-            bool is_empty = toml::find_or<bool>(overlay_data, "empty", false);
-            if (!is_empty) {
-                const toml::value& entrypoint_name = toml::find<toml::value>(overlay_data, "name");
-                const toml::array& entrypoint_array = toml::find<toml::array>(overlay_data, "entrypoints");
-                std::vector<Symbol> entrypoints{};
-                entrypoints.resize(entrypoint_array.size());
-                for (size_t i = 0; i < entrypoint_array.size(); i++) {
-                    entrypoints[i].name = entrypoint_array[i].as_string();
-                    entrypoints[i].value = symbol_not_found;
-                }
-                overlays.emplace_back(entrypoint_name.as_string().str, std::move(entrypoints));
-            }
-            else {
-                overlays.emplace_back("");
-            }
-        }
-        return overlays;
-    }
-	catch (const toml::syntax_error& err) {
-		fmt::print(stderr, "Syntax error in config file on line {}, full error:\n{}\n", err.location().line(), err.what());
-        std::exit(EXIT_FAILURE);
-	}
-	catch (const toml::type_error& err) {
-		fmt::print(stderr, "Incorrect type in config file on line {}, full error:\n{}\n", err.location().line(), err.what());
-        std::exit(EXIT_FAILURE);
-	}
-	catch (const std::out_of_range& err) {
-		fmt::print(stderr, "Missing value in config file, full error:\n{}\n", err.what());
-        std::exit(EXIT_FAILURE);
-	}
-    return {};
-}
 
 std::vector<uint16_t> read_original_relocs(const std::string& original_reloc_path) {
     std::ifstream reloc_file{original_reloc_path, std::ios_base::binary};
@@ -184,8 +90,6 @@ int main(int argc, const char **argv) {
         return EXIT_SUCCESS;
     }
 
-    (void)argc;
-    (void)argv;
     auto exit_failure = [] (const std::string& error_str) {
         fmt::vprint(stderr, error_str, fmt::make_format_args());
         std::exit(EXIT_FAILURE);
@@ -193,113 +97,47 @@ int main(int argc, const char **argv) {
 
     const char* elf_path = argv[1];
 
-    ELFIO::elfio elf_file;
-    if (!elf_file.load(elf_path)) {
-        exit_failure("Failed to load provided elf file\n");
-    }
+    ElfHandler elf_file{elf_path};
 
-    if (elf_file.get_class() != ELFIO::ELFCLASS32) {
-        exit_failure("Incorrect elf class\n");
-    }
+    std::vector<Segment> overlays = read_config("overlays.us.v10.toml");
 
-    if (elf_file.get_encoding() != ELFIO::ELFDATA2MSB) {
-        exit_failure("Incorrect endianness\n");
-    }
-
-    std::vector<Overlay> overlays = read_config("overlays.us.v10.toml");
-
-    std::unordered_map<std::string, Overlay*> overlay_map{};
+    std::unordered_map<std::string, Segment*> segment_map{};
     std::unordered_map<std::string, Symbol*> symbol_map{};
 
+    auto add_symbol_to_map = [&] (Symbol& sym) {
+        symbol_map[sym.name] = &sym;
+    };
+    auto add_segment_to_maps = [&] (Segment& seg) {
+        // Add the segment itself to the segment map
+        segment_map[seg.name] = &seg;
+        // Add the segment's section sizes to the symbol map
+        add_symbol_to_map(seg.text_size);
+        add_symbol_to_map(seg.rodata_size);
+        add_symbol_to_map(seg.data_size);
+        add_symbol_to_map(seg.bss_size);
+        add_symbol_to_map(seg.rom_start);
+        add_symbol_to_map(seg.rom_end);
+        // Add the segment's entrypoints to the symbol map
+        for (auto& entrypoint : seg.entrypoints) {
+            add_symbol_to_map(entrypoint);
+        }
+    };
+
+    // Gather all the symbols that we need to find in the elf
     Symbol overlay_table_sym{"overlay_table_ROM_START"};
     symbol_map[overlay_table_sym.name] = &overlay_table_sym;
 
     for (auto& ovl : overlays) {
         if (!ovl.name.empty()) {
-            overlay_map[ovl.name] = &ovl;
-
-            // Add the overlay's section sizes to the symbol map
-            auto setup_size_sym = [&] (Symbol& s, const char* suffix) {
-                s.name = ovl.name + suffix;
-                symbol_map[s.name] = &s;
-            };
-
-            setup_size_sym(ovl.text_size, "_TEXT_SIZE");
-            setup_size_sym(ovl.rodata_size, "_RODATA_SIZE");
-            setup_size_sym(ovl.data_size, "_DATA_SIZE");
-            setup_size_sym(ovl.bss_size, "_BSS_SIZE");
-
-            // Add the overlay's entrypoints to the symbol map
-            for (auto& entrypoint : ovl.entrypoints) {
-                symbol_map[entrypoint.name] = &entrypoint;
-            }
+            add_segment_to_maps(ovl);
         }
     }
 
-    ELFIO::section* symtab_section = nullptr;
+    // Read all the segments in the elf to find the overlays
+    elf_file.find_segments_in_elf(segment_map);
 
-    // Find all overlay sections and their reloc sections 
-    for (const auto& section : elf_file.sections) {
-        std::string section_name = section->get_name();
-        ELFIO::Elf_Word type = section->get_type();
-
-        // Check if this is a reloc section
-        bool is_reloc_section = false;
-        if (section_name.starts_with(".rel") && type == ELFIO::SHT_REL) {
-            is_reloc_section = true;
-            section_name = section_name.substr(std::strlen(".rel"));
-        }
-
-        bool is_bss_setion = false;
-        if (section_name.ends_with("_bss")) {
-            is_bss_setion = true;
-            section_name = section_name.substr(0, section_name.size() - std::strlen("_bss"));
-        }
-
-        // Check if this section has a corresponding overlay
-        if (!section_name.empty()) {
-            // Strip the dot off the start of the section name
-            auto find_it = overlay_map.find(section_name.substr(1));
-            if (find_it != overlay_map.end()) {
-                if (is_reloc_section) {
-                    find_it->second->reloc_section = section.get();
-                }
-                else if (is_bss_setion) {
-                    find_it->second->bss_section = section.get();
-                }
-                else {
-                    find_it->second->section = section.get();
-                }
-            }
-        }
-
-        // Check if this section is the symbol table
-        if (type == ELFIO::SHT_SYMTAB) {
-            symtab_section = section.get();
-        }
-    }
-
-    if (symtab_section == nullptr) {
-        exit_failure("Failed to find symbol table section\n");
-    }
-
-    // Read all the symbols in the elf and find the entrypoints
-    ELFIO::symbol_section_accessor symbols{elf_file, symtab_section};
-    for (size_t sym_index = 0; sym_index < symbols.get_symbols_num(); sym_index++) {
-        std::string   name;
-        ELFIO::Elf64_Addr    value = symbol_not_found;
-        ELFIO::Elf_Xword     size;
-        unsigned char bind;
-        unsigned char type;
-        ELFIO::Elf_Half      section_index;
-        unsigned char other;
-        symbols.get_symbol(sym_index, name, value, size, bind, type, section_index, other);
-
-        auto find_it = symbol_map.find(name);
-        if (find_it != symbol_map.end()) {
-            find_it->second->value = (uint32_t)value;
-        }
-    }
+    // Read all the symbols in the elf
+    elf_file.find_symbol_in_elf(symbol_map);
     
     // Make sure every symbol was found
     if (overlay_table_sym.value == symbol_not_found) {
@@ -355,54 +193,14 @@ int main(int argc, const char **argv) {
         if (!ovl.name.empty()) {
             std::filesystem::create_directories(output_path + "overlays/" + ovl.name);
             std::ofstream header{output_path + "overlays/" + ovl.name + "/" + ovl.name + "_header.s"};
-            // fmt::print("{} (section {},bss section {})\n", ovl.name, ovl.section->get_index(), ovl.bss_section->get_index());
             prev_overlay_name = ovl.name.c_str();
-            // const char* ovl_data = ovl.section->get_data();
             
             fmt::print(overlay_table,
                 "    .word {}_ROM_END - 0x{:08X}\n", ovl.name, overlay_table_sym.value);
 
+            // Get the relocs for this overlay and sort them based on their original order
             reloc_values.clear();
-            // Skip gathering relocs if this overlay doesn't have a reloc section
-            if (ovl.reloc_section != nullptr) {
-                ELFIO::relocation_section_accessor relocs{elf_file, ovl.reloc_section};
-
-                // Find all relocs in this overlay that point back to this overlay
-                size_t num_relocs = relocs.get_entries_num();
-                for (size_t reloc_index = 0; reloc_index < num_relocs; reloc_index++) {
-                    ELFIO::Elf64_Addr offset = 0;
-                    ELFIO::Elf_Word symbol = 0;
-                    unsigned int type = (int)RelocType::R_MIPS_NONE;
-                    ELFIO::Elf_Sxword addend;
-                    relocs.get_entry(reloc_index, offset, symbol, type, addend);
-
-                    std::string sym_name;
-                    ELFIO::Elf64_Addr sym_value = symbol_not_found;
-                    ELFIO::Elf_Xword sym_size;
-                    unsigned char sym_bind;
-                    unsigned char sym_type;
-                    ELFIO::Elf_Half sym_section_index;
-                    unsigned char sym_other;
-
-                    symbols.get_symbol(symbol, sym_name, sym_value, sym_size, sym_bind, sym_type, sym_section_index, sym_other);
-                    // fmt::print("  Reloc at 0x{:04X} type {} for {} in {}\n", (uint16_t)offset, type, sym_name, sym_section_index);
-                    if (sym_section_index == ovl.section->get_index() || sym_section_index == ovl.bss_section->get_index()) {
-                        uint16_t reloc_value = (uint16_t)offset;
-
-                        auto reloc_it = reloc_mapping.find(static_cast<RelocType>(type));
-                        if (reloc_it == reloc_mapping.end()) {
-                            exit_failure("Invalid reloc type at reloc " + std::to_string(reloc_index) + " in overlay " + ovl.name + ": " + std::to_string(type) + "\n");
-                        }
-
-                        reloc_value |= (uint16_t)reloc_it->second;
-
-                        reloc_values.push_back(reloc_value);
-                    }
-                    else {
-                        // fmt::print("    Skipped\n");
-                    }
-                }
-            }
+            elf_file.get_relocs(ovl, reloc_values);
             sort_relocs(reloc_values, "assets/overlays/" + ovl.name + "/relocs.bin");
 
             fmt::print(header, 

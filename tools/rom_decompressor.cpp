@@ -9,28 +9,13 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <string_view>
+#define ZLIB_CONST
 #include "zlib.h"
+#include "tooie_utils.h"
 
-// Relocate overlays to this address for easier disassembly
-constexpr uint32_t overlay_vram = 0x80800000;
 constexpr bool generate_splat_files = false;
 constexpr bool generate_overlay_toml = false;
 constexpr bool generate_any_files = generate_splat_files | generate_overlay_toml;
-
-static inline uint32_t byteswap32(uint32_t in) {
-    return __builtin_bswap32(in);
-}
-
-static inline uint16_t byteswap16(uint16_t in) {
-    return __builtin_bswap16(in);
-}
-
-enum class RelocType {
-    R_MIPS_32 = 0,
-    R_MIPS_26 = 1,
-    R_MIPS_HI16 = 2,
-    R_MIPS_LO16 = 3
-};
 
 enum class SymbolType {
     Function,
@@ -55,14 +40,14 @@ enum class Section {
     Bss
 };
 
-struct Symbol {
+struct OverlaySymbol {
     std::string ovl_name;
     uint32_t address;
 
-    std::strong_ordering operator<=>(const Symbol& rhs) const {
+    std::strong_ordering operator<=>(const OverlaySymbol& rhs) const {
         return std::tie(ovl_name, address) <=> std::tie(rhs.ovl_name, rhs.address);
     }
-    bool operator==(const Symbol&) const = default;
+    bool operator==(const OverlaySymbol&) const = default;
 };
 
 struct SymbolDetails {
@@ -72,9 +57,9 @@ struct SymbolDetails {
 };
 
 struct Reloc {
-    Symbol symbol;
+    OverlaySymbol symbol;
     uint32_t rom_address;
-    RelocType type;
+    TooieRelocType type;
     Section section;
 };
 
@@ -92,8 +77,8 @@ struct Overlay {
 
 namespace std {
     template <>
-    struct hash<Symbol> {
-        size_t operator()(const Symbol& s) const {
+    struct hash<OverlaySymbol> {
+        size_t operator()(const OverlaySymbol& s) const {
             std::size_t h1 = std::hash<std::string>{}(s.ovl_name);
             std::size_t h2 = std::hash<uint32_t>{}(s.address);
             return h1 ^ h2;
@@ -101,16 +86,13 @@ namespace std {
     };
 };
 
-std::string symbol_name(const Symbol& symbol, SymbolType type) {
+std::string symbol_name(const OverlaySymbol& symbol, SymbolType type) {
     const char* type_name;
     switch (type) {
         case SymbolType::Function:
-        case SymbolType::Text: // Temporary fix that may end up permanent, treat all .text symbols as functions
+        case SymbolType::Text: // Treat all .text symbols as functions, rodata .text references will be ignored (for jtbls) 
             type_name = "func";
             break;
-        // case SymbolType::Text:
-        //     type_name = "T";
-        //     break;
         case SymbolType::Rodata:
             type_name = "R";
             break;
@@ -133,11 +115,11 @@ private:
     std::ofstream reloc_addrs_file;
     std::ofstream yaml_file;
     std::ofstream overlay_toml_file;
-    std::unordered_map<Symbol, SymbolDetails> symbols;
+    std::unordered_map<OverlaySymbol, SymbolDetails> symbols;
     std::vector<Reloc> relocs;
     std::vector<Overlay> overlays;
     std::vector<size_t> all_overlays; // Indexes into the overlays array, includes empty ones as size_t(-1)
-    std::unordered_set<Symbol> rejected_symbols;
+    std::unordered_set<OverlaySymbol> rejected_symbols;
     size_t overlay_table_rom_start_;
 public:
     output_file_state(size_t overlay_table_rom_start) : overlay_table_rom_start_(overlay_table_rom_start) {
@@ -146,37 +128,37 @@ public:
             reloc_addrs_file = std::ofstream{"ovl_reloc_addrs.us.v10.txt"};
             yaml_file = std::ofstream{"ovl.us.v10.yaml"};
             // TODO pull this from a file
-            rejected_symbols.insert(Symbol{.ovl_name = "chterryegg", .address = 0x80801236});
-            rejected_symbols.insert(Symbol{.ovl_name = "badeathmatch", .address = 0x8080054F});
-            rejected_symbols.insert(Symbol{.ovl_name = "chlagoonufoint", .address = 0x8080193E});
-            rejected_symbols.insert(Symbol{.ovl_name = "gemarkersDll", .address = 0xFFFFFDB8});
-            rejected_symbols.insert(Symbol{.ovl_name = "bsfirstp", .address = 0x8080AC02});
-            rejected_symbols.insert(Symbol{.ovl_name = "chdiggerbossbattery", .address = 0x808002E8});
-            rejected_symbols.insert(Symbol{.ovl_name = "chtransparentfish", .address = 0x808011D0});
-            rejected_symbols.insert(Symbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A50});
-            rejected_symbols.insert(Symbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A58});
-            rejected_symbols.insert(Symbol{.ovl_name = "gczoombox", .address = 0x80803E80});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcintrotext", .address = 0x808005A0});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800E30});
-            rejected_symbols.insert(Symbol{.ovl_name = "gclevel", .address = 0x808003B3});
-            rejected_symbols.insert(Symbol{.ovl_name = "gclevel", .address = 0x80800420});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcegg", .address = 0x80800270});
-            rejected_symbols.insert(Symbol{.ovl_name = "glintrosyncDll", .address = 0x808005D0});
-            rejected_symbols.insert(Symbol{.ovl_name = "inantab", .address = 0x80807780});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D81});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D8D});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800D99});
-            rejected_symbols.insert(Symbol{.ovl_name = "gcfrontend", .address = 0x80800DA5});
-            rejected_symbols.insert(Symbol{.ovl_name = "chwarppad", .address = 0x80800E60});
-            rejected_symbols.insert(Symbol{.ovl_name = "chwarppad", .address = 0x80800E5C});
-            rejected_symbols.insert(Symbol{.ovl_name = "gczoombox", .address = 0x80803F3E});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chterryegg", .address = 0x80801236});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "badeathmatch", .address = 0x8080054F});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chlagoonufoint", .address = 0x8080193E});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gemarkersDll", .address = 0xFFFFFDB8});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "bsfirstp", .address = 0x8080AC02});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chdiggerbossbattery", .address = 0x808002E8});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chtransparentfish", .address = 0x808011D0});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A50});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chfantasydrillfield", .address = 0x80800A58});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gczoombox", .address = 0x80803E80});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcintrotext", .address = 0x808005A0});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcfrontend", .address = 0x80800E30});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gclevel", .address = 0x808003B3});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gclevel", .address = 0x80800420});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcegg", .address = 0x80800270});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "glintrosyncDll", .address = 0x808005D0});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "inantab", .address = 0x80807780});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcfrontend", .address = 0x80800D81});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcfrontend", .address = 0x80800D8D});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcfrontend", .address = 0x80800D99});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gcfrontend", .address = 0x80800DA5});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chwarppad", .address = 0x80800E60});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "chwarppad", .address = 0x80800E5C});
+            rejected_symbols.insert(OverlaySymbol{.ovl_name = "gczoombox", .address = 0x80803F3E});
         }
         if constexpr (generate_overlay_toml) {
             overlay_toml_file = std::ofstream("overlays.us.v10.toml");
         }
     }
 
-    void add_reloc(const char* ovl_name, uint32_t symbol_address, uint32_t rom_addr, RelocType reloc_type, size_t reloc_offset, size_t text_size, size_t rodata_size, size_t data_size) {
+    void add_reloc(const char* ovl_name, uint32_t symbol_address, uint32_t rom_addr, TooieRelocType reloc_type, size_t reloc_offset, size_t text_size, size_t rodata_size, size_t data_size) {
         if constexpr (generate_any_files) {
             Section section = Section::Text;
             if (reloc_offset >= text_size + rodata_size + data_size) {
@@ -188,13 +170,13 @@ public:
             else if (reloc_offset >= text_size) {
                 section = Section::Rodata;
             }
-            relocs.emplace_back(Reloc{.symbol = Symbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type, .section = section});
+            relocs.emplace_back(Reloc{.symbol = OverlaySymbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type, .section = section});
         }
     }
 
     void add_symbol(const char* ovl_name, uint32_t addr, uint32_t rom_addr) {
         if constexpr (generate_any_files) {
-            Symbol sym{.ovl_name = ovl_name, .address = addr};
+            OverlaySymbol sym{.ovl_name = ovl_name, .address = addr};
             if (!symbols.contains(sym)) {
                 symbols[sym] = SymbolDetails{.rom_address = rom_addr, .type = SymbolType::None, .name = ""};
             }
@@ -202,20 +184,20 @@ public:
     }
 
     void set_symbol_type(const char* ovl_name, uint32_t addr, SymbolType type) {
-        symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type = type;
+        symbols[OverlaySymbol{.ovl_name = ovl_name, .address = addr}].type = type;
     }
 
     void set_symbol_name(const char* ovl_name, uint32_t addr, const std::string& sym_name) {
-        symbols[Symbol{.ovl_name = ovl_name, .address = addr}].name = sym_name;
+        symbols[OverlaySymbol{.ovl_name = ovl_name, .address = addr}].name = sym_name;
     }
 
     SymbolType get_symbol_type(const char* ovl_name, uint32_t addr) {
-        return symbols[Symbol{.ovl_name = ovl_name, .address = addr}].type;
+        return symbols[OverlaySymbol{.ovl_name = ovl_name, .address = addr}].type;
     }
 
     void add_bss_symbol(const char* ovl_name, uint32_t addr) {
         if constexpr (generate_any_files) {
-            Symbol sym{.ovl_name = ovl_name, .address = addr};
+            OverlaySymbol sym{.ovl_name = ovl_name, .address = addr};
             if (!symbols.contains(sym)) {
                 symbols[sym] = SymbolDetails{0, SymbolType::Bss, ""};
             }
@@ -344,25 +326,8 @@ public:
     }
 
     bool is_rejected(const std::string& ovl_name, uint32_t address) {
-        return rejected_symbols.contains(Symbol{ovl_name, address});
+        return rejected_symbols.contains(OverlaySymbol{ovl_name, address});
     }
-};
-
-constexpr uint32_t overlay_table_offset = 0x1E899B0;
-
-namespace ovl_header_offsets {
-    constexpr size_t text_size = 0x0;
-    constexpr size_t rodata_size = 0x2;
-    constexpr size_t data_size = 0x4;
-    constexpr size_t bss_size = 0x6;
-    constexpr size_t entrypoint_count = 0x8;
-    constexpr size_t reloc_count = 0xA;
-    constexpr size_t flags = 0xC;
-    constexpr size_t decompressed_size = 0x10;
-};
-
-enum class OverlayFlags {
-    Compressed = 0x80,
 };
 
 template <typename T>
@@ -372,50 +337,20 @@ void resize_if_larger(std::vector<T>& vec, size_t new_size) {
     }
 }
 
-void bk_crc(const std::vector<char>& bytes, uint32_t decompressed_size, uint32_t& crc1, uint32_t& crc2) {
-    crc1 = 0;
-    crc2 = 0;//xFFFFFFFF;
-    for (size_t i = 0; i < decompressed_size; i++) {
-        uint32_t byte = (uint32_t)(uint8_t)bytes[i];
-        
-        crc1 += byte;
-        crc2 ^= byte << (crc1 & 0x17);
-    }
-}
-
-char* get_overlay_reloc_ptr(char* overlay_header, char* overlay_contents, uint16_t* num_entrypoints_out, uint16_t* num_relocs_out) {
-    // Start by reading the entrypoint and reloc counts from the overlay header
-    uint16_t num_entrypoints = byteswap16(*reinterpret_cast<uint16_t*>(overlay_header + ovl_header_offsets::entrypoint_count));
-    uint16_t num_relocs = byteswap16(*reinterpret_cast<uint16_t*>(overlay_header + ovl_header_offsets::reloc_count));
-
-    // Offset the overlay contents by 0x28 to get to the entrypoints
-    char* ovl_entrypoints = overlay_contents + 0x28;
-    // Offset the entrypoints by [entrypoint count] 32-bit values
-    char* ovl_name = ovl_entrypoints + sizeof(uint32_t) * num_entrypoints;
-    // Determine the length of the overlay name
-    size_t name_length = std::strlen(ovl_name) + 1; // include the null terminator in the length
-    // Round the overlay name up to the nearest 4 bytes and offset from the name start to get to the relocs
-    char* ovl_relocs = ovl_name + ((name_length + 4 - 1) & -4);
-
-    *num_entrypoints_out = num_entrypoints;
-    *num_relocs_out = num_relocs;
-    return ovl_relocs;
-}
-
-void undo_xors(size_t overlay_index, char* rom_start, std::vector<char>& overlay_data, std::vector<char>& decompressed_buffer, size_t decompressed_size) {
+void undo_xors(size_t overlay_index, char* rom_start, char* overlay_data, std::vector<char>& decompressed_buffer, size_t decompressed_size) {
     // Calculate the CRCs of the decompressed overlay data
     uint32_t crc1, crc2;
-    bk_crc(decompressed_buffer, decompressed_size, crc1, crc2);
+    bk_crc(decompressed_buffer.data(), decompressed_size, crc1, crc2);
     // printf("crcs: %08X %08X\n", crc1, crc2);
 
     // Reverse the CRC xor in the overlay
-    *reinterpret_cast<uint32_t*>(overlay_data.data() + 0) ^= byteswap32(crc1);
-    *reinterpret_cast<uint32_t*>(overlay_data.data() + 8) ^= byteswap32(crc2);
+    *reinterpret_cast<uint32_t*>(overlay_data + 0) ^= byteswap32(crc1);
+    *reinterpret_cast<uint32_t*>(overlay_data + 8) ^= byteswap32(crc2);
 
     // Get the pointer to the relocs and the number of relocs
     uint16_t num_relocs;
     uint16_t num_entrypoints;
-    char* ovl_relocs = get_overlay_reloc_ptr(overlay_data.data(), decompressed_buffer.data(), &num_entrypoints, &num_relocs);
+    char* ovl_relocs = get_overlay_reloc_ptr(overlay_data, decompressed_buffer.data(), &num_entrypoints, &num_relocs);
 
     // Read the data from the start of the rom used to xor the relocs
     uint32_t rom_xor = byteswap32(*reinterpret_cast<uint32_t*>(rom_start + 0x40 + overlay_index * sizeof(uint32_t))) & 0xFFFF;
@@ -446,10 +381,10 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
     uint32_t data_end = rodata_end + data_size;
     uint32_t bss_end = data_end + bss_size;
 
-    fmt::print(" Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
-    fmt::print(" Text {0:08X} - {1:08X}, Rodata {1:08X} - {2:08X}, Data {2:08X} - {3:08X}, Bss {3:08X} - 0x{4:08X}\n",
-        overlay_vram, text_end, rodata_end, data_end, bss_end);
-    printf("  code offset: 0x%08lX\n", ovl_code_offset);
+    // fmt::print(" Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
+    // fmt::print(" Text {0:08X} - {1:08X}, Rodata {1:08X} - {2:08X}, Data {2:08X} - {3:08X}, Bss {3:08X} - 0x{4:08X}\n",
+    //     overlay_vram, text_end, rodata_end, data_end, bss_end);
+    // printf("  code offset: 0x%08lX\n", ovl_code_offset);
 
     bool tracking_hi = false;
     uint32_t prev_hi_addend = 0;
@@ -459,15 +394,15 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
         // Write the reloc value to the overlay's reloc list
         relocs_bin.write(reinterpret_cast<char*>(&reloc_val), sizeof(reloc_val));
         // Determine the reloc offset and type
-        RelocType reloc_type = (RelocType)(reloc_val & 0x3);
+        TooieRelocType reloc_type = (TooieRelocType)(reloc_val & 0x3);
         uint16_t reloc_offset = reloc_val & ~0x3;
         // Get the overlay word that the reloc corresponds to
         uint32_t reloc_word = byteswap32(*reinterpret_cast<uint32_t*>(ovl_code + reloc_offset));
-        printf("    %4d Type: %-11s Offset: 0x%04X Word: %08X (Val: 0x%04X)\n", reloc_index, reloc_names[(size_t)reloc_type], reloc_offset, reloc_word, reloc_val);
+        // printf("    %4d Type: %-11s Offset: 0x%04X Word: %08X (Val: 0x%04X)\n", reloc_index, reloc_names[(size_t)reloc_type], reloc_offset, reloc_word, reloc_val);
 
         uint32_t reloc_addend = 0;
 
-        if (reloc_type == RelocType::R_MIPS_HI16) {
+        if (reloc_type == TooieRelocType::R_MIPS_HI16) {
             reloc_addend = (reloc_word & 0xFFFF) << 16;
             prev_hi_addend = reloc_addend;
             tracking_hi = true;
@@ -477,38 +412,38 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
                 // Read the next reloc value
                 uint16_t next_reloc_val = byteswap16(*reinterpret_cast<uint16_t*>(ovl_relocs + (reloc_index + 1) * sizeof(uint16_t)));
                 // Determine the next reloc offset and type
-                RelocType next_reloc_type = (RelocType)(next_reloc_val & 0x3);
+                TooieRelocType next_reloc_type = (TooieRelocType)(next_reloc_val & 0x3);
                 uint16_t next_reloc_offset = next_reloc_val & ~0x3;
                 // Get the overlay word that the next reloc corresponds to
                 uint32_t next_reloc_word = byteswap32(*reinterpret_cast<uint32_t*>(ovl_code + next_reloc_offset));
-                if (next_reloc_type == RelocType::R_MIPS_LO16) {
+                if (next_reloc_type == TooieRelocType::R_MIPS_LO16) {
                     reloc_addend += (int16_t)(next_reloc_word & 0xFFFF);
                 }
                 else {
-                    fprintf(stderr, "hi with wrong reloc type afterwards (%s)\n", reloc_names[(size_t)next_reloc_type]);
+                    fmt::print(stderr, "hi with wrong reloc type afterwards ({})\n", reloc_names[(size_t)next_reloc_type]);
                 }
 
             }
             else {
-                fprintf(stderr, "hi with no reloc afterwards\n");
+                fmt::print(stderr, "hi with no reloc afterwards\n");
             }
             // This is safe to do as no overlay could possibly be large enough for these bits to overlap with a reloc's hi offset
             reloc_word |= (overlay_vram >> 16);
         }
-        else if (reloc_type == RelocType::R_MIPS_LO16) {
+        else if (reloc_type == TooieRelocType::R_MIPS_LO16) {
             if (tracking_hi) {
                 reloc_addend = prev_hi_addend + (int16_t)(reloc_word & 0xFFFF);
             }
             else {
-                fprintf(stderr, "lo without hi (reloc %d in %s)\n", reloc_index, ovl_name);
+                fmt::print(stderr, "lo without hi (reloc {} in {})\n", reloc_index, ovl_name);
                 reloc_addend = (int16_t)(reloc_word & 0xFFFF);
             }
         }
-        else if (reloc_type == RelocType::R_MIPS_32) {
+        else if (reloc_type == TooieRelocType::R_MIPS_32) {
             reloc_addend = reloc_word;
             reloc_word |= overlay_vram;
         }
-        else if (reloc_type == RelocType::R_MIPS_26) {
+        else if (reloc_type == TooieRelocType::R_MIPS_26) {
             reloc_addend = (reloc_word & ((1 << 26) - 1)) << 2;
             // Grab the lower 26 bits of the vram offset and right shift by 2 to encode the address as R_MIPS_26
             reloc_word |= (overlay_vram & ((1 << 26) - 1)) >> 2;
@@ -518,12 +453,12 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
         *reinterpret_cast<uint32_t*>(ovl_code + reloc_offset) = byteswap32(reloc_word);
 
         // Stop tracking the previous HI16 if we see anything other than a HI16 or LO16
-        if (reloc_type != RelocType::R_MIPS_HI16 && reloc_type != RelocType::R_MIPS_LO16) {
+        if (reloc_type != TooieRelocType::R_MIPS_HI16 && reloc_type != TooieRelocType::R_MIPS_LO16) {
             tracking_hi = false;
         }
 
         uint32_t symbol_address = overlay_vram | reloc_addend;
-        fmt::print("      0x{:08X}\n", symbol_address);
+        // fmt::print("      0x{:08X}\n", symbol_address);
 
         // Skip rejected symbols
         if (output_files.is_rejected(ovl_name, symbol_address)) {
@@ -532,7 +467,7 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
         }
         
         if (symbol_address >= data_end) {
-            printf("      bss\n");
+            // fmt::print("      bss\n");
             output_files.add_bss_symbol(ovl_name, symbol_address);
         }
         else {
@@ -541,7 +476,7 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
         output_files.add_reloc(ovl_name, symbol_address, ovl_rom_address + 0x10 + ovl_code_offset + reloc_offset, reloc_type, reloc_offset, text_size, rodata_size, data_size);
 
         if (symbol_address < text_end) {
-            if (reloc_type == RelocType::R_MIPS_26) {
+            if (reloc_type == TooieRelocType::R_MIPS_26) {
                 output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Function);
             } else {
                 // Don't override functions with generic text symbols
@@ -561,7 +496,7 @@ void parse_relocs(output_file_state& output_files, uint32_t ovl_rom_address, con
             output_files.set_symbol_type(ovl_name, symbol_address, SymbolType::Bss);
         }
         else {
-            fmt::print(stderr, "Symbol in reloc {} in {} is beyond the end of bss\n", reloc_index, ovl_name);
+            // fmt::print(stderr, "Symbol in reloc {} in {} is beyond the end of bss\n", reloc_index, ovl_name);
         }
     }
 }
@@ -584,43 +519,99 @@ std::vector<char> read_file_contents(const char* file_path) {
     return ret;
 }
 
-void write_partial_contents(std::ofstream& output_rom_file, const char* partial_decompressed_rom_path) {
-    // Read the contents of the partial decompressed rom
-    std::vector<char> partial_rom_data = read_file_contents(partial_decompressed_rom_path);
+template <typename T>
+T read_swapped(const std::vector<char>& data, size_t offset) = delete;
 
-    // Write them to the output rom
-    output_rom_file.write(partial_rom_data.data(), partial_rom_data.size());
+template<>
+uint32_t read_swapped(const std::vector<char>& data, size_t offset) {
+    return byteswap32(*reinterpret_cast<const uint32_t*>(data.data() + offset));
+}
+
+template<>
+uint16_t read_swapped(const std::vector<char>& data, size_t offset) {
+    return byteswap16(*reinterpret_cast<const uint16_t*>(data.data() + offset));
+}
+
+template<>
+uint8_t read_swapped(const std::vector<char>& data, size_t offset) {
+    return static_cast<uint8_t>(*(data.data() + offset));
+}
+
+
+template <typename T>
+void write_swapped(std::vector<char>& data, size_t offset, T val) = delete;
+
+template<>
+void write_swapped(std::vector<char>& data, size_t offset, uint32_t val) {
+    *reinterpret_cast<uint32_t*>(data.data() + offset) = byteswap32(val);
+}
+
+template<>
+void write_swapped(std::vector<char>& data, size_t offset, uint16_t val) {
+    *reinterpret_cast<uint16_t*>(data.data() + offset) = byteswap16(val);
+}
+
+template<>
+void write_swapped(std::vector<char>& data, size_t offset, uint8_t val) {
+    *(data.data() + offset) = static_cast<char>(val);
+}
+
+void decompress_copy(z_stream& stream, std::ofstream& output_rom, const std::vector<char> baserom_contents, size_t offset, size_t size) {
+    size_t decompressed_size = read_swapped<uint16_t>(baserom_contents, offset) * 16;
+    std::vector<char> decompressed_buffer(decompressed_size);
+
+    stream.avail_in = size - sizeof(uint16_t);
+    stream.next_in = reinterpret_cast<const Bytef*>(baserom_contents.data() + offset + sizeof(uint16_t));
+
+    stream.avail_out = decompressed_size;
+    stream.next_out = reinterpret_cast<Bytef*>(decompressed_buffer.data());
+    int err = 0;
+    while (!err) {
+        err = inflate(&stream, Z_NO_FLUSH);
+    }
+    if (err != Z_STREAM_END) {
+        fmt::print(stderr, "Zlib error: {}\n", err);
+        std::exit(EXIT_FAILURE);
+    }
+    output_rom.write(decompressed_buffer.data(), decompressed_size);
+
+    inflateReset(&stream);
 }
 
 int main(int argc, const char** argv) {
-    if (argc != 4) {
-        fprintf(stderr, "Decompresses banjo tooie overlays and adds them to the end of a\n"
-                        "partially decompressed rom. Meant to be used in conjunction with\n"
-                        "bk rom decompressor.\n");
-        fprintf(stderr, "Usage: %s [baserom] [partially decompressed rom path] [output rom path]\n", argv[0]);
+    if (argc != 3) {
+        fmt::print(stderr, "Decompresses a Banjo Tooie ROM.\n");
+        fmt::print(stderr, "Usage: {} [base ROM] [output ROM path]\n", argv[0]);
         return EXIT_SUCCESS;
     }
 
     const char* baserom_path = argv[1];
-    const char* partial_rom_path = argv[2];
-    const char* output_rom_path = argv[3];
+    const char* output_rom_path = argv[2];
+    
+    // Read the contents of the base ROM
+    std::vector<char> baserom_contents = read_file_contents(baserom_path);
 
     std::ofstream output_rom_file{output_rom_path, std::ios::binary};
-    write_partial_contents(output_rom_file, partial_rom_path);
+    
+    // Write the contents up to core1
+    output_rom_file.write(baserom_contents.data(), us_v10.core1_start);
 
-    char rom_start[0x1000];
-    std::ifstream rom_file{baserom_path, std::ios::binary};
+    z_stream stream;
+    stream.zalloc = Z_NULL;
+    stream.zfree = Z_NULL;
+    stream.opaque = Z_NULL;
+    stream.avail_in = 0;
+    stream.next_in = Z_NULL;
+    inflateInit2(&stream, -MAX_WBITS);
+
+    decompress_copy(stream, output_rom_file, baserom_contents, us_v10.core1_start, us_v10.core1_text_end - us_v10.core1_start);
+    decompress_copy(stream, output_rom_file, baserom_contents, us_v10.core1_text_end, us_v10.core1_end - us_v10.core1_text_end);
+    decompress_copy(stream, output_rom_file, baserom_contents, us_v10.core2_start, us_v10.core2_text_end - us_v10.core2_start);
+    decompress_copy(stream, output_rom_file, baserom_contents, us_v10.core2_text_end, us_v10.core2_end - us_v10.core2_text_end);
 
     output_file_state output_files{(size_t)output_rom_file.tellp()};
-    
-    rom_file.seekg(0);
-    rom_file.read(rom_start, sizeof(rom_start));
 
-    rom_file.seekg(overlay_table_offset);
-
-    uint32_t overlay_table_size;
-    rom_file.read(reinterpret_cast<char*>(&overlay_table_size), sizeof(overlay_table_size));
-    overlay_table_size = byteswap32(overlay_table_size);
+    uint32_t overlay_table_size = read_swapped<uint32_t>(baserom_contents, us_v10.overlay_table_offset);
     
     // Record the current output file position to know where to write the overlay table later
     size_t cur_output_pos = output_rom_file.tellp();
@@ -634,28 +625,15 @@ int main(int argc, const char** argv) {
     std::vector<uint32_t> overlay_table;
     overlay_table.resize(overlay_count + 1);
 
-    rom_file.seekg(overlay_table_offset);
-    rom_file.read(reinterpret_cast<char*>(overlay_table.data()), (overlay_count + 1) * sizeof(uint32_t));
-
-    for (auto& overlay_table_entry : overlay_table) {
-        overlay_table_entry = byteswap32(overlay_table_entry);
+    for (size_t i = 0; i < overlay_count + 1; i++) {
+        overlay_table[i] = read_swapped<uint32_t>(baserom_contents, us_v10.overlay_table_offset + sizeof(uint32_t) * i);
     }
 
-    std::vector<char> overlay_header;
     std::vector<char> decompressed_buffer;
-    overlay_header.resize(512);
     decompressed_buffer.resize(1024);
 
     size_t total_compressed = 0;
     size_t total_decompressed = 0;
-
-    z_stream stream;
-    stream.zalloc = Z_NULL;
-    stream.zfree = Z_NULL;
-    stream.opaque = Z_NULL;
-    stream.avail_in = 0;
-    stream.next_in = Z_NULL;
-    inflateInit2(&stream, -MAX_WBITS);
 
     // Seek past the overlay table since that'll be written afterwards
     output_rom_file.seekp((overlay_count + 1) * sizeof(uint32_t), std::ios::cur);
@@ -670,25 +648,23 @@ int main(int argc, const char** argv) {
 
         uint32_t overlay_start = overlay_table[overlay_index - 1];
         uint32_t overlay_end   = overlay_table[overlay_index];
-        printf("Ovl %lu: 0x%04X bytes\n", overlay_index, overlay_end - overlay_start);
+        // fmt::print("Ovl {}: 0x{:04X} bytes\n", overlay_index, overlay_end - overlay_start);
         char* overlay_contents;
         size_t overlay_contents_length;
 
         if (overlay_end != overlay_start) {
-            resize_if_larger(overlay_header, overlay_end - overlay_start);
-            rom_file.seekg(overlay_start + overlay_table_offset);
-            rom_file.read(overlay_header.data(), overlay_end - overlay_start);
+            size_t ovl_rom_start = us_v10.overlay_table_offset + overlay_start;
+            char* overlay_header = baserom_contents.data() + ovl_rom_start;
 
-            uint32_t flags = byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + ovl_header_offsets::flags));
-            // printf("  sp3C: 0x%04X Flags: 0x%02X\n", sp3C, flags);
+            uint32_t flags = read_swapped<uint32_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::flags);
+            // fmt::print("  sp3C: 0x{:04X} Flags: 0x{:02X}\n", sp3C, flags);
 
             if (flags & (uint32_t)OverlayFlags::Compressed) {
-                uint32_t decompressed_size = byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + ovl_header_offsets::decompressed_size));
+                uint32_t decompressed_size = read_swapped<uint16_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::decompressed_size) * 16;
                 flags &= ~(uint32_t)OverlayFlags::Compressed;
-                *reinterpret_cast<uint32_t*>(overlay_header.data() + ovl_header_offsets::flags) = byteswap32(flags);
+                write_swapped<uint32_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::flags, flags);
 
-                decompressed_size = ((decompressed_size & 0xFFFF0000) >> 0x10) * 0x10;
-                printf("  Compressed, decompressed size: 0x%04X\n", decompressed_size);
+                // fmt::print("  Compressed, decompressed size: 0x%04X\n", decompressed_size);
                 total_compressed += overlay_end - overlay_start;
                 total_decompressed += decompressed_size;
 
@@ -696,7 +672,7 @@ int main(int argc, const char** argv) {
 
                 constexpr int header_size = 0x12;
                 stream.avail_in = overlay_end - overlay_start - header_size;
-                stream.next_in = reinterpret_cast<Bytef*>(overlay_header.data() + header_size);
+                stream.next_in = reinterpret_cast<const Bytef*>(overlay_header + header_size);
 
                 stream.avail_out = decompressed_size;
                 stream.next_out = reinterpret_cast<Bytef*>(decompressed_buffer.data());
@@ -710,7 +686,7 @@ int main(int argc, const char** argv) {
                 }
                 inflateReset(&stream);
 
-                undo_xors(overlay_index, rom_start, overlay_header, decompressed_buffer, decompressed_size);
+                undo_xors(overlay_index, baserom_contents.data(), overlay_header, decompressed_buffer, decompressed_size);
 
                 // printf("  %08X %08X %08X %08X\n",
                 //     byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + 0)),
@@ -727,28 +703,28 @@ int main(int argc, const char** argv) {
                 overlay_contents = decompressed_buffer.data();
                 overlay_contents_length = decompressed_size;
             } else {
-                overlay_contents = overlay_header.data() + 0x10;
-                overlay_contents_length = overlay_header.size() - 0x10;
-                printf("  Uncompressed\n");
+                overlay_contents = overlay_header + 0x10;
+                overlay_contents_length = overlay_end - overlay_start - 0x10;
+                // fmt::print("  Uncompressed\n");
             }
             
-            uint32_t text_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::text_size));
-            uint32_t rodata_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::rodata_size));
-            uint32_t data_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::data_size));
-            uint32_t bss_size = 16 * byteswap16(*reinterpret_cast<uint16_t*>(overlay_header.data() + ovl_header_offsets::bss_size));
-            fmt::print(" Parsed Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
+            uint32_t text_size = 16 * read_swapped<uint16_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::text_size);
+            uint32_t rodata_size = 16 * read_swapped<uint16_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::rodata_size);
+            uint32_t data_size = 16 * read_swapped<uint16_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::data_size);
+            uint32_t bss_size = 16 * read_swapped<uint16_t>(baserom_contents, ovl_rom_start + ovl_header_offsets::bss_size);
+            // fmt::print(" Parsed Text {:08X} Rodata {:08X} Data {:08X} Bss {:08X}\n", text_size, rodata_size, data_size, bss_size);
 
             // Get the pointer to the relocs and the number of relocs
             uint16_t num_relocs;
             uint16_t num_entrypoints;
-            char* ovl_relocs = get_overlay_reloc_ptr(overlay_header.data(), overlay_contents, &num_entrypoints, &num_relocs);
+            char* ovl_relocs = get_overlay_reloc_ptr(overlay_header, overlay_contents, &num_entrypoints, &num_relocs);
             char* ovl_relocs_end = ovl_relocs + num_relocs * sizeof(uint16_t);
             size_t ovl_relocs_end_offset = ovl_relocs_end - overlay_contents;
             // Align the overlay offset to 16 bytes to get the location of code
             size_t ovl_code_offset = ((ovl_relocs_end_offset + 16 - 1) & -16);
             const char* ovl_entrypoints = overlay_contents + 0x28;
             const char* ovl_name = ovl_entrypoints + num_entrypoints * sizeof(uint32_t);
-            printf("  Name: %s\n", ovl_name);
+            // printf("  Name: %s\n", ovl_name);
 
             size_t before = output_rom_file.tellp();
             size_t pad_amount = 16 - (before & (16 - 1));
@@ -770,24 +746,18 @@ int main(int argc, const char** argv) {
                 byteswapped_overlay_offsets[overlay_index - 1] = byteswap32((uint32_t)before - output_overlay_table_pos);
             }
             
-            parse_relocs(output_files, before, ovl_name, overlay_header.data(), overlay_contents, text_size, rodata_size, data_size, bss_size);
+            parse_relocs(output_files, before, ovl_name, overlay_header, overlay_contents, text_size, rodata_size, data_size, bss_size);
 
-            output_rom_file.write(overlay_header.data(), 0x10);
+            output_rom_file.write(overlay_header, 0x10);
             output_rom_file.write(overlay_contents, overlay_contents_length);
 
-            size_t after = output_rom_file.tellp();
+            // size_t after = output_rom_file.tellp();
 
-            printf("  %08X %08X %08X %08X\n",
-                byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + 0)),
-                byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + 4)),
-                byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + 8)),
-                byteswap32(*reinterpret_cast<uint32_t*>(overlay_header.data() + 12)));
-
-            printf("  Code Size: 0x%08lX Total Size: 0x%08lX From: 0x%08lX to 0x%08lX\n", after - before - ovl_code_offset - 0x10, after - before, before, after);
-            printf("  Num Entrypoints: %u\n", num_entrypoints);
+            // printf("  Code Size: 0x%08lX Total Size: 0x%08lX From: 0x%08lX to 0x%08lX\n", after - before - ovl_code_offset - 0x10, after - before, before, after);
+            // printf("  Num Entrypoints: %u\n", num_entrypoints);
             output_files.add_overlay(ovl_name, before, before + ovl_code_offset + 0x10, text_size, rodata_size, data_size, bss_size, num_relocs, std::move(entrypoints));
         } else {
-            printf("  Empty overlay\n");
+            // fmt::print("  Empty overlay\n");
             output_files.add_empty_overlay();
         }
     }
@@ -795,7 +765,7 @@ int main(int argc, const char** argv) {
     output_files.print_symbols();
     output_files.print_overlays();
 
-    printf("Compression ratio: %5.3f\n", (float)total_compressed / total_decompressed);
+    // printf("Compression ratio: %5.3f\n", (float)total_compressed / total_decompressed);
     byteswapped_overlay_offsets[overlay_count] = byteswap32((uint32_t)output_rom_file.tellp() - output_overlay_table_pos);
 
     // Overlay 0 is empty, so make its start equal the next overlay's start in case any padding was added after the overlay table

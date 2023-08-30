@@ -1,5 +1,12 @@
 // ignored
 D_00000000 = 0x00000000; // ignore:true
+D_80041195 = 0x80041195; // ignore:true
+
+// ROM addresses
+table_addr_ROM_START = 0x50E0; // defined:true
+assets_ROM_START = 0x50F0; // defined:true
+core2_compressed_ROM_START = 0x1E42550; // defined:true
+overlay_table_compressed_ROM_START = 0x1E899B0; // defined:true
 
 rom_read_word = 0x8001E210;
 
@@ -8,6 +15,8 @@ osTvType = 0x80000300;
 osRomBase = 0x80000308;
 osResetType = 0x8000030C;
 osAppNMIBuffer = 0x8000031C;
+D_A02FB1F4 = 0xA02FB1F4; // defined:True
+D_A02FE1C0 = 0xA02FE1C0; // defined:True
 
 // core1
 cic_send_challenge = 0x8001E048;
@@ -19,6 +28,37 @@ func_800137C4 = 0x800137C4; // size:0x10
 // core2
 syscall_handler = 0x80081E74; // size:0xF0
 ovl_entrypoint_table = 0x80082540;
+D_8011A2F8 = 0x8011A2F8; // type:s32
+D_8011A350 = 0x8011A350; // type:s32
+D_8011A630 = 0x8011A630; // type:s32
+D_8011A668 = 0x8011A668; // type:s32
+D_8011A690 = 0x8011A690; // type:s32
+D_8011A6E0 = 0x8011A6E0; // type:s32
+D_8011A730 = 0x8011A730; // type:s32
+D_8011A7E0 = 0x8011A7E0; // type:s32
+D_8011A840 = 0x8011A840; // type:s32
+D_80122DB0 = 0x80122DB0; // type:s32
+D_801231B0 = 0x801231B0; // type:s32
+D_80123310 = 0x80123310; // type:s32
+D_80123340 = 0x80123340; // type:s32
+D_801281B0 = 0x801281B0; // type:s32
+D_80128338 = 0x80128338; // type:s32
+
+D_11A2F8 = 0x11A2F8; // ignored:True
+D_11A350 = 0x11A350; // ignored:True
+D_11A630 = 0x11A630; // ignored:True
+D_11A668 = 0x11A668; // ignored:True
+D_11A690 = 0x11A690; // ignored:True
+D_11A6E0 = 0x11A6E0; // ignored:True
+D_11A730 = 0x11A730; // ignored:True
+D_11A7E0 = 0x11A7E0; // ignored:True
+D_11A840 = 0x11A840; // ignored:True
+D_122DB0 = 0x122DB0; // ignored:True
+D_1231B0 = 0x1231B0; // ignored:True
+D_123310 = 0x123310; // ignored:True
+D_123340 = 0x123340; // ignored:True
+D_1281B0 = 0x1281B0; // ignored:True
+D_128338 = 0x128338; // ignored:True
 
 // core1 deflate
 inflate = 0x8001C3FC;
@@ -199,7 +239,7 @@ __osPfsGetInitData = 0x80037520;
 bcmp = 0x800375D0;
 ldiv = 0x800376F0;
 lldiv = 0x80037774;
-osClockRate = 0x80041390;
+osClockRate = 0x80041390; // type:u64
 osViClock = 0x80041398;
 __osShutdown = 0x8004139C;
 __OSGlobalIntMask = 0x800413A0;
@@ -302,7 +342,7 @@ boot___osEPiRawWriteIo = 0x80003EE0; // segment:boot
 boot___osEPiRawReadIo = 0x80004040; // segment:boot
 boot___osSetGlobalIntMask = 0x800041A0; // segment:boot
 boot_osYieldThread = 0x800041F0; // segment:boot
-boot_osClockRate = 0x80004250; // segment:boot
+boot_osClockRate = 0x80004250; // segment:boot type:u64
 boot_osViClock = 0x80004258; // segment:boot
 boot___osShutdown = 0x8000425C; // segment:boot
 boot___OSGlobalIntMask = 0x80004260; // segment:boot

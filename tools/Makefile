@@ -1,14 +1,29 @@
 # IDO
 IDO_DIR   := ido
 IDO       := $(IDO_DIR)/cc
+RAREZIP_DIR := rarezip/gzip
+RAREZIP     := $(RAREZIP_DIR)/librarezip.a
 
-all: overlay_decompressor overlay_processor $(IDO)
+UTILS_SRC := tooie_utils.cpp
+UTILS_H   := $(UTILS_SRC:.cpp=.h)
+UTILS_OBJ := $(UTILS_SRC:.cpp=.o)
 
-overlay_decompressor: overlay_decompressor.cpp
-	g++ -std=c++20 -O2 $^ -o $@ -Wall -Wextra -Wpedantic -lz -lfmt
+all: rom_decompressor overlay_processor rom_compressor n64crc $(IDO)
 
-overlay_processor: overlay_processor.cpp
-	g++ -std=c++20 -O2 $^ -o $@ -Wall -Wextra -Wpedantic -lz -lfmt -Ielfio
+rom_decompressor: rom_decompressor.cpp $(UTILS_OBJ) $(UTILS_H)
+	g++ -std=c++20 -O2 $< $(UTILS_OBJ) -o $@ -Wall -Wextra -Wpedantic -lz -lfmt
+
+overlay_processor: overlay_processor.cpp $(UTILS_OBJ) $(UTILS_H)
+	g++ -std=c++20 -O2 $< $(UTILS_OBJ) -o $@ -Wall -Wextra -Wpedantic -lz -lfmt
+
+rom_compressor: rom_compressor.cpp $(UTILS_OBJ) $(RAREZIP) $(UTILS_H)
+	g++ -std=c++20 -O2 $< $(UTILS_OBJ) $(RAREZIP) -o $@ -Wall -Wextra -Wpedantic -I$(RAREZIP_DIR) -lfmt
+
+$(UTILS_OBJ) : $(UTILS_SRC) $(UTILS_H)
+	g++ -std=c++20 -O2 $< -o $@ -c -Wall -Wextra -Wpedantic -Ielfio
+
+n64crc: n64crc.c
+	gcc -O2 $^ -o $@ -Wall -Wextra -Wpedantic
 
 $(IDO): | $(IDO_DIR)
 	wget https://github.com/decompals/ido-static-recomp/releases/latest/download/ido-5.3-recomp-ubuntu-20.04.tar.gz
@@ -18,7 +33,13 @@ $(IDO): | $(IDO_DIR)
 $(IDO_DIR):
 	mkdir $@
 
-distclean:
-	rm -rf $(IDO_DIR) overlay_decompressor overlay_processor
+$(RAREZIP):
+	make -C $(RAREZIP_DIR)
 
-.PHONY: distclean
+clean:
+	rm -rf rom_decompressor overlay_processor rom_compressor n64crc $(UTILS_OBJ)
+
+distclean:
+	rm -rf $(IDO_DIR) rom_decompressor overlay_processor rom_compressor n64crc $(UTILS_OBJ)
+
+.PHONY: all clean distclean
