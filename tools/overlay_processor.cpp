@@ -99,7 +99,7 @@ int main(int argc, const char **argv) {
 
     ElfHandler elf_file{elf_path};
 
-    std::vector<Segment> overlays = read_config("overlays.us.v10.toml");
+    std::vector<Segment> overlays = read_config("overlays.us.toml");
 
     std::unordered_map<std::string, Segment*> segment_map{};
     std::unordered_map<std::string, Symbol*> symbol_map{};

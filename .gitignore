@@ -60,5 +60,5 @@ nonmatchings/
 
 #progress reports
 *.csv
-undefined_funcs_auto.us.v10.txt
-undefined_syms_auto.us.v10.txt
+undefined_funcs_auto.us.txt
+undefined_syms_auto.us.txt

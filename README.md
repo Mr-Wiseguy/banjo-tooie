@@ -10,6 +10,6 @@
   * `python3 -m pip install -r tools/splat/requirements.txt`
 * Install pip requirements for this project.
   * `python3 -m pip install -r tools/requirements.txt`
-* Place a copy of Banjo Tooie NTSC-U in this folder and name it `baserom.us.v10.z64`.
+* Place a copy of Banjo Tooie NTSC-U in this folder and name it `baserom.us.z64`.
 * Run `make setup` to decompress the rom and split it.
 * Run `make` (with an optional job count) to build the rom.

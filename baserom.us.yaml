@@ -2,7 +2,7 @@ name: Banjo Tooie (North America)
 # sha1: af1a89e12b638b8d82cc4c085c8e01d4cba03fb3
 options:
   basename: banjotooie
-  target_path: decompressed.us.v10.z64
+  target_path: decompressed.us.z64
   base_path: .
   compiler: IDO
   find_file_boundaries: True
@@ -12,11 +12,11 @@ options:
   asm_jtbl_label_macro: "jlabel"
   asm_data_macro: dlabel
   # undefined_funcs_auto: True
-  undefined_funcs_auto_path: undefined_funcs_auto.us.v10.txt
+  undefined_funcs_auto_path: undefined_funcs_auto.us.txt
   # undefined_syms_auto: True
-  undefined_syms_auto_path: undefined_syms_auto.us.v10.txt
-  symbol_addrs_path: [ovl_symbol_addrs.us.v10.txt, symbol_addrs.us.v10.txt]
-  reloc_addrs_path: [ovl_reloc_addrs.us.v10.txt, reloc_addrs.us.v10.txt]
+  undefined_syms_auto_path: undefined_syms_auto.us.txt
+  symbol_addrs_path: [ovl_symbol_addrs.us.txt, symbol_addrs.us.txt]
+  reloc_addrs_path: [ovl_reloc_addrs.us.txt, reloc_addrs.us.txt]
   create_asm_dependencies: True
   detect_redundant_function_end: False
   # asm_path: asm
@@ -28,7 +28,7 @@ options:
   # auto_all_sections: [".data", ".rodata", ".bss"]
   # libultra_symbols: True
   # hardware_regs: True
-  build_path: build/us.v10
+  build_path: build/us
 segments:
   - name: header
     type: header

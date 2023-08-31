@@ -128,7 +128,7 @@ int main(int argc, const char** argv) {
     // Open the elf file
     ElfHandler elf_file(elf_path);
 
-    std::vector<Segment> overlays = read_config("overlays.us.v10.toml");
+    std::vector<Segment> overlays = read_config("overlays.us.toml");
     std::vector<Symbol> overlay_header_symbols;
     overlay_header_symbols.resize(overlays.size());
 

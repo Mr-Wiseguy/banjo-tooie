@@ -34,11 +34,11 @@ diff_count = args.count
 if args.make:
     check_call(["ninja", "ver/current/build/papermario.z64"])
 
-baseimg = f"decompressed.us.v10.z64"
+baseimg = f"decompressed.us.z64"
 basemap = f"banjotooie_decompressed.map"
 
-myimg = f"build/us.v10/banjotooie_decompressed.z64"
-mymap = f"build/us.v10/banjotooie_decompressed.map"
+myimg = f"build/us/banjotooie_decompressed.z64"
+mymap = f"build/us/banjotooie_decompressed.map"
 
 if not os.path.isfile(baseimg):
     print(f"{baseimg} must exist.")

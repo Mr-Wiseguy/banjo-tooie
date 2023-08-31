@@ -124,9 +124,9 @@ private:
 public:
     output_file_state(size_t overlay_table_rom_start) : overlay_table_rom_start_(overlay_table_rom_start) {
         if constexpr (generate_splat_files) {
-            symbol_addrs_file = std::ofstream{"ovl_symbol_addrs.us.v10.txt"};
-            reloc_addrs_file = std::ofstream{"ovl_reloc_addrs.us.v10.txt"};
-            yaml_file = std::ofstream{"ovl.us.v10.yaml"};
+            symbol_addrs_file = std::ofstream{"ovl_symbol_addrs.us.txt"};
+            reloc_addrs_file = std::ofstream{"ovl_reloc_addrs.us.txt"};
+            yaml_file = std::ofstream{"ovl.us.yaml"};
             // TODO pull this from a file
             rejected_symbols.insert(OverlaySymbol{.ovl_name = "chterryegg", .address = 0x80801236});
             rejected_symbols.insert(OverlaySymbol{.ovl_name = "badeathmatch", .address = 0x8080054F});
@@ -154,7 +154,7 @@ public:
             rejected_symbols.insert(OverlaySymbol{.ovl_name = "gczoombox", .address = 0x80803F3E});
         }
         if constexpr (generate_overlay_toml) {
-            overlay_toml_file = std::ofstream("overlays.us.v10.toml");
+            overlay_toml_file = std::ofstream("overlays.us.toml");
         }
     }
 
