@@ -37,6 +37,21 @@ osAppNMIBuffer = 0x8000031C;
 D_A02FB1F4 = 0xA02FB1F4; // defined:True
 D_A02FE1C0 = 0xA02FE1C0; // defined:True
 
+// ucodes
+rspBootTextStart = 0x80039050; // name_end:rspBootTextEnd
+
+n_aspMainTextStart = 0x80037880; // name_end:n_aspMainTextEnd
+n_aspMainDataStart = 0x80042010; // name_end:n_aspMainDataEnd
+
+gspF3DEX2_NoN_fifoTextStart = 0x80039120; // name_end:gspF3DEX2_NoN_fifoTextEnd
+gspF3DEX2_NoN_fifoDataStart = 0x80042750; // name_end:gspF3DEX2_NoN_fifoDataEnd
+
+gspF3DEX2_fifoTextStart = 0x8003A4B0; // name_end:gspF3DEX2_fifoTextEnd
+gspF3DEX2_fifoDataStart = 0x80042B70; // name_end:gspF3DEX2_fifoDataEnd
+
+gspL3DEX2_fifoTextStart = 0x8003B840; // name_end:gspL3DEX2_fifoTextEnd
+gspL3DEX2_fifoDataStart = 0x80042F90; // name_end:gspL3DEX2_fifoDataEnd
+
 // core1
 cic_send_challenge = 0x8001E048;
 cic_read_response = 0x8001E11C;

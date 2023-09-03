@@ -1,5 +1,5 @@
 name: Banjo Tooie (North America)
-# sha1: af1a89e12b638b8d82cc4c085c8e01d4cba03fb3
+sha1: af479771ff5e91ce3732f3d84146614ab71d8d79
 options:
   basename: banjotooie
   target_path: decompressed.us.z64
