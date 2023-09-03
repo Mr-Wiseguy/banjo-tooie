@@ -11,24 +11,13 @@ options:
   asm_end_label: "endlabel"
   asm_jtbl_label_macro: "jlabel"
   asm_data_macro: dlabel
-  # undefined_funcs_auto: True
-  undefined_funcs_auto_path: undefined_funcs_auto.us.txt
-  # undefined_syms_auto: True
-  undefined_syms_auto_path: undefined_syms_auto.us.txt
+  create_undefined_funcs_auto: False
+  create_undefined_syms_auto: False
   symbol_addrs_path: [ovl_symbol_addrs.us.txt, syscall_symbol_addrs.us.txt, symbol_addrs.us.txt]
   reloc_addrs_path: [ovl_reloc_addrs.us.txt, reloc_addrs.us.txt]
   create_asm_dependencies: True
   detect_redundant_function_end: False
   lib_path: build/us
-  # asm_path: asm
-  # src_path: src
-  # build_path: build
-  # extensions_path: tools/splat_ext
-  # mips_abi_float_regs: o32
-  # section_order: [".text", ".data", ".rodata", ".bss"]
-  # auto_all_sections: [".data", ".rodata", ".bss"]
-  # libultra_symbols: True
-  # hardware_regs: True
   build_path: build/us
 segments:
   - name: header
@@ -116,12 +105,26 @@ segments:
     type: data
     vram: 0x0
     start: 0x50E0
-  - [0x50F0, bin, assets]
+  - [0x50F0, bin, unknown]
+  - [0x5180, bin, assets]
+  - [0x1A14580, bin, unknown2]
+  - [0x1A46560, bin, unknown3]
+  - name: buffers
+    type: code
+    start: 0x1E29B60
+    vram: 0x8000E800
+    bss_size: 0x3830
+    subsegments:
+    - [0x1E29B60, c, buffers]
+    - [0x1E29B60, .data, buffers]
+    - [0x1E29B60, .rodata, buffers]
+    - [0x1E29B60, .bss, buffers]
   - name: core1
     dir: core1
     type: code
     start: 0x1E29B60
     vram: 0x80012030
+    follows_vram: buffers
     # bss_size: 0x3E240
     bss_size: 0x3B750
     subsegments:

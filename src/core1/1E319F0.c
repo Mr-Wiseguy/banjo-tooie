@@ -1,18 +1,10 @@
-#include <ultra64.h>
-#include "common.h"
+#include "buffers.h"
 
 extern void     bzero(void *, int);
 extern void		osInvalDCache(void *, s32);
 extern void		osInvalICache(void *, s32);
 extern void		osWritebackDCache(void *, s32);
 extern void		osWritebackDCacheAll(void);
-
-struct unkD_80012010 {
-    u8* unk0;
-    u8* unk4;
-};
-
-extern struct unkD_80012010 D_80012010[];
 
 void func_80012F78(s32, u8*, u32);                     /* extern */
 s32 func_8001A0A8();                                /* extern */
@@ -35,8 +27,8 @@ void func_80019EC0(s32 arg0, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* 
     if (ovl_bss_start != NULL) {
         osInvalDCache(ovl_bss_start, ovl_bss_end - (u8*)ovl_bss_start);
     }
-    ovl_rom_start = D_80012010[arg0].unk0;
-    ovl_rom_end = D_80012010[arg0].unk4;
+    ovl_rom_start = D_80012010[arg0].rom_start;
+    ovl_rom_end = D_80012010[arg0].rom_end;
     if (arg0 != 0) {
         func_8001A2B0();
         var_a0 = func_8001A0A8();

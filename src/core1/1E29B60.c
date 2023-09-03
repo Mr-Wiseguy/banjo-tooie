@@ -18,8 +18,8 @@ void func_8001DDF0();
 void func_8001E7E8();
 void func_8001E840();
 void func_800815CC();
-s32 func_80087890();
-void func_80088310();
+s32 _cosection_entrypoint_1();
+void _gcstatusDll_entrypoint_0();
 void func_800A5BE0();
 void func_800C929C();
 void func_800D5D70();
@@ -37,10 +37,10 @@ extern struct {
 extern s32 D_800459C8;
 extern s32 D_800459D0;
 extern u64 D_800459D8;
-extern u8 D_800815C0[]; // core2 start
-extern u8 D_80137390[]; // core2 end
-extern u8 D_1E5AEB0[]; // core2 decompressed rom start
-extern u8 D_1F00020[]; // core2 decompressed rom end
+extern u8 core2_VRAM[]; // core2 start
+extern u8 core2_VRAM_END[]; // core2 end
+extern u8 core2_ROM_START[]; // core2 decompressed rom start
+extern u8 core2_ROM_END[]; // core2 decompressed rom end
 extern u8 core2_TEXT_START[]; // core2 text start
 extern u8 core2_TEXT_END[]; // core2 text end
 extern u8 core2_RODATA_START[]; // core2 rodata start
@@ -79,7 +79,7 @@ void func_80012214(void) {
     func_80014FE8();
     func_8001E7E8();
     func_8001C1C0();
-    func_80019EC0(0, D_800815C0, D_80137390, D_1E5AEB0, D_1F00020, core2_TEXT_START, core2_TEXT_END, core2_RODATA_START, core2_DATA_END, core2_BSS_START, core2_BSS_END);
+    func_80019EC0(0, core2_VRAM, core2_VRAM_END, core2_ROM_START, core2_ROM_END, core2_TEXT_START, core2_TEXT_END, core2_RODATA_START, core2_DATA_END, core2_BSS_START, core2_BSS_END);
     func_8001A8B4(1);
     func_80014E6C();
     D_80043388.unk400 = 0x01020304;
@@ -97,12 +97,12 @@ void func_80012214(void) {
     func_800D66AC();
     func_800D5D70();
     func_800E692C();
-    func_80088310();
+    _gcstatusDll_entrypoint_0();
     func_800C929C();
     D_80043380 = 0;
     D_800459C8 = 0;
     func_800A5BE0();
-    func_800D740C();
+    _cosection_entrypoint_1();
     func_8001253C(func_80087890());
     func_8001209C(1);
 }

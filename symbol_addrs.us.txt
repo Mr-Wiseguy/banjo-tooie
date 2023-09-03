@@ -1,5 +1,6 @@
 // ignored
 D_00000000 = 0x00000000; // ignore:true
+func_80000000 = 0x80000000; // ignore:true
 D_80041195 = 0x80041195; // ignore:true
 D_80080C12 = 0x80080C12; // ignore:true
 D_80080C12 = 0x80080C12; // ignore:true
@@ -17,9 +18,14 @@ D_80080C02 = 0x80080C02; // ignore:true
 
 // ROM addresses
 table_addr_ROM_START = 0x50E0; // defined:true
-assets_ROM_START = 0x50F0; // defined:true
+unknown_ROM_START = 0x50F0; // defined:true
+unknown2_ROM_START = 0x1A14580; // defined:true
+unknown3_ROM_START = 0x1A46560; // defined:true
+assets_ROM_START = 0x5180; // defined:true
 core2_compressed_ROM_START = 0x1E42550; // defined:true
 overlay_table_compressed_ROM_START = 0x1E899B0; // defined:true
+core2_ROM_START = 0x1E5AEB0; // defined:true
+core2_ROM_END = 0x1F00020; // defined:true
 
 rom_read_word = 0x8001E210;
 
@@ -38,9 +44,13 @@ func_80013798 = 0x80013798; // size:0x14
 func_800137AC = 0x800137AC; // size:0x18
 func_800137C4 = 0x800137C4; // size:0x10
 
+D_8012762C = 0x8012762C; // type:u8
+D_8012762D = 0x8012762D; // type:u8
+
 // core2
 syscall_handler = 0x80081E74; // size:0xF0
 ovl_entrypoint_table = 0x80082540;
+core2_VRAM_END = 0x80137390;
 D_8011A2F8 = 0x8011A2F8; // type:s32
 D_8011A350 = 0x8011A350; // type:s32
 D_8011A630 = 0x8011A630; // type:s32
@@ -383,6 +393,7 @@ boot_inflate_codes = 0x800012B0; // segment:boot
 // other boot
 boot_entrypoint = 0x80000400; // segment:boot rom:0x1000
 boot_syscall_handler = 0x800064E0; // segment:boot
+boot_thread_stack = 0x800044E0; // segment:boot
 
 boot_mask_bits = 0x80004300; // segment:boot
 boot_cplens = 0x80004322; // segment:boot

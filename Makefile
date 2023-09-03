@@ -58,7 +58,7 @@ OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2
 CPPFLAGS  := -I include -I $(ULTRALIB_DIR)/include -DBUILD_VERSION=VERSION_$(ULTRALIB_VERSION) -D_FINALROM -DF3DEX_GBI_2
 ASFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY
-LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,-T,undefined_syms_auto.us.txt -Wl,-T,undefined_funcs_auto.us.txt -Wl,--build-id=none -Wl,--emit-relocs \
+LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,--build-id=none -Wl,--emit-relocs \
 	-Wl,--whole-archive
 BINOFLAGS := -I binary -O elf32-tradbigmips
 Z64OFLAGS := -O binary --gap-fill=0x00

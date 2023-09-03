@@ -1,3 +1,19 @@
+// Boot/Core1/Core2
+rom:0x1000 symbol:boot_BSS_START reloc:MIPS_HI16
+rom:0x1004 symbol:boot_BSS_START reloc:MIPS_LO16
+rom:0x1008 symbol:boot_BSS_SIZE reloc:MIPS_LO16
+rom:0x1024 symbol:boot_thread_stack reloc:MIPS_HI16 addend:0x2000
+rom:0x1030 symbol:boot_thread_stack reloc:MIPS_LO16 addend:0x2000
+
+// Compressed start/end symbols
+rom:0x1074 symbol:core1_compressed_ROM_START reloc:MIPS_HI16
+rom:0x107C symbol:core1_compressed_ROM_START reloc:MIPS_LO16
+rom:0x1078 symbol:core1_compressed_ROM_END reloc:MIPS_HI16
+rom:0x1080 symbol:core1_compressed_ROM_END reloc:MIPS_LO16
+rom:0x1278 symbol:core2_compressed_ROM_END reloc:MIPS_HI16
+rom:0x1284 symbol:core2_compressed_ROM_END reloc:MIPS_LO16
+
+// Overlay fixes
 rom:0x01FD10E4 symbol:R_80801228_chterryegg reloc:MIPS_HI16 addend:0xE // TODO wrong symbol
 rom:0x01FD1108 symbol:R_80801228_chterryegg reloc:MIPS_LO16 addend:0xE // TODO wrong symbol
 rom:0x01F4E894 symbol:D_8080AC94_bsfirstp reloc:MIPS_HI16 addend:-0x92 // TODO wrong symbol?
@@ -59,13 +75,6 @@ rom:0x01FFC064 symbol:D_80800402 reloc:MIPS_NONE
 rom:0x02023CFC symbol:D_80800000 reloc:MIPS_NONE
 rom:0x1E36450 symbol:D_80041194 reloc:MIPS_HI16 addend:0x1
 rom:0x1E36458 symbol:D_80041194 reloc:MIPS_LO16 addend:0x1
-
-rom:0x1074 symbol:core1_compressed_ROM_START reloc:MIPS_HI16
-rom:0x107C symbol:core1_compressed_ROM_START reloc:MIPS_LO16
-rom:0x1078 symbol:core1_compressed_ROM_END reloc:MIPS_HI16
-rom:0x1080 symbol:core1_compressed_ROM_END reloc:MIPS_LO16
-rom:0x1278 symbol:core2_compressed_ROM_END reloc:MIPS_HI16
-rom:0x1284 symbol:core2_compressed_ROM_END reloc:MIPS_LO16
 
 // Physical addresses
 rom:0x1E7FA74 symbol:D_8011A350 reloc:MIPS_HI16 addend:-0x80000000
