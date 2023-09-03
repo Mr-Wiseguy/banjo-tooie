@@ -6,6 +6,8 @@ UNCOMPRESSED_ROM     := $(ELF:.elf=.z64)
 DECOMPRESSED_BASEROM := decompressed.us.z64
 ROM                  := $(BUILD_ROOT)/banjotooie.z64
 BASEROM              := baserom.us.z64
+ULTRALIB_VERSION     := J
+ULTRALIB_TARGET      := libultra_rom
 
 SRC_ROOT     := src
 ASM_ROOT     := asm
@@ -36,8 +38,10 @@ ASM_PROC_C_OBJS := $(addprefix $(BUILD_ROOT)/,$(ASM_PROC_C_SRCS:.c=.c.o))
 ASM_PROC_C_DEPS := $(addprefix $(BUILD_ROOT)/,$(ASM_PROC_C_SRCS:.c=.asmproc.d))
 PURE_C_OBJS     := $(filter-out $(ASM_PROC_C_OBJS),$(C_OBJS))
 
-ULTRALIB_DIR := lib/ultralib
-ULTRALIB_LIB := $(ULTRALIB_DIR)/build/J/libultra_rom/libultra_rom.a
+ULTRALIB_DIR  := lib/ultralib
+ULTRALIB_LIB  := $(ULTRALIB_DIR)/build/J/libultra_rom/libultra_rom.a
+ULTRALIB_CORE := $(BUILD_ROOT)/libultra_rom.a 
+ULTRALIB_BOOT := $(BUILD_ROOT)/libultra_rom_boot.a 
 
 ALL_OBJS     := $(C_OBJS) $(S_OBJS) $(BIN_OBJS)
 BUILD_DIRS   := $(C_BUILD_DIRS) $(S_BUILD_DIRS) $(BIN_BUILD_DIRS)
@@ -70,11 +74,11 @@ $(ROM) : $(UNCOMPRESSED_ROM) $(ELF)
 $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)
 	sed 's/$(subst /,\/,$(BUILD_ROOT))\/assets\/overlay.*$$//' $< > $@
 
-$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(ULTRALIB_LIB)
-	$(LD) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_LIB) -o $@
+$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
+	$(LD) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
-$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_LIB)
-	$(LD) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_LIB) -o $@
+$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
+	$(LD) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
 $(ASM_PROC_C_OBJS): $(BUILD_ROOT)/%.c.o: %.c | $(C_BUILD_DIRS)
 	$(ASM_PROC) $(OPT_LEVEL) $< > $(BUILD_ROOT)/$<
@@ -100,7 +104,13 @@ $(BIN_OBJS): $(BUILD_ROOT)/%.bin.o: %.bin | $(BIN_BUILD_DIRS)
 	$(OBJCOPY) $(BINOFLAGS) $< $@
 
 $(ULTRALIB_LIB):
-	$(MAKE) -C $(ULTRALIB_DIR) VERSION=J TARGET=libultra_rom NON_MATCHING=1
+	$(MAKE) -C $(ULTRALIB_DIR) VERSION=$(ULTRALIB_VERSION) TARGET=$(ULTRALIB_TARGET) NON_MATCHING=1
+
+$(ULTRALIB_CORE): $(ULTRALIB_LIB)
+	cp $< $@
+
+$(ULTRALIB_BOOT): $(ULTRALIB_CORE)
+	$(OBJCOPY) --prefix-symbols boot_ $< $@
 
 $(BUILD_DIRS):
 	mkdir -p $@

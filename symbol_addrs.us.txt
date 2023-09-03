@@ -382,6 +382,7 @@ boot_inflate_codes = 0x800012B0; // segment:boot
 
 // other boot
 boot_entrypoint = 0x80000400; // segment:boot rom:0x1000
+boot_syscall_handler = 0x800064E0; // segment:boot
 
 boot_mask_bits = 0x80004300; // segment:boot
 boot_cplens = 0x80004322; // segment:boot
