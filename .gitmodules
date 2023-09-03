@@ -10,3 +10,7 @@
 [submodule "tools/rarezip"]
 	path = tools/rarezip
 	url = https://github.com/Mr-Wiseguy/rarezip
+[submodule "lib/ultralib"]
+	path = lib/ultralib
+	url = https://github.com/Mr-Wiseguy/ultralib
+	branch = tooie

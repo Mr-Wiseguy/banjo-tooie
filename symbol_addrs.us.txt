@@ -1,6 +1,19 @@
 // ignored
 D_00000000 = 0x00000000; // ignore:true
 D_80041195 = 0x80041195; // ignore:true
+D_80080C12 = 0x80080C12; // ignore:true
+D_80080C12 = 0x80080C12; // ignore:true
+D_80080402 = 0x80080402; // ignore:true
+D_80080402 = 0x80080402; // ignore:true
+D_80080412 = 0x80080412; // ignore:true
+D_80080812 = 0x80080812; // ignore:true
+D_80080C10 = 0x80080C10; // ignore:true
+D_80080C12 = 0x80080C12; // ignore:true
+D_80080002 = 0x80080002; // ignore:true
+D_80080012 = 0x80080012; // ignore:true
+D_80086412 = 0x80086412; // ignore:true
+D_80080C00 = 0x80080C00; // ignore:true
+D_80080C02 = 0x80080C02; // ignore:true
 
 // ROM addresses
 table_addr_ROM_START = 0x50E0; // defined:true
@@ -78,7 +91,6 @@ cpdext = 0x8004181E;
 
 // core1 libultra
 __osGetSR_2 = 0x8001DCA0;
-osAfterPreNMI = 0x8001E490;
 bzero = 0x8002D6E0;
 osWritebackDCacheAll = 0x8002D780;
 osInitialize = 0x8002D7B0;
@@ -253,6 +265,8 @@ __osThreadTail = 0x80041480;
 __osRunQueue = 0x80041488;
 __osActiveQueue = 0x8004148C;
 __osRunningThread = 0x80041490;
+__osFaultedThread = 0x80041494;
+__osSiAccessQueueEnabled = 0x800414A0;
 __osPiAccessQueueEnabled = 0x800414B0;
 vi = 0x800414E0; // static
 __osViCurr = 0x80041540;
@@ -265,7 +279,6 @@ osViModePalLan1 = 0x800415B0;
 osViModeMpalLan1 = 0x80041600;
 osViModeNtscLan1 = 0x80041650;
 __osRcpImTable = 0x80041DC0; // size:0x80
-__osContPifRam = 0x80081080;
 __osContLastCmd = 0x800810C0;
 __osMaxControllers = 0x800810C1;
 __osEepromTimer = 0x800810C8;
@@ -281,10 +294,7 @@ __osTimerCounter = 0x800812C0;
 __osPfsInodeCache = 0x800812D0;
 __osThreadSave = 0x800813D0;
 __osPfsPifRam = 0x80081580; // size:0x40
-__osFinalrom = 0x8009EAD0;
-__Dom1SpeedParam = 0x8009EAE0;
-__Dom2SpeedParam = 0x8009EB58;
-__osEventStateTab = 0x8009FDE0;
+viThreadStack = 0x80080010; // size:0x1000
 
 // boot libultra
 boot_osInitialize = 0x800016F0; // segment:boot

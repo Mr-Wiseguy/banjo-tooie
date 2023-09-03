@@ -36,6 +36,9 @@ ASM_PROC_C_OBJS := $(addprefix $(BUILD_ROOT)/,$(ASM_PROC_C_SRCS:.c=.c.o))
 ASM_PROC_C_DEPS := $(addprefix $(BUILD_ROOT)/,$(ASM_PROC_C_SRCS:.c=.asmproc.d))
 PURE_C_OBJS     := $(filter-out $(ASM_PROC_C_OBJS),$(C_OBJS))
 
+ULTRALIB_DIR := lib/ultralib
+ULTRALIB_LIB := $(ULTRALIB_DIR)/build/J/libultra_rom/libultra_rom.a
+
 ALL_OBJS     := $(C_OBJS) $(S_OBJS) $(BIN_OBJS)
 BUILD_DIRS   := $(C_BUILD_DIRS) $(S_BUILD_DIRS) $(BIN_BUILD_DIRS)
 
@@ -49,7 +52,8 @@ OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2
 CPPFLAGS  := -I include -D_FINALROM -DF3DEX_GBI_2
 ASFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY
-LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,-T,undefined_syms_auto.us.txt -Wl,-T,undefined_funcs_auto.us.txt -Wl,--build-id=none -Wl,--emit-relocs
+LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,-T,undefined_syms_auto.us.txt -Wl,-T,undefined_funcs_auto.us.txt -Wl,--build-id=none -Wl,--emit-relocs \
+	-Wl,--whole-archive
 BINOFLAGS := -I binary -O elf32-tradbigmips
 Z64OFLAGS := -O binary --gap-fill=0x00
 
@@ -66,11 +70,11 @@ $(ROM) : $(UNCOMPRESSED_ROM) $(ELF)
 $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)
 	sed 's/$(subst /,\/,$(BUILD_ROOT))\/assets\/overlay.*$$//' $< > $@
 
-$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT)
-	$(LD) $(LDFLAGS) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) -o $@
+$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(ULTRALIB_LIB)
+	$(LD) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_LIB) -o $@
 
-$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS)
-	$(LD) $(LDFLAGS) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) -o $@
+$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_LIB)
+	$(LD) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_LIB) -o $@
 
 $(ASM_PROC_C_OBJS): $(BUILD_ROOT)/%.c.o: %.c | $(C_BUILD_DIRS)
 	$(ASM_PROC) $(OPT_LEVEL) $< > $(BUILD_ROOT)/$<
@@ -95,6 +99,9 @@ $(OVERLAY_HEADER_SRCS) $(OVERLAY_TABLE_SRC) &: $(PRELIM_ELF)
 $(BIN_OBJS): $(BUILD_ROOT)/%.bin.o: %.bin | $(BIN_BUILD_DIRS)
 	$(OBJCOPY) $(BINOFLAGS) $< $@
 
+$(ULTRALIB_LIB):
+	$(MAKE) -C $(ULTRALIB_DIR) VERSION=J TARGET=libultra_rom NON_MATCHING=1
+
 $(BUILD_DIRS):
 	mkdir -p $@
 
@@ -102,13 +109,15 @@ clean:
 	find $(BUILD_ROOT) -type f -not -name '*.asmproc.d' -not -name '*.eeprom' -delete
 
 setup:
-	make -C tools
+	$(MAKE) -C $(ULTRALIB_DIR) setup NON_MATCHING=1
+	$(MAKE) -C tools
 	tools/rom_decompressor baserom.us.z64 decompressed.us.z64
 	tools/splat/split.py $(SPLAT_YAML)
 
 distclean:
 	rm -rf $(BUILD_ROOT) asm assets $(DECOMPRESSED_BASEROM) undefined_*_auto.us.txt $(LD_SCRIPT)
-	make -C tools distclean
+	$(MAKE) -C tools distclean
+	$(MAKE) -C $(ULTRALIB_DIR) distclean
 
 -include $(ASM_PROC_C_DEPS)
 
