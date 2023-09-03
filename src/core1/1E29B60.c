@@ -1,3 +1,4 @@
+#include <ultra64.h>
 #include "common.h"
 
 void func_8001209C(s32);
@@ -26,7 +27,6 @@ void func_800D66AC();
 void func_800D740C();
 void func_800E692C();
 void func_801168F0();
-s32 osGetMemSize();
 
 extern s32 D_80043380;
 extern struct {

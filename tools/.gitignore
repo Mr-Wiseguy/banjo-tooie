@@ -1,4 +1,5 @@
 rom_decompressor
+syscall_builder
 overlay_processor
 rom_compressor
 n64crc

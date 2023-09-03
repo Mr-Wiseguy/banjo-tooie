@@ -26,12 +26,14 @@ S_BUILD_DIRS   := $(sort $(dir $(S_OBJS)))
 BIN_OBJS       := $(addprefix $(BUILD_ROOT)/,$(BIN_SRCS:.bin=.bin.o))
 BIN_BUILD_DIRS := $(sort $(dir $(BIN_OBJS)))
 
-OVERLAY_TABLE_SRC   := $(BUILD_ROOT)/assets/overlay_table.s
-OVERLAY_TABLE_OBJ   := $(OVERLAY_TABLE_SRC:.s=.bin.o)
-OVERLAY_HEADER_SRCS := $(foreach ovl,$(OVERLAYS),$(BUILD_ROOT)/assets/overlays/$(ovl)/$(ovl)_header.s)
-OVERLAY_HEADER_OBJS := $(OVERLAY_HEADER_SRCS:.s=.bin.o)
-PRELIM_ELF          := $(ELF:.elf=_prelim.elf)
-PRELIM_LD_SCRIPT    := $(BUILD_ROOT)/$(LD_SCRIPT:.ld=_prelim.ld)
+OVERLAY_TABLE_SRC    := $(BUILD_ROOT)/assets/overlay_table.s
+OVERLAY_SYSCALLS_SRC := $(BUILD_ROOT)/assets/overlay_syscalls.s
+OVERLAY_TABLE_OBJ    := $(OVERLAY_TABLE_SRC:.s=.bin.o)
+OVERLAY_SYSCALLS_OBJ := $(BUILD_ROOT)/asm/core2/overlay_syscalls.s.o
+OVERLAY_HEADER_SRCS  := $(foreach ovl,$(OVERLAYS),$(BUILD_ROOT)/assets/overlays/$(ovl)/$(ovl)_header.s)
+OVERLAY_HEADER_OBJS  := $(OVERLAY_HEADER_SRCS:.s=.bin.o)
+PRELIM_ELF           := $(ELF:.elf=_prelim.elf)
+PRELIM_LD_SCRIPT     := $(BUILD_ROOT)/$(LD_SCRIPT:.ld=_prelim.ld)
 
 ASM_PROC_C_SRCS := $(shell grep -rl GLOBAL_ASM $(SRC_ROOT) </dev/null)
 ASM_PROC_C_OBJS := $(addprefix $(BUILD_ROOT)/,$(ASM_PROC_C_SRCS:.c=.c.o))
@@ -54,7 +56,7 @@ ASM_PROC := python3 tools/asm-processor/asm_processor.py
 
 OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2
-CPPFLAGS  := -I include -D_FINALROM -DF3DEX_GBI_2
+CPPFLAGS  := -I include -I $(ULTRALIB_DIR)/include -DBUILD_VERSION=VERSION_$(ULTRALIB_VERSION) -D_FINALROM -DF3DEX_GBI_2
 ASFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY
 LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,-T,undefined_syms_auto.us.txt -Wl,-T,undefined_funcs_auto.us.txt -Wl,--build-id=none -Wl,--emit-relocs \
 	-Wl,--whole-archive
@@ -74,10 +76,10 @@ $(ROM) : $(UNCOMPRESSED_ROM) $(ELF)
 $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)
 	sed 's/$(subst /,\/,$(BUILD_ROOT))\/assets\/overlay.*$$//' $< > $@
 
-$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
+$(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(OVERLAY_SYSCALLS_OBJ) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
 	$(LD) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
-$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
+$(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_SYSCALLS_OBJ) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
 	$(LD) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
 $(ASM_PROC_C_OBJS): $(BUILD_ROOT)/%.c.o: %.c | $(C_BUILD_DIRS)
@@ -99,6 +101,12 @@ $(OVERLAY_TABLE_OBJ): $(OVERLAY_TABLE_SRC)
 
 $(OVERLAY_HEADER_SRCS) $(OVERLAY_TABLE_SRC) &: $(PRELIM_ELF)
 	tools/overlay_processor $(PRELIM_ELF) $(BUILD_ROOT)/assets > /dev/null
+
+$(OVERLAY_SYSCALLS_OBJ): $(OVERLAY_SYSCALLS_SRC)
+	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(OVERLAY_SYSCALLS_SRC): overlays.us.toml
+	tools/syscall_builder $(BUILD_ROOT)/assets
 
 $(BIN_OBJS): $(BUILD_ROOT)/%.bin.o: %.bin | $(BIN_BUILD_DIRS)
 	$(OBJCOPY) $(BINOFLAGS) $< $@

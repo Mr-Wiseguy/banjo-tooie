@@ -1,3 +1,4 @@
+#include <ultra64.h>
 #include "common.h"
 
 extern void     bzero(void *, int);

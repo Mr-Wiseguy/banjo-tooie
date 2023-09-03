@@ -15,7 +15,7 @@ options:
   undefined_funcs_auto_path: undefined_funcs_auto.us.txt
   # undefined_syms_auto: True
   undefined_syms_auto_path: undefined_syms_auto.us.txt
-  symbol_addrs_path: [ovl_symbol_addrs.us.txt, symbol_addrs.us.txt]
+  symbol_addrs_path: [ovl_symbol_addrs.us.txt, syscall_symbol_addrs.us.txt, symbol_addrs.us.txt]
   reloc_addrs_path: [ovl_reloc_addrs.us.txt, reloc_addrs.us.txt]
   create_asm_dependencies: True
   detect_redundant_function_end: False
@@ -356,7 +356,7 @@ segments:
     subsegments:
       - [0x1E5AEB0, asm]
       - [0x1E5B6F0, asm]
-      - [0x1E5BE30, asm, ovl_entrypoints]
+      - { start: 0x1E5BE30, type: hasm, name: overlay_syscalls, extract: False}
       - [0x1E64280, asm]
       - [0x1E64F00, asm]
       - [0x1E65B90, asm]
