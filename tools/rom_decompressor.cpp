@@ -56,7 +56,7 @@ struct SymbolDetails {
     std::string name;
 };
 
-struct Reloc {
+struct OutputReloc {
     OverlaySymbol symbol;
     uint32_t rom_address;
     TooieRelocType type;
@@ -116,7 +116,7 @@ private:
     std::ofstream yaml_file;
     std::ofstream overlay_toml_file;
     std::unordered_map<OverlaySymbol, SymbolDetails> symbols;
-    std::vector<Reloc> relocs;
+    std::vector<OutputReloc> relocs;
     std::vector<Overlay> overlays;
     std::vector<size_t> all_overlays; // Indexes into the overlays array, includes empty ones as size_t(-1)
     std::unordered_set<OverlaySymbol> rejected_symbols;
@@ -170,7 +170,7 @@ public:
             else if (reloc_offset >= text_size) {
                 section = Section::Rodata;
             }
-            relocs.emplace_back(Reloc{.symbol = OverlaySymbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type, .section = section});
+            relocs.emplace_back(OutputReloc{.symbol = OverlaySymbol{.ovl_name = ovl_name, .address = symbol_address}, .rom_address = rom_addr, .type = reloc_type, .section = section});
         }
     }
 

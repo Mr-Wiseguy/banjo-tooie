@@ -18,7 +18,7 @@ D_80080C02 = 0x80080C02; // ignore:true
 
 // ROM addresses
 table_addr_ROM_START = 0x50E0; // defined:true
-unknown_ROM_START = 0x50F0; // defined:true
+build_data_ROM_START = 0x50F0; // defined:true
 unknown2_ROM_START = 0x1A14580; // defined:true
 unknown3_ROM_START = 0x1A46560; // defined:true
 assets_ROM_START = 0x5180; // defined:true
@@ -58,9 +58,15 @@ cic_read_response = 0x8001E11C;
 func_80013798 = 0x80013798; // size:0x14
 func_800137AC = 0x800137AC; // size:0x18
 func_800137C4 = 0x800137C4; // size:0x10
+init_crc_check = 0x8001E840; // type:func
+set_crc_entry = 0x8001E868; // type:func
+advance_crc_check = 0x8001E8E4; // type:func
+do_crc_check = 0x8001EAB4; // type:func
 
 D_8012762C = 0x8012762C; // type:u8
 D_8012762D = 0x8012762D; // type:u8
+D_80041194 = 0x80041194; // type:u32
+D_801247A0 = 0x801247A0; // type:u32 size:0x1B0
 
 // core2
 syscall_handler = 0x80081E74; // size:0xF0
@@ -470,6 +476,7 @@ D_80801327_suexpressmorph = 0x80801327; // type:s32 rom:0x2159447 segment:suexpr
 D_80801328_suexpressmorph = 0x80801328; // type:s32 rom:0x2159448 segment:suexpressmorph
 D_8080132C_suexpressmorph = 0x8080132C; // type:s32 rom:0x215944C segment:suexpressmorph
 D_808010D0_badata = 0x808010D0; // type:s32 rom:0x1F5CD50 segment:badata
+D_808000B0_bareact = 0x808000B0; // type:u32 rom:0x1F68120 segment:bareact
 
 D_808000E2_sudialog = 0x808000E2; // defined:True segment:sudialog
 D_80800202_gcegg = 0x80800202; // defined:True segment:gcegg

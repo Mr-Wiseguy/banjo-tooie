@@ -36,7 +36,7 @@ void align_file_pos(std::ofstream& output_file, size_t alignment) {
     }
 }
 
-void compress_and_write(std::ofstream& output_file, char* begin, char* end)
+void compress_and_write(std::ofstream& output_file, char* begin, char* end, bool dump = false)
 {
     // Make a buffer to hold the compressed data
     std::vector<char> compression_buffer;
@@ -47,9 +47,6 @@ void compress_and_write(std::ofstream& output_file, char* begin, char* end)
 
     // Write the buffer to the file
     output_file.write(compression_buffer.data(), compressed_size);
-
-    // Pad to the nearest multiple of 2 bytes
-    align_file_pos(output_file, 2);
 }
 
 void apply_xors(size_t overlay_index, char* rom_start, char* overlay_header, char* overlay_start, size_t decompressed_size) {
@@ -97,6 +94,80 @@ void apply_xors(size_t overlay_index, char* rom_start, char* overlay_header, cha
     *reinterpret_cast<uint32_t*>(overlay_header + 8) ^= byteswap32(crc2);
 }
 
+const char* get_symbol_rom_pointer(const std::vector<char>& decompressed_rom_contents, const Segment& core1, const Segment& core2, uint32_t vram_address) {
+    // In core2 bss or after core2, no rom address
+    if (vram_address >= core2.ram_end.value - core2.bss_size.value) {
+        return nullptr;
+    }
+    // In core2
+    else if (vram_address >= core2.ram_start.value) {
+        return decompressed_rom_contents.data() + vram_address - core2.ram_start.value + core2.rom_start.value;
+    }
+    // In core1 bss, no rom address
+    else if (vram_address >= core1.ram_end.value - core1.bss_size.value) {
+        return nullptr;
+    }
+    // In core1
+    else if (vram_address >= core1.ram_start.value) {
+        return decompressed_rom_contents.data() + vram_address - core1.ram_start.value + core1.rom_start.value;
+    }
+    // Before core1, no rom address
+    else {
+        return nullptr;
+    }
+}
+
+// Array in build_data that contains the CRCs and the number of bytes to checksum
+struct CrcValues {
+    uint32_t crc1;
+    uint32_t crc2;
+    uint32_t byte_count;
+};
+
+// Array in core1 detailing what symbols to calculate the CRC of
+struct CrcEntry {
+    uint32_t address;
+    uint8_t rom_word_offset; // Offset from the start of build_data
+    uint8_t in_rom;
+};
+
+constexpr size_t num_crc_entries = 8;
+
+void patch_crc_values(std::ofstream& compressed_rom, const std::vector<char>& decompressed_rom_contents, const Segment& core1, const Segment& core2, uint32_t build_data_rom_address, uint32_t crc_entries_vram_address) {
+    const char* crc_entries = get_symbol_rom_pointer(decompressed_rom_contents, core1, core2, crc_entries_vram_address);
+
+    if (crc_entries == nullptr) {
+        fmt::print(stderr, "Could not find ROM address of symbol crc_entries\n");
+        std::exit(EXIT_FAILURE);
+    }
+
+    for (size_t entry_index = 0; entry_index < num_crc_entries; entry_index++) {
+        const CrcEntry* entry = reinterpret_cast<const CrcEntry*>(crc_entries) + entry_index;
+        uint32_t word_offset = entry->rom_word_offset;
+        uint32_t byte_offset = word_offset * sizeof(uint32_t);
+        uint32_t cur_values_rom_address = build_data_rom_address + byte_offset;
+        const CrcValues* values_in = reinterpret_cast<const CrcValues*>(decompressed_rom_contents.data() + cur_values_rom_address);
+        uint32_t crc_symbol_vram = byteswap32(entry->address);
+        uint32_t byte_count = byteswap32(values_in->byte_count);
+        const char* crc_symbol = get_symbol_rom_pointer(decompressed_rom_contents, core1, core2, crc_symbol_vram);
+        uint32_t crc1, crc2;
+
+        if (crc_symbol == nullptr) {
+            fmt::print(stderr, "Could not find ROM address of symbol at VRAM 0x{:08X}\n", crc_symbol_vram);
+            std::exit(EXIT_FAILURE);
+        }
+
+        bk_crc(crc_symbol, byte_count, crc1, crc2);
+
+        // Byteswap the CRC values before writing them
+        crc1 = byteswap32(crc1);
+        crc2 = byteswap32(crc2);
+        compressed_rom.seekp(cur_values_rom_address, std::ios_base::beg);
+        compressed_rom.write(reinterpret_cast<const char*>(&crc1), sizeof(crc1));
+        compressed_rom.write(reinterpret_cast<const char*>(&crc2), sizeof(crc2));
+    }
+}
+
 int main(int argc, const char** argv) {
     if (argc != 6) {
         fmt::print(stderr,
@@ -142,6 +213,8 @@ int main(int argc, const char** argv) {
         // Add the segment itself to the segment map
         segment_map[seg.name] = &seg;
         // Add the segment's section sizes to the symbol map
+        add_symbol_to_map(seg.ram_start);
+        add_symbol_to_map(seg.ram_end);
         add_symbol_to_map(seg.text_size);
         add_symbol_to_map(seg.rodata_size);
         add_symbol_to_map(seg.data_size);
@@ -161,9 +234,11 @@ int main(int argc, const char** argv) {
         }
     }
     
-    // Add core1 and core2 to the segment map
+    // Add boot, core1, and core2 to the segment map
+    Segment boot{"boot"};
     Segment core1{"core1"};
     Segment core2{"core2"};
+    add_segment_to_maps(boot);
     add_segment_to_maps(core1);
     add_segment_to_maps(core2);
 
@@ -177,6 +252,10 @@ int main(int argc, const char** argv) {
     // Add symbols for patching after compression
     Symbol table_addr_sym{"table_addr_ROM_START"};
     add_symbol_to_map(table_addr_sym);
+    Symbol build_data_rom_sym{"build_data_ROM_START"};
+    add_symbol_to_map(build_data_rom_sym);
+    Symbol crc_entries_sym{"crc_entries"};
+    add_symbol_to_map(crc_entries_sym);
 
     // Search the elf for sections and symbols
     elf_file.find_segments_in_elf(segment_map);
@@ -198,8 +277,9 @@ int main(int argc, const char** argv) {
     char* core1_text_end = core1_start + core1.text_size.value;
     char* core1_end = core1_text_end + core1.rodata_size.value + core1.data_size.value;
     compress_and_write(compressed_rom, core1_start, core1_text_end);
-    size_t core1_compressed_text_end = compressed_rom.tellp();
+    // size_t core1_compressed_text_end = compressed_rom.tellp();
     compress_and_write(compressed_rom, core1_text_end, core1_end);
+    align_file_pos(compressed_rom, 2);
     size_t core1_compressed_end = compressed_rom.tellp();
 
     // Compress core2 and write it to the rom
@@ -208,11 +288,11 @@ int main(int argc, const char** argv) {
     char* core2_text_end = core2_start + core2.text_size.value;
     char* core2_end = core2_text_end + core2.rodata_size.value + core2.data_size.value;
     compress_and_write(compressed_rom, core2_start, core2_text_end);
-    size_t core2_compressed_text_end = compressed_rom.tellp();
-    compress_and_write(compressed_rom, core2_text_end, core2_end);
+    // size_t core2_compressed_text_end = compressed_rom.tellp();
+    compress_and_write(compressed_rom, core2_text_end, core2_end, true);
+    align_file_pos(compressed_rom, 16);
     size_t core2_compressed_end = compressed_rom.tellp();
 
-    align_file_pos(compressed_rom, 16);
     
     // Skip the overlay table since it'll be filled in after the overlays are placed
     size_t overlay_count = overlays.size();
@@ -275,14 +355,80 @@ int main(int argc, const char** argv) {
         compressed_rom.write(reinterpret_cast<const char*>(&overlay_end_swapped), sizeof(overlay_end_swapped));
     }
 
-    // TODO patch relocs to core1/core2 compressed start/end
-    // TODO patch overlay table address
-    (void)core1_compressed_start;
-    (void)core1_compressed_text_end;
-    (void)core1_compressed_end;
-    (void)core2_compressed_start;
-    (void)core2_compressed_text_end;
-    (void)core2_compressed_end;
+    std::vector<Reloc> boot_relocs;
+    elf_file.get_all_relocs_in_segment(boot, boot_relocs);
+
+    struct SymbolAddressPair {
+        size_t old_value;
+        size_t new_value;
+    };
+    // Holds a mapping of symbol name to a pair containing the original symbol value and the new one
+    std::unordered_map<std::string, SymbolAddressPair> symbol_patch_mapping {
+        {"core1_compressed_ROM_START", {.old_value = 0x1E29B60, .new_value = core1_compressed_start}},
+        {"core1_compressed_ROM_END",   {.old_value = 0x1E42550, .new_value = core1_compressed_end}},
+        {"core2_compressed_ROM_START", {.old_value = 0x1E42550, .new_value = core2_compressed_start}},
+        {"core2_compressed_ROM_END",   {.old_value = 0x1E899B0, .new_value = core2_compressed_end}},
+    };
+
+    // fmt::print("{} relocs in boot\n", boot_relocs.size());
+
+    // Patch relocs that reference any of the compressed segment ROM address symbols
+    for (const Reloc& reloc : boot_relocs) {
+        auto find_it = symbol_patch_mapping.find(reloc.symbol_name);
+        if (find_it != symbol_patch_mapping.end()) {
+            size_t patched_word_rom_address = reloc.segment_offset + boot.rom_start.value - boot.ram_start.value;
+            // fmt::print("{} @ 0x{:08X}\n", reloc.symbol_name, patched_word_rom_address);
+            uint32_t patched_word = byteswap32(*reinterpret_cast<uint32_t*>(decompressed_rom_contents.data() + patched_word_rom_address));
+            // uint32_t original_word = patched_word;
+            if (reloc.type == RelocType::R_MIPS_32) {
+                // Subtract the original symbol value and add the new one to preserve any addends
+                patched_word -= find_it->second.old_value;
+                patched_word += find_it->second.new_value;
+            }
+            else if (reloc.type == RelocType::R_MIPS_HI16 || reloc.type == RelocType::R_MIPS_LO16) {
+                uint16_t current_immediate = patched_word & 0xFFFF;
+                uint16_t old_target_immediate;
+                uint16_t new_target_immediate;
+                int16_t old_lo = (int16_t)(find_it->second.old_value & 0xFFFF);
+                int16_t new_lo = (int16_t)(find_it->second.new_value & 0xFFFF);
+                if (reloc.type == RelocType::R_MIPS_HI16) {
+                    old_target_immediate = (find_it->second.old_value - old_lo) >> 16;
+                    new_target_immediate = (find_it->second.new_value - new_lo) >> 16;
+                }
+                else {
+                    old_target_immediate = old_lo;
+                    new_target_immediate = new_lo;
+                }
+                // Error if an addend is detected since HI/LO pairing isn't implemented here
+                if (old_target_immediate != current_immediate) {
+                    fmt::print(stderr,
+                        "Detected addend for reloc of type {} for patched symbol {} at ROM 0x{:08X}\n"
+                        "Addends for HI16/LO16 relocs of patched symbols are currently unsupported",
+                            (int)reloc.type, reloc.symbol_name, patched_word_rom_address);
+                    return EXIT_FAILURE;
+                }
+                patched_word = (patched_word & 0xFFFF0000) | new_target_immediate;
+            }
+            else {
+                fmt::print(stderr, "Unhandled reloc type {} for patched symbol {} at ROM 0x{:08X}\n", (int)reloc.type, reloc.symbol_name, patched_word_rom_address);
+                return EXIT_FAILURE;
+            }
+
+            // fmt::print("Patched word from 0x{:08X} to 0x{:08X} at ROM 0x{:08X} for reloc to {}\n", original_word, patched_word, patched_word_rom_address, reloc.symbol_name);
+
+            // Overwrite the patched word in the output ROM
+            compressed_rom.seekp(patched_word_rom_address);
+            uint32_t patched_word_swapped = byteswap32(patched_word);
+            compressed_rom.write(reinterpret_cast<const char*>(&patched_word_swapped), sizeof(patched_word_swapped));
+        }
+    }
+
+    // Patch overlay table address
+    compressed_rom.seekp(table_addr_sym.value);
+    uint32_t table_address_swapped = byteswap32(overlay_table_address);
+    compressed_rom.write(reinterpret_cast<const char*>(&table_address_swapped), sizeof(table_address_swapped));
+
+    patch_crc_values(compressed_rom, decompressed_rom_contents, core1, core2, build_data_rom_sym.value, crc_entries_sym.value);
 
     return EXIT_SUCCESS;
 }

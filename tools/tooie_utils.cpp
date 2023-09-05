@@ -163,7 +163,36 @@ void ElfHandler::find_symbol_in_elf(std::unordered_map<std::string, Symbol*>& sy
     }
 }
 
-void ElfHandler::get_relocs(const Segment& segment, std::vector<uint16_t>& relocs_out) {
+void ElfHandler::get_all_relocs_in_segment(const Segment& segment, std::vector<Reloc>& relocs_out) {
+    // Skip gathering relocs if this overlay doesn't have a reloc section
+    if (segment.reloc_section != nullptr) {
+        ELFIO::relocation_section_accessor relocs{elf_context_->elf_file, segment.reloc_section};
+
+        // Find all relocs in this overlay that point back to this overlay
+        size_t num_relocs = relocs.get_entries_num();
+        for (size_t reloc_index = 0; reloc_index < num_relocs; reloc_index++) {
+            ELFIO::Elf64_Addr offset = 0;
+            ELFIO::Elf_Word symbol = 0;
+            unsigned int type = (int)RelocType::R_MIPS_NONE;
+            ELFIO::Elf_Sxword addend;
+            relocs.get_entry(reloc_index, offset, symbol, type, addend);
+
+            std::string sym_name;
+            ELFIO::Elf64_Addr sym_value = symbol_not_found;
+            ELFIO::Elf_Xword sym_size;
+            unsigned char sym_bind;
+            unsigned char sym_type;
+            ELFIO::Elf_Half sym_section_index;
+            unsigned char sym_other;
+            elf_context_->symbol_accessor.get_symbol(symbol, sym_name, sym_value, sym_size, sym_bind, sym_type, sym_section_index, sym_other);
+
+            // fmt::print("  Reloc at 0x{:04X} type {} for {} in {}\n", (uint16_t)offset, type, sym_name, sym_section_index);
+            relocs_out.emplace_back(offset, static_cast<RelocType>(type), std::move(sym_name));
+        }
+    }
+}
+
+void ElfHandler::get_tooie_relocs(const Segment& segment, std::vector<uint16_t>& relocs_out) {
     // Skip gathering relocs if this overlay doesn't have a reloc section
     if (segment.reloc_section != nullptr) {
         ELFIO::relocation_section_accessor relocs{elf_context_->elf_file, segment.reloc_section};
@@ -226,10 +255,10 @@ char* get_overlay_reloc_ptr(char* overlay_header, char* overlay_contents, uint16
     return ovl_relocs;
 }
 
-void bk_crc(const char* bytes, uint32_t decompressed_size, uint32_t& crc1, uint32_t& crc2) {
-    crc1 = 0;
-    crc2 = 0;//xFFFFFFFF;
-    for (size_t i = 0; i < decompressed_size; i++) {
+void bk_crc(const char* bytes, uint32_t size, uint32_t& crc1, uint32_t& crc2, uint32_t start_crc1, uint32_t start_crc2) {
+    crc1 = start_crc1;
+    crc2 = start_crc2;
+    for (size_t i = 0; i < size; i++) {
         uint32_t byte = (uint32_t)(uint8_t)bytes[i];
         
         crc1 += byte;

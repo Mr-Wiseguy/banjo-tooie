@@ -77,9 +77,17 @@ struct Symbol {
     Symbol() : name(""), value(symbol_not_found) {}
 };
 
+struct Reloc {
+    size_t segment_offset;
+    RelocType type;
+    std::string symbol_name;
+};
+
 struct Segment {
     std::string name;
     std::vector<Symbol> entrypoints;
+    Symbol ram_start;
+    Symbol ram_end;
     Symbol rom_start;
     Symbol rom_end;
     Symbol text_size;
@@ -90,10 +98,10 @@ struct Segment {
     ELFIO::section* bss_section;
     ELFIO::section* reloc_section;
     Segment(const std::string& name_, std::vector<Symbol>&& entrypoints_) : name(name_), entrypoints{std::move(entrypoints_)},
-        rom_start{name + "_ROM_START"}, rom_end{name + "_ROM_END"}, text_size{name + "_TEXT_SIZE"}, rodata_size{name + "_RODATA_SIZE"}, data_size{name + "_DATA_SIZE"}, bss_size{name + "_BSS_SIZE"},
+        ram_start{name + "_VRAM"}, ram_end{name + "_VRAM_END"}, rom_start{name + "_ROM_START"}, rom_end{name + "_ROM_END"}, text_size{name + "_TEXT_SIZE"}, rodata_size{name + "_RODATA_SIZE"}, data_size{name + "_DATA_SIZE"}, bss_size{name + "_BSS_SIZE"},
         section(nullptr), bss_section(nullptr), reloc_section(nullptr) {}
     Segment(const std::string& name_) : name(name_), entrypoints{},
-        rom_start{name + "_ROM_START"}, rom_end{name + "_ROM_END"}, text_size{name + "_TEXT_SIZE"}, rodata_size{name + "_RODATA_SIZE"}, data_size{name + "_DATA_SIZE"}, bss_size{name + "_BSS_SIZE"},
+        ram_start{name + "_VRAM"}, ram_end{name + "_VRAM_END"}, rom_start{name + "_ROM_START"}, rom_end{name + "_ROM_END"}, text_size{name + "_TEXT_SIZE"}, rodata_size{name + "_RODATA_SIZE"}, data_size{name + "_DATA_SIZE"}, bss_size{name + "_BSS_SIZE"},
         section(nullptr), bss_section(nullptr), reloc_section(nullptr) {}
 };
 
@@ -106,7 +114,8 @@ public:
     ~ElfHandler(); // Explicit destructor to allow forward declaration of ElfContext
     void find_segments_in_elf(std::unordered_map<std::string, Segment*>& symbol_map);
     void find_symbol_in_elf(std::unordered_map<std::string, Symbol*>& symbol_map);
-    void get_relocs(const Segment& segment, std::vector<uint16_t>& relocs_out);
+    void get_all_relocs_in_segment(const Segment& segment, std::vector<Reloc>& relocs_out);
+    void get_tooie_relocs(const Segment& segment, std::vector<uint16_t>& relocs_out);
 };
 
 std::vector<Segment> read_config(const char* path);
@@ -120,6 +129,6 @@ static inline uint16_t byteswap16(uint16_t in) {
 }
 
 char* get_overlay_reloc_ptr(char* overlay_header, char* overlay_contents, uint16_t* num_entrypoints_out, uint16_t* num_relocs_out);
-void bk_crc(const char* bytes, uint32_t decompressed_size, uint32_t& crc1, uint32_t& crc2);
+void bk_crc(const char* bytes, uint32_t size, uint32_t& crc1, uint32_t& crc2, uint32_t start_crc1 = 0, uint32_t start_crc2 = 0);
 
 #endif

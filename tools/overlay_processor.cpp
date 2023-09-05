@@ -200,7 +200,7 @@ int main(int argc, const char **argv) {
 
             // Get the relocs for this overlay and sort them based on their original order
             reloc_values.clear();
-            elf_file.get_relocs(ovl, reloc_values);
+            elf_file.get_tooie_relocs(ovl, reloc_values);
             sort_relocs(reloc_values, "assets/overlays/" + ovl.name + "/relocs.bin");
 
             fmt::print(header, 

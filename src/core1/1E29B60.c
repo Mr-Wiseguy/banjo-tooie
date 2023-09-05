@@ -16,7 +16,7 @@ void func_8001A8B4(s32);
 void func_8001C1C0();
 void func_8001DDF0();
 void func_8001E7E8();
-void func_8001E840();
+void init_crc_check();
 void func_800815CC();
 s32 _cosection_entrypoint_1();
 void _gcstatusDll_entrypoint_0();
@@ -75,7 +75,7 @@ extern u8 core2_BSS_END[]; // core2 bss end
 void func_80012214(void) {
     D_800459D0 = osGetMemSize();
     func_8001DDF0();
-    func_8001E840();
+    init_crc_check();
     func_80014FE8();
     func_8001E7E8();
     func_8001C1C0();

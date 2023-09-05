@@ -39,7 +39,7 @@ segments:
     subsegments:
       - [0x1000, hasm]
       - [0x1050, asm]
-      - [0x1140, asm]
+      - [0x1140, c]
       - [0x1270, asm]
       - [0x12A0, asm]
       - [0x22F0, lib, libultra_rom_boot, initialize]
@@ -105,7 +105,7 @@ segments:
     type: data
     vram: 0x0
     start: 0x50E0
-  - [0x50F0, bin, unknown]
+  - [0x50F0, bin, build_data] # Contains build date and CRCs of some functions
   - [0x5180, bin, assets]
   - [0x1A14580, bin, unknown2]
   - [0x1A46560, bin, unknown3]
@@ -126,7 +126,7 @@ segments:
     vram: 0x80012030
     follows_vram: buffers
     # bss_size: 0x3E240
-    bss_size: 0x3B750
+    bss_size: 0x3B620
     subsegments:
       - [0x1E29B60, c]
       - [0x1E2A0E0, asm]
@@ -147,7 +147,7 @@ segments:
       - [0x1E33370, asm]
       - [0x1E336D0, asm]
       - [0x1E33860, asm]
-      - [0x1E33CF0, asm]
+      - [0x1E33CF0, c]
       - [0x1E33E20, asm]
       - [0x1E34E70, asm]
       - [0x1E34F80, asm]
@@ -157,7 +157,7 @@ segments:
       - [0x1E35920, asm]
       - [0x1E35DD0, asm]
       - [0x1E36310, asm]
-      - [0x1E36370, asm]
+      - [0x1E36370, c, crc]
       - [0x1E36640, asm]
       - [0x1E38970, asm]
       - [0x1E389F0, asm]
@@ -187,6 +187,7 @@ segments:
       - [0x1E440F0, asm]
       - [0x1E44B60, asm]
       - [0x1E44F80, asm]
+      - [0x1E45210, c, core1bss2]
       - [0x1E45210, lib, libultra_rom, bzero]
       - [0x1E452B0, lib, libultra_rom, writebackdcacheall]
       - [0x1E452E0, lib, libultra_rom, initialize]
@@ -303,7 +304,9 @@ segments:
       - [0x1E50C50, textbin, gspF3DEX2.NoN.fifo]
       - [0x1E51FE0, textbin, gspF3DEX2.fifo]
       - [0x1E53370, textbin, gspL3DEX2.fifo]
-      - [0x1E54500, data]
+      - [0x1E54500, data, core1data1]
+      - [0x1E58CC0, .data, crc]
+      - [0x1E58D00, data, core1data2]
       - [0x1E58EC0, lib, libultra_rom, initialize, .data]
       - [0x1E58EE0, lib, libultra_rom, aisetnextbuf, .data]
       - [0x1E58EF0, lib, libultra_rom, pimgr, .data]
@@ -334,7 +337,9 @@ segments:
       - [0x1E5A280, rodatabin, gspF3DEX2.NoN.fifo]
       - [0x1E5A6A0, rodatabin, gspF3DEX2.fifo]
       - [0x1E5AAC0, rodatabin, gspL3DEX2.fifo]
-      - { start: 0x1E5AEB0, type: bss, vram: 0x80043380 }
+      - { start: 0x1E5AEB0, type: bss, vram: 0x80043380, name: core1bss1 }
+      - [0x1E5AEB0, .bss, crc]
+      - [0x1E5AEB0, .bss, core1bss2]
       - [0x1E5AEB0, lib, libultra_rom, initialize, .bss]
       - [0x1E5AEB0, lib, libultra_rom, pimgr, .bss]
       - [0x1E5AEB0, lib, libultra_rom, sptask, .bss]
@@ -554,7 +559,7 @@ segments:
       - [0x1EEF790, asm]
       - [0x1EF0140, asm]
       - [0x1EF01E0, asm]
-      - [0x1EF0820, asm]
+      - [0x1EF0820, asm] #
       - [0x1EF1550, data]
       - { start: 0x1F00020, type: bss, vram: 0x80126730 }
   # Generated from overlay decompression tool
