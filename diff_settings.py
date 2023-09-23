@@ -10,5 +10,5 @@ def apply(config, args):
     config['mapfile'] = f'build/{ver}/banjotooie_decompressed.map'
     config['myimg'] = f'build/{ver}/banjotooie_decompressed.z64'
     config['baseimg'] = f'decompressed.{ver}.z64'
-    config['makeflags'] = [f'VERSION={ver}']
+    config['makeflags'] = [f'VERSION={ver} -j8']
     config['source_directories'] = ['src', 'include']

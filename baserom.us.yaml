@@ -126,14 +126,14 @@ segments:
     vram: 0x80012030
     follows_vram: buffers
     # bss_size: 0x3E240
-    bss_size: 0x3B620
+    bss_size: 0x39370
     subsegments:
       - [0x1E29B60, c]
       - [0x1E2A0E0, asm]
       - [0x1E2AED0, asm]
       - [0x1E2B7B0, asm]
       - [0x1E2B840, asm]
-      - [0x1E2C940, asm]
+      - [0x1E2C940, c]
       - [0x1E2D890, asm]
       - [0x1E2E730, asm]
       - [0x1E2F380, asm]
@@ -142,9 +142,9 @@ segments:
       - [0x1E319A0, asm]
       - [0x1E319F0, c]
       - [0x1E31B40, asm]
-      - [0x1E321F0, asm]
+      - [0x1E321F0, c, heap]
       - [0x1E32FE0, asm]
-      - [0x1E33370, asm]
+      - [0x1E33370, c, defrag]
       - [0x1E336D0, asm]
       - [0x1E33860, asm]
       - [0x1E33CF0, c]
@@ -187,6 +187,7 @@ segments:
       - [0x1E440F0, asm]
       - [0x1E44B60, asm]
       - [0x1E44F80, asm]
+      - [0x1E45210, hasm, ../../src/core1/core1bss1_2]
       - [0x1E45210, c, core1bss2]
       - [0x1E45210, lib, libultra_rom, bzero]
       - [0x1E452B0, lib, libultra_rom, writebackdcacheall]
@@ -338,6 +339,8 @@ segments:
       - [0x1E5A6A0, rodatabin, gspF3DEX2.fifo]
       - [0x1E5AAC0, rodatabin, gspL3DEX2.fifo]
       - { start: 0x1E5AEB0, type: bss, vram: 0x80043380, name: core1bss1 }
+      - [0x1E5AEB0, .bss, defrag]
+      - [0x1E5AEB0, .bss, ../../src/core1/core1bss1_2]
       - [0x1E5AEB0, .bss, crc]
       - [0x1E5AEB0, .bss, core1bss2]
       - [0x1E5AEB0, lib, libultra_rom, initialize, .bss]
@@ -362,7 +365,7 @@ segments:
     follows_vram: core1
     bss_size: 0x10C60
     subsegments:
-      - [0x1E5AEB0, asm]
+      - [0x1E5AEB0, c, overlays]
       - [0x1E5B6F0, asm]
       - { start: 0x1E5BE30, type: hasm, name: overlay_syscalls, extract: False}
       - [0x1E64280, asm]
@@ -487,7 +490,7 @@ segments:
       - [0x1EB5E70, asm]
       - [0x1EB93C0, asm]
       - [0x1EB9940, asm]
-      - [0x1EB9DB0, asm]
+      - [0x1EB9DB0, c]
       - [0x1EBAA10, asm]
       - [0x1EBB4F0, asm]
       - [0x1EBCFC0, asm]
@@ -560,7 +563,8 @@ segments:
       - [0x1EF0140, asm]
       - [0x1EF01E0, asm]
       - [0x1EF0820, asm] #
-      - [0x1EF1550, data]
+      - [0x1EF1550, .data, overlays]
+      - [0x1EF1560, data]
       - { start: 0x1F00020, type: bss, vram: 0x80126730 }
   # Generated from overlay decompression tool
   - name: overlay_table

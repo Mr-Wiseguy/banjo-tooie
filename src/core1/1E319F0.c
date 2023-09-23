@@ -6,7 +6,7 @@ extern void		osInvalICache(void *, s32);
 extern void		osWritebackDCache(void *, s32);
 extern void		osWritebackDCacheAll(void);
 
-void func_80012F78(s32, u8*, u32);                     /* extern */
+void rom_dma_read(s32, u8*, u32);                     /* extern */
 s32 func_8001A0A8();                                /* extern */
 void func_8001A2B0();                                  /* extern */
 void func_8001C1E0(s32*, void**);                      /* extern */
@@ -35,7 +35,7 @@ void func_80019EC0(s32 arg0, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* 
     } else {
         var_a0 = D_8007E994;
     }
-    func_80012F78(var_a0, ovl_rom_start, ovl_rom_end - ovl_rom_start);
+    rom_dma_read(var_a0, ovl_rom_start, ovl_rom_end - ovl_rom_start);
     func_8001C1E0(&var_a0, (void** ) &ovl_start);
     sp2C = func_8001C26C();
     sp30 = func_8001C28C();

@@ -1,7 +1,7 @@
 #include "types.h"
 
 void init_crc_check();
-void func_80081E00();
+void ovl_entrypoint();
 void func_800A1364();
 void func_800965D4();
 void func_8009B7C0();
@@ -29,7 +29,7 @@ typedef struct {
 // Do not rename this variable or CRC calculation in the ROM compressor will fail
 CrcEntry crc_entries[] = {
     {init_crc_check, 9, FALSE},
-    {func_80081E00, 12, FALSE},
+    {ovl_entrypoint, 12, FALSE},
     {func_800A1364, 15, FALSE},
     {func_800965D4, 18, FALSE},
     {func_8009B7C0, 21, FALSE},

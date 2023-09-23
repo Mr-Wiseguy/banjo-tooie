@@ -12,7 +12,7 @@ void func_800184E8();
 void func_8001A080();
 void func_8001A2D0();
 void func_8001A3A0();
-void func_8001A8B4(s32);
+void heap_setup(s32);
 void func_8001C1C0();
 void func_8001DDF0();
 void func_8001E7E8();
@@ -80,7 +80,7 @@ void func_80012214(void) {
     func_8001E7E8();
     func_8001C1C0();
     func_80019EC0(0, core2_VRAM, core2_VRAM_END, core2_ROM_START, core2_ROM_END, core2_TEXT_START, core2_TEXT_END, core2_RODATA_START, core2_DATA_END, core2_BSS_START, core2_BSS_END);
-    func_8001A8B4(1);
+    heap_setup(TRUE);
     func_80014E6C();
     D_80043388.unk400 = 0x01020304;
     D_80043388.unk404 = 0x05060708;

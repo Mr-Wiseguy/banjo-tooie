@@ -14,7 +14,7 @@ s32 func_80014F00();
 s32 func_80014F38();
 void func_80015430(s32);
 void func_8001DA60(s32);
-void func_80800000_gzpublic();
+void wait_five_seconds_gzpublic();
 void func_80800040_gzpublic(s32);
 
 struct unkD_8007E94C {
@@ -40,11 +40,11 @@ struct BuildData {
 
 extern u8 build_data_ROM_START[];
 
-void func_80800000_gzpublic(void) {
+void wait_five_seconds_gzpublic(void) {
     s32 i;
 
     for (i = 0; i < 300; i++) {
-        func_80015778();
+        wait_one_frame();
     }
 }
 
@@ -72,24 +72,28 @@ void func_80800040_gzpublic(s32 thread_id) {
 }
 
 void gzpublic_entrypoint_0(struct unkD_8007E94C* arg0) {
-    func_80800000_gzpublic();
+    wait_five_seconds_gzpublic();
     func_80015430(func_80014F38());
-    func_80800000_gzpublic();
+    wait_five_seconds_gzpublic();
     while (TRUE) {
         func_80800040_gzpublic(arg0->unk14);
         _gztrace_entrypoint_1(arg0, 0, 0, 0);
         func_8001DA60(func_80014F00());
-        func_80800000_gzpublic();
+        wait_five_seconds_gzpublic();
+
         func_80800040_gzpublic(arg0->unk14);
         _gzreg_entrypoint_0(arg0);
         func_8001DA60(func_80014F00());
-        func_80800000_gzpublic();
+        wait_five_seconds_gzpublic();
+
         func_80800040_gzpublic(arg0->unk14);
         _gzthread_entrypoint_1(-1);
         func_8001DA60(func_80014F00());
-        func_80800000_gzpublic();
+        wait_five_seconds_gzpublic();
+
         func_80015430(func_80014F38());
-        func_80800000_gzpublic();
+        wait_five_seconds_gzpublic();
+
         func_80015430(func_80014F38());
     }
 }

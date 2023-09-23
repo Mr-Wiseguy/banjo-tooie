@@ -4,6 +4,14 @@ rom:0x1004 symbol:boot_BSS_START reloc:MIPS_LO16
 rom:0x1008 symbol:boot_BSS_SIZE reloc:MIPS_LO16
 rom:0x1024 symbol:boot_thread_stack reloc:MIPS_HI16 addend:0x2000
 rom:0x1030 symbol:boot_thread_stack reloc:MIPS_LO16 addend:0x2000
+rom:0x1E29B68 symbol:core1_BSS_START reloc:MIPS_HI16
+rom:0x1E29B6C symbol:core1_BSS_END reloc:MIPS_HI16
+rom:0x1E29B70 symbol:core1_BSS_START reloc:MIPS_LO16
+rom:0x1E29B78 symbol:core1_BSS_END reloc:MIPS_LO16
+rom:0x1E29D84 symbol:core2_VRAM reloc:MIPS_HI16
+rom:0x1E29DB0 symbol:core2_VRAM reloc:MIPS_LO16
+rom:0x1E29DB8 symbol:core2_VRAM reloc:MIPS_HI16
+rom:0x1E29DCC symbol:core2_VRAM reloc:MIPS_LO16
 
 // Compressed start/end symbols
 rom:0x1074 symbol:core1_compressed_ROM_START reloc:MIPS_HI16

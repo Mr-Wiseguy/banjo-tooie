@@ -16,6 +16,7 @@ NONMATCHINGS := nonmatchings
 
 C_SRCS     := $(shell find $(SRC_ROOT) -type f -iname '*.c' 2> /dev/null)
 S_SRCS     := $(shell find $(ASM_ROOT) -type f -iname "*.s" -not -path "asm/$(NONMATCHINGS)/*" 2> /dev/null)
+HASM_SRCS  := $(shell find $(SRC_ROOT) -type f -iname '*.s' 2> /dev/null)
 BIN_SRCS   := $(shell find $(ASSETS_ROOT) -type f -iname '*.bin' -not -iname "relocs.bin" 2> /dev/null)
 OVERLAYS   := $(shell tools/list_overlays.py overlays.us.toml)
 
@@ -23,6 +24,8 @@ C_OBJS         := $(addprefix $(BUILD_ROOT)/,$(C_SRCS:.c=.c.o))
 C_BUILD_DIRS   := $(sort $(dir $(C_OBJS)))
 S_OBJS         := $(addprefix $(BUILD_ROOT)/,$(S_SRCS:.s=.s.o))
 S_BUILD_DIRS   := $(sort $(dir $(S_OBJS)))
+HS_OBJS        := $(addprefix $(BUILD_ROOT)/,$(HASM_SRCS:.s=.s.o))
+HS_BUILD_DIRS  := $(sort $(dir $(HS_OBJS)))
 BIN_OBJS       := $(addprefix $(BUILD_ROOT)/,$(BIN_SRCS:.bin=.bin.o))
 BIN_BUILD_DIRS := $(sort $(dir $(BIN_OBJS)))
 
@@ -45,8 +48,8 @@ ULTRALIB_LIB  := $(ULTRALIB_DIR)/build/J/libultra_rom/libultra_rom.a
 ULTRALIB_CORE := $(BUILD_ROOT)/libultra_rom.a 
 ULTRALIB_BOOT := $(BUILD_ROOT)/libultra_rom_boot.a 
 
-ALL_OBJS     := $(C_OBJS) $(S_OBJS) $(BIN_OBJS)
-BUILD_DIRS   := $(C_BUILD_DIRS) $(S_BUILD_DIRS) $(BIN_BUILD_DIRS)
+ALL_OBJS     := $(C_OBJS) $(S_OBJS) $(HS_OBJS) $(BIN_OBJS)
+BUILD_DIRS   := $(sort $(C_BUILD_DIRS) $(S_BUILD_DIRS) $(HS_BUILD_DIRS) $(BIN_BUILD_DIRS))
 
 CC       := tools/ido/cc
 AS       := mips-linux-gnu-gcc
@@ -91,6 +94,9 @@ $(PURE_C_OBJS): $(BUILD_ROOT)/%.c.o: %.c | $(C_BUILD_DIRS)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(S_OBJS): $(BUILD_ROOT)/%.s.o: %.s | $(S_BUILD_DIRS)
+	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(HS_OBJS): $(BUILD_ROOT)/%.s.o: %.s | $(HS_BUILD_DIRS)
 	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OVERLAY_HEADER_OBJS): $(BUILD_ROOT)/%.bin.o: $(BUILD_ROOT)/%.s

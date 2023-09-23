@@ -1,5 +1,9 @@
 #include "common.h"
 
+// void stuff() {
+    
+// }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gsmaker/gsmaker/gsmaker_entrypoint_0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gsmaker/gsmaker/gsmaker_entrypoint_1.s")
