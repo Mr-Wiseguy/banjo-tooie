@@ -1,0 +1,25 @@
+name: Banjo-Tooie
+github: https://github.com/Mr-Wiseguy/banjo-tooie
+platform: n64
+versions:
+- name: us
+  fullname: US
+  sha1: af1a89e12b638b8d82cc4c085c8e01d4cba03fb3
+  paths:
+    baserom: "baserom.us.z64"
+    build: "build/us/banjotooie_decompressed.z64"
+    asm: "asm"
+    nonmatchings: "asm/nonmatchings"
+    map: "build/us/banjotooie_decompressed.map"
+    elf: "build/us/banjotooie_decompressed.elf"
+tools:
+#  decompme:
+#    preset: 0
+  permuter:
+    decompme_compilers:
+      tools/ido/cc: ido5.3
+#  frogress:
+#    project: banjo-tooie
+#    versions:
+#      us: # corresponds with top-level version snames
+#        version: us

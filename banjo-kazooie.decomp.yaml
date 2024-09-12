@@ -1,0 +1,25 @@
+name: Banjo-Kazooie
+github: https://github.com/n64decomp/banjo-kazooie
+platform: n64
+versions:
+- name: us
+  fullname: US
+  sha1: 1fe1632098865f639e22c11b9a81ee8f29c75d7a
+  paths:
+    baserom: "../banjo-kazooie/baserom.us.v10.z64"
+    build: "../banjo-kazooie/build/us.v10/banjo.us.v10.uncompressed"
+    asm: "../banjo-kazooie/asm"
+    nonmatchings: "../banjo-kazooie/asm/nonmatchings"
+    map: "../banjo-kazooie/build/us.v10/banjo.us.v10.map"
+    elf: "../banjo-kazooie/build/us.v10/banjo.us.v10.elf"
+tools:
+#  decompme:
+#    preset: 0
+  permuter:
+    decompme_compilers:
+      tools/ido/cc: ido5.3
+#  frogress:
+#    project: banjo-kazooie
+#    versions:
+#      us: # corresponds with top-level version snames
+#        version: us
