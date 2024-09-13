@@ -60,7 +60,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     } else if (func_8008B324(aCtrl)) {
         next_state = BS_1_IDLE;
     }
-    func_8009E5C8(player, next_state);
+    bs_setState(player, next_state);
 }
 
 // bsegghead_end

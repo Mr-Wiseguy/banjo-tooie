@@ -12,10 +12,6 @@ typedef enum baanim_update_type_e {
     BAANIM_UPDATE_3_SCALE_VERT
 } BaAnimUpdateType;
 
-// TODO rename these symbols
-#define baanim_playForDuration_onceSmooth func_8008CDB8
-#define baanim_getAnimCtrlPtr func_8008CABC
-
 void baanim_playForDuration_onceSmooth(PlayerState* thisx, AssetId anim_id, f32 duration);
 AnimCtrl* baanim_getAnimCtrlPtr(PlayerState* arg0);
 

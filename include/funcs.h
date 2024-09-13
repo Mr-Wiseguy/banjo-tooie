@@ -8,9 +8,6 @@
 #include "ba/playerstate.h"
 #include "ba/animctrl.h"
 
-// TODO rename these symbols
-#define bs_setState func_8009E5C8
-
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
 void func_8009AB78();

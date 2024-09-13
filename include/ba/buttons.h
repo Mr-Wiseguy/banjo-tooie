@@ -19,9 +19,6 @@ typedef enum button_e {
     BUTTON_C_RIGHT = 0xD
 } ButtonId;
 
-// TODO rename these symbols
-#define button_held func_800919F4
-
 s32 button_held(PlayerState*, ButtonId);
 
 #endif
