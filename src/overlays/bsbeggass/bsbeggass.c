@@ -1,44 +1,10 @@
-#include <ultra64.h>
-#include "common.h"
 #include "ba/physics.h"
-#include "ba/yaw.h"
 #include "ba/playerstate.h"
 #include "ba/animctrl.h"
 #include "ba/anim.h"
 #include "ba/buttons.h"
-
-// TODO rename these symbols
-#define yaw_setVelocityBounded func_8009C99C
-#define bs_setState func_8009E5C8
-
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawState yaw_state, s32 arg2, BaPhysicsType arg3);
-void yaw_setVelocityBounded(PlayerState* thisx, f32 arg0, f32 arg1);
-void func_800A0CDC(PlayerState* thisx, s32 arg1);
-s32 func_80094510(PlayerState* thisx);
-void func_80098140(PlayerState* thisx, s32, s32);
-void func_800A0CDC(PlayerState* thisx, s32 arg1);
-void func_8009AB78();
-void bs_setState(PlayerState*, s32);
-void _baeggsetup_entrypoint_2(PlayerState*, s32, f32, f32);
-void _baeggsetup_entrypoint_9(PlayerState*);
-s32 _bscrouch_entrypoint_4(PlayerState*, s32);
-void func_800C6DA0(s32);
-s32 func_8008B324(AnimCtrl*);
-s32 func_8008DD04(PlayerState*);
-s32 func_800944E0(PlayerState*, s32);
-s32 func_80094B14(PlayerState*);
-s32 func_80094BC0(PlayerState*);
-s32 func_80097BFC(PlayerState*);
-s32 func_800F1418(s32, s32);
-
-void bsbeggass_entrypoint_0(PlayerState* arg0);
-void bsbeggass_entrypoint_1(PlayerState* arg0);
-void bsbeggass_entrypoint_2(PlayerState* arg0);
-
-// syscall trampolines for this module's functions, which just jump here.
-void _bsbeggass_entrypoint_0(PlayerState* arg0);
-void _bsbeggass_entrypoint_1(PlayerState* arg0);
-void _bsbeggass_entrypoint_2(PlayerState* arg0);
+#include "ba/eggs.h"
+#include "funcs.h"
 
 // bseggass_init
 void bsbeggass_entrypoint_0(PlayerState* arg0){
@@ -49,7 +15,7 @@ void bsbeggass_entrypoint_0(PlayerState* arg0){
     func_800A0CDC(arg0, 1);
     arg0->unk15C = arg0->unk160 = 1;
     arg0->unk164 = func_80094510(arg0);
-    func_80098140(arg0,5,0);
+    func_80098140(arg0, 5, 0);
 }
 
 // bseggass_update

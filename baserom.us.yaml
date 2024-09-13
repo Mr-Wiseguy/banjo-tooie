@@ -913,8 +913,8 @@ segments:
     subsegments: 
       - [0x01F0CB00, c, bsbegghead]
       - [0x01F0CDD0, .rodata, bsbegghead]
-      - [0x01F0CDE0, data, bsbegghead]
-      - [0x01F0CDF0, bss, bsbegghead]
+      - [0x01F0CDE0, .data, bsbegghead]
+      - [0x01F0CDF0, .bss, bsbegghead]
   - name: bsbflap_header
     dir: overlays/bsbflap
     type: bin

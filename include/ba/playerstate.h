@@ -17,4 +17,7 @@ typedef struct player_state_s {
     s32 unk164;
 } PlayerState;
 
+void func_80098140(PlayerState* thisx, s32, s32);
+s32 func_80094510(PlayerState* thisx);
+
 #endif

@@ -57,6 +57,7 @@ expected/
 .splat_cache*
 ctx.c
 nonmatchings/
+testing/
 
 #progress reports
 *.csv
