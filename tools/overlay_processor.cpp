@@ -31,8 +31,8 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
     std::vector<uint16_t> original_relocs = read_original_relocs(original_reloc_path);
     // Convert the generated relocs into a set for quick lookups
     std::unordered_set<uint16_t> reloc_set{relocs.begin(), relocs.end()};
-    // Clear the generator reloc vector so it can be filled back in during sorting
-    relocs.clear();
+    // Create a vector for placing the sorted relocs.
+    std::vector<uint16_t> relocs_out;
 
     // Iterate over every original reloc and check if it exists in the generated relocs
     for (size_t i = 0; i < original_relocs.size(); i++) {
@@ -46,7 +46,7 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
                 // Determine how many LO16 relocs are paired to this HI16
                 // Pulling isn't done here, as we don't want to pull a HI16 unless all of its paired LO16 relocs are present as well
                 size_t lo16_count = 0;
-                while ((i + lo16_count + 1) < relocs.size() && TooieRelocType(relocs[i + 1] & 0x3) == TooieRelocType::R_MIPS_LO16) {
+                while ((i + lo16_count + 1) < original_relocs.size() && TooieRelocType(original_relocs[i + lo16_count + 1] & 0x3) == TooieRelocType::R_MIPS_LO16) {
                     // Check if the current LO16 is in the generated relocs
                     if (reloc_set.contains(original_relocs[i + lo16_count + 1])) {
                         lo16_count++;
@@ -59,12 +59,12 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
                 // If all of the paired LO16 relocs were found, pull them all into the generated reloc vector
                 if (lo16_count != size_t(-1)) {
                     // Pull the HI16
-                    relocs.push_back(cur_reloc);
+                    relocs_out.push_back(cur_reloc);
                     reloc_set.erase(find_it);
                     // Pull all the LO16
                     for (size_t count_copied = 0; count_copied < lo16_count; count_copied++) {
                         uint16_t reloc_to_copy = original_relocs[i + count_copied + 1];
-                        relocs.push_back(reloc_to_copy);
+                        relocs_out.push_back(reloc_to_copy);
                         reloc_set.erase(reloc_to_copy);
                     }
 
@@ -74,13 +74,20 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
             // Otherwise, just pull this reloc on its own
             else {
                 reloc_set.erase(find_it);
-                relocs.push_back(cur_reloc);
+                relocs_out.push_back(cur_reloc);
             }
         }
     }
 
-    // Copy any remaining generated relocs that weren't found during sorting back into the vector
-    std::copy(reloc_set.begin(), reloc_set.end(), std::back_inserter(relocs));
+    // Copy any remaining generated relocs that weren't found during sorting back into the vector.
+    // They must be copied in the original order to maintain hi/lo pairing.
+    for (uint16_t reloc : relocs) {
+        if (reloc_set.contains(reloc)) {
+            relocs_out.push_back(reloc);
+        }
+    }
+
+    relocs = std::move(relocs_out);
 }
 
 bool write_if_different(const std::filesystem::path& filepath, const std::string& data) {
