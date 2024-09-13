@@ -74,9 +74,9 @@ extern u8 core2_BSS_END[]; // core2 bss end
 #if 0
 void func_80012214(void) {
     D_800459D0 = osGetMemSize();
-    func_8001DDF0();
+    func_8001DDF0(); // start_cic_thread
     init_crc_check();
-    func_80014FE8();
+    func_80014FE8(); // start_vi_thread
     func_8001E7E8();
     func_8001C1C0();
     func_80019EC0(0, core2_VRAM, core2_VRAM_END, core2_ROM_START, core2_ROM_END, core2_TEXT_START, core2_TEXT_END, core2_RODATA_START, core2_DATA_END, core2_BSS_START, core2_BSS_END);

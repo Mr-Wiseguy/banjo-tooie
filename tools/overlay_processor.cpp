@@ -5,6 +5,7 @@
 #include <fmt/core.h>
 #include <fmt/ostream.h>
 #include <fstream>
+#include <sstream>
 #include "tooie_utils.h"
 
 constexpr uint32_t section_size_divisor = 0x10;
@@ -80,6 +81,46 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
 
     // Copy any remaining generated relocs that weren't found during sorting back into the vector
     std::copy(reloc_set.begin(), reloc_set.end(), std::back_inserter(relocs));
+}
+
+bool write_if_different(const std::filesystem::path& filepath, const std::string& data) {
+    bool do_write = false;
+    std::error_code ec;
+    // Check if the file already exists.
+    bool exists = std::filesystem::exists(filepath, ec);
+    // If it doesn't or if checking failed then queue up the file for writing.
+    if (!exists || ec) {
+        do_write = true;
+    }
+    // If it does exist, then read the contents and compare to the output.
+    else {
+        std::string existing_data;
+        std::ifstream input_file{filepath};
+
+        if (input_file.good()) {
+            size_t input_file_size = std::filesystem::file_size(filepath);
+            existing_data.resize(input_file_size);
+            input_file.read(existing_data.data(), existing_data.size());
+
+            // Write the data if the existing data differs from the new data.
+            do_write = existing_data != data;
+        }
+        // Failed to open the existing file for reading, so write the data.
+        else {
+            do_write = true;
+        }
+    }
+
+    // If the file needs to be written, write it and return false if a failure is encountered.
+    if (do_write) {
+        std::ofstream output_file{filepath};
+        if (!output_file.good()) {
+            return false;
+        }
+        output_file.write(data.data(), data.size());
+    }
+    
+    return true;
 }
 
 int main(int argc, const char **argv) {
@@ -192,7 +233,8 @@ int main(int argc, const char **argv) {
     for (const auto& ovl : overlays) {
         if (!ovl.name.empty()) {
             std::filesystem::create_directories(output_path + "overlays/" + ovl.name);
-            std::ofstream header{output_path + "overlays/" + ovl.name + "/" + ovl.name + "_header.s"};
+            std::stringstream header{};
+            std::filesystem::path header_path = output_path + "overlays/" + ovl.name + "/" + ovl.name + "_header.s";
             prev_overlay_name = ovl.name.c_str();
             
             fmt::print(overlay_table,
@@ -259,6 +301,8 @@ int main(int argc, const char **argv) {
             for (uint16_t reloc_value : reloc_values) {
                 fmt::print(header, "  .half 0x{:04X}\n", reloc_value);
             }
+
+            write_if_different(header_path, header.str());
         }
         else {
             fmt::print(overlay_table,

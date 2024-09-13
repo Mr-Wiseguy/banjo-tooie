@@ -54,15 +54,14 @@ BUILD_DIRS   := $(sort $(C_BUILD_DIRS) $(S_BUILD_DIRS) $(HS_BUILD_DIRS) $(BIN_BU
 CC       := tools/ido/cc
 AS       := mips-linux-gnu-gcc
 OBJCOPY  := mips-linux-gnu-objcopy
-LD       := mips-linux-gnu-gcc
+LD       := mips-linux-gnu-ld
 ASM_PROC := python3 tools/asm-processor/asm_processor.py
 
 OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2
 CPPFLAGS  := -I include -I $(ULTRALIB_DIR)/include -DBUILD_VERSION=VERSION_$(ULTRALIB_VERSION) -D_FINALROM -DF3DEX_GBI_2
 ASFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY
-LDFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -nostartfiles -nostdlib -Wl,-T,undefined_syms.us.txt -Wl,--build-id=none -Wl,--emit-relocs \
-	-Wl,--whole-archive
+LDFLAGS   := -nostdlib -T undefined_syms.us.txt --build-id=none --emit-relocs --whole-archive --no-warn-mismatch
 BINOFLAGS := -I binary -O elf32-tradbigmips
 Z64OFLAGS := -O binary --gap-fill=0x00
 
@@ -80,10 +79,10 @@ $(PRELIM_LD_SCRIPT): $(LD_SCRIPT)
 	sed 's/$(subst /,\/,$(BUILD_ROOT))\/assets\/overlay.*$$//' $< > $@
 
 $(PRELIM_ELF): $(ALL_OBJS) $(PRELIM_LD_SCRIPT) $(OVERLAY_SYSCALLS_OBJ) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
-	$(LD) -Wl,-T,$(PRELIM_LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
+	$(LD) -T $(PRELIM_LD_SCRIPT) -Map $(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
 $(ELF): $(ALL_OBJS) $(LD_SCRIPT) $(OVERLAY_SYSCALLS_OBJ) $(OVERLAY_TABLE_OBJ) $(OVERLAY_HEADER_OBJS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT)
-	$(LD) -Wl,-T,$(LD_SCRIPT) -Wl,-Map,$(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
+	$(LD) -T $(LD_SCRIPT) -Map $(@:.elf=.map) $(LDFLAGS) $(ULTRALIB_CORE) $(ULTRALIB_BOOT) -o $@
 
 $(ASM_PROC_C_OBJS): $(BUILD_ROOT)/%.c.o: %.c | $(C_BUILD_DIRS)
 	$(ASM_PROC) $(OPT_LEVEL) $< > $(BUILD_ROOT)/$<
@@ -100,7 +99,7 @@ $(HS_OBJS): $(BUILD_ROOT)/%.s.o: %.s | $(HS_BUILD_DIRS)
 	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OVERLAY_HEADER_OBJS): $(BUILD_ROOT)/%.bin.o: $(BUILD_ROOT)/%.s
-	@$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OVERLAY_TABLE_OBJ): $(OVERLAY_TABLE_SRC)
 	$(AS) $(ASFLAGS) $(CPPFLAGS) -c $< -o $@

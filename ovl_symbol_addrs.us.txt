@@ -16993,3 +16993,4 @@ D_80802570_chchuffy = 0x80802570; // segment:chchuffy rom:0x02060420
 R_80803E18_gczoombox = 0x80803E18; // segment:gczoombox rom:0x020FF778 
 func_808003D8_gczoombox = 0x808003D8; // segment:gczoombox rom:0x020FBD38 type:func
 D_80803E44_gczoombox = 0x80803E44; // segment:gczoombox rom:0x020FF7A4 
+D_8080B4AC_bsfirstp = 0x8080B4AC; // segment:bsfirstp rom:0x01F5733C type:f32 size:0xC
