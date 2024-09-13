@@ -197,9 +197,7 @@ int main(int argc, const char **argv) {
             if (ovl.section == nullptr) {
                 exit_failure("Failed to find section for overlay " + ovl.name + "\n");
             }
-            if (ovl.bss_section == nullptr) {
-                exit_failure("Failed to find bss section for overlay " + ovl.name + "\n");
-            }
+            // No bss section means the linker may have optimized it out, so it doesn't need to be checked.
 
             // Make sure the overlay's section sizes are valid
             auto check_section_size = [&] (const Symbol& s) {

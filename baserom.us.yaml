@@ -894,8 +894,8 @@ segments:
     subsegments: 
       - [0x01F0C7F0, c, bsbeggass]
       - [0x01F0CA80, .rodata, bsbeggass]
-      - [0x01F0CA90, data, bsbeggass]
-      - [0x01F0CAA0, bss, bsbeggass]
+      - [0x01F0CA90, .data, bsbeggass]
+      - [0x01F0CAA0, .bss, bsbeggass]
   - name: bsbegghead_header
     dir: overlays/bsbegghead
     type: bin

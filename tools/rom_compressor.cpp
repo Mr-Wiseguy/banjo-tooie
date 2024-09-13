@@ -38,6 +38,7 @@ void align_file_pos(std::ofstream& output_file, size_t alignment) {
 
 void compress_and_write(std::ofstream& output_file, char* begin, char* end, bool dump = false)
 {
+    (void)dump;
     // Make a buffer to hold the compressed data
     std::vector<char> compression_buffer;
     compression_buffer.resize(end - begin + 0x800);

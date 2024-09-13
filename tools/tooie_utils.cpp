@@ -216,7 +216,7 @@ void ElfHandler::get_tooie_relocs(const Segment& segment, std::vector<uint16_t>&
 
             elf_context_->symbol_accessor.get_symbol(symbol, sym_name, sym_value, sym_size, sym_bind, sym_type, sym_section_index, sym_other);
             // fmt::print("  Reloc at 0x{:04X} type {} for {} in {}\n", (uint16_t)offset, type, sym_name, sym_section_index);
-            if (sym_section_index == segment.section->get_index() || sym_section_index == segment.bss_section->get_index()) {
+            if (sym_section_index == segment.section->get_index() || (segment.bss_section && sym_section_index == segment.bss_section->get_index())) {
                 uint16_t reloc_value = (uint16_t)offset;
 
                 auto reloc_it = reloc_mapping.find(static_cast<RelocType>(type));
