@@ -37,8 +37,8 @@ void bsbeggass_entrypoint_2(PlayerState* arg0);
 
 // syscall trampolines for this module's functions, which just jump here.
 void _bsbeggass_entrypoint_0(PlayerState* arg0);
-void _bsbeggass_entrypoint_1();
-void _bsbeggass_entrypoint_2();
+void _bsbeggass_entrypoint_1(PlayerState* arg0);
+void _bsbeggass_entrypoint_2(PlayerState* arg0);
 
 // bseggass_init
 void bsbeggass_entrypoint_0(PlayerState* arg0){
