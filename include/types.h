@@ -3,6 +3,10 @@
 
 #include <ultra64.h>
 
+#define SQ(x) ((x) * (x))
+
+#define ARRLEN(x) (sizeof(x) / sizeof((x)[0]))
+
 typedef u32 uintptr_t;
 
 #define offsetof(type, member) \
