@@ -3,7 +3,7 @@
 
 // Copy of core1's 1E33CF0.c
 
-u32 func_80001590(void);
+void func_80001590(void);
 u32 func_800016CC(void);
 u32 func_800016DC(void);
 s32 func_800006D4(u8*, u8*, void*);

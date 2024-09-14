@@ -36,14 +36,18 @@ void func_80019EC0(s32 arg0, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* 
         var_a0 = D_8007E994;
     }
     rom_dma_read(var_a0, ovl_rom_start, ovl_rom_end - ovl_rom_start);
+    // Decompress the overlay's .text section.
     func_8001C1E0(&var_a0, (void** ) &ovl_start);
+    // Get the overlay's .text section checksums.
     sp2C = func_8001C26C();
     sp30 = func_8001C28C();
+    // Decompress the overlay's .data/.rodata sections.
     func_8001C1E0(&var_a0, (void** ) &ovl_start);
     if (ovl_bss_start != NULL) {
         bzero(ovl_bss_start, ovl_bss_end - (u8*)ovl_bss_start);
         osWritebackDCacheAll();
         test = (s32*)ovl_bss_start;
+        // Write the overlay's checksums to the start of its .bss section.
         *test++ = sp2C;
         *test++ = sp30;
         ovl_bss_start += 2; // Needed to match

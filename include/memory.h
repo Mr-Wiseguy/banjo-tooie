@@ -73,5 +73,7 @@ s32 heap_bytes_allocated();
 
 void* heap_alloc(s32 size);
 void* heap_alloc_sided(s32 size, s32 alloc_side);
+void heap_free(void* mem);
+void* defrag(void* mem);
 
 #endif

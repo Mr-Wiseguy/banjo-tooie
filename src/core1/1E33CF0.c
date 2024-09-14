@@ -2,8 +2,8 @@
 #include "buffers.h"
 
 void func_8001D1E0(void);
-void func_8001D31C(void);
-void func_8001D32C(void);
+u32 func_8001D31C(void);
+u32 func_8001D32C(void);
 s32 func_8001C324(u8*, u8*, void*);
 u8* func_8001D30C();
 
@@ -25,12 +25,12 @@ s32 func_8001C1E0(u8** arg0, u8** arg1) {
     return 1;
 }
 
-void func_8001C26C() {
+u32 func_8001C26C() {
     func_8001D31C();
 }
 
-void func_8001C28C() {
-    func_8001D32C();
+u32 func_8001C28C() {
+    return func_8001D32C();
 }
 
 s32 func_8001C2AC(u8* arg0, u8* arg1) {
