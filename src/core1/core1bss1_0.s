@@ -331,7 +331,7 @@ dlabel D_80079778
 dlabel D_800797B8
 /* 1E912E8 800797B8 */ .space 0x200
 
-dlabel D_800799B8
+dlabel widescreen_enabled
 /* 1E914E8 800799B8 */ .space 0x08
 
 dlabel D_800799C0

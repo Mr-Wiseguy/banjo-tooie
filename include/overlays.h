@@ -1,7 +1,7 @@
 #ifndef __OVERLAYS_H__
 #define __OVERLAYS_H__
 
-#include "types.h"
+#include <ultra64.h>
 
 struct OverlayFields {
     u32 entry_hook[6]; // Holds the instructions of initial jump point for all entrypoints

@@ -3,9 +3,9 @@
 
 // Copy of core1's 1E33CF0.c
 
-void func_80001590(void);
-void func_800016CC(void);
-void func_800016DC(void);
+u32 func_80001590(void);
+u32 func_800016CC(void);
+u32 func_800016DC(void);
 s32 func_800006D4(u8*, u8*, void*);
 u8* func_800016BC();
 
@@ -27,12 +27,12 @@ s32 func_80000560(u8** arg0, u8** arg1) {
     return 1;
 }
 
-void func_800005EC() {
-    func_800016CC();
+u32 func_800005EC() {
+    return func_800016CC();
 }
 
-void func_8000060C() {
-    func_800016DC();
+u32 func_8000060C() {
+    return func_800016DC();
 }
 
 s32 func_8000062C(u8* arg0, u8* arg1) {

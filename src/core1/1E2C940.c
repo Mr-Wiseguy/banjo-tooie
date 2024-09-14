@@ -1,5 +1,7 @@
 #include "types.h"
 
+extern s16 widescreen_enabled;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E6C.s")
@@ -51,7 +53,9 @@ void wait_one_frame(void) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_800157E0.s")
+void set_widescreen(s32 arg0) {
+    widescreen_enabled = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_800157EC.s")
 

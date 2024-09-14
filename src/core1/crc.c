@@ -1,4 +1,5 @@
 #include "types.h"
+#include "macros.h"
 
 void init_crc_check();
 void ovl_entrypoint();

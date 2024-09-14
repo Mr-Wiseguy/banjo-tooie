@@ -29,5 +29,6 @@ void mlMtxScale(f32 scale);
 void mlMtx_apply_f3(f32 dst[3], f32 x, f32 y, f32 z);
 void mlMtx_apply_vec3s(s16 dst[3], s16 src[3]);
 void mlMtxTranslate(f32 x, f32 y, f32 z);
+void func_80018C50(MtxF* arg0);
 
 #endif
