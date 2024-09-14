@@ -125,8 +125,7 @@ segments:
     start: 0x1E29B60
     vram: 0x80012030
     follows_vram: buffers
-    # bss_size: 0x3E240
-    bss_size: 0x39370
+    bss_size: 0x3E240
     subsegments:
       - [0x1E29B60, c]
       - [0x1E2A0E0, asm]
@@ -137,7 +136,7 @@ segments:
       - [0x1E2D890, asm]
       - [0x1E2E730, asm]
       - [0x1E2F380, asm]
-      - [0x1E30600, asm]
+      - [0x1E30600, c, mlmtx]
       - [0x1E315D0, asm]
       - [0x1E319A0, asm]
       - [0x1E319F0, c]
@@ -187,6 +186,8 @@ segments:
       - [0x1E440F0, asm]
       - [0x1E44B60, asm]
       - [0x1E44F80, asm]
+      - [0x1E45210, hasm, ../../src/core1/core1bss1_0]
+      - [0x1E45210, hasm, ../../src/core1/core1bss1_1]
       - [0x1E45210, hasm, ../../src/core1/core1bss1_2]
       - [0x1E45210, c, core1bss2]
       - [0x1E45210, lib, libultra_rom, bzero]
@@ -328,6 +329,8 @@ segments:
       - [0x1E59130, lib, libultra_rom, vimodempallan1, .data]
       - [0x1E59180, lib, libultra_rom, vimodentsclan1, .data]
       - [0x1E591D0, rodata]
+      - [0x1E59270, .rodata, mlmtx]
+      - [0x1E59280, rodata]
       - [0x1E598F0, lib, libultra_rom, setintmask, .rodata]
       - [0x1E59970, lib, libultra_rom, xprintf, .rodata]
       - [0x1E59A70, lib, libultra_rom, exceptasm, .rodata]
@@ -338,7 +341,9 @@ segments:
       - [0x1E5A280, rodatabin, gspF3DEX2.NoN.fifo]
       - [0x1E5A6A0, rodatabin, gspF3DEX2.fifo]
       - [0x1E5AAC0, rodatabin, gspL3DEX2.fifo]
-      - { start: 0x1E5AEB0, type: bss, vram: 0x80043380, name: core1bss1 }
+      - [0x1E5AEB0, .bss, ../../src/core1/core1bss1_0]
+      - [0x1E5AEB0, .bss, mlmtx]
+      - [0x1E5AEB0, .bss, ../../src/core1/core1bss1_1]
       - [0x1E5AEB0, .bss, defrag]
       - [0x1E5AEB0, .bss, ../../src/core1/core1bss1_2]
       - [0x1E5AEB0, .bss, crc]

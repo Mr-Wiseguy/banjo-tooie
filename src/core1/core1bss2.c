@@ -1,4 +1,4 @@
-// These bss variables were migrated to this standalone file because of a splat limitation, but they all belong to other C files.
+// These bss variables were migrated to this standalone file to make bss migration for other C files easier, but they all belong to other C files.
 #include "types.h"
 
 u8 D_8007E9C0[0x64];
