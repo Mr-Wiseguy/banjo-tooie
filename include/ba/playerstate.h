@@ -3,6 +3,8 @@
 
 #include <ultra64.h>
 
+#include "buttons.h"
+
 // TODO validate that the rest of these state
 typedef enum bs_e {
     BS_1_IDLE = 0x1,
@@ -19,5 +21,6 @@ typedef struct player_state_s {
 
 void func_80098140(PlayerState* thisx, s32, s32);
 s32 func_80094510(PlayerState* thisx);
+s32 button_held(PlayerState*, ButtonId);
 
 #endif

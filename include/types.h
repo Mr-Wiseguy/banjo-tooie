@@ -5,11 +5,13 @@
 
 #define SQ(x) ((x) * (x))
 
-#define ARRLEN(x) (sizeof(x) / sizeof((x)[0]))
+#define ARRLEN(x) ((s32)(sizeof(x) / sizeof(x[0])))
 
 typedef u32 uintptr_t;
 
 #define offsetof(type, member) \
     ((size_t)&((type*)0)->member)
+
+#define UNUSED
 
 #endif

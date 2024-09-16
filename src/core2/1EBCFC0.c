@@ -159,61 +159,118 @@ void func_800E42E4(s32 arg0) {
     D_8012D508 = arg0;
 }
 
-void func_800E42F0(Unkfunc_800E44FC* arg0, s32 arg1) {
+/**
+ * @brief Builds an orthographic projection matrix and an identity model matrix and loads them.
+ * 
+ * @param arg0 The graphics context to apply the matrices to.
+ * @param use_widescreen Determines whether to adjust the resulting matrix for anamorphic widescreen if widescreen is enabled.
+ */
+void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
     Gfx* cur_gfx;
     Mtx* cur_mtx;
     cur_gfx = arg0->unk0;
     cur_mtx = arg0->unk4;
-    if (arg1 && widescreen_enabled) {
+
+    // Build the orthographic matrix.
+    // Determine the matrix's left and right coordinates based on whether widescreen should be used and is enabled.
+    if (use_widescreen && widescreen_enabled) {
+        // Approximately 16:9 aspect ratio.
         guOrtho(cur_mtx, -810.0f, 810.0f, -456.0f, 456.0f, -50.0f, 50.0f, 1.0f);
     } else {
+        // 4:3 aspect ratio.
         guOrtho(cur_mtx, -608.0f, 608.0f, -456.0f, 456.0f, -50.0f, 50.0f, 1.0f);
     }
+
+    // Load the created ortho matrix.
     gSPMatrix(cur_gfx++, OS_K0_TO_PHYSICAL(cur_mtx++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+
+    // Record the ortho matrix that was created.
     D_8012D554 = cur_mtx - 1;
+
+    // Create an identity matrix and load it into the model stack.
     guMtxIdent(cur_mtx);
     gSPMatrix(cur_gfx++, OS_K0_TO_PHYSICAL(cur_mtx++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+
+    // Update the graphics context with the final displaylist and matrix pointers.
     arg0->unk0 = cur_gfx;
     arg0->unk4 = cur_mtx;
 }
 
-void func_800E443C(MtxF* arg0, f32* translation, f32 scale) {
+/**
+ * @brief Applies an inverse translation and scale to the provided matrix and loads the result into the matrix stack.
+ * 
+ * @param base_matrix The matrix to apply the inverse translation and scale to.
+ * @param translation The translation that will be inverted and applied.
+ * @param scale The scale that will be inveterd and applied.
+ */
+void func_800E443C(MtxF* base_matrix, f32* translation, f32 scale) {
     f32 inv_scale;
     MtxF mat;
 
-    mlMtxSet(arg0);
+    // Load the provided matrix into the matrix stack.
+    mlMtxSet(base_matrix);
+
+    // TODO figure out what D_8012D500 is and what the matrix returned by func_800CA7AC is.
+    // Multiplies that matrix into the stack.
     func_80018C50(func_800CA7AC(D_8012D500));
     
+    // Build a translate and scale matrix with the inverse of the provided translation and scale values.
     inv_scale = 1.0f / scale;
     
     // Fill in matrix diagonals (scale).
     mat.m[0][0] = mat.m[1][1] = mat.m[2][2] = inv_scale;
     // Fill in zeroes for the rest of the matrix.
     mat.m[0][1] = mat.m[0][2] = mat.m[0][3] = mat.m[1][0] = mat.m[1][2] = mat.m[1][3] = mat.m[2][0] = mat.m[2][1] = mat.m[2][3] = 0.0f;
-    // Fill out bottom row (translation).
+    // Fill out bottom row (translation) with the inverse scale applied.
     mat.m[3][0] = -translation[0] * inv_scale;
     mat.m[3][1] = -translation[1] * inv_scale;
     mat.m[3][2] = -translation[2] * inv_scale;
     mat.m[3][3] = 1.0f;
     
+    // Multiply the scale and translation matrix into the matrix stack.
     func_80018C50(&mat);
 }
 
+/**
+ * @brief Builds a perspective view-projection (viewproj) matrix and an identity model matrix and loads them.
+ * 
+ * @param arg0 The graphics context to apply the matrices to.
+ */
 void func_800E44FC(Unkfunc_800E44FC* arg0) {
     u16 persp_norm;
-    MtxF sp44;
-    f32 sp38[3];
+    MtxF proj;
+    f32 translation[3];
 
-    func_800CA7E4(D_8012D500, sp38);
-    persp_norm = func_800CB124(D_8012D500, &sp44);
+    // The terms "model" and "viewproj" are used to refer to the G_MTX_MODELVIEW and G_MTX_PROJECTION matrices respectively,
+    // since that corresponds to how they're actually used here.
+    // While the names don't match the gbi.h names, the original naming used by SGI was a mistake.
+    // Placing the view matrix in the G_MTX_MODELVIEW stack results in lighting being dependent on the camera (as seen in Super Mario 64).
+    // This game (and most others) place the view matrix as part of the G_MTX_PROJECTION matrix, which results in proper world-space lighting.
+
+    // Get the translation to use for the view matrix.
+    func_800CA7E4(D_8012D500, translation);
+
+    // Build the projection matrix and load its perspnorm value.
+    persp_norm = func_800CB124(D_8012D500, &proj);
     gSPPerspNormalize(arg0->unk0++, persp_norm);
-    func_800E443C(&sp44, sp38, func_800CA6E8(D_8012D500));
+
+    // Build the viewproj matrix from the projection matrix, translation, and world scale.
+    func_800E443C(&proj, translation, func_800CA6E8(D_8012D500));
+
+    // Check if the current matrix is out of the range that can fit in a fixed-point matrix.
     if (func_80018BC4()) {
-        func_800E443C(&sp44, sp38, 2.0f * func_800CA6E8(D_8012D500));
+        // If so, recreate the matrix but with half the scale.
+        func_800E443C(&proj, translation, 2.0f * func_800CA6E8(D_8012D500));
     }
+
+    // Convert the matrix stack into fixed point and load it as the viewproj matrix.
     mlMtxApply(arg0->unk4);
     gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+
+    // Record the viewproj matrix that was created.
     D_8012D558 = arg0->unk4 - 1;
+
+    // Create an identity matrix and load it into the model stack.
     guMtxIdent(arg0->unk4);
     gSPMatrix(arg0->unk0++, OS_K0_TO_PHYSICAL(arg0->unk4++), G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
 }

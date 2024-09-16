@@ -112,6 +112,7 @@ mlMtxTranslate = 0x80019C84;
 mlMtxScale_xyz = 0x80019D30;
 set_widescreen = 0x800157E0;
 widescreen_enabled = 0x800799B8;
+D_80079D70 = 0x80079D70; // size:0x200
 
 D_8012762C = 0x8012762C; // type:u8
 D_8012762D = 0x8012762D; // type:u8

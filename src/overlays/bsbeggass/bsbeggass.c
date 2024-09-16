@@ -2,7 +2,6 @@
 #include "ba/playerstate.h"
 #include "ba/animctrl.h"
 #include "ba/anim.h"
-#include "ba/buttons.h"
 #include "ba/eggs.h"
 #include "funcs.h"
 

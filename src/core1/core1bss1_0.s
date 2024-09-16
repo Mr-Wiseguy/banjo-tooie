@@ -401,7 +401,10 @@ dlabel D_80079D69
 /* 1E91899 80079D69 */ .space 0x03
 
 dlabel D_80079D6C
-/* 1E9189C 80079D6C */ .space 0x204
+/* 1E9189C 80079D6C */ .space 0x04
+
+dlabel D_80079D70
+/* 1E918A0 80079D70 */ .space 0x200
 
 dlabel D_80079F70
 /* 1E91AA0 80079F70 */ .space 0x08
