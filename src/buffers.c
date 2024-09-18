@@ -1,6 +1,10 @@
 #include "buffers.h"
 
-u64 D_8000E800[0x2800 / 8];
+// gfx task dram stack buffer
+u64 D_80000400[SP_DRAM_STACK_SIZE64];
+ // gfx task output buffer
+u64 D_80000800[GFX_OUTPUT_BUFFER_SIZE64];
+u64 D_8000E800[0x2800 / 8]; 
 u64 D_80011000[0x1000 / 8];
 // core1 .text checksum
 u32 D_80012000;

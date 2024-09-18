@@ -206,7 +206,10 @@ dlabel D_80078490
 /* 1E8FFC0 80078490 */ .space 0x04
 
 dlabel D_80078494
-/* 1E8FFC4 80078494 */ .space 0x804
+/* 1E8FFC4 80078494 */ .space 0x04
+
+dlabel D_80078498
+/* 1E8FFC8 80078498 */ .space 0x800
 
 dlabel D_80078C98
 /* 1E907C8 80078C98 */ .space 0x1B0

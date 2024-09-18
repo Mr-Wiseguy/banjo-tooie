@@ -15,6 +15,7 @@ D_80080012 = 0x80080012; // ignore:true
 D_80086412 = 0x80086412; // ignore:true
 D_80080C00 = 0x80080C00; // ignore:true
 D_80080C02 = 0x80080C02; // ignore:true
+D_80000400 = 0x80000400; // segment:buffers ignore:true type:u8 size:0x400
 
 // ROM addresses
 table_addr_ROM_START = 0x50E0; // defined:true
@@ -38,7 +39,7 @@ D_A02FB1F4 = 0xA02FB1F4; // defined:True
 D_A02FE1C0 = 0xA02FE1C0; // defined:True
 
 // ucodes
-rspBootTextStart = 0x80039050; // name_end:rspBootTextEnd
+rspbootTextStart = 0x80039050; // name_end:rspbootTextEnd
 
 n_aspMainTextStart = 0x80037880; // name_end:n_aspMainTextEnd
 n_aspMainDataStart = 0x80042010; // name_end:n_aspMainDataEnd

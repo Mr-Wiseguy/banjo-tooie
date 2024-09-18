@@ -8,6 +8,13 @@ typedef struct {
     u8* rom_end;
 } OverlayEntry;
 
+#define GFX_OUTPUT_BUFFER_SIZE 0xE000
+#define GFX_OUTPUT_BUFFER_SIZE64 ((GFX_OUTPUT_BUFFER_SIZE) / sizeof(u64))
+// gfx task dram stack buffer
+extern u64 D_80000400[SP_DRAM_STACK_SIZE64];
+ // gfx task output buffer
+extern u64 D_80000800[GFX_OUTPUT_BUFFER_SIZE64];
+
 extern u64 D_8000E800[];
 extern u64 D_80011000[];
 

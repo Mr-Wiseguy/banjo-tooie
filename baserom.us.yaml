@@ -112,7 +112,10 @@ segments:
   - name: buffers
     type: code
     start: 0x1E29B60
-    vram: 0x8000E800
+    vram: 0x80000400
+    # While the boot segment does reference some buffers in this segment, it can't access the majority of
+    # them due to overlaps. Therefore, this segment is marked with the same exclusive ID as the boot segment.
+    exclusive_ram_id: boot
     bss_size: 0x3830
     subsegments:
     - [0x1E29B60, c, buffers]
@@ -307,6 +310,8 @@ segments:
       - [0x1E51FE0, textbin, gspF3DEX2.fifo]
       - [0x1E53370, textbin, gspL3DEX2.fifo]
       - [0x1E54500, data, core1data1]
+      - [0x1E56EE0, .data, 1E2B840]
+      - [0x1E57010, data, core1data1_2]
       - [0x1E58CC0, .data, crc]
       - [0x1E58D00, data, core1data2]
       - [0x1E58EC0, lib, libultra_rom, initialize, .data]

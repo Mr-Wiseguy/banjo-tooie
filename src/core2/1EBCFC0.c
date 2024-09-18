@@ -287,8 +287,8 @@ void func_800E4640(Gfx** gfx) {
     gSPMatrix((*gfx)++, OS_K0_TO_PHYSICAL(D_8012D558), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
 }
 
-void func_800E46A4(s32 arg0, s32 arg1) {
-    func_800F2D34(&D_8012D510, arg0, arg1);
+void func_800E46A4(f32 out[4], f32 in[4]) {
+    func_800F2D34(&D_8012D510, out, in);
 }
 
 u16 func_800E46D4() {

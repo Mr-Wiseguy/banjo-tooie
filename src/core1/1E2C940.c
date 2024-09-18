@@ -18,7 +18,24 @@ extern s16 widescreen_enabled;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014F58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014F64.s")
+typedef struct {
+    OSMesgQueue* queue;
+    OSMesg mesg;
+} ViEventHandler;
+
+extern ViEventHandler D_80078F90[8];
+
+// register_vi_handler
+void func_80014F64(OSMesgQueue* queue, OSMesg mesg) {
+    s32 i;
+    for (i = 0; i < ARRLEN(D_80078F90); i++) {
+        if (D_80078F90[i].queue == NULL) {
+            D_80078F90[i].queue = queue;
+            D_80078F90[i].mesg = mesg;
+            return;
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014FE8.s")
 
