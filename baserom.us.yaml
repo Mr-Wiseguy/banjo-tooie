@@ -116,7 +116,7 @@ segments:
     # While the boot segment does reference some buffers in this segment, it can't access the majority of
     # them due to overlaps. Therefore, this segment is marked with the same exclusive ID as the boot segment.
     exclusive_ram_id: boot
-    bss_size: 0x3830
+    bss_size: 0x11C30
     subsegments:
     - [0x1E29B60, c, buffers]
     - [0x1E29B60, .data, buffers]
