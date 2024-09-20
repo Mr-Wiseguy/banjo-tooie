@@ -76,4 +76,10 @@ void* heap_alloc_sided(s32 size, s32 alloc_side);
 void heap_free(void* mem);
 void* defrag(void* mem);
 
+void aligned_memset(u64* mem, u32 value, u32 size);
+void aligned_memcpy(u64* dst, u64* src, u32 size);
+
+// round_up_16
+u32 func_8001BD30(u32);
+
 #endif

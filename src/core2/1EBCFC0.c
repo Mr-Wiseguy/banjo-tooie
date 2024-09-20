@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <PR/gbi.h>
 #include "ml/mtx.h"
+#include "gfx.h"
 
 typedef struct {
     Gfx* unk0;
@@ -18,8 +19,6 @@ extern MtxF D_8012D510;
 extern u16 D_8012D550;
 extern Mtx* D_8012D554;
 extern Mtx* D_8012D558;
-extern s16 widescreen_enabled;
-
 
 s32 func_80018BC4();
 s32 func_800A89F8();
@@ -174,11 +173,19 @@ void func_800E42F0(Unkfunc_800E44FC* arg0, s32 use_widescreen) {
     // Build the orthographic matrix.
     // Determine the matrix's left and right coordinates based on whether widescreen should be used and is enabled.
     if (use_widescreen && widescreen_enabled) {
-        // Approximately 16:9 aspect ratio.
-        guOrtho(cur_mtx, -810.0f, 810.0f, -456.0f, 456.0f, -50.0f, 50.0f, 1.0f);
+        // Approximately 16:9 aspect ratio (truncated to an integer).
+        guOrtho(cur_mtx,
+            -(s32)(SCREEN_WIDTH * 2 * WIDESCREEN_ADJUSTMENT), (s32)(SCREEN_WIDTH * 2 * WIDESCREEN_ADJUSTMENT),
+            -SCREEN_HEIGHT * 2, SCREEN_HEIGHT * 2,
+            -50.0f, 50.0f,
+            1.0f);
     } else {
         // 4:3 aspect ratio.
-        guOrtho(cur_mtx, -608.0f, 608.0f, -456.0f, 456.0f, -50.0f, 50.0f, 1.0f);
+        guOrtho(cur_mtx,
+            -SCREEN_WIDTH * 2, SCREEN_WIDTH * 2,
+            -SCREEN_HEIGHT * 2, SCREEN_HEIGHT * 2,
+            -50.0f, 50.0f,
+            1.0f);
     }
 
     // Load the created ortho matrix.

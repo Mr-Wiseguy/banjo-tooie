@@ -1,12 +1,14 @@
 #include "types.h"
-
-extern s16 widescreen_enabled;
+#include "gfx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E6C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014EC8.s")
+// get_framebuffer_size_bytes
+u32 func_80014EC8() {
+    return FRAMEBUFFER_SIZE_BYTES;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014ED4.s")
 
@@ -70,8 +72,8 @@ void wait_one_frame(void) {
     }
 }
 
-void set_widescreen(s32 arg0) {
-    widescreen_enabled = arg0;
+void set_widescreen(s32 enabled) {
+    widescreen_enabled = enabled;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_800157EC.s")

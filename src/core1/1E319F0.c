@@ -1,57 +1,63 @@
 #include "buffers.h"
 
-extern void     bzero(void *, int);
-extern void		osInvalDCache(void *, s32);
-extern void		osInvalICache(void *, s32);
-extern void		osWritebackDCache(void *, s32);
-extern void		osWritebackDCacheAll(void);
-
-void rom_dma_read(s32, u8*, u32);                     /* extern */
-s32 func_8001A0A8();                                /* extern */
-void func_8001A2B0();                                  /* extern */
-void func_8001C1E0(s32*, void**);                      /* extern */
-s32 func_8001C26C();                                /* extern */
-s32 func_8001C28C();                                /* extern */
-extern s32 D_8007E994;
+void rom_dma_read(u8*, u8*, u32);
+u8* func_8001A0A8();
+void func_8001A2B0();
+void func_8001C1E0(u8**, u8**);
+s32 func_8001C26C();
+s32 func_8001C28C();
+extern u8* D_8007E994;
 
 // Loads a non-relocatable overlay
-void func_80019EC0(s32 arg0, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* ovl_rom_end, u8* ovl_text_start, u8* ovl_text_end, u8* ovl_rodata_start, u8* ovl_data_end, u8* ovl_bss_start, u8* ovl_bss_end) {
-    s32 var_a0;
-    s32 sp30;
-    s32 sp2C;
-    s32* test;
+void func_80019EC0(s32 overlay_index, u8* ovl_start, u8* ovl_end, u8* ovl_rom_start, u8* ovl_rom_end, u8* ovl_text_start, u8* ovl_text_end, u8* ovl_rodata_start, u8* ovl_data_end, u8* ovl_bss_start, u8* ovl_bss_end) {
+    u8* compressed_data;
+    s32 crc2;
+    s32 crc1;
+    s32* ovl_bss;
 
+    // Synchronize the CPU cache and rdram in preparation for loading the overlay's data.
     osWritebackDCacheAll();
     osInvalDCache(ovl_start, ovl_end - ovl_start);
     osInvalICache(ovl_start, ovl_end - ovl_start);
     if (ovl_bss_start != NULL) {
         osInvalDCache(ovl_bss_start, ovl_bss_end - (u8*)ovl_bss_start);
     }
-    ovl_rom_start = D_80012010[arg0].rom_start;
-    ovl_rom_end = D_80012010[arg0].rom_end;
-    if (arg0 != 0) {
+
+    // Get the overlay's compressed rom start and end addresses.
+    ovl_rom_start = D_80012010[overlay_index].rom_start;
+    ovl_rom_end = D_80012010[overlay_index].rom_end;
+
+    // Get the buffer to hold the compressed data. 
+    if (overlay_index != 0) {
         func_8001A2B0();
-        var_a0 = func_8001A0A8();
+        compressed_data = func_8001A0A8();
     } else {
-        var_a0 = D_8007E994;
+        compressed_data = D_8007E994;
     }
-    rom_dma_read(var_a0, ovl_rom_start, ovl_rom_end - ovl_rom_start);
+    
+    // Load the overlay's compressed data.
+    rom_dma_read(compressed_data, ovl_rom_start, ovl_rom_end - ovl_rom_start);
+
     // Decompress the overlay's .text section.
-    func_8001C1E0(&var_a0, (void** ) &ovl_start);
+    func_8001C1E0(&compressed_data, &ovl_start);
+    
     // Get the overlay's .text section checksums.
-    sp2C = func_8001C26C();
-    sp30 = func_8001C28C();
+    crc1 = func_8001C26C();
+    crc2 = func_8001C28C();
+    
     // Decompress the overlay's .data/.rodata sections.
-    func_8001C1E0(&var_a0, (void** ) &ovl_start);
+    func_8001C1E0(&compressed_data, &ovl_start);
+
+    // Zero out the overlay's bss if it has a bss section.
     if (ovl_bss_start != NULL) {
-        bzero(ovl_bss_start, ovl_bss_end - (u8*)ovl_bss_start);
+        bzero(ovl_bss_start, ovl_bss_end - ovl_bss_start);
         osWritebackDCacheAll();
-        test = (s32*)ovl_bss_start;
+        ovl_bss = (s32*)ovl_bss_start;
         // Write the overlay's checksums to the start of its .bss section.
-        *test++ = sp2C;
-        *test++ = sp30;
+        *ovl_bss++ = crc1;
+        *ovl_bss++ = crc2;
         ovl_bss_start += 2; // Needed to match
-        *test++ = func_8001C26C();
-        *test++ = func_8001C28C();
+        *ovl_bss++ = func_8001C26C();
+        *ovl_bss++ = func_8001C28C();
     }
 }

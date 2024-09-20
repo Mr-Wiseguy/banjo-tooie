@@ -134,7 +134,7 @@ void* defrag_prev(void* mem) {
     prev_prev = prev_block->prev;
     
     // Copy the contents of the current block into the previous one
-    aligned_memcpy(prev_block, cur_block, block_size);
+    aligned_memcpy((u64*)prev_block, (u64*)cur_block, block_size);
     
     // Create a new free block at the end of the shifted block
     new_free_block = (struct EmptyHeapBlock*)((char*)prev_block + block_size);

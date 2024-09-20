@@ -75,6 +75,7 @@ ovl_entrypoint_alternate = 0x80081E18; // size:0x18
 rom_dma_read = 0x80012F78; // type:func
 defrag = 0x8001BAFC; // type:func
 aligned_memcpy = 0x80019E70;
+aligned_memset = 0x80019E98;
 func_8001A6C0 = 0x8001A6C0;
 heap_update_empty_block = 0x8001A6EC;
 heap_init_empty_block = 0x8001A7B0;

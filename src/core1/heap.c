@@ -375,7 +375,7 @@ void* heap_realloc(void* mem, s32 size) {
     GET_BLOCK_HEADER(new_mem)->unkC_29 = cur_block->unkC_29;
 
     // Copy the contents of the original block into the new one
-    aligned_memcpy(new_mem, mem, func_8001BD30(size));
+    aligned_memcpy((u64*)new_mem, (u64*)mem, func_8001BD30(size));
 
     // Free and unpin the original block
     heap_free(mem);

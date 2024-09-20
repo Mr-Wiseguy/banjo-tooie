@@ -1,8 +1,8 @@
 #include "types.h"
+#include "gfx.h"
+#include "memory.h"
 
-void func_80019E98(s32, s32, s32);
 s32 func_80014F00();
-s32 func_80014EC8();
 void func_8001D96C();
 void func_8001D3D8(s32, s32, const char*, ...);
 void _gzthread_entrypoint_0(s32, char*);
@@ -57,7 +57,7 @@ void func_80800040_gzpublic(s32 thread_id) {
     u16 hour;
     u16 minute;
 
-    func_80019E98(func_80014F00(), 0x12211221, func_80014EC8());
+    aligned_memset(func_80014F00(), 0x12211221, func_80014EC8());
     func_8001D96C();
     rom_address = (uintptr_t)build_data_ROM_START;
     rom_read_word(rom_address + offsetof(struct BuildData, day), &day);
