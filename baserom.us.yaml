@@ -576,6 +576,7 @@ segments:
       - [0x1EF0820, hasm]
       - [0x1EF1550, .data, overlays]
       - [0x1EF1560, data]
+      - [0x1EFE380, rodata]
       - { start: 0x1F00020, type: bss, vram: 0x80126730 }
   # Generated from overlay decompression tool
   - name: overlay_table
