@@ -50,7 +50,12 @@ void func_800F2E60(s32 arg0[3], s32 arg1[3]) {
     arg0[2] = arg1[2];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F2E7C.s")
+void func_800F2E7C(s32 arg0[4], s32 arg1[4]) {
+    arg0[0] = arg1[0];
+    arg0[1] = arg1[1];
+    arg0[2] = arg1[2];
+    arg0[3] = arg1[3];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F2EA0.s")
 
@@ -86,4 +91,6 @@ void func_800F2E60(s32 arg0[3], s32 arg1[3]) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F36D4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F371C.s")
+int func_800F371C(u32 arg0[4], u32 arg1[4]) {
+    return arg0[0] == arg1[0] && arg0[1] == arg1[1] && arg0[2] == arg1[2] && arg0[3] == arg1[3];
+}

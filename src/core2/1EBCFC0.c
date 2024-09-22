@@ -22,7 +22,7 @@ extern Mtx* D_8012D558;
 
 s32 func_80018BC4();
 s32 func_800A89F8();
-s32 func_800C4C34(s32, s32, s32, s32);
+s32 func_800C4C34(s32, s32, s32, s32*);
 void func_800CA314(s32, s32);
 s32 func_800CA334();
 void func_800CA364(s32);
@@ -101,21 +101,16 @@ void func_800E443C(MtxF*, f32[3], f32);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E40DC.s")
 
-#if 0
-u32 func_800E4140(s32 arg0, s32 arg1) {
-    u32 ret;
-    u32 sp20;
-    ret = func_800C4C34(func_800A89F8(), arg0, arg1, &sp20) != 0;
-    if (!ret) {
-        ret = sp20 != 0;
-    }
-    return ret;
-}
-#else
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E4140.s")
-#endif
+int func_800E4140(s32 arg0, s32 arg1) {
+    int temp_t6;
+    s32 sp20;
+    int var_v0;
 
-void func_800E4190(s32 arg0, s32 arg1, s32 arg2) {
+    temp_t6 = func_800C4C34(func_800A89F8(), arg0, arg1, &sp20);
+    return temp_t6 && sp20;
+}
+
+void func_800E4190(s32 arg0, s32 arg1, s32* arg2) {
     func_800C4C34(func_800A89F8(), arg0, arg1, arg2);
 }
 

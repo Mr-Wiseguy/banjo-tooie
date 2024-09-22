@@ -114,9 +114,19 @@ void func_800BCF90(unkfunc_800BCE84* arg0, f32* joystick_values_out) {
     joystick_values_out[1] = joystick_values[1];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E965B0/func_800BCFC4.s")
+int func_800BCFC4(unkfunc_800BCE84* arg0, ButtonId button) {
+    ButtonData* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E965B0/func_800BD030.s")
+    temp_v0 = func_800BCCC0(arg0, arg0->unk8[button]);
+    return !temp_v0->data[button].pressed && (arg0->counter - temp_v0->data[button].timestamp) == 1;
+}
+
+int func_800BD030(unkfunc_800BCE84* arg0, ButtonId button) {
+    ButtonData* temp_v0;
+
+    temp_v0 = func_800BCCC0(arg0, arg0->unk8[button]);
+    return temp_v0->data[button].pressed && (arg0->counter - temp_v0->data[button].timestamp) == 1;
+}
 
 void func_800BD09C(unkfunc_800BCE84* arg0) {
     heap_free(arg0);

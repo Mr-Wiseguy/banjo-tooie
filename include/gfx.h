@@ -17,7 +17,7 @@ u32 func_80014EC8();
 
 // RSP Segments
 typedef enum {
-    RSP_SEGMENT_FACE_CULLING = 7,
+    RSP_SEGMENT_FACE_CULLING = 7
 } RSPSegmentId;
 
 #endif
