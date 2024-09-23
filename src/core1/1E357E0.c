@@ -1,4 +1,4 @@
-#include <ultra64.h>
+#include "threads.h"
 
 extern OSThread* D_8007D820[];
 

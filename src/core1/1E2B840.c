@@ -1,11 +1,9 @@
-#include <ultra64.h>
+#include "threads.h"
 #include "types.h"
 #include "buffers.h"
 
 extern long long int n_aspMainTextStart[];
 extern long long int n_aspMainDataStart[];
-
-void func_8001DCB0(OSThread* t, __OSThreadOddFpStorage* fp_storage, s32 id, void (*entry)(void*), void* arg, void* sp, OSPri p);
 
 typedef enum task_type_e {
     TASK_TYPE_AUDIO,
@@ -92,7 +90,7 @@ extern s32 D_80078488;
 extern s32 D_8007848C;
 extern s32 D_80078490;
 extern s32 D_80078494;
-extern u64 D_80078498[2048 / sizeof(u64)]; //stack for thread D_80078C98;
+extern u64 D_80078498[SCHEDULER_THREAD_STACK_SIZE64]; //stack for thread D_80078C98;
 extern OSThread D_80078C98;
 extern GraphicsTask * D_80078E58[20];
 extern volatile s32 D_80078EA8;
@@ -437,7 +435,7 @@ void func_800149BC(void){
         }
         func_80015430(0);
         rumbleManager_80018634(); //stop controller motors
-        while (1) { 
+        while (TRUE) { 
             osDpSetStatus(DPC_STATUS_FLUSH);
         }
     }
@@ -449,10 +447,10 @@ void func_80014A54(void) {
     }
 }
 
-//resetproc
+// scheduler_thread_entry
 void func_80014A88(void *arg0){
     OSMesg msg = NULL;
-    while (1) {
+    while (TRUE) {
         osRecvMesg(&D_800783D0, &msg, OS_MESG_BLOCK);
         func_80014A54();
         if((s32)msg == 3){ func_80014258(); }
@@ -473,6 +471,7 @@ void func_80014A88(void *arg0){
     }
 }
 
+// scheduler_init
 void func_80014C40(void) {
     u8 *tmp_v0;
     osCreateMesgQueue(&D_800783D0, D_800783E8, ARRLEN(D_800783E8));
@@ -494,7 +493,7 @@ void func_80014C40(void) {
     tmp_v0 = (u8*)D_800777B0;
     while((u32)tmp_v0 % 0x10){tmp_v0++;}
     D_8003F3F0.t.yield_data_ptr = (u64*)tmp_v0;
-    func_8001DCB0(&D_80078C98, &D_80078E48, 5, func_80014A88, NULL, &D_80078498[ARRLEN(D_80078498)], 60);
+    func_8001DCB0(&D_80078C98, &D_80078E48, THREAD_ID_SCHEDULER, func_80014A88, NULL, &D_80078498[SCHEDULER_THREAD_STACK_SIZE64], SCHEDULER_THREAD_PRIORITY);
     osStartThread(&D_80078C98);
 }
 

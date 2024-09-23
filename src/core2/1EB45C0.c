@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include "types.h"
 
+s16 func_800A8184(void);
 f32 func_800D9004(void);
 
 extern u8 D_8012762C;

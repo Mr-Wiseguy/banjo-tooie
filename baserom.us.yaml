@@ -132,7 +132,9 @@ segments:
     subsegments:
       - [0x1E29B60, c, 1E29B60]
       - [0x1E2A0E0, c, 1E2A0E0]
-      - [0x1E2AED0, c, 1E2AED0]
+      - [0x1E2AED0, c, tidy]
+      - [0x1E2B150, c, idle]
+      - [0x1E2B200, hasm, 1E2B200]
       - [0x1E2B7B0, c, 1E2B7B0]
       - [0x1E2B840, c, 1E2B840]
       - [0x1E2C940, c, 1E2C940]

@@ -158,10 +158,16 @@ dlabel D_80076A20
 /* 1E8E550 80076A20 */ .space 0x1B0
 
 dlabel D_80076BD0
-/* 1E8E700 80076BD0 */ .space 0x810
+/* 1E8E700 80076BD0 */ .space 0x10
+
+dlabel D_80076BE0
+/* 1E8E710 80076BE0 */ .space 0x800
 
 dlabel D_800773E0
-/* 1E8EF10 800773E0 */ .space 0x210
+/* 1E8EF10 800773E0 */ .space 0x10
+
+dlabel D_800773F0
+/* 1E8EF20 800773F0 */ .space 0x200
 
 dlabel D_800775F0
 /* 1E8F120 800775F0 */ .space 0x1B0

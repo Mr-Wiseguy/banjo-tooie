@@ -1,10 +1,5 @@
-#include <ultra64.h>
+#include "threads.h"
 #include "types.h"
-
-void func_8001DCB0(OSThread* t, __OSThreadOddFpStorage* fp_storage, s32 id, void (*entry)(void*), void* arg, void* sp, OSPri p);
-#define JOY_THREAD_STACK_SIZE 0x200
-#define JOY_THREAD_ID 7
-#define JOY_THREAD_PRI 40
 
 // .data
 extern s32 D_8003F5F0;
@@ -100,7 +95,7 @@ void func_800165F0(void) {
 }
 
 void func_8001662C(void) {
-    while (1) {
+    while (TRUE) {
         osRecvMesg(&D_80079B60, NULL, OS_MESG_BLOCK);
         if (D_80079BA0 == 1) {
             func_800165F0();
@@ -126,7 +121,7 @@ void func_800166DC(UNUSED void* arg0) {
 void func_80016734(void) {
     osCreateMesgQueue(&D_80079B60, &D_80079B38, 1);
     osCreateMesgQueue(&D_80079B78, &D_80079B3C, 1);
-    func_8001DCB0(&D_80079BA8, &D_80079D58, JOY_THREAD_ID, func_800166DC, NULL, &D_80079D70[JOY_THREAD_STACK_SIZE / sizeof(u64)], JOY_THREAD_PRI);
+    func_8001DCB0(&D_80079BA8, &D_80079D58, THREAD_ID_JOY, func_800166DC, NULL, &D_80079D70[JOY_THREAD_STACK_SIZE / sizeof(u64)], JOY_THREAD_PRI);
     osSetEventMesg(OS_EVENT_SI, &D_80079B60, &D_80079B38);
     osContInit(&D_80079B60, &D_80079D68, D_80079B90);
     osStartThread(&D_80079BA8);
