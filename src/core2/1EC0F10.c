@@ -14,30 +14,26 @@ typedef struct {
     /* 0x20 */ u32 combiner;
     /* 0x24 */ u8 needs_pipesync;
     /* 0x25 */ u8 unk25;
-} unkD_8012D580;
+} RenderState;
 
-extern unkD_8012D580 D_8012D580;
+extern RenderState D_8012D580;
 
-#ifdef NON_MATCHING
-// regalloc
+// reset_render_state
 void func_800E7620(void) {
-    unkD_8012D580* state = &D_8012D580;
+    RenderState* state = &D_8012D580;
     
-    state->prim_color[0] =
-    state->prim_color[1] =
-    state->prim_color[2] =
-    state->prim_color[3] =
-    state->cycle_type =
-    state->combiner =
-    state->filtering_mode = (u32)-1;
+    D_8012D580.prim_color[0] =
+    D_8012D580.prim_color[1] =
+    D_8012D580.prim_color[2] =
+    D_8012D580.prim_color[3] =
+    D_8012D580.cycle_type =
+    D_8012D580.combiner =
+    D_8012D580.filtering_mode = (u32)-1;
 
-    state->texture_lut = 0;
-    state->texture_persp = G_TP_PERSP;
-    state->needs_pipesync = FALSE;
+    D_8012D580.texture_lut = 0;
+    D_8012D580.texture_persp = G_TP_PERSP;
+    D_8012D580.needs_pipesync = FALSE;
 }
-#else
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC0F10/func_800E7620.s")
-#endif
 
 // do_pipesync
 void func_800E765C(Gfx** gfx) {

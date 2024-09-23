@@ -443,6 +443,7 @@ segments:
       - [0x1E8A670, c, 1E8A670]
       - [0x1E8BFE0, c, 1E8BFE0]
       - [0x1E8C180, c, 1E8C180]
+      - [0x1E8C8D0, c, freelist]
       - [0x1E8CC00, c, 1E8CC00]
       - [0x1E8D2C0, c, 1E8D2C0]
       - [0x1E8DC70, c, 1E8DC70]
@@ -494,6 +495,8 @@ segments:
       - [0x1EB2C90, c, 1EB2C90]
       - [0x1EB2EF0, c, 1EB2EF0]
       - [0x1EB3750, c, 1EB3750]
+      - [0x1EB45C0, c, 1EB45C0]
+      - [0x1EB52C0, c, 1EB52C0]
       - [0x1EB57A0, c, 1EB57A0]
       - [0x1EB5980, c, 1EB5980]
       - [0x1EB5C70, c, 1EB5C70]
@@ -574,10 +577,20 @@ segments:
       - [0x1EF0140, c, 1EF0140]
       - [0x1EF01E0, c, 1EF01E0]
       - [0x1EF0820, hasm]
+      - [0x1EF1550, hasm, ../../src/core2/core2bss1]
+      - [0x1EF1550, hasm, ../../src/core2/core2bss2]
       - [0x1EF1550, .data, overlays]
       - [0x1EF1560, data]
+      - [0x1EF5280, .data, 1EB3750]
+      - [0x1EF5290, data]
       - [0x1EFE380, rodata]
-      - { start: 0x1F00020, type: bss, vram: 0x80126730 }
+      - [0x1EFF620, .rodata, 1EB45C0]
+      - [0x1EFF640, rodata]
+      - [0x1F00020, .bss, ../../src/core2/core2bss1]
+      - [0x1F00020, .bss, 1EB3750]
+      - [0x1F00020, .bss, 1EB45C0]
+      - [0x1F00020, .bss, 1EB52C0]
+      - [0x1F00020, .bss, ../../src/core2/core2bss2]
   # Generated from overlay decompression tool
   - name: overlay_table
     type: bin

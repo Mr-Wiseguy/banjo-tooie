@@ -41,25 +41,3 @@
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B2F58.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B2FB0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B2FE0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B301C.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B3034.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B303C.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B3044.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B31B8.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B3204.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B3248.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B3268.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B32C0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8C180/func_800B32E4.s")
