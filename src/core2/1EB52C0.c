@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "memory.h"
+#include "freelist.h"
 
 f32 func_800D8FF8(void);
 
@@ -79,7 +80,7 @@ void func_800DBB9C(u8 arg0) {
 void func_800DBBF8(u8 arg0, unkfunc_800DB9FC* arg1) {
     unkfunc_800DB9FC* var_v0 = func_800DB9D0(arg0);
     s32 i;
-    func_8001BBA0(var_v0, arg1, sizeof(var_v0->unk0));
+    rare_memcpy(var_v0, arg1, sizeof(var_v0->unk0));
     for (i = 0; i < ARRLEN(var_v0->unk0); i++) {
         var_v0->unk38[i] = 0.0f;
     }

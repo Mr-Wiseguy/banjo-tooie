@@ -3,6 +3,16 @@
 
 #include "types.h"
 
+void rare_memcpy(void* dst, void* src, int length);
+void aligned4_memcpy(void* dst, void* src, int length);
+void aligned8_memcpy(void* dst, void* src, int size);
+
+void rare_memmove(void* dst, void* src, int length);
+void aligned4_memmove(void* dst, void* src, int length);
+
+void rare_memset(void* dst, u8 value, int length);
+void aligned8_memset(void* dst, u32 value, int size);
+
 typedef enum {
     HEAP_BLOCK_STATE_EMPTY = 0,
     HEAP_BLOCK_STATE_USED  = 1,
@@ -73,36 +83,11 @@ s32 heap_bytes_allocated();
 
 void* heap_alloc(s32 size);
 void* heap_alloc_sided(s32 size, s32 alloc_side);
+void* heap_realloc(void* mem, s32 size);
 void heap_free(void* mem);
 void* defrag(void* mem);
 
-void aligned_memset(u64* mem, u32 value, u32 size);
-void aligned_memcpy(u64* dst, u64* src, u32 size);
-
 // round_up_16
 u32 func_8001BD30(u32);
-
-typedef struct {
-    s16 next_free;
-    u8 data[];
-} FreeListElement;
-
-typedef struct {
-    s16 element_size;
-    s16 capacity;
-    FreeListElement data[];
-} FreeList;
-
-void freelist_clear(FreeList* list);
-void* freelist_at(FreeList* list, s32 index);
-s16 freelist_capacity(FreeList* list);
-void* freelist_data(FreeList* list);
-void* freelist_next(FreeList** list, s32* index_out);
-s32 freelist_is_element_alive(FreeList* list, s32 index);
-s32 freelist_used_count(FreeList* list);
-void freelist_free(FreeList *this);
-FreeList* freelist_new(s32 element_size, s32 capacity);
-void freelist_erase(FreeList* list, s32 index);
-FreeList* freelist_defrag(FreeList* list);
 
 #endif

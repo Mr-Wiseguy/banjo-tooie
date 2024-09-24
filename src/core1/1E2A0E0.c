@@ -4,6 +4,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_8001268C.s")
 
+// audio_thread_entry
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_800128C0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2A0E0/func_800129FC.s")

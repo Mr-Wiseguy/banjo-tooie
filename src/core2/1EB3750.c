@@ -1,11 +1,6 @@
 #include <ultra64.h>
 #include "memory.h"
 
-// memcpy?
-void func_8001BBA0(void* dst, void* src, s32 length);
-// memset?
-void func_8001BCF8(void* dst, s32 val, s32 length);
-
 void _gldbDll_entrypoint_1(void);
 void _gldbDll_entrypoint_2(void);
 s32 _glgamedata_entrypoint_3(u8*, s32, s32*, u32*);
@@ -87,7 +82,7 @@ void func_800DA054(s32 arg0, s32 length) {
     if (D_8012C770[arg0] == NULL) {
         D_8012C770[arg0] = heap_alloc_sided(length, 0);
     }
-    func_8001BCF8(D_8012C770[arg0], 0, length);
+    rare_memset(D_8012C770[arg0], 0, length);
 }
 
 void func_800DA0B4(void) {
@@ -352,11 +347,11 @@ s32 func_800DAC08(void) {
 void func_800DAC10(u8* src, s32 length) {
     s32 length_clamped;
     length_clamped = MIN(D_8012C770_0_LENGTH, length);
-    func_8001BBA0(D_8012C770[0], src, length_clamped);
+    rare_memcpy(D_8012C770[0], src, length_clamped);
 }
 
 void func_800DAC50(u8* dst) {
-    func_8001BBA0(dst, D_8012C770[0], D_8012C770_0_LENGTH);
+    rare_memcpy(dst, D_8012C770[0], D_8012C770_0_LENGTH);
 }
 
 s32 func_800DAC78(u8* arg0, s32 arg1) {

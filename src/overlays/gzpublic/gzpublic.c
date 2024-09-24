@@ -57,7 +57,7 @@ void func_80800040_gzpublic(s32 thread_id) {
     u16 hour;
     u16 minute;
 
-    aligned_memset(func_80014F00(), 0x12211221, func_80014EC8());
+    aligned8_memset(func_80014F00(), 0x12211221, func_80014EC8());
     func_8001D96C();
     rom_address = (uintptr_t)build_data_ROM_START;
     rom_read_word(rom_address + offsetof(struct BuildData, day), &day);

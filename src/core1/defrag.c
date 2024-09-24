@@ -69,7 +69,7 @@ void* defrag_next(void* mem) {
     // Create a new block to return at the end of the next block
     new_block = (struct HeapHeader*)((char*)next_next - block_size);
     
-    func_8001BC68(new_block, cur_block, block_size);
+    aligned4_memmove(new_block, cur_block, block_size);
 
     // Update the links for the neighboring blocks
     new_block->prev = cur_block;
@@ -134,7 +134,7 @@ void* defrag_prev(void* mem) {
     prev_prev = prev_block->prev;
     
     // Copy the contents of the current block into the previous one
-    aligned_memcpy((u64*)prev_block, (u64*)cur_block, block_size);
+    aligned8_memcpy(prev_block, cur_block, block_size);
     
     // Create a new free block at the end of the shifted block
     new_free_block = (struct EmptyHeapBlock*)((char*)prev_block + block_size);
