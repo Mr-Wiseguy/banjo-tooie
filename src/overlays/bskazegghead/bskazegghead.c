@@ -1,4 +1,3 @@
-#include "common.h"
 #include "ba/playerstate.h"
 #include "ba/anim.h"
 #include "ba/animctrl.h"
