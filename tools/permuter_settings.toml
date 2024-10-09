@@ -1,0 +1,38 @@
+compiler_type = "ido"  # adjusts default weights for permuting
+compiler_command = "tools/ido/cc -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm -O2 -mips2 -woff 807 -I include -I lib/ultralib/include -DBUILD_VERSION=VERSION_J -D_FINALROM -DF3DEX_GBI_2 -c"
+assembler_command = "mips-linux-gnu-gcc -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY -I include -I lib/ultralib/include -DBUILD_VERSION=VERSION_J -D_FINALROM -DF3DEX_GBI_2"
+asm_prelude_file = "include/prelude.inc"
+
+[preserve_macros]
+"a[A-Z].*" = "void"
+LOG = "void"
+SET_FULLSCREEN_VIEWPORT = "void"
+OPEN_DISPS = "void"
+CLOSE_DISPS = "void"
+GRAPH_ALLOC = "void*"
+LOG_UTILS_CHECK_NULL_POINTER = "void"
+WORK_DISP = "void*"
+POLY_OPA_DISP = "void*"
+POLY_XLU_DISP = "void*"
+OVERLAY_DISP = "void*"
+"G_MTX_.*" = "int"
+ABS = "int"
+SQ = "int"
+CLAMP = "int"
+NULL = "int"
+"g[DS]P.*" = "void"
+"gs[DS]P.*" = "void"
+"gDma.*" = "void"
+"G_IM_SIZ_.*" = "int"
+"G_[AC]C.*" = "int"
+
+# If changing to not preserve these, add a check for the permuter to IDO_PRINTF_WORKAROUND,
+# so that modern CPP (used by the permuter import) does not error on the IDO-specific hack.
+# For example:
+# #define IDO_PRINTF_WORKAROUND (__sgi && !__GNUC__ && !PERMUTER && !M2CTX)
+PRINTF = "void"
+SCHED_DEBUG_PRINTF = "void"
+ACTOR_DEBUG_PRINTF = "void"
+
+[decompme.compilers]
+"tools/ido/cc" = "ido5.3"
