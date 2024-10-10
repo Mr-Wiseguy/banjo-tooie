@@ -32,46 +32,9 @@ CPP_FLAGS = [
     "-std=gnu89",
 ]
 
-# Read through the processes context and replace whatever
+# Project-specific, allows us to add custom replacements should we need them.
 def custom_replacements(output):
-    actorList = []
-    output = output.splitlines()
-
-    i = 0
-    while i < len(output):
-        line = output[i]
-
-        ############### actorLists[2].first -> Player* ###############
-        if "typedef struct ActorListEntry " in line:
-            actorListText = ""
-            i += 1
-            while not output[i].startswith("}"):
-                actorListText += output[i]
-                i += 1
-            actorCats = [
-                "actorSwitch",
-                "bg",
-                "player",
-                "explosive",
-                "npc",
-                "enemy",
-                "prop",
-                "itemAction",
-                "misc",
-                "boss",
-                "door",
-                "chest",
-            ]
-            for x in range(12):
-                actorList.append(actorListText.replace("first;", f"{actorCats[x]};") + "\n")
-                if x == 2:
-                    actorList[x] = actorList[x].replace("Actor*", "struct Player*")
-        elif "ActorListEntry actorLists[ACTORCAT_MAX];" in line:
-            output[i] = "struct {\n" + "".join(actorList) + "};"
-        ########################################################
-
-        i += 1
-    return "\n".join(output)
+    pass
 
 def import_c_file(in_file) -> str:
     in_file = os.path.relpath(in_file, root_dir)
