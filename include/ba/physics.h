@@ -28,6 +28,10 @@ typedef enum yaw_state_e {
     YAW_STATE_3_BOUNDED
 } YawState;
 
+f32 yaw_getIdeal(PlayerState *thisx);
+void baphysics_set_target_yaw(PlayerState *this_x, f32 target_yaw);
+f32 baphysics_get_target_horizontal_velocity(PlayerState *self);
+void baphysics_set_horizontal_velocity(PlayerState *thisx, f32 yaw, f32 vel);
 void baphysics_set_target_horizontal_velocity(PlayerState* thisx, f32 vel);
 void baphysics_reset_gravity(PlayerState* thisx);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawState yaw_state, s32 arg2, BaPhysicsType arg3);

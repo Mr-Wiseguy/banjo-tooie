@@ -2544,7 +2544,7 @@ segments:
     subsegments: 
       - [0x01F47310, c, bstwirl]
       - [0x01F475C0, .rodata, bstwirl]
-      - [0x01F475D0, data, bstwirl]
+      - [0x01F475D0, .data, bstwirl]
       - [0x01F475E0, bss, bstwirl]
   - name: bsvan_header
     dir: overlays/bsvan

@@ -30,7 +30,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_8009FE78.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_8009FE84.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/bs_getTypeOfJump.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_8009FF00.s")
 
