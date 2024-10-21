@@ -10,7 +10,7 @@
 // bseggass_init
 void bsbeggass_entrypoint_0(PlayerState* arg0){
     baanim_playForDuration_onceSmooth(arg0, ASSET_2B_ANIM_BSEGGASS, 1.0f);
-    func_8009FFD8(arg0, BAANIM_UPDATE_1_NORMAL, YAW_STATE_3_BOUNDED, 1, BA_PHYSICS_LOCKED_ROTATION);
+    func_8009FFD8(arg0, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 1, BA_PHYSICS_LOCKED_ROTATION);
     yaw_setVelocityBounded(arg0, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(arg0, 0.0f);
     func_800A0CDC(arg0, 1);
