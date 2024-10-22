@@ -5,6 +5,8 @@
 #include "ba/eggs.h"
 #include "funcs.h"
 
+#include "core2/1E72EA0.h"
+
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){
     baanim_playForDuration_onceSmooth(player, ASSET_2A_ANIM_BSEGGHEAD, 1.0f);

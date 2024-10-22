@@ -1,4 +1,5 @@
 #include "common.h"
+
 #include "ba/anim.h"
 #include "ba/animctrl.h"
 #include "ba/assets.h"
@@ -6,11 +7,9 @@
 #include "bs.h"
 #include "buttons.h"
 
-
-extern f32 func_800DC0C0(void);
-extern void func_8009DF18(PlayerState *, s32, f32, s32);
-extern void func_8009DE38(PlayerState *, s32, f32);
-extern void func_8009AB78(PlayerState *);
+#include "core2/1E72EA0.h"
+#include "core2/1E76CC0.h"
+#include "core2/1EB5980.h"
 
 void func_80800000_bstwirl(PlayerState *);
 void bstwirl_init(PlayerState *);

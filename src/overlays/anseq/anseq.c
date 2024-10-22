@@ -18,7 +18,7 @@ typedef struct{
     void *func_ptr; //function_ptr
 }AnSeqElement;
 
-extern struct {
+struct {
     s32 unk0;
     AnSeqElement *unk4;
 }B_80800490_anseq;

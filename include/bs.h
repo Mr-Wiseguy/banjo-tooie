@@ -12,4 +12,6 @@ typedef enum {
 
 typedef void (*BsScript)(PlayerState *);
 
+BsScript bstwirl_entrypoint_0(BsScriptType type);
+
 #endif // __BS_H__
