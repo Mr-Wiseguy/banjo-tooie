@@ -19,6 +19,7 @@ options:
   detect_redundant_function_end: False
   lib_path: build/us
   build_path: build/us
+  section_order: [".text", ".rodata", ".data", ".bss"]
 segments:
   - name: header
     type: header
@@ -526,7 +527,7 @@ segments:
       - [0x1EC9740, c, 1EC9740]
       - [0x1ECA640, c, 1ECA640]
       - [0x1ECB0F0, c, 1ECB0F0]
-      - [0x1ECB9F0, c, 1ECB9F0]
+      - [0x1ECB9F0, hasm]
       - [0x1ECBB80, c, 1ECBB80]
       - [0x1ECBCC0, c, 1ECBCC0]
       - [0x1ECD070, c, 1ECD070]
@@ -914,15 +915,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F0C7F0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F0C7F0, c, bsbeggass]
-      - [0x01F0CA80, .rodata, bsbeggass]
-      - [0x01F0CA90, .data, bsbeggass]
-      - [0x01F0CAA0, .bss, bsbeggass]
+      - [auto, c, bsbeggass]
   - name: bsbegghead_header
     dir: overlays/bsbegghead
     type: bin
@@ -933,15 +928,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F0CB00
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F0CB00, c, bsbegghead]
-      - [0x01F0CDD0, .rodata, bsbegghead]
-      - [0x01F0CDE0, .data, bsbegghead]
-      - [0x01F0CDF0, .bss, bsbegghead]
+      - [auto, c, bsbegghead]
   - name: bsbflap_header
     dir: overlays/bsbflap
     type: bin
