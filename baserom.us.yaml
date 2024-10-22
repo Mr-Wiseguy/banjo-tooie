@@ -628,17 +628,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F017C0
-    bss_size: 0x00000010
-    subalign: 8
-    align: 16
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F017C0, c, anseq]
-      - [0x01F01C30, .rodata, anseq]
-      - [0x01F01C50, data, anseq]
-      - [0x01F01C50, bss, anseq]
+      - [auto, c, anseq]
   - name: seqdefine_header
     dir: overlays/seqdefine
     type: bin
@@ -2537,15 +2529,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F47310
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F47310, c, bstwirl]
-      - [0x01F475C0, .rodata, bstwirl]
-      - [0x01F475D0, .data, bstwirl]
-      - [0x01F475E0, bss, bstwirl]
+      - [auto, c, bstwirl]
   - name: bsvan_header
     dir: overlays/bsvan
     type: bin
