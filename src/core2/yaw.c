@@ -1,14 +1,9 @@
-#include "common.h"
-#include "types.h"
-#include "ba/playerstate.h"
-#include "ba/physics.h"
 
-extern f32 func_800136E4(f32); // mlNormalizeAngle()
-extern f32 func_80013728(f32);  //mlAbsNormalized()
-extern f32 func_800D8FF8(void); //time_getDelta()
-extern f32 func_800F0D50(f32, f32, f32); // mlClamp()
-extern f32 func_800F2100(f32); // mlAbsF()
-extern f32 func_800F212C(f32, f32);
+#include "common.h"
+
+#include "ba/yaw.h"
+#include "core2/1EB2840.h"
+#include "ml.h"
 
 s32 yaw_size(void){
     return sizeof(PlayerYaw);
@@ -52,7 +47,7 @@ void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_perce
         dyaw_deg = func_80013728(pYaw->ideal - pYaw->value);
 
         val_deg = dyaw_deg * step_percent;
-        if(val_deg != 0){
+        if (val_deg != 0) {
             val_deg = (val_deg < 0) ? func_800F0D50(val_deg, -limit_degPerSec, -3.0f) : func_800F0D50(val_deg, 3.0f, limit_degPerSec);
         }
         pYaw->unk8 = val_deg;
@@ -119,9 +114,9 @@ void yaw_setVelocityUnbounded(PlayerState *self, f32 velocity_degPerSec){
     self->yaw->velocity_degPerSec = velocity_degPerSec;
 }
 
-void yaw_rotateTimed(PlayerState *self, f32 time_sec){
+void yaw_rotateTimed(PlayerState *self, f32 time_sec) {
     f32 dyaw_deg = self->yaw->ideal - self->yaw->value;
-    if(180.0f < func_800F2100(dyaw_deg)){
+    if (180.0f < func_800F2100(dyaw_deg)) {
         dyaw_deg += (dyaw_deg < 0.0f)? 360.0f: -360.0f;
     }
 
