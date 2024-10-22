@@ -184,6 +184,7 @@ vector_pop_back_n = 0x800B2EFC;
 vector_assign = 0x800B2F18;
 vector_defrag = 0x800B2F58;
 vector_update_pointers = 0x800B2FB0;
+fabsf = 0x800F2100;
 
 // Actual size is 0x26 without file alignment padding
 D_8012D580 = 0x8012D580; // size:0x30

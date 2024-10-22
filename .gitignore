@@ -58,6 +58,7 @@ expected/
 ctx.c
 nonmatchings/
 testing/
+permuting/
 
 #progress reports
 *.csv
