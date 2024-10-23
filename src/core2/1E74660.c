@@ -44,13 +44,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/baphysics_set_target_horizontal_velocity.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009B9C0.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/baphysics_set_target_yaw.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009B9F0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BA58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BA68.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/baphysics_set_horizontal_velocity.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BA9C.s")
 
@@ -60,7 +60,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BAF4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BB00.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/baphysics_get_target_horizontal_velocity.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E74660/func_8009BB0C.s")
 

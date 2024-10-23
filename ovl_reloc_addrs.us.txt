@@ -3774,8 +3774,8 @@ rom:0x01F4753C symbol:R_808002B0_bstwirl reloc:MIPS_LO16
 rom:0x01F475A8 symbol:D_808002C0_bstwirl reloc:MIPS_HI16
 rom:0x01F475B4 symbol:D_808002C0_bstwirl reloc:MIPS_LO16
 rom:0x01F475D0 symbol:func_80800000_bstwirl reloc:MIPS_32
-rom:0x01F475D4 symbol:func_80800044_bstwirl reloc:MIPS_32
-rom:0x01F475D8 symbol:func_80800144_bstwirl reloc:MIPS_32
+rom:0x01F475D4 symbol:bstwirl_init reloc:MIPS_32
+rom:0x01F475D8 symbol:bstwirl_update reloc:MIPS_32
 rom:0x01F47ADC symbol:D_80801B90_bsvan reloc:MIPS_HI16
 rom:0x01F47AE0 symbol:D_80801B90_bsvan reloc:MIPS_LO16
 rom:0x01F47B28 symbol:D_80801C40_bsvan reloc:MIPS_HI16

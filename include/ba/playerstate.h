@@ -9,7 +9,9 @@
 typedef enum bs_e {
     BS_1_IDLE = 0x1,
     BS_CROUCH = 0x7,
-    BS_2F_FALL = 0x2F
+    BS_20_LANDING = 0x20,
+    BS_2F_FALL = 0x2F,
+    BS_4C_LANDING_IN_WATER = 0x4C
 } BanjoStateId;
 
 typedef struct player_state_s {

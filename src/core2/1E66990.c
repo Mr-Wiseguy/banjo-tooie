@@ -84,7 +84,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DF8C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E078.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_isStable.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E0C8.s")
 
@@ -106,7 +106,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E300.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E35C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_inWater.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E37C.s")
 

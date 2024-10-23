@@ -42,7 +42,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6AE20/func_80091A30.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6AE20/func_80091A58.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6AE20/button_pressed.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6AE20/func_80091A94.s")
 

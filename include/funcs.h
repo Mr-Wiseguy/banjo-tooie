@@ -10,7 +10,6 @@
 
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
-void func_8009AB78();
 void bs_setState(PlayerState*, s32);
 s32 func_80097BFC(PlayerState*);
 s32 _bscrouch_entrypoint_4(PlayerState*, s32);

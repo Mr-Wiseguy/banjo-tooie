@@ -18,24 +18,26 @@ typedef struct{
     void *func_ptr; //function_ptr
 }AnSeqElement;
 
-extern struct {
+struct {
     s32 unk0;
     AnSeqElement *unk4;
 }B_80800490_anseq;
 
-void func_80800000_anseq(s16 *pSeqIndx, AnSeqElement *element){
-    if(element->unk6){
-        if(element->unk6 == 0xFF)
+void func_80800000_anseq(s16 *pSeqIndx, AnSeqElement *element) {
+    if (element->unk6) {
+        if (element->unk6 == 0xFF) {
             return;
+        }
     
         element->unk6--;
-        if(element->unk6)
+        if (element->unk6) {
             return;
+        }
 
         element->unk6 = 0xFF;
     }
 
-     switch(element->argCount){
+     switch(element->argCount) {
         case 0:// 80288BF8
             ((void (*)(void)) element->func_ptr)();
             break;
@@ -57,7 +59,7 @@ void func_80800000_anseq(s16 *pSeqIndx, AnSeqElement *element){
      }
 }
 
-void anseq_entrypoint_0(s16 *pSeqIndx){
+void anseq_entrypoint_0(s16 *pSeqIndx) {
     vector_clear(func_800B2890(*pSeqIndx));
 }
 
@@ -71,7 +73,7 @@ void* func_80800134_anseq(s16 *pSeqIndx, f32 duration, s32 arg_count, void * fun
     v0->arg2 = a2;
     v0->arg3 = a3;
     v0->unk6 = B_80800490_anseq.unk0;
-    if(duration == -1){
+    if (duration == -1) {
         anseq_entrypoint_1(pSeqIndx, 1);
     } else {
         v0->unk5 = 0;
@@ -116,12 +118,13 @@ void anseq_entrypoint_7(s16 *pSeqIndx, s32 arg1) {
     B_80800490_anseq.unk0 = arg1;
 }
 
-void anseq_entrypoint_8(s16 *pSeqIndx, AnimCtrl *pAnCtl){
+void anseq_entrypoint_8(s16 *pSeqIndx, AnimCtrl *pAnCtl) {
     void* s0 = func_800B2890(*pSeqIndx);
     AnSeqElement *iPtr;
-    for(iPtr = vector_begin(s0); iPtr != (void*)vector_end(s0); iPtr++){
-        if((iPtr->duration == -1.0f) || animctrl_isAt(pAnCtl, iPtr->duration))
+    for (iPtr = vector_begin(s0); iPtr != (void*)vector_end(s0); iPtr++) {
+        if ((iPtr->duration == -1.0f) || animctrl_isAt(pAnCtl, iPtr->duration)) {
             func_80800000_anseq(pSeqIndx, iPtr);
+        }
     }
 }
 

@@ -20,7 +20,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75E90/func_8009C984.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75E90/func_8009C990.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75E90/yaw_getIdeal.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75E90/yaw_setVelocityBounded.s")
 
