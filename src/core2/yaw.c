@@ -15,13 +15,13 @@ void __yaw_update_limitless(PlayerState *self, f32 velocity_degPerSec) {
 
     velocity_degPerSec *= func_800D8FF8();
     dYaw_deg = self->yaw->ideal - self->yaw->value;
-    if (func_800F2100(dYaw_deg) > 180.0f) {
+    if (mlAbsF(dYaw_deg) > 180.0f) {
         dYaw_deg += (dYaw_deg < 0.0f) ? 360.0f : -360.0f;
     }
 
-    sp20 = (func_800F2100(dYaw_deg) > 180.0f) ? velocity_degPerSec : ((dYaw_deg < 0.0f)? -velocity_degPerSec: velocity_degPerSec);
+    sp20 = (mlAbsF(dYaw_deg) > 180.0f) ? velocity_degPerSec : ((dYaw_deg < 0.0f)? -velocity_degPerSec: velocity_degPerSec);
     
-    if (func_800F2100(sp20) <= func_800F2100(dYaw_deg)) {
+    if (mlAbsF(sp20) <= mlAbsF(dYaw_deg)) {
         self->yaw->value += sp20;
     } else {
         self->yaw->value = self->yaw->ideal;
@@ -116,9 +116,9 @@ void yaw_setVelocityUnbounded(PlayerState *self, f32 velocity_degPerSec){
 
 void yaw_rotateTimed(PlayerState *self, f32 time_sec) {
     f32 dyaw_deg = self->yaw->ideal - self->yaw->value;
-    if (180.0f < func_800F2100(dyaw_deg)) {
+    if (180.0f < mlAbsF(dyaw_deg)) {
         dyaw_deg += (dyaw_deg < 0.0f)? 360.0f: -360.0f;
     }
 
-    self->yaw->velocity_degPerSec = func_800F2100(dyaw_deg/time_sec);
+    self->yaw->velocity_degPerSec = mlAbsF(dyaw_deg/time_sec);
 }

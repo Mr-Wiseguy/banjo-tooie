@@ -139,6 +139,7 @@ defragment_overlays = 0x80081BEC;
 core2_VRAM_END = 0x80137390;
 baphysics_set_target_horizontal_velocity = 0x8009B9B0;
 baphysics_reset_gravity = 0x8009BC6C;
+yaw_size = 0x8009C5A0;
 yaw_init = 0x8009C830;
 yaw_update = 0x8009C88C;
 yaw_setUpdateType = 0x8009C908;
@@ -201,7 +202,7 @@ vector_pop_back_n = 0x800B2EFC;
 vector_assign = 0x800B2F18;
 vector_defrag = 0x800B2F58;
 vector_update_pointers = 0x800B2FB0;
-fabsf = 0x800F2100;
+mlAbsF = 0x800F2100;
 
 // Actual size is 0x26 without file alignment padding
 D_8012D580 = 0x8012D580; // size:0x30
