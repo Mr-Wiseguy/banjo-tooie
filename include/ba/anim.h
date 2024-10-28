@@ -12,7 +12,9 @@ typedef enum baanim_update_type_e {
     BAANIM_UPDATE_3_SCALE_VERT
 } BaAnimUpdateType;
 
-void baanim_playForDuration_onceSmooth(PlayerState* thisx, AssetId anim_id, f32 duration);
+int  baanim_isAt(PlayerState *, f32);
 AnimCtrl* baanim_getAnimCtrlPtr(PlayerState* arg0);
+void baanim_playForDuration_onceSmooth(PlayerState* thisx, AssetId anim_id, f32 duration);
+void func_8008CF1C(PlayerState *, f32, f32); // baanim_setend
 
 #endif

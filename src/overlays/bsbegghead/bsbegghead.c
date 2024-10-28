@@ -14,7 +14,7 @@ void bsbegghead_entrypoint_0(PlayerState* player){
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
     func_800A0CF4(player, 1);
-    player->unk15C = player->unk160 = 1;
+    player->unk15C.word = player->unk160.word = 1;
     player->unk164 = func_80094510(player);
     func_80098140(player, 2, 0);
 }
@@ -29,7 +29,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
     if (func_80097C3C(player) && func_80094B14(player)) {
-        player->unk15C = func_800F1418(player->unk15C + 1, func_800944E0(player, player->unk164));
+        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (has_eggs) {
         if (anctrl_isAt(aCtrl, 0.1f)) {
@@ -42,10 +42,10 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
             _baeggsetup_entrypoint_5(player, player->unk164, 80.0f, 120.0f);
             func_800C6DA0(0x43);
         }
-        if (anctrl_isAt(aCtrl, 0.5919f) && player->unk160 < player->unk15C) {
+        if (anctrl_isAt(aCtrl, 0.5919f) && player->unk160.word < player->unk15C.word) {
             anctrl_setStart(aCtrl, 0.3878f);
             anctrl_start(aCtrl);
-            player->unk160++;
+            player->unk160.word++;
         }
     }
     if (func_8008DD04(player)) {

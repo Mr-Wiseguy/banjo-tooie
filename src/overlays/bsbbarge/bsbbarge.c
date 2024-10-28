@@ -8,13 +8,11 @@
 #include "bs.h"
 #include "buttons.h"
 
-#include "core2/1E65B90.h"
 #include "core2/1E68670.h"
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 
-// 1E65B90
 void bsbbarge_end(PlayerState *self);
 void bsbbarge_init(PlayerState *self);
 void bsbbarge_update(PlayerState *self);
@@ -56,7 +54,7 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
             _badust_entrypoint_12(self, 1);
             break;
     }
-    self->unk160 = substate;
+    self->unk160.word = substate;
 }
 
 void bsbbarge_end(PlayerState *self) {
@@ -89,7 +87,7 @@ void bsbbarge_init(PlayerState *self) {
     func_8009E4AC(self);
     func_8009E5A4(self, 2, 3);
     func_8009E55C(self, 2, 40.f);
-    self->unk160 = 0;
+    self->unk160.word = 0;
     bsbbarge_setSubstate(self, 1);
 }
 
@@ -102,7 +100,7 @@ void bsbbarge_update(PlayerState *self) {
     if (button_released(self, BUTTON_B)) {
         func_80095760(self, 0xA); //miscFlag_set
     }
-    switch(self->unk160) {
+    switch(self->unk160.word) {
         case 1:
             if(anctrl_isAt(anctrl, 0.1392f)) {
                 func_8009D874(self); // BK:func_80299BD4();

@@ -11,7 +11,8 @@ typedef enum bs_e {
     BS_CROUCH = 0x7,
     BS_20_LANDING = 0x20,
     BS_2F_FALL = 0x2F,
-    BS_4C_LANDING_IN_WATER = 0x4C
+    BS_4C_LANDING_IN_WATER = 0x4C,
+    BS_B6_BILL_DRILL = 0xB6
 } BanjoStateId;
 
 typedef struct player_yaw_s {
@@ -28,8 +29,14 @@ typedef struct player_state_s {
     u8 pad0[0xF8];
     PlayerYaw *yaw;
     u8 padFC[0x60];
-    s32 unk15C;
-    s32 unk160;
+    union {
+        s32 word;
+        u8 bytes[4];
+    } unk15C;
+    union {
+        s32 word;
+        u8 bytes[4];
+    } unk160;
     s32 unk164;
     u8 pad168[4];
     f32 unk16C;
