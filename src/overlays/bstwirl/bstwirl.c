@@ -1,7 +1,7 @@
 #include "common.h"
 
 #include "ba/anim.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "ba/assets.h"
 #include "ba/physics.h"
 #include "bs.h"
@@ -46,17 +46,17 @@ void bstwirl_update(PlayerState *self) {
     BanjoStateId next_state = 0;
     AnimCtrl *aCtrl = baanim_getAnimCtrlPtr(self);
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
-    if (animctrl_isAt(aCtrl, 0.18f)) {
+    if (anctrl_isAt(aCtrl, 0.18f)) {
         func_8009DF18(self, 0x5A7, 1.0f, 26000);
     }
-    if (animctrl_isAt(aCtrl, 0.3f)) {
+    if (anctrl_isAt(aCtrl, 0.3f)) {
         _badust_entrypoint_12(self, 2);
     }
-    if (animctrl_isAt(aCtrl, 0.75f)) {
+    if (anctrl_isAt(aCtrl, 0.75f)) {
         _badust_entrypoint_12(self, 1);
     }
 
-    if (animctrl_isAt(aCtrl, 0.8011f)) {
+    if (anctrl_isAt(aCtrl, 0.8011f)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         next_state = BS_20_LANDING;
     }
@@ -65,7 +65,7 @@ void bstwirl_update(PlayerState *self) {
         next_state = bs_getTypeOfJump(self);
     }
 
-    if ( 0.6f < animctrl_getAnimTimer(aCtrl) && !player_isStable(self)) {
+    if ( 0.6f < anctrl_getAnimTimer(aCtrl) && !player_isStable(self)) {
         next_state = BS_2F_FALL;
     }
 

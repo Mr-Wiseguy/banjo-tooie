@@ -1,6 +1,6 @@
 #include "common.h"
 #include "types.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "vector.h"
 
 void anseq_entrypoint_1(s16 * pSeqIndx, s32 arg1);
@@ -122,7 +122,7 @@ void anseq_entrypoint_8(s16 *pSeqIndx, AnimCtrl *pAnCtl) {
     void* s0 = func_800B2890(*pSeqIndx);
     AnSeqElement *iPtr;
     for (iPtr = vector_begin(s0); iPtr != (void*)vector_end(s0); iPtr++) {
-        if ((iPtr->duration == -1.0f) || animctrl_isAt(pAnCtl, iPtr->duration)) {
+        if ((iPtr->duration == -1.0f) || anctrl_isAt(pAnCtl, iPtr->duration)) {
             func_80800000_anseq(pSeqIndx, iPtr);
         }
     }

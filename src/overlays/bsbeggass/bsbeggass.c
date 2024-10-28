@@ -1,6 +1,6 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
 #include "funcs.h"
@@ -32,14 +32,14 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
         arg0->unk15C = func_800F1418(arg0->unk15C + 1, func_800944E0(arg0, arg0->unk164));
     }
     if (has_eggs) {
-        if (animctrl_isAt(plyr_mvmt, 0.3837f)) {
+        if (anctrl_isAt(plyr_mvmt, 0.3837f)) {
             _baeggsetup_entrypoint_9(arg0);
             _baeggsetup_entrypoint_2(arg0, arg0->unk164, 60.0f, -18.0f);
             func_800C6DA0(0x43);
         }
-        if (animctrl_isAt(plyr_mvmt, 0.4885f) && (arg0->unk160 < arg0->unk15C)) {
-            animctrl_setStart(plyr_mvmt, 0.349f);
-            animctrl_start(plyr_mvmt);
+        if (anctrl_isAt(plyr_mvmt, 0.4885f) && (arg0->unk160 < arg0->unk15C)) {
+            anctrl_setStart(plyr_mvmt, 0.349f);
+            anctrl_start(plyr_mvmt);
             arg0->unk160++;
         }
     }
@@ -47,13 +47,13 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
         next_state = BS_2F_FALL;
     }
     if (button_held(arg0, BUTTON_Z)) {
-        if (func_8008B324(plyr_mvmt)) {
+        if (anctrl_isStopped(plyr_mvmt)) {
             next_state = BS_CROUCH;
         }
-        if (0.6f < animctrl_getAnimTimer(plyr_mvmt)) {
+        if (0.6f < anctrl_getAnimTimer(plyr_mvmt)) {
             next_state = _bscrouch_entrypoint_4(arg0, next_state);
         }
-    } else if (func_8008B324(plyr_mvmt)) {
+    } else if (anctrl_isStopped(plyr_mvmt)) {
         next_state = BS_1_IDLE;
     }
     bs_setState(arg0, next_state);

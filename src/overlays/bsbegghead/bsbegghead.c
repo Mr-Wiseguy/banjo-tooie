@@ -1,6 +1,6 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
 #include "funcs.h"
@@ -32,19 +32,19 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
         player->unk15C = func_800F1418(player->unk15C + 1, func_800944E0(player, player->unk164));
     }
     if (has_eggs) {
-        if (animctrl_isAt(aCtrl, 0.1f)) {
+        if (anctrl_isAt(aCtrl, 0.1f)) {
             _baeggsetup_entrypoint_10(player);
         }
-        if (animctrl_isAt(aCtrl, 0.4f)) {
+        if (anctrl_isAt(aCtrl, 0.4f)) {
             _baeggsetup_entrypoint_8(player, player->unk164);
         }
-        if (animctrl_isAt(aCtrl, 0.4704f)) {
+        if (anctrl_isAt(aCtrl, 0.4704f)) {
             _baeggsetup_entrypoint_5(player, player->unk164, 80.0f, 120.0f);
             func_800C6DA0(0x43);
         }
-        if (animctrl_isAt(aCtrl, 0.5919f) && player->unk160 < player->unk15C) {
-            animctrl_setStart(aCtrl, 0.3878f);
-            animctrl_start(aCtrl);
+        if (anctrl_isAt(aCtrl, 0.5919f) && player->unk160 < player->unk15C) {
+            anctrl_setStart(aCtrl, 0.3878f);
+            anctrl_start(aCtrl);
             player->unk160++;
         }
     }
@@ -52,13 +52,13 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
         next_state = BS_2F_FALL;
     }
     if (button_held(player, BUTTON_Z)) {
-        if (func_8008B324(aCtrl)) {
+        if (anctrl_isStopped(aCtrl)) {
             next_state = BS_CROUCH;
         }
-        if (0.65f < animctrl_getAnimTimer(aCtrl)) {
+        if (0.65f < anctrl_getAnimTimer(aCtrl)) {
             next_state = _bscrouch_entrypoint_4(player, next_state);
         }
-    } else if (func_8008B324(aCtrl)) {
+    } else if (anctrl_isStopped(aCtrl)) {
         next_state = BS_1_IDLE;
     }
     bs_setState(player, next_state);

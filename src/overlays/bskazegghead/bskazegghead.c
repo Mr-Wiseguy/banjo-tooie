@@ -1,6 +1,6 @@
 #include "ba/playerstate.h"
 #include "ba/anim.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "ba/eggs.h"
 #include "types.h"
 
@@ -37,19 +37,19 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
         player->unk15C = func_800F1418(player->unk15C + 1, func_800944E0(player, player->unk164));
     }
     if (sp24 != 0) {
-        if (animctrl_isAt(sp28, 0.1f) != 0) {
+        if (anctrl_isAt(sp28, 0.1f) != 0) {
             _baeggsetup_entrypoint_10(player);
         }
-        if (animctrl_isAt(sp28, 0.4f) != 0) {
+        if (anctrl_isAt(sp28, 0.4f) != 0) {
             _baeggsetup_entrypoint_8(player, player->unk164);
         }
-        if (animctrl_isAt(sp28, 0.43f) != 0) {
+        if (anctrl_isAt(sp28, 0.43f) != 0) {
             _baeggsetup_entrypoint_5(player, player->unk164, 33.0f, 80.0f);
             func_800C6DA0(0x43);
         }
-        if ((animctrl_isAt(sp28, 0.55f) != 0) && (player->unk160 < player->unk15C)) {
-            animctrl_setStart(sp28, 0.32f);
-            animctrl_start(sp28);
+        if ((anctrl_isAt(sp28, 0.55f) != 0) && (player->unk160 < player->unk15C)) {
+            anctrl_setStart(sp28, 0.32f);
+            anctrl_start(sp28);
             player->unk160 += 1;
         }
     }
@@ -57,13 +57,13 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
         sp2C = 0xDF;
     }
     if (button_held(player, BUTTON_Z) != 0) {
-        if (func_8008B324(sp28) != 0) {
+        if (anctrl_isStopped(sp28) != 0) {
             sp2C = 0xDD;
         }
-        if (animctrl_getAnimTimer(sp28) > 0.65f) {
+        if (anctrl_getAnimTimer(sp28) > 0.65f) {
             sp2C = _bskazcrouch_entrypoint_0(player, sp2C);
         }
-    } else if (func_8008B324(sp28) != 0) {
+    } else if (anctrl_isStopped(sp28) != 0) {
         sp2C = 0xBB;
     }
     bs_setState(player, sp2C);

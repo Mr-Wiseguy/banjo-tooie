@@ -1,0 +1,24 @@
+#ifndef __ANIM_CTRL_H__
+#define __ANIM_CTRL_H__
+
+#include <ultra64.h>
+
+#include "../ba/assets.h"
+
+typedef struct anctrl_s {
+    // TODO populate this struct
+    u8 unk0;
+} AnimCtrl;
+
+void anctrl_setIndex(AnimCtrl *, AssetId);
+void anctrl_reset(AnimCtrl *);
+void anctrl_setSmoothTransition(AnimCtrl *, s32);
+void anctrl_setDuration(AnimCtrl *, f32);
+void anctrl_setSubrange(AnimCtrl *, f32, f32);
+
+int anctrl_isAt(AnimCtrl*, f32);
+void anctrl_setStart(AnimCtrl*, f32);
+f32 anctrl_getAnimTimer(AnimCtrl*);
+void anctrl_start(AnimCtrl*);
+
+#endif

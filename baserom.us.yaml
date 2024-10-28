@@ -381,7 +381,7 @@ segments:
       - [0x1E5AEB0, c, overlays]
       - [0x1E5B6F0, hasm]
       - { start: 0x1E5BE30, type: hasm, name: overlay_syscalls, extract: False}
-      - [0x1E64280, c, 1E64280]
+      - [0x1E64280, c, anctrl]
       - [0x1E64F00, c, 1E64F00]
       - [0x1E65B90, c, 1E65B90]
       - [0x1E66990, c, 1E66990]

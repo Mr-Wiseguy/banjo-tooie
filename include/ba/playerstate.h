@@ -27,10 +27,12 @@ typedef struct player_yaw_s {
 typedef struct player_state_s {
     u8 pad0[0xF8];
     PlayerYaw *yaw;
-    u8 unkFC[0x60];
+    u8 padFC[0x60];
     s32 unk15C;
     s32 unk160;
     s32 unk164;
+    u8 pad168[4];
+    f32 unk16C;
 } PlayerState;
 
 void func_80098140(PlayerState* thisx, s32, s32);
