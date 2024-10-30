@@ -9975,6 +9975,7 @@ func_80800000_chchuffycont = 0x80800000; // segment:chchuffycont rom:0x020606C0 
 func_80803BFC_chquiz = 0x80803BFC; // segment:chquiz rom:0x020F154C type:func
 R_80800C14_chklungophial = 0x80800C14; // segment:chklungophial rom:0x01FECFB4 
 bsbbarge_entrypoint_0 = 0x808005E4; // segment:bsbbarge rom:0x01F07414 
+bsbbarge_update = 0x80800344; // segment:bsbbarge rom:0x1F07174
 func_80802BD8_bsfirstp = 0x80802BD8; // segment:bsfirstp rom:0x01F4EA68 type:func
 bsstand_entrypoint_12 = 0x80800D50; // segment:bsstand rom:0x01F37C90 
 func_80800C00_chpawnbroker = 0x80800C00; // segment:chpawnbroker rom:0x01FB8E90 type:func
