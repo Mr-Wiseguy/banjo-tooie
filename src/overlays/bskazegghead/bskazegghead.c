@@ -1,6 +1,6 @@
 #include "ba/playerstate.h"
 #include "ba/anim.h"
-#include "ba/animctrl.h"
+#include "an/anctrl.h"
 #include "ba/eggs.h"
 #include "types.h"
 
@@ -17,8 +17,8 @@ void bskazegghead_entrypoint_0(PlayerState* player) {
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
     func_800A0CF4(player, 1);
-    player->unk160 = 1;
-    player->unk15C = 1;
+    player->unk160.word = 1;
+    player->unk15C.word = 1;
     player->unk164 = func_80094510(player);
     func_80098140(player, 2, 0);
 }
@@ -34,36 +34,36 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(player);
     sp24 = func_80094BC0(player) != 0;
     if ((func_80097C3C(player) != 0) && (func_80094B14(player) != 0)) {
-        player->unk15C = func_800F1418(player->unk15C + 1, func_800944E0(player, player->unk164));
+        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (sp24 != 0) {
-        if (animctrl_isAt(sp28, 0.1f) != 0) {
+        if (anctrl_isAt(sp28, 0.1f) != 0) {
             _baeggsetup_entrypoint_10(player);
         }
-        if (animctrl_isAt(sp28, 0.4f) != 0) {
+        if (anctrl_isAt(sp28, 0.4f) != 0) {
             _baeggsetup_entrypoint_8(player, player->unk164);
         }
-        if (animctrl_isAt(sp28, 0.43f) != 0) {
+        if (anctrl_isAt(sp28, 0.43f) != 0) {
             _baeggsetup_entrypoint_5(player, player->unk164, 33.0f, 80.0f);
             func_800C6DA0(0x43);
         }
-        if ((animctrl_isAt(sp28, 0.55f) != 0) && (player->unk160 < player->unk15C)) {
-            animctrl_setStart(sp28, 0.32f);
-            animctrl_start(sp28);
-            player->unk160 += 1;
+        if ((anctrl_isAt(sp28, 0.55f) != 0) && (player->unk160.word < player->unk15C.word)) {
+            anctrl_setStart(sp28, 0.32f);
+            anctrl_start(sp28);
+            player->unk160.word += 1;
         }
     }
     if (func_8008DD04(player) != 0) {
         sp2C = 0xDF;
     }
     if (button_held(player, BUTTON_Z) != 0) {
-        if (func_8008B324(sp28) != 0) {
+        if (anctrl_isStopped(sp28) != 0) {
             sp2C = 0xDD;
         }
-        if (animctrl_getAnimTimer(sp28) > 0.65f) {
+        if (anctrl_getAnimTimer(sp28) > 0.65f) {
             sp2C = _bskazcrouch_entrypoint_0(player, sp2C);
         }
-    } else if (func_8008B324(sp28) != 0) {
+    } else if (anctrl_isStopped(sp28) != 0) {
         sp2C = 0xBB;
     }
     bs_setState(player, sp2C);

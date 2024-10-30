@@ -24,6 +24,4 @@ void yaw_setVelocityBounded(PlayerState *self, f32 limit_degPerSec, f32 step_per
 void yaw_setVelocityUnbounded(PlayerState *self, f32 velocity_degPerSec);
 void yaw_rotateTimed(PlayerState *self, f32 time_sec);
 
-
-
 #endif // __BA_YAW_H__

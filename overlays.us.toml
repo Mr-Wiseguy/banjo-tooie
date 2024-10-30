@@ -215,18 +215,18 @@ entrypoints = [
 [[overlay]] # Overlay 20
 name = "bsbflap"
 entrypoints = [
-  "bsbflap_entrypoint_0",
-  "bsbflap_entrypoint_1",
-  "bsbflap_entrypoint_2",
+  "bsbflap_init",
+  "bsbflap_update",
+  "bsbflap_end",
   "bsbflap_entrypoint_3",
 ]
 
 [[overlay]] # Overlay 21
 name = "bsbflip"
 entrypoints = [
-  "bsbflip_entrypoint_0",
-  "bsbflip_entrypoint_1",
-  "bsbflip_entrypoint_2",
+  "bsbflip_end",
+  "bsbflip_init",
+  "bsbflip_update",
   "bsbflip_entrypoint_3",
 ]
 
@@ -2240,16 +2240,16 @@ name = "batimer"
 entrypoints = [
   "batimer_entrypoint_0",
   "batimer_entrypoint_1",
-  "batimer_entrypoint_2",
+  "batimer_decrement",
   "batimer_entrypoint_3",
   "batimer_entrypoint_4",
   "batimer_entrypoint_5",
   "batimer_entrypoint_6",
-  "batimer_entrypoint_7",
+  "batimer_isLessThan",
   "batimer_entrypoint_8",
   "batimer_entrypoint_9",
-  "batimer_entrypoint_10",
-  "batimer_entrypoint_11",
+  "batimer_isZero",
+  "batimer_set",
 ]
 
 [[overlay]] # Overlay 158

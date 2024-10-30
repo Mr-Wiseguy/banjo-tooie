@@ -381,9 +381,9 @@ segments:
       - [0x1E5AEB0, c, overlays]
       - [0x1E5B6F0, hasm]
       - { start: 0x1E5BE30, type: hasm, name: overlay_syscalls, extract: False}
-      - [0x1E64280, c, 1E64280]
+      - [0x1E64280, c, anctrl]
       - [0x1E64F00, c, 1E64F00]
-      - [0x1E65B90, c, 1E65B90]
+      - [0x1E65B90, c, baanim]
       - [0x1E66990, c, 1E66990]
       - [0x1E67DA0, c, 1E67DA0]
       - [0x1E68670, c, 1E68670]
@@ -403,7 +403,7 @@ segments:
       - [0x1E71B00, c, 1E71B00]
       - [0x1E72180, c, 1E72180]
       - [0x1E72EA0, c, 1E72EA0]
-      - [0x1E74660, c, 1E74660]
+      - [0x1E74660, c, baphysics]
       - [0x1E75620, c, 1E75620]
       - [0x1E75710, c, 1E75710]
       - [0x1E75920, c, 1E75920]
@@ -812,15 +812,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F08150
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F08150, c, bsbbuster]
-      - [0x01F08850, .rodata, bsbbuster]
-      - [0x01F08880, data, bsbbuster]
-      - [0x01F08890, bss, bsbbuster]
+      - [auto, c, bsbbuster]
   - name: bsbabykaz_header
     dir: overlays/bsbabykaz
     type: bin
@@ -933,15 +927,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F0CEB0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F0CEB0, c, bsbflap]
-      - [0x01F0D5A0, .rodata, bsbflap]
-      - [0x01F0D600, data, bsbflap]
-      - [0x01F0D610, bss, bsbflap]
+      - [auto, c, bsbflap]
   - name: bsbflip_header
     dir: overlays/bsbflip
     type: bin
@@ -952,15 +940,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F0D680
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F0D680, c, bsbflip]
-      - [0x01F0DC80, .rodata, bsbflip]
-      - [0x01F0DCA0, data, bsbflip]
-      - [0x01F0DCB0, bss, bsbflip]
+      - [auto, c, bsbflip]
   - name: bsbfly_header
     dir: overlays/bsbfly
     type: bin
