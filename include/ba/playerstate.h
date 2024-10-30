@@ -8,10 +8,20 @@
 // TODO validate that the rest of these state
 typedef enum bs_e {
     BS_1_IDLE = 0x1,
+    BS_2_SLOW_WALK = 0x2,
+
     BS_CROUCH = 0x7,
+    
+    BS_F_BBUSTER = 0xF,
+
     BS_20_LANDING = 0x20,
+
     BS_2F_FALL = 0x2F,
+
+    BS_3D_FALL_TUMBLING = 0x3D,
+
     BS_4C_LANDING_IN_WATER = 0x4C,
+
     BS_B6_BILL_DRILL = 0xB6
 } BanjoStateId;
 
@@ -40,6 +50,7 @@ typedef struct player_state_s {
     s32 unk164;
     u8 pad168[4];
     f32 unk16C;
+    f32 unk170;
 } PlayerState;
 
 void func_80098140(PlayerState* thisx, s32, s32);

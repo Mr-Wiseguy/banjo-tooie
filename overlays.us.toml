@@ -215,9 +215,9 @@ entrypoints = [
 [[overlay]] # Overlay 20
 name = "bsbflap"
 entrypoints = [
-  "bsbflap_entrypoint_0",
-  "bsbflap_entrypoint_1",
-  "bsbflap_entrypoint_2",
+  "bsbflap_init",
+  "bsbflap_update",
+  "bsbflap_end",
   "bsbflap_entrypoint_3",
 ]
 

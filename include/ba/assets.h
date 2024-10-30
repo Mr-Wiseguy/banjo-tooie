@@ -2,6 +2,9 @@
 #define __ASSETS_H__
 
 typedef enum asset_e {
+    ASSET_17_ANIM_BSBFLAP = 0x17,
+    ASSET_18_ANIM_BSBFLAP_ENTER = 0x18,
+
     ASSET_1C_ANIM_BSBBARGE = 0x1C,
     ASSET_1D_ANIM_BSBBUSTER,
 
