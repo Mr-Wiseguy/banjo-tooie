@@ -24,6 +24,7 @@ typedef enum ba_physics_type_e {
 
 
 
+void baphysics_set_type(PlayerState *, BaPhysicsType);
 void func_8009B94(PlayerState *);
 void baphysics_set_vertical_velocity(PlayerState *, f32);
 void baphysics_set_target_horizontal_velocity(PlayerState* thisx, f32 vel);

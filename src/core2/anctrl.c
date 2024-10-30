@@ -34,7 +34,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B10C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B134.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/anctrl_setPlaybackType.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B188.s")
 
@@ -50,9 +50,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/anctrl_setStart.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B264.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/anctrl_getIndex.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B284.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/anctrl_getPlaybackType.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008B28C.s")
 

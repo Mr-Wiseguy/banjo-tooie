@@ -36,7 +36,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B7C0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B800.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/baphysics_set_type.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009B94C.s")
 

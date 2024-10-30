@@ -78,7 +78,7 @@ void bsbbuster_init(PlayerState *self) {
     anctrl_setIndex(anctrl, ASSET_1D_ANIM_BSBBUSTER);
     anctrl_setDuration(anctrl, 1.02f);
     anctrl_setSubrange(anctrl, 0.0f, 0.455f);
-    func_8008B134(anctrl, 1);
+    anctrl_setPlaybackType(anctrl, 1);
     anctrl_start(anctrl);
     func_8009FFD8(self, 1, 1, 3, 6);
     baphysics_set_gravity(self, 0.0f);
@@ -186,7 +186,7 @@ void bsbbuster_update(PlayerState *self) {
             if (player_isStable(self)){
                 anctrl_setSubrange(anctrl, 0.0f, 1.0f);
                 anctrl_setDuration(anctrl, 1.9f);
-                func_8008B134(anctrl, 1);
+                anctrl_setPlaybackType(anctrl, 1);
                 next_state = BS_20_LANDING;
             }
             break;

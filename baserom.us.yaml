@@ -940,15 +940,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F0D680
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F0D680, c, bsbflip]
-      - [0x01F0DC80, .rodata, bsbflip]
-      - [0x01F0DCA0, data, bsbflip]
-      - [0x01F0DCB0, bss, bsbflip]
+      - [auto, c, bsbflip]
   - name: bsbfly_header
     dir: overlays/bsbfly
     type: bin

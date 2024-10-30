@@ -224,9 +224,9 @@ entrypoints = [
 [[overlay]] # Overlay 21
 name = "bsbflip"
 entrypoints = [
-  "bsbflip_entrypoint_0",
-  "bsbflip_entrypoint_1",
-  "bsbflip_entrypoint_2",
+  "bsbflip_end",
+  "bsbflip_init",
+  "bsbflip_update",
   "bsbflip_entrypoint_3",
 ]
 

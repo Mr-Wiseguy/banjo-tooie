@@ -85,7 +85,7 @@ void func_80800294_bsbflap(PlayerState *self) {
     if ((0.7f < self->unk170) && anctrl_isAt(anctrl, 0.5698f)) {
         func_8009DF18(self, 0x4431, 1.0f, 22000);
     }
-    if ((func_8008B264(anctrl) == 0x17) && anctrl_isAt(anctrl, 0.02f)) {
+    if ((anctrl_getIndex(anctrl) == 0x17) && anctrl_isAt(anctrl, 0.02f)) {
         func_8009DF94(self, 0x3FF, func_800DC178(0.92f, 1.02f), 16000);
     }
 }
@@ -103,7 +103,7 @@ void bsbflap_update(PlayerState *self) {
                 anctrl_setSmoothTransition(anctrl, 0);
                 anctrl_setIndex(anctrl, ASSET_17_ANIM_BSBFLAP);
                 anctrl_setDuration(anctrl, func_80800168_bsbflap(self));
-                func_8008B134(anctrl, 2); //anctrl_setPlaybackType;
+                anctrl_setPlaybackType(anctrl, 2); //anctrl_setPlaybackType;
                 anctrl_setStart(anctrl, 0);
                 anctrl_start(anctrl);
                 baphysics_set_vertical_velocity(self, 280.0f);

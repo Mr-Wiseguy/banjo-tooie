@@ -72,7 +72,7 @@ void bsbbarge_init(PlayerState *self) {
     anctrl_setIndex(anctrl, ASSET_1C_ANIM_BSBBARGE);
     anctrl_setDuration(anctrl, 1.0f);
     anctrl_setSubrange(anctrl, 0.0f, 0.375f);
-    func_8008B134(anctrl, 1);
+    anctrl_setPlaybackType(anctrl, 1);
     anctrl_start(anctrl);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 3, 14);
     yaw_setVelocityBounded(self, 300.0f, 6.5f);
