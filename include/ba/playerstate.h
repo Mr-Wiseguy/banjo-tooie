@@ -25,6 +25,13 @@ typedef enum bs_e {
     BS_B6_BILL_DRILL = 0xB6
 } BanjoStateId;
 
+typedef struct player_roll_s {
+    f32 value;
+    f32 ideal;
+    f32 limit;
+    f32 rate;
+} BaRoll;
+
 typedef struct player_yaw_s {
     f32 value;
     f32 ideal;
@@ -54,7 +61,8 @@ typedef struct ba_stick_s {
 } BaStick;
 
 typedef struct player_state_s {
-    u8 pad0[0xF8];
+    u8 pad0[0xF4];
+    BaRoll *roll;   // 0xF4
     PlayerYaw *yaw; // 0xF8
     u8 padFC[0x2C];
     BaStick *stick; // 0x128
