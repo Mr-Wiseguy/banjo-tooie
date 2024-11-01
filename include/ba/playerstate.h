@@ -35,10 +35,30 @@ typedef struct player_yaw_s {
     f32 step_percent;
 } PlayerYaw;
 
+typedef struct ba_stick_0_s {
+    f32 position;
+    s32 id;
+    f32 markers[5];
+} BaStickZone;
+
+typedef struct ba_stick_s {
+    BaStickZone stored_zones[2];
+    BaStickZone zone;
+    f32 value[2];
+    f32 angle;
+    f32 distance;
+    u8 unk64;
+    u8 unk65;
+    u8 unk66;
+    u8 unk67;
+} BaStick;
+
 typedef struct player_state_s {
     u8 pad0[0xF8];
-    PlayerYaw *yaw;
-    u8 padFC[0x60];
+    PlayerYaw *yaw; // 0xF8
+    u8 padFC[0x2C];
+    BaStick *stick; // 0x128
+    u8 pad12C[0x30];
     union {
         s32 word;
         u8 bytes[4];

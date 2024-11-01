@@ -416,7 +416,7 @@ segments:
       - [0x1E76CC0, c, 1E76CC0]
       - [0x1E77A20, c, 1E77A20]
       - [0x1E78170, c, 1E78170]
-      - [0x1E785F0, c, 1E785F0]
+      - [0x1E785F0, c, bastick]
       - [0x1E78BF0, c, 1E78BF0]
       - [0x1E79FD0, c, 1E79FD0]
       - [0x1E7AB30, c, 1E7AB30]

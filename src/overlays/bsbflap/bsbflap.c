@@ -10,7 +10,7 @@
 
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"
-#include "core2/1E785F0.h"
+#include "ba/stick.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB5980.h"
@@ -20,8 +20,8 @@
 void bsbflap_init(PlayerState *self) {
     baanim_playForDuration_onceSmooth(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
     func_8009FFD8(self, 1, 1, 1, 2);
-    if (func_8009EF04(self) != 0.0f) {
-        yaw_setIdeal(self, func_8009EEB8(self));
+    if (bastick_distance(self) != 0.0f) {
+        yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
     }
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
     _bswalk_entrypoint_1(self);
