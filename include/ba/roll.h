@@ -5,6 +5,13 @@
 
 #include "ba/playerstate.h"
 
+typedef struct ba_roll_s {
+    f32 value;
+    f32 ideal;
+    f32 limit;
+    f32 rate;
+} BaRoll;
+
 // Definitions
 s32 baroll_getStructSize(void);
 void baroll_reset(PlayerState *self);

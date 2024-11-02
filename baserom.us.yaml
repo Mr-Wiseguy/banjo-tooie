@@ -397,7 +397,7 @@ segments:
       - [0x1E6E760, c, 1E6E760]
       - [0x1E6E870, c, 1E6E870]
       - [0x1E6EC70, c, 1E6EC70]
-      - [0x1E6EFD0, c, 1E6EFD0]
+      - [0x1E6EFD0, c, baflag]
       - [0x1E6F080, c, 1E6F080]
       - [0x1E71260, c, 1E71260]
       - [0x1E71B00, c, 1E71B00]

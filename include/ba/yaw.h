@@ -11,6 +11,16 @@ typedef enum yaw_type_e{
     YAW_TYPE_3_BOUNDED
 } YawType;
 
+typedef struct ba_yaw_s {
+    f32 value;
+    f32 ideal;
+    f32 unk8;
+    s32 update_type;
+    f32 velocity_degPerSec;
+    f32 limit_degPerSec;
+    f32 step_percent;
+} BaYaw;
+
 s32 yaw_size(void);
 void yaw_init(PlayerState *self);
 void yaw_update(PlayerState *self);

@@ -5,6 +5,24 @@
 
 #include "playerstate.h"
 
+typedef struct ba_stick_0_s {
+    f32 position;
+    s32 id;
+    f32 markers[5];
+} BaStickZone;
+
+typedef struct ba_stick_s {
+    BaStickZone stored_zones[2];
+    BaStickZone zone;
+    f32 value[2];
+    f32 angle;
+    f32 distance;
+    u8 unk64;
+    u8 unk65;
+    u8 unk66;
+    u8 unk67;
+} BaStick;
+
 f32 bastick_getAngle(PlayerState *self);
 f32 bastick_getAngleRelativeToBanjo(PlayerState *self);
 s32 bastick_func_8009EEF8(PlayerState *self);

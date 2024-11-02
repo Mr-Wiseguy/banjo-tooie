@@ -22,7 +22,7 @@ BsScript D_808002C0_bstwirl[4] = {func_80800000_bstwirl, bstwirl_init, bstwirl_u
 void func_80800000_bstwirl(PlayerState *self) {
     func_800A0CF4(self, 0);
     func_800C6DA0(0x48);
-    func_80095774(self, 0x29);
+    baflag_clear(self, 0x29);
     _badust_entrypoint_12(self, 1);
 }
 
@@ -34,7 +34,7 @@ void bstwirl_init(PlayerState *self){
     baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
     baphysics_set_target_horizontal_velocity(self, 600.0f);
     func_800A0CF4(self, 1);
-    func_80095760(self, 0x29);
+    baflag_set(self, 0x29);
     if (func_800DC0C0() < 0.5f) {
         func_8009DE38(self, 0x57C, 1.0f);
     } else {

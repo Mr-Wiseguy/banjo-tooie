@@ -25,47 +25,14 @@ typedef enum bs_e {
     BS_B6_BILL_DRILL = 0xB6
 } BanjoStateId;
 
-typedef struct player_roll_s {
-    f32 value;
-    f32 ideal;
-    f32 limit;
-    f32 rate;
-} BaRoll;
-
-typedef struct player_yaw_s {
-    f32 value;
-    f32 ideal;
-    f32 unk8;
-    s32 update_type;
-    f32 velocity_degPerSec;
-    f32 limit_degPerSec;
-    f32 step_percent;
-} PlayerYaw;
-
-typedef struct ba_stick_0_s {
-    f32 position;
-    s32 id;
-    f32 markers[5];
-} BaStickZone;
-
-typedef struct ba_stick_s {
-    BaStickZone stored_zones[2];
-    BaStickZone zone;
-    f32 value[2];
-    f32 angle;
-    f32 distance;
-    u8 unk64;
-    u8 unk65;
-    u8 unk66;
-    u8 unk67;
-} BaStick;
-
 typedef struct player_state_s {
-    u8 pad0[0xF4];
-    BaRoll *roll;   // 0xF4
-    PlayerYaw *yaw; // 0xF8
+    u8 pad0[0x80];
+    struct ba_flag_s *flag; //0x80
+    u8 pad84[0x70];
+    struct ba_roll_s *roll;   // 0xF4
+    struct ba_yaw_s *yaw; // 0xF8
     u8 padFC[0x2C];
-    BaStick *stick; // 0x128
+    struct ba_stick_s *stick; // 0x128
     u8 pad12C[0x30];
     union {
         s32 word;

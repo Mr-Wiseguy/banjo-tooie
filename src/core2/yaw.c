@@ -6,7 +6,7 @@
 #include "ml.h"
 
 s32 yaw_size(void){
-    return sizeof(PlayerYaw);
+    return sizeof(BaYaw);
 }
 
 void __yaw_update_limitless(PlayerState *self, f32 velocity_degPerSec) {
@@ -37,7 +37,7 @@ void __yaw_update_limitless(PlayerState *self, f32 velocity_degPerSec) {
 }
 
 void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_percent) {
-        PlayerYaw *pYaw;
+        BaYaw *pYaw;
         f32 val_deg;
         f32 dyaw_deg;
         f32 dt_s;

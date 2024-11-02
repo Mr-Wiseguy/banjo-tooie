@@ -3,6 +3,7 @@
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/assets.h"
+#include "ba/flag.h"
 #include "ba/timer.h"
 #include "ba/physics.h"
 #include "ba/playerstate.h"
@@ -29,7 +30,7 @@ void bsbflap_init(PlayerState *self) {
     baphysics_set_vertical_velocity(self, 0.0f);
     baphysics_set_gravity(self, -1100.0f);
     func_800A0CF4(self, 1);
-    func_80095760(self, 0x12);
+    baflag_set(self, BA_FLAG_12_HAS_FLAPPED);
     _batimer_set(self, 0, 2.5f);
     func_8009D874(self);
     self->unk160.word = 0;
