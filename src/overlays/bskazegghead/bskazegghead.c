@@ -20,7 +20,7 @@ void bskazegghead_entrypoint_0(PlayerState* player) {
     player->unk160.word = 1;
     player->unk15C.word = 1;
     player->unk164 = func_80094510(player);
-    func_80098140(player, 2, 0);
+    bainput_enable(player, 2, 0);
 }
 
 s32 _bskazcrouch_entrypoint_0(PlayerState*, s32 arg1);   /* extern */
@@ -33,7 +33,7 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     sp2C = 0;
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(player);
     sp24 = func_80094BC0(player) != 0;
-    if ((func_80097C3C(player) != 0) && (func_80094B14(player) != 0)) {
+    if ((baintput_should_shoot_egg(player) != 0) && (func_80094B14(player) != 0)) {
         player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (sp24 != 0) {
@@ -73,7 +73,7 @@ void _bskaz_entrypoint_2(PlayerState*);                /* extern */
 void baphysics_reset_gravity(PlayerState*);            /* extern */
 
 void bskazegghead_entrypoint_2(PlayerState* player) {
-    func_80098140(player, 2, 1);
+    bainput_enable(player, 2, 1);
     baphysics_reset_gravity(player);
     func_800A0CF4(player, 0);
     _bskaz_entrypoint_2(player);

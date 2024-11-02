@@ -171,7 +171,7 @@ void bsbflap_update(PlayerState *self) {
         next_state = BS_2F_FALL;
     }
 
-    if (func_80097A90(self)) {
+    if (bainput_should_beak_bust(self)) {
         next_state = BS_F_BBUSTER;
     }
     

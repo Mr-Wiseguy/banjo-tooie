@@ -30,7 +30,9 @@ typedef struct player_state_s {
     struct ba_key_s *key; // 0x40
     u8 pad44[0x3C];
     struct ba_flag_s *flag; //0x80
-    u8 pad84[0x70];
+    u8 pad84[0x20];
+    struct ba_input_s *input; //0xA4
+    u8 padA8[0x4C];
     struct ba_roll_s *roll;   // 0xF4
     struct ba_yaw_s *yaw; // 0xF8
     u8 padFC[0x2C];
@@ -48,9 +50,10 @@ typedef struct player_state_s {
     u8 pad168[4];
     f32 unk16C;
     f32 unk170;
+    u8 pad174[0x10];
+    s32 unk184;
 } PlayerState;
 
-void func_80098140(PlayerState* thisx, s32, s32);
 s32 func_80094510(PlayerState* thisx);
 
 #endif

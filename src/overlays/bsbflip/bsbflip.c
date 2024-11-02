@@ -132,7 +132,7 @@ void bsbflip_update(PlayerState *self) {
             if (anctrl_isStopped(anctrl)) {
                func_80800064_bsbflip(self, 3); 
             }
-            if (func_80097A90(self)) {
+            if (bainput_should_beak_bust(self)) {
                 next_state = BS_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
@@ -153,7 +153,7 @@ void bsbflip_update(PlayerState *self) {
                 break;
             } 
 
-            if (func_80097A90(self)) {
+            if (bainput_should_beak_bust(self)) {
                 next_state = BS_F_BBUSTER;
             }
             if (func_8008DA24(self)) {

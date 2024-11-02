@@ -16,7 +16,7 @@ void bsbeggass_entrypoint_0(PlayerState* arg0){
     func_800A0CDC(arg0, 1);
     arg0->unk15C.word = arg0->unk160.word = 1;
     arg0->unk164 = func_80094510(arg0);
-    func_80098140(arg0, 5, 0);
+    bainput_enable(arg0, 5, 0);
 }
 
 // bseggass_update
@@ -28,7 +28,7 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
     next_state = 0;
     plyr_mvmt = baanim_getAnimCtrlPtr(arg0);
     has_eggs = func_80094BC0(arg0) != 0;
-    if (func_80097BFC(arg0) && func_80094B14(arg0)) {
+    if (bainput_should_poop_egg(arg0) && func_80094B14(arg0)) {
         arg0->unk15C.word = func_800F1418(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164));
     }
     if (has_eggs) {
@@ -61,7 +61,7 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
 
 // bseggass_end
 void bsbeggass_entrypoint_2(PlayerState* arg0){
-    func_80098140(arg0, 5, 1);
+    bainput_enable(arg0, 5, 1);
     baphysics_reset_gravity(arg0);
     func_800A0CDC(arg0, 0);
 }
