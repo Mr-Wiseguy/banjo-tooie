@@ -5,17 +5,9 @@
 #include "ba/key.h"
 #include "ba/flag.h"
 #include "core2/1EB2840.h"
-extern f32 func_800F0E00(f32, f32);
+#include "core2/1ECA640.h"
 
 #define NOT(x) ((x) ^ 1)
-
-typedef enum {
-    BA_INPUT_0_ROTATE_CAMERA_LEFT,
-    BA_INPUT_1_ROTATE_CAMERA_RIGHT,
-    BA_INPUT_2_ENTER_FIRST_PERSON,
-
-    BA_INPUT_5_EXIT_FIRST_PERSON = 5
-} BaInputId;
 
 s32 bainput_getStructSize(void) {
     return sizeof(BaInput);
@@ -158,7 +150,7 @@ int bainput_func_80097FB8(PlayerState *self) {
         && !func_8008E39C(self);
 }
 
-s32 bainput_isEnabled(PlayerState *self, s32 arg1) {
+s32 bainput_isEnabled(PlayerState *self, BaInputId arg1) {
     return self->input->enabled & (1 << arg1);
 }
 
@@ -186,7 +178,7 @@ void bainput_init(PlayerState *self) {
     self->input->dive_cooldown = 0.0f;
 }
 
-void bainput_enable(PlayerState *self, s32 id, s32 value) {
+void bainput_enable(PlayerState *self, BaInputId id, s32 value) {
     if (value) {
         self->input->enabled |= (1 << id);
     } else {

@@ -11,6 +11,14 @@ typedef struct ba_input_s {
     f32 dive_cooldown;
 } BaInput;
 
+typedef enum {
+    BA_INPUT_0_ROTATE_CAMERA_LEFT,
+    BA_INPUT_1_ROTATE_CAMERA_RIGHT,
+    BA_INPUT_2_ENTER_FIRST_PERSON,
+
+    BA_INPUT_5_EXIT_FIRST_PERSON = 5
+} BaInputId;
+
 s32 bainput_getStructSize(void);
 int bainput_should_beak_barge(PlayerState *self);
 int bainput_should_beak_bust(PlayerState *self);
@@ -32,12 +40,12 @@ int bainput_func_80097EC8(PlayerState *self);
 int bainput_func_80097F08(PlayerState *self);
 int bainput_should_dive(PlayerState *self);
 int bainput_func_80097FB8(PlayerState *self);
-s32 bainput_isEnabled(PlayerState *self, s32 arg1);
+s32 bainput_isEnabled(PlayerState *self, BaInputId arg1);
 int bainput_func_8009803C(PlayerState *self);
 int bainput_should_trot(PlayerState *self);
 int bainput_should_wonderwing(PlayerState *self);
 void bainput_init(PlayerState *self);
-void bainput_enable(PlayerState *self, s32 id, s32 value);
+void bainput_enable(PlayerState *self, BaInputId id, s32 value);
 void bainput_setDiveCooldown(PlayerState *self, s32 arg1, f32 cooldown);
 void bainput_update(PlayerState *self);
 
