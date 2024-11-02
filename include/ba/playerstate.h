@@ -26,7 +26,9 @@ typedef enum bs_e {
 } BanjoStateId;
 
 typedef struct player_state_s {
-    u8 pad0[0x80];
+    u8 pad0[0x40];
+    struct ba_key_s *key; // 0x40
+    u8 pad44[0x3C];
     struct ba_flag_s *flag; //0x80
     u8 pad84[0x70];
     struct ba_roll_s *roll;   // 0xF4
@@ -50,6 +52,5 @@ typedef struct player_state_s {
 
 void func_80098140(PlayerState* thisx, s32, s32);
 s32 func_80094510(PlayerState* thisx);
-s32 button_held(PlayerState*, ButtonId);
 
 #endif

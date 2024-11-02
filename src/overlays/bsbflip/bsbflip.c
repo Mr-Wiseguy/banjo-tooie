@@ -144,7 +144,7 @@ void bsbflip_update(PlayerState *self) {
             if (func_8008E260(self)) {
                 next_state = BS_3D_FALL_TUMBLING;
             }
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 next_state = BS_2F_FALL;
             }
             if (player_isStable(self)) {

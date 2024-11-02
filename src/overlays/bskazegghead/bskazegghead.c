@@ -56,7 +56,7 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     if (func_8008DD04(player) != 0) {
         sp2C = 0xDF;
     }
-    if (button_held(player, BUTTON_Z) != 0) {
+    if (bakey_held(player, BUTTON_Z) != 0) {
         if (anctrl_isStopped(sp28) != 0) {
             sp2C = 0xDD;
         }

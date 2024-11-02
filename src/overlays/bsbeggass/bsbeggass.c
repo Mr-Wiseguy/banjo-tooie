@@ -46,7 +46,7 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
     if (func_8008DD04(arg0)) {
         next_state = BS_2F_FALL;
     }
-    if (button_held(arg0, BUTTON_Z)) {
+    if (bakey_held(arg0, BUTTON_Z)) {
         if (anctrl_isStopped(plyr_mvmt)) {
             next_state = BS_CROUCH;
         }

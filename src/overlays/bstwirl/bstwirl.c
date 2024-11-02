@@ -61,7 +61,7 @@ void bstwirl_update(PlayerState *self) {
         next_state = BS_20_LANDING;
     }
 
-    if (button_pressed(self, BUTTON_A)) {
+    if (bakey_pressed(self, BUTTON_A)) {
         next_state = bs_getTypeOfJump(self);
     }
 

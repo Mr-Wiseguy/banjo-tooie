@@ -97,7 +97,7 @@ void bsbbarge_init(PlayerState *self) {
 void bsbbarge_update(PlayerState *self) {
     s32 next_state = 0;
     AnimCtrl *anctrl =  baanim_getAnimCtrlPtr(self);
-    if (button_released(self, BUTTON_B)) {
+    if (bakey_released(self, BUTTON_B)) {
         baflag_set(self, 0xA); //miscFlag_set
     }
     switch(self->unk160.word) {

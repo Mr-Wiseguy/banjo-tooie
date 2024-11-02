@@ -51,7 +51,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     if (func_8008DD04(player)) {
         next_state = BS_2F_FALL;
     }
-    if (button_held(player, BUTTON_Z)) {
+    if (bakey_held(player, BUTTON_Z)) {
         if (anctrl_isStopped(aCtrl)) {
             next_state = BS_CROUCH;
         }

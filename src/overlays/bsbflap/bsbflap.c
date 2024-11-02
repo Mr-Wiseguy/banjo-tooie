@@ -134,7 +134,7 @@ void bsbflap_update(PlayerState *self) {
             if (self->unk160.word == 4) {
                 self->unk15C.word = 3;
             }
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 baphysics_reset_gravity(self);
                 baphysics_reset_terminal_velocity(self);
                 anctrl_setDuration(anctrl, 1.0f);
@@ -148,7 +148,7 @@ void bsbflap_update(PlayerState *self) {
             func_80800120_bsbflap(self);
             func_808001D8_bsbflap(self);
             func_80800294_bsbflap(self);
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 baphysics_reset_gravity(self);
                 baphysics_reset_terminal_velocity(self);
                 anctrl_setDuration(anctrl, 1.0f);

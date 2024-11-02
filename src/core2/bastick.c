@@ -4,8 +4,8 @@
 
 #include "ba/stick.h"
 
+#include "ba/key.h"
 #include "core2/1E2B200.h"
-#include "core2/1E6AE20.h"
 #include "core2/1E7D460.h"
 #include "core2/1EA3AA0.h"
 
@@ -86,7 +86,7 @@ void bastick_pushZone(PlayerState *self) {
 }
 
 void bastick_update(PlayerState *self) {
-    func_800919D0(self, self->stick->value);
+    bakey_getStick(self, self->stick->value);
     if (self->stick->unk64 || self->stick->unk65 || self->stick->unk67 || !func_80091E80(self, 0x40)) {
         self->stick->unk67 = 0;
         self->stick->value[0] = self->stick->value[1] = 0.0f; 

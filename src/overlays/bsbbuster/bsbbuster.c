@@ -117,7 +117,7 @@ void bsbbuster_update(PlayerState *self) {
                 bsbbuster_setSubstate(self, 2);
             }
 
-            if (baanim_isAt(self, 0.3637f) && button_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
+            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
                 next_state = BS_B6_BILL_DRILL;
             }
             break;
