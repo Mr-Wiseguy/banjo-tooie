@@ -25,20 +25,19 @@ typedef enum bs_e {
     BS_B6_BILL_DRILL = 0xB6
 } BanjoStateId;
 
-typedef struct player_yaw_s {
-    f32 value;
-    f32 ideal;
-    f32 unk8;
-    s32 update_type;
-    f32 velocity_degPerSec;
-    f32 limit_degPerSec;
-    f32 step_percent;
-} PlayerYaw;
-
 typedef struct player_state_s {
-    u8 pad0[0xF8];
-    PlayerYaw *yaw;
-    u8 padFC[0x60];
+    u8 pad0[0x40];
+    struct ba_key_s *key; // 0x40
+    u8 pad44[0x3C];
+    struct ba_flag_s *flag; //0x80
+    u8 pad84[0x20];
+    struct ba_input_s *input; //0xA4
+    u8 padA8[0x4C];
+    struct ba_roll_s *roll;   // 0xF4
+    struct ba_yaw_s *yaw; // 0xF8
+    u8 padFC[0x2C];
+    struct ba_stick_s *stick; // 0x128
+    u8 pad12C[0x30];
     union {
         s32 word;
         u8 bytes[4];
@@ -51,10 +50,10 @@ typedef struct player_state_s {
     u8 pad168[4];
     f32 unk16C;
     f32 unk170;
+    u8 pad174[0x10];
+    s32 unk184;
 } PlayerState;
 
-void func_80098140(PlayerState* thisx, s32, s32);
 s32 func_80094510(PlayerState* thisx);
-s32 button_held(PlayerState*, ButtonId);
 
 #endif

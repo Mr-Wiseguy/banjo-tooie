@@ -25,8 +25,8 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
         case 1:
             break;
         case 2:
-            if (func_80095748(self, 0xA)) {
-                func_80095760(self, 0xC);
+            if (baflag_isFalse(self, 0xA)) {
+                baflag_set(self, 0xC);
                 self->unk16C = 850.0f;
             } else {
                 self->unk16C = 500.0f;
@@ -41,7 +41,7 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
             baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
             func_8009DF18(self, 0x3FF, 0.558f, 0x55F0);
             _badust_entrypoint_12(self, 2);
-            func_80095760(self, 0x20);
+            baflag_set(self, 0x20);
             break;
 
         case 4:
@@ -61,7 +61,7 @@ void bsbbarge_end(PlayerState *self) {
     func_8009E474(self);
     func_800C6DA0(0x41);
     func_800A0CF4(self, 0);
-    func_80095774(self, 0x20);
+    baflag_clear(self, 0x20);
     _badust_entrypoint_12(self, 0x1);
 }
 
@@ -80,10 +80,10 @@ void bsbbarge_init(PlayerState *self) {
     baphysics_set_target_horizontal_velocity(self, baphysics_get_target_horizontal_velocity(self)*0.3f);
     baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
     func_800A0CF4(self, 1);
-    func_80095774(self, 0x20);
-    func_80095774(self, 0xA);
-    func_80095774(self, 0xB);
-    func_80095774(self, 0xC);
+    baflag_clear(self, 0x20);
+    baflag_clear(self, 0xA);
+    baflag_clear(self, 0xB);
+    baflag_clear(self, 0xC);
     func_8009E4AC(self);
     func_8009E5A4(self, 2, 3);
     func_8009E55C(self, 2, 40.f);
@@ -97,8 +97,8 @@ void bsbbarge_init(PlayerState *self) {
 void bsbbarge_update(PlayerState *self) {
     s32 next_state = 0;
     AnimCtrl *anctrl =  baanim_getAnimCtrlPtr(self);
-    if (button_released(self, BUTTON_B)) {
-        func_80095760(self, 0xA); //miscFlag_set
+    if (bakey_released(self, BUTTON_B)) {
+        baflag_set(self, 0xA); //miscFlag_set
     }
     switch(self->unk160.word) {
         case 1:
@@ -113,13 +113,13 @@ void bsbbarge_update(PlayerState *self) {
 
         case 2:
             _batimer_decrement(self, 1);
-            if (func_80095748(self, 0xB) && _batimer_isLessThan(self, 1, 0.1f)) {
-                if (func_80095738(self, 0xC)) {
+            if (baflag_isFalse(self, 0xB) && _batimer_isLessThan(self, 1, 0.1f)) {
+                if (baflag_isTrue(self, 0xC)) {
                     func_8009DF94(self, 0x4400, 1.0f, 0x7530);
                 } else {
                     func_8009DF94(self, 0x442D, 1.0f, 0x7530);
                 }
-                func_80095760(self, 0xB);
+                baflag_set(self, 0xB);
             }
 
             if (_batimer_isZero(self, 1)){
@@ -137,7 +137,7 @@ void bsbbarge_update(PlayerState *self) {
 
         case 4:
             _batimer_decrement(self, 0);
-            if (func_80095748(self, 0xC) || _batimer_isZero(self, 0)) {
+            if (baflag_isFalse(self, 0xC) || _batimer_isZero(self, 0)) {
                 self->unk16C -= 80.0f;
             }
             baphysics_set_target_horizontal_velocity(self, self->unk16C);
@@ -153,7 +153,7 @@ void bsbbarge_update(PlayerState *self) {
 
             if (anctrl_isAt(anctrl, 0.7f)) {
                 self->unk16C = 0.0f;
-                func_80095774(self, 0x20);
+                baflag_clear(self, 0x20);
             }
 
             baphysics_set_target_horizontal_velocity(self, self->unk16C);
@@ -164,7 +164,7 @@ void bsbbarge_update(PlayerState *self) {
             break;
     }
 
-    if (func_80095738(self, 0x20)) {
+    if (baflag_isTrue(self, 0x20)) {
         func_8008EE88(self, 50.0f);
     }
 

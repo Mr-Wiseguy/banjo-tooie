@@ -8,13 +8,13 @@
 
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"
-#include "core2/1E785F0.h"
+#include "ba/stick.h"
 #include "core2/1ECA640.h"
 
 
 void func_80800000_bsbflip(PlayerState *self) {
-    f32 sp1C = func_8009EF1C(self);
-    if (!func_8009EF10(self)) {
+    f32 sp1C = bastick_getZonePosition(self);
+    if (!bastick_getZone(self)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
         baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 200.0f));
@@ -31,7 +31,7 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
             baphysics_reset_gravity(self);
             baphysics_reset_terminal_velocity(self);
             func_800A0D44(self, 0);
-            func_8009F1E0(self);
+            bastick_resetZones(self);
             break;
 
         case 1:
@@ -44,18 +44,18 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
             anctrl_setPlaybackType(anctrl, 1);
             anctrl_start(anctrl);
             func_8009FFD8(self, 1, 1, 2, 3);
-            func_8009F1C8(self, 0, 0.03f);
-            func_8009F1C8(self, 1, 1.0f);
+            bastick_setZoneMax(self, 0, 0.03f);
+            bastick_setZoneMax(self, 1, 1.0f);
             func_800A0CF4(self, 1);
             func_8009D874(self);
             break;
 
         case 2:
-            if (func_8009EF04(self) != 0.0f) {
+            if (bastick_distance(self) != 0.0f) {
                 yaw_setUpdateType(self, YAW_TYPE_2_UNBOUNDED);
                 func_8009D2D8(self, 3);
-                if (func_8009EF04){
-                    yaw_setIdeal(self, func_8009EEB8(self));
+                if (bastick_distance){
+                    yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
                 }
                 yaw_rotateTimed(self, 1.0f);
                 baphysics_set_type(self, BA_PHYSICS_AIRBORN);
@@ -132,7 +132,7 @@ void bsbflip_update(PlayerState *self) {
             if (anctrl_isStopped(anctrl)) {
                func_80800064_bsbflip(self, 3); 
             }
-            if (func_80097A90(self)) {
+            if (bainput_should_beak_bust(self)) {
                 next_state = BS_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
@@ -144,7 +144,7 @@ void bsbflip_update(PlayerState *self) {
             if (func_8008E260(self)) {
                 next_state = BS_3D_FALL_TUMBLING;
             }
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 next_state = BS_2F_FALL;
             }
             if (player_isStable(self)) {
@@ -153,7 +153,7 @@ void bsbflip_update(PlayerState *self) {
                 break;
             } 
 
-            if (func_80097A90(self)) {
+            if (bainput_should_beak_bust(self)) {
                 next_state = BS_F_BBUSTER;
             }
             if (func_8008DA24(self)) {

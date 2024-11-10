@@ -38,7 +38,7 @@ void bsbbuster_setSubstate(PlayerState *self, int substate) {
             break;
 
         case 4:
-            func_80095760(self, 0x27);
+            baflag_set(self, 0x27);
             _bashake_entrypoint_1(self, 0x3, 0x2);
             func_800A2EEC(self, 0);
             _badust_entrypoint_10(self, 0.0f);
@@ -51,7 +51,7 @@ void bsbbuster_setSubstate(PlayerState *self, int substate) {
             break;
 
         case 5:
-            if (func_80095738(self, 0x23)) {
+            if (baflag_isTrue(self, 0x23)) {
                 baphysics_set_vertical_velocity(self, 400.0f);
                 baphysics_set_gravity(self, -800.0f);
             } else {
@@ -67,8 +67,8 @@ void bsbbuster_end(PlayerState *self) {
     baphysics_reset_gravity(self);
     baphysics_reset_terminal_velocity(self);
     func_800A0CF4(self, 0);
-    func_80095774(self, 0x21);
-    func_80095774(self, 0x27);
+    baflag_clear(self, 0x21);
+    baflag_clear(self, 0x27);
 }
 
 void bsbbuster_init(PlayerState *self) {
@@ -85,9 +85,9 @@ void bsbbuster_init(PlayerState *self) {
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_8009BA9C(self, 0);
     func_800A0CF4(self, 1);
-    func_80095774(self, 0x23);
-    func_80095774(self, 0x21);
-    func_80095774(self, 0x27);
+    baflag_clear(self, 0x23);
+    baflag_clear(self, 0x21);
+    baflag_clear(self, 0x27);
     self->unk15C.bytes[1] = 0;
     self->unk15C.bytes[2] = 0;
     self->unk16C = 9.999999747e-05f;
@@ -117,7 +117,7 @@ void bsbbuster_update(PlayerState *self) {
                 bsbbuster_setSubstate(self, 2);
             }
 
-            if (baanim_isAt(self, 0.3637f) && button_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
+            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
                 next_state = BS_B6_BILL_DRILL;
             }
             break;
@@ -145,7 +145,7 @@ void bsbbuster_update(PlayerState *self) {
                 _bamotor_entrypoint_1(self, 1.0f, 0.7f, 0.2f);
                 self->unk15C.bytes[3]++;
             }
-            self->unk15C.bytes[1] = func_80095738(self, 0x8);
+            self->unk15C.bytes[1] = baflag_isTrue(self, 0x8);
             func_80096394(self, sp28);
             if (mlAbsF(sp28[1]) < 1.0f) {
                 self->unk160.bytes[0]++;
@@ -166,7 +166,7 @@ void bsbbuster_update(PlayerState *self) {
             break;
 
         case 4:
-            func_80095774(self, 0x27);
+            baflag_clear(self, 0x27);
             self->unk15C.bytes[2] = 0;
             if (func_8009BD44(self) == 1) {
                 func_8009BDAC(self, 0.9f);
@@ -197,9 +197,9 @@ void bsbbuster_update(PlayerState *self) {
     }
     
     if (self->unk15C.bytes[2]) {
-        func_80095760(self, 0x21);
+        baflag_set(self, 0x21);
     } else {
-        func_80095774(self, 0x21);
+        baflag_clear(self, 0x21);
     }
     bs_setState(self, next_state);
 

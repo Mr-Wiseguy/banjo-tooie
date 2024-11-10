@@ -3,6 +3,7 @@
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/assets.h"
+#include "ba/flag.h"
 #include "ba/timer.h"
 #include "ba/physics.h"
 #include "ba/playerstate.h"
@@ -10,7 +11,7 @@
 
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"
-#include "core2/1E785F0.h"
+#include "ba/stick.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB5980.h"
@@ -20,8 +21,8 @@
 void bsbflap_init(PlayerState *self) {
     baanim_playForDuration_onceSmooth(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
     func_8009FFD8(self, 1, 1, 1, 2);
-    if (func_8009EF04(self) != 0.0f) {
-        yaw_setIdeal(self, func_8009EEB8(self));
+    if (bastick_distance(self) != 0.0f) {
+        yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
     }
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
     _bswalk_entrypoint_1(self);
@@ -29,7 +30,7 @@ void bsbflap_init(PlayerState *self) {
     baphysics_set_vertical_velocity(self, 0.0f);
     baphysics_set_gravity(self, -1100.0f);
     func_800A0CF4(self, 1);
-    func_80095760(self, 0x12);
+    baflag_set(self, BA_FLAG_12_HAS_FLAPPED);
     _batimer_set(self, 0, 2.5f);
     func_8009D874(self);
     self->unk160.word = 0;
@@ -133,7 +134,7 @@ void bsbflap_update(PlayerState *self) {
             if (self->unk160.word == 4) {
                 self->unk15C.word = 3;
             }
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 baphysics_reset_gravity(self);
                 baphysics_reset_terminal_velocity(self);
                 anctrl_setDuration(anctrl, 1.0f);
@@ -147,7 +148,7 @@ void bsbflap_update(PlayerState *self) {
             func_80800120_bsbflap(self);
             func_808001D8_bsbflap(self);
             func_80800294_bsbflap(self);
-            if (button_released(self, BUTTON_A)) {
+            if (bakey_released(self, BUTTON_A)) {
                 baphysics_reset_gravity(self);
                 baphysics_reset_terminal_velocity(self);
                 anctrl_setDuration(anctrl, 1.0f);
@@ -170,7 +171,7 @@ void bsbflap_update(PlayerState *self) {
         next_state = BS_2F_FALL;
     }
 
-    if (func_80097A90(self)) {
+    if (bainput_should_beak_bust(self)) {
         next_state = BS_F_BBUSTER;
     }
     

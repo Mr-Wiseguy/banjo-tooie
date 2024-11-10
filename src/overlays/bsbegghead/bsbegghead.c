@@ -16,7 +16,7 @@ void bsbegghead_entrypoint_0(PlayerState* player){
     func_800A0CF4(player, 1);
     player->unk15C.word = player->unk160.word = 1;
     player->unk164 = func_80094510(player);
-    func_80098140(player, 2, 0);
+    bainput_enable(player, 2, 0);
 }
 
 // bsegghead_update
@@ -28,7 +28,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     next_state = 0;
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
-    if (func_80097C3C(player) && func_80094B14(player)) {
+    if (baintput_should_shoot_egg(player) && func_80094B14(player)) {
         player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (has_eggs) {
@@ -51,7 +51,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     if (func_8008DD04(player)) {
         next_state = BS_2F_FALL;
     }
-    if (button_held(player, BUTTON_Z)) {
+    if (bakey_held(player, BUTTON_Z)) {
         if (anctrl_isStopped(aCtrl)) {
             next_state = BS_CROUCH;
         }
@@ -66,7 +66,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
 
 // bsegghead_end
 void bsbegghead_entrypoint_2(PlayerState* player){
-    func_80098140(player, 2, 1);
+    bainput_enable(player, 2, 1);
     baphysics_reset_gravity(player);
     func_800A0CF4(player, 0);
 }
