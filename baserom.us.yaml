@@ -663,15 +663,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F01DB0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F01DB0, c, bsbanbflip]
-      - [0x01F022C0, .rodata, bsbanbflip]
-      - [0x01F022C0, data, bsbanbflip]
-      - [0x01F022D0, bss, bsbanbflip]
+      - [auto, c, bsbanbflip]
   - name: bsbanpackwhack_header
     dir: overlays/bsbanpackwhack
     type: bin
