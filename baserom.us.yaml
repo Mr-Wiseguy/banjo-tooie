@@ -3680,15 +3680,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F703E0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F703E0, c, baairbar]
-      - [0x01F70480, .rodata, baairbar]
-      - [0x01F70480, data, baairbar]
-      - [0x01F70480, bss, baairbar]
+      - [auto, c, baairbar]
   - name: cadbmgrDll_header
     dir: overlays/cadbmgrDll
     type: bin
