@@ -26,12 +26,14 @@ typedef enum bs_e {
 } BanjoStateId;
 
 typedef struct player_state_s {
-    u8 pad0[0x40];
-    struct ba_key_s *key; // 0x40
+    u8 pad0[0x14];
+    /* 0x14 */ struct ba_backpack_s *backpack;
+    u8 pad18[0x28];
+    /* 0x40 */ struct ba_key_s *key;
     u8 pad44[0x3C];
-    struct ba_flag_s *flag; //0x80
+    /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x20];
-    struct ba_input_s *input; //0xA4
+    /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x4C];
     struct ba_roll_s *roll;   // 0xF4
     struct ba_yaw_s *yaw; // 0xF8
