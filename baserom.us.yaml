@@ -2616,15 +2616,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F59590
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F59590, c, baalarm]
-      - [0x01F59870, .rodata, baalarm]
-      - [0x01F59880, data, baalarm]
-      - [0x01F59880, bss, baalarm]
+      - [auto, c, baalarm]
   - name: baattach_header
     dir: overlays/baattach
     type: bin
@@ -2635,15 +2629,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F598F0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F598F0, c, baattach]
-      - [0x01F599C0, .rodata, baattach]
-      - [0x01F599C0, data, baattach]
-      - [0x01F599C0, bss, baattach]
+      - [auto, c, baattach]
   - name: bababykaz_header
     dir: overlays/bababykaz
     type: bin

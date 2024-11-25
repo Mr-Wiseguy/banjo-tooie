@@ -27,7 +27,9 @@ typedef enum bs_e {
 
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
-    u8 pad4[0x10];
+    u8 pad4[0x4];
+    /* 0x08 */ struct ba_attach_s *attach;
+    u8 padC[0x8];
     /* 0x14 */ struct ba_backpack_s *backpack;
     u8 pad18[0x28];
     /* 0x40 */ struct ba_key_s *key;
