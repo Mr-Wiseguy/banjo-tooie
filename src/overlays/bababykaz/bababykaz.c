@@ -91,7 +91,7 @@ void bababykaz_entrypoint_11(PlayerState *self) {
     if (sp38 && _batimer_decrement(self, 0xC)) {
         self->babykaz->unk1 = 1;
     }
-    tmp_f0 = _batimer_entrypoint_4(self, 0xC);
+    tmp_f0 = _batimer_get(self, 0xC);
     tmp0 = func_800F10B4(tmp_f0, 0.0f, 20.0f, 1.0f, 21.0f) - 0.0001f;
     self->babykaz->unk4 = func_800F0E00(0.0f, (f32)tmp0);
 

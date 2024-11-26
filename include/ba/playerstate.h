@@ -43,11 +43,13 @@ typedef struct player_state_s {
     u8 pad84[0x20];
     /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x4C];
-    struct ba_roll_s *roll;   // 0xF4
-    struct ba_yaw_s *yaw; // 0xF8
+    /* 0xF4 */ struct ba_roll_s *roll;
+    /* 0xF8 */ struct ba_yaw_s *yaw;
     u8 padFC[0x2C];
-    struct ba_stick_s *stick; // 0x128
-    u8 pad12C[0x30];
+    /* 0x128 */ struct ba_stick_s *stick;
+    u8 pad12C[0x10];
+    /* 0x13C */ struct ba_timer_s *timer;
+    u8 pad140[0x1C];
     union {
         s32 word;
         u8 bytes[4];

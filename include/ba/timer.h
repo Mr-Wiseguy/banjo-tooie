@@ -5,10 +5,17 @@
 
 #include "playerstate.h"
 
-f32 _batimer_entrypoint_4(PlayerState *, s32 id);
+#define BA_TIMER_COUNT 15
+
+typedef struct ba_timer_s {
+    f32 unk0[BA_TIMER_COUNT];
+    f32 unk3C[BA_TIMER_COUNT];
+} BaTimer;
+
+int _batimer_decrement(PlayerState *self, s32 id);
+f32 _batimer_get(PlayerState *, s32 id);
 
 s32 _batimer_isLessThan(PlayerState *self, s32 id, f32 inc_value_sec);
-int _batimer_decrement(PlayerState *self, s32 id);
 void batimer_increment(PlayerState *self,  s32 id);
 f32 batimer_get(PlayerState *self, s32 id);
 int batimer_isAt(PlayerState *self, s32 id, f32 value_sec);
