@@ -49,7 +49,8 @@ typedef struct player_state_s {
     /* 0x128 */ struct ba_stick_s *stick;
     u8 pad12C[0x10];
     /* 0x13C */ struct ba_timer_s *timer;
-    u8 pad140[0x1C];
+    /* 0x140 */ struct ba_translate_s *translate;
+    u8 pad144[0x18];
     union {
         s32 word;
         u8 bytes[4];

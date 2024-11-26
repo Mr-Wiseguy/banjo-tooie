@@ -3485,15 +3485,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F6DDD0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F6DDD0, c, batimer]
-      - [0x01F6E0D0, .rodata, batimer]
-      - [0x01F6E0D0, data, batimer]
-      - [0x01F6E0D0, bss, batimer]
+      - [auto, c, batimer]
   - name: batranslate_header
     dir: overlays/batranslate
     type: bin
@@ -3504,15 +3498,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F6E130
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F6E130, c, batranslate]
-      - [0x01F6E350, .rodata, batranslate]
-      - [0x01F6E350, data, batranslate]
-      - [0x01F6E350, bss, batranslate]
+      - [auto, c, batranslate]
   - name: bavan_header
     dir: overlays/bavan
     type: bin
