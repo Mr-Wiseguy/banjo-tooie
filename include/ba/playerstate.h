@@ -32,7 +32,9 @@ typedef struct player_state_s {
     u8 padC[0x4];
     /* 0x10 */ struct ba_babykaz_s *babykaz;
     /* 0x14 */ struct ba_backpack_s *backpack;
-    u8 pad18[0x28];
+    u8 pad18[0x4];
+    /* 0x1C */ struct ba_bee_s *bee;
+    u8 pad20[0x20];
     /* 0x40 */ struct ba_key_s *key;
     u8 pad44[0x3C];
     /* 0x80 */ struct ba_flag_s *flag;

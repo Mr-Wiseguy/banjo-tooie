@@ -2655,15 +2655,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F59F70
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F59F70, c, babackpack]
-      - [0x01F5A6C0, .rodata, babackpack]
-      - [0x01F5A6E0, data, babackpack]
-      - [0x01F5A6E0, bss, babackpack]
+      - [auto, c, babackpack]
   - name: babee_header
     dir: overlays/babee
     type: bin
