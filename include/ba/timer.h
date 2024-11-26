@@ -5,6 +5,8 @@
 
 #include "playerstate.h"
 
+f32 _batimer_entrypoint_4(PlayerState *, s32 id);
+
 s32 _batimer_isLessThan(PlayerState *self, s32 id, f32 inc_value_sec);
 int _batimer_decrement(PlayerState *self, s32 id);
 void batimer_increment(PlayerState *self,  s32 id);

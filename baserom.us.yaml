@@ -2642,15 +2642,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F59A50
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F59A50, c, bababykaz]
-      - [0x01F59EC0, .rodata, bababykaz]
-      - [0x01F59ED0, data, bababykaz]
-      - [0x01F59ED0, bss, bababykaz]
+      - [auto, c, bababykaz]
   - name: babackpack_header
     dir: overlays/babackpack
     type: bin
