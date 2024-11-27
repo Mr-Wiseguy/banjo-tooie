@@ -3568,15 +3568,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F6EDD0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F6EDD0, c, bawobble]
-      - [0x01F6F1B0, .rodata, bawobble]
-      - [0x01F6F1C0, data, bawobble]
-      - [0x01F6F1C0, bss, bawobble]
+      - [auto, c, bawobble]
   - name: bamotor_header
     dir: overlays/bamotor
     type: bin
