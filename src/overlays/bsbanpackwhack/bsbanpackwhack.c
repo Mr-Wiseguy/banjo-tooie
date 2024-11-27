@@ -40,7 +40,7 @@ void bsbanpackwhack_entrypoint_0(PlayerState *self) {
 }
 
 void bsbanpackwhack_entrypoint_1(PlayerState *self) {
-    func_8008CCBC(self, 0xAF, 1.7f);
+    baanim_playForDuration_onceSmooth(self, 0xAF, 1.7f);
     func_8009FFD8(self, 1, 1, 3, 6);
     self->unk16C = baphysics_get_target_horizontal_velocity(self);
     if (player_isStable(self)) {

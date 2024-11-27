@@ -10,6 +10,7 @@ typedef struct anctrl_s {
     u8 unk0;
 } AnimCtrl;
 
+AnimCtrl *func_8008AD80(s32);
 void anctrl_setIndex(AnimCtrl *, AssetId);
 void anctrl_reset(AnimCtrl *);
 void anctrl_setSmoothTransition(AnimCtrl *, s32);

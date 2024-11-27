@@ -19,7 +19,7 @@ void func_8080003C_babackpack(PlayerState *self) {
     self->backpack->anctrl = func_8008AD80(1);
     anctrl_setSmoothTransition(self->backpack->anctrl, 0);
     anctrl_setIndex(self->backpack->anctrl, 0x21);
-    func_8008B10C(self->backpack->anctrl, func_8008CAC8(self));
+    func_8008B10C(self->backpack->anctrl, baanim_getTimer(self));
     anctrl_setPlaybackType(self->backpack->anctrl, 1);
     anctrl_setDuration(self->backpack->anctrl, 1000.0f);
     anctrl_start(self->backpack->anctrl);
@@ -74,7 +74,7 @@ s32 func_8080021C_babackpack(PlayerState *self) {
 
 void babackpack_entrypoint_2(PlayerState *self) {
     if (self->backpack->state == 7) {
-        func_8008B10C(self->backpack->anctrl, func_8008CAC8(self));
+        func_8008B10C(self->backpack->anctrl, baanim_getTimer(self));
         func_8008B304(self->backpack->anctrl);
         func_800DF41C(func_8008B4D4(self->backpack->anctrl));
         func_800A0714(self, self->backpack->unk0);
@@ -90,7 +90,7 @@ void babackpack_entrypoint_3(PlayerState *self, f32 *position, f32 *arg2, s32 ar
     func_800DF818(func_8080021C_babackpack(self));
     func_800DF720(func_80100AC4(self->backpack->unk8));
     if (self->backpack->state == 7) {
-        func_8008B10C(self->backpack->anctrl, func_8008CAC8(self));
+        func_8008B10C(self->backpack->anctrl, baanim_getTimer(self));
         func_8008B304(self->backpack->anctrl);
         func_800DF41C(func_8008B4D4(self->backpack->anctrl));
         func_800A0714(self, self->backpack->unk0);

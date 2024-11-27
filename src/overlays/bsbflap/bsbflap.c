@@ -19,7 +19,7 @@
 
 
 void bsbflap_init(PlayerState *self) {
-    baanim_playForDuration_onceSmooth(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
+    baanim_playForDuration_once(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
     func_8009FFD8(self, 1, 1, 1, 2);
     if (bastick_distance(self) != 0.0f) {
         yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));

@@ -12,7 +12,7 @@ void yaw_setVelocityBounded(PlayerState*, f32, f32);       /* extern */
 
 void bskazegghead_entrypoint_0(PlayerState* player) {
     _bskaz_entrypoint_1();
-    baanim_playForDuration_onceSmooth(player, 0x28D, 0.75f);
+    baanim_playForDuration_once(player, 0x28D, 0.75f);
     func_8009FFD8(player, 1, 3, 1, 3);
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
