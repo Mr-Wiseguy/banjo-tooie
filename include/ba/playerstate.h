@@ -52,7 +52,8 @@ typedef struct player_state_s {
     /* 0x140 */ struct ba_translate_s *translate;
     /* 0x144 */ struct ba_van_s *van;
     /* 0x148 */ struct ba_wandglow_s *wandglow;
-    u8 pad14C[0x10];
+    /* 0x14C */ struct ba_washer_s *washer;
+    u8 pad150[0xC];
     union {
         s32 word;
         u8 bytes[4];
