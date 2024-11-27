@@ -1,36 +1,16 @@
 #include "types.h"
 #include "memory.h"
 
+#include "core2/1EBA250.h"
+#include "core2/1EC8070.h"
+
 // TODO move these to a math header.
 void func_800D9470(f32[4], f32[4], f32[4]);
 void func_800D952C(f32[4], f32[4]);
 void func_800D9888(f32[4], f32[4], f32[4], f32);
 void func_800D9AD4(f32[4], f32[4], f32[4], f32);
-void func_800EF334(f32[3], f32);
 
-typedef struct {
-    f32 unk0;
-    f32 unk4[3];
-    u8 unk10;
-    u8 unk11;
-    u8 pad12[2];
-} Unkfunc_800E0960_2;
-
-typedef struct {
-    Unkfunc_800E0960_2* unk0;
-    s16 unk4;
-    s16 unk6;
-    u8 unk8;
-    u8 unk9;
-    u8 unkA;
-    u8 padB;
-    f32 unkC;
-    s32 unk10[4];
-} Unkfunc_800E0960_1;
-
-void func_800E0ACC(Unkfunc_800E0960_1*);
 s16 func_8001B668(s32, s32);
-Unkfunc_800E0960_1* func_800E0A28(s16);
 Unkfunc_800E0960_1* func_8001B798(s16);
 void func_8001B754(s16);
 

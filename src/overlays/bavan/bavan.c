@@ -55,7 +55,7 @@ void bavan_entrypoint_7(PlayerState *self, f32 arg1) {
 }
 
 void bavan_entrypoint_8(PlayerState *self) {
-    s32 tmp_s1;
+    Unkfunc_800E0960_1 *tmp_s1;
     f32 sp38[3];
     f32 dt;
     
