@@ -2710,15 +2710,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F5AFC0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F5AFC0, c, babounce]
-      - [0x01F5B670, .rodata, babounce]
-      - [0x01F5B680, data, babounce]
-      - [0x01F5B680, bss, babounce]
+      - [auto, c, babounce]
   - name: bacough_header
     dir: overlays/bacough
     type: bin
@@ -2729,15 +2723,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F5B700
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F5B700, c, bacough]
-      - [0x01F5B9D0, .rodata, bacough]
-      - [0x01F5B9F0, data, bacough]
-      - [0x01F5B9F0, bss, bacough]
+      - [auto, c, bacough]
   - name: badata_header
     dir: overlays/badata
     type: bin

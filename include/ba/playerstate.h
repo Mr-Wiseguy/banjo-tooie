@@ -42,7 +42,8 @@ typedef struct player_state_s {
     /* 0x34 */ struct ba_buzz_s *buzz;
     u8 pad38[0x8];
     /* 0x40 */ struct ba_key_s *key;
-    u8 pad44[0x3C];
+    /* 0x44 */ struct ba_cough_s *cough;
+    u8 pad48[0x38];
     /* 0x80 */ struct ba_flag_s *flag;
     u8 pad84[0x20];
     /* 0xA4 */ struct ba_input_s *input;
