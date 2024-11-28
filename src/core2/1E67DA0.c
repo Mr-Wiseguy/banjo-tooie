@@ -1,8 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E4B0.s")
+#include "ba/1E67DA0.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E4B8.s")
+extern f32 func_8009E138(PlayerState *, s32);
+
+s32 func_8008E4B0(void) {
+    return sizeof(BaUnknownC);
+}
+
+s32 *func_8008E4B8(PlayerState *self) {
+    s32 i;
+    for (i = 0; i < 3; i++) {
+        self->unkC->unkC[i] = (s32)func_8009E138(self, i);
+    }
+    return self->unkC->unkC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E530.s")
 

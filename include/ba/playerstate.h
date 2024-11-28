@@ -29,14 +29,16 @@ typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
     /* 0x08 */ struct ba_attach_s *attach;
-    u8 padC[0x4];
+    /* 0x0C */ struct ba_unknown_c_s *unkC; // baavatar? from BK XBox debug strings?
     /* 0x10 */ struct ba_babykaz_s *babykaz;
     /* 0x14 */ struct ba_backpack_s *backpack;
     u8 pad18[0x4];
     /* 0x1C */ struct ba_bee_s *bee;
-    u8 pad20[0x4];
+    /* 0x20 */ struct ba_unknown_20_s *unk20;
     /* 0x24 */ struct ba_boost_s *boost;
-    u8 pad28[0x18];
+    u8 pad28[0x4];
+    /* 0x2C */ struct ba_unknown_2C_s *unk2C; //something with camera
+    u8 pad30[0x10];
     /* 0x40 */ struct ba_key_s *key;
     u8 pad44[0x3C];
     /* 0x80 */ struct ba_flag_s *flag;
