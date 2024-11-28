@@ -2786,15 +2786,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F5E910
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F5E910, c, babuzz]
-      - [0x01F5EBE0, .rodata, babuzz]
-      - [0x01F5EBF0, data, babuzz]
-      - [0x01F5EBF0, bss, babuzz]
+      - [auto, c, babuzz]
   - name: badialog_header
     dir: overlays/badialog
     type: bin
