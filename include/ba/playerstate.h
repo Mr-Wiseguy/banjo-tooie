@@ -36,7 +36,7 @@ typedef struct player_state_s {
     /* 0x1C */ struct ba_bee_s *bee;
     /* 0x20 */ struct ba_unknown_20_s *unk20;
     /* 0x24 */ struct ba_boost_s *boost;
-    u8 pad28[0x4];
+    /* 0x28 */ struct ba_bounce_s *bounce;
     /* 0x2C */ struct ba_unknown_2C_s *unk2C; //something with camera
     u8 pad30[0x4];
     /* 0x34 */ struct ba_buzz_s *buzz;
