@@ -49,11 +49,11 @@ int bainput_should_enter_first_person(PlayerState *self) {
     return bakey_pressed(self, BUTTON_C_UP) && func_8008D9A4(self) && bainput_isEnabled(self, BA_INPUT_2_ENTER_FIRST_PERSON);
 }
 
-int baintput_func_80097B28(PlayerState *self) {
+int bainput_func_80097B28(PlayerState *self) {
     return NOT(bakey_heldCount(self, BUTTON_R) < 7);
 }
 
-int baintput_func_80097B4C(PlayerState *self) {
+int bainput_func_80097B4C(PlayerState *self) {
     return NOT(bakey_heldCount(self, BUTTON_R) < 9);
 }
 
@@ -73,7 +73,7 @@ int bainput_should_poop_egg(PlayerState *self) {
     return bakey_pressed(self, BUTTON_C_DOWN) && func_8008D280(self);
 }
 
-int baintput_should_shoot_egg(PlayerState *self) {
+int bainput_should_shoot_egg(PlayerState *self) {
     return bakey_pressed(self, BUTTON_C_UP) && func_8008D280(self);
 }
 
@@ -109,7 +109,7 @@ int bainput_func_80097D28(PlayerState *self) {
     return bakey_newlyReleased(self, BUTTON_R) && (bakey_func_80091940(self, BUTTON_R, 1) < 7);     
 }
 
-int baintput_should_feathery_flap(PlayerState *self) {
+int bainput_should_feathery_flap(PlayerState *self) {
     return bakey_pressed(self, BUTTON_A)
         && !func_8008E39C(self)
         && baflag_isFalse(self, BA_FLAG_12_HAS_FLAPPED);

@@ -23,7 +23,7 @@ s32 func_800F1418(s32, s32);
 void func_8008B064(AnimCtrl*);
 void func_8008B24C(AnimCtrl*, f32);
 f32 func_8008B2B4(AnimCtrl*);
-s32 baintput_should_shoot_egg(PlayerState*);
+s32 bainput_should_shoot_egg(PlayerState*);
 void func_8009E5C8(PlayerState*, s32);
 void func_800A0CF4(PlayerState* player, s32);
 

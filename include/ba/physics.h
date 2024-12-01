@@ -37,6 +37,10 @@ void baphysics_reset_terminal_velocity(PlayerState *);
 void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
 
+f32 func_8009BADC(PlayerState *self);
+f32 func_8009BAE8(PlayerState *self);
+
+
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 
 #endif

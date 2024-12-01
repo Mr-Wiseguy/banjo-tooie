@@ -14,7 +14,9 @@ typedef enum asset_e {
     ASSET_4B_ANIM_BSBFLIP_ENTER = 0x4B,
     ASSET_4C_ANIM_BSBFLIP_HOLD = 0x4C,
 
-    ASSET_4F_ANIM_BSTWIRL = 0x4F
+    ASSET_4F_ANIM_BSTWIRL = 0x4F,
+
+    ASSET_27B_ANIM_BANBFLIP = 0x27B
 } AssetId;
 
 #endif

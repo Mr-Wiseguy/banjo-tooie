@@ -12,7 +12,7 @@ void yaw_setVelocityBounded(PlayerState*, f32, f32);       /* extern */
 
 void bskazegghead_entrypoint_0(PlayerState* player) {
     _bskaz_entrypoint_1();
-    baanim_playForDuration_onceSmooth(player, 0x28D, 0.75f);
+    baanim_playForDuration_once(player, 0x28D, 0.75f);
     func_8009FFD8(player, 1, 3, 1, 3);
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
@@ -33,7 +33,7 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     sp2C = 0;
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(player);
     sp24 = func_80094BC0(player) != 0;
-    if ((baintput_should_shoot_egg(player) != 0) && (func_80094B14(player) != 0)) {
+    if ((bainput_should_shoot_egg(player) != 0) && (func_80094B14(player) != 0)) {
         player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (sp24 != 0) {

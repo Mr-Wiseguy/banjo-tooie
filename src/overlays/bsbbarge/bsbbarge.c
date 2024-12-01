@@ -9,7 +9,7 @@
 #include "buttons.h"
 
 #include "core2/1E68670.h"
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 
@@ -36,7 +36,7 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
 
         case 3:
             func_8009D2D8(self, 1);
-            func_8008CF1C(self, 0.565f, 1.0f);
+            baanim_setEndAndDuration(self, 0.565f, 1.0f);
             baphysics_set_target_horizontal_velocity(self, self->unk16C);
             baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
             func_8009DF18(self, 0x3FF, 0.558f, 0x55F0);
@@ -45,12 +45,12 @@ void bsbbarge_setSubstate(PlayerState *self, int substate) {
             break;
 
         case 4:
-            func_8008CF1C(self, 0.6f, 2.0f);
+            baanim_setEndAndDuration(self, 0.6f, 2.0f);
             _batimer_set(self, 0, 0.1f);
             break;
 
         case 5:
-            func_8008CF1C(self, 1.0f, 1.5f);
+            baanim_setEndAndDuration(self, 1.0f, 1.5f);
             _badust_entrypoint_12(self, 1);
             break;
     }

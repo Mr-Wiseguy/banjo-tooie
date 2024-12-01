@@ -1,6 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_800995B0.s")
+#include "ba/1E72EA0.h"
+
+s32 func_800995B0(void) {
+    return sizeof(BaUnknownC0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_800995B8.s")
 
@@ -16,17 +20,30 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099970.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A34.s")
+f32 func_80099A34(PlayerState *self) {
+    return self->unkC0->unk0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A40.s")
+f32 func_80099A40(PlayerState *self) {
+    return self->unkC0->unk4;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A4C.s")
+s32 func_80099A4C(PlayerState *self) {
+    return self->unkC0->unk14;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A58.s")
+s32 func_80099A58(PlayerState *self) {
+    return self->unkC0->unk18;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A64.s")
+s32 func_80099A64(PlayerState *self) {
+    return self->unkC0->unk1C;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A70.s")
+s32 func_80099A70(PlayerState *self) {
+    return self->unkC0->unk20;
+}
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_80099A7C.s")
 
