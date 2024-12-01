@@ -7,7 +7,7 @@
 #include "bs.h"
 #include "buttons.h"
 
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1EB5980.h"
 

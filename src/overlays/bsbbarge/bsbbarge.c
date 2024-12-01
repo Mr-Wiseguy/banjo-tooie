@@ -9,7 +9,7 @@
 #include "buttons.h"
 
 #include "core2/1E68670.h"
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 

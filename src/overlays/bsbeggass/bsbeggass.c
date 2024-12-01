@@ -5,7 +5,7 @@
 #include "ba/eggs.h"
 #include "funcs.h"
 
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 
 // bseggass_init
 void bsbeggass_entrypoint_0(PlayerState* arg0){

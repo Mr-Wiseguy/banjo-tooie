@@ -8,7 +8,7 @@
 #include "ba/timer.h"
 
 #include "core2/1E2B200.h"
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E78BF0.h"
 
 s32 babounce_entrypoint_0(void) {
