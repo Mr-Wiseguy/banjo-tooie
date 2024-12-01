@@ -28,7 +28,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     next_state = 0;
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
-    if (baintput_should_shoot_egg(player) && func_80094B14(player)) {
+    if (bainput_should_shoot_egg(player) && func_80094B14(player)) {
         player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (has_eggs) {

@@ -3,7 +3,7 @@
 
 #include "ba/playerstate.h"
 
-#include "core2/1E6AE20.h"
+#include "ba/statetimer.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1EB5980.h"
@@ -112,7 +112,7 @@ s32 func_80800000_badata(PlayerState *self) {
                 return 0x22;
             } else if (func_8009CBDC(self, sp1C) == 0x9) {
                 return 0x3;
-            } else if (func_80091538(self, 2) != 0.0f) {
+            } else if (bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x1;
             } else if (func_800F8B88() == 3) {
                 return 0x1A;
@@ -167,7 +167,7 @@ s32 func_80800000_badata(PlayerState *self) {
                 return 0x8;
             } else if (func_8009CA70(self, sp1C, 0x400)) {
                 return 0x1C;
-            } else if (func_80091538(self, 2) != 0.0f) {
+            } else if (bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x9;
             } else if (func_8009EA4C() == 5) {
                 return 0x5;
@@ -238,11 +238,11 @@ s32 func_80800388_badata(PlayerState *self) {
                 return 0x3;
             }
 
-            if (func_80091538(self, 3) != 0.0f) {
+            if (bastatetimer_get(self, BA_STATE_TIMER_ID_3_TURBO_TALON) != 0.0f) {
                 return 0x10;
             }
 
-            if (func_80091538(self, 2) != 0.0f) {
+            if (bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x1;
             }
 
@@ -306,11 +306,11 @@ s32 func_80800388_badata(PlayerState *self) {
                 return 0x8;
             }
 
-            if(func_80091538(self, 3) != 0.0f) {
+            if(bastatetimer_get(self, BA_STATE_TIMER_ID_3_TURBO_TALON) != 0.0f) {
                 return 0x8;
             }
 
-            if(func_80091538(self, 2) != 0.0f) {
+            if(bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x9;
             }
             return 0x6;

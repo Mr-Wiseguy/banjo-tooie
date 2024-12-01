@@ -391,7 +391,7 @@ segments:
       - [0x1E6A190, c, 1E6A190]
       - [0x1E6A480, c, 1E6A480]
       - [0x1E6A730, c, 1E6A730]
-      - [0x1E6AE20, c, 1E6AE20]
+      - [0x1E6AE20, c, bastatetimer]
       - [0x1E6B1E0, c, bakey]
       - [0x1E6B700, c, 1E6B700]
       - [0x1E6B900, c, 1E6B900]

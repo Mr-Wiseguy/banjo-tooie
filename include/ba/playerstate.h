@@ -40,8 +40,9 @@ typedef struct player_state_s {
     /* 0x2C */ struct ba_unknown_2C_s *unk2C; //something with camera
     u8 pad30[0x4];
     /* 0x34 */ struct ba_buzz_s *buzz;
-    u8 pad38[0x8];
-    /* 0x40 */ struct ba_key_s *key;
+    u8 pad38[0x4];
+    /* 0x3C */ struct ba_state_timer_list_s *state_timer; // clock?
+    /* 0x40 */ struct ba_key_s *key; // controller?
     /* 0x44 */ struct ba_cough_s *cough;
     u8 pad48[0x38];
     /* 0x80 */ struct ba_flag_s *flag;
