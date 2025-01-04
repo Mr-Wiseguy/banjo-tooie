@@ -9,7 +9,7 @@
 #include "ba/playerstate.h"
 #include "bs.h"
 
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "ba/stick.h"
 #include "core2/1E79FD0.h"
@@ -19,7 +19,7 @@
 
 
 void bsbflap_init(PlayerState *self) {
-    baanim_playForDuration_onceSmooth(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
+    baanim_playForDuration_once(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
     func_8009FFD8(self, 1, 1, 1, 2);
     if (bastick_distance(self) != 0.0f) {
         yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));

@@ -5,11 +5,11 @@
 #include "ba/eggs.h"
 #include "funcs.h"
 
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){
-    baanim_playForDuration_onceSmooth(player, ASSET_2A_ANIM_BSEGGHEAD, 1.0f);
+    baanim_playForDuration_once(player, ASSET_2A_ANIM_BSEGGHEAD, 1.0f);
     func_8009FFD8(player, 1,3,1, BA_PHYSICS_LOCKED_ROTATION);
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
@@ -28,7 +28,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     next_state = 0;
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
-    if (baintput_should_shoot_egg(player) && func_80094B14(player)) {
+    if (bainput_should_shoot_egg(player) && func_80094B14(player)) {
         player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
     }
     if (has_eggs) {

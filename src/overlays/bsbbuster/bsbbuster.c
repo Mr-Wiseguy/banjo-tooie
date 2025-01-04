@@ -11,7 +11,7 @@
 #include "buttons.h"
 
 #include "core2/1E68670.h"
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E75620.h"
 #include "core2/1E76CC0.h"
 #include "core2/1EB2840.h"
@@ -58,7 +58,7 @@ void bsbbuster_setSubstate(PlayerState *self, int substate) {
                 baphysics_set_vertical_velocity(self, 730.0f);
                 baphysics_set_gravity(self, -2110.0f);
             }
-            func_8008CF1C(self, 0.7299f, 1.9f);
+            baanim_setEndAndDuration(self, 0.7299f, 1.9f);
             break;
     }
 }
@@ -113,7 +113,7 @@ void bsbbuster_update(PlayerState *self) {
     switch (self->unk160.bytes[1]) {
         case 1:
             _bswalk_entrypoint_1(self);
-            if (func_8008CAEC(self)) {
+            if (baanim_isStopped(self)) {
                 bsbbuster_setSubstate(self, 2);
             }
 
@@ -179,8 +179,8 @@ void bsbbuster_update(PlayerState *self) {
 
         case 5:
             _bswalk_entrypoint_1(self);
-            if (func_8008CAEC(self)) {
-                func_8008CF1C(self, 0.74f, 15.0f);
+            if (baanim_isStopped(self)) {
+                baanim_setEndAndDuration(self, 0.74f, 15.0f);
             }
 
             if (player_isStable(self)){

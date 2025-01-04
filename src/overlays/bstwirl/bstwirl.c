@@ -7,7 +7,7 @@
 #include "bs.h"
 #include "buttons.h"
 
-#include "core2/1E72EA0.h"
+#include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
 #include "core2/1EB5980.h"
 
@@ -27,7 +27,7 @@ void func_80800000_bstwirl(PlayerState *self) {
 }
 
 void bstwirl_init(PlayerState *self){
-    baanim_playForDuration_onceSmooth(self, ASSET_4F_ANIM_BSTWIRL, 1.3f);
+    baanim_playForDuration_once(self, ASSET_4F_ANIM_BSTWIRL, 1.3f);
     func_8009FFD8(self, 1, 3, 1, 0xE);
     yaw_setVelocityBounded(self, 300.0f, 6.5f);
     baphysics_set_target_yaw(self, yaw_getIdeal(self));

@@ -5,5 +5,6 @@
 
 f32 func_800DC0C0(void);
 f32 func_800DC178(f32, f32);
+int func_800DC298(f32);
 
 #endif // __CORE2_1EB5980_H__
