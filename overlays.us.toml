@@ -56,9 +56,9 @@ entrypoints = [
 [[overlay]] # Overlay 5
 name = "bsbanbflip"
 entrypoints = [
-  "bsbanbflip_entrypoint_0",
-  "bsbanbflip_entrypoint_1",
-  "bsbanbflip_entrypoint_2",
+  "bsbanbflip_end",
+  "bsbanbflip_init",
+  "bsbanbflip_update",
   "bsbanbflip_entrypoint_3",
 ]
 
@@ -1530,9 +1530,9 @@ entrypoints = [
 [[overlay]] # Overlay 110
 name = "baalarm"
 entrypoints = [
-  "baalarm_entrypoint_0",
-  "baalarm_entrypoint_1",
-  "baalarm_entrypoint_2",
+  "baalarm_get_size",
+  "baalarm_free",
+  "baalarm_new",
   "baalarm_entrypoint_3",
 ]
 
@@ -1571,17 +1571,17 @@ entrypoints = [
 [[overlay]] # Overlay 113
 name = "babackpack"
 entrypoints = [
-  "babackpack_entrypoint_0",
+  "babackpack_get_size",
   "babackpack_entrypoint_1",
   "babackpack_entrypoint_2",
   "babackpack_entrypoint_3",
-  "babackpack_entrypoint_4",
+  "babackpack_get_state",
   "babackpack_entrypoint_5",
   "babackpack_entrypoint_6",
-  "babackpack_entrypoint_7",
+  "babackpack_get_scale",
   "babackpack_entrypoint_8",
   "babackpack_entrypoint_9",
-  "babackpack_entrypoint_10",
+  "babackpack_set_state",
 ]
 
 [[overlay]] # Overlay 114
@@ -2238,16 +2238,16 @@ entrypoints = [
 [[overlay]] # Overlay 157
 name = "batimer"
 entrypoints = [
-  "batimer_entrypoint_0",
-  "batimer_entrypoint_1",
+  "batimer_get_size",
+  "batimer_incrementBy",
   "batimer_decrement",
-  "batimer_entrypoint_3",
-  "batimer_entrypoint_4",
-  "batimer_entrypoint_5",
-  "batimer_entrypoint_6",
+  "batimer_increment",
+  "batimer_get",
+  "batimer_isAt_falling",
+  "batimer_isAt_rising",
   "batimer_isLessThan",
-  "batimer_entrypoint_8",
-  "batimer_entrypoint_9",
+  "batimer_isGreaterThan",
+  "batimer_isNonzero",
   "batimer_isZero",
   "batimer_set",
 ]

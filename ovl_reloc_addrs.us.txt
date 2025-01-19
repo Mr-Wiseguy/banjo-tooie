@@ -5009,8 +5009,8 @@ rom:0x01F5A0FC symbol:babackpack_entrypoint_1 reloc:MIPS_26
 rom:0x01F5A254 symbol:func_8080021C_babackpack reloc:MIPS_26
 rom:0x01F5A2B8 symbol:func_8080021C_babackpack reloc:MIPS_26
 rom:0x01F5A350 symbol:babackpack_entrypoint_1 reloc:MIPS_26
-rom:0x01F5A42C symbol:babackpack_entrypoint_10 reloc:MIPS_26
-rom:0x01F5A494 symbol:babackpack_entrypoint_10 reloc:MIPS_26
+rom:0x01F5A42C symbol:babackpack_set_state reloc:MIPS_26
+rom:0x01F5A494 symbol:babackpack_set_state reloc:MIPS_26
 rom:0x01F5A4D4 symbol:func_80800008_babackpack reloc:MIPS_26
 rom:0x01F5A53C symbol:R_80800750_babackpack reloc:MIPS_HI16
 rom:0x01F5A544 symbol:R_80800750_babackpack reloc:MIPS_LO16
