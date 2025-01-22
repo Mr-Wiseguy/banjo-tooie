@@ -8,6 +8,7 @@ ROM                  := $(BUILD_ROOT)/banjotooie.z64
 BASEROM              := baserom.us.z64
 ULTRALIB_VERSION     := J
 ULTRALIB_TARGET      := libultra_rom
+PYTHON3_BIN			 := python3
 
 SRC_ROOT     := src
 ASM_ROOT     := asm
@@ -18,7 +19,7 @@ C_SRCS     := $(shell find $(SRC_ROOT) -type f -iname '*.c' 2> /dev/null)
 S_SRCS     := $(shell find $(ASM_ROOT) -type f -iname "*.s" -not -path "asm/$(NONMATCHINGS)/*" 2> /dev/null)
 HASM_SRCS  := $(shell find $(SRC_ROOT) -type f -iname '*.s' 2> /dev/null)
 BIN_SRCS   := $(shell find $(ASSETS_ROOT) -type f -iname '*.bin' -not -iname "relocs.bin" 2> /dev/null)
-OVERLAYS   := $(shell tools/list_overlays.py overlays.us.toml)
+OVERLAYS   := $(shell $(PYTHON3_BIN) tools/list_overlays.py overlays.us.toml)
 
 C_OBJS         := $(addprefix $(BUILD_ROOT)/,$(C_SRCS:.c=.c.o))
 C_BUILD_DIRS   := $(sort $(dir $(C_OBJS)))
@@ -55,7 +56,7 @@ CC       := tools/ido/cc
 AS       := mips-linux-gnu-gcc
 OBJCOPY  := mips-linux-gnu-objcopy
 LD       := mips-linux-gnu-ld
-ASM_PROC := python3 tools/asm-processor/asm_processor.py
+ASM_PROC := $(PYTHON3_BIN) tools/asm-processor/asm_processor.py
 
 OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2 -woff 807
@@ -135,7 +136,7 @@ setup:
 	$(MAKE) -C $(ULTRALIB_DIR) setup NON_MATCHING=1
 	$(MAKE) -C tools
 	tools/rom_decompressor baserom.us.z64 decompressed.us.z64
-	tools/splat/split.py $(SPLAT_YAML)
+	$(PYTHON3_BIN) tools/splat/split.py $(SPLAT_YAML)
 
 distclean:
 	rm -rf $(BUILD_ROOT) asm assets $(DECOMPRESSED_BASEROM) undefined_*_auto.us.txt $(LD_SCRIPT)
