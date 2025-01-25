@@ -67,7 +67,7 @@ typedef struct player_state_s {
     union {
         s32 word;
         u8 bytes[4];
-    } unk15C;
+    } unk15C; // Some sort of state
     union {
         s32 word;
         u8 bytes[4];
