@@ -1,14 +1,8 @@
-#include "ba/playerstate.h"
-#include "ba/anim.h"
-#include "an/anctrl.h"
-#include "ba/eggs.h"
-#include "types.h"
+#include "common.h"
 
-void _bskaz_entrypoint_1();                            /* extern */
-void baphysics_set_target_horizontal_velocity(PlayerState*, f32); /* extern */
-void func_8009FFD8(PlayerState*, s32, s32, s32, s32);        /* extern */
-void func_800A0CF4(PlayerState*, s32);                   /* extern */
-void yaw_setVelocityBounded(PlayerState*, f32, f32);       /* extern */
+#include "bs/kazegghead.h"
+
+s32 D_808002F0_bskazegghead[];
 
 void bskazegghead_entrypoint_0(PlayerState* player) {
     _bskaz_entrypoint_1();
@@ -23,7 +17,6 @@ void bskazegghead_entrypoint_0(PlayerState* player) {
     bainput_enable(player, 2, 0);
 }
 
-s32 _bskazcrouch_entrypoint_0(PlayerState*, s32 arg1);   /* extern */
 
 void bskazegghead_entrypoint_1(PlayerState* player) {
     s32 sp2C;
@@ -69,17 +62,12 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     bs_setState(player, sp2C);
 }
 
-void _bskaz_entrypoint_2(PlayerState*);                /* extern */
-void baphysics_reset_gravity(PlayerState*);            /* extern */
-
 void bskazegghead_entrypoint_2(PlayerState* player) {
     bainput_enable(player, 2, 1);
     baphysics_reset_gravity(player);
     func_800A0CF4(player, 0);
     _bskaz_entrypoint_2(player);
 }
-
-extern s32 D_808002F0_bskazegghead[];
 
 s32 bskazegghead_entrypoint_3(s32 arg0) {
     return D_808002F0_bskazegghead[arg0];
