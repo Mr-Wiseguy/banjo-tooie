@@ -22,4 +22,6 @@ extern void func_8009D658(PlayerState *);
 extern s32 func_8009E710(PlayerState *);
 extern s32 func_800F1EA4(f32 *, s32 *);
 
+s32 bskazcrouch_entrypoint_0(PlayerState* self, s32 arg1);
+
 #endif // __BS_KAZCROUCH_H__

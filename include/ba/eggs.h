@@ -14,10 +14,10 @@ void _bsbegghead_entrypoint_0(PlayerState* player); // bsbegghead_init
 void _bsbegghead_entrypoint_1(PlayerState* player); // bsbegghead_update
 void _bsbegghead_entrypoint_2(PlayerState* player); // bsbegghead_end
 
-void _baeggsetup_entrypoint_10(PlayerState*);
+void _baeggsetup_entrypoint_2(PlayerState*, s32, f32, f32);
 void _baeggsetup_entrypoint_5(PlayerState*, s32, f32, f32);
 void _baeggsetup_entrypoint_8(PlayerState*, s32);
-void _baeggsetup_entrypoint_2(PlayerState*, s32, f32, f32);
 void _baeggsetup_entrypoint_9(PlayerState*);
+void _baeggsetup_entrypoint_10(PlayerState*);
 
 #endif
