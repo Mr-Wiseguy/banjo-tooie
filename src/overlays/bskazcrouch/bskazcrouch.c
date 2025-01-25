@@ -2,6 +2,8 @@
 
 #include "bs/kazcrouch.h"
 
+s32 D_808007C0_bskazcrouch[];
+
 void func_80800000_bskazcrouch(PlayerState *self) {
     baanim_playForDuration_loopSmooth(self, ASSET_28F_ANIM_BSKAZCROUCH_UNKNOWN, 0.5f);
     self->unk15C.word = 4;
@@ -99,8 +101,8 @@ void bskazcrouch_entrypoint_1(PlayerState *self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazcrouch/bskazcrouch/bskazcrouch_entrypoint_2.s")
 
-void bskazcrouch_entrypoint_3() {
-    _bskaz_entrypoint_2();
+void bskazcrouch_entrypoint_3(PlayerState *self) {
+    _bskaz_entrypoint_2(self);
 }
 
 

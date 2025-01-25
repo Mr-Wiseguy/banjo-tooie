@@ -21,5 +21,6 @@ int anctrl_isAt(AnimCtrl*, f32);
 void anctrl_setStart(AnimCtrl*, f32);
 f32 anctrl_getAnimTimer(AnimCtrl*);
 void anctrl_start(AnimCtrl*);
+s32 anctrl_isStopped(AnimCtrl*);
 
 #endif
