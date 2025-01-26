@@ -78,6 +78,7 @@ typedef struct player_state_s {
     f32 unk170;
     u8 pad174[0x10];
     s32 unk184;
+    /* 0x188 */ struct bs_kazfly_s *kazfly;
 } PlayerState;
 
 s32 func_80094510(PlayerState* thisx);

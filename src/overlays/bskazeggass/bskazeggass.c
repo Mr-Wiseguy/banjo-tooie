@@ -6,7 +6,7 @@ s32 D_808002C0_bskazeggass[];
 
 void bskazeggass_entrypoint_0(PlayerState *self) {
     _bskaz_entrypoint_1();
-    baanim_playForDuration_once(self, ASSET_28E_BZKAZEGGASS_UNKNOWN, 0.75);
+    baanim_playForDuration_once(self, ASSET_28E_ANIM_BZKAZEGGASS_UNKNOWN, 0.75);
     func_8009FFD8(self, 1, 3, 1, 3);
     yaw_setVelocityBounded(self, 350, 14);
     baphysics_set_target_horizontal_velocity(self, 0);
