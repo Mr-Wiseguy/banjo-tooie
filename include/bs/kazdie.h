@@ -29,13 +29,13 @@ extern f32 func_800136E4(f32 maybe_yaw);
 extern void func_8008E944(PlayerState *self);
 extern void func_8009514C(PlayerState *self);
 extern void func_8009BFE4(PlayerState *self, f32, f32);
-extern void func_8009C128(PlayerState *self, s32);
+extern void func_8009C128(PlayerState *self, f32[3]);
 extern void func_8009D2D8(PlayerState *self, s32);
 extern void func_8009D820(PlayerState *self, f32);
 extern void func_800A0180(PlayerState *self);
-extern void func_800A32C4(PlayerState *self, s32);
+extern void func_800A32C4(PlayerState *self, s32[3]);
 extern s32 func_800A4CA8(PlayerState *self);
 extern void func_800A4DFC(PlayerState *self, s32);
-extern void func_800F1E6C(s32 *, s32 *, f32 *target_yaw);
+extern void func_800F1E6C(s32[3], f32[3], f32 *target_yaw);
 
 #endif // __BS_KAZDIE_H__

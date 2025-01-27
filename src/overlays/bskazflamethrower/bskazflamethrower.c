@@ -4,10 +4,8 @@
 
 s32 D_808003B0_bskazflamethrower[];
 
-void bskazflamethrower_entrypoint_0(PlayerState *self, BzKazFlamethrowerS *arg1, s32 arg2) {
-    s32 pad0;
-    s32 pad1;
-    f32 unk0;
+void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], s32 arg2) {
+    f32 unk0[3];
     s32 pad2;
     f32 unk1;
 
@@ -16,7 +14,7 @@ void bskazflamethrower_entrypoint_0(PlayerState *self, BzKazFlamethrowerS *arg1,
     func_8009C128(self, arg1);
     func_800EFA98(&unk0, arg2, 17);
     func_800EF04C(arg1, &unk0);
-    arg1->unk4 = arg1->unk4 + 57.0f;
+    arg1[1] += 57.0f;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazflamethrower/bskazflamethrower/func_80800094_bskazflamethrower.s")

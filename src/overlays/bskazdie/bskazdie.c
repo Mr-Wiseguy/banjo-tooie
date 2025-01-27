@@ -16,12 +16,8 @@ void func_80800000_bskazdie(PlayerState *self) {
 void bskazdie_entrypoint_0(PlayerState *self) {
     AnimCtrl *animCtrl;
     f32 targetYaw;
-    s32 pad0;
-    s32 pad1;
-    s32 unk0;
-    s32 pad2;
-    s32 pad3;
-    s32 unk1;
+    f32 unk0[3];
+    s32 unk1[3];
 
 
     animCtrl = baanim_getAnimCtrlPtr(self);
