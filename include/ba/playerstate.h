@@ -73,7 +73,7 @@ typedef struct player_state_s {
         u8 bytes[4];
     } unk160;
     s32 unk164;
-    u8 pad168[4];
+    s32 unk168; // used in bskazjump
     f32 unk16C;
     f32 unk170;
     u8 pad174[0x10];

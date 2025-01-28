@@ -57,11 +57,11 @@ void bskazdie_entrypoint_0(PlayerState *self) {
 }
 
 void bskazdie_entrypoint_1(PlayerState *self) {
-    s32 sp24;
+    AnimCtrl *animCtrl;
     f32 temp_f0;
     s32 temp_v0;
 
-    sp24 = baanim_getAnimCtrlPtr(self);
+    animCtrl = baanim_getAnimCtrlPtr(self);
     _basudie_entrypoint_12(self);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     func_8009D3A8(self, 0);
@@ -70,8 +70,8 @@ void bskazdie_entrypoint_1(PlayerState *self) {
             break;
         case 0:
             if (func_8008DF8C(self, 0x82) != 0) {
-                anctrl_setSubrange(sp24, 0, 1);
-                anctrl_setPlaybackType(sp24, 1);
+                anctrl_setSubrange(animCtrl, 0, 1);
+                anctrl_setPlaybackType(animCtrl, 1);
                 baphysics_set_vertical_velocity(self, 400);
                 func_8009E058(self);
                 func_8009D9D4(self);
@@ -85,10 +85,10 @@ void bskazdie_entrypoint_1(PlayerState *self) {
             if (self->unk16C > 140.0f) {
                 _badust_entrypoint_9(self);
             }
-            if (anctrl_isAt(sp24, 0.6538) != 0) {
-                anctrl_setDuration(sp24, 4);
+            if (anctrl_isAt(animCtrl, 0.6538) != 0) {
+                anctrl_setDuration(animCtrl, 4);
             }
-            if (anctrl_isStopped(sp24) != 0) {
+            if (anctrl_isStopped(animCtrl) != 0) {
                 self->unk15C.word = 3;
                 self->unk16C = 0.0f;
             }

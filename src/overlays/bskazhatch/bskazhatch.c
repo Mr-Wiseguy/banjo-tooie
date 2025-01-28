@@ -11,7 +11,7 @@ void func_80800000_bskazhatch(PlayerState *self, s32 arg1) {
             break;
         case 1:
             baanim_playForDuration_onceSmooth(self, ASSET_13F_ANIM_KAZHATCH_UNKNOWN, 2.5);
-            func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_NORMAL);
+            func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
             baphysics_set_target_horizontal_velocity(self, 0);
             break;
         case 2:
@@ -75,7 +75,7 @@ void func_80800220_bskazhatch(PlayerState *self) {
                 func_8009DEC0(self, 0x4599, 0.95, 1.05, 26000, 26000);
             }
             if (baanim_isStopped(self) != 0) {
-                baphysics_set_type(self, BA_PHYSICS_NORMAL);
+                baphysics_set_type(self, BA_PHYSICS_2_NORMAL);
                 if (func_8010114C(self->unk160.word, 0x18, self->unk184) > 0) {
                     return;
                 }

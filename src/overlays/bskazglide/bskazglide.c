@@ -262,7 +262,7 @@ void func_80800944_bskazglide(PlayerState *self) {
 void func_80800964_bskazglide(PlayerState *self) {
     func_80800090_bskazglide(self);
     baanim_playForDuration_loopSmooth(self, ASSET_13D_ANIM_KAZGLIDE_UNKNOWN, 0.8);
-    func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_FREEZE);
+    func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_7_FREEZE);
 }
 
 void func_808009B4_bskazglide(PlayerState *self) {

@@ -56,12 +56,12 @@ void __bsbanbflip_set_substate(PlayerState *self, s32 next_state) {
                     yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
                 }
                 yaw_rotateTimed(self, 1.0f);
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_yaw(self, yaw_getIdeal(self));
                 baphysics_set_target_horizontal_velocity(self, 200.0f);
                 baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
             } else {
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_horizontal_velocity(self, 0.0f);
             }
             baphysics_set_vertical_velocity(self, 800.0f);
@@ -78,7 +78,7 @@ void __bsbanbflip_set_substate(PlayerState *self, s32 next_state) {
             anctrl_setStart(anctrl, 0.8566);
             anctrl_setPlaybackType(anctrl, 1);
             anctrl_start(anctrl);
-            baphysics_set_type(self, BA_PHYSICS_LOCKED_ROTATION);
+            baphysics_set_type(self, BA_PHYSICS_3_LOCKED_ROTATION);
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             func_800EFD24(sp38);
             func_8009BA9C(self, sp38);

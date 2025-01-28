@@ -37,7 +37,6 @@ typedef struct bs_kazfly_s {
     u8 unk1C;
 } BsKazFly;
 
-
 extern s32 func_8001211C();
 extern f32 func_800136E4(f32);
 extern f32 func_8009BFD8(PlayerState *self);

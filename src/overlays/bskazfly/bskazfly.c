@@ -120,7 +120,7 @@ void func_8080042C_bskazfly(PlayerState *self) {
     f32 sp28;
 
     baanim_playForDuration_loopSmooth(self, ASSET_AA_ANIM_BZKAZFLY_UNKNOWN, 0.62);
-    func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_LOCKED_ROTATION);
+    func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_3_LOCKED_ROTATION);
     if (baflag_isTrue(self, BA_FLAG_9) != 0) {
         baphysics_set_target_horizontal_velocity(self, 0);
     } else {

@@ -103,7 +103,7 @@ void babounce_entrypoint_4(PlayerState *self, s32 arg1) {
         self->bounce->unk1C = _bareact_entrypoint_5(self);
         func_8009FFD8(self, 1, 1, 2, 3);
         if (_bareact_entrypoint_2(self) == 2) {
-            baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+            baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
         }
     }
     baphysics_set_gravity(self, self->bounce->unk1C);

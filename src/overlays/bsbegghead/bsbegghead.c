@@ -10,7 +10,7 @@
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){
     baanim_playForDuration_once(player, ASSET_2A_ANIM_BSEGGHEAD, 1.0f);
-    func_8009FFD8(player, 1,3,1, BA_PHYSICS_LOCKED_ROTATION);
+    func_8009FFD8(player, 1,3,1, BA_PHYSICS_3_LOCKED_ROTATION);
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
     func_800A0CF4(player, 1);

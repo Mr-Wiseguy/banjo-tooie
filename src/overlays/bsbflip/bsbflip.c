@@ -58,13 +58,13 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
                     yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
                 }
                 yaw_rotateTimed(self, 1.0f);
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_yaw(self, yaw_getIdeal(self));
                 baphysics_set_target_horizontal_velocity(self, 200.0f);
                 baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
 
             } else {
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_horizontal_velocity(self, 0.0f);
             }
             baphysics_set_vertical_velocity(self, 920.0f);
