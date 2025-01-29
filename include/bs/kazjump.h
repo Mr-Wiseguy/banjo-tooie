@@ -43,7 +43,5 @@ extern void func_800A042C(PlayerState *self);
 extern void func_800A046C(PlayerState *self);
 extern void func_800C6DA0(s32);
 extern s32 func_800C6E38(s32);
-extern s32 player_inWater();
-extern s32 player_isStable(PlayerState *self);
 
 #endif // __BS_KAZJUMP_H__

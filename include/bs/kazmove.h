@@ -1,6 +1,8 @@
 #ifndef __BS_KAZMOVE_H__
 #define __BS_KAZMOVE_H__
 
+#include <ultra64.h>
+
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/drone.h"
@@ -16,6 +18,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "funcs.h"
+#include "player.h"
 
 extern void func_8008B1C8(AnimCtrl *, f32);
 extern s32 func_8008D790(PlayerState *self);
@@ -32,7 +35,6 @@ extern s32 func_800A02DC(PlayerState *self, s32);
 extern void func_800A2CE8(PlayerState *self, f32, s32);
 extern void func_800A2D2C(PlayerState *self, f32, s32);
 extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
-extern s32 player_inWater();
 
 void _bskazmove_entrypoint_0(PlayerState *self);
 void _bskazmove_entrypoint_11();

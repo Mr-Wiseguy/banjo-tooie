@@ -29,6 +29,7 @@
 #include "nc/badive.h"
 #include "nc/bafly.h"
 #include "funcs.h"
+#include "player.h"
 
 typedef struct bs_kazfly_s {
     f32 unk0;
@@ -45,8 +46,6 @@ extern f32 func_800F0E00(f32, f32);
 extern s32 func_8008D0E0(PlayerState *self);
 
 extern f32 mlAbsF(f32);
-extern s32 player_inWater();
-extern s32 player_isStable(PlayerState *self);
 
 extern void func_8009BF5C(PlayerState *self, f32);
 extern void func_8009DF94(PlayerState *self, s32, f32, s32);

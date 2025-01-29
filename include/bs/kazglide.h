@@ -18,6 +18,7 @@
 #include "bs/kaz.h"
 #include "bs/kazmove.h"
 #include "funcs.h"
+#include "player.h"
 
 extern f32 func_800136E4(f32);
 extern s32 func_8008DF8C(PlayerState *self, s32);
@@ -49,7 +50,5 @@ extern void func_800A4E30(PlayerState *self);
 extern f32 func_800DC178(f32, f32);
 extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 extern void func_800F1E6C(f32[3], f32[3], f32 *target_yaw);
-extern s32 player_inWater();
-extern s32 player_isStable(PlayerState *self);
 
 #endif // __BS_KAZGLIDE_H__
