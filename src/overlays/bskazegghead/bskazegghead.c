@@ -13,7 +13,7 @@ void bskazegghead_entrypoint_0(PlayerState* player) {
     func_800A0CF4(player, 1);
     player->unk160.word = 1;
     player->unk15C.word = 1;
-    player->unk164 = func_80094510(player);
+    player->unk164.word = func_80094510(player);
     bainput_enable(player, 2, 0);
 }
 
@@ -27,17 +27,17 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(player);
     sp24 = func_80094BC0(player) != 0;
     if ((bainput_should_shoot_egg(player) != 0) && (func_80094B14(player) != 0)) {
-        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
+        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164.word));
     }
     if (sp24 != 0) {
         if (anctrl_isAt(sp28, 0.1f) != 0) {
             _baeggsetup_entrypoint_10(player);
         }
         if (anctrl_isAt(sp28, 0.4f) != 0) {
-            _baeggsetup_entrypoint_8(player, player->unk164);
+            _baeggsetup_entrypoint_8(player, player->unk164.word);
         }
         if (anctrl_isAt(sp28, 0.43f) != 0) {
-            _baeggsetup_entrypoint_5(player, player->unk164, 33.0f, 80.0f);
+            _baeggsetup_entrypoint_5(player, player->unk164.word, 33.0f, 80.0f);
             func_800C6DA0(0x43);
         }
         if ((anctrl_isAt(sp28, 0.55f) != 0) && (player->unk160.word < player->unk15C.word)) {

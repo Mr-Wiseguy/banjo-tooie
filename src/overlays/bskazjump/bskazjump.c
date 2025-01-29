@@ -14,7 +14,7 @@ void bskazjump_entrypoint_0(PlayerState *self) {
 
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskaz_entrypoint_1(self);
-    self->unk164 = baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD);
+    self->unk164.word = baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD);
     self->unk160.word = 0;
     anctrl_reset(animCtrl);
     anctrl_setIndex(animCtrl, ASSET_A9_ANIM_BSKAZJUMP_UNKNOWN);
@@ -38,7 +38,7 @@ void bskazjump_entrypoint_0(PlayerState *self) {
         baphysics_set_vertical_velocity(self, 610);
     }
     baphysics_set_gravity(self, -1000);
-    if (self->unk164 != 0) {
+    if (self->unk164.word != 0) {
         func_8009DE38(self, 0x4432, 1);
     } else {
         func_8009DE38(self, 0x4432, 1);
@@ -57,7 +57,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
 
     state = 0;
     animCtrl = baanim_getAnimCtrlPtr(self);
-    if (self->unk164 != 0) {
+    if (self->unk164.word != 0) {
         _bskazshock_entrypoint_0(self);
     }
     if (baflag_isTrue(self, BA_FLAG_F) != 0) {
@@ -66,7 +66,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
         _bskazmove_entrypoint_0(self);
     }
     func_8009BB24(self, &sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164 == 0)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {
@@ -86,8 +86,8 @@ void bskazjump_entrypoint_1(PlayerState *self) {
             if (baanim_isStopped(self) != 0) {
                 state = 0xDF;
             }
-            if (self->unk164 != 0) {
-                self->unk164 = 0;
+            if (self->unk164.word != 0) {
+                self->unk164.word = 0;
                 state = 0xC3;
             }
             if (func_8008DF8C(self, 0x5A) != 0) {
@@ -97,7 +97,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
             break;
     }
     if (bakey_released(self, BUTTON_A) != 0) {
-        self->unk164 = 0;
+        self->unk164.word = 0;
     }
     if (bainput_should_feathery_flap(self) != 0) {
         state = 0x15C;

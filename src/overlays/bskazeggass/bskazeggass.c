@@ -13,7 +13,7 @@ void bskazeggass_entrypoint_0(PlayerState *self) {
     func_800A0CDC(self, 1);
     self->unk160.word = 1;
     self->unk15C.word = 1;
-    self->unk164 = func_80094510(self);
+    self->unk164.word = func_80094510(self);
     bainput_enable(self, 5, 0);
 }
 
@@ -26,12 +26,12 @@ void bskazeggass_entrypoint_1(PlayerState *self) {
     sp28 = baanim_getAnimCtrlPtr(self);
     sp24 = func_80094BC0(self) != 0;
     if ((bainput_should_poop_egg(self) != 0) && (func_80094B14(self) != 0)) {
-        self->unk15C.word = func_800F1418(self->unk15C.word + 1, func_800944E0(self, self->unk164));
+        self->unk15C.word = func_800F1418(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
     }
     if (sp24 != 0) {
         if (anctrl_isAt(sp28, 0.38) != 0) {
             _baeggsetup_entrypoint_9(self);
-            _baeggsetup_entrypoint_2(self, self->unk164, 45, 25);
+            _baeggsetup_entrypoint_2(self, self->unk164.word, 45, 25);
             func_800C6DA0(0x43);
         }
         if ((anctrl_isAt(sp28, 0.6) != 0) && (self->unk160.word < self->unk15C.word)) {
