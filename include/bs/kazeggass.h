@@ -15,7 +15,6 @@
 #include "bs/kazcrouch.h"
 #include "funcs.h"
 
-extern s32 func_8008DD04(PlayerState *self);
 extern s32 func_800944E0(PlayerState *self, s32);
 extern s32 func_80094510(PlayerState *self);
 extern s32 func_80094B14(PlayerState *self);

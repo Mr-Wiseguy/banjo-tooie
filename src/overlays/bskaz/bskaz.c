@@ -42,7 +42,7 @@ s32 bskaz_entrypoint_3(PlayerState *self) {
 }
 
 
-s32 bskaz_entrypoint_4(s32 arg0) {
+s32 bskaz_entrypoint_4(f32 * arg0) {
     if (func_8009EA2C() != 0) {
         return 0x18B;
     }

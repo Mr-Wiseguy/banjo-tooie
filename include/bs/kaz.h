@@ -21,5 +21,6 @@ void _bskaz_entrypoint_0();
 void _bskaz_entrypoint_1();
 void _bskaz_entrypoint_2(PlayerState *self);
 s32 _bskaz_entrypoint_3(PlayerState *self);
+s32 _bskaz_entrypoint_4(PlayerState *self);
 
 #endif // __BS_KAZ_H__
