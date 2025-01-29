@@ -35,6 +35,7 @@ void bskazmove_entrypoint_0(PlayerState *self) {
 
     // &self should not be a reference as it adds "addiu a0, sp, 0x38" to the assembly
     // however if it's not a reference it's not calling "sw a0,0x38(sp)" but instead calls "move a0,s0"
+    // a possible solution is to not pass self somewhere down the line so we need to store the sp of self somewhere
     value = bastick_getZonePosition(self); 
     zone = bastick_getZone(self);
     temp_v0 = func_8008E39C(self);

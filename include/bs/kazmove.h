@@ -37,6 +37,8 @@ extern void func_800A2D2C(PlayerState *self, f32, s32);
 extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 
 void _bskazmove_entrypoint_0(PlayerState *self);
+void _bskazmove_entrypoint_5(PlayerState *self, s32);
+void _bskazmove_entrypoint_6(PlayerState *self);
 void _bskazmove_entrypoint_11();
 
 #endif // __BS_KAZMOVE_H__

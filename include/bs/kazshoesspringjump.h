@@ -1,5 +1,5 @@
-#ifndef __BS_KAZSHOCK_H__
-#define __BS_KAZSHOCK_H__
+#ifndef __BS_KAZSHOESSPRINGJUMP_H__
+#define __BS_KAZSHOESSPRINGJUMP_H__
 
 #include <ultra64.h>
 
@@ -14,4 +14,4 @@
 
 extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
 
-#endif // __BS_KAZSHOCK_H__
+#endif // __BS_KAZSHOESSPRINGJUMP_H__
