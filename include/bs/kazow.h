@@ -1,5 +1,5 @@
-#ifndef __BS_KAZMOVE_H__
-#define __BS_KAZMOVE_H__
+#ifndef __BS_KAZOW_H__
+#define __BS_KAZOW_H__
 
 #include <ultra64.h>
 
@@ -12,4 +12,4 @@
 #include "funcs.h"
 #include "player.h"
 
-#endif // __BS_KAZMOVE_H__
+#endif // __BS_KAZOW_H__
