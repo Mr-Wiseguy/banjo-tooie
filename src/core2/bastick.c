@@ -50,7 +50,6 @@ s32 bastick_func_8009EEF8(PlayerState *self) {
     return self->stick->unk65;
 }
 
-
 f32 bastick_distance(PlayerState *self) {
     return self->stick->distance;
 }

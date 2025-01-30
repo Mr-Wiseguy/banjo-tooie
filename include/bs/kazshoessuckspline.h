@@ -13,6 +13,7 @@
 #include "ba/flag.h"
 #include "ba/key.h"
 #include "ba/physics.h"
+#include "ba/playerstate.h"
 #include "ba/stick.h"
 #include "funcs.h"
 
