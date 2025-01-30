@@ -331,7 +331,7 @@ s32 func_80800D24_bskazfly(PlayerState *self, s32 arg1) {
     s32 sp28;
     s32 isPlayerStable;
 
-    if (player_inWater() != 0) {
+    if (player_inWater(self) != 0) {
         arg1 = 0x160;
     }
 

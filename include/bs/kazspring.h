@@ -3,14 +3,14 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
-#include "bs/kaz.h"
 #include "ba/anim.h"
-#include "ba/key.h"
 #include "ba/input.h"
+#include "ba/key.h"
 #include "ba/physics.h"
+#include "ba/playerstate.h"
 #include "ba/stick.h"
 #include "ba/yaw.h"
+#include "bs/kaz.h"
 #include "funcs.h"
 #include "player.h"
 
