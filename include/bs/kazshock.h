@@ -28,7 +28,7 @@ extern void func_8009DF58(PlayerState *self, s32, f32);
 extern void func_800BBCB8(f32[3], s32, f32, s32, s32[]);
 extern s32 func_800C2E04();
 extern void func_800C2E40(s32);
-extern void func_800C2FDC(s32);
+extern void func_800C2FDC(u8);
 extern void func_800C301C(s32, s32);
 extern void func_800C330C(s32, s32);
 extern void func_800C3418(s32, s32);
