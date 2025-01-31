@@ -3,14 +3,14 @@
 
 #include <ultra64.h>
 
-#include "funcs.h"
-#include "player.h"
-#include "bs/kaz.h"
 #include "ba/anim.h"
 #include "ba/flag.h"
 #include "ba/input.h"
 #include "ba/physics.h"
 #include "ba/yaw.h"
+#include "bs/kaz.h"
+#include "funcs.h"
+#include "player.h"
 
 extern f32 func_800136E4(f32 maybe_yaw);
 extern s32 func_8008DF8C(PlayerState *self, s32);

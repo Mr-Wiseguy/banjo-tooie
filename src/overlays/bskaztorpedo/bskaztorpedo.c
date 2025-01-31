@@ -2,7 +2,6 @@
 
 #include "bs/kaztorpedo.h"
 
-
 extern s32 D_80801730_bskaztorpedo[];
 extern s32 D_80801740_bskaztorpedo[];
 extern s32 D_80801750_bskaztorpedo[];
@@ -312,7 +311,7 @@ s32 bskaztorpedo_entrypoint_2(s32 idx) {
 }
 
 void func_80800E04_bskaztorpedo(PlayerState *self) {
-    _bsdrone_entrypoint_2();
+    _bsdrone_entrypoint_2(self);
     func_80800508_bskaztorpedo(self);
 }
 

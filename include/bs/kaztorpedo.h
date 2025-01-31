@@ -21,6 +21,7 @@
 #include "ba/yaw.h"
 #include "bs/drone.h"
 #include "bs/rest.h"
+#include "core2/1EBA250.h"
 #include "funcs.h"
 #include "player.h"
 

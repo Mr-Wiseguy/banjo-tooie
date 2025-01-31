@@ -271,7 +271,7 @@ void func_808009B8_bskazpaddle(PlayerState *self) {
 }
 
 void func_808009FC_bskazpaddle(PlayerState *self) {
-    _bsdrone_entrypoint_2();
+    _bsdrone_entrypoint_2(self);
     func_80800000_bskazpaddle(self);
 }
 
