@@ -79,7 +79,8 @@ typedef struct player_state_s {
     s32 unk168; // used in bskazjump
     f32 unk16C;
     f32 unk170;
-    u8 pad174[0x10];
+    f32 unk174;
+    u8 pad178[0xC];
     s32 unk184;
     /* 0x188 */ struct bs_kazfly_s *kazfly;
 } PlayerState;

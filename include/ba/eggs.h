@@ -1,5 +1,5 @@
-#ifndef __EGGS_H__
-#define __EGGS_H__
+#ifndef __BA_EGGS_H__
+#define __BA_EGGS_H__
 
 #include "playerstate.h"
 
@@ -20,4 +20,4 @@ void _baeggsetup_entrypoint_8(PlayerState*, s32);
 void _baeggsetup_entrypoint_9(PlayerState*);
 void _baeggsetup_entrypoint_10(PlayerState*);
 
-#endif
+#endif // __BA_EGGS_H__

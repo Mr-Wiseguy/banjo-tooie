@@ -1,5 +1,5 @@
-#ifndef __BS_KAZSTLT_H__
-#define __BS_KAZSTLT_H__
+#ifndef __BS_KAZSTILT_H__
+#define __BS_KAZSTILT_H__
 
 #include <ultra64.h>
 
@@ -49,4 +49,4 @@ extern void func_800C3BDC(s32);
 extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 extern s32 func_800F1EA4(f32[3], f32 *);
 
-#endif // __BS_KAZSTLT_H__
+#endif // __BS_KAZSTILT_H__
