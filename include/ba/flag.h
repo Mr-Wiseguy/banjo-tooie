@@ -39,6 +39,8 @@ typedef enum {
     BA_FLAG_2F = 0x2F, // related to kazooie flight?
     BA_FLAG_30,
 
+    BA_FLAG_36 = 0x36, // related to kazooie wing whack?
+
     BA_FLAG_3D = 0x3D, // related to kazooie shoes suck spline?
 
     NUM_BA_FLAGS = 0x42
