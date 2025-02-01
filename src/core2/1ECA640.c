@@ -1,5 +1,7 @@
 #include "common.h"
 
+#include <ultra64.h>
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F0D50.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F0D90.s")
@@ -30,7 +32,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F11E4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F1214.s")
+f32 func_800F1214(f32 value, f32 min, f32 max) {
+    return ((max - min) * value) + min;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F122C.s")
 

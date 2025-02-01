@@ -401,16 +401,17 @@ s32 bskaztorpedo_entrypoint_4(s32 idx) {
     return D_808017E4_bskaztorpedo[idx];
 }
 
-#ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskaztorpedo/bskaztorpedo/func_808011A4_bskaztorpedo.s")
-#else
 void func_808011A4_bskaztorpedo(PlayerState *self) {
-    f32 sp2C[3];
+    s32 result;
+    s32 pad0;
+    f32 *sp2C; 
+    
 
     func_8009E154(self, NULL, &sp2C);
-    func_800BABB8(func_800BABB8(func_800BABB8(func_800B5BE4(0x24),  sp2C,  sp2C, 1.0f, D_808017F4_bskaztorpedo),  sp2C,  sp2C, 1.0f, D_80801824_bskaztorpedo),  sp2C,  sp2C, 1.0f, D_80801854_bskaztorpedo);
+    result = func_800BABB8(func_800B5BE4(0x24), &sp2C, &sp2C,1.0f, D_808017F4_bskaztorpedo);
+    result = func_800BABB8(result, &sp2C, &sp2C,1.0f, D_80801824_bskaztorpedo);
+    result = func_800BABB8(result, &sp2C, &sp2C,1.0f, D_80801854_bskaztorpedo);
 }
-#endif
 
 void func_8080123C_bskaztorpedo(PlayerState *self) {
     baflag_clear(self, 0x35);

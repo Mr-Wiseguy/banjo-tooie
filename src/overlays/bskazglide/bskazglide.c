@@ -65,48 +65,29 @@ void func_8080022C_bskazglide(PlayerState *self) {
     func_80800000_bskazglide(self);
 }
 
-#ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazglide/bskazglide/func_8080024C_bskazglide.s")
-#else
 void func_8080024C_bskazglide(PlayerState *self) {
     s32 sp2C;
-    f32 temp_f0;
+    s32 isAboveMaximumVelocity;
 
     func_80800090_bskazglide(self);
-    baanim_playForDuration_loopSmooth(self, ASSET_13D_ANIM_KAZGLIDE_UNKNOWN, 0.8);
-    func_8009FFD8(self, 1, 3, 3, 3);
+    baanim_playForDuration_loopSmooth(self, ASSET_13D_ANIM_KAZGLIDE_UNKNOWN, 0.8f);
+    func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 3, BA_PHYSICS_3_LOCKED_ROTATION);
     if (baflag_isTrue(self, BA_FLAG_9) != 0) {
-        baphysics_set_target_horizontal_velocity(self, 0);
+        baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
-        baphysics_set_target_horizontal_velocity(self, 600);
+        baphysics_set_target_horizontal_velocity(self, 600.0f);
     }
 
-    sp2C = 0;
-    if (func_8009630C(self) < 100.0f) {
-        sp2C = 1;
-    } 
-    else {
-        sp2C = 0;
-    }
-    
-    temp_f0 = baphysics_get_vertical_velocity(self);
-    if (sp2C == 0) {
-        sp2C = 0;
-        if (temp_f0 > 150) {
-            sp2C = 1;
-        }
-        if (sp2C != 0) {
-            goto block_9;
-        }
-    } else {
-block_9:
+    sp2C = func_8009630C(self) < 100.0f;
+    isAboveMaximumVelocity = baphysics_get_vertical_velocity(self) > 150;
+    if (sp2C || isAboveMaximumVelocity) {
         baphysics_set_vertical_velocity(self, 150);
     }
+
     _batimer_set(self, 0, 0.38);
     self->unk15C.bytes[1] = 0;
     self->unk15C.bytes[0] = 0;
 }
-#endif
 
 void func_80800364_bskazglide(PlayerState *self) {
     s32 sp34;
@@ -168,9 +149,9 @@ void func_80800544_bskazglide(PlayerState *self) {
     func_80800090_bskazglide(self);
     baanim_playForDuration_once(self, 0x11C, 1.1);
     func_8009D9D4(self);
-    func_8009C128(self, &sp3C);
-    func_800A32C4(self, &sp30);
-    func_800F1E6C(&sp30, &sp3C, &sp2C);
+    func_8009C128(self, sp3C);
+    func_800A32C4(self, sp30);
+    func_800F1E6C(sp30, sp3C, &sp2C);
     yaw_setIdeal(self, func_800136E4(sp2C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, 400);

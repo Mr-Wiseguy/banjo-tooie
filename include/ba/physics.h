@@ -20,7 +20,7 @@ typedef enum ba_physics_type_e {
     BA_PHYSICS_B_TRANSFORM,
     BA_PHYSICS_C_GOTO,
     BA_PHYSICS_D_END,
-    BA_PHYSICS_E_UNKNOWN,
+    BA_PHYSICS_E_UNKNOWN
 } BaPhysicsType;
 
 
