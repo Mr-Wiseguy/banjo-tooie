@@ -9,6 +9,7 @@
 #include "ba/playerstate.h"
 #include "bs.h"
 #include "buttons.h"
+#include "bs/state.h"
 
 #include "core2/1E68670.h"
 #include "ba/1E72EA0.h"
@@ -118,7 +119,7 @@ void bsbbuster_update(PlayerState *self) {
             }
 
             if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
-                next_state = BS_B6_BILL_DRILL;
+                next_state = BS_STATE_B6_BILL_DRILL;
             }
             break;
         
@@ -187,13 +188,13 @@ void bsbbuster_update(PlayerState *self) {
                 anctrl_setSubrange(anctrl, 0.0f, 1.0f);
                 anctrl_setDuration(anctrl, 1.9f);
                 anctrl_setPlaybackType(anctrl, 1);
-                next_state = BS_20_LANDING;
+                next_state = BS_STATE_20_LANDING;
             }
             break;
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
     
     if (self->unk15C.bytes[2]) {

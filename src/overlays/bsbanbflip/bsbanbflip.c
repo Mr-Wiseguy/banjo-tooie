@@ -7,6 +7,7 @@
 #include "core2/1E76CC0.h"
 #include "ba/1E72EA0.h"
 #include "core2/1ECA640.h"
+#include "bs/state.h"
 
 extern void _bsbanbflip_end(PlayerState *);
 extern void _bsbanbflip_init(PlayerState *);
@@ -118,7 +119,7 @@ void bsbanbflip_update(PlayerState *self) {
         case 2:
             func_80800000_bsbanbflip(self);
             if(anctrl_isStopped(anctrl)) {
-                next_state = BS_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
             if (func_8008DA24(self)) {
                 next_state = 0xA8;
@@ -127,13 +128,13 @@ void bsbanbflip_update(PlayerState *self) {
 
         case 3:
             if(anctrl_isStopped(anctrl)) {
-                next_state = BS_2_SLOW_WALK;
+                next_state = BS_STATE_1_SLOW_WALK;
             }
             next_state = func_800A01F8(self, next_state);
             break;
     }
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
     bs_setState(self, next_state);
 }

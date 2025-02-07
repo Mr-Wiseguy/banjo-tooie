@@ -7,6 +7,7 @@
 #include "ba/playerstate.h"
 #include "ba/yaw.h"
 #include "bs.h"
+#include "bs/state.h"
 
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
@@ -113,11 +114,11 @@ void bsbanpackwhack_entrypoint_2(PlayerState *self) {
     }
 
     if (anctrl_isStopped(anctrl)) {
-        next_state = BS_1_IDLE;
+        next_state = BS_STATE_1_IDLE;
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
 
     if (bakey_pressed(self, BUTTON_A)) {

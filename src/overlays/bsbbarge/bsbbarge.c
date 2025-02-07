@@ -148,7 +148,7 @@ void bsbbarge_update(PlayerState *self) {
 
         case 5:
             if (!player_isStable(self)) {
-                next_state = BS_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
 
             if (anctrl_isAt(anctrl, 0.7f)) {
@@ -159,7 +159,7 @@ void bsbbarge_update(PlayerState *self) {
             baphysics_set_target_horizontal_velocity(self, self->unk16C);
 
             if (anctrl_isAt(anctrl, 0.9193f)) {
-                next_state = BS_20_LANDING;
+                next_state = BS_STATE_20_LANDING;
             }
             break;
     }
@@ -169,7 +169,7 @@ void bsbbarge_update(PlayerState *self) {
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
 
     bs_setState(self, next_state);

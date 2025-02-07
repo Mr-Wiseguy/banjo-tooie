@@ -10,6 +10,7 @@
 #include "core2/1E76CC0.h"
 #include "ba/stick.h"
 #include "core2/1ECA640.h"
+#include "bs/state.h"
 
 
 void func_80800000_bsbflip(PlayerState *self) {
@@ -133,7 +134,7 @@ void bsbflip_update(PlayerState *self) {
                func_80800064_bsbflip(self, 3); 
             }
             if (bainput_should_beak_bust(self)) {
-                next_state = BS_F_BBUSTER;
+                next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
                 next_state = 0xA8;
@@ -142,10 +143,10 @@ void bsbflip_update(PlayerState *self) {
 
         case 3:
             if (func_8008E260(self)) {
-                next_state = BS_3D_FALL_TUMBLING;
+                next_state = BS_STATE_3D_FALL_TUMBLING;
             }
             if (bakey_released(self, BUTTON_A)) {
-                next_state = BS_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
             if (player_isStable(self)) {
                 next_state = func_800A01F8(self, next_state);
@@ -154,7 +155,7 @@ void bsbflip_update(PlayerState *self) {
             } 
 
             if (bainput_should_beak_bust(self)) {
-                next_state = BS_F_BBUSTER;
+                next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
                 next_state = 0xA8;
@@ -164,14 +165,14 @@ void bsbflip_update(PlayerState *self) {
 
         case 4:
             if (anctrl_isStopped(anctrl)) {
-                next_state = BS_2_SLOW_WALK;
+                next_state = BS_STATE_1_SLOW_WALK;
             }
             next_state = func_800A01F8(self, next_state);
             break;
 
     }
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
     bs_setState(self, next_state);
 }

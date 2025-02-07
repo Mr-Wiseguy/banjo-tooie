@@ -1,5 +1,9 @@
 #include "common.h"
 
+#include <ultra64.h>
+#include "ba/playerstate.h"
+#include "bs/state.h"
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E130.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E138.s")
@@ -26,7 +30,24 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E5C0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/bs_setState.s")
+
+void (*func_8009CAAC(PlayerState *, BanjoStateId))(PlayerState *);
+void (*func_8009CAF8(PlayerState *, BanjoStateId))(PlayerState *);
+
+void bs_setState(PlayerState *self, BanjoStateId nextState) {
+    if (nextState != BS_0_INVALID) {
+        self->state->next = nextState;
+        if (func_8009CAAC(self, self->state->current) != NULL) {
+            func_8009CAAC(self, self->state->current)(self);
+        }
+        self->state->previous = self->state->current;
+        self->state->current = self->state->next;
+        self->state->next = NULL;
+        if (func_8009CAF8(self, self->state->current) != NULL) {
+            func_8009CAF8(self, self->state->current)(self);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E674.s")
 

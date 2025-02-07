@@ -3,6 +3,7 @@
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
+#include "bs/state.h"
 #include "funcs.h"
 
 #include "ba/1E72EA0.h"
@@ -49,17 +50,17 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
         }
     }
     if (func_8008DD04(player)) {
-        next_state = BS_2F_FALL;
+        next_state = BS_STATE_2F_FALL;
     }
     if (bakey_held(player, BUTTON_Z)) {
         if (anctrl_isStopped(aCtrl)) {
-            next_state = BS_CROUCH;
+            next_state = BS_STATE_7_CROUCH;
         }
         if (0.65f < anctrl_getAnimTimer(aCtrl)) {
             next_state = _bscrouch_entrypoint_4(player, next_state);
         }
     } else if (anctrl_isStopped(aCtrl)) {
-        next_state = BS_1_IDLE;
+        next_state = BS_STATE_1_IDLE;
     }
     bs_setState(player, next_state);
 }
