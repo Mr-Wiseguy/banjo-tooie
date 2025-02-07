@@ -46,7 +46,7 @@ void func_80800090_bskazglide(PlayerState *self) {
 void func_80800184_bskazglide(PlayerState *self) {
     if (func_8009E6EC(self) == 0x23) {
         func_800995B8(self, 1);
-        bs_setState(self, 0x15B);
+        bs_setState(self, BS_STATE_15B);
         func_8009E830(self, 2);
         return;
     }
@@ -90,10 +90,10 @@ void func_8080024C_bskazglide(PlayerState *self) {
 }
 
 void func_80800364_bskazglide(PlayerState *self) {
-    s32 sp34;
+    BanjoStateId next_state;
     s32 sp30;
 
-    sp34 = 0;
+    next_state = BS_STATE_0_INVALID;
     _batimer_decrement(self, 0);
     if (_batimer_get(self, 0) == 0.0f) {
         sp30 = 1;
@@ -105,14 +105,14 @@ void func_80800364_bskazglide(PlayerState *self) {
     _bafly_entrypoint_11(self);
     _bafly_entrypoint_8(self, 300, 80, 600, -300.0f, -50.0f, -700.0f, -1000.0f);
     if ((func_8008DF8C(self, 0x28) != 0) || ((bakey_released(self, BUTTON_Z) != 0) && (sp30 != 0))) {
-        sp34 = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (sp30 != 0) {
         if ((bainput_should_feathery_flap(self) != 0) || (self->unk15C.bytes[0] != 0)) {
-            sp34 = 0x15C;
+            next_state = BS_STATE_15C;
         }
         if ((bainput_func_80097FB8(self) != 0) || (self->unk15C.bytes[1] != 0)) {
-            sp34 = 0xC4;
+            next_state = BS_STATE_C4;
         }
     } else {
         if (bainput_should_feathery_flap(self) != 0) {
@@ -125,9 +125,9 @@ void func_80800364_bskazglide(PlayerState *self) {
         }
     }
     if (player_inWater(self) != 0) {
-        sp34 = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, sp34);
+    bs_setState(self, next_state);
 }
 
 s32 bskazglide_entrypoint_0(s32 idx) {
@@ -165,16 +165,16 @@ void func_80800544_bskazglide(PlayerState *self) {
 }
 
 void func_80800650_bskazglide(PlayerState *self) {
-    s32 sp1C;
+    BanjoStateId next_state;
 
-    sp1C = 0;
+    next_state = BS_STATE_0_INVALID;
     if (anctrl_isStopped(baanim_getAnimCtrlPtr(self)) != 0) {
-        sp1C = 0xBE;
+        next_state = BS_STATE_BE;
     }
     if (player_isStable(self) != 0) {
-        sp1C = 0xBB;
+        next_state = BS_STATE_BB;
     }
-    bs_setState(self, sp1C);
+    bs_setState(self, next_state);
 }
 
 s32 bskazglide_entrypoint_1(s32 idx) {
@@ -199,12 +199,12 @@ void func_808006EC_bskazglide(PlayerState *self) {
 
 void func_80800780_bskazglide(PlayerState *self) {
     s32 sp34;
-    s32 sp30;
+    BanjoStateId next_state;
     f32 sp2C;
     f32 temp_f0;
 
     sp34 = baanim_getAnimCtrlPtr(self);
-    sp30 = 0;
+    next_state = BS_STATE_0_INVALID;
     _bskazmove_entrypoint_0(self);
     _batimer_decrement(self, 0);
     temp_f0 = _batimer_get(self, 0);
@@ -218,18 +218,18 @@ void func_80800780_bskazglide(PlayerState *self) {
         func_8009DF18(self, 0x4431, func_800DC178(0.95f, 1.05f), 17000);
     }
     if ((sp2C < 1.2f) && (bakey_released(self, 8) != 0)) {
-        sp30 = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (func_8008DF8C(self, 0x28) != 0) {
-        sp30 = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (bainput_func_80097FB8(self) != 0) {
-        sp30 = 0xC4;
+        next_state = BS_STATE_C4;
     }
     if (player_inWater(self) != 0) {
-        sp30 = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, sp30);
+    bs_setState(self, next_state);
 }
 
 s32 bskazglide_entrypoint_2(s32 idx) {
@@ -247,13 +247,13 @@ void func_80800964_bskazglide(PlayerState *self) {
 }
 
 void func_808009B4_bskazglide(PlayerState *self) {
-    s32 var_a1;
+    BanjoStateId next_state;
 
-    var_a1 = 0;
+    next_state = BS_STATE_0_INVALID;
     if (func_8008E124() == 0) {
-        var_a1 = 0xBE;
+        next_state = BS_STATE_BE;
     }
-    bs_setState(self, var_a1);
+    bs_setState(self, next_state);
 }
 
 s32 bskazglide_entrypoint_3(s32 idx) {

@@ -18,11 +18,11 @@ void bskazeggass_entrypoint_0(PlayerState *self) {
 }
 
 void bskazeggass_entrypoint_1(PlayerState *self) {
-    s32 sp2C;
+    BanjoStateId next_state;
     AnimCtrl *sp28;
     s32 sp24;
 
-    sp2C = 0;
+    next_state = BS_STATE_0_INVALID;
     sp28 = baanim_getAnimCtrlPtr(self);
     sp24 = func_80094BC0(self) != 0;
     if ((bainput_should_poop_egg(self) != 0) && (func_80094B14(self) != 0)) {
@@ -42,19 +42,19 @@ void bskazeggass_entrypoint_1(PlayerState *self) {
         }
     }
     if (func_8008DD04(self) != 0) {
-        sp2C = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (bakey_held(self, 1) != 0) {
         if (anctrl_isStopped(sp28) != 0) {
-            sp2C = 0xDD;
+            next_state = BS_STATE_DD;
         }
         if (anctrl_getAnimTimer(sp28) > 0.6f) {
-            sp2C = _bskazcrouch_entrypoint_0(self, sp2C);
+            next_state = _bskazcrouch_entrypoint_0(self, next_state);
         }
     } else if (anctrl_isStopped(sp28) != 0) {
-        sp2C = 0xBB;
+        next_state = BS_STATE_BB;
     }
-    bs_setState(self, sp2C);
+    bs_setState(self, next_state);
 }
 
 void bskazeggass_entrypoint_2(PlayerState *self) {

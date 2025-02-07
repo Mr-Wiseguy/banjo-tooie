@@ -97,7 +97,7 @@ void bskazdie_entrypoint_1(PlayerState *self) {
     if (_batimer_decrement(self, 0) != 0) {
         _basudie_entrypoint_0(self);
     }
-    bs_setState(self, 0);
+    bs_setState(self, BS_STATE_0_INVALID);
 }
 
 void bskazdie_entrypoint_2(PlayerState *self) {

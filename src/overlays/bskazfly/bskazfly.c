@@ -82,12 +82,12 @@ void func_80800248_bskazfly(PlayerState *self) {
 }
 
 void func_80800320_bskazfly(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
     s32 sp20;
     s32 temp_v0;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     if (self->unk160.word == 0) {
         if (anctrl_isAt(animCtrl, 0.39) != 0) {
@@ -99,10 +99,10 @@ void func_80800320_bskazfly(PlayerState *self) {
     } else {
         func_80800000_bskazfly(self);
         if (baphysics_get_vertical_velocity(self) < 0.0f) {
-            sp24 = 0x162;
+            next_state = BS_STATE_162;
         }
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void func_808003E0_bskazfly(PlayerState *self) {
@@ -142,14 +142,14 @@ void func_8080042C_bskazfly(PlayerState *self) {
 
 
 void func_80800540_bskazfly(PlayerState *self) {
-    s32 sp44;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
     f32 sp40;
     s32 sp38;
     s32 sp34;
     f32 sp30;
 
-    sp44 = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bafly_entrypoint_9(self);
     _bafly_entrypoint_10(self, 300, 80);
@@ -206,16 +206,16 @@ void func_80800540_bskazfly(PlayerState *self) {
     _bafly_entrypoint_8(self, 300, 80, 800, -300.0f, -50.0f, -700.0f, -1000.0f);
     self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - func_800D8FF8(), 0);
     if ((self->kazfly->unk0 == 0.0f) && (bakey_pressed(self, BUTTON_B) != 0) && (func_8008D0E0(self) != 0) && (_bafly_entrypoint_12(self) != 0)) {
-        sp44 = 0x174;
+        next_state = BS_STATE_174;
     }
     if (player_inWater(self) != 0) {
-        sp44 = 0x15D;
+        next_state = BS_STATE_15D;
     }
     if (_bafly_entrypoint_2(self) != 0) {
-        sp44 = 0xBB;
+        next_state = BS_STATE_BB;
     }
     _baboost_entrypoint_5(self);
-    bs_setState(self, sp44);
+    bs_setState(self, next_state);
 }
 
 void func_808008A8_bskazfly(PlayerState *self) {
@@ -322,25 +322,25 @@ void func_80800CF4_bskazfly(PlayerState *self) {
 }
 
 
-s32 func_80800D24_bskazfly(PlayerState *self, s32 arg1) {
+BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     f32 sp44;
     s32 pad0;
     f32 sp3C;
     f32 sp38;
     f32 sp2C[3];
     s32 sp28;
-    s32 isPlayerStable;
+    s32 is_player_stable;
 
     if (player_inWater(self) != 0) {
-        arg1 = 0x160;
+        nextState = BS_STATE_160;
     }
 
-    isPlayerStable = player_isStable(self);
-    if (func_8009650C(self) == 0 && isPlayerStable == 0) {
-        return arg1;
+    is_player_stable = player_isStable(self);
+    if (func_8009650C(self) == 0 && is_player_stable == 0) {
+        return nextState;
     } 
 
-    if (isPlayerStable != 0) {
+    if (is_player_stable != 0) {
         func_800963C0(self, &sp38);
         sp28 = func_80096628(self);
     } else {
@@ -353,33 +353,33 @@ s32 func_80800D24_bskazfly(PlayerState *self, s32 arg1) {
     sp44 = mlAbsF(func_800EEAA4(&sp38, &sp2C));
     if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (sp28 & 0x80)) {
         func_80800974_bskazfly(self);
-        arg1 = 0x173;
+        nextState = BS_STATE_173;
     } else if (sp44 > 0.4f) {
         if (sp3C < 0.65f) {
             func_80800974_bskazfly(self);
             func_800A17A8(self, -1);
             if (func_800A1718(self) != 0) {
-                arg1 = 0x177;
+                nextState = BS_STATE_177;
             } else {
-                arg1 = 0x101;
+                nextState = BS_STATE_101;
             }
         } else {
-            arg1 = 0x176;
+            nextState = BS_STATE_176;
         }
-    } else if (isPlayerStable != 0) {
-        arg1 = 0x176;
+    } else if (is_player_stable != 0) {
+        nextState = BS_STATE_176;
     }
 
-    return arg1;
+    return nextState;
 }
 
 void func_80800EB4_bskazfly(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
     f32 unk0[3];
     s32 pad0;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bafly_entrypoint_11(self);
     func_8009DDDC(self);
@@ -404,29 +404,29 @@ void func_80800EB4_bskazfly(PlayerState *self) {
             if (bakey_held(self, 9) != 0) {
                 func_808009C8_bskazfly(self, 3);
             } else {
-                state = 0x175;
+                next_state = BS_STATE_175;
             }
         }
         func_80800000_bskazfly(self);
-        state = func_80800D24_bskazfly(self, state);
+        next_state = func_80800D24_bskazfly(self, next_state);
         break;
     case 3:
         func_80800BDC_bskazfly(self);
         if (bakey_released(self, 9) != 0) {
-            state = 0x175;
+            next_state = BS_STATE_175;
         } else if (_batimer_decrement(self, 1) != 0) {
             if (_bafly_entrypoint_12(self) != 0) {
                 _chusefeather_entrypoint_1(self->unk184, 0);
                 _batimer_set(self, 1, 1);
             } else {
-                state = 0x175;
+                next_state = BS_STATE_175;
             }
         }
         func_80800000_bskazfly(self);
-        state = func_80800D24_bskazfly(self, state);
+        next_state = func_80800D24_bskazfly(self, next_state);
     }
 
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void func_808010DC_bskazfly(PlayerState *self) {
@@ -466,34 +466,34 @@ void func_8080111C_bskazfly(PlayerState *self) {
 }
 
 void func_80801248_bskazfly(PlayerState *self) {
-    s32 var_s1;
+    BanjoStateId next_state;
     f32 sp28[3];
 
-    var_s1 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_8009BB24(self, &sp28);
     if (func_8008DF8C(self, 0x5A) != 0) {
-        var_s1 = 0xDF;
+        next_state = BS_STATE_DF;
     }
 
     self->kazfly->unk0 -= func_800D8FF8();
     if (self->kazfly->unk0 < 0.0f) {
         self->unk15C.word = 1;
-        var_s1 = 0x162;
+        next_state = BS_STATE_162;
     }
 
     if (bainput_func_80097E74(self) != 0) {
-        var_s1 = 0xBE;
+        next_state = BS_STATE_BE;
     }
 
     if (player_isStable(self) != 0) {
         func_8009FE58(self);
-        var_s1 = 0xBC;
+        next_state = BS_STATE_BC;
     }
 
     if (player_inWater(self) != 0) {
-        var_s1 = 0x15D;
+        next_state = BS_STATE_15D;
     }
-    bs_setState(self, var_s1);
+    bs_setState(self, next_state);
 }
 
 void func_80801320_bskazfly(PlayerState *self) {
@@ -576,16 +576,16 @@ void func_80801550_bskazfly(PlayerState *self) {
 }
 
 void func_80801640_bskazfly(PlayerState *self) {
-    s32 sp24;
-    AnimCtrl *animCtrl;
+    BanjoStateId next_state;
+    AnimCtrl *anim_ctrl;
 
-    sp24 = 0;
-    animCtrl = baanim_getAnimCtrlPtr(self);
+    next_state = BS_STATE_0_INVALID;
+    anim_ctrl = baanim_getAnimCtrlPtr(self);
     func_8009D3A8(self, 0);
     switch (self->unk160.word) {
         case 0:
             func_80801550_bskazfly(self);
-            if (anctrl_isAt(animCtrl, 0.2) != 0) {
+            if (anctrl_isAt(anim_ctrl, 0.2) != 0) {
                 if (func_800F8B64() != 0) {
                     func_800A0180(self);
                     func_800A4DFC(self, 0xA);
@@ -594,18 +594,18 @@ void func_80801640_bskazfly(PlayerState *self) {
                     _batimer_set(self, 0, 3.2);
                     self->unk160.word = 2;
                 }
-            } else if (anctrl_isAt(animCtrl, 0.92) != 0) {
+            } else if (anctrl_isAt(anim_ctrl, 0.92) != 0) {
                 baanim_playForDuration_onceSmooth(self, ASSET_11E_ANIM_BSKAZFLY_UNKNOWN, 1.6);
                 self->unk160.word = 1;
             }
             break;
 
         case 1:
-            if (anctrl_isStopped(animCtrl) != 0) {
-                sp24 = 0xBB;
+            if (anctrl_isStopped(anim_ctrl) != 0) {
+                next_state = BS_STATE_BB;
             }
             if (func_8008DD04(self) != 0) {
-                sp24 = 0xDF;
+                next_state = BS_STATE_DF;
             }
             break;
 
@@ -617,7 +617,7 @@ void func_80801640_bskazfly(PlayerState *self) {
             break;
     }
 
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void func_808017B0_bskazfly(PlayerState *self) {
@@ -696,18 +696,18 @@ void func_808019C8_bskazfly(PlayerState *self) {
 }
 
 void func_80801A38_bskazfly(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     if (anctrl_isAt(baanim_getAnimCtrlPtr(self), 0.1358) != 0) {
         func_8009DEC0(self, 0x3FF, 0.6, 0.7, 10000, 12000);
     }
 
     if (func_8008E124(self) == 0) {
-        sp24 = 0x162;
+        next_state = BS_STATE_162;
     }
 
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void func_80801ABC_bskazfly(PlayerState *self) {

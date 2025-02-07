@@ -40,9 +40,9 @@ void bskazshoesspringjump_entrypoint_1(PlayerState *self) {
 }
 
 void bskazshoesspringjump_entrypoint_2(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     switch (self->unk15C.word) {
         case 1:
             if (baanim_isAt(self, 0.4744) != 0) {
@@ -55,11 +55,11 @@ void bskazshoesspringjump_entrypoint_2(PlayerState *self) {
             }
             _bskazmove_entrypoint_0(self);
             if (baanim_isStopped(self) != 0) {
-                sp24 = 0xDF;
+                next_state = BS_STATE_DF;
             }
             break;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskazshoesspringjump_entrypoint_3(s32 idx) {

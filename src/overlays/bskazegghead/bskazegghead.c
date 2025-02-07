@@ -19,11 +19,11 @@ void bskazegghead_entrypoint_0(PlayerState* player) {
 
 
 void bskazegghead_entrypoint_1(PlayerState* player) {
-    s32 sp2C;
+    BanjoStateId next_state;
     AnimCtrl* sp28;
     s32 sp24;
 
-    sp2C = 0;
+    next_state = BS_STATE_0_INVALID;
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(player);
     sp24 = func_80094BC0(player) != 0;
     if ((bainput_should_shoot_egg(player) != 0) && (func_80094B14(player) != 0)) {
@@ -47,19 +47,19 @@ void bskazegghead_entrypoint_1(PlayerState* player) {
         }
     }
     if (func_8008DD04(player) != 0) {
-        sp2C = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (bakey_held(player, BUTTON_Z) != 0) {
         if (anctrl_isStopped(sp28) != 0) {
-            sp2C = 0xDD;
+            next_state = BS_STATE_DD;
         }
         if (anctrl_getAnimTimer(sp28) > 0.65f) {
-            sp2C = _bskazcrouch_entrypoint_0(player, sp2C);
+            next_state = _bskazcrouch_entrypoint_0(player, next_state);
         }
     } else if (anctrl_isStopped(sp28) != 0) {
-        sp2C = 0xBB;
+        next_state = BS_STATE_BB;
     }
-    bs_setState(player, sp2C);
+    bs_setState(player, next_state);
 }
 
 void bskazegghead_entrypoint_2(PlayerState* player) {

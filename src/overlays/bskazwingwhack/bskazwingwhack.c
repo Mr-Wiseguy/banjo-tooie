@@ -53,13 +53,13 @@ void func_80800148_bskazwingwhack(PlayerState *self) {
 }
 
 void func_80800278_bskazwingwhack(PlayerState *self) {
-    s32 sp44;
+    BanjoStateId next_state;
     f32 sp38[3];
     f32 temp_f0;
     f32 sp34;
     f32 var_f0;
 
-    sp44 = 0;
+    next_state = BS_STATE_0_INVALID;
     baphysics_set_target_yaw(self, yaw_get(self));
     temp_f0 = baanim_getTimer(self);
     if (temp_f0 < 0.5f) {
@@ -85,15 +85,15 @@ void func_80800278_bskazwingwhack(PlayerState *self) {
         func_80800000_bskazwingwhack(self, &sp38, 70.0f, 0.0f);
     }
     if ((baanim_isAt(self, 0.64f) != 0) && (func_8008DF8C(self, 0xA) == 0)) {
-        sp44 = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (baanim_isStopped(self) != 0) {
-        sp44 = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (bainput_should_feathery_flap(self) != 0) {
-        sp44 = 0x15C;
+        next_state = BS_STATE_15C;
     }
-    bs_setState(self, sp44);
+    bs_setState(self, next_state);
 }
 
 s32 bskazwingwhack_entrypoint_0(s32 idx) {
@@ -120,13 +120,13 @@ void func_808004DC_bskazwingwhack(PlayerState *self) {
 
 void func_80800580_bskazwingwhack(PlayerState *self) {
     AnimCtrl *animCtrl;
-    s32 state;
+    BanjoStateId next_state;
     f32 animTimer;
     f32 sp28[3];
     AnimCtrl *otherAnimCtrl;
 
     animCtrl = baanim_getAnimCtrlPtr(self);
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     animTimer = anctrl_getAnimTimer(animCtrl);
     if (anctrl_isAt(animCtrl, 0.27f) != 0) {
         func_8009E5A4(self, 2, 5);
@@ -171,15 +171,15 @@ void func_80800580_bskazwingwhack(PlayerState *self) {
         baflag_set(self, BA_FLAG_36);
     }
     if (anctrl_isStopped(animCtrl) != 0) {
-        state = 0xBB;
+        next_state = BS_STATE_BB;
     }
     if (player_isStable(self) == 0) {
-        state = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (player_inWater(self) != 0) {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 s32 bskazwingwhack_entrypoint_1(s32 idx) {

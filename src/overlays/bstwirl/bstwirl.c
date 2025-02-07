@@ -44,7 +44,7 @@ void bstwirl_init(PlayerState *self){
 }
 
 void bstwirl_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *aCtrl = baanim_getAnimCtrlPtr(self);
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
     if (anctrl_isAt(aCtrl, 0.18f)) {

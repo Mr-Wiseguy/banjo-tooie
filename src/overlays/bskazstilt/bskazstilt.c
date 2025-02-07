@@ -113,16 +113,15 @@ void bskazstilt_entrypoint_0(PlayerState *self)
 
 void bskazstilt_entrypoint_1(PlayerState *self)
 {
-    s32 sp1C;
+    BanjoStateId next_state;
 
-    sp1C = 0;
+    next_state = BS_STATE_0_INVALID;
     func_808000C8_bskazstilt(self);
     func_8009D2F0(self, 1, 0.5f);
-    if (baanim_isStopped(self) != 0)
-    {
-        sp1C = 0x48;
+    if (baanim_isStopped(self) != 0) {
+        next_state = BS_STATE_48;
     }
-    bs_setState(self, sp1C);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_2(PlayerState *self)
@@ -146,14 +145,14 @@ void bskazstilt_entrypoint_4(PlayerState *self)
 
 void bskazstilt_entrypoint_5(PlayerState *self)
 {
-    s32 state;
+    BanjoStateId next_state;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     func_808000C8_bskazstilt(self);
     func_8009D2F0(self, 1, 0.5f);
     if (bainput_should_enter_first_person(self) != 0)
     {
-        state = _badrone_entrypoint_24(self);
+        next_state = _badrone_entrypoint_24(self);
     }
     if (bakey_pressed(self, BUTTON_B) != 0)
     {
@@ -161,25 +160,25 @@ void bskazstilt_entrypoint_5(PlayerState *self)
     }
     if (bastick_getZone(self) > 0)
     {
-        state = 0x49;
+        next_state = BS_STATE_49;
     }
     if (func_8008DF18(self) != 0)
     {
-        state = 0x4D;
+        next_state = BS_STATE_4D;
     }
     if ((bakey_pressed(self, BUTTON_A) != 0) && (player_isStable(self) != 0))
     {
-        state = 0x4A;
+        next_state = BS_STATE_4A;
     }
     if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0)
     {
-        state = 0x4B;
+        next_state = BS_STATE_4B;
     }
     if (func_80800000_bskazstilt(self) != 0)
     {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_6(PlayerState *self)
@@ -201,10 +200,10 @@ void bskazstilt_entrypoint_8(PlayerState *self)
 
 void bskazstilt_entrypoint_9(PlayerState *self)
 {
-    s32 sp24;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     func_808000C8_bskazstilt(self);
     func_8009D2F0(self, 1, 0.5f);
@@ -225,25 +224,25 @@ void bskazstilt_entrypoint_9(PlayerState *self)
     }
     if ((bastick_getZone(self) == 0) && (func_8009BCD4(self, 1.0f) != 0))
     {
-        sp24 = 0x48;
+        next_state = BS_STATE_48;
     }
     if (func_8008DF18(self) != 0)
     {
-        sp24 = 0x4D;
+        next_state = BS_STATE_4D;
     }
     if ((bakey_pressed(self, BUTTON_A) != 0) && (player_isStable(self) != 0))
     {
-        sp24 = 0x4A;
+        next_state = BS_STATE_4A;
     }
     if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0)
     {
-        sp24 = 0x4B;
+        next_state = BS_STATE_4B;
     }
     if (func_80800000_bskazstilt(self) != 0)
     {
-        sp24 = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_10(PlayerState *self)
@@ -279,10 +278,10 @@ void bskazstilt_entrypoint_12(PlayerState *self)
 
 void bskazstilt_entrypoint_13(PlayerState *self)
 {
-    s32 sp24;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     func_8009D3A8(self, 1);
     if (anctrl_isAt(animCtrl, 0.68f) != 0)
@@ -291,13 +290,13 @@ void bskazstilt_entrypoint_13(PlayerState *self)
     }
     if (anctrl_isStopped(animCtrl) != 0)
     {
-        sp24 = 0xBB;
+        next_state = BS_STATE_BB;
     }
     if (func_80800000_bskazstilt(self) != 0)
     {
-        sp24 = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_14(PlayerState *self)
@@ -347,14 +346,14 @@ void bskazstilt_entrypoint_16(PlayerState *self)
 
 void bskazstilt_entrypoint_17(PlayerState *self)
 {
-    s32 state;
+    BanjoStateId next_state;
     AnimCtrl *sp48;
     s32 pad0;
     f32 sp40;
     f32 sp3C;
     f32 temp_f2;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     sp48 = baanim_getAnimCtrlPtr(self);
     func_808000C8_bskazstilt(self);
     func_80800064_bskazstilt(self);
@@ -403,23 +402,23 @@ void bskazstilt_entrypoint_17(PlayerState *self)
             func_8009D2F0(self, 1, 0.5f);
             if (anctrl_isStopped(sp48) != 0)
             {
-                state = 0x48;
+                next_state = BS_STATE_48;
             }
             if (bakey_pressed(self, BUTTON_A) != 0)
             {
-                state = 0x4A;
+                next_state = BS_STATE_4A;
             }
             if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0)
             {
-                state = 0x4B;
+                next_state = BS_STATE_4B;
             }
             break;
     }
     if (func_80800000_bskazstilt(self) != 0)
     {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_18(PlayerState *self)
@@ -460,11 +459,11 @@ void bskazstilt_entrypoint_20(PlayerState *self)
 
 void bskazstilt_entrypoint_21(PlayerState *self)
 {
-    s32 sp44;
+    BanjoStateId next_state;
     f32 sp38[3];
     f32 sp34;
 
-    sp44 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_808000C8_bskazstilt(self);
     func_8009D658(self);
     _batimer_decrement(self, 0);
@@ -479,17 +478,17 @@ void bskazstilt_entrypoint_21(PlayerState *self)
     }
     else
     {
-        sp44 = 0x48;
+        next_state = BS_STATE_48;
     }
     if ((_batimer_isZero(self, 0) != 0) && (bakey_pressed(self, BUTTON_A) != 0))
     {
-        sp44 = 0x4A;
+        next_state = BS_STATE_4A;
     }
     if (func_80800000_bskazstilt(self) != 0)
     {
-        sp44 = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, sp44);
+    bs_setState(self, next_state);
 }
 
 void bskazstilt_entrypoint_22(PlayerState *self)
@@ -516,16 +515,16 @@ void bskazstilt_entrypoint_25(PlayerState *self)
 
 void bskazstilt_entrypoint_26(PlayerState *self)
 {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_808000C8_bskazstilt(self);
     func_8009D3A8(self, 1);
     if (_bsrest_entrypoint_20(self) != 0)
     {
-        sp24 = _bsrest_entrypoint_13(self);
+        next_state = _bsrest_entrypoint_13(self);
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskazstilt_entrypoint_27(s32 idx)
@@ -545,7 +544,7 @@ void bskazstilt_entrypoint_29(PlayerState *self)
     _bsdrone_entrypoint_1(self);
     if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0)
     {
-        bs_setState(self, 0x4B);
+        bs_setState(self, BS_STATE_4B);
     }
 }
 

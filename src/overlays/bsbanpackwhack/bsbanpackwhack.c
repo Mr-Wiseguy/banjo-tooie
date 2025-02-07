@@ -33,7 +33,7 @@ void func_80800074_bsbanpackwhack(PlayerState * self, s32 arg1) {
 }
 
 void bsbanpackwhack_entrypoint_0(PlayerState *self) {
-    baflag_clear(self, 0x28);
+    baflag_clear(self, BA_FLAG_28);
     _babackpack_set_state(self, 1);
     func_800A0CD0(self, 1);
     baphysics_reset_terminal_velocity(self);
@@ -50,13 +50,13 @@ void bsbanpackwhack_entrypoint_1(PlayerState *self) {
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
     baphysics_set_terminal_velocity(self, -100.0f);
-    baflag_set(self, 0x5);
+    baflag_set(self, BA_FLAG_5_HAS_PECKED);
     func_8009E4AC(self);
     self->unk170 = 0.0f;
 }
 
 void bsbanpackwhack_entrypoint_2(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
     f32 tmp_f0;
     f32 sp28[3];
@@ -96,14 +96,14 @@ void bsbanpackwhack_entrypoint_2(PlayerState *self) {
     }
 
     if (anctrl_isAt(anctrl, 0.1649f)) {
-        baflag_set(self, 0x28);
+        baflag_set(self, BA_FLAG_28);
         _babackpack_set_state(self, 2);
         func_800A0CD0(self, 0);
         self->unk170 = 1.0f;
     }
 
     if (anctrl_isAt(anctrl, 0.8247f)) {
-        baflag_clear(self, 0x28);
+        baflag_clear(self, BA_FLAG_28);
         func_8009E4E0(self, 2, NULL);
         _babackpack_set_state(self, 1);
         func_800A0CD0(self, 1);

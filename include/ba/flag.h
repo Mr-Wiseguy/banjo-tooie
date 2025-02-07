@@ -36,6 +36,13 @@ typedef enum {
     BA_FLAG_1B_TRANSFORMING,
     BA_FLAG_1C, // related to kazooie flight?
 
+    BA_FLAG_21 = 0x21,
+
+    BA_FLAG_23 = 0x23,
+
+    BA_FLAG_27 = 0x27,
+    BA_FLAG_28,
+
     BA_FLAG_2F = 0x2F, // related to kazooie flight?
     BA_FLAG_30,
 

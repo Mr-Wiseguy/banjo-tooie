@@ -46,11 +46,11 @@ void bskazshock_entrypoint_1(PlayerState *self) {
 }
 
 void bskazshock_entrypoint_2(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
     f32 sp24[3];
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     if (player_isStable(self) != 0) {
         if ((func_8001211C() % -2) != 0) {
@@ -67,7 +67,7 @@ void bskazshock_entrypoint_2(PlayerState *self) {
     switch (self->unk160.word) {
         case 0:
             if (func_8008E260(self) != 0) {
-                state = 0xE0;
+                next_state = BS_STATE_E0;
             }
             if (func_8008DF8C(self, 0x82) != 0) {
                 anctrl_setSubrange(animCtrl, 0, 1);
@@ -84,7 +84,7 @@ void bskazshock_entrypoint_2(PlayerState *self) {
                 anctrl_setDuration(animCtrl, 1.4);
             }
             if (anctrl_isStopped(animCtrl) != 0) {
-                state = 0xBB;
+                next_state = BS_STATE_BB;
             }
             break;
     }
@@ -97,15 +97,15 @@ void bskazshock_entrypoint_2(PlayerState *self) {
         }
     }
     if ((anctrl_isAt(animCtrl, 0.5) != 0) && (self->unk15C.word != 0)) {
-        state = 0xC1;
+        next_state = BS_STATE_C1;
     }
     if (anctrl_isAt(animCtrl, 0.5551) != 0) {
         baphysics_set_vertical_velocity(self, 180);
     }
     if ((sp24[1] < 0.0f) && (player_inWater(self) != 0)) {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void bskazshock_entrypoint_3(PlayerState *self) {
@@ -148,11 +148,11 @@ void bskazshock_entrypoint_5(PlayerState *self) {
 }
 
 void bskazshock_entrypoint_6(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
     f32 sp28[3];
     AnimCtrl *animCtrl;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskazmove_entrypoint_0(self);
     func_8009BB24(self, &sp28);
@@ -165,21 +165,21 @@ void bskazshock_entrypoint_6(PlayerState *self) {
     if (self->unk160.word == 0) {
         bskazshock_entrypoint_0(self);
         if (sp28[1] < 0.0f) {
-            state = 0xDF;
+            next_state = BS_STATE_DF;
         }
     }
     if (player_isStable(self) == 0) {
         if (func_8008E260(self) != 0) {
-            state = 0xE0;
+            next_state = BS_STATE_E0;
         }
         if (bainput_should_feathery_flap(self) != 0) {
-            state = 0x15C;
+            next_state = BS_STATE_15C;
         }
         if ((baphysics_get_vertical_velocity(self) < 0.0f) && (bainput_func_80097E74(self) != 0)) {
-            state = 0xBE;
+            next_state = BS_STATE_BE;
         }
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void bskazshock_entrypoint_7(PlayerState *self) {

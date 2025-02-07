@@ -21,9 +21,9 @@ void func_80800028_bskazow(PlayerState *self) {
 }
 
 void func_80800098_bskazow(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.3) != 0) {
         func_800951B4(self);
     }
@@ -31,12 +31,12 @@ void func_80800098_bskazow(PlayerState *self) {
         _bskazmove_entrypoint_0(self);
     }
     if (_babounce_entrypoint_9(self) != 0) {
-        state = 0xBB;
+        next_state = BS_STATE_BB;
     }
     if ((player_inWater(self) != 0) && (baphysics_get_vertical_velocity(self) <= 0.0f)) {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 s32 bskazow_entrypoint_0(s32 idx) {
@@ -59,9 +59,9 @@ void func_80800184_bskazow(PlayerState *self) {
 }
 
 void func_808001F0_bskazow(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.3) != 0) {
         func_800951B4(self);
     }
@@ -69,12 +69,12 @@ void func_808001F0_bskazow(PlayerState *self) {
         _bskazmove_entrypoint_0(self);
     }
     if (_babounce_entrypoint_9(self) != 0) {
-        state = 0xBB;
+        next_state = BS_STATE_BB;
     }
     if ((player_inWater(self) != 0) && (baphysics_get_vertical_velocity(self) <= 0.0f)) {
-        state = 0x160;
+        next_state = BS_STATE_160;
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 s32 bskazow_entrypoint_1(s32 idx) {

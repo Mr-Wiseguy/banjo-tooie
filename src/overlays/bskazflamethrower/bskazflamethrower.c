@@ -29,9 +29,9 @@ void bskazflamethrower_entrypoint_2(PlayerState *self) {
 }
 
 void bskazflamethrower_entrypoint_3(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     switch (self->unk15C.word) {
         case 1:
             if (baanim_isAt(self, 0.2) != 0) {
@@ -54,15 +54,15 @@ void bskazflamethrower_entrypoint_3(PlayerState *self) {
             break;
         case 4:
             if (baanim_isStopped(self) != 0) {
-                state = 0xBB;
+                next_state = BS_STATE_BB;
             }
             if (baanim_getTimer(self) > 0.7f) {
-                state = _bskazstill_entrypoint_4(self, state);
+                next_state = _bskazstill_entrypoint_4(self, next_state);
             }
             break;
     }
     _baflamethrower_entrypoint_5(self);
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 s32 bskazflamethrower_entrypoint_4(s32 idx) {

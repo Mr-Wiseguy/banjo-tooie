@@ -113,7 +113,7 @@ void bsbflip_init(PlayerState *self) {
 }
 
 void bsbflip_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
     if ( anctrl_isAt(anctrl, 0.2394f)
         && (anctrl_getPlaybackType(anctrl) != 2)
@@ -137,7 +137,7 @@ void bsbflip_update(PlayerState *self) {
                 next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
-                next_state = 0xA8;
+                next_state = BS_STATE_A8;
             }
             break;
 
@@ -158,7 +158,7 @@ void bsbflip_update(PlayerState *self) {
                 next_state = BS_STATE_F_BBUSTER;
             }
             if (func_8008DA24(self)) {
-                next_state = 0xA8;
+                next_state = BS_STATE_A8;
             }
             
             break;

@@ -25,20 +25,20 @@ void bskaz_entrypoint_2(PlayerState *self) {
     func_80092864(self, 1);
 }
 
-s32 bskaz_entrypoint_3(PlayerState *self) {
+BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
     if (func_8008E430() != 0) {
-        return 0x186;
+        return BS_STATE_186;
     }
     
     if (func_8008D3B0(self) != 0) {
-        return 0x161;
+        return BS_STATE_161;
     }
     
-    if ((bakey_held(self, 1) != 0) && (func_800C6E38(0x24) != 0)) {
-        return 0xC6;
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_800C6E38(0x24) != 0)) {
+        return BS_STATE_C6;
     }
     
-    return 0xBD;
+    return BS_STATE_BD;
 }
 
 

@@ -22,11 +22,11 @@ void bsbeggass_entrypoint_0(PlayerState* arg0){
 
 // bseggass_update
 void bsbeggass_entrypoint_1(PlayerState* arg0) {
-    s32 next_state;
+    BanjoStateId next_state;
     AnimCtrl* plyr_mvmt;
     s32 has_eggs;
 
-    next_state = 0;
+    next_state = BS_STATE_0_INVALID;
     plyr_mvmt = baanim_getAnimCtrlPtr(arg0);
     has_eggs = func_80094BC0(arg0) != 0;
     if (bainput_should_poop_egg(arg0) && func_80094B14(arg0)) {

@@ -13,7 +13,7 @@ void bskazshoessuckspline_entrypoint_0(PlayerState *self) {
             func_80099A7C(self, &sp24);
             if (_bashoessuck_entrypoint_5(self, &sp24) != 0) {
                 baflag_set(self, BA_FLAG_3D);
-                bs_setState(self, 0x188);
+                bs_setState(self, BS_STATE_188);
                 func_8009E830(self, 2);
             }
         }
@@ -54,35 +54,35 @@ void bskazshoessuckspline_entrypoint_2(PlayerState *self) {
 }
 
 void bskazshoessuckspline_entrypoint_3(PlayerState *self) {
-    s32 sp2C;
+    BanjoStateId next_state;
     f32 sp20[3];
 
-    sp2C = 0;
+    next_state = BS_STATE_0_INVALID;
     func_800956B8();
     _bskazmove_entrypoint_6(self);
     _bskazmove_entrypoint_0(self);
     _bashoessuck_entrypoint_4(self);
     if ((bastick_getZone(self) == 0) && (func_8009BCD4(self, 1) != 0)) {
-        sp2C = 0x187;
+        next_state = BS_STATE_187;
     }
     if (bakey_pressed(self, 8) != 0) {
-        sp2C = _bskaz_entrypoint_3(self);
+        next_state = _bskaz_entrypoint_3(self);
     }
     if ((_bamovespline_entrypoint_1(self, 100) != 0) || (_bashoes_entrypoint_1(self) != 4)) {
-        sp2C = 0xDF;
+        next_state = BS_STATE_DF;
     }
     if (_bamovespline_entrypoint_3(self) != 0) {
-        sp2C = 0xC7;
+        next_state = BS_STATE_C7;
     }
     if (_bamovespline_entrypoint_2(self) != 0) {
         if (_bashoes_entrypoint_2(self) == 2) {
             _bashoessuck_entrypoint_1(self, &sp20);
-            sp2C = _badrone_entrypoint_23(self, &sp20);
+            next_state = _badrone_entrypoint_23(self, &sp20);
         } else {
-            sp2C = 0xC7;
+            next_state = BS_STATE_C7;
         }
     }
-    bs_setState(self, sp2C);
+    bs_setState(self, next_state);
 }
 
 s32 bskazshoessuckspline_entrypoint_4(s32 idx) {
@@ -98,22 +98,22 @@ void bskazshoessuckspline_entrypoint_5(PlayerState *self) {
 }
 
 void bskazshoessuckspline_entrypoint_6(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     if ((baflag_isTrue(self, BA_FLAG_3D) != 0) && (_bashoes_entrypoint_1(self) == 4)) {
         _bashoessuck_entrypoint_4(self);
         if (bastick_getZone(self) > 0) {
-            state = 0x188;
+            next_state = BS_STATE_188;
         }
     } else {
         if (func_8008DD04(self) != 0) {
-            state = 0xDF;
+            next_state = BS_STATE_DF;
         } else {
-            state = 0xBB;
+            next_state = BS_STATE_BB;
         }
     }
-    bs_setState(self, state);
+    bs_setState(self, next_state);
 }
 
 void bskazshoessuckspline_entrypoint_7(PlayerState *self) {

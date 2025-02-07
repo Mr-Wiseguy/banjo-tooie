@@ -71,19 +71,19 @@ void bskazmove_entrypoint_0(PlayerState *self) {
 }
 #endif
 
-s32 func_808001C4_bskazmove(PlayerState *self, s32 arg1) {
+BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) {
     if (func_8008E39C(self) != 0) {
-        return arg1;
+        return nextState;
     } 
 
     if (baphysics_get_target_horizontal_velocity(self) > 80.0f) {
         if (bainput_func_80097FB8(self) != 0) {
-            arg1 = 0xC4;
+            nextState = BS_STATE_C4;
         }
     } else if (bainput_func_80097FB8(self) != 0) {
-        arg1 = _bskaz_entrypoint_4(self);
+        nextState = _bskaz_entrypoint_4(self);
     }
-    return arg1;
+    return nextState;
 }
 
 void func_8080025C_bskazmove(PlayerState *self) {
@@ -120,10 +120,10 @@ void bskazmove_entrypoint_2(PlayerState *self) {
 }
 
 void bskazmove_entrypoint_3(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
     s32 temp_v0;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     if (bastick_distance(self) == 0.0f) {
         yaw_setIdeal(self, yaw_get(self));
     }
@@ -133,34 +133,34 @@ void bskazmove_entrypoint_3(PlayerState *self) {
     switch (bastick_getZone(self)) {
         case 0:
             if (func_8009BCD4(self, 3) != 0) {
-                sp24 = 0xBB;
+                next_state = BS_STATE_BB;
             }
             break;
         case 2:
-            sp24 = 0xC7;
+            next_state = BS_STATE_C7;
             break;
     }
 
     if (func_8008E39C(self) != 0) {
-        sp24 = 0xC7;
+        next_state = BS_STATE_C7;
     }
 
     if (func_8008DD04(self) != 0) {
-        sp24 = 0xDF;
+        next_state = BS_STATE_DF;
     }
 
     if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
-        sp24 = 0xDD;
+        next_state = BS_STATE_DD;
     }
 
     if (func_8008E39C(self) != 0) {
         func_8080025C_bskazmove(self);
     } else {
-        sp24 = func_808001C4_bskazmove(self, sp24);
+        next_state = func_808001C4_bskazmove(self, next_state);
     }
 
     if (bakey_pressed(self, 8) != 0) {
-        sp24 = _bskaz_entrypoint_3(self);
+        next_state = _bskaz_entrypoint_3(self);
         if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
@@ -168,14 +168,14 @@ void bskazmove_entrypoint_3(PlayerState *self) {
     }
 
     if (func_8008DF18(self) != 0) {
-        sp24 = _badrone_entrypoint_25(self);
+        next_state = _badrone_entrypoint_25(self);
     }
 
     if (player_inWater(self) != 0) {
-        sp24 = 0x15D;
+        next_state = BS_STATE_15D;
     }
 
-    bs_setState(self, func_800A02DC(self, sp24));
+    bs_setState(self, func_800A02DC(self, next_state));
 }
 
 s32 bskazmove_entrypoint_4(s32 idx) {
@@ -295,10 +295,10 @@ void bskazmove_entrypoint_8(PlayerState *self) {
 }
 
 void bskazmove_entrypoint_9(PlayerState *self) {
-    s32 state;
+    BanjoStateId next_state;
     s32 sp20;
 
-    state = 0;
+    next_state = BS_STATE_0_INVALID;
     sp20 = func_8008E39C(self);
     func_80800754_bskazmove(self);
     bskazmove_entrypoint_6(self);
@@ -307,32 +307,32 @@ void bskazmove_entrypoint_9(PlayerState *self) {
     switch (bastick_getZone(self)) {
         case 0:
             if (func_8009BCD4(self, 18) != 0) {
-                state = 0xBB;
+                next_state = BS_STATE_BB;
             }
             break;
         case 1:
             if ((sp20 == 0) && (func_8009BCD4(self, 250) != 0)) {
-                state = 0xBC;
+                next_state = BS_STATE_BC;
             }
             break;
     }
 
     if (func_8008DD04(self) != 0) {
-        state = 0xDF;
+        next_state = BS_STATE_DF;
     }
 
     if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
-        state = 0xDD;
+        next_state = BS_STATE_DD;
     }
 
     if (sp20 != 0) {
         func_8080025C_bskazmove(self);
     } else {
-        state = func_808001C4_bskazmove(self, state);
+        next_state = func_808001C4_bskazmove(self, next_state);
     }
 
     if (bakey_pressed(self, BUTTON_A) != 0) {
-        state = _bskaz_entrypoint_3(self);
+        next_state = _bskaz_entrypoint_3(self);
         if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
@@ -340,14 +340,14 @@ void bskazmove_entrypoint_9(PlayerState *self) {
     }
 
     if (func_8008DF18(self) != 0) {
-        state = _badrone_entrypoint_25(self);
+        next_state = _badrone_entrypoint_25(self);
     }
 
     if (player_inWater(self) != 0) {
-        state = 0x15D;
+        next_state = BS_STATE_15D;
     }
 
-    bs_setState(self, func_800A02DC(self, state));
+    bs_setState(self, func_800A02DC(self, next_state));
 }
 
 s32 bskazmove_entrypoint_10(s32 idx) {

@@ -30,24 +30,24 @@ void func_808000FC_bskazcrouch(s32 arg0, s32 arg1) {
 }
 
 
-s32 bskazcrouch_entrypoint_0(PlayerState* self, s32 arg1) {
+BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1) {
     if (bakey_released(self, BUTTON_Z) != 0) {
-        arg1 = 0xBB;
+        arg1 = BS_STATE_BB;
         if (bakey_pressed(self, BUTTON_A) != 0) {
             arg1 = _bskaz_entrypoint_3(self);
         }
     } else {
         if ((bakey_pressed(self, BUTTON_B) != 0) && (func_800C6E38(0x28) != 0)) {
-            arg1 = 0xC5;
+            arg1 = BS_STATE_C5;
         }
         if (bakey_pressed(self, BUTTON_A) != 0) {
             arg1 = _bskaz_entrypoint_3(self);
         }
         if ((bainput_should_poop_egg(self) != 0) && (func_80094B14(self) != 0)) {
-            arg1 = 0x68;
+            arg1 = BS_STATE_68;
         }
         if ((bainput_should_shoot_egg(self) != 0) && (func_80094B14(self) != 0)) {
-            arg1 = 0x67;
+            arg1 = BS_STATE_67;
         }
     }
 

@@ -22,11 +22,11 @@ void bsbegghead_entrypoint_0(PlayerState* player){
 
 // bsegghead_update
 void bsbegghead_entrypoint_1(PlayerState* player) {
-    s32 next_state;
+    BanjoStateId next_state;
     AnimCtrl* aCtrl;
     s32 has_eggs;
 
-    next_state = 0;
+    next_state = BS_STATE_0_INVALID;
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
     if (bainput_should_shoot_egg(player) && func_80094B14(player)) {

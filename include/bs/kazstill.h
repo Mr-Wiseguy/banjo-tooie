@@ -26,8 +26,8 @@ extern s32 func_8008E3E8(PlayerState *self);
 extern void func_80090A2C(s32);
 extern void func_800951B4(s32);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
-extern s32 func_800A02DC(PlayerState *self, s32);
+extern BanjoStateId func_800A02DC(PlayerState *self, BanjoStateId);
 
-extern s32 _bskazstill_entrypoint_4(PlayerState *self, s32);
+extern BanjoStateId _bskazstill_entrypoint_4(PlayerState *self, BanjoStateId);
 
 #endif // __BS_KAZSTLL_H__

@@ -6,6 +6,7 @@
 #include "ba/physics.h"
 #include "ba/timer.h"
 #include "bs.h"
+#include "bs/state.h"
 #include "buttons.h"
 
 #include "core2/1E68670.h"
@@ -95,7 +96,7 @@ void bsbbarge_init(PlayerState *self) {
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsbbarge/bsbbarge/bsbbarge_update.s")
 #else
 void bsbbarge_update(PlayerState *self) {
-    s32 next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl =  baanim_getAnimCtrlPtr(self);
     if (bakey_released(self, BUTTON_B)) {
         baflag_set(self, 0xA); //miscFlag_set

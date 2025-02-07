@@ -93,7 +93,7 @@ void func_80800294_bsbflap(PlayerState *self) {
 }
 
 void bsbflap_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
     _bswalk_entrypoint_1(self);
     switch (self->unk15C.word) {
@@ -177,7 +177,7 @@ void bsbflap_update(PlayerState *self) {
     }
     
     if (func_8008DA24(self)) {
-        next_state = 0xA8;
+        next_state = BS_STATE_A8;
     }
 
     if (player_isStable(self)) {

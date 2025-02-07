@@ -70,9 +70,9 @@ void func_80800270_bskazspring(PlayerState *self) {
 }
 
 void func_808002A0_bskazspring(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = 0;
     switch (self->unk15C.bytes[0]) {
         case 1:
             if (baanim_isAt(self, 0.22) != 0) {
@@ -91,10 +91,10 @@ void func_808002A0_bskazspring(PlayerState *self) {
         case 3:
             func_80800000_bskazspring(self);
             if (bakey_released(self, BUTTON_A) != 0) {
-                sp24 = 0xDF;
+                next_state = BS_STATE_DF;
             }
             if (player_isStable(self) != 0) {
-                sp24 = 0xDF;
+                next_state = BS_STATE_DF;
             }
             break;
     }
@@ -102,9 +102,9 @@ void func_808002A0_bskazspring(PlayerState *self) {
         self->unk160.word = 1;
     }
     if ((self->unk160.word != 0) && (baphysics_get_vertical_velocity(self) < 0.0f) && (bainput_func_80097E74(self) != 0)) {
-        sp24 = 0xBE;
+        next_state = BS_STATE_BE;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskazspring_entrypoint_0(s32 idx) {

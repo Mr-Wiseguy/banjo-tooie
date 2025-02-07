@@ -4,8 +4,9 @@
 #include <ultra64.h>
 
 #include "ba/playerstate.h"
+#include "bs/state.h"
 
-extern s32 _bsrest_entrypoint_13(PlayerState *self);
+extern BanjoStateId _bsrest_entrypoint_13(PlayerState *self);
 extern void _bsrest_entrypoint_14();
 extern void _bsrest_entrypoint_16(PlayerState *self);
 extern s32 _bsrest_entrypoint_20();

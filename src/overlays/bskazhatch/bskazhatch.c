@@ -35,17 +35,17 @@ void func_808000D4_bskazhatch(PlayerState *self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazhatch/bskazhatch/func_80800108_bskazhatch.s")
 
-s32 func_808001E4_bskazhatch(PlayerState *self) {
+BanjoStateId func_808001E4_bskazhatch(PlayerState *self) {
     if (func_8008E124(self) != 0) {
         return _badata_entrypoint_32(self);
     }
-    return 0xBB;
+    return BS_STATE_BB;
 }
 
 void func_80800220_bskazhatch(PlayerState *self) {
-    s32 nextState;
+    BanjoStateId next_state;
 
-    nextState = 0;
+    next_state = BS_STATE_0_INVALID;
 
     switch (self->unk15C.bytes[0]) {
         case 1:
@@ -79,7 +79,7 @@ void func_80800220_bskazhatch(PlayerState *self) {
                 if (func_8010114C(self->unk160.word, 0x18, self->unk184) > 0) {
                     return;
                 }
-                nextState = func_808001E4_bskazhatch(self);
+                next_state = func_808001E4_bskazhatch(self);
             }
             break;
 
@@ -88,12 +88,12 @@ void func_80800220_bskazhatch(PlayerState *self) {
                 func_8009DEC0(self, 0x459D, 0.95, 1.05, 26000, 26000);
             }
             if (baanim_isStopped(self) != 0) {
-                nextState = func_808001E4_bskazhatch(self);
+                next_state = func_808001E4_bskazhatch(self);
             }
             break;
     }
     
-    bs_setState(self, nextState);
+    bs_setState(self, next_state);
 }
 
 s32 bskazhatch_entrypoint_0(s32 idx) {

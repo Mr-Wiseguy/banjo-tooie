@@ -7,11 +7,11 @@
 
 #include "ba/playerstate.h"
 #include "an/anctrl.h"
+#include "bs/state.h"
 
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
 void func_800A0CDC(PlayerState* thisx, s32 arg1);
-void bs_setState(PlayerState*, s32);
-s32 _bscrouch_entrypoint_4(PlayerState*, s32);
+BanjoStateId _bscrouch_entrypoint_4(PlayerState*, BanjoStateId);
 void func_800C6DA0(s32);
 s32 func_8008DD04(PlayerState*);
 s32 func_800944E0(PlayerState*, s32);

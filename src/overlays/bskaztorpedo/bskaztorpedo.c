@@ -209,7 +209,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
 void func_8080088C_bskaztorpedo(PlayerState *self) {
     func_800995B8();
     if (func_8009E6F8(self) != 0x15A) {
-        bs_setState(self, 0x15A);
+        bs_setState(self, BS_STATE_15A);
         func_8009E830(self, 2);
     }
 }
@@ -235,13 +235,13 @@ void func_80800B34_bskaztorpedo(PlayerState *self) {
 }
 
 void func_80800BA0_bskaztorpedo(PlayerState *self) {
-    s32 var_a2;
+    BanjoStateId next_state;
 
-    var_a2 = 0;
+    next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.9424f) != 0) {
-        var_a2 = 0x154;
+        next_state = BS_STATE_154;
     }
-    bs_setState(self, var_a2);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_0(s32 idx) {
@@ -264,9 +264,9 @@ void func_80800C20_bskaztorpedo(PlayerState *self) {
 }
 
 void func_80800CAC_bskaztorpedo(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_8080076C_bskaztorpedo(self);
     func_8080078C_bskaztorpedo(self);
     func_8080016C_bskaztorpedo(self);
@@ -274,9 +274,9 @@ void func_80800CAC_bskaztorpedo(PlayerState *self) {
     func_808002E0_bskaztorpedo(self);
     func_80800034_bskaztorpedo(self);
     if (func_80800000_bskaztorpedo(self) > 48.0f) {
-        sp24 = 0x159;
+        next_state = BS_STATE_159;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_1(s32 idx) {
@@ -295,15 +295,15 @@ void func_80800D70_bskaztorpedo(PlayerState *self) {
 }
 
 void func_80800DA4_bskaztorpedo(PlayerState *self) {
-    s32 sp1C;
+    BanjoStateId next_state;
 
-    sp1C = 0;
+    next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_20() != 0) {
-        sp1C = 0x154;
+        next_state = BS_STATE_154;
     }
     func_8080076C_bskaztorpedo(self);
     func_8080078C_bskaztorpedo(self);
-    bs_setState(self, sp1C);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_2(s32 idx) {
@@ -390,7 +390,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
         func_800A16BC(0);
         func_8009DB04(self, 0x45A5, 1.0f, 0x55F0);
         if (func_8009E6F8(sp34) == 0xED) {
-            bs_setState(sp34, 0x84);
+            bs_setState(sp34, BS_STATE_84);
             return;
         }
         func_800A0CF4(sp34, 1);
@@ -428,9 +428,9 @@ void func_80801268_bskaztorpedo(PlayerState *self) {
 }
 
 void func_808012DC_bskaztorpedo(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_8080076C_bskaztorpedo(self);
     func_8080078C_bskaztorpedo(self);
     func_8080016C_bskaztorpedo(self);
@@ -439,9 +439,9 @@ void func_808012DC_bskaztorpedo(PlayerState *self) {
     func_808011A4_bskaztorpedo(self);
     func_80800034_bskaztorpedo(self);
     if (func_80800000_bskaztorpedo(self) < 43.0f) {
-        sp24 = 0x154;
+        next_state = BS_STATE_154;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_5(s32 idx) {
@@ -461,18 +461,18 @@ void func_808013B4_bskaztorpedo(PlayerState *self) {
 }
 
 void func_80801400_bskaztorpedo(PlayerState *self) {
-    s32 sp1C;
+    BanjoStateId next_state;
 
-    sp1C = 0;
+    next_state = BS_STATE_0_INVALID;
     func_80091290(self, 80.0f, 1, 0xD);
     if (_baspin_entrypoint_3(self) == 2) {
         if (func_8008E124(self) != 0) {
-            sp1C = 0x155;
+            next_state = BS_STATE_155;
         } else {
-            sp1C = 0x154;
+            next_state = BS_STATE_154;
         }
     }
-    bs_setState(self, sp1C);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_6(s32 idx) {
@@ -521,17 +521,17 @@ void func_808014F8_bskaztorpedo(PlayerState *self) {
 }
 
 void func_80801614_bskaztorpedo(PlayerState *self) {
-    s32 sp24;
+    BanjoStateId next_state;
 
-    sp24 = 0;
+    next_state = BS_STATE_0_INVALID;
     func_80091290(self, 80.0f, 1, 0xD);
     if (baanim_isAt(self, 0.5f) != 0) {
         func_800951B4(self);
     }
     if (baanim_isStopped(self) != 0) {
-        sp24 = 0x154;
+        next_state = BS_STATE_154;
     }
-    bs_setState(self, sp24);
+    bs_setState(self, next_state);
 }
 
 s32 bskaztorpedo_entrypoint_7(s32 idx) {

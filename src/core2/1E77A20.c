@@ -35,7 +35,7 @@ void (*func_8009CAAC(PlayerState *, BanjoStateId))(PlayerState *);
 void (*func_8009CAF8(PlayerState *, BanjoStateId))(PlayerState *);
 
 void bs_setState(PlayerState *self, BanjoStateId nextState) {
-    if (nextState != BS_0_INVALID) {
+    if (nextState != BS_STATE_0_INVALID) {
         self->state->next = nextState;
         if (func_8009CAAC(self, self->state->current) != NULL) {
             func_8009CAAC(self, self->state->current)(self);
