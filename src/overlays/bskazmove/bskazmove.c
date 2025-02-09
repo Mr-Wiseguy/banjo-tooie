@@ -23,9 +23,6 @@ void func_80800000_bskazmove(PlayerState *self, f32 *arg1, f32 *arg2) {
     }
 }
 
-#ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazmove/bskazmove/bskazmove_entrypoint_0.s")
-#else
 void bskazmove_entrypoint_0(PlayerState *self) {
     s32 temp_v0;
     f32 value;
@@ -33,9 +30,10 @@ void bskazmove_entrypoint_0(PlayerState *self) {
     f32 min;
     s32 zone;
 
-    // &self should not be a reference as it adds "addiu a0, sp, 0x38" to the assembly
-    // however if it's not a reference it's not calling "sw a0,0x38(sp)" but instead calls "move a0,s0"
-    // a possible solution is to not pass self somewhere down the line so we need to store the sp of self somewhere
+    // Fake match?: Force self onto the stack by taking its address.
+    if (&self) {
+    }
+
     value = bastick_getZonePosition(self); 
     zone = bastick_getZone(self);
     temp_v0 = func_8008E39C(self);
@@ -69,7 +67,6 @@ void bskazmove_entrypoint_0(PlayerState *self) {
 
     baphysics_set_target_horizontal_velocity(self, func_800F1214(value, min, max));
 }
-#endif
 
 BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) {
     if (func_8008E39C(self) != 0) {
