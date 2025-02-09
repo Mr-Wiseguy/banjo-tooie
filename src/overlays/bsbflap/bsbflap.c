@@ -8,6 +8,7 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
 #include "bs.h"
+#include "bs/state.h"
 
 #include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
@@ -92,7 +93,7 @@ void func_80800294_bsbflap(PlayerState *self) {
 }
 
 void bsbflap_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
     _bswalk_entrypoint_1(self);
     switch (self->unk15C.word) {
@@ -162,30 +163,30 @@ void bsbflap_update(PlayerState *self) {
 
         case 4:
             if (func_8008E260(self)) {
-                next_state = BS_3D_FALL_TUMBLING;
+                next_state = BS_STATE_3D_FALL_TUMBLING;
             }
             break;
     }
     _batimer_decrement(self, 0);
     if (_batimer_isZero(self, 0)) {
-        next_state = BS_2F_FALL;
+        next_state = BS_STATE_2F_FALL;
     }
 
     if (bainput_should_beak_bust(self)) {
-        next_state = BS_F_BBUSTER;
+        next_state = BS_STATE_F_BBUSTER;
     }
     
     if (func_8008DA24(self)) {
-        next_state = 0xA8;
+        next_state = BS_STATE_A8;
     }
 
     if (player_isStable(self)) {
         func_8009FE58(self);
-        next_state = BS_2_SLOW_WALK;
+        next_state = BS_STATE_1_SLOW_WALK;
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
 
     bs_setState(self, next_state);

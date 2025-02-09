@@ -34,6 +34,22 @@ typedef enum {
     BA_FLAG_19, // related to transformations
     BA_FLAG_1A, // related to bee transformation
     BA_FLAG_1B_TRANSFORMING,
+    BA_FLAG_1C, // related to kazooie flight?
+
+    BA_FLAG_21 = 0x21,
+
+    BA_FLAG_23 = 0x23,
+
+    BA_FLAG_27 = 0x27,
+    BA_FLAG_28,
+
+    BA_FLAG_2F = 0x2F, // related to kazooie flight?
+    BA_FLAG_30,
+
+    BA_FLAG_36 = 0x36, // related to kazooie wing whack?
+
+    BA_FLAG_3D = 0x3D, // related to kazooie shoes suck spline?
+
     NUM_BA_FLAGS = 0x42
 } BaFlagId;
 

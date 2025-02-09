@@ -6,6 +6,7 @@
 #include "ba/physics.h"
 #include "bs.h"
 #include "buttons.h"
+#include "bs/state.h"
 
 #include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
@@ -43,7 +44,7 @@ void bstwirl_init(PlayerState *self){
 }
 
 void bstwirl_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *aCtrl = baanim_getAnimCtrlPtr(self);
     baphysics_set_target_yaw(self, yaw_getIdeal(self));
     if (anctrl_isAt(aCtrl, 0.18f)) {
@@ -58,7 +59,7 @@ void bstwirl_update(PlayerState *self) {
 
     if (anctrl_isAt(aCtrl, 0.8011f)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
-        next_state = BS_20_LANDING;
+        next_state = BS_STATE_20_LANDING;
     }
 
     if (bakey_pressed(self, BUTTON_A)) {
@@ -66,11 +67,11 @@ void bstwirl_update(PlayerState *self) {
     }
 
     if ( 0.6f < anctrl_getAnimTimer(aCtrl) && !player_isStable(self)) {
-        next_state = BS_2F_FALL;
+        next_state = BS_STATE_2F_FALL;
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
 
     next_state = func_800A02DC(self, next_state);

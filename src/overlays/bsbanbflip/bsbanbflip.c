@@ -7,6 +7,7 @@
 #include "core2/1E76CC0.h"
 #include "ba/1E72EA0.h"
 #include "core2/1ECA640.h"
+#include "bs/state.h"
 
 extern void _bsbanbflip_end(PlayerState *);
 extern void _bsbanbflip_init(PlayerState *);
@@ -21,7 +22,7 @@ void func_80800000_bsbanbflip(PlayerState *self) {
     }
 }
 
-void __bsbanbflip_set_substate(PlayerState *self, s32 next_state) {
+void __bsbanbflip_set_substate(PlayerState *self, BanjoStateId next_state) {
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self); //sp44
     f32 sp38[3];
     switch (next_state) {
@@ -56,12 +57,12 @@ void __bsbanbflip_set_substate(PlayerState *self, s32 next_state) {
                     yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
                 }
                 yaw_rotateTimed(self, 1.0f);
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_yaw(self, yaw_getIdeal(self));
                 baphysics_set_target_horizontal_velocity(self, 200.0f);
                 baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), baphysics_get_target_horizontal_velocity(self));
             } else {
-                baphysics_set_type(self, BA_PHYSICS_AIRBORN);
+                baphysics_set_type(self, BA_PHYSICS_6_AIRBORN);
                 baphysics_set_target_horizontal_velocity(self, 0.0f);
             }
             baphysics_set_vertical_velocity(self, 800.0f);
@@ -78,7 +79,7 @@ void __bsbanbflip_set_substate(PlayerState *self, s32 next_state) {
             anctrl_setStart(anctrl, 0.8566);
             anctrl_setPlaybackType(anctrl, 1);
             anctrl_start(anctrl);
-            baphysics_set_type(self, BA_PHYSICS_LOCKED_ROTATION);
+            baphysics_set_type(self, BA_PHYSICS_3_LOCKED_ROTATION);
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             func_800EFD24(sp38);
             func_8009BA9C(self, sp38);
@@ -99,7 +100,7 @@ void bsbanbflip_init(PlayerState *self) {
 }
 
 void bsbanbflip_update(PlayerState *self) {
-    BanjoStateId next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
     if (anctrl_isAt(anctrl, 0.2394f) 
         && anctrl_getPlaybackType(anctrl) != 2
@@ -118,22 +119,22 @@ void bsbanbflip_update(PlayerState *self) {
         case 2:
             func_80800000_bsbanbflip(self);
             if(anctrl_isStopped(anctrl)) {
-                next_state = BS_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
             if (func_8008DA24(self)) {
-                next_state = 0xA8;
+                next_state = BS_STATE_A8;
             }
             break;
 
         case 3:
             if(anctrl_isStopped(anctrl)) {
-                next_state = BS_2_SLOW_WALK;
+                next_state = BS_STATE_1_SLOW_WALK;
             }
             next_state = func_800A01F8(self, next_state);
             break;
     }
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
     bs_setState(self, next_state);
 }

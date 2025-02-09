@@ -6,6 +6,7 @@
 #include "ba/physics.h"
 #include "ba/timer.h"
 #include "bs.h"
+#include "bs/state.h"
 #include "buttons.h"
 
 #include "core2/1E68670.h"
@@ -95,7 +96,7 @@ void bsbbarge_init(PlayerState *self) {
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsbbarge/bsbbarge/bsbbarge_update.s")
 #else
 void bsbbarge_update(PlayerState *self) {
-    s32 next_state = 0;
+    BanjoStateId next_state = BS_STATE_0_INVALID;
     AnimCtrl *anctrl =  baanim_getAnimCtrlPtr(self);
     if (bakey_released(self, BUTTON_B)) {
         baflag_set(self, 0xA); //miscFlag_set
@@ -148,7 +149,7 @@ void bsbbarge_update(PlayerState *self) {
 
         case 5:
             if (!player_isStable(self)) {
-                next_state = BS_2F_FALL;
+                next_state = BS_STATE_2F_FALL;
             }
 
             if (anctrl_isAt(anctrl, 0.7f)) {
@@ -159,7 +160,7 @@ void bsbbarge_update(PlayerState *self) {
             baphysics_set_target_horizontal_velocity(self, self->unk16C);
 
             if (anctrl_isAt(anctrl, 0.9193f)) {
-                next_state = BS_20_LANDING;
+                next_state = BS_STATE_20_LANDING;
             }
             break;
     }
@@ -169,7 +170,7 @@ void bsbbarge_update(PlayerState *self) {
     }
 
     if (player_inWater(self)) {
-        next_state = BS_4C_LANDING_IN_WATER;
+        next_state = BS_STATE_4C_LANDING_IN_WATER;
     }
 
     bs_setState(self, next_state);

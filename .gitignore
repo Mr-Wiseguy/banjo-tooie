@@ -59,6 +59,7 @@ ctx.c
 nonmatchings/
 testing/
 permuting/
+venv/
 
 #progress reports
 *.csv

@@ -3,6 +3,7 @@
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
+#include "bs/state.h"
 #include "funcs.h"
 
 #include "ba/1E72EA0.h"
@@ -10,36 +11,36 @@
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){
     baanim_playForDuration_once(player, ASSET_2A_ANIM_BSEGGHEAD, 1.0f);
-    func_8009FFD8(player, 1,3,1, BA_PHYSICS_LOCKED_ROTATION);
+    func_8009FFD8(player, 1,3,1, BA_PHYSICS_3_LOCKED_ROTATION);
     yaw_setVelocityBounded(player, 350.0f, 14.0f);
     baphysics_set_target_horizontal_velocity(player, 0.0f);
     func_800A0CF4(player, 1);
     player->unk15C.word = player->unk160.word = 1;
-    player->unk164 = func_80094510(player);
+    player->unk164.word = func_80094510(player);
     bainput_enable(player, 2, 0);
 }
 
 // bsegghead_update
 void bsbegghead_entrypoint_1(PlayerState* player) {
-    s32 next_state;
+    BanjoStateId next_state;
     AnimCtrl* aCtrl;
     s32 has_eggs;
 
-    next_state = 0;
+    next_state = BS_STATE_0_INVALID;
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
     if (bainput_should_shoot_egg(player) && func_80094B14(player)) {
-        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164));
+        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164.word));
     }
     if (has_eggs) {
         if (anctrl_isAt(aCtrl, 0.1f)) {
             _baeggsetup_entrypoint_10(player);
         }
         if (anctrl_isAt(aCtrl, 0.4f)) {
-            _baeggsetup_entrypoint_8(player, player->unk164);
+            _baeggsetup_entrypoint_8(player, player->unk164.word);
         }
         if (anctrl_isAt(aCtrl, 0.4704f)) {
-            _baeggsetup_entrypoint_5(player, player->unk164, 80.0f, 120.0f);
+            _baeggsetup_entrypoint_5(player, player->unk164.word, 80.0f, 120.0f);
             func_800C6DA0(0x43);
         }
         if (anctrl_isAt(aCtrl, 0.5919f) && player->unk160.word < player->unk15C.word) {
@@ -49,17 +50,17 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
         }
     }
     if (func_8008DD04(player)) {
-        next_state = BS_2F_FALL;
+        next_state = BS_STATE_2F_FALL;
     }
     if (bakey_held(player, BUTTON_Z)) {
         if (anctrl_isStopped(aCtrl)) {
-            next_state = BS_CROUCH;
+            next_state = BS_STATE_7_CROUCH;
         }
         if (0.65f < anctrl_getAnimTimer(aCtrl)) {
             next_state = _bscrouch_entrypoint_4(player, next_state);
         }
     } else if (anctrl_isStopped(aCtrl)) {
-        next_state = BS_1_IDLE;
+        next_state = BS_STATE_1_IDLE;
     }
     bs_setState(player, next_state);
 }
