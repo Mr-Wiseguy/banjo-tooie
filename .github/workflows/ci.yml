@@ -29,7 +29,7 @@ jobs:
       run: pip3 install -r tools/splat/requirements.txt
 
     - name: Get extra dependencies
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: ${{ secrets.SECRETREPO }}
         token: ${{ secrets.SECRETTOKEN }}
@@ -51,7 +51,7 @@ jobs:
       run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
 
     - name: Upload map
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: banjotooie.${{ matrix.version }}.map
         path: build/${{ matrix.version }}/banjotooie_decompressed.map
