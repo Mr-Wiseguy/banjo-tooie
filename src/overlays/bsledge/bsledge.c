@@ -87,31 +87,25 @@ void func_80800238_bsledge(PlayerState *self) {
 }
 
 void func_80800324_bsledge(PlayerState *self) {
-    self->unk168 = 2;
-    self->unk169 = 0;
+    self->unk168.bytes[0] = 2;
+    self->unk168.bytes[1] = 0;
 }
 
-#ifndef NONMATCHINGS
-
-void func_80800334_bsledge(PlayerState *self);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_80800334_bsledge.s")
-#else
 void func_80800334_bsledge(PlayerState *self) {
     s32 temp_a1;
 
-    temp_a1 = self->unk168;
-    self->unk168--;
+    temp_a1 = self->unk168.bytes[0];
+    self->unk168.bytes[0]--;
     if (temp_a1 == 0) {
-        self->unk168 = func_800DC128(1, 3);
-        temp_a1 =  D_80801340_bsledge[ (self->unk169)];
-        self->unk169++;
-        if (self->unk169 >= 3U) {
-            self->unk169 = 0U;
+        self->unk168.bytes[0] = func_800DC128(1, 3);
+        temp_a1 =  D_80801340_bsledge[ (self->unk168.bytes[1])];
+        self->unk168.bytes[1]++;
+        if (self->unk168.bytes[1] >= 3U) {
+            self->unk168.bytes[1] = 0U;
         }
         func_8009DF18(self, temp_a1, func_800DC178(0.8f, 1.0f), 10000);
     }
 }
-#endif
 
 #ifndef NONMATCHINGS
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_808003D0_bsledge.s")

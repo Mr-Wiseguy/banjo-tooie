@@ -59,7 +59,20 @@ typedef enum bs_state_e {
     BS_STATE_DF,
     BS_STATE_E0,
 
+    BS_STATE_E5 = 0xE5,
+
+    BS_STATE_E9 = 0xE9,
+
+    BS_STATE_EE = 0xEE,
+    BS_STATE_EF,
+    
+    BS_STATE_F4 = 0xF4,
+
+    BS_STATE_FF = 0xFF,
+
     BS_STATE_101 = 0x101,
+
+    BS_STATE_11E = 0x11E,
 
     BS_STATE_154 = 0x154,
     BS_STATE_155,

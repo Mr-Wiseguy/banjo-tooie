@@ -136,7 +136,7 @@ void bskazstill_entrypoint_2(PlayerState *self) {
             break;
         case 5:
             if (sp24 != 0) {
-                if (_bashoes_entrypoint_1(self) != self->unk168) {
+                if (_bashoes_entrypoint_1(self) != self->unk168.word) {
                     func_80800030_bskazstill(self, 5U);
                 }
             } else {
@@ -198,8 +198,8 @@ void func_80800780_bskazstill(PlayerState *self) {
     _bsdrone_entrypoint_0(self);
 }
 
-void func_808007A8_bskazstill() {
-    _bsdrone_entrypoint_1();
+void func_808007A8_bskazstill(PlayerState *self) {
+    _bsdrone_entrypoint_1(self);
 }
 
 s32 bskazstill_entrypoint_9(s32 idx) {
