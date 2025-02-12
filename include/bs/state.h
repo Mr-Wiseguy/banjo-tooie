@@ -34,8 +34,10 @@ typedef enum bs_state_e {
     BS_STATE_84 = 0x84,
 
     BS_STATE_A6 = 0xA6,
-    
-    BS_STATE_A8 = 0xA8,
+    BS_STATE_A7,
+    BS_STATE_A8,
+    BS_STATE_A9,
+    BS_STATE_AA,
 
     BS_STATE_B6_BILL_DRILL = 0xB6,
 

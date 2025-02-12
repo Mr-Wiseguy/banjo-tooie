@@ -24,11 +24,10 @@ void func_808000B4_bskazcrouch(AnimCtrl *anim_ctrl, f32 arg1) {
     anctrl_setDuration(anim_ctrl, func_800F10B4(arg1, 0, 180, 0.5, 0.2));
 }
 
-void func_808000FC_bskazcrouch(s32 arg0, s32 arg1) {
-    func_800A2CE8(arg0, 0.41f, 4);
-    func_800A2CE8(arg0, 0.91f, 3);
+void func_808000FC_bskazcrouch(PlayerState *self, s32 arg1) {
+    func_800A2CE8(self, 0.41f, 4);
+    func_800A2CE8(self, 0.91f, 3);
 }
-
 
 BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1) {
     if (bakey_released(self, BUTTON_Z) != 0) {

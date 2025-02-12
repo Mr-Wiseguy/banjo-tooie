@@ -20,7 +20,7 @@ extern void func_8009CFD8(PlayerState *, f32);
 extern void func_8009D2D8(PlayerState *, s32);
 extern void func_8009D658(PlayerState *);
 extern s32 func_8009E710(PlayerState *);
-extern s32 func_800F1EA4(f32 *, s32 *);
+extern s32 func_800F1EA4(f32 *, f32 *);
 
 BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1);
 
