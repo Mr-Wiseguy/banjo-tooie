@@ -23,5 +23,6 @@ void anctrl_setStart(AnimCtrl*, f32);
 f32 anctrl_getAnimTimer(AnimCtrl*);
 void anctrl_start(AnimCtrl*);
 s32 anctrl_isStopped(AnimCtrl*);
+AssetId anctrl_getIndex(AnimCtrl *);
 
 #endif

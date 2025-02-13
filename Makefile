@@ -8,7 +8,7 @@ ROM                  := $(BUILD_ROOT)/banjotooie.z64
 BASEROM              := baserom.us.z64
 ULTRALIB_VERSION     := J
 ULTRALIB_TARGET      := libultra_rom
-PYTHON3_BIN          := python3
+PYTHON3_BIN          := venv/bin/python3
 
 SRC_ROOT     := src
 ASM_ROOT     := asm

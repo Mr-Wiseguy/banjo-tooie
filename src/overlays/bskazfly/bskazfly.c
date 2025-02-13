@@ -736,8 +736,8 @@ void func_80801B50_bskazfly(PlayerState *self) {
     }
 }
 
-void func_80801B94_bskazfly() {
-    _bsdrone_entrypoint_1();
+void func_80801B94_bskazfly(PlayerState *self) {
+    _bsdrone_entrypoint_1(self);
 }
 
 void func_80801BB4_bskazfly(PlayerState *self) {

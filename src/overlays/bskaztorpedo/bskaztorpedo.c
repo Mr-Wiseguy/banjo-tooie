@@ -249,7 +249,7 @@ s32 bskaztorpedo_entrypoint_0(s32 idx) {
 }
 
 void func_80800BF8_bskaztorpedo(PlayerState *self) {
-    func_80090A2C();
+    func_80090A2C(self);
     func_80800508_bskaztorpedo(self);
 }
 
