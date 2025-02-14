@@ -263,7 +263,7 @@ void func_808009B8_bskazpaddle(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_badrone_entrypoint_30() != 0) {
+    if (_badrone_entrypoint_30(self) != 0) {
         next_state = BS_STATE_BB;
     }
     _bsdrone_entrypoint_1(self);

@@ -20,7 +20,8 @@ typedef enum asset_e {
     ASSET_2B_ANIM_BSEGGASS = 0x2B,
 
     ASSET_4B_ANIM_BSBFLIP_ENTER = 0x4B,
-    ASSET_4C_ANIM_BSBFLIP_HOLD = 0x4C,
+    ASSET_4C_ANIM_BSBFLIP_HOLD,
+    ASSET_4D_ANIM_BSOW_UNKNOWN, // might not be an anim
 
     ASSET_4F_ANIM_BSTWIRL = 0x4F,
 
