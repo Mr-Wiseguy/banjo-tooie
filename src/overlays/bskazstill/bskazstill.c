@@ -24,16 +24,16 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
     sp24 = func_8008E39C(self);
     temp_v0 = bastick_getZone(self);
     switch (temp_v0) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             break;
-        case 1:
+        case BS_STICK_ZONE_ID_1:
             if (sp24 != 0) {
                 nextState = BS_STATE_C7;
             } else {
                 nextState = BS_STATE_BC;
             }
             break;
-        case 2:
+        case BS_STICK_ZONE_ID_2:
             nextState = BS_STATE_C7;
             break;
     }
@@ -97,7 +97,7 @@ void bskazstill_entrypoint_2(PlayerState *self) {
     s32 sp24;
 
     animCtrl = baanim_getAnimCtrlPtr(self);
-    if ((bastick_getZone(self) == 0) && (bastick_distance(self) > 0.0f)) {
+    if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (bastick_distance(self) > 0.0f)) {
         self->unk164.word = 1;
         yaw_setUpdateType(self, 3);
         yaw_setVelocityBounded(self, 200, 14);

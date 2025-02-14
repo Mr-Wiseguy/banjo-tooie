@@ -19,8 +19,8 @@ void bsmumcast_entrypoint_1(PlayerState *self) {
 
     _bsmum_entrypoint_2(self);
     func_8008E944(self);
-    func_80099A7C(self, &sp24);
-    func_800A00CC(self, &sp24);
+    func_80099A7C(self, sp24);
+    func_800A00CC(self, sp24);
     self->unk15C.word = 0;
     if (func_8009EA20() != 0) {
         func_80800000_bsmumcast(self, 4);
@@ -41,6 +41,6 @@ void bsmumcast_entrypoint_1(PlayerState *self) {
 // Decomp failure
 #endif
 
-s32 bsmumcast_entrypoint_4(s32 self) {
-    return D_808004A0_bsmumcast[self];
+s32 bsmumcast_entrypoint_4(s32 idx) {
+    return D_808004A0_bsmumcast[idx];
 }

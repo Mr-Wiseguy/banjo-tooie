@@ -31,7 +31,7 @@ void func_80800064_bskazstilt(PlayerState *self)
     f32 sp1C;
 
     sp1C = bastick_getZonePosition(self);
-    if (bastick_getZone(self) == 0)
+    if (bastick_getZone(self) == BS_STICK_ZONE_ID_0)
     {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
@@ -158,7 +158,7 @@ void bskazstilt_entrypoint_5(PlayerState *self)
     {
         bastatetimer_clear(self, BA_STATE_TIMER_ID_2_LONGLEG);
     }
-    if (bastick_getZone(self) > 0)
+    if (bastick_getZone(self) > BS_STICK_ZONE_ID_0)
     {
         next_state = BS_STATE_49;
     }
@@ -222,7 +222,7 @@ void bskazstilt_entrypoint_9(PlayerState *self)
     {
         bastatetimer_clear(self, BA_STATE_TIMER_ID_2_LONGLEG);
     }
-    if ((bastick_getZone(self) == 0) && (func_8009BCD4(self, 1.0f) != 0))
+    if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (func_8009BCD4(self, 1.0f) != 0))
     {
         next_state = BS_STATE_48;
     }

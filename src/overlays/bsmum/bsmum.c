@@ -381,7 +381,7 @@ void bsmum_entrypoint_13(PlayerState *self) {
     zone_position = bastick_getZonePosition(self);
     stick_zone = bastick_getZone(self);
     if ((func_8008DE24(self) != 0) && (player_isStable(self) != 0)) {
-        if (stick_zone == 0) {
+        if (stick_zone == BS_STICK_ZONE_ID_0) {
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
         }
@@ -389,14 +389,14 @@ void bsmum_entrypoint_13(PlayerState *self) {
         return;
     }
     switch (stick_zone) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
-        case 1:
+        case BS_STICK_ZONE_ID_1:
             min_velocity = _bsmummove_entrypoint_2(self);
             baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_1(self)));
             return;
-        case 2:
+        case BS_STICK_ZONE_ID_2:
             min_velocity = _bsmummove_entrypoint_1(self);
             baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_0(self)));
             return;

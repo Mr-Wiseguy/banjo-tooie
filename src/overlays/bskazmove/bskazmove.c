@@ -38,13 +38,13 @@ void bskazmove_entrypoint_0(PlayerState *self) {
     zone = bastick_getZone(self);
     temp_v0 = func_8008E39C(self);
     switch (zone) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             value = 0;
             max = 0;
             min = 0;
             break;
 
-        case 1:
+        case BS_STICK_ZONE_ID_1:
             if (temp_v0 != 0) {
                 func_80800000_bskazmove(self, &min, &max);
                 value = value * 0.5f;
@@ -54,7 +54,7 @@ void bskazmove_entrypoint_0(PlayerState *self) {
             }
             break;
 
-        case 2:
+        case BS_STICK_ZONE_ID_2:
             if (temp_v0 != 0) {
                 func_80800000_bskazmove(self, &min, &max);
                 value = (value * 0.5f) + 0.5f;
@@ -128,12 +128,12 @@ void bskazmove_entrypoint_3(PlayerState *self) {
     func_800A2CE8(self, 0.97, 3);
     bskazmove_entrypoint_0(self);
     switch (bastick_getZone(self)) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             if (func_8009BCD4(self, 3) != 0) {
                 next_state = BS_STATE_BB;
             }
             break;
-        case 2:
+        case BS_STICK_ZONE_ID_2:
             next_state = BS_STATE_C7;
             break;
     }
@@ -302,12 +302,12 @@ void bskazmove_entrypoint_9(PlayerState *self) {
     func_8009D2F0(self, 0, 0.5);
     bskazmove_entrypoint_0(self);
     switch (bastick_getZone(self)) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             if (func_8009BCD4(self, 18) != 0) {
                 next_state = BS_STATE_BB;
             }
             break;
-        case 1:
+        case BS_STICK_ZONE_ID_1:
             if ((sp20 == 0) && (func_8009BCD4(self, 250) != 0)) {
                 next_state = BS_STATE_BC;
             }
@@ -352,7 +352,7 @@ s32 bskazmove_entrypoint_10(s32 idx) {
 }
 
 void bskazmove_entrypoint_11(PlayerState *self, s32 arg1) {
-    if ((arg1 == 3) && (bastick_getZone(self) == 2) && (bastick_getZonePosition(self) > 0.8f)) {
+    if ((arg1 == 3) && (bastick_getZone(self) == BS_STICK_ZONE_ID_2) && (bastick_getZonePosition(self) > 0.8f)) {
         func_800962B0(self, 1);
         return;
     }

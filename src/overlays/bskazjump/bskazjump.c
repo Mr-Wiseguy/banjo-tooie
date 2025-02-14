@@ -110,7 +110,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
     }
     if (player_isStable(self) != 0) {
         func_8009FE58(self);
-        if (bastick_getZone(self) == 0) {
+        if (bastick_getZone(self) == BS_STICK_ZONE_ID_0) {
             next_state = BS_STATE_DE;
         } else if (func_8008E39C(self) != 0) {
             next_state = BS_STATE_C7;
@@ -221,7 +221,7 @@ void bskazjump_entrypoint_6(PlayerState *self) {
     }
     if (player_isStable(self) != 0) {
         func_8009FE58(self);
-        if (bastick_getZone(self) == 0) {
+        if (bastick_getZone(self) == BS_STICK_ZONE_ID_0) {
             next_state = BS_STATE_DE;
         } else if (func_8008E39C(self) != 0) {
             next_state = BS_STATE_C7;
