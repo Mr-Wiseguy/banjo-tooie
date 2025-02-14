@@ -31,6 +31,9 @@ s32 func_800C8A98();
 void func_800C8B84(s32);
 void func_800C8CB8(s32, f32[3]);
 
+void func_800C8D4C(s32, f32 *);
+void func_800C8E84(s32, s32 *);
+
 extern s32 D_808006F0_bsmumattack[];
 extern s32 D_80800700_bsmumattack[];
 

@@ -30,10 +30,6 @@ void func_808000AC_bsmumattack(PlayerState *self, f32 arg1) {
     }
 }
 
-#ifndef NONMATCHINGS
-void func_808000E0_bsmumattack(PlayerState *self);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmumattack/bsmumattack/func_808000E0_bsmumattack.s")
-#else
 void func_808000E0_bsmumattack(PlayerState *self) {
     f32 sp3C[3];
     s32 sp30[3];
@@ -52,17 +48,16 @@ void func_808000E0_bsmumattack(PlayerState *self) {
         sp30[1] = temp_f10;
         sp30[2] = temp_f10;
     } else {
-        // This should write to v0 but writes to t9
-        sp30[0] = (s32) (self->unk16C * 100);
+        temp_f10 = (s32)(self->unk16C * 100);
+        sp30[0] = temp_f10;
         sp30[2] = 0;
-        sp30[1] = 0;
+        sp30[1] = temp_f10 * 0; // temp_f10 * 0 is required to match
     }
     sp28[1] = 120;
     sp28[2] = 500;
     func_800C8D4C(self->unk164.word, &sp28[1]);
-    func_800C8E84(self->unk164.word, &sp30);
+    func_800C8E84(self->unk164.word, sp30);
 }
-#endif
 
 void func_808001B4_bsmumattack(PlayerState *self, s32 arg1) {
     AnimCtrl *anim_ctrl;
