@@ -349,7 +349,7 @@ s32 bsmum_entrypoint_11(s32 idx) {
 }
 
 void func_80800DC0_bsmum(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     bsmum_entrypoint_1(self);
 }
 
@@ -362,7 +362,7 @@ void func_80800E10_bsmum(PlayerState *self) {
     enum bs_state_e next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_bsrest_entrypoint_20() != 0) {
+    if (_bsrest_entrypoint_20(self) != 0) {
         next_state = _bsrest_entrypoint_13(self);
     }
     bs_setState(self, next_state);

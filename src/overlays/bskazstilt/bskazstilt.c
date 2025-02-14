@@ -503,7 +503,7 @@ s32 bskazstilt_entrypoint_23(s32 idx)
 
 void bskazstilt_entrypoint_24(PlayerState *self)
 {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     func_80800234_bskazstilt(self);
 }
 

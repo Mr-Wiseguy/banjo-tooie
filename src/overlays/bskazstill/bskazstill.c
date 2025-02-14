@@ -207,7 +207,7 @@ s32 bskazstill_entrypoint_9(s32 idx) {
 }
 
 void func_808007DC_bskazstill(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     _bskaz_entrypoint_2(self);
 }
 
@@ -220,7 +220,7 @@ void func_8080082C_bskazstill(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_bsrest_entrypoint_20() != 0) {
+    if (_bsrest_entrypoint_20(self) != 0) {
         next_state = _bsrest_entrypoint_13(self);
     }
     bs_setState(self, next_state);

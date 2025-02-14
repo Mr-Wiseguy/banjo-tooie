@@ -70,6 +70,7 @@ typedef enum bs_state_e {
     BS_STATE_EE = 0xEE,
     BS_STATE_EF,
     BS_STATE_F0,
+    BS_STATE_F1,
     
     BS_STATE_F4 = 0xF4,
     

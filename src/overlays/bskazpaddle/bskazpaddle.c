@@ -231,7 +231,7 @@ s32 bskazpaddle_entrypoint_3(s32 idx) {
 }
 
 void func_808008EC_bskazpaddle(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     func_80800000_bskazpaddle(self);
 }
 
@@ -244,7 +244,7 @@ void func_8080093C_bskazpaddle(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_bsrest_entrypoint_20() != 0) {
+    if (_bsrest_entrypoint_20(self) != 0) {
         next_state = _bsrest_entrypoint_13(self);
     }
     bs_setState(self, next_state);

@@ -461,7 +461,7 @@ s32 bsledge_entrypoint_4(s32 idx) {
 }
 
 void bsledge_entrypoint_5(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     func_808001A8_bsledge(self);
 }
 
