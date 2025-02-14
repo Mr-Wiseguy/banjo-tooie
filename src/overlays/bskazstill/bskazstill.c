@@ -24,16 +24,16 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
     sp24 = func_8008E39C(self);
     temp_v0 = bastick_getZone(self);
     switch (temp_v0) {
-        case 0:
+        case BS_STICK_ZONE_ID_0:
             break;
-        case 1:
+        case BS_STICK_ZONE_ID_1:
             if (sp24 != 0) {
                 nextState = BS_STATE_C7;
             } else {
                 nextState = BS_STATE_BC;
             }
             break;
-        case 2:
+        case BS_STICK_ZONE_ID_2:
             nextState = BS_STATE_C7;
             break;
     }
@@ -97,7 +97,7 @@ void bskazstill_entrypoint_2(PlayerState *self) {
     s32 sp24;
 
     animCtrl = baanim_getAnimCtrlPtr(self);
-    if ((bastick_getZone(self) == 0) && (bastick_distance(self) > 0.0f)) {
+    if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (bastick_distance(self) > 0.0f)) {
         self->unk164.word = 1;
         yaw_setUpdateType(self, 3);
         yaw_setVelocityBounded(self, 200, 14);
@@ -136,7 +136,7 @@ void bskazstill_entrypoint_2(PlayerState *self) {
             break;
         case 5:
             if (sp24 != 0) {
-                if (_bashoes_entrypoint_1(self) != self->unk168) {
+                if (_bashoes_entrypoint_1(self) != self->unk168.word) {
                     func_80800030_bskazstill(self, 5U);
                 }
             } else {
@@ -198,8 +198,8 @@ void func_80800780_bskazstill(PlayerState *self) {
     _bsdrone_entrypoint_0(self);
 }
 
-void func_808007A8_bskazstill() {
-    _bsdrone_entrypoint_1();
+void func_808007A8_bskazstill(PlayerState *self) {
+    _bsdrone_entrypoint_1(self);
 }
 
 s32 bskazstill_entrypoint_9(s32 idx) {
@@ -207,7 +207,7 @@ s32 bskazstill_entrypoint_9(s32 idx) {
 }
 
 void func_808007DC_bskazstill(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     _bskaz_entrypoint_2(self);
 }
 
@@ -220,7 +220,7 @@ void func_8080082C_bskazstill(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_bsrest_entrypoint_20() != 0) {
+    if (_bsrest_entrypoint_20(self) != 0) {
         next_state = _bsrest_entrypoint_13(self);
     }
     bs_setState(self, next_state);

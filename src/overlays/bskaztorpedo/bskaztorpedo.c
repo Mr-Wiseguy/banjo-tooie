@@ -249,7 +249,7 @@ s32 bskaztorpedo_entrypoint_0(s32 idx) {
 }
 
 void func_80800BF8_bskaztorpedo(PlayerState *self) {
-    func_80090A2C();
+    func_80090A2C(self);
     func_80800508_bskaztorpedo(self);
 }
 
@@ -284,7 +284,7 @@ s32 bskaztorpedo_entrypoint_1(s32 idx) {
 }
 
 void func_80800D48_bskaztorpedo(PlayerState *self) {
-    _bsrest_entrypoint_14();
+    _bsrest_entrypoint_14(self);
     func_80800508_bskaztorpedo(self);
 }
 
@@ -298,7 +298,7 @@ void func_80800DA4_bskaztorpedo(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (_bsrest_entrypoint_20() != 0) {
+    if (_bsrest_entrypoint_20(self) != 0) {
         next_state = BS_STATE_154;
     }
     func_8080076C_bskaztorpedo(self);

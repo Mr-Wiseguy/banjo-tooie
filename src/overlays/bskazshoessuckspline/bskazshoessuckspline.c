@@ -62,7 +62,7 @@ void bskazshoessuckspline_entrypoint_3(PlayerState *self) {
     _bskazmove_entrypoint_6(self);
     _bskazmove_entrypoint_0(self);
     _bashoessuck_entrypoint_4(self);
-    if ((bastick_getZone(self) == 0) && (func_8009BCD4(self, 1) != 0)) {
+    if ((bastick_getZone(self) == BS_STICK_ZONE_ID_0) && (func_8009BCD4(self, 1) != 0)) {
         next_state = BS_STATE_187;
     }
     if (bakey_pressed(self, 8) != 0) {
@@ -103,7 +103,7 @@ void bskazshoessuckspline_entrypoint_6(PlayerState *self) {
     next_state = BS_STATE_0_INVALID;
     if ((baflag_isTrue(self, BA_FLAG_3D) != 0) && (_bashoes_entrypoint_1(self) == 4)) {
         _bashoessuck_entrypoint_4(self);
-        if (bastick_getZone(self) > 0) {
+        if (bastick_getZone(self) > BS_STICK_ZONE_ID_0) {
             next_state = BS_STATE_188;
         }
     } else {

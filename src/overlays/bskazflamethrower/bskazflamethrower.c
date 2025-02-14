@@ -12,8 +12,8 @@ void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], s32 arg2) {
     unk1 = func_8009BFCC(self);
     func_800EEC30(arg2, -unk1, yaw_get(self), 1);
     func_8009C128(self, arg1);
-    func_800EFA98(&unk0, arg2, 17);
-    func_800EF04C(arg1, &unk0);
+    func_800EFA98(unk0, arg2, 17);
+    func_800EF04C(arg1, unk0);
     arg1[1] += 57.0f;
 }
 

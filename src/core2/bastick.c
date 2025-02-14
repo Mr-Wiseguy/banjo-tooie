@@ -54,7 +54,7 @@ f32 bastick_distance(PlayerState *self) {
     return self->stick->distance;
 }
 
-s32 bastick_getZone(PlayerState *self) {
+BsStickZoneId bastick_getZone(PlayerState *self) {
     return self->stick->zone.id;
 }
 

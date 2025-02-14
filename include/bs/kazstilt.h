@@ -33,7 +33,7 @@ extern void func_800C77DC(s32);
 extern void func_8008B188(AnimCtrl *, s32);
 extern f32 func_80096364(PlayerState *self);
 extern void func_800963C0(PlayerState *self,f32[3]);
-extern void func_8009BB24(PlayerState *self, f32 *);
+extern void func_8009BB24(PlayerState *self, f32[3]);
 extern f32 func_8009BFD8(PlayerState *self);
 extern f32 func_8009C150(PlayerState *self);
 extern void func_8009D3A8(PlayerState *self, s32);

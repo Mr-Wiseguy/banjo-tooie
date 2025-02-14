@@ -4,7 +4,8 @@
 #include "ba/playerstate.h"
 
 extern void _bsdrone_entrypoint_0(PlayerState *self);
-extern void _bsdrone_entrypoint_1();
-extern void _bsdrone_entrypoint_2();
+extern void _bsdrone_entrypoint_1(PlayerState *self);
+extern void _bsdrone_entrypoint_2(PlayerState *self);
+extern void _bsdrone_entrypoint_3(PlayerState *self);
 
 #endif // __BS_DRONE_H__

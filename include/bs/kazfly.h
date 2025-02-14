@@ -45,8 +45,6 @@ extern void func_8009DFD4(PlayerState *self, s32, f32, f32, s32, s32);
 extern f32 func_800F0E00(f32, f32);
 extern s32 func_8008D0E0(PlayerState *self);
 
-extern f32 mlAbsF(f32);
-
 extern void func_8009BF5C(PlayerState *self, f32);
 extern void func_8009DF94(PlayerState *self, s32, f32, s32);
 extern void func_8009E0DC(PlayerState *self);
@@ -94,7 +92,7 @@ extern f32 func_800F10B4(f32, f32, f32, f32, f32);
 extern void func_8008B1C8(AnimCtrl *, f32);
 extern void func_8009DB04(PlayerState *self, s32, f32, s32);
 extern s32 func_8008DF8C(PlayerState *self, s32);
-extern void func_8009BB24(PlayerState *self, f32 *);
+extern void func_8009BB24(PlayerState *self, f32[3]);
 extern void func_8009FE58(PlayerState *self);
 extern f32 func_800D8FF8();
 extern void func_8009DBF0(PlayerState *self, s32, f32);
