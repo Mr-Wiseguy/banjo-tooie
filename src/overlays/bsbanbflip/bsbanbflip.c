@@ -15,7 +15,7 @@ extern void _bsbanbflip_update(PlayerState *);
 
 void func_80800000_bsbanbflip(PlayerState *self) {
     f32 stick_position = bastick_getZonePosition(self);
-    if (bastick_getZone(self) == 0) {
+    if (bastick_getZone(self) == BS_STICK_ZONE_ID_0) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
         baphysics_set_target_horizontal_velocity(self, func_800F1214(stick_position, 80.0f, 200.0f));
