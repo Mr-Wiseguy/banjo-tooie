@@ -13,5 +13,10 @@ typedef struct ba_wandglow_s {
 
 void _bawandglow_entrypoint_1(s32 arg0, s32 arg1);
 void _bawandglow_entrypoint_2(s32 arg0);
+void _bawandglow_entrypoint_3(PlayerState *self, f32);
+void _bawandglow_entrypoint_4(PlayerState *self, s32);
+void _bawandglow_entrypoint_5(PlayerState *self);
+void _bawandglow_entrypoint_6(PlayerState *self);
+void _bawandglow_entrypoint_7(PlayerState *self);
 
 #endif 

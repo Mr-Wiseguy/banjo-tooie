@@ -43,6 +43,8 @@ typedef enum {
     BA_FLAG_27 = 0x27,
     BA_FLAG_28,
 
+    BA_FLAG_2C = 0x2C,
+
     BA_FLAG_2F = 0x2F, // related to kazooie flight?
     BA_FLAG_30,
 

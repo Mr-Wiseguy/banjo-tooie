@@ -76,9 +76,9 @@ void func_808002A0_bskazpaddle(PlayerState *self) {
     s32 sp3C;
 
     next_state = BS_STATE_0_INVALID;
-    func_8009C128(self, &sp40);
+    func_8009C128(self, sp40);
     sp40[1] = sp40[1] + 60.0f;
-    sp3C = func_8009FBB0(self, &sp40, 20);
+    sp3C = func_8009FBB0(self, sp40, 20);
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);
     func_800BA22C(sp3C, 1);
     if (self->unk16C < 0.0f) {
@@ -132,10 +132,10 @@ void func_80800518_bskazpaddle(PlayerState *self) {
 
     next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
-    func_80092C24(self, &sp24);
-    func_808003F4_bskazpaddle(self, &sp24);
-    func_80092C00(self, &sp24);
-    func_808003F4_bskazpaddle(self, &sp24);
+    func_80092C24(self, sp24);
+    func_808003F4_bskazpaddle(self, sp24);
+    func_80092C00(self, sp24);
+    func_808003F4_bskazpaddle(self, sp24);
     if (anctrl_isAt(animCtrl, 0.2) != 0) {
         func_8009DE74(self, 0x40C, 0.9, 1.1);
     }

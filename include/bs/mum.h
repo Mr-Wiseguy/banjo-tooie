@@ -68,5 +68,8 @@ extern s32 D_808011A0_bsmum[];
 extern s32 D_808011B0_bsmum[];
 
 void bsmum_entrypoint_13(PlayerState *self);
+void _bsmum_entrypoint_1(PlayerState *self);
+void _bsmum_entrypoint_2(PlayerState *self);
+void _bamum_entrypoint_5(PlayerState *self, f32);
 
 #endif // __BS_MUM_H__
