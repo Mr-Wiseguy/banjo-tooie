@@ -1,5 +1,6 @@
 #ifndef __BS_MUMATTACK_H__
 #define __BS_MUMATTACK_H__
+
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/flag.h"
