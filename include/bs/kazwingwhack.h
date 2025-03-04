@@ -1,5 +1,5 @@
-#ifndef __BS_KAZTORPEDO_H__
-#define __BS_KAZTORPEDO_H__
+#ifndef __BS_KAZWINGWHACK__
+#define __BS_KAZWINGWHACK__
 
 #include <ultra64.h>
 
@@ -40,4 +40,4 @@ extern f32 func_800F1DF4(f32[3], f32[3]);
 extern f32 func_800F3780(f32, s32[], s32);
 extern void func_800F3BD0(PlayerState *self, s32, f32[3]);
 
-#endif // __BS_KAZTORPEDO_H__
+#endif // __BS_KAZWINGWHACK__
