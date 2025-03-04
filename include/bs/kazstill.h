@@ -23,8 +23,8 @@ extern s32 func_8008D790(PlayerState *self);
 extern s32 func_8008DF18(PlayerState *self);
 extern s32 func_8008E39C(PlayerState *self);
 extern s32 func_8008E3E8(PlayerState *self);
-extern void func_80090A2C(s32);
-extern void func_800951B4(s32);
+extern void func_80090A2C(PlayerState *self);
+extern void func_800951B4(PlayerState *self);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern BanjoStateId func_800A02DC(PlayerState *self, BanjoStateId);
 

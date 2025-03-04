@@ -5,9 +5,15 @@
 
 #include "playerstate.h"
 
+typedef enum bs_stick_zone_id_e {
+    BS_STICK_ZONE_ID_0,
+    BS_STICK_ZONE_ID_1,
+    BS_STICK_ZONE_ID_2
+} BsStickZoneId;
+
 typedef struct ba_stick_0_s {
     f32 position;
-    s32 id;
+    BsStickZoneId id;
     f32 markers[5];
 } BaStickZone;
 
@@ -27,7 +33,7 @@ f32 bastick_getAngle(PlayerState *self);
 f32 bastick_getAngleRelativeToBanjo(PlayerState *self);
 s32 bastick_func_8009EEF8(PlayerState *self);
 f32 bastick_distance(PlayerState *);
-s32 bastick_getZone(PlayerState *self);
+BsStickZoneId bastick_getZone(PlayerState *self);
 f32 bastick_getZonePosition(PlayerState *self);
 f32 bastick_getX(PlayerState *self);
 f32 bastick_getY(PlayerState *self);
@@ -40,5 +46,6 @@ void bastick_func_8009F198(PlayerState *self, s32 arg1);
 s32 bastick_func_8009F1A4(PlayerState *self);
 void bastick_setZoneMax(PlayerState *self, s32 zone_id , f32 value);
 void bastick_resetZones(PlayerState *self);
+void bastick_func_8009F2A4(PlayerState *self);
 
 #endif // __BA_STICK_H__

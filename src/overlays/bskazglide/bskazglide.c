@@ -270,8 +270,8 @@ void func_80800A28_bskazglide(PlayerState *self) {
     _bsdrone_entrypoint_0(self);
 }
 
-void func_80800A50_bskazglide() {
-    _bsdrone_entrypoint_1();
+void func_80800A50_bskazglide(PlayerState *self) {
+    _bsdrone_entrypoint_1(self);
 }
 
 s32 bskazglide_entrypoint_4(s32 idx) {

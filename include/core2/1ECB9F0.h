@@ -3,7 +3,8 @@
 
 #include <ultra64.h>
 
-f32 mlAbsF(f32);
+#include "funcs.h"
+
 f32 func_800F212C(f32, f32);
 
 #endif // #define __CORE2_1ECB9F0_H__

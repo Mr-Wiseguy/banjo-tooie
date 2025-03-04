@@ -34,8 +34,10 @@ typedef enum bs_state_e {
     BS_STATE_84 = 0x84,
 
     BS_STATE_A6 = 0xA6,
-    
-    BS_STATE_A8 = 0xA8,
+    BS_STATE_A7,
+    BS_STATE_A8,
+    BS_STATE_A9,
+    BS_STATE_AA,
 
     BS_STATE_B6_BILL_DRILL = 0xB6,
 
@@ -57,7 +59,28 @@ typedef enum bs_state_e {
     BS_STATE_DF,
     BS_STATE_E0,
 
+    BS_STATE_E5 = 0xE5,
+    BS_STATE_E6, // stick zone = 1 => move somewhere
+    BS_STATE_E7, // stick zone = 2 => move somewhere
+    BS_STATE_E8, // maybe jump
+    BS_STATE_E9,
+
+    BS_STATE_EB = 0xEB,
+
+    BS_STATE_EE = 0xEE,
+    BS_STATE_EF,
+    BS_STATE_F0,
+    BS_STATE_F1,
+    
+    BS_STATE_F4 = 0xF4,
+    
+    BS_STATE_F7 = 0xF7, // maybe attack
+
+    BS_STATE_FF = 0xFF,
+
     BS_STATE_101 = 0x101,
+
+    BS_STATE_11E = 0x11E,
 
     BS_STATE_154 = 0x154,
     BS_STATE_155,

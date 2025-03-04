@@ -58,7 +58,10 @@ typedef struct player_state_s {
         s32 word;
         u8 bytes[4];
     } unk164;
-    s32 unk168; // used in bskazjump
+    union {
+        s32 word;
+        u8 bytes[4];
+    } unk168;
     f32 unk16C;
     f32 unk170;
     f32 unk174;
