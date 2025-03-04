@@ -1,15 +1,6 @@
 #include "bs/mumstill.h"
 
-#ifndef NONMATCHINGS
-enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e arg1);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmumstill/bsmumstill/func_80800000_bsmumstill.s")
-#else
-// Unmatched because it switches s0 and s1
-enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e arg1) {
-    enum bs_state_e next_state;
-    
-    next_state = arg1;
-
+enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e next_state) {
     switch (bastick_getZone(self)) {
         case BS_STICK_ZONE_ID_0:
             break;
@@ -41,7 +32,6 @@ enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e arg1
 
     return next_state;
 }
-#endif
 
 u8 func_808000EC_bsmumstill(PlayerState *self) {
     if (self->unk160.word >= 2U) {
