@@ -13,6 +13,7 @@
 #include "ba/yaw.h"
 #include "bs/rest.h"
 #include "bs/state.h"
+#include "core2/1E77A20.h"
 #include "common.h"
 #include "funcs.h"
 
@@ -37,7 +38,6 @@ void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawTyp
 void func_8009DF94(PlayerState *, s32, f32, s32);
 extern s32 func_800A4CA8(PlayerState *self);
 extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
-extern s32 func_8009E710(PlayerState *self);
 extern void func_8009D874(PlayerState *self);
 extern void func_8009DF58(PlayerState *self, s32, f32);
 

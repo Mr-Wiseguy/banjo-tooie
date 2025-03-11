@@ -25,6 +25,8 @@
 #include "bs/drone.h"
 #include "bs/splat.h"
 #include "ch/usefeather.h"
+#include "core2/1E77A20.h"
+#include "core2/1ECA640.h"
 #include "nc/badie.h"
 #include "nc/badive.h"
 #include "nc/bafly.h"
@@ -88,7 +90,6 @@ extern void func_800EF2A0(f32[3]);
 extern void func_8009DDDC(PlayerState *);
 extern f32 func_800EEFD4(f32[3]);
 extern void func_800EF3DC(f32[3], s32);
-extern f32 func_800F10B4(f32, f32, f32, f32, f32);
 extern void func_8008B1C8(AnimCtrl *, f32);
 extern void func_8009DB04(PlayerState *self, s32, f32, s32);
 extern s32 func_8008DF8C(PlayerState *self, s32);
@@ -100,7 +101,6 @@ extern void func_8009E100(PlayerState *self);
 extern void func_8008E944(PlayerState *self);
 extern void func_8009D820(PlayerState *self, f32);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
-extern s32 func_8009E710();
 extern void func_8009D3A8(PlayerState *self, s32);
 extern void func_800A0180(PlayerState *self);
 extern void func_800A4DFC(PlayerState *self, s32);

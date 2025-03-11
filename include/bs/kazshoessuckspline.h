@@ -15,6 +15,7 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
 #include "ba/stick.h"
+#include "core2/1E77A20.h"
 #include "funcs.h"
 
 extern s32 func_8008DD04(PlayerState *self);
@@ -26,7 +27,6 @@ extern s32 func_8009BCD4(PlayerState *self, f32);
 extern s32 func_8009CA70(PlayerState *self, s32, s32);
 extern s32 func_8009E6EC(PlayerState *self);
 extern s32 func_8009E704();
-extern s32 func_8009E710(PlayerState *self);
 extern void func_8009E830(PlayerState *self, s32);
 extern void func_800A2018(PlayerState *self, s32);
 extern void func_800A4DA4(PlayerState *self, s32);

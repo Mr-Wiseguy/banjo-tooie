@@ -5,4 +5,4 @@
 
 void func_800BBCB8(f32[3], s32, f32, s32, void *);
 
-#endif // #define __CORE2_1E93440_H__
+#endif __CORE2_1E93440_H__

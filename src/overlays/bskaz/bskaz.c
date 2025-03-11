@@ -40,10 +40,10 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
 }
 
 
-s32 bskaz_entrypoint_4(f32 * arg0) {
+BanjoStateId bskaz_entrypoint_4(f32 * arg0) {
     if (func_8009EA2C() != 0) {
-        return 0x18B;
+        return BS_STATE_18B;
     }
 
-    return 0xC2;
+    return BS_STATE_C2;
 }

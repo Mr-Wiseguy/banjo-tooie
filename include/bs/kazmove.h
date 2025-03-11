@@ -19,6 +19,8 @@
 #include "bs/kaz.h"
 #include "bs/splat.h"
 #include "core2/1E6F080.h"
+#include "core2/1E77A20.h"
+#include "core2/1E7BFA0.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -31,9 +33,7 @@ extern s32 func_8009BCD4(PlayerState *self, f32);
 extern void func_8009BF5C(PlayerState *self, f32);
 extern void func_8009BFE4(PlayerState *self, f32, f32);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
-extern s32 func_8009E710(PlayerState *self);
 extern BanjoStateId func_800A02DC(PlayerState *self, BanjoStateId);
-extern void func_800A2CE8(PlayerState *self, f32, s32);
 extern void func_800A2D2C(PlayerState *self, f32, s32);
 extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 

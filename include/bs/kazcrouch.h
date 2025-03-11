@@ -11,17 +11,19 @@
 #include "ba/anim.h"
 #include "bs/kaz.h"
 #include "funcs.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E7BFA0.h"
 #include "core2/1EA0690.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
 
-extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
-extern void func_800A2CE8(PlayerState *self, f32, s32);
-extern void func_8009BB24(PlayerState *self, f32[3]);
-extern void func_8009CFD8(PlayerState *, f32);
-extern void func_8009D2D8(PlayerState *, s32);
-extern void func_8009D658(PlayerState *);
-extern s32 func_8009E710(PlayerState *);
-extern s32 func_800F1EA4(f32 *, f32 *);
-
-BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1);
+extern BanjoStateId _bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1);
+extern void _bskazcrouch_entrypoint_1(PlayerState *self);
+// This might be inaccurate
+// extern void _bskazcrouch_entrypoint_2(PlayerState *self);
+extern void _bskazcrouch_entrypoint_3(PlayerState *self);
+extern s32 _bskazcrouch_entrypoint_4(s32 idx);
 
 #endif // __BS_KAZCROUCH_H__

@@ -12,6 +12,8 @@
 #include "ba/yaw.h"
 #include "bs/mum.h"
 #include "bs/state.h"
+#include "core2/1E77A20.h"
+#include "core2/1E7BFA0.h"
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
@@ -26,9 +28,7 @@ extern s32 func_8009BCD4(PlayerState *self, f32);
 extern void func_8009BF5C(PlayerState *self, f32);
 extern void func_8009BFE4(PlayerState *self, f32, f32);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
-extern s32 func_8009E710(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-extern void func_800A2CE8(PlayerState *self, f32, s32);
 s32 func_8008E148(PlayerState *self);
 
 extern s32 D_808005B0_bsmummove[];

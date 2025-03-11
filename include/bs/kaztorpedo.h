@@ -22,6 +22,7 @@
 #include "bs/drone.h"
 #include "bs/rest.h"
 #include "core2/1EBA250.h"
+#include "core2/1ECA640.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -47,7 +48,6 @@ extern void func_800961AC(PlayerState *self, s32);
 extern s32 func_8009650C(PlayerState *self);
 extern void func_800995B8();
 extern s32 func_80099A58(PlayerState *self);
-extern void func_8009B94C(PlayerState *self, s32);
 extern void func_8009BA9C(PlayerState *self, s32);
 extern f32 func_8009BB94(PlayerState *self);
 extern void func_8009BC34(PlayerState *self);
@@ -84,7 +84,6 @@ extern f32 func_800D8FF8();
 extern f32 func_800DC178(f32, f32);
 extern f32 func_800EEB40(f32 *, f32 *);
 extern void func_800EFA4C(f32[3], f32, f32, f32);
-extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 extern void func_800F1E6C(f32 *, f32 *, f32 *);
 extern PlayerState *func_800F53D0(s32);
 extern void func_800F5A00(s32, f32 *);

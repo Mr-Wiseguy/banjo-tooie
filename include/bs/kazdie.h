@@ -14,6 +14,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "nc/badie.h"
+#include "core2/1E76880.h"
 #include "funcs.h"
 
 extern s32 func_8008DF8C(PlayerState *self, s32);
@@ -30,7 +31,6 @@ extern void func_8008E944(PlayerState *self);
 extern void func_8009514C(PlayerState *self);
 extern void func_8009BFE4(PlayerState *self, f32, f32);
 extern void func_8009C128(PlayerState *self, f32[3]);
-extern void func_8009D2D8(PlayerState *self, s32);
 extern void func_8009D820(PlayerState *self, f32);
 extern void func_800A0180(PlayerState *self);
 extern void func_800A32C4(PlayerState *self, s32[3]);

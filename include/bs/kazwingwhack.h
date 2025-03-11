@@ -10,6 +10,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "core2/1E78170.h"
+#include "core2/1ECA640.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -29,7 +30,6 @@ extern void func_8009E55C(PlayerState *self, s32, f32);
 extern void func_8009E5A4(PlayerState *self, s32, s32);
 extern s32 func_800B5BE4(s32);
 extern s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
-extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 extern f32 func_8009E138(PlayerState *self, s32);
 extern void func_8009328C(PlayerState *self, f32);
 extern void func_8009B9F0(PlayerState *self, f32);

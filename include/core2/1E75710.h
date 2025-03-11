@@ -7,4 +7,4 @@
 
 extern f32 func_8009BFCC(PlayerState *);
 
-#endif // #define __CORE2_1E75710_H__
+#endif __CORE2_1E75710_H__
