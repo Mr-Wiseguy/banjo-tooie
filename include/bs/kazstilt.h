@@ -16,6 +16,7 @@
 #include "ba/physics.h"
 #include "bs/rest.h"
 #include "ba/input.h"
+#include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
@@ -39,7 +40,6 @@ extern void func_800963C0(PlayerState *self,f32[3]);
 extern void func_8009BB24(PlayerState *self, f32[3]);
 extern f32 func_8009BFD8(PlayerState *self);
 extern f32 func_8009C150(PlayerState *self);
-extern void func_8009D3A8(PlayerState *self, s32);
 extern void func_8009FE58(PlayerState *self);
 extern f32 func_800A3394(PlayerState *self);
 extern s32 func_800C2E04();

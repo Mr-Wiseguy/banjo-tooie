@@ -161,7 +161,7 @@ void bskazjump_entrypoint_4(PlayerState *self) {
 }
 
 void bskazjump_entrypoint_5(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     self->unk168.word = func_8009E710(self) == 0xC6;
     if ((baflag_isTrue(self, BA_FLAG_7) != 0) && (baphysics_get_vertical_velocity(self) > 700.0f)) {
         baphysics_set_vertical_velocity(self, 700.0f);
@@ -303,7 +303,7 @@ void bskazjump_entrypoint_12(PlayerState *self) {
 }
 
 void bskazjump_entrypoint_13(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     baanim_playForDuration_loop(self, 0x13C, 0.4);
     func_8009FFD8(self, 1, 1, 3, 6);
     func_80093360(self, 60);

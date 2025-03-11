@@ -2,6 +2,7 @@
 
 #include "ba/van.h"
 
+#include "core2/1E75920.h"
 #include "core2/1E76CC0.h"
 #include "core2/1EB2840.h"
 #include "core2/1E9A960.h"

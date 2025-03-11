@@ -12,6 +12,7 @@
 #include "bs/state.h"
 #include "ba/flag.h"
 
+#include "core2/1E66990.h"
 #include "core2/1E68670.h"
 #include "ba/1E72EA0.h"
 #include "core2/1E75620.h"

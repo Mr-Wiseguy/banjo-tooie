@@ -19,6 +19,7 @@
 #include "bs/kaz.h"
 #include "bs/splat.h"
 #include "core2/1E6F080.h"
+#include "core2/1E75710.h"
 #include "core2/1E77A20.h"
 #include "core2/1E7BFA0.h"
 #include "funcs.h"
@@ -30,8 +31,6 @@ extern s32 func_8008DF18(PlayerState *self);
 extern s32 func_8008E39C(PlayerState *self);
 extern f32 func_8009BB5C(PlayerState *self);
 extern s32 func_8009BCD4(PlayerState *self, f32);
-extern void func_8009BF5C(PlayerState *self, f32);
-extern void func_8009BFE4(PlayerState *self, f32, f32);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
 extern BanjoStateId func_800A02DC(PlayerState *self, BanjoStateId);
 extern void func_800A2D2C(PlayerState *self, f32, s32);

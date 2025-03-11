@@ -33,7 +33,7 @@ void func_808000DC_bskazwingwhack(PlayerState *self) {
 }
 
 void func_80800148_bskazwingwhack(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     baanim_playForDuration_onceSmooth(self, 0x138, 1.25f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 1, BA_PHYSICS_3_LOCKED_ROTATION);
     yaw_setVelocityBounded(self, 400.0f, 7.5f);
@@ -107,7 +107,7 @@ void func_808004A8_bskazwingwhack(PlayerState *self) {
 }
 
 void func_808004DC_bskazwingwhack(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     baanim_playForDuration_onceSmooth(self, ASSET_137_ANIM_BSKAZWINGWHACK_UNKNOWN, 1.5f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 1, BA_PHYSICS_E_UNKNOWN);
     yaw_setVelocityBounded(self, 300.0f, 6.5f);

@@ -106,7 +106,7 @@ typedef enum bs_state_e {
     BS_STATE_187,
     BS_STATE_188,
 
-    BS_STATE_18B = 0x18B,
+    BS_STATE_18B = 0x18B
 } BanjoStateId;
 
 typedef struct bs_state_s {

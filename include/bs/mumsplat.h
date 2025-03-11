@@ -9,12 +9,12 @@
 #include "bs/mum.h"
 #include "bs/splat.h"
 #include "bs/state.h"
+#include "core2/1E67DA0.h"
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
 
 s32 func_8008DD04(PlayerState*);
-extern void func_8008E944(PlayerState *self);
 extern void func_8008E95C(PlayerState *self);
 extern void func_8009BA9C(PlayerState *self, f32 *);
 extern void func_8009BD88();

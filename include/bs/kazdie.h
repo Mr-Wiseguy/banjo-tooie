@@ -14,28 +14,24 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "nc/badie.h"
+#include "core2/1E2B200.h"
+#include "core2/1E66990.h"
+#include "core2/1E67DA0.h"
+#include "core2/1E6E870.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E76880.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7D460.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
 #include "funcs.h"
 
-extern s32 func_8008DF8C(PlayerState *self, s32);
-extern void func_8009D3A8(PlayerState *self, s32);
-extern void func_8009D9D4(PlayerState *self);
-extern void func_8009E058(PlayerState *self);
-extern f32 func_800F0E00(f32, f32);
-extern void func_80800000_bskazdie(PlayerState *self);
-extern void func_800951B4(PlayerState *self);
-extern void func_8009BF5C(PlayerState *self, f32);
-extern void func_800A4E30(PlayerState *self);
-extern f32 func_800136E4(f32 maybe_yaw);
-extern void func_8008E944(PlayerState *self);
-extern void func_8009514C(PlayerState *self);
-extern void func_8009BFE4(PlayerState *self, f32, f32);
-extern void func_8009C128(PlayerState *self, f32[3]);
-extern void func_8009D820(PlayerState *self, f32);
-extern void func_800A0180(PlayerState *self);
-extern void func_800A32C4(PlayerState *self, s32[3]);
-extern s32 func_800A4CA8(PlayerState *self);
-extern void func_800A4DFC(PlayerState *self, s32);
-extern void func_800F1E6C(s32[3], f32[3], f32 *target_yaw);
+extern void _bskazdie_entrypoint_0(PlayerState *self);
+extern void _bskazdie_entrypoint_1(PlayerState *self);
+extern void _bskazdie_entrypoint_2(PlayerState *self);
+extern s32 _bskazdie_entrypoint_3(s32 idx);
 
 #endif // __BS_KAZDIE_H__

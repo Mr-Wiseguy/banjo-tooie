@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "../ba/playerstate.h" // for PlayerState
+#include "ba/playerstate.h"
 
 void func_8009BDAC(PlayerState *, f32);
 

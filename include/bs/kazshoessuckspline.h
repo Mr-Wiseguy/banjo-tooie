@@ -16,6 +16,7 @@
 #include "ba/playerstate.h"
 #include "ba/stick.h"
 #include "core2/1E77A20.h"
+#include "core2/1E7D460.h"
 #include "funcs.h"
 
 extern s32 func_8008DD04(PlayerState *self);
@@ -30,6 +31,5 @@ extern s32 func_8009E704();
 extern void func_8009E830(PlayerState *self, s32);
 extern void func_800A2018(PlayerState *self, s32);
 extern void func_800A4DA4(PlayerState *self, s32);
-extern void func_800A4E30(PlayerState *self);
 
 #endif // __BS_KAZSHOESSUCKSPLINE_H__

@@ -1,7 +1,7 @@
 #ifndef __BA_1E72EA0_H__
 #define __BA_1E72EA0_H__
 
-#include "../ba/playerstate.h" // for PlayerState
+#include "ba/playerstate.h"
 
 typedef struct ba_unknown_C0_s {
     f32 unk0;

@@ -21,15 +21,20 @@
 #include "ba/yaw.h"
 #include "bs/drone.h"
 #include "bs/rest.h"
+#include "core2/1E67DA0.h"
+#include "core2/1E6E870.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E7BFA0.h"
 #include "core2/1EBA250.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
 #include "funcs.h"
 #include "player.h"
 
 extern s32 _plsu_entrypoint_1(s32);
 extern f32 func_80013728(f32);
 extern s32 func_8008E124(PlayerState *self);
-extern void func_8008E944(PlayerState *self);
 extern void func_8008E95C(PlayerState *self);
 extern void func_800909CC(PlayerState *self);
 extern void func_80090A2C(PlayerState *self);
@@ -40,8 +45,6 @@ extern f32 func_80092BE8(PlayerState *self);
 extern void func_800931AC(PlayerState *self, s32);
 extern void func_80093360(PlayerState *self, f32);
 extern void func_800947EC(PlayerState *self, s32, s32);
-extern void func_8009514C(PlayerState *self);
-extern void func_800951B4(PlayerState *self);
 extern void func_800959C8(PlayerState *self, f32, f32);
 extern void func_80095A40(PlayerState *self);
 extern void func_800961AC(PlayerState *self, s32);
@@ -53,12 +56,9 @@ extern f32 func_8009BB94(PlayerState *self);
 extern void func_8009BC34(PlayerState *self);
 extern void func_8009BC5C(PlayerState *self, f32);
 extern void func_8009BD88();
-extern void func_8009BF5C(PlayerState *self, f32);
 extern f32 func_8009BFCC(PlayerState *self);
 extern f32 func_8009BFD8(PlayerState *self);
-extern void func_8009BFE4(PlayerState *self, f32, f32);
 extern void func_8009C000(PlayerState *self);
-extern void func_8009C128(PlayerState *self, f32[3]);
 extern void func_8009DA40(PlayerState *self);
 extern void func_8009DB04(PlayerState *self, s32, f32, s32);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
@@ -73,7 +73,6 @@ extern void func_8009E830(PlayerState *self, s32);
 extern s32 func_8009FBB0(PlayerState *self, f32[3], f32);
 extern void func_800A0DC4(PlayerState *self, s32);
 extern void func_800A16BC(s32);
-extern void func_800A32C4(PlayerState *self, f32 *);
 extern void func_800A3410(PlayerState *self, s32);
 extern void func_800A38F0(PlayerState *self, s32, s32);
 extern void func_800A3904(PlayerState *self, s32);
@@ -84,7 +83,6 @@ extern f32 func_800D8FF8();
 extern f32 func_800DC178(f32, f32);
 extern f32 func_800EEB40(f32 *, f32 *);
 extern void func_800EFA4C(f32[3], f32, f32, f32);
-extern void func_800F1E6C(f32 *, f32 *, f32 *);
 extern PlayerState *func_800F53D0(s32);
 extern void func_800F5A00(s32, f32 *);
 extern void func_800F82C0(s32);

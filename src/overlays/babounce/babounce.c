@@ -6,10 +6,15 @@
 #include "ba/react.h"
 #include "ba/stick.h"
 #include "ba/timer.h"
+#include "ba/1E72EA0.h"
 
 #include "core2/1E2B200.h"
-#include "ba/1E72EA0.h"
+#include "core2/1E6E870.h"
+#include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1ECB0F0.h"
 
 s32 babounce_entrypoint_0(void) {
     return sizeof(BaBounce);

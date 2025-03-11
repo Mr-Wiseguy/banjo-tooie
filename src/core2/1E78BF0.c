@@ -1,7 +1,4 @@
-#include "common.h"
-
-#include "ba/playerstate.h"
-#include "bs/state.h"
+#include "core2/1E78BF0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_8009F300.s")
 

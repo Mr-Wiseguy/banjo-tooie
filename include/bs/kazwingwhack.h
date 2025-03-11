@@ -9,18 +9,18 @@
 #include "ba/physics.h"
 #include "ba/yaw.h"
 #include "bs/kaz.h"
+#include "core2/1E2B200.h"
+#include "core2/1E66990.h"
+#include "core2/1E75920.h"
 #include "core2/1E78170.h"
 #include "core2/1ECA640.h"
 #include "funcs.h"
 #include "player.h"
 
-extern f32 func_800136E4(f32 maybe_yaw);
-extern s32 func_8008DF8C(PlayerState *self, s32);
 extern f32 func_80092BE8(PlayerState *self);
 extern void func_800931AC(PlayerState *self, s32);
 extern void func_8009BA9C(PlayerState *self, f32 *);
 extern f32 func_8009BB5C(PlayerState *self);
-extern void func_8009C128(PlayerState *self, f32[3]);
 extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern void func_8009DF94(PlayerState *self, s32, f32, s32);

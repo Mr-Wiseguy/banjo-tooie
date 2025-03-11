@@ -188,7 +188,7 @@ void func_808006BC_bskazglide(PlayerState *self) {
 }
 
 void func_808006EC_bskazglide(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     baanim_playForDuration_loopSmooth(self, 0x13E, 0.4);
     func_8009FFD8(self, 1, 1, 1, 2);
     baphysics_set_gravity(self, -1100);

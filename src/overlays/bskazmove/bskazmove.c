@@ -280,7 +280,7 @@ void bskazmove_entrypoint_7(PlayerState *self) {
 }
 
 void bskazmove_entrypoint_8(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     if ((func_8009E710(self) == 0xBC) && (func_8009BB5C(self) < 200.0f)) {
         _badust_entrypoint_3(self, 0.0f, 0.0f);
     }

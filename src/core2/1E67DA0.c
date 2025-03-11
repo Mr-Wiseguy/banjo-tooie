@@ -1,8 +1,4 @@
-#include "common.h"
-
-#include "ba/1E67DA0.h"
-
-extern f32 func_8009E138(PlayerState *, s32);
+#include "core2/1E67DA0.h"
 
 s32 func_8008E4B0(void) {
     return sizeof(BaUnknownC);

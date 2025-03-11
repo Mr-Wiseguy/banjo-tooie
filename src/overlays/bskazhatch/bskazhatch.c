@@ -27,7 +27,7 @@ void func_808000A8_bskazhatch(s32 self) {
 }
 
 void func_808000D4_bskazhatch(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     self->unk15C.bytes[0] = 0;
     self->unk160.word = 0;
     func_80800000_bskazhatch(self, 1);

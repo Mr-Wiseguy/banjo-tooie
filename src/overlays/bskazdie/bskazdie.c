@@ -4,7 +4,6 @@
 
 s32 D_80800460_bskazdie[];
 
-
 void func_80800000_bskazdie(PlayerState *self) {
     f32 sp30 = 0.0f;
     while (sp30 < 360) {
