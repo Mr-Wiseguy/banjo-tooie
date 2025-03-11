@@ -4,6 +4,7 @@
 
 #include "ba/key.h"
 #include "ba/flag.h"
+#include "core2/1EA0690.h"
 #include "core2/1EB2840.h"
 #include "core2/1ECA640.h"
 

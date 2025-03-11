@@ -15,6 +15,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "bs/kazmove.h"
+#include "core2/1EA0690.h"
 #include "funcs.h"
 
 extern void _bskazshock_entrypoint_0(PlayerState *self);
@@ -42,6 +43,5 @@ extern void func_8009FE58(PlayerState *self);
 extern void func_800A042C(PlayerState *self);
 extern void func_800A046C(PlayerState *self);
 extern void func_800C6DA0(s32);
-extern s32 func_800C6E38(s32);
 
 #endif // __BS_KAZJUMP_H__

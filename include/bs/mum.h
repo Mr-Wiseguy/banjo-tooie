@@ -15,6 +15,7 @@
 #include "bs/mummove.h"
 #include "bs/rest.h"
 #include "bs/state.h"
+#include "core2/1E6B900.h"
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
@@ -22,7 +23,6 @@
 extern s32 func_8008D544(PlayerState *self);
 extern s32 func_8008DF8C(PlayerState *self, s32);
 extern s32 func_8008E260(PlayerState *self);
-extern void func_80092864(PlayerState *self, f32);
 extern void func_80093360(PlayerState *self, f32);
 extern void func_800947EC(PlayerState *self, s32, s32);
 extern void func_800951B4(PlayerState *self);

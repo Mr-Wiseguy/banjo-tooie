@@ -11,10 +11,10 @@
 #include "ba/anim.h"
 #include "bs/kaz.h"
 #include "funcs.h"
+#include "core2/1EA0690.h"
 
 extern f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 extern void func_800A2CE8(PlayerState *self, f32, s32);
-extern s32 func_800C6E38(s32);
 extern void func_8009BB24(PlayerState *self, f32[3]);
 extern void func_8009CFD8(PlayerState *, f32);
 extern void func_8009D2D8(PlayerState *, s32);

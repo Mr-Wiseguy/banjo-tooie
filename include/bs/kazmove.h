@@ -18,6 +18,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "bs/splat.h"
+#include "core2/1E6F080.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -25,7 +26,6 @@ extern void func_8008B1C8(AnimCtrl *, f32);
 extern s32 func_8008D790(PlayerState *self);
 extern s32 func_8008DF18(PlayerState *self);
 extern s32 func_8008E39C(PlayerState *self);
-extern void func_800962B0(s32, s32);
 extern f32 func_8009BB5C(PlayerState *self);
 extern s32 func_8009BCD4(PlayerState *self, f32);
 extern void func_8009BF5C(PlayerState *self, f32);

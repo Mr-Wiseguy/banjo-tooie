@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EA0690.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C6DA0.s")
 
