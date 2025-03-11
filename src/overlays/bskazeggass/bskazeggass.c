@@ -1,5 +1,3 @@
-#include "common.h"
-
 #include "bs/kazeggass.h"
 
 s32 D_808002C0_bskazeggass[];

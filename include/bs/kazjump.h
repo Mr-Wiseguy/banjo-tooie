@@ -42,6 +42,5 @@ extern f32 func_8009F308(PlayerState *self);
 extern void func_8009FE58(PlayerState *self);
 extern void func_800A042C(PlayerState *self);
 extern void func_800A046C(PlayerState *self);
-extern void func_800C6DA0(s32);
 
 #endif // __BS_KAZJUMP_H__

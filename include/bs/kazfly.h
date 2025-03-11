@@ -35,6 +35,7 @@
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
 #include "core2/1E7D460.h"
+#include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
 #include "nc/badie.h"
 #include "nc/badive.h"
@@ -70,7 +71,6 @@ extern void func_808000AC_bskazfly(PlayerState *self);
 extern void func_8009BA9C(PlayerState *self, f32 *);
 extern void func_8009D874(PlayerState *self);
 extern void func_8009DE38(PlayerState *, s32, f32);
-extern void func_800C6DA0(s32);
 extern void func_800BBCB8(f32[3], s32, f32, s32, s32[]);
 extern f32 func_800DC178(f32, f32);
 extern void func_80093360(PlayerState *self, f32);

@@ -14,6 +14,7 @@
 #include "bs/kaz.h"
 #include "bs/kazmove.h"
 #include "core2/1E66990.h"
+#include "core2/1EA0690.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -34,6 +35,5 @@ extern void func_800C330C(s32, s32);
 extern void func_800C3418(s32, s32);
 extern void func_800C3730(s32, f32, f32, f32);
 extern void func_800C3BDC(s32);
-extern void func_800C6DA0(s32);
 
 #endif // __BS_KAZSHOCK_H__

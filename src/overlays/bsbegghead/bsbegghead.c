@@ -3,10 +3,12 @@
 #include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
+#include "ba/1E72EA0.h"
 #include "bs/state.h"
+#include "core2/1E6B900.h"
+#include "core2/1ECA640.h"
 #include "funcs.h"
 
-#include "ba/1E72EA0.h"
 
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){

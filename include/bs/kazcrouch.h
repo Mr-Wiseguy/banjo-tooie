@@ -11,6 +11,7 @@
 #include "ba/anim.h"
 #include "bs/kaz.h"
 #include "funcs.h"
+#include "core2/1E6B900.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
