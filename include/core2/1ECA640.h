@@ -16,4 +16,4 @@ f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 s32 func_800F1418(s32, s32);
 f32 func_800F15F8(f32, f32, f32);
 
-#endif __CORE2_1ECA640_H__
+#endif // __CORE2_1ECA640_H__
