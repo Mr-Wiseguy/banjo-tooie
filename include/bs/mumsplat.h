@@ -16,7 +16,7 @@
 s32 func_8008DD04(PlayerState*);
 extern void func_8008E944(PlayerState *self);
 extern void func_8008E95C(PlayerState *self);
-extern void func_8009BA9C(PlayerState *self, f32 *);
+extern void func_8009BA9C(PlayerState *self, f32[3]);
 extern void func_8009BD88();
 void func_8009DB04(PlayerState *, s32, f32, s32);
 void func_8009DF18(PlayerState *, s32, f32, s32);

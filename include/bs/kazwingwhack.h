@@ -16,7 +16,7 @@ extern f32 func_800136E4(f32 maybe_yaw);
 extern s32 func_8008DF8C(PlayerState *self, s32);
 extern f32 func_80092BE8(PlayerState *self);
 extern void func_800931AC(PlayerState *self, s32);
-extern void func_8009BA9C(PlayerState *self, f32 *);
+extern void func_8009BA9C(PlayerState *self, f32[3]);
 extern f32 func_8009BB5C(PlayerState *self);
 extern void func_8009C128(PlayerState *self, f32[3]);
 extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
