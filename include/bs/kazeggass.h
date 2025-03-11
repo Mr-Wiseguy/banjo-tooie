@@ -13,14 +13,16 @@
 #include "ba/physics.h"
 #include "bs/kaz.h"
 #include "bs/kazcrouch.h"
+#include "core2/1E6B900.h"
+#include "core2/1E79FD0.h"
+#include "core2/1EA0690.h"
+#include "core2/1ECA640.h"
+#include "common.h"
 #include "funcs.h"
 
-extern s32 func_800944E0(PlayerState *self, s32);
-extern s32 func_80094510(PlayerState *self);
-extern s32 func_80094B14(PlayerState *self);
-extern s32 func_80094BC0(PlayerState *self);
-extern void func_800A0CDC(PlayerState *self, s32);
-extern void func_800C6DA0(s32);
-extern s32 func_800F1418(s32, s32);
+extern void _bskazeggass_entrypoint_0(PlayerState *self);
+extern void _bskazeggass_entrypoint_1(PlayerState *self);
+extern void _bskazeggass_entrypoint_2(PlayerState *self);
+extern s32 _bskazeggass_entrypoint_3(s32 idx);
 
 #endif // __BS_KAZEGGASS_H__

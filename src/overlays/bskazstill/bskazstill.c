@@ -82,7 +82,7 @@ void bskazstill_entrypoint_0(s32 self) {
 }
 
 void bskazstill_entrypoint_1(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     self->unk15C.word = 0;
     if (func_8008E39C(self) != 0) {
         func_80800030_bskazstill(self, 5U);
@@ -169,7 +169,7 @@ void bskazstill_entrypoint_5(PlayerState *self) {
 }
 
 void bskazstill_entrypoint_6(s32 self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     func_8009FFD8(self, 1, 1, 1, 2);
     baphysics_set_target_horizontal_velocity(self, 0);
 }
@@ -194,7 +194,7 @@ void func_80800758_bskazstill(PlayerState *self) {
 }
 
 void func_80800780_bskazstill(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     _bsdrone_entrypoint_0(self);
 }
 
@@ -212,7 +212,7 @@ void func_808007DC_bskazstill(PlayerState *self) {
 }
 
 void func_80800804_bskazstill(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     _bsrest_entrypoint_16(self);
 }
 

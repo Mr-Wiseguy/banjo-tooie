@@ -1,11 +1,9 @@
-#include "common.h"
-
 #include "bs/kaz.h"
 
-void bskaz_entrypoint_0(s32 arg0, s32 arg1, s32 arg2) {
+void bskaz_entrypoint_0(PlayerState *self, s32 arg1, s32 arg2) {
     if (arg1 != arg2) {
         if (arg1 == 3) {
-            func_800962B0(arg0, 0);
+            func_800962B0(self, 0);
         }
     }
 }
@@ -42,10 +40,10 @@ BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
 }
 
 
-s32 bskaz_entrypoint_4(f32 * arg0) {
+BanjoStateId bskaz_entrypoint_4(f32 * arg0) {
     if (func_8009EA2C() != 0) {
-        return 0x18B;
+        return BS_STATE_18B;
     }
 
-    return 0xC2;
+    return BS_STATE_C2;
 }

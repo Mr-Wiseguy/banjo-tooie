@@ -3,10 +3,10 @@
 
 #include "ba/playerstate.h"
 #include "bs/mum.h"
+#include "core2/1E67DA0.h"
 #include "common.h"
 #include <ultra64.h>
 
-extern void func_8008E944(PlayerState *self);
 extern void func_8008E95C(PlayerState *self);
 extern void func_80099A7C(PlayerState *self, f32[3]);
 void func_800A0DAC(PlayerState *self, s32);

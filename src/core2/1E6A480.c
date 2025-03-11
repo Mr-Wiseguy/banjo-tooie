@@ -1,5 +1,7 @@
 /* This file maps to BK: core2/code_9290.c */
 #include "common.h"
+#include "core2/1E75920.h"
+#include "core2/1E7D460.h"
 
 #include "ba/1E6A480.h"
 

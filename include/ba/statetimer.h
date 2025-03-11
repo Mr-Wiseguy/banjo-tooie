@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "../ba/playerstate.h" // for PlayerState
+#include "ba/playerstate.h"
 
 #define BA_STATE_TIMER_COUNT 10
 

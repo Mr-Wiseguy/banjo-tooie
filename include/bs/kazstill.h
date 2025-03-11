@@ -16,6 +16,7 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "bs/rest.h"
+#include "core2/1E6E870.h"
 #include "funcs.h"
 #include "player.h"
 
@@ -24,7 +25,6 @@ extern s32 func_8008DF18(PlayerState *self);
 extern s32 func_8008E39C(PlayerState *self);
 extern s32 func_8008E3E8(PlayerState *self);
 extern void func_80090A2C(PlayerState *self);
-extern void func_800951B4(PlayerState *self);
 extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern BanjoStateId func_800A02DC(PlayerState *self, BanjoStateId);
 

@@ -5,14 +5,15 @@
 #include "ba/assets.h"
 #include "ba/physics.h"
 #include "ba/timer.h"
-#include "bs.h"
 #include "bs/state.h"
-#include "buttons.h"
-
-#include "core2/1E68670.h"
 #include "ba/1E72EA0.h"
+#include "core2/1E68670.h"
+#include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1EA0690.h"
+#include "buttons.h"
+#include "bs.h"
 
 void bsbbarge_end(PlayerState *self);
 void bsbbarge_init(PlayerState *self);

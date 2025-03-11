@@ -1,6 +1,4 @@
-#include "common.h"
-
-#include <ultra64.h>
+#include "core2/1ECA640.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECA640/func_800F0D50.s")
 

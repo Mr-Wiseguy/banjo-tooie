@@ -533,7 +533,7 @@ void func_808013BC_bskazfly(PlayerState *self) {
 void func_80801448_bskazfly(PlayerState *self) {
     s32 sp2C;
 
-    sp2C = func_8009E710();
+    sp2C = func_8009E710(self);
     baanim_playForDuration_onceSmooth(self, 0x11D, 1.3);
     func_8009FFD8(self, 1, 1, 3, 3);
     func_800A0CF4(self, 1);

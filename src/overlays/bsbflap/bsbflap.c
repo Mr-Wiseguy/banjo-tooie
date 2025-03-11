@@ -7,17 +7,15 @@
 #include "ba/timer.h"
 #include "ba/physics.h"
 #include "ba/playerstate.h"
-#include "bs.h"
-#include "bs/state.h"
-
-#include "ba/1E72EA0.h"
-#include "core2/1E76CC0.h"
 #include "ba/stick.h"
+#include "ba/1E72EA0.h"
+#include "bs/state.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E79FD0.h"
+#include "core2/1EA0690.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB5980.h"
-
-
+#include "bs.h"
 
 void bsbflap_init(PlayerState *self) {
     baanim_playForDuration_once(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);

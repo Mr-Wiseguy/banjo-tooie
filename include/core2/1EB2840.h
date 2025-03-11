@@ -5,4 +5,4 @@
 
 f32 func_800D8FF8(void); //time_getDelta()
 
-#endif // #define __CORE2_1EB2840_H__
+#endif // __CORE2_1EB2840_H__

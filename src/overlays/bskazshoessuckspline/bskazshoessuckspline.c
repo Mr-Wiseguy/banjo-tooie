@@ -47,7 +47,7 @@ void bskazshoessuckspline_entrypoint_1(PlayerState *self) {
 }
 
 void bskazshoessuckspline_entrypoint_2(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     func_808000A4_bskazshoessuckspline(self);
     _bskazmove_entrypoint_5(self, 4);
     func_8009FFD8(self, 2, 1, 9, 0x12);

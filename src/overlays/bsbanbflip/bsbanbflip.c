@@ -2,12 +2,13 @@
 #include "ba/anim.h"
 #include "ba/stick.h"
 #include "ba/physics.h"
-#include "bs.h"
-
-#include "core2/1E76CC0.h"
 #include "ba/1E72EA0.h"
-#include "core2/1ECA640.h"
 #include "bs/state.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1EA0690.h"
+#include "core2/1ECA640.h"
+#include "bs.h"
 
 extern void _bsbanbflip_end(PlayerState *);
 extern void _bsbanbflip_init(PlayerState *);

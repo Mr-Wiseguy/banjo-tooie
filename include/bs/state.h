@@ -47,8 +47,8 @@ typedef enum bs_state_e {
     BS_STATE_BE,
     
     BS_STATE_C1 = 0xC1,
-
-    BS_STATE_C3 = 0xC3,
+    BS_STATE_C2,
+    BS_STATE_C3,
     BS_STATE_C4,
     BS_STATE_C5,
     BS_STATE_C6,
@@ -104,7 +104,9 @@ typedef enum bs_state_e {
 
     BS_STATE_186 = 0x186,
     BS_STATE_187,
-    BS_STATE_188
+    BS_STATE_188,
+
+    BS_STATE_18B = 0x18B
 } BanjoStateId;
 
 typedef struct bs_state_s {

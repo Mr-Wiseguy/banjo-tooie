@@ -70,6 +70,4 @@ typedef struct player_state_s {
     /* 0x188 */ struct bs_kazfly_s *kazfly;
 } PlayerState;
 
-s32 func_80094510(PlayerState* thisx);
-
 #endif

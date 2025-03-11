@@ -10,6 +10,7 @@
 
 #include "ba/1E72EA0.h"
 #include "core2/1E76CC0.h"
+#include "core2/1EA0690.h"
 #include "core2/1EB5980.h"
 
 void func_80800000_bstwirl(PlayerState *);

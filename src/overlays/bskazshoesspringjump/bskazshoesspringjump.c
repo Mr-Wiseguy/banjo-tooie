@@ -33,7 +33,7 @@ void bskazshoesspringjump_entrypoint_0(PlayerState *self) {
 }
 
 void bskazshoesspringjump_entrypoint_1(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     _bashoes_entrypoint_5(self, 1);
     self->unk15C.word = 0;
     func_80800000_bskazshoesspringjump(self, 1);

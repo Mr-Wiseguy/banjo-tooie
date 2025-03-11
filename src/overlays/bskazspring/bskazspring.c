@@ -64,7 +64,7 @@ void func_80800244_bskazspring(s32 self) {
 }
 
 void func_80800270_bskazspring(PlayerState *self) {
-    _bskaz_entrypoint_1();
+    _bskaz_entrypoint_1(self);
     self->unk15C.bytes[0] = 0;
     func_80800064_bskazspring(self, 1);
 }

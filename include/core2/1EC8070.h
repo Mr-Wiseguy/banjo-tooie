@@ -10,4 +10,4 @@ void func_800EF934(f32[3], f32[3], f32);
 void func_800EFA98(f32[3], f32[3], f32);
 void func_800EFD24(f32 [3]);
 
-#endif // #define __CORE2_1EC8070_H__
+#endif // __CORE2_1EC8070_H__

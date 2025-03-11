@@ -12,6 +12,7 @@
 #include "ba/wandglow.h"
 #include "bs/mum.h"
 #include "bs/state.h"
+#include "core2/1ECA640.h"
 #include "common.h"
 #include <ultra64.h>
 
@@ -23,7 +24,6 @@ void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawTyp
 void func_800C2FDC(u8 id);
 void func_800C31DC(s32 id, f32, s32);
 f32 func_800DC0C0(void);
-f32 func_800F10B4(f32 value, f32 in_min, f32 in_max, f32 out_min, f32 out_max);
 void func_8008B2E8(AnimCtrl *, s32);
 void func_80092C48(PlayerState *self, f32[3]);
 s32 func_8009D454(PlayerState *self, s32, s32 *);

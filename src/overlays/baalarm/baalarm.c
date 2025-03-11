@@ -3,6 +3,7 @@
 #include "ba/alarm.h"
 #include "ba/playerstate.h"
 
+#include "core2/1E75920.h"
 #include "core2/1E9A960.h"
 #include "core2/1ECA640.h"
 
