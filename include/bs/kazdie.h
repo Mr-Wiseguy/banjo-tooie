@@ -34,8 +34,8 @@ extern void func_8009D2D8(PlayerState *self, s32);
 extern void func_8009D820(PlayerState *self, f32);
 extern void func_800A0180(PlayerState *self);
 extern void func_800A32C4(PlayerState *self, s32[3]);
-extern s32 func_800A4CA8(PlayerState *self);
+extern PlayerState *func_800A4CA8(PlayerState *self);
 extern void func_800A4DFC(PlayerState *self, s32);
-extern void func_800F1E6C(s32[3], f32[3], f32 *target_yaw);
+extern s32 func_800F1E6C(f32[3], f32[3], f32 *target_yaw);
 
 #endif // __BS_KAZDIE_H__
