@@ -1,6 +1,10 @@
 #ifndef __BA_1E72EA0_H__
 #define __BA_1E72EA0_H__
 
+#include "common.h"
+
+#include <ultra64.h>
+
 #include "ba/playerstate.h"
 
 typedef struct ba_unknown_C0_s {

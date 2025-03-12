@@ -1,5 +1,3 @@
-#include "common.h"
-
 #include "ba/1E72EA0.h"
 
 s32 func_800995B0(void) {

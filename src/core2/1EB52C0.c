@@ -1,8 +1,7 @@
 #include <ultra64.h>
 #include "memory.h"
 #include "freelist.h"
-
-f32 func_800D8FF8(void);
+#include "core2/1EB2840.h"
 
 FreeList* D_8012C7E0;
 

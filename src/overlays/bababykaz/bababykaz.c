@@ -5,6 +5,7 @@
 #include "ba/key.h"
 #include "ba/stick.h"
 #include "ba/timer.h"
+#include "core2/1E66990.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1E78170.h"
@@ -85,7 +86,7 @@ void bababykaz_entrypoint_11(PlayerState *self) {
     s32 sp38;
     s32 sp28;
 
-    sp38 = !(func_8008E124() || func_800C954C()  || func_800F8004(self->unk184) || func_800F99E8() || func_800F68B8(self->unk184));
+    sp38 = !(func_8008E124(self) || func_800C954C()  || func_800F8004(self->unk184) || func_800F99E8() || func_800F68B8(self->unk184));
     sp28 = (sp38 && !(func_800C0638() || func_800D3948())
     );
     if (sp38 && _batimer_decrement(self, 0xC)) {

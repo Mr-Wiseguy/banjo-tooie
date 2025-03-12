@@ -15,7 +15,6 @@ void func_8008B064(AnimCtrl*);
 void func_8008B24C(AnimCtrl*, f32);
 f32 func_8008B2B4(AnimCtrl*);
 void func_8009E5C8(PlayerState*, s32);
-void func_800A0CF4(PlayerState* player, s32);
 f32 mlAbsF(f32);
 
 #endif

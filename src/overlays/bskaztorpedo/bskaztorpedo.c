@@ -208,7 +208,7 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
 
 void func_8080088C_bskaztorpedo(PlayerState *self) {
     func_800995B8();
-    if (func_8009E6F8(self) != 0x15A) {
+    if (bs_getCurrentState(self) != 0x15A) {
         bs_setState(self, BS_STATE_15A);
         func_8009E830(self, 2);
     }
@@ -389,7 +389,7 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
         func_800D5234(0);
         func_800A16BC(0);
         func_8009DB04(self, 0x45A5, 1.0f, 0x55F0);
-        if (func_8009E6F8(sp34) == 0xED) {
+        if (bs_getCurrentState(sp34) == 0xED) {
             bs_setState(sp34, BS_STATE_84);
             return;
         }

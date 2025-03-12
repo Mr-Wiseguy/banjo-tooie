@@ -25,7 +25,7 @@ void func_80800068_bsmummove(PlayerState *self) {
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     _bsmum_entrypoint_2(self);
     anim_start = 0.0f;
-    if (func_8009E710(self) == 0xE6) {
+    if (bs_getPreviousState(self) == 0xE6) {
         anim_start = baanim_getTimer(self);
         if (func_8009BB5C(self) < 200.0f) {
             _badust_entrypoint_3(self, 0.0f, 0.0f);
@@ -98,7 +98,7 @@ void func_80800338_bsmummove(PlayerState *self) {
 
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     _bsmum_entrypoint_2(self);
-    if (func_8009E710(self) == 0xE7) {
+    if (bs_getPreviousState(self) == 0xE7) {
         anim_start = baanim_getTimer(self);
     } else {
         anim_start = 0.0f;

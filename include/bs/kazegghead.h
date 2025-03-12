@@ -10,10 +10,13 @@
 #include "ba/yaw.h"
 #include "bs/kazcrouch.h"
 #include "core2/1E6B900.h"
+#include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
-#include "types.h"
 
-extern void func_800A0CF4(PlayerState*, s32);
+extern void _bskazegghead_entrypoint_0(PlayerState *self);
+extern void _bskazegghead_entrypoint_1(PlayerState *self);
+extern void _bskazegghead_entrypoint_2(PlayerState *self);
+extern s32 _bskazegghead_entrypoint_3(s32 idx);
 
 #endif // __BS_KAZEGGHEAD_H__

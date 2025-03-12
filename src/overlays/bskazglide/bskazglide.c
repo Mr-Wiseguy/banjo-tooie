@@ -250,7 +250,7 @@ void func_808009B4_bskazglide(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if (func_8008E124() == 0) {
+    if (func_8008E124(self) == 0) {
         next_state = BS_STATE_BE;
     }
     bs_setState(self, next_state);

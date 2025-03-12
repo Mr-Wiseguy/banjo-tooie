@@ -25,7 +25,6 @@
 #include "funcs.h"
 #include "player.h"
 
-extern void func_8008B1C8(AnimCtrl *, f32);
 extern s32 func_8008D790(PlayerState *self);
 extern s32 func_8008DF18(PlayerState *self);
 extern s32 func_8008E39C(PlayerState *self);

@@ -99,7 +99,7 @@ void bskazmove_entrypoint_2(PlayerState *self) {
 
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskaz_entrypoint_1(self);
-    if (func_8009E710(self) == 0xC7) {
+    if (bs_getPreviousState(self) == 0xC7) {
         animTimer = baanim_getTimer(self);
     } else {
         animTimer = 0.0f;
@@ -281,7 +281,7 @@ void bskazmove_entrypoint_7(PlayerState *self) {
 
 void bskazmove_entrypoint_8(PlayerState *self) {
     _bskaz_entrypoint_1(self);
-    if ((func_8009E710(self) == 0xBC) && (func_8009BB5C(self) < 200.0f)) {
+    if ((bs_getPreviousState(self) == 0xBC) && (func_8009BB5C(self) < 200.0f)) {
         _badust_entrypoint_3(self, 0.0f, 0.0f);
     }
     self->unk15C.word = 0;

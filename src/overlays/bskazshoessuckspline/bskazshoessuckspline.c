@@ -23,7 +23,7 @@ void bskazshoessuckspline_entrypoint_0(PlayerState *self) {
 }
 
 void func_808000A4_bskazshoessuckspline(PlayerState *self) {
-    if (func_8009CA70(self, func_8009E710(self), 0x800) == 0) {
+    if (func_8009CA70(self, bs_getPreviousState(self), 0x800) == 0) {
         _bashoessuck_entrypoint_3(self);
         func_80092880(self, 0);
         func_800A2018(self, 3);
@@ -32,7 +32,7 @@ void func_808000A4_bskazshoessuckspline(PlayerState *self) {
 }
 
 void func_80800110_bskazshoessuckspline(PlayerState *self) {
-    if (func_8009CA70(self, func_8009E704(self), 0x800) == 0) {
+    if (func_8009CA70(self, bs_getNextState(self), 0x800) == 0) {
         _bashoessuck_entrypoint_2(self);
         baflag_clear(self, BA_FLAG_3D);
         func_80092880(self, 1);

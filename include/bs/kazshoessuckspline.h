@@ -3,6 +3,7 @@
 
 #include <ultra64.h>
 
+#include "ba/1E72EA0.h"
 #include "ba/drone.h"
 #include "ba/movespline.h"
 #include "ba/shoes.h"
@@ -23,13 +24,8 @@ extern s32 func_8008DD04(PlayerState *self);
 extern void func_80092880(PlayerState *self, s32);
 extern void func_800956B8();
 extern void func_80099A7C(PlayerState *self, f32[3]);
-extern void func_80099B94(PlayerState *self);
 extern s32 func_8009BCD4(PlayerState *self, f32);
 extern s32 func_8009CA70(PlayerState *self, s32, s32);
-extern s32 func_8009E6EC(PlayerState *self);
-extern s32 func_8009E704();
-extern void func_8009E830(PlayerState *self, s32);
 extern void func_800A2018(PlayerState *self, s32);
-extern void func_800A4DA4(PlayerState *self, s32);
 
 #endif // __BS_KAZSHOESSUCKSPLINE_H__

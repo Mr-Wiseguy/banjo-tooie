@@ -114,7 +114,7 @@ void func_80800498_bsmumswim(PlayerState *self) {
     anim_ctrl = baanim_getAnimCtrlPtr(self);
     func_80800114_bsmumswim(self);
     anctrl_reset(anim_ctrl);
-    if (func_8009E710(self) == 0xF1) {
+    if (bs_getPreviousState(self) == 0xF1) {
         func_8008B1C8(anim_ctrl, 0.8f);
     }
     anctrl_setIndex(anim_ctrl, ASSET_9D_ANIM_BSMUMSWIM_UNKNOWN);
@@ -171,7 +171,7 @@ void func_80800750_bsmumswim(PlayerState *self) {
     f32 sp28;
 
     anim_ctrl = baanim_getAnimCtrlPtr(self);
-    if (func_8009E710(self) == 0xF0) {
+    if (bs_getPreviousState(self) == 0xF0) {
         sp28 = 0.8f;
     } else {
         sp28 = 0.2f;

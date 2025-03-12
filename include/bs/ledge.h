@@ -13,31 +13,25 @@
 #include "ba/yaw.h"
 #include "bs/rest.h"
 #include "bs/state.h"
+#include "core2/1E6F080.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
+#include "core2/1EB5980.h"
 #include "common.h"
 #include "funcs.h"
 
 void func_800EFD24(f32 [3]);
 f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 extern void func_80092880(PlayerState *self, s32);
-extern void func_800961AC(PlayerState *self, s32);
 extern void func_8009E474(PlayerState *self);
-extern s32 func_8009E74C(PlayerState *self, s32);
 extern void func_800A2018(PlayerState *self, s32);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
 void func_8009E55C(PlayerState *, s32, f32);
-extern s32 func_8009E77C(PlayerState *self, s32);
-void func_8009DF18(PlayerState *, s32, f32, s32);
-f32 func_800DC178(f32, f32);
 extern f32 func_8009BB5C(PlayerState *self);
-extern void func_8009BA9C(PlayerState *self, f32[3]);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-void func_8009DF94(PlayerState *, s32, f32, s32);
-extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
-extern void func_8009D874(PlayerState *self);
-extern void func_8009DF58(PlayerState *self, s32, f32);
 
 void _bapackctrl_entrypoint_5(PlayerState *self, s32);
 void _batranslate_entrypoint_3(PlayerState *self, s32);

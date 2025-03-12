@@ -45,7 +45,7 @@ s32 func_80090C34(PlayerState *self) {
     
     if ( (self->unk2C->unk18 != 0) || player_isStable(self)
         || (a1) 
-        || (func_800F3ED0(self) == 0x5) || (func_8009E6F8(self) == 0xB)
+        || (func_800F3ED0(self) == 0x5) || (bs_getCurrentState(self) == 0xB)
     ){
         func_8009C128(self, self->unk2C->unkC);
     }

@@ -19,8 +19,6 @@
 #include "player.h"
 #include <ultra64.h>
 
-// Imported header definitions
-extern void func_8008B1C8(AnimCtrl *, f32);
 void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
 void func_8008CA30(PlayerState *self, f32 scale);
 s32 func_8008DD04(PlayerState*);
