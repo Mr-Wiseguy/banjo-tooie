@@ -13,20 +13,17 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "bs/kazmove.h"
+#include "core2/1E29B60.h"
 #include "core2/1E66990.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E93440.h"
 #include "core2/1EA0690.h"
 #include "funcs.h"
 #include "player.h"
 
-extern s32 func_8001211C();
-extern void func_8008B1C8(AnimCtrl *, f32);
 extern s32 func_8008E260(PlayerState *self);
 extern void func_80092BF4(PlayerState *self);
 extern void func_80092C24(PlayerState *self, f32[3]);
-extern void func_8009BB24(PlayerState *self, f32[3]);
-extern void func_8009DBF0(PlayerState *self, s32, f32);
-extern void func_8009DF58(PlayerState *self, s32, f32);
-extern void func_800BBCB8(f32[3], s32, f32, s32, s32[]);
 extern s32 func_800C2E04();
 extern void func_800C2E40(s32);
 extern void func_800C2FDC(u8);

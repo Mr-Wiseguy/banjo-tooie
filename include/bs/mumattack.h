@@ -12,14 +12,13 @@
 #include "ba/wandglow.h"
 #include "bs/mum.h"
 #include "bs/state.h"
+#include "core2/1E76CC0.h"
 #include "core2/1ECA640.h"
 #include "common.h"
 #include <ultra64.h>
 
 extern s32 func_8001210C(s32);
 void func_8008B10C(AnimCtrl *, f32);
-extern void func_8009DBF0(PlayerState *self, s32, f32);
-void func_8009DE38(PlayerState *, s32, f32);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 void func_800C2FDC(u8 id);
 void func_800C31DC(s32 id, f32, s32);

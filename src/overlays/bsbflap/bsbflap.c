@@ -11,6 +11,7 @@
 #include "ba/1E72EA0.h"
 #include "bs/state.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1EB2840.h"

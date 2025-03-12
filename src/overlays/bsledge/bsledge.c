@@ -252,7 +252,7 @@ void func_808008F4_bsledge(PlayerState *self) {
     baanim_playForDuration_onceSmooth(self, ASSET_13_ANIM_BSLEDGE_UNKNOWN, 0.8f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_D_END);
     func_80800488_bsledge(self, 0);
-    if (func_8009E710(self) == 0x2F) {
+    if (bs_getPreviousState(self) == 0x2F) {
         func_8009DEC0(self, 0x58E, 0.95f, 1.05f, 26000, 26000);
         return;
     }

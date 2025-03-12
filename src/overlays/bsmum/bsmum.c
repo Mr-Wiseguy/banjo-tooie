@@ -17,7 +17,7 @@ void bsmum_entrypoint_0(PlayerState *self) {
     s32 temp_v0;
 
     if (func_8009E6EC(self) == 0x43) {
-        temp_v0 = func_8009E6F8(self);
+        temp_v0 = bs_getCurrentState(self);
         if ((temp_v0 == 0xE5) || (temp_v0 == 0xE6) || (temp_v0 == 0xE7) || (temp_v0 == 0xF7)) {
             bs_setState(self, BS_STATE_11E);
             func_8009E830(self, 2);
@@ -224,7 +224,7 @@ void func_808007A0_bsmum(PlayerState *self, s32);
 void func_80800980_bsmum(PlayerState *self) {
     bsmum_entrypoint_1(self);
     func_808007A0_bsmum(self, 0);
-    if (func_8009E704(self) == 0xEF) {
+    if (bs_getNextState(self) == 0xEF) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     }
 }

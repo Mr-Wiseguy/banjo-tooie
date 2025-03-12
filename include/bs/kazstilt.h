@@ -16,32 +16,29 @@
 #include "ba/physics.h"
 #include "bs/rest.h"
 #include "ba/input.h"
+#include "core2/1E6F080.h"
+#include "core2/1E75710.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "funcs.h"
 #include "player.h"
 
-extern void func_8009DE38(PlayerState *self, s32, f32);
 extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
 extern void func_8009E55C(PlayerState *self, s32, f32);
 extern void func_8009E5A4(PlayerState *self, s32, s32);
-extern s32 func_8009E74C(PlayerState *self, s32);
-extern s32 func_8009E77C(PlayerState *self, s32);
 extern void func_800A0CE8(PlayerState *self, s32);
 extern void func_800A0DD0(PlayerState *self, s32);
 extern void func_800C77DC(s32);
 extern void func_8008B188(AnimCtrl *, s32);
 extern f32 func_80096364(PlayerState *self);
-extern void func_800963C0(PlayerState *self,f32[3]);
-extern void func_8009BB24(PlayerState *self, f32[3]);
-extern f32 func_8009BFD8(PlayerState *self);
 extern f32 func_8009C150(PlayerState *self);
-extern void func_8009FE58(PlayerState *self);
 extern f32 func_800A3394(PlayerState *self);
 extern s32 func_800C2E04();
 extern void func_800C2FDC(u8);

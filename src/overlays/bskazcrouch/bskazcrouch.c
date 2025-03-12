@@ -65,7 +65,7 @@ void bskazcrouch_entrypoint_1(PlayerState *self) {
 
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskaz_entrypoint_1(self);
-    unk2 = func_8009E710(self);
+    unk2 = bs_getPreviousState(self);
     if ((unk2 != 0x67) && (unk2 != 0x68)) {
         animStart = 0;
     } else {
