@@ -18,6 +18,7 @@
 #include "ba/input.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E79FD0.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "funcs.h"

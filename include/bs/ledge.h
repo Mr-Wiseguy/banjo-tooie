@@ -14,6 +14,7 @@
 #include "bs/rest.h"
 #include "bs/state.h"
 #include "core2/1E77A20.h"
+#include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
 #include "common.h"
 #include "funcs.h"

@@ -25,6 +25,7 @@
 #include "core2/1E6E870.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
+#include "core2/1E79FD0.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1EBA250.h"
 #include "core2/1ECA640.h"

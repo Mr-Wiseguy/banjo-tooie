@@ -34,6 +34,7 @@
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
 #include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
@@ -66,7 +67,6 @@ extern void func_800961AC(PlayerState *self, s32);
 extern s32 func_8009E74C(PlayerState *self, s32);
 extern s32 func_8009E77C(PlayerState *self, s32);
 extern void func_800A042C(PlayerState *self);
-extern void func_800A0CF4(PlayerState *self, s32);
 extern void func_808000AC_bskazfly(PlayerState *self);
 extern void func_8009BA9C(PlayerState *self, f32 *);
 extern void func_8009D874(PlayerState *self);

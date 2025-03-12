@@ -9,6 +9,7 @@
 #include "bs/state.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
 #include "bs.h"
