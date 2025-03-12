@@ -27,6 +27,7 @@
 #include "ch/usefeather.h"
 #include "core2/1E2B200.h"
 #include "core2/1E66990.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
@@ -37,6 +38,7 @@
 #include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
 #include "core2/1EA0690.h"
+#include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "nc/badie.h"
 #include "nc/badive.h"
@@ -60,7 +62,6 @@ extern void func_8009E0DC(PlayerState *self);
 extern void func_800A4DA4(PlayerState *self, s32);
 extern void func_8009DF58(PlayerState *self, s32, f32);
 extern void func_800A34AC(PlayerState *self, f32[3]);
-extern void func_800EF04C(f32[3], f32 *);
 extern s32 func_8009E704(PlayerState *self);
 extern void func_80095A40(PlayerState *self);
 extern void func_800961AC(PlayerState *self, s32);
@@ -77,7 +78,6 @@ extern void func_80093360(PlayerState *self, f32);
 extern void func_800959C8(PlayerState *self, f32, f32);
 extern void func_800CA9D8(s32, s32 *);
 extern void func_800EE7F8(f32 dst[3], f32 src[3]);
-extern void func_800EF934(f32 *, f32 *, s32);
 extern void func_800EFA4C(f32 *, f32, f32, f32);
 extern void func_800963C0(PlayerState *self, f32 *);
 extern s32 func_80096434(PlayerState *self);
@@ -90,7 +90,6 @@ extern f32 func_800EEAA4(f32 *, f32[3]);
 extern void func_800EF2A0(f32[3]);
 extern void func_8009DDDC(PlayerState *);
 extern f32 func_800EEFD4(f32[3]);
-extern void func_800EF3DC(f32[3], s32);
 extern void func_8008B1C8(AnimCtrl *, f32);
 extern void func_8009DB04(PlayerState *self, s32, f32, s32);
 extern void func_8009BB24(PlayerState *self, f32[3]);
@@ -98,7 +97,6 @@ extern void func_8009FE58(PlayerState *self);
 extern f32 func_800D8FF8();
 extern void func_8009DBF0(PlayerState *self, s32, f32);
 extern void func_8009E100(PlayerState *self);
-extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern s32 func_800F8B64();
 extern void func_8008E95C(PlayerState *self);
 extern s32 func_8008E124(PlayerState *self);

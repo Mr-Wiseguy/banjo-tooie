@@ -19,6 +19,7 @@
 #include "core2/1E67DA0.h"
 #include "core2/1E75710.h"
 #include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1EA0690.h"
 #include "funcs.h"
@@ -36,7 +37,6 @@ extern void func_8009BA9C(PlayerState *self, s32);
 extern void func_8009BB24(PlayerState *self, f32[3]);
 extern f32 func_8009BFD8(PlayerState *self);
 extern void func_8009DE38(PlayerState *self, s32, f32);
-extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern void func_8009E0DC(PlayerState *self);
 extern f32 func_8009F308(PlayerState *self);
 extern void func_8009FE58(PlayerState *self);

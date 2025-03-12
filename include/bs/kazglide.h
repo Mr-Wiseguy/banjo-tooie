@@ -41,7 +41,6 @@ extern void func_800995B8(PlayerState *self, s32);
 extern void func_80099B94(PlayerState *self);
 extern void func_8009BC34();
 extern void func_8009BD88(PlayerState *self);
-extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern void func_8009DF94(PlayerState *self, s32, f32, s32);
 extern s32 func_8009E69C(PlayerState *self, s32);
 extern s32 func_8009E6C4(PlayerState *self, s32);

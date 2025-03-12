@@ -13,6 +13,7 @@
 #include "ba/yaw.h"
 #include "bs/rest.h"
 #include "bs/state.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
@@ -30,7 +31,6 @@ extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
 void func_8009E55C(PlayerState *, s32, f32);
 extern s32 func_8009E77C(PlayerState *self, s32);
-void func_8009DF18(PlayerState *, s32, f32, s32);
 f32 func_800DC178(f32, f32);
 extern f32 func_8009BB5C(PlayerState *self);
 extern void func_8009BA9C(PlayerState *self, f32[3]);

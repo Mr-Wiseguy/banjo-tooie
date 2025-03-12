@@ -25,6 +25,7 @@
 #include "core2/1E6E870.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1EBA250.h"
@@ -57,12 +58,10 @@ extern f32 func_8009BB94(PlayerState *self);
 extern void func_8009BC34(PlayerState *self);
 extern void func_8009BC5C(PlayerState *self, f32);
 extern void func_8009BD88();
-extern f32 func_8009BFCC(PlayerState *self);
 extern f32 func_8009BFD8(PlayerState *self);
 extern void func_8009C000(PlayerState *self);
 extern void func_8009DA40(PlayerState *self);
 extern void func_8009DB04(PlayerState *self, s32, f32, s32);
-extern void func_8009DF18(PlayerState *self, s32, f32, s32);
 extern void func_8009E154(PlayerState *self, s32, f32 *);
 extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);

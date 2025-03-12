@@ -3,17 +3,21 @@
 #include "ba/translate.h"
 #include "ba/yaw.h"
 #include "db/skeleton.h"
+#include "core2/1E6B900.h"
 #include "core2/1E75920.h"
 #include "core2/1EC8070.h"
-
 
 s32 batranslate_entrypoint_0(void) {
     return sizeof(BaTranslate);
 }
 
 void func_80800008_batranslate(PlayerState *self, f32 arg1[3]) {
+    f32 yaw;
+
     func_800EF334(arg1, _dbskeleton_entrypoint_1(func_800B27E0(func_80092B04(self, 0))));
-    func_800EF934(arg1, arg1, yaw_get(self));
+
+    yaw = yaw_get(self);
+    func_800EF934(arg1, arg1, yaw);
 }
 
 void batranslate_entrypoint_1(PlayerState *self) {}
