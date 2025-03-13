@@ -37,6 +37,12 @@
 #include "funcs.h"
 #include "player.h"
 
+extern s32 D_80800AB0_bskazglide[];
+extern s32 D_80800AC0_bskazglide[];
+extern s32 D_80800AD0_bskazglide[];
+extern s32 D_80800AE0_bskazglide[];
+extern s32 D_80800AF0_bskazglide[];
+
 extern s32 _bskazglide_entrypoint_0(s32 idx);
 extern s32 _bskazglide_entrypoint_1(s32 idx);
 extern s32 _bskazglide_entrypoint_2(s32 idx);

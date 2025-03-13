@@ -1,69 +1,4 @@
-#include <ultra64.h>
-#include "common.h"
-
-#include "ba/playerstate.h"
-
-#include "ba/statetimer.h"
-#include "core2/1E6F080.h"
-#include "core2/1E75920.h"
-#include "core2/1EB5980.h"
-
-typedef struct {
-    s16 unk0;
-    s16 unk2;
-    f32 unk4;
-} BaData_1;
-
-typedef struct {
-    BaData_1 *unk0;
-    s32 count;
-    f32 unk8;
-} BaData_5;
-
-typedef struct {
-    s16 unk0;
-    s16 unk2;
-    f32 unk4;
-    f32 unk8;
-} BaData_4;
-
-typedef struct {
-    s16 unk0;
-    s16 unk2;
-    f32 unk4;
-    f32 unk8;
-    f32 unkC;
-} BaData_3;
-
-typedef struct {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
-} BaData_2;
-
-extern BaData_5 D_808010C8_badata[];
-extern BaData_5 D_80801298_badata[];
-extern s16 D_80801448_badata[];
-extern s16 D_80801490_badata[];
-extern s16 D_808014D8_badata[];
-extern s16 D_80801520_badata[];
-extern BaData_2 D_80801568_badata[];
-extern u8 D_80801640_badata[];
-extern u8 D_80801664_badata[];
-extern s32 D_80801688_badata[];
-extern BaData_3 D_80801718_badata[];
-extern BaData_1 D_80801958_badata[];
-extern BaData_1 D_80801A78_badata[];
-extern BaData_1 D_80801B98_badata[];
-extern BaData_1 D_80801CB8_badata[];
-extern BaData_1 D_80801DD8_badata[];
-extern BaData_1 D_80801EF8_badata[];
-extern BaData_1 D_80802018_badata[];
-extern BaData_1 D_80802138_badata[];
-extern BaData_1 D_80802258_badata[];
-extern BaData_1 D_80802378_badata[];
-extern BaData_4 D_80802498_badata[];
-extern BaData_4 D_80802648_badata[];
+#include "ba/data.h"
 
 s32 func_80800000_badata(PlayerState *self) {
     s32 sp1C  = bs_getCurrentState(self);
@@ -324,28 +259,28 @@ void func_808006AC_badata(PlayerState *self , BaData_1 *arg1, s32 *arg2, f32 *ar
 }
 
 
-void badata_entrypoint_0(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801EF8_badata, arg1, arg2);
+void badata_entrypoint_0(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801EF8_badata, assetId, arg2);
 }
 
-void badata_entrypoint_1(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801A78_badata, arg1, arg2);
+void badata_entrypoint_1(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801A78_badata, assetId, arg2);
 }
 
-void badata_entrypoint_2(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801B98_badata, arg1, arg2);
+void badata_entrypoint_2(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801B98_badata, assetId, arg2);
 }
 
-void badata_entrypoint_3(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801DD8_badata, arg1, arg2);
+void badata_entrypoint_3(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801DD8_badata, assetId, arg2);
 }
 
-void badata_entrypoint_4(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80802018_badata, arg1, arg2);
+void badata_entrypoint_4(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80802018_badata, assetId, arg2);
 }
 
-void badata_entrypoint_5(PlayerState *self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801CB8_badata, arg1, arg2);
+void badata_entrypoint_5(PlayerState *self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801CB8_badata, assetId, arg2);
 }
 
 
@@ -358,8 +293,8 @@ void badata_entrypoint_6(PlayerState *self, s32 *arg1, f32 *arg2, f32 *arg3, f32
     *arg4  = tmp_v1->unkC;
 }
 
-void badata_entrypoint_7(PlayerState * self, s32 *arg1, f32 *arg2) {
-    func_808006AC_badata(self, D_80801958_badata, arg1, arg2);
+void badata_entrypoint_7(PlayerState * self, AssetId *assetId, f32 *arg2) {
+    func_808006AC_badata(self, D_80801958_badata, assetId, arg2);
 }
 
 void badata_entrypoint_8(PlayerState *self, s32 *arg1, f32 *arg2, f32 *arg3) {
@@ -370,16 +305,16 @@ void badata_entrypoint_8(PlayerState *self, s32 *arg1, f32 *arg2, f32 *arg3) {
     *arg3  = tmp_v1->unk8;
 }
 
-void badata_entrypoint_9(PlayerState *self, s32 *arg1, f32 *arg2){
-    func_808006AC_badata(self, D_80802138_badata, arg1, arg2);
+void badata_entrypoint_9(PlayerState *self, AssetId *assetId, f32 *arg2){
+    func_808006AC_badata(self, D_80802138_badata, assetId, arg2);
 }
 
-void badata_entrypoint_10(PlayerState *self, s32 *arg1, f32 *arg2){
-    func_808006AC_badata(self, D_80802378_badata, arg1, arg2);
+void badata_entrypoint_10(PlayerState *self, AssetId *assetId, f32 *arg2){
+    func_808006AC_badata(self, D_80802378_badata, assetId, arg2);
 }
 
-void badata_entrypoint_11(PlayerState *self, s32 *arg1, f32 *arg2){
-    func_808006AC_badata(self, D_80802258_badata, arg1, arg2);
+void badata_entrypoint_11(PlayerState *self, AssetId *assetId, f32 *arg2){
+    func_808006AC_badata(self, D_80802258_badata, assetId, arg2);
 }
 
 void badata_entrypoint_12(PlayerState *self, s32 *arg1, f32 *arg2) {

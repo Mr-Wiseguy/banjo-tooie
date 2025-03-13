@@ -17,6 +17,7 @@
 #include "core2/1E78BF0.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1ECB0F0.h"
+#include "core2/1EDA900.h"
 
 s32 babounce_entrypoint_0(void) {
     return sizeof(BaBounce);
