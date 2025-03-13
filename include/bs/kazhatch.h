@@ -1,6 +1,7 @@
 #ifndef __BS_KAZHATCH_H__
 #define __BS_KAZHATCH_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "ba/anim.h"

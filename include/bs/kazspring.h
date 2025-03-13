@@ -13,9 +13,8 @@
 #include "bs/kaz.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"
+#include "core2/1ECA640.h"
 #include "funcs.h"
 #include "player.h"
-
-extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 
 #endif // __BS_KAZSPRING_H__

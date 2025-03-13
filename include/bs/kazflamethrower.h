@@ -1,6 +1,7 @@
 #ifndef __BS_KAZFLAMETHROWER_H__
 #define __BS_KAZFLAMETHROWER_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "ba/timer.h"

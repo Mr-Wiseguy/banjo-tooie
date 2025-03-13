@@ -42,7 +42,6 @@ extern f32 func_800A3298(PlayerState *self);
 extern void func_800BA22C(s32, s32);
 extern void func_800BA930(s32, s32, s32, s32, s32, s32, s32);
 f32 func_800DC0C0(void);
-f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 s32 func_80096544(PlayerState *self);
 void func_8009FD24(PlayerState *self, s32);
 

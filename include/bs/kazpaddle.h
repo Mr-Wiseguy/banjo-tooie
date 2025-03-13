@@ -38,6 +38,5 @@ extern f32 func_800A3298(PlayerState *self);
 extern void func_800BA22C(s32, s32);
 extern void func_800BA930(s32, s32, s32, s32, s32, s32, s32);
 extern f32 func_800DC0C0();
-extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 
 #endif // __BS_KAZPADDLE_H__

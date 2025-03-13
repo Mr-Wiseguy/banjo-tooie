@@ -1,6 +1,7 @@
 #ifndef __BS_KAZJUMP_H__
 #define __BS_KAZJUMP_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "an/anctrl.h"
@@ -29,7 +30,6 @@
 extern void _bskazshock_entrypoint_0(PlayerState *self);
 extern s32 func_8008D544(PlayerState *self);
 extern s32 func_8008E260(PlayerState *self);
-extern s32 func_8008E39C(PlayerState *self);
 extern s32 func_8009557C(PlayerState *self);
 extern void func_8009B7C0(PlayerState *self);
 extern f32 func_8009F308(PlayerState *self);
