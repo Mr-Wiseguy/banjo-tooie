@@ -44,7 +44,7 @@ void func_80800100_bskazpaddle(PlayerState *self) {
 }
 
 void func_80800164_bskazpaddle(PlayerState *self) {
-    func_8009BC34();
+    func_8009BC34(self);
     func_800961AC(self, 1);
 }
 

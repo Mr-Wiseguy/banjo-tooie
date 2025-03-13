@@ -23,6 +23,7 @@
 #include "core2/1E67DA0.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
+#include "core2/1E75620.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76CC0.h"
@@ -36,11 +37,10 @@
 #include "funcs.h"
 #include "player.h"
 
-extern f32 func_8009630C(PlayerState *self);
-extern void func_800995B8(PlayerState *self, s32);
-extern void func_8009BC34();
-extern void func_8009BD88(PlayerState *self);
-extern s32 func_8009E69C(PlayerState *self, s32);
-extern s32 func_8009E6C4(PlayerState *self, s32);
+extern s32 _bskazglide_entrypoint_0(s32 idx);
+extern s32 _bskazglide_entrypoint_1(s32 idx);
+extern s32 _bskazglide_entrypoint_2(s32 idx);
+extern s32 _bskazglide_entrypoint_3(s32 idx);
+extern s32 _bskazglide_entrypoint_4(s32 idx);
 
 #endif // __BS_KAZGLIDE_H__
