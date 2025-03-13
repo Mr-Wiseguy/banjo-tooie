@@ -29,10 +29,7 @@
 #include "player.h"
 #include <ultra64.h>
 
-extern s32 func_8008D544(PlayerState *self);
-extern s32 func_8008E260(PlayerState *self);
 extern void func_800947EC(PlayerState *self, s32, s32);
-extern void func_8009B7C0(PlayerState *self);
 extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);

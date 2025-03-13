@@ -36,6 +36,7 @@ void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
 
 void func_8009B94(PlayerState *);
+void func_8009B7C0(PlayerState *);
 void func_8009BA9C(PlayerState *, f32 *);
 f32 func_8009BADC(PlayerState *);
 f32 func_8009BAE8(PlayerState *);

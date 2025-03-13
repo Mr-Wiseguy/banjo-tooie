@@ -21,7 +21,6 @@
 #include "funcs.h"
 #include "player.h"
 
-extern s32 func_8008E260(PlayerState *self);
 extern void func_80092BF4(PlayerState *self);
 extern void func_80092C24(PlayerState *self, f32[3]);
 extern s32 func_800C2E04();
@@ -32,5 +31,7 @@ extern void func_800C330C(s32, s32);
 extern void func_800C3418(s32, s32);
 extern void func_800C3730(s32, f32, f32, f32);
 extern void func_800C3BDC(s32);
+
+extern void _bskazshock_entrypoint_0(PlayerState *self);
 
 #endif // __BS_KAZSHOCK_H__
