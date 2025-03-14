@@ -51,6 +51,7 @@ extern u8 core2_DATA_END[]; // core2 data end
 extern u8 core2_BSS_START[]; // core2 bss start
 extern u8 core2_BSS_END[]; // core2 bss end
 
+s32 func_8001210C(s32);
 s32 func_8001211C(void);
 
 #endif // __CORE2_1E29B60_H__

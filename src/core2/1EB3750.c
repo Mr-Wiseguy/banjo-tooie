@@ -1,10 +1,10 @@
 #include <ultra64.h>
 #include "memory.h"
+#include "core2/1E29B60.h"
 
 void _gldbDll_entrypoint_1(void);
 void _gldbDll_entrypoint_2(void);
 s32 _glgamedata_entrypoint_3(u8*, s32, s32*, u32*);
-u32 func_8001210C(u32);
 
 // .data
 u32 D_8011B990 = 0;

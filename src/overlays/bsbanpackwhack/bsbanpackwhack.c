@@ -11,6 +11,7 @@
 
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1E93440.h"
 #include "core2/1ECA640.h"
 
 extern s32 D_808004D0_bsbanpackwhack;

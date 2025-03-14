@@ -32,6 +32,7 @@
 #include "core2/1E75920.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1EB2840.h"
@@ -55,7 +56,6 @@ extern void func_800931AC(PlayerState *self, s32);
 extern void func_800947EC(PlayerState *self, s32, s32);
 extern s32 func_80099A58(PlayerState *self);
 extern f32 func_8009BB94(PlayerState *self);
-extern void func_8009BC5C(PlayerState *self, f32);
 extern void func_8009C000(PlayerState *self);
 extern void func_8009DA40(PlayerState *self);
 extern void func_8009E154(PlayerState *self, s32, f32 *);
@@ -63,7 +63,6 @@ extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E55C(PlayerState *self, s32, f32);
 extern s32 bs_getCurrentState(PlayerState *self);
-extern s32 func_8009FBB0(PlayerState *self, f32[3], f32);
 extern void func_800A0DC4(PlayerState *self, s32);
 extern void func_800A16BC(s32);
 extern void func_800A3410(PlayerState *self, s32);
