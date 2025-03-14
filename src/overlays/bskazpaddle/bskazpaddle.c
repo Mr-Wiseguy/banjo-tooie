@@ -137,10 +137,10 @@ void func_80800518_bskazpaddle(PlayerState *self) {
     func_80092C00(self, sp24);
     func_808003F4_bskazpaddle(self, sp24);
     if (anctrl_isAt(animCtrl, 0.2) != 0) {
-        func_8009DE74(self, 0x40C, 0.9, 1.1);
+        func_8009DE74(self, 0x40C, 0.9f, 1.1f);
     }
     if (anctrl_isAt(animCtrl, 0.7) != 0) {
-        func_8009DE74(self, 0x40C, 0.9, 1.1);
+        func_8009DE74(self, 0x40C, 0.9f, 1.1f);
     }
     func_80800100_bskazpaddle(self);
     if (bastick_getZone(self) == BS_STICK_ZONE_ID_0) {

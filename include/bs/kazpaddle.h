@@ -19,6 +19,7 @@
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"

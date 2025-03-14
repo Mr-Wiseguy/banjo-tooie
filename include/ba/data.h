@@ -83,7 +83,7 @@ extern void _badata_entrypoint_12(PlayerState *self, s32 *arg1, f32 *arg2);
 extern void _badata_entrypoint_13(PlayerState *self, s32 *arg1, f32 *arg2);
 extern s32 _badata_entrypoint_14(PlayerState *self);
 extern s32 _badata_entrypoint_15(PlayerState *self);
-extern s32 _badata_entrypoint_16();
+extern s32 _badata_entrypoint_16(void);
 extern void _badata_entrypoint_17(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s32 *arg4);
 extern f32 _badata_entrypoint_18(PlayerState *self);
 extern void _badata_entrypoint_19(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s32 *arg4);

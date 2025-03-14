@@ -34,7 +34,6 @@
 
 void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
 void func_8008CA4C(PlayerState *self, BaAnimUpdateType arg1);
-extern void func_8009DE74(PlayerState *self, s32, f32, f32);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 s32 func_80096544(PlayerState *self);
 void func_8009FD24(PlayerState *self, s32);
