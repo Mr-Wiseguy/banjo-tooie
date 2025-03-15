@@ -12,11 +12,10 @@
 #include "ba/yaw.h"
 #include "bs/kaz.h"
 #include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
 #include "funcs.h"
 #include "player.h"
 
-extern void func_8009DF18(PlayerState *self, s32, f32, s32);
-extern void func_8009DF94(PlayerState *self, s32, f32, s32);
 extern f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 
 #endif // __BS_KAZSPRING_H__

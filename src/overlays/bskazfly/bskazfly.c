@@ -1,19 +1,4 @@
-#include "common.h"
-
 #include "bs/kazfly.h"
-
-s32 D_80801C10_bskazfly[];
-
-s32 D_80801C38_bskazfly[];
-s32 D_80801C48_bskazfly[];
-s32 D_80801C58_bskazfly[];
-s32 D_80801C68_bskazfly[];
-s32 D_80801C78_bskazfly[];
-s32 D_80801C88_bskazfly[];
-s32 D_80801C98_bskazfly[];
-s32 D_80801CA8_bskazfly[];
-s32 D_80801CB8_bskazfly[];
-s32 D_80801CC8_bskazfly[];
 
 void func_80800000_bskazfly(PlayerState *self) {
     f32 sp24[3];
@@ -223,7 +208,7 @@ void func_808008A8_bskazfly(PlayerState *self) {
 
     baflag_clear(self, BA_FLAG_2F);
     baflag_clear(self, BA_FLAG_30);
-    temp_v0 = func_8009E704(self);
+    temp_v0 = bs_getNextState(self);
     if (((temp_v0 == 0x173) || (temp_v0 == 0x174) || (temp_v0 == 0x179)) && (_bafpctrl_entrypoint_4(self) == 3)) {
         baflag_set(self, 0x2F);
         if (_bafpctrl_entrypoint_5(self) != 0) {
@@ -294,12 +279,10 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
 }
 
 void func_80800BDC_bskazfly(PlayerState *self) {
-    s32 pad0;
-    s32 pad1;
-    f32 unk0;
+    f32 unk0[3];
     f32 unk1[3];
     s32 pad2;
-    s32 unk2;
+    f32 unk2;
     s32 unk3;
 
     func_800EE7F8(&unk1, &self->kazfly->unk10);
@@ -324,9 +307,7 @@ void func_80800CF4_bskazfly(PlayerState *self) {
 
 BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     f32 sp44;
-    s32 pad0;
-    f32 sp3C;
-    f32 sp38;
+    f32 sp38[3];
     f32 sp2C[3];
     s32 sp28;
     s32 is_player_stable;
@@ -355,7 +336,7 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
         func_80800974_bskazfly(self);
         nextState = BS_STATE_173;
     } else if (sp44 > 0.4f) {
-        if (sp3C < 0.65f) {
+        if (sp38[1] < 0.65f) {
             func_80800974_bskazfly(self);
             func_800A17A8(self, -1);
             if (func_800A1718(self) != 0) {
@@ -505,7 +486,7 @@ void func_80801320_bskazfly(PlayerState *self) {
         func_808000AC_bskazfly(self);
     }
 
-    temp_v0 = func_8009E704(self);
+    temp_v0 = bs_getNextState(self);
     if ((temp_v0 == 0x15D) || (temp_v0 == 0x162)) {
         func_8009DBF0(self, 0x4435, 1);
     }
@@ -533,7 +514,7 @@ void func_808013BC_bskazfly(PlayerState *self) {
 void func_80801448_bskazfly(PlayerState *self) {
     s32 sp2C;
 
-    sp2C = func_8009E710(self);
+    sp2C = bs_getPreviousState(self);
     baanim_playForDuration_onceSmooth(self, 0x11D, 1.3);
     func_8009FFD8(self, 1, 1, 3, 3);
     func_800A0CF4(self, 1);

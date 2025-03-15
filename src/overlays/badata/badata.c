@@ -66,7 +66,7 @@ extern BaData_4 D_80802498_badata[];
 extern BaData_4 D_80802648_badata[];
 
 s32 func_80800000_badata(PlayerState *self) {
-    s32 sp1C  = func_8009E6F8(self);
+    s32 sp1C  = bs_getCurrentState(self);
     switch(func_800A3274(self)) {
         case 2: 
             return 2;

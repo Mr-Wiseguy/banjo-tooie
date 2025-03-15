@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "types.h"
+#include "core2/1EC8070.h"
 
 // TODO rename operations based on whether they output to a new vector or output to an input vector.
 // add vs sum/subtract vs difference? What to do for scalar multiplication? apply_scale vs scale?

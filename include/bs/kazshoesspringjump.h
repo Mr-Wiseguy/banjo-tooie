@@ -11,8 +11,7 @@
 #include "ba/shoes.h"
 #include "bs/kaz.h"
 #include "bs/kazmove.h"
+#include "core2/1E76CC0.h"
 #include "funcs.h"
-
-extern void func_8009DEC0(PlayerState *self, s32, f32, f32, s32, s32);
 
 #endif // __BS_KAZSHOESSPRINGJUMP_H__

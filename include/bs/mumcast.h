@@ -7,7 +7,6 @@
 #include "common.h"
 #include <ultra64.h>
 
-extern void func_8008E95C(PlayerState *self);
 extern void func_80099A7C(PlayerState *self, f32[3]);
 void func_800A0DAC(PlayerState *self, s32);
 u8 func_8009EA20();

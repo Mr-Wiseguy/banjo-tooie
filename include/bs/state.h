@@ -110,9 +110,10 @@ typedef enum bs_state_e {
 } BanjoStateId;
 
 typedef struct bs_state_s {
-    s32 previous;
-    s32 current;
-    s32 next;
+    /* 0x00 */ BanjoStateId previous;
+    /* 0x04 */ BanjoStateId current;
+    /* 0x08 */ BanjoStateId next;
+    /* 0x0C */ s16 unkC;
 } BanjoState;
 
 BanjoStateId bs_getTypeOfJump(PlayerState *self);

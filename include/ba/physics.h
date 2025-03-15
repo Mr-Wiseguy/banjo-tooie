@@ -27,20 +27,21 @@ typedef enum ba_physics_type_e {
 
 void baphysics_set_type(PlayerState *, BaPhysicsType);
 void baphysics_set_vertical_velocity(PlayerState *, f32);
-void baphysics_set_target_horizontal_velocity(PlayerState* self, f32 vel);
-void baphysics_set_target_yaw(PlayerState *self, f32 target_yaw);
-f32 baphysics_get_target_horizontal_velocity(PlayerState *self);
-void baphysics_set_horizontal_velocity(PlayerState *self, f32 yaw, f32 vel);
+void baphysics_set_target_horizontal_velocity(PlayerState* , f32 vel);
+void baphysics_set_target_yaw(PlayerState *, f32 target_yaw);
+f32 baphysics_get_target_horizontal_velocity(PlayerState *);
+void baphysics_set_horizontal_velocity(PlayerState *, f32 yaw, f32 vel);
 f32  baphysics_get_vertical_velocity(PlayerState *);
-void baphysics_reset_gravity(PlayerState* self);
+void baphysics_reset_gravity(PlayerState* );
 void baphysics_reset_terminal_velocity(PlayerState *);
 void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
 
-void func_8009B94(PlayerState *self);
-f32 func_8009BADC(PlayerState *self);
-f32 func_8009BAE8(PlayerState *self);
-void func_8009BB24(PlayerState *self, f32[3]);
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
+void func_8009B94(PlayerState *);
+f32 func_8009BADC(PlayerState *);
+f32 func_8009BAE8(PlayerState *);
+void func_8009BB24(PlayerState *, f32[3]);
+void func_8009FFD8(PlayerState *, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
+void func_8009BA9C(PlayerState *, f32 *);
 
 #endif

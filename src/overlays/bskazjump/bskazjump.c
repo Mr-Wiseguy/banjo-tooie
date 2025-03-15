@@ -162,7 +162,7 @@ void bskazjump_entrypoint_4(PlayerState *self) {
 
 void bskazjump_entrypoint_5(PlayerState *self) {
     _bskaz_entrypoint_1(self);
-    self->unk168.word = func_8009E710(self) == 0xC6;
+    self->unk168.word = bs_getPreviousState(self) == 0xC6;
     if ((baflag_isTrue(self, BA_FLAG_7) != 0) && (baphysics_get_vertical_velocity(self) > 700.0f)) {
         baphysics_set_vertical_velocity(self, 700.0f);
     }

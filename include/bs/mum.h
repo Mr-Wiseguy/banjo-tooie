@@ -2,6 +2,7 @@
 #define __BS_MUM_H__
 
 #include "an/anctrl.h"
+#include "ba/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/bounce.h"
 #include "ba/flag.h"
@@ -19,6 +20,10 @@
 #include "core2/1E6B900.h"
 #include "core2/1E6E870.h"
 #include "core2/1E75710.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1EB5980.h"
 #include "core2/1ECA640.h"
 #include "common.h"
 #include "player.h"
@@ -26,33 +31,16 @@
 
 extern s32 func_8008D544(PlayerState *self);
 extern s32 func_8008E260(PlayerState *self);
-extern void func_80093360(PlayerState *self, f32);
 extern void func_800947EC(PlayerState *self, s32, s32);
-void func_80099B94(PlayerState *self);
 extern void func_8009B7C0(PlayerState *self);
-extern void func_8009BB24(PlayerState *self, f32 *);
-extern f32 func_8009BFD8(PlayerState *self);
-void func_8009DE38(PlayerState *self, s32, f32);
-void func_8009DF18(PlayerState *self, s32, f32, s32);
-void func_8009DF94(PlayerState *self, s32, f32, s32);
-extern void func_8009E0DC(PlayerState *self);
 extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
 void func_8009E55C(PlayerState *self, s32, f32);
 extern void func_8009E5A4(PlayerState *self, s32, s32);
-extern s32 func_8009E6EC(PlayerState *self);
-extern s32 func_8009E6F8(PlayerState *self);
-extern s32 func_8009E704();
-extern s32 func_8009E74C(PlayerState *self, s32);
-extern s32 func_8009E77C(PlayerState *self, s32);
-extern void func_8009E830(PlayerState *self, s32);
-extern void func_8009FE58(PlayerState *self);
+extern s32 bs_getCurrentState(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-extern void func_800A042C(PlayerState *self);
-extern void func_800A046C(PlayerState *self);
 f32 func_800DC0C0(void);
-f32 func_800DC178(f32, f32);
 f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 s32 func_8008DE24(PlayerState *self);
 void func_80093230(PlayerState *self, f32);
