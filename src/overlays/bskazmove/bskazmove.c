@@ -2,10 +2,6 @@
 
 #include "bs/kazmove.h"
 
-extern s32 D_80800C70_bskazmove[];
-extern s32 D_80800C80_bskazmove[];
-
-
 void func_80800000_bskazmove(PlayerState *self, f32 *arg1, f32 *arg2) {
     switch ( _bashoes_entrypoint_1(self)) {
         case 3:

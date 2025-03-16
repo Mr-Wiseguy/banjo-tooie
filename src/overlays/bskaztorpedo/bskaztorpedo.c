@@ -206,9 +206,9 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
     }
 }
 
-void func_8080088C_bskaztorpedo(PlayerState *self) {
-    func_800995B8();
-    if (bs_getCurrentState(self) != 0x15A) {
+void func_8080088C_bskaztorpedo(PlayerState *self, s32 arg1) {
+    func_800995B8(self, arg1);
+    if (bs_getCurrentState(self) != BS_STATE_15A) {
         bs_setState(self, BS_STATE_15A);
         func_8009E830(self, 2);
     }
@@ -480,7 +480,7 @@ s32 bskaztorpedo_entrypoint_6(s32 idx) {
 }
 
 void func_80801484_bskaztorpedo(PlayerState *self) {
-    func_8009BD88();
+    func_8009BD88(self);
     func_8008E95C(self);
     func_800951B4(self);
     yaw_setIdeal(self, func_80092BE8(self));

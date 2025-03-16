@@ -19,18 +19,17 @@
 #include "core2/1E79FD0.h"
 #include "core2/1E7D460.h"
 #include "core2/1EB5980.h"
+#include "core2/1ECA640.h"
 #include "common.h"
 #include "funcs.h"
 
 void func_800EFD24(f32 [3]);
-f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 extern void func_80092880(PlayerState *self, s32);
 extern void func_8009E474(PlayerState *self);
 extern void func_800A2018(PlayerState *self, s32);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
 void func_8009E55C(PlayerState *, s32, f32);
-extern f32 func_8009BB5C(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 
 void _bapackctrl_entrypoint_5(PlayerState *self, s32);

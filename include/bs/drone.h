@@ -1,6 +1,7 @@
 #ifndef __BS_DRONE_H__
 #define __BS_DRONE_H__
 
+#include "common.h"
 #include "ba/playerstate.h"
 
 extern void _bsdrone_entrypoint_0(PlayerState *self);

@@ -18,9 +18,10 @@ typedef struct ba_unknown_C0_s {
     u8 pad24[0xCC];
 } BaUnknownC0;
 
-f32 func_80099A34(PlayerState *self);
+void func_800995B8(PlayerState *, s32);
+f32 func_80099A34(PlayerState *);
 void func_80099B94(PlayerState *);
-f32 func_80099A40(PlayerState *self);
+f32 func_80099A40(PlayerState *);
 void func_8009AB78(PlayerState *);
 
 #endif // __BA_1E72EA0_H__

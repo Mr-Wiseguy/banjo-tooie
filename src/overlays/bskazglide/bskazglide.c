@@ -2,12 +2,6 @@
 
 #include "bs/kazglide.h"
 
-extern s32 D_80800AB0_bskazglide[];
-extern s32 D_80800AC0_bskazglide[];
-extern s32 D_80800AD0_bskazglide[];
-extern s32 D_80800AE0_bskazglide[];
-extern s32 D_80800AF0_bskazglide[];
-
 void func_80800000_bskazglide(PlayerState *self) {
     if (func_8009E69C(self, 0x200) == 0) {
         baphysics_reset_gravity(self);
@@ -135,7 +129,7 @@ s32 bskazglide_entrypoint_0(s32 idx) {
 }
 
 void func_8080050C_bskazglide(PlayerState *self) {
-    func_8009BC34();
+    func_8009BC34(self);
     func_8008E95C(self);
     func_8009BD88(self);
     func_80800000_bskazglide(self);
