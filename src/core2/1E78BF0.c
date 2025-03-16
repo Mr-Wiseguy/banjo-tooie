@@ -50,10 +50,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A0180.s")
 
-BanjoState func_800A01F8(PlayerState *self, BanjoState arg1);
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A01F8.s")
 
-BanjoState func_800A02DC(PlayerState *self, BanjoState arg1);
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A02DC.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A042C.s")

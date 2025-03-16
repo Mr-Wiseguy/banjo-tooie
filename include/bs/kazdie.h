@@ -1,6 +1,7 @@
 #ifndef __BS_KAZDIE_H__
 #define __BS_KAZDIE_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "an/anctrl.h"

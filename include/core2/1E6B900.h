@@ -6,6 +6,8 @@
 #include "ba/playerstate.h"
 
 void func_80092864(PlayerState *, f32);
+void func_80092C00(PlayerState *, f32[3]);
+void func_80092C24(PlayerState *, f32[3]);
 void func_80093360(PlayerState *, f32);
 s32 func_800944E0(PlayerState *, s32);
 s32 func_80094510(PlayerState *);

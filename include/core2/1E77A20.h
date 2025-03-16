@@ -13,6 +13,8 @@ s16 func_8009E6EC(PlayerState *);
 s32 bs_getCurrentState(PlayerState *);
 s32 bs_getNextState(PlayerState *);
 s32 bs_getPreviousState(PlayerState *);
+s32 func_8009E69C(PlayerState *, s32);
+s32 func_8009E6C4(PlayerState *, s32);
 s32 func_8009E74C(PlayerState *, s32);
 s32 func_8009E77C(PlayerState *, s32);
 void func_8009E830(PlayerState *, s32);

@@ -49,7 +49,7 @@ void func_80800198_bsmumswim(PlayerState *self) {
 }
 
 void bsmumswim_entrypoint_0(PlayerState *self) {
-    func_8009BC34();
+    func_8009BC34(self);
     func_800961AC(self, 1);
     _bsmum_entrypoint_1(self);
 }

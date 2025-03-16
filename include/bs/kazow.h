@@ -12,4 +12,7 @@
 #include "funcs.h"
 #include "player.h"
 
+extern s32 _bskazow_entrypoint_0(s32 idx);
+extern s32 _bskazow_entrypoint_1(s32 idx);
+
 #endif // __BS_KAZOW_H__

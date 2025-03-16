@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/physics.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD70.s")
 

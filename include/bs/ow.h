@@ -7,12 +7,11 @@
 #include "ba/playerstate.h"
 #include "bs/state.h"
 #include "bs/walk.h"
+#include "core2/1E66990.h"
 #include "core2/1E6E870.h"
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
-
-extern s32 func_8008E260(PlayerState *self);
 
 extern s32 D_80800150_bsow[];
 

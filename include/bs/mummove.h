@@ -6,6 +6,7 @@
 #include "ba/drone.h"
 #include "ba/dust.h"
 #include "ba/key.h"
+#include "ba/physics.h"
 #include "ba/playerstate.h"
 #include "ba/roll.h"
 #include "ba/stick.h"
@@ -13,6 +14,7 @@
 #include "bs/mum.h"
 #include "bs/state.h"
 #include "core2/1E75710.h"
+#include "core2/1E76880.h"
 #include "core2/1E77A20.h"
 #include "core2/1E7BFA0.h"
 #include "common.h"
@@ -22,8 +24,6 @@
 void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
 void func_8008CA30(PlayerState *self, f32 scale);
 s32 func_8008DD04(PlayerState*);
-extern f32 func_8009BB5C(PlayerState *self);
-extern s32 func_8009BCD4(PlayerState *self, f32);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 s32 func_8008E148(PlayerState *self);

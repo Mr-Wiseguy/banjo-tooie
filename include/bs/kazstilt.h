@@ -16,6 +16,7 @@
 #include "ba/physics.h"
 #include "bs/rest.h"
 #include "ba/input.h"
+#include "core2/1E66990.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75710.h"
 #include "core2/1E76880.h"

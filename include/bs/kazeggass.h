@@ -1,6 +1,7 @@
 #ifndef __BS_KAZEGGASS_H__
 #define __BS_KAZEGGASS_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "an/anctrl.h"
@@ -17,7 +18,6 @@
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
 #include "core2/1ECA640.h"
-#include "common.h"
 #include "funcs.h"
 
 extern void _bskazeggass_entrypoint_0(PlayerState *self);

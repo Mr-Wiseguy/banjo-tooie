@@ -1,6 +1,9 @@
 #ifndef __BS_KAZEGGHEAD_H__
 #define __BS_KAZEGGHEAD_H__
 
+#include "common.h"
+#include <ultra64.h>
+
 #include "an/anctrl.h"
 #include "ba/playerstate.h"
 #include "ba/anim.h"
