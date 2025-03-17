@@ -185,8 +185,8 @@ def main():
     # Set up argument parsing to allow the user to specify required inputs
     parser = argparse.ArgumentParser(description="Process .c files and generate .decomp.c files with m2c output.")
     parser.add_argument("c_file_path", help="Path to the .c file to process.")
-    parser.add_argument("--m2c-path", required=True, help="Path to the m2c.py script.")
-    parser.add_argument("--m2c-python-bin", default="python3", help="Python interpreter to use for m2c (e.g., python3, python3.9).")
+    parser.add_argument("--m2c-path", default="../m2c/m2c.py", help="Path to the m2c.py script.")
+    parser.add_argument("--m2c-python-bin", default=sys.executable, help="Python interpreter to use for m2c (e.g., python3, python3.9).")
     args = parser.parse_args()
 
     # Step 1: Extract paths to .s files from the .c file using the GLOBAL_ASM macros
