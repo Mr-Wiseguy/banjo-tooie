@@ -30,11 +30,6 @@
 #include <ultra64.h>
 
 extern void func_800947EC(PlayerState *self, s32, s32);
-extern void func_8009E474(PlayerState *self);
-extern void func_8009E4AC(PlayerState *self);
-extern void func_8009E53C(PlayerState *self, s32, f32);
-void func_8009E55C(PlayerState *self, s32, f32);
-extern void func_8009E5A4(PlayerState *self, s32, s32);
 extern s32 bs_getCurrentState(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 s32 func_8008DE24(PlayerState *self);

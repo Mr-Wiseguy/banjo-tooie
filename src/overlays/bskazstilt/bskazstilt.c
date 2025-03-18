@@ -11,13 +11,11 @@ extern s32 D_80801250_bskazstilt[];
 extern s32 D_80801260_bskazstilt[];
 extern s32 D_80801270_bskazstilt[];
 
-s32 func_80800000_bskazstilt(PlayerState *self)
-{
+s32 func_80800000_bskazstilt(PlayerState *self) {
     return player_inWater(self);
 }
 
-void func_80800020_bskazstilt(PlayerState *self, s32 arg1)
-{
+void func_80800020_bskazstilt(PlayerState *self, s32 arg1) {
     if (arg1 != 0)
     {
         func_8009DE38(self, 0x4433, 0.88);
@@ -26,8 +24,7 @@ void func_80800020_bskazstilt(PlayerState *self, s32 arg1)
     func_8009DE38(self, 0x4433, 0.96);
 }
 
-void func_80800064_bskazstilt(PlayerState *self)
-{
+void func_80800064_bskazstilt(PlayerState *self) {
     f32 sp1C;
 
     sp1C = bastick_getZonePosition(self);
@@ -39,8 +36,7 @@ void func_80800064_bskazstilt(PlayerState *self)
     baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 500.0f));
 }
 
-void func_808000C8_bskazstilt(PlayerState *self)
-{
+void func_808000C8_bskazstilt(PlayerState *self) {
     s32 pad0;
     f32 sp20;
 
@@ -52,8 +48,7 @@ void func_808000C8_bskazstilt(PlayerState *self)
     }
 }
 
-void func_8080013C_bskazstilt(PlayerState *self)
-{
+void func_8080013C_bskazstilt(PlayerState *self) {
     if (func_8009E77C(self, 8) == 0)
     {
         _bskaz_entrypoint_1(self);
@@ -74,8 +69,7 @@ void func_8080013C_bskazstilt(PlayerState *self)
     }
 }
 
-void func_80800234_bskazstilt(PlayerState *self)
-{
+void func_80800234_bskazstilt(PlayerState *self) {
     if (func_8009E74C(self, 8) == 0)
     {
         _baalarm_free(self);
@@ -94,8 +88,7 @@ void func_80800234_bskazstilt(PlayerState *self)
     }
 }
 
-void bskazstilt_entrypoint_0(PlayerState *self)
-{
+void bskazstilt_entrypoint_0(PlayerState *self) {
     func_8080013C_bskazstilt(self);
     baanim_playForDuration_once(self, ASSET_27F_ANIM_BSKAZSTILT_UNKNOWN, 1.0f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
@@ -109,8 +102,7 @@ void bskazstilt_entrypoint_0(PlayerState *self)
     func_800C3BDC(self->unk160.bytes[0]);
 }
 
-void bskazstilt_entrypoint_1(PlayerState *self)
-{
+void bskazstilt_entrypoint_1(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
@@ -122,27 +114,23 @@ void bskazstilt_entrypoint_1(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_2(PlayerState *self)
-{
+void bskazstilt_entrypoint_2(PlayerState *self) {
     func_80800234_bskazstilt(self);
     func_800C2FDC(self->unk160.bytes[0]);
 }
 
-s32 bskazstilt_entrypoint_3(s32 idx)
-{
+s32 bskazstilt_entrypoint_3(s32 idx) {
     return D_80801200_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_4(PlayerState *self)
-{
+void bskazstilt_entrypoint_4(PlayerState *self) {
     baanim_playForDuration_loopSmooth(self, ASSET_149_ABIM_BSKAZSTILT_UNKNOWN, 1.0f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_8080013C_bskazstilt(self);
 }
 
-void bskazstilt_entrypoint_5(PlayerState *self)
-{
+void bskazstilt_entrypoint_5(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
@@ -179,25 +167,21 @@ void bskazstilt_entrypoint_5(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_6(PlayerState *self)
-{
+void bskazstilt_entrypoint_6(PlayerState *self) {
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_7(s32 idx)
-{
+s32 bskazstilt_entrypoint_7(s32 idx) {
     return D_80801210_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_8(PlayerState *self)
-{
+void bskazstilt_entrypoint_8(PlayerState *self) {
     baanim_playForDuration_loopSmooth(self, 0x280, 1.0f);
     func_8009FFD8(self, BAANIM_UPDATE_2_SCALE_HORZ, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
     func_8008C9F0(self, 80.0f, 500.0f, 1.0f, 0.8f);
 }
 
-void bskazstilt_entrypoint_9(PlayerState *self)
-{
+void bskazstilt_entrypoint_9(PlayerState *self) {
     BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
@@ -243,18 +227,15 @@ void bskazstilt_entrypoint_9(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_10(PlayerState *self)
-{
+void bskazstilt_entrypoint_10(PlayerState *self) {
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_11(s32 idx)
-{
+s32 bskazstilt_entrypoint_11(s32 idx) {
     return D_80801220_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_12(PlayerState *self)
-{
+void bskazstilt_entrypoint_12(PlayerState *self) {
     AnimCtrl *animCtrl;
 
     animCtrl = baanim_getAnimCtrlPtr(self);
@@ -273,8 +254,7 @@ void bskazstilt_entrypoint_12(PlayerState *self)
     func_800C3730(self->unk160.bytes[0], 1.4, 0.4, -1.2);
 }
 
-void bskazstilt_entrypoint_13(PlayerState *self)
-{
+void bskazstilt_entrypoint_13(PlayerState *self) {
     BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
@@ -296,19 +276,16 @@ void bskazstilt_entrypoint_13(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_14(PlayerState *self)
-{
+void bskazstilt_entrypoint_14(PlayerState *self) {
     func_800C2FDC(self->unk160.bytes[0]);
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_15(s32 idx)
-{
+s32 bskazstilt_entrypoint_15(s32 idx) {
     return D_80801230_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_16(PlayerState *self)
-{
+void bskazstilt_entrypoint_16(PlayerState *self) {
     f32 sp2C[3];
     AnimCtrl *animCtrl1;
     AnimCtrl *animCtrl2;
@@ -341,8 +318,7 @@ void bskazstilt_entrypoint_16(PlayerState *self)
     self->unk15C.word = 0;
 }
 
-void bskazstilt_entrypoint_17(PlayerState *self)
-{
+void bskazstilt_entrypoint_17(PlayerState *self) {
     BanjoStateId next_state;
     AnimCtrl *sp48;
     s32 pad0;
@@ -418,19 +394,16 @@ void bskazstilt_entrypoint_17(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_18(PlayerState *self)
-{
+void bskazstilt_entrypoint_18(PlayerState *self) {
     baphysics_reset_gravity(self);
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_19(s32 idx)
-{
+s32 bskazstilt_entrypoint_19(s32 idx) {
     return D_80801240_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_20(PlayerState *self)
-{
+void bskazstilt_entrypoint_20(PlayerState *self) {
     f32 sp2C[3];
     AnimCtrl *temp_s1;
 
@@ -454,8 +427,7 @@ void bskazstilt_entrypoint_20(PlayerState *self)
     _batimer_set(self, 0, 1.0f);
 }
 
-void bskazstilt_entrypoint_21(PlayerState *self)
-{
+void bskazstilt_entrypoint_21(PlayerState *self) {
     BanjoStateId next_state;
     f32 sp38[3];
     f32 sp34;
@@ -466,7 +438,7 @@ void bskazstilt_entrypoint_21(PlayerState *self)
     _batimer_decrement(self, 0);
     if (func_8008DF18(self) != 0)
     {
-        func_800963C0(self, &sp38);
+        func_800963C0(self, sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D2F0(self, 1, 0.5f);
         baphysics_set_target_horizontal_velocity(self, func_800F10B4(func_8009BFD8(self), 20.0f, 60, 550, 700.0f));
@@ -488,30 +460,25 @@ void bskazstilt_entrypoint_21(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-void bskazstilt_entrypoint_22(PlayerState *self)
-{
+void bskazstilt_entrypoint_22(PlayerState *self) {
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_23(s32 idx)
-{
+s32 bskazstilt_entrypoint_23(s32 idx) {
     return D_80801250_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_24(PlayerState *self)
-{
+void bskazstilt_entrypoint_24(PlayerState *self) {
     _bsrest_entrypoint_14(self);
     func_80800234_bskazstilt(self);
 }
 
-void bskazstilt_entrypoint_25(PlayerState *self)
-{
+void bskazstilt_entrypoint_25(PlayerState *self) {
     func_8080013C_bskazstilt(self);
     _bsrest_entrypoint_16(self);
 }
 
-void bskazstilt_entrypoint_26(PlayerState *self)
-{
+void bskazstilt_entrypoint_26(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
@@ -524,19 +491,16 @@ void bskazstilt_entrypoint_26(PlayerState *self)
     bs_setState(self, next_state);
 }
 
-s32 bskazstilt_entrypoint_27(s32 idx)
-{
+s32 bskazstilt_entrypoint_27(s32 idx) {
     return D_80801260_bskazstilt[idx];
 }
 
-void bskazstilt_entrypoint_28(PlayerState *self)
-{
+void bskazstilt_entrypoint_28(PlayerState *self) {
     func_8080013C_bskazstilt(self);
     _bsdrone_entrypoint_0(self);
 }
 
-void bskazstilt_entrypoint_29(PlayerState *self)
-{
+void bskazstilt_entrypoint_29(PlayerState *self) {
     func_808000C8_bskazstilt(self);
     _bsdrone_entrypoint_1(self);
     if (bastatetimer_isDone(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0)
@@ -545,13 +509,11 @@ void bskazstilt_entrypoint_29(PlayerState *self)
     }
 }
 
-void bskazstilt_entrypoint_30(PlayerState *self)
-{
+void bskazstilt_entrypoint_30(PlayerState *self) {
     _bsdrone_entrypoint_2(self);
     func_80800234_bskazstilt(self);
 }
 
-s32 bskazstilt_entrypoint_31(s32 idx)
-{
+s32 bskazstilt_entrypoint_31(s32 idx) {
     return D_80801270_bskazstilt[idx];
 }

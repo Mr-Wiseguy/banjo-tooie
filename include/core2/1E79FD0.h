@@ -7,7 +7,9 @@
 
 void func_800A0D14(PlayerState *, s32, f32);
 void func_800A0CDC(PlayerState *, s32);
+void func_800A0CE8(PlayerState *, s32);
 void func_800A0CF4(PlayerState *, s32);
+void func_800A0DD0(PlayerState *, s32);
 void func_800A1040(PlayerState *);
 void func_800A106C(PlayerState *, f32, f32);
 

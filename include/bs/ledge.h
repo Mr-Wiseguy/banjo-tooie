@@ -26,10 +26,6 @@
 #include "funcs.h"
 
 void func_800EFD24(f32 [3]);
-extern void func_8009E474(PlayerState *self);
-extern void func_8009E4AC(PlayerState *self);
-extern void func_8009E53C(PlayerState *self, s32, f32);
-void func_8009E55C(PlayerState *, s32, f32);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 
 void _bapackctrl_entrypoint_5(PlayerState *self, s32);
