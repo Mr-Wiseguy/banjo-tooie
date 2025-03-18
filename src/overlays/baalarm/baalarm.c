@@ -19,7 +19,7 @@ void baalarm_free(PlayerState *self) {
 }
 
 void baalarm_new(PlayerState *self) {
-    self->alarm->id = func_800C2E04(self);
+    self->alarm->id = func_800C2E04();
     func_800C3418(self->alarm->id, 0);
     func_800C330C(self->alarm->id, 2);
     func_800C431C(self->alarm->id, 0);

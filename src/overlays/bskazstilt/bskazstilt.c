@@ -96,16 +96,14 @@ void func_80800234_bskazstilt(PlayerState *self)
 
 void bskazstilt_entrypoint_0(PlayerState *self)
 {
-    s32 temp_v0;
-
     func_8080013C_bskazstilt(self);
     baanim_playForDuration_once(self, ASSET_27F_ANIM_BSKAZSTILT_UNKNOWN, 1.0f);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     bastatetimer_set(self, BA_STATE_TIMER_ID_2_LONGLEG, func_800A3394(self));
     func_800C77DC(2);
-    self->unk160.bytes[0] = temp_v0 = func_800C2E04();
-    func_800C301C(temp_v0 & 0xFF, 0x41D);
+    self->unk160.bytes[0] = func_800C2E04();
+    func_800C301C(self->unk160.bytes[0], 0x41D);
     func_800C330C(self->unk160.bytes[0], 3);
     func_800C3730(self->unk160.bytes[0], 0.8, 1.9, 1.2);
     func_800C3BDC(self->unk160.bytes[0]);
@@ -257,21 +255,20 @@ s32 bskazstilt_entrypoint_11(s32 idx)
 
 void bskazstilt_entrypoint_12(PlayerState *self)
 {
-    AnimCtrl *temp_v0;
-    s32 temp_v0_2;
+    AnimCtrl *animCtrl;
 
-    temp_v0 = baanim_getAnimCtrlPtr(self);
-    anctrl_reset(temp_v0);
-    anctrl_setSmoothTransition(temp_v0, 0);
-    func_8008B188(temp_v0, 0);
-    anctrl_setIndex(temp_v0, 0x27F);
-    anctrl_setDuration(temp_v0, 0.4f);
-    anctrl_setPlaybackType(temp_v0, 1);
-    anctrl_start(temp_v0);
+    animCtrl = baanim_getAnimCtrlPtr(self);
+    anctrl_reset(animCtrl);
+    anctrl_setSmoothTransition(animCtrl, 0);
+    func_8008B188(animCtrl, 0);
+    anctrl_setIndex(animCtrl, 0x27F);
+    anctrl_setDuration(animCtrl, 0.4f);
+    anctrl_setPlaybackType(animCtrl, 1);
+    anctrl_start(animCtrl);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 2, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
-    self->unk160.bytes[0] =  temp_v0_2 = func_800C2E04();
-    func_800C301C(temp_v0_2 & 0xFF, 0x41D);
+    self->unk160.bytes[0] = func_800C2E04();
+    func_800C301C(self->unk160.bytes[0], 0x41D);
     func_800C330C(self->unk160.bytes[0], 3);
     func_800C3730(self->unk160.bytes[0], 1.4, 0.4, -1.2);
 }

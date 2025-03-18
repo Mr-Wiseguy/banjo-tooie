@@ -229,7 +229,7 @@ void func_80800974_bskazfly(PlayerState *self) {
     f32 sp1C[3];
 
     func_8009C128(self, sp1C);
-    func_800EF04C(sp1C, &self->kazfly->unk10);
+    func_800EF04C(sp1C, self->kazfly->unk10);
     func_800A34AC(self, sp1C);
     func_8009DF58(self, 0x40D, 1);
 }
@@ -251,14 +251,14 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
         case 1:
             baanim_playForDuration_onceSmooth(self, ASSET_29D_ANIM_BSKAZFLY_UNKNOWN, 1);
             func_8009FFD8(self, 1, 1, 3, 7);
-            _bafly_entrypoint_1(self, &self->kazfly->unk10, &sp34, 4200);
+            _bafly_entrypoint_1(self, self->kazfly->unk10, &sp34, 4200);
             yaw_setIdeal(self, sp38 + 180.0f);
             func_8009BF5C(self, sp34);
             baroll_setIdeal(self, 0);
-            func_8009BA9C(self, &self->kazfly->unk10);
+            func_8009BA9C(self, self->kazfly->unk10);
             func_800A0CF4(self, 1);
             func_800A4DA4(self, 4);
-            _ncbadive_entrypoint_4(func_800A4CA8(self), &self->kazfly->unk10);
+            _ncbadive_entrypoint_4(func_800A4CA8(self), self->kazfly->unk10);
             _ncbafly_entrypoint_5(func_800A4CA8(self), 1);
             func_8009DF94(self, 0x442E, 1, 28000);
             baflag_clear(self, BA_FLAG_1C);
@@ -268,7 +268,7 @@ void func_808009C8_bskazfly(PlayerState *self, s32 arg1) {
         case 2:
             baphysics_set_type(self, 8);
             func_800A4DA4(self, 4);
-            _ncbadive_entrypoint_4(func_800A4CA8(self), &self->kazfly->unk10);
+            _ncbadive_entrypoint_4(func_800A4CA8(self), self->kazfly->unk10);
             anctrl_setDuration(animCtrl, 0.05);
             func_8009DF94(self, 0x4437, 1.3, 0x7FFF);
             baflag_set(self, BA_FLAG_1C);
@@ -285,17 +285,17 @@ void func_80800BDC_bskazfly(PlayerState *self) {
     f32 unk2;
     s32 unk3;
 
-    func_800EE7F8(&unk1, &self->kazfly->unk10);
+    func_800EE7F8(unk1, self->kazfly->unk10);
     func_800CA9D8(func_800A4C48(self), &unk3);
-    func_800EFA4C(&unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
-    func_800EF8BC(&unk0, &unk0, unk3);
-    func_800EF934(&unk0, &unk0, unk2);
-    func_800EF04C(&unk1, &unk0);
-    func_800EFA4C(&unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
-    func_800EF8BC(&unk0, &unk0, unk3);
-    func_800EF934(&unk0, &unk0, unk2);
-    func_800EF04C(&unk1, &unk0);
-    func_8009BA9C(self, &unk1);
+    func_800EFA4C(unk0, bastick_getX(self) * 1000.0f, 0.0f, 0.0f);
+    func_800EF8BC(unk0, unk0, unk3);
+    func_800EF934(unk0, unk0, unk2);
+    func_800EF04C(unk1, unk0);
+    func_800EFA4C(unk0, 0.0f, -bastick_getY(self) * 1000.0f, 0.0f);
+    func_800EF8BC(unk0, unk0, unk3);
+    func_800EF934(unk0, unk0, unk2);
+    func_800EF04C(unk1, unk0);
+    func_8009BA9C(self, unk1);
 }
 
 void func_80800CF4_bskazfly(PlayerState *self) {
@@ -322,16 +322,16 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     } 
 
     if (is_player_stable != 0) {
-        func_800963C0(self, &sp38);
+        func_800963C0(self, sp38);
         sp28 = func_80096628(self);
     } else {
-        func_80096440(self, &sp38);
+        func_80096440(self, sp38);
         sp28 = func_80096434(self);
     }
 
-    func_800EE7F8(&sp2C, &self->kazfly->unk10);
-    func_800EF2A0(&sp2C);
-    sp44 = mlAbsF(func_800EEAA4(&sp38, &sp2C));
+    func_800EE7F8(sp2C, self->kazfly->unk10);
+    func_800EF2A0(sp2C);
+    sp44 = mlAbsF(func_800EEAA4(sp38, sp2C));
     if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (sp28 & 0x80)) {
         func_80800974_bskazfly(self);
         nextState = BS_STATE_173;
@@ -378,10 +378,10 @@ void func_80800EB4_bskazfly(PlayerState *self) {
             anctrl_setPlaybackType(animCtrl, 2);
             anctrl_start(animCtrl);
         }
-        func_8009C128(self, &unk0);
-        func_800EF3DC(&unk0, &self->kazfly->unk4);
-        _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(&unk0), 0, 16000000, 0.2, 0.7f));
-        if (func_800EEFD4(&unk0) > 1.6e7f) {
+        func_8009C128(self, unk0);
+        func_800EF3DC(unk0, self->kazfly->unk4);
+        _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
+        if (func_800EEFD4(unk0) > 1.6e7f) {
             if (bakey_held(self, 9) != 0) {
                 func_808009C8_bskazfly(self, 3);
             } else {
@@ -451,7 +451,7 @@ void func_80801248_bskazfly(PlayerState *self) {
     f32 sp28[3];
 
     next_state = BS_STATE_0_INVALID;
-    func_8009BB24(self, &sp28);
+    func_8009BB24(self, sp28);
     if (func_8008DF8C(self, 0x5A) != 0) {
         next_state = BS_STATE_DF;
     }

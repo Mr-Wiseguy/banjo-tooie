@@ -14,6 +14,7 @@
 #include "bs/state.h"
 #include "core2/1E29B60.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E9A960.h"
 #include "core2/1EB5980.h"
 #include "core2/1ECA640.h"
 #include "common.h"
@@ -21,8 +22,6 @@
 
 void func_8008B10C(AnimCtrl *, f32);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-void func_800C2FDC(u8 id);
-void func_800C31DC(s32 id, f32, s32);
 void func_8008B2E8(AnimCtrl *, s32);
 void func_80092C48(PlayerState *self, f32[3]);
 s32 func_8009D454(PlayerState *self, s32, s32 *);

@@ -9,14 +9,13 @@ extern s32 D_808007B4_bskazshock[];
 void bskazshock_entrypoint_0(PlayerState *self) {
     f32 sp24[3];
 
-    func_80092C24(self, &sp24);
-    func_800BBCB8(&sp24, 0, 1, 1, &D_80800770_bskazshock);
+    func_80092C24(self, sp24);
+    func_800BBCB8(sp24, 0, 1, 1, D_80800770_bskazshock);
 }
 
 void bskazshock_entrypoint_1(PlayerState *self) {
     f32 sp2C[3];
     AnimCtrl *animCtrl;
-    s32 temp0;
 
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskaz_entrypoint_1(self);
@@ -35,8 +34,8 @@ void bskazshock_entrypoint_1(PlayerState *self) {
     _bskazmove_entrypoint_0(self);
     sp2C[0] = yaw_getIdeal(self);
     baphysics_set_horizontal_velocity(self, sp2C[0], baphysics_get_target_horizontal_velocity(self));
-    self->unk164.bytes[0] = temp0 = func_800C2E04();
-    func_800C3418(temp0 & 0xFF, 0);
+    self->unk164.bytes[0] = func_800C2E04();
+    func_800C3418(self->unk164.bytes[0], 0);
     func_800C2E40(self->unk164.bytes[0]);
     func_800C330C(self->unk164.bytes[0], 3);
     func_800C301C(self->unk164.bytes[0], 0x41D);
@@ -60,7 +59,7 @@ void bskazshock_entrypoint_2(PlayerState *self) {
         bskazshock_entrypoint_0(self);
     }
     _bskazmove_entrypoint_0(self);
-    func_8009BB24(self, &sp24);
+    func_8009BB24(self, sp24);
     if ((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) {
         baphysics_reset_gravity(self);
     }
@@ -155,7 +154,7 @@ void bskazshock_entrypoint_6(PlayerState *self) {
     next_state = BS_STATE_0_INVALID;
     animCtrl = baanim_getAnimCtrlPtr(self);
     _bskazmove_entrypoint_0(self);
-    func_8009BB24(self, &sp28);
+    func_8009BB24(self, sp28);
     if (anctrl_isAt(animCtrl, 0.61) != 0) {
         func_8009DF58(self, 0x4598, 1);
     }

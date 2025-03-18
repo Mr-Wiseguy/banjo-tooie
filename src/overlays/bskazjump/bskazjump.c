@@ -186,7 +186,7 @@ void bskazjump_entrypoint_6(PlayerState *self) {
     } else {
         _bskazmove_entrypoint_0(self);
     }
-    func_8009BB24(self, &sp28);
+    func_8009BB24(self, sp28);
     switch (self->unk15C.word) {
     case 2:
         break;

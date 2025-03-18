@@ -24,6 +24,7 @@
 #include "core2/1E77A20.h"
 #include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
+#include "core2/1E9A960.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "funcs.h"
@@ -41,11 +42,5 @@ extern void func_8008B188(AnimCtrl *, s32);
 extern f32 func_80096364(PlayerState *self);
 extern f32 func_8009C150(PlayerState *self);
 extern f32 func_800A3394(PlayerState *self);
-extern s32 func_800C2E04();
-extern void func_800C2FDC(u8);
-extern void func_800C301C(s32, s32);
-extern void func_800C330C(s32, s32);
-extern void func_800C3730(s32, f32, f32, f32);
-extern void func_800C3BDC(s32);
 
 #endif // __BS_KAZSTILT_H__

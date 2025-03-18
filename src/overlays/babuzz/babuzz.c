@@ -49,7 +49,7 @@ void babuzz_entrypoint_1(PlayerState *self) {
 }
 
 void babuzz_entrypoint_2(PlayerState *self) {
-    self->buzz->unk0 = func_800C2E04(self);
+    self->buzz->unk0 = func_800C2E04();
     self->buzz->unk4 = self->buzz->unkC = 1.0f;
     self->buzz->unk8 = self->buzz->unk10 = 8000;
     func_800C301C(self->buzz->unk0, 0x49B);
