@@ -25,6 +25,7 @@
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E6B900.h"
+#include "core2/1E6A190.h"
 #include "core2/1E6E870.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75620.h"
@@ -47,7 +48,6 @@
 extern s32 _plsu_entrypoint_1(s32);
 extern f32 func_80013728(f32);
 extern void func_800909CC(PlayerState *self);
-extern void func_80090A2C(PlayerState *self);
 extern void func_800910BC(PlayerState *self, s32);
 extern void func_80091290(PlayerState *self, f32, s32,s32);
 extern s32 func_80092AD8(PlayerState *self);

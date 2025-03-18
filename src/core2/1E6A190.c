@@ -1,7 +1,6 @@
 #include "common.h"
 
-#include "ba/1E6A190.h"
-#include "core2/1EB2840.h"
+#include "core2/1E6A190.h"
 
 typedef struct {
     u8 pad0[0xC];

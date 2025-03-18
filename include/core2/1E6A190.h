@@ -1,7 +1,8 @@
-#ifndef __BA_1E6A190_H__
-#define __BA_1E6A190_H__
+#ifndef __CORE2_1E6A190_H__
+#define __CORE2_1E6A190_H__
 
 #include "playerstate.h"
+#include "core2/1EB2840.h"
 
 typedef struct ba_unknown_20_s {
     u8 unk0;
@@ -11,4 +12,4 @@ typedef struct ba_unknown_20_s {
 } BaUnknown20;
 
 
-#endif // __BA_1E6A190_H__
+#endif // __CORE2_1E6A190_H__

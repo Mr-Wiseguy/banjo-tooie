@@ -17,4 +17,6 @@
 #include "funcs.h"
 #include "player.h"
 
+extern s32 _bskazspring_entrypoint_0(s32 idx);
+
 #endif // __BS_KAZSPRING_H__
