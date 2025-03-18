@@ -10,7 +10,6 @@
 #include "bs/state.h"
 
 BanjoStateId _bscrouch_entrypoint_4(PlayerState*, BanjoStateId);
-s32 func_8008DD04(PlayerState*);
 void func_8008B064(AnimCtrl*);
 void func_8008B24C(AnimCtrl*, f32);
 f32 func_8008B2B4(AnimCtrl*);

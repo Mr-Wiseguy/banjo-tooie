@@ -5,6 +5,7 @@
 #include "ba/eggs.h"
 #include "ba/1E72EA0.h"
 #include "bs/state.h"
+#include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"

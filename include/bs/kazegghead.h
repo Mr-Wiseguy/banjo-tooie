@@ -12,6 +12,7 @@
 #include "ba/physics.h"
 #include "ba/yaw.h"
 #include "bs/kazcrouch.h"
+#include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"

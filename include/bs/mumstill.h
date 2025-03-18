@@ -10,6 +10,7 @@
 #include "ba/stick.h"
 #include "bs/mum.h"
 #include "bs/state.h"
+#include "core2/1E66990.h"
 #include "core2/1E6E870.h"
 #include "core2/1E76CC0.h"
 #include "common.h"
@@ -17,7 +18,6 @@
 #include <ultra64.h>
 
 
-s32 func_8008DD04(PlayerState*);
 s32 func_8008E148(PlayerState *self);
 extern void func_800909CC(PlayerState *self);
 extern void func_80090A2C(PlayerState *self);

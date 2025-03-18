@@ -6,6 +6,7 @@
 #include "common.h"
 #include "ba/playerstate.h"
 
-extern s32 func_8009557C(PlayerState *self);
+s32 func_8009557C(PlayerState *);
+void func_800956B8(PlayerState *);
 
 #endif // __CORE2_1E6EC70_H__
