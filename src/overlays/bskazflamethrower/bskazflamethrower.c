@@ -4,7 +4,7 @@
 
 s32 D_808003B0_bskazflamethrower[];
 
-void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], s32 arg2) {
+void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], f32 arg2[3]) {
     f32 unk0[3];
     s32 pad2;
     f32 unk1;

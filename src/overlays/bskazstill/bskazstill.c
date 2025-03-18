@@ -74,7 +74,7 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
     return func_800A02DC(self, nextState);
 }
 
-void bskazstill_entrypoint_0(s32 self) {
+void bskazstill_entrypoint_0(PlayerState *self) {
     func_80800030_bskazstill(self, 0);
     func_80090A2C(self);
     func_800951B4(self);
@@ -160,7 +160,7 @@ s32 bskazstill_entrypoint_3(s32 idx) {
     return D_808008A4_bskazstill[idx];
 }
 
-void bskazstill_entrypoint_4(PlayerState *self, s32 arg1) {
+BanjoStateId bskazstill_entrypoint_4(PlayerState *self, BanjoStateId arg1) {
     func_808001A4_bskazstill(self, arg1);
 }
 
@@ -168,7 +168,7 @@ void bskazstill_entrypoint_5(PlayerState *self) {
     _bskaz_entrypoint_2(self);
 }
 
-void bskazstill_entrypoint_6(s32 self) {
+void bskazstill_entrypoint_6(PlayerState *self) {
     _bskaz_entrypoint_1(self);
     func_8009FFD8(self, 1, 1, 1, 2);
     baphysics_set_target_horizontal_velocity(self, 0);

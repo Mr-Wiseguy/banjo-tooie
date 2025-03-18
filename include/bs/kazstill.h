@@ -24,13 +24,13 @@
 #include "funcs.h"
 #include "player.h"
 
-extern void _bskazstill_entrypoint_0(s32 self);
+extern void _bskazstill_entrypoint_0(PlayerState *self);
 extern void _bskazstill_entrypoint_1(PlayerState *self);
 extern void _bskazstill_entrypoint_2(PlayerState *self);
 extern s32 _bskazstill_entrypoint_3(s32 idx);
-extern void _bskazstill_entrypoint_4(PlayerState *self, s32 arg1);
+extern BanjoStateId _bskazstill_entrypoint_4(PlayerState *self, BanjoStateId arg1);
 extern void _bskazstill_entrypoint_5(PlayerState *self);
-extern void _bskazstill_entrypoint_6(s32 self);
+extern void _bskazstill_entrypoint_6(PlayerState *self);
 extern void _bskazstill_entrypoint_7(PlayerState *self);
 extern s32 _bskazstill_entrypoint_8(s32 idx);
 extern s32 _bskazstill_entrypoint_9(s32 idx);

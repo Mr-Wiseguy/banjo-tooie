@@ -19,17 +19,12 @@
 #include "core2/1E93440.h"
 #include "core2/1E8F430.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECD070.h"
+#include "core2/1ECD170.h"
 #include "funcs.h"
 #include "player.h"
 
-extern f32 func_8009E138(PlayerState *self, s32);
-extern void func_8009328C(PlayerState *self, f32);
-extern void func_8009B9F0(PlayerState *self, f32);
-extern void func_800BA670(s32, s32);
-extern void func_800BA77C(s32, s32, s16, s16);
-extern f32 func_800F13F0(f32, f32);
-extern f32 func_800F1DF4(f32[3], f32[3]);
-extern f32 func_800F3780(f32, s32[], s32);
-extern void func_800F3BD0(PlayerState *self, s32, f32[3]);
+extern s32 _bskazwingwhack_entrypoint_0(s32 idx);
+extern s32 _bskazwingwhack_entrypoint_1(s32 idx);
 
 #endif // __BS_KAZWINGWHACK__

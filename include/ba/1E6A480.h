@@ -13,5 +13,4 @@ typedef struct ba_unknown_2C_s {
     u8 unk1A;
 } BaUnknown2C;
 
-
 #endif // __BA_1E6A480_H__
