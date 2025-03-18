@@ -7,6 +7,7 @@
 
 #include "ba/playerstate.h"
 
+void func_800A16BC(s32);
 s32 func_800A1718(PlayerState *);
 void func_800A17A8(PlayerState *, s32);
 

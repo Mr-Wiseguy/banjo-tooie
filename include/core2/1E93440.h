@@ -6,5 +6,6 @@
 void func_800BBCB8(f32[3], s32, f32, s32, s32 *);
 void func_800BA22C(s32, s32);
 void func_800BA930(s32, s32, s32, s32, s32, s32, s32);
+s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
 
 #endif // __CORE2_1E93440_H__

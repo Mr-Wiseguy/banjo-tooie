@@ -20,7 +20,6 @@
 
 
 s32 func_8008E148(PlayerState *self);
-extern void func_800909CC(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 
 extern u8 D_80800400_bsmumstill[];

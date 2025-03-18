@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "ba/drone.h"
 #include "ba/movespline.h"
 #include "ba/shoes.h"

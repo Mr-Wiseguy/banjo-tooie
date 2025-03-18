@@ -1,5 +1,5 @@
-#ifndef __BA_1E72EA0_H__
-#define __BA_1E72EA0_H__
+#ifndef __CORE2_1E72EA0_H__
+#define __CORE2_1E72EA0_H__
 
 #include "common.h"
 
@@ -23,6 +23,7 @@ f32 func_80099A34(PlayerState *);
 void func_80099A7C(PlayerState *, f32[3]);
 void func_80099B94(PlayerState *);
 f32 func_80099A40(PlayerState *);
+s32 func_80099A58(PlayerState *);
 void func_8009AB78(PlayerState *);
 
-#endif // __BA_1E72EA0_H__
+#endif // __CORE2_1E72EA0_H__

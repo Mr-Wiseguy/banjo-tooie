@@ -11,5 +11,6 @@ typedef struct ba_unknown_20_s {
     u8 unk9;
 } BaUnknown20;
 
+void func_800909CC(PlayerState *);
 
 #endif // __CORE2_1E6A190_H__

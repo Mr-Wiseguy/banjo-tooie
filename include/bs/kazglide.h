@@ -5,7 +5,7 @@
 #include <ultra64.h>
 
 #include "an/anctrl.h"
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/flag.h"
 #include "ba/fly.h"

@@ -1,7 +1,7 @@
 #ifndef __BS_MUMCAST_H__
 #define __BS_MUMCAST_H__
 
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "ba/playerstate.h"
 #include "bs/mum.h"
 #include "core2/1E67DA0.h"

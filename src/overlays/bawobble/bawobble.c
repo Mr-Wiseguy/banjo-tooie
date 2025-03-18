@@ -2,11 +2,12 @@
 
 #include "ba/wobble.h"
 
+#include "core2/1E6A730.h"
+#include "core2/1E6B900.h"
 #include "core2/1EBA250.h"
 #include "core2/1ECA640.h"
 
 extern Unkfunc_800E0960_1 * func_80092AD8(PlayerState *);
-
 
 s32 bawobble_entrypoint_0(void) {
     return sizeof(BaWobble);

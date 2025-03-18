@@ -6,7 +6,7 @@
 #include "ba/physics.h"
 #include "ba/timer.h"
 #include "bs/state.h"
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "core2/1E68670.h"
 #include "core2/1E76880.h"
 #include "core2/1E76CC0.h"

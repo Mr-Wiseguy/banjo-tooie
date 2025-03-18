@@ -11,6 +11,7 @@
 
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1E8F430.h"
 #include "core2/1E93440.h"
 #include "core2/1ECA640.h"
 
@@ -18,7 +19,6 @@ extern s32 D_808004D0_bsbanpackwhack;
 extern BsScript D_8080050C_bsbanpackwhack[4];
 
 extern void _babackpack_entrypoint_5(PlayerState *);
-extern s32 func_800BABB8(s32, s32, s32, f32, void *);
 extern void func_800F1574(f32 *, f32);
 
 
