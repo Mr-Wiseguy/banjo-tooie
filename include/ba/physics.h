@@ -23,8 +23,6 @@ typedef enum ba_physics_type_e {
     BA_PHYSICS_E_UNKNOWN
 } BaPhysicsType;
 
-
-
 void baphysics_set_type(PlayerState *, BaPhysicsType);
 void baphysics_set_vertical_velocity(PlayerState *, f32);
 void baphysics_set_target_horizontal_velocity(PlayerState* , f32 vel);
@@ -38,10 +36,15 @@ void baphysics_set_gravity(PlayerState *, f32);
 void baphysics_set_terminal_velocity(PlayerState *, f32);
 
 void func_8009B94(PlayerState *);
+void func_8009B7C0(PlayerState *);
+void func_8009BA9C(PlayerState *, f32 *);
 f32 func_8009BADC(PlayerState *);
 f32 func_8009BAE8(PlayerState *);
 void func_8009BB24(PlayerState *, f32[3]);
+f32 func_8009BB5C(PlayerState *);
+void func_8009BC34(PlayerState *);
+void func_8009BC5C(PlayerState *, f32);
+s32 func_8009BCD4(PlayerState *, f32);
 void func_8009FFD8(PlayerState *, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-void func_8009BA9C(PlayerState *, f32 *);
 
 #endif

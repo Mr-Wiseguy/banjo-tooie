@@ -1,8 +1,4 @@
-#include "common.h"
-
 #include "bs/kazhatch.h"
-
-extern s32 D_808004E0_bskazhatch[];
 
 void func_80800000_bskazhatch(PlayerState *self, s32 arg1) {
     switch (arg1) {

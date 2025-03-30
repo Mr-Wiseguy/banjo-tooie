@@ -29,10 +29,7 @@
 #include "player.h"
 #include <ultra64.h>
 
-extern s32 func_8008D544(PlayerState *self);
-extern s32 func_8008E260(PlayerState *self);
 extern void func_800947EC(PlayerState *self, s32, s32);
-extern void func_8009B7C0(PlayerState *self);
 extern void func_8009E474(PlayerState *self);
 extern void func_8009E4AC(PlayerState *self);
 extern void func_8009E53C(PlayerState *self, s32, f32);
@@ -40,8 +37,6 @@ void func_8009E55C(PlayerState *self, s32, f32);
 extern void func_8009E5A4(PlayerState *self, s32, s32);
 extern s32 bs_getCurrentState(PlayerState *self);
 void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-f32 func_800DC0C0(void);
-f32 func_800F1214(f32 value, f32 min, f32 max); // ml_interpolate_f
 s32 func_8008DE24(PlayerState *self);
 void func_80093230(PlayerState *self, f32);
 void func_800A0DAC(PlayerState *self, s32);

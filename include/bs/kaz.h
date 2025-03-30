@@ -1,6 +1,7 @@
 #ifndef __BS_KAZ_H__
 #define __BS_KAZ_H__
 
+#include "common.h"
 #include <ultra64.h>
 
 #include "ba/flag.h"
@@ -14,7 +15,6 @@
 #include "core2/1E6F080.h"
 #include "core2/1E78170.h"
 #include "core2/1EA0690.h"
-#include "common.h"
 
 extern void _bskaz_entrypoint_0(PlayerState *self, s32 arg1, s32 arg2);
 extern void _bskaz_entrypoint_1(PlayerState *self);
