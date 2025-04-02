@@ -23,7 +23,6 @@
 #include "player.h"
 #include <ultra64.h>
 
-void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
 void func_8008CA30(PlayerState *self, f32 scale);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
 s32 func_8008E148(PlayerState *self);

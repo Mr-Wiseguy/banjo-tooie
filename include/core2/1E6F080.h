@@ -23,6 +23,7 @@ f32 func_80096364(PlayerState *);
 f32 func_800964DC(PlayerState *);
 s32 func_80096500(PlayerState *);
 s32 func_8009650C(PlayerState *);
+s32 func_80096544(PlayerState *);
 s32 func_80096628(PlayerState *);
 
 #endif // __CORE2_1E6F080_H__

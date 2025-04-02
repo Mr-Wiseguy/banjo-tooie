@@ -32,15 +32,19 @@
 #include "player.h"
 #include <ultra64.h>
 
-void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
-void func_8008CA4C(PlayerState *self, BaAnimUpdateType arg1);
-s32 func_80096544(PlayerState *self);
-void func_8009FD24(PlayerState *self, s32);
-
 extern s32 D_80800B30_bsmumswim[];
 extern s32 D_80800B40_bsmumswim[];
 extern s32 D_80800B50_bsmumswim[];
 extern s32 D_80800B60_bsmumswim[];
 extern s32 D_80800B70_bsmumswim[];
+
+extern void _bsmumswim_entrypoint_0(PlayerState *self);
+extern void _bsmumswim_entrypoint_1(PlayerState *self);
+extern void _bsmumswim_entrypoint_2(PlayerState *self);
+extern s32 _bsmumswim_entrypoint_3(s32 idx);
+extern s32 _bsmumswim_entrypoint_4(s32 idx);
+extern s32 _bsmumswim_entrypoint_5(s32 idx);
+extern s32 _bsmumswim_entrypoint_6(s32 idx);
+extern s32 _bsmumswim_entrypoint_7(s32 idx);
 
 #endif // __BS_MUMSWIM_H__
