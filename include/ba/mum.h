@@ -4,6 +4,7 @@
 #include <ultra64.h>
 #include "ba/playerstate.h"
 
-s32 _bamum_entrypoint_4(PlayerState *self, s32 idx);
+extern s32 _bamum_entrypoint_4(PlayerState *self, s32 idx);
+extern void _bamum_entrypoint_5(PlayerState *self, f32);
 
 #endif // __BA_MUM_H__

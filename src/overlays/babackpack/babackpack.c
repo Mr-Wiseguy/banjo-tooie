@@ -1,5 +1,6 @@
 #include "common.h"
 
+#include "an/anctrl.h"
 #include "ba/anim.h"
 #include "ba/backpack.h"
 #include "ba/playerstate.h"
