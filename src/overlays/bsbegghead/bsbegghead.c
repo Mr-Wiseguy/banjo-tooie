@@ -7,6 +7,7 @@
 #include "bs/state.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1ECA640.h"
 #include "funcs.h"

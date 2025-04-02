@@ -9,6 +9,7 @@
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1E78170.h"
+#include "core2/1E7BFA0.h"
 #include "core2/1EA0AA0.h"
 #include "core2/1ECA640.h"
 

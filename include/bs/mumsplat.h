@@ -13,12 +13,11 @@
 #include "core2/1E67DA0.h"
 #include "core2/1E75620.h"
 #include "core2/1E76CC0.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E7AB30.h"
 #include "common.h"
 #include "player.h"
 #include <ultra64.h>
-
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 
 extern s32 D_808001E0_bsmumsplat[];
 

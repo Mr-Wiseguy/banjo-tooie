@@ -9,6 +9,7 @@
 #include "ba/duo.h"
 #include "ba/flag.h"
 #include "ba/fpctrl.h"
+#include "ba/kaztorpedo.h"
 #include "ba/key.h"
 #include "ba/movegoto.h"
 #include "ba/movethrust.h"

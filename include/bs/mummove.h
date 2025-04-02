@@ -17,6 +17,7 @@
 #include "core2/1E75710.h"
 #include "core2/1E76880.h"
 #include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E7BFA0.h"
 #include "common.h"
 #include "player.h"
@@ -25,7 +26,6 @@
 void func_8008C9F0(PlayerState *self, f32, f32, f32, f32);
 void func_8008CA30(PlayerState *self, f32 scale);
 extern void func_8009D2F0(PlayerState *self, s32, f32);
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 s32 func_8008E148(PlayerState *self);
 
 extern s32 D_808005B0_bsmummove[];

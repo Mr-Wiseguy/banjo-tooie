@@ -20,6 +20,7 @@ void func_800EE9EC(f32 dst[3], s32 a[3], s32 b[3]); // ml_vec3i_cross_product
 f32 func_800EEAA4(f32 a[3], f32 b[3]); // ml_vec3f_dot_product
 f32 func_800EEAD4(f32 a[3], f32 b[3]); // ml_vec3f_distance
 f32 func_800EEB40(f32 a[3], f32 b[3]); // ml_vec3f_distance_sq
+s32 func_800EEF24(f32[3]);
 void func_800EF334(f32 vec[3], f32 scale); // ml_vec3f_apply_scale
 void func_800EF368(f32 vec[3], f32 target_length); // ml_vec3f_set_length
 void func_800EF3DC(f32 dst[3], f32 src[3]); // ml_vec3f_subtract
@@ -34,4 +35,5 @@ void func_800EF934(f32[3], f32[3], f32);
 void func_800EF2A0(f32[3]);
 void func_800EFA4C(f32[3], f32, f32, f32);
 void func_800EFA98(f32[3], f32[3], f32);
+void func_800EFCD8(f32[3], f32, f32);
 #endif // __CORE2_1EC8070_H__

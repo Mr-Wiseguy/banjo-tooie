@@ -58,7 +58,7 @@ void bskazshoessuckspline_entrypoint_3(PlayerState *self) {
     f32 sp20[3];
 
     next_state = BS_STATE_0_INVALID;
-    func_800956B8();
+    func_800956B8(self);
     _bskazmove_entrypoint_6(self);
     _bskazmove_entrypoint_0(self);
     _bashoessuck_entrypoint_4(self);

@@ -1,5 +1,3 @@
-#include "common.h"
-
 #include "ba/wandglow.h"
 
 s32 bawandglow_entrypoint_0(void) {

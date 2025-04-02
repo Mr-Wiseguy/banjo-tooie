@@ -65,6 +65,8 @@ void func_808001A8_bsledge(PlayerState *self) {
     }
 }
 
+
+static void func_80800324_bsledge(PlayerState *self);
 void func_80800238_bsledge(PlayerState *self) {
     if (func_8009E77C(self, 2) == 0) {
         func_8009E4AC(self);
@@ -86,7 +88,7 @@ void func_80800238_bsledge(PlayerState *self) {
     }
 }
 
-void func_80800324_bsledge(PlayerState *self) {
+static void func_80800324_bsledge(PlayerState *self) {
     self->unk168.bytes[0] = 2;
     self->unk168.bytes[1] = 0;
 }
@@ -144,7 +146,7 @@ void func_808004A8_bsledge(PlayerState *self) {
 }
 
 void func_808004D8_bsledge(PlayerState *self) {
-    yaw_setIdeal(self, func_800974FC());
+    yaw_setIdeal(self, func_800974FC(self));
 }
 
 void func_80800504_bsledge(PlayerState *self) {
@@ -359,7 +361,7 @@ s32 func_80800CF4_bsledge(PlayerState *self, u8 *arg1, u32 arg2) {
 }
 
 s32 func_80800D24_bsledge(PlayerState *self) {
-    if (func_800A3274() == 0xA) {
+    if (func_800A3274(self) == 0xA) {
         return func_80800CF4_bsledge(self, D_80801390_bsledge, 5);
     }
 

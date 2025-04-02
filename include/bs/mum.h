@@ -29,7 +29,6 @@
 #include "player.h"
 #include <ultra64.h>
 
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
 s32 func_8008DE24(PlayerState *self);
 void func_80093230(PlayerState *self, f32);
 void func_800A0DAC(PlayerState *self, s32);
