@@ -1,12 +1,13 @@
 #ifndef __BS_MUMCAST_H__
 #define __BS_MUMCAST_H__
 
-#include "core2/1E72EA0.h"
+#include <ultra64.h>
 #include "ba/playerstate.h"
 #include "bs/mum.h"
 #include "core2/1E67DA0.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E79FD0.h"
 #include "common.h"
-#include <ultra64.h>
 
 void func_800A0DAC(PlayerState *self, s32);
 u8 func_8009EA20();
