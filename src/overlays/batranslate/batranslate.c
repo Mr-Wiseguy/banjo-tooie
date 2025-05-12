@@ -7,6 +7,8 @@
 #include "core2/1E75920.h"
 #include "core2/1EC8070.h"
 
+void batranslate_entrypoint_3(PlayerState *self, s32 arg1);
+
 s32 batranslate_entrypoint_0(void) {
     return sizeof(BaTranslate);
 }

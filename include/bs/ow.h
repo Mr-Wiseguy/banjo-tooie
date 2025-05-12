@@ -15,4 +15,8 @@
 
 extern s32 D_80800150_bsow[];
 
+extern void _bsow_entrypoint_0(PlayerState *self);
+extern void _bsow_entrypoint_1(PlayerState *self);
+extern void _bsow_entrypoint_2(PlayerState *self);
+extern s32 _bsow_entrypoint_3(s32 idx);
 #endif // __BS_OW_H__

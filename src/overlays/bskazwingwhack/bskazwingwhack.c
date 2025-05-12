@@ -12,8 +12,8 @@ void func_80800000_bskazwingwhack(PlayerState *self, f32 arg1[3], f32 arg2, f32 
     f32 sp30[3];
 
     temp_s0 = func_800B5BE4(0xA);
-    func_8009C128(self, &sp30);
-    func_800BA77C(temp_s0, 0, func_800136E4(func_800F1DF4(&sp30, arg1) + arg2), arg3);
+    func_8009C128(self, sp30);
+    func_800BA77C(temp_s0, 0, func_800136E4(func_800F1DF4(sp30, arg1) + arg2), arg3);
     if (func_8009EA2C() != 0) {
         func_800BA670(temp_s0, 0x619);
     } else {
@@ -79,10 +79,10 @@ void func_80800278_bskazwingwhack(PlayerState *self) {
         func_8009DF94(self, 0x3FF, 0.9f, 12000);
     }
     if ((sp34 > 0.16f) && (sp34 < 0.82f)) {
-        func_800F3BD0(self, 7, &sp38);
-        func_80800000_bskazwingwhack(self, &sp38, 45.0f, 0.0f);
-        func_800F3BD0(self, 9, &sp38);
-        func_80800000_bskazwingwhack(self, &sp38, 70.0f, 0.0f);
+        func_800F3BD0(self, 7, sp38);
+        func_80800000_bskazwingwhack(self, sp38, 45.0f, 0.0f);
+        func_800F3BD0(self, 9, sp38);
+        func_80800000_bskazwingwhack(self, sp38, 70.0f, 0.0f);
     }
     if ((baanim_isAt(self, 0.64f) != 0) && (func_8008DF8C(self, 0xA) == 0)) {
         next_state = BS_STATE_DF;
@@ -158,16 +158,16 @@ void func_80800580_bskazwingwhack(PlayerState *self) {
         func_8009DF94(self, 0x3FF, 0.9f, 15000);
     }
     if ((animTimer > 0.104f) && (animTimer < 0.222f)) {
-        func_800F3BD0(self, 7, &sp28);
-        func_80800000_bskazwingwhack(self, &sp28, 45.0f, 0.0f);
+        func_800F3BD0(self, 7, sp28);
+        func_80800000_bskazwingwhack(self, sp28, 45.0f, 0.0f);
         baflag_set(self, BA_FLAG_36);
     } else if ((animTimer > 0.317f) && (animTimer < 0.4f)) {
-        func_800F3BD0(self, 9, &sp28);
-        func_80800000_bskazwingwhack(self, &sp28, func_800136E4(295.0f), 180.0f);
+        func_800F3BD0(self, 9, sp28);
+        func_80800000_bskazwingwhack(self, sp28, func_800136E4(295.0f), 180.0f);
         baflag_set(self, BA_FLAG_36);
     } else if ((animTimer > 0.58f) && (animTimer < 0.7f)) {
-        func_800F3BD0(self, 7, &sp28);
-        func_80800000_bskazwingwhack(self, &sp28, 90.0f, -30.0f);
+        func_800F3BD0(self, 7, sp28);
+        func_80800000_bskazwingwhack(self, sp28, 90.0f, -30.0f);
         baflag_set(self, BA_FLAG_36);
     }
     if (anctrl_isStopped(animCtrl) != 0) {

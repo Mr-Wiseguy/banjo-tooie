@@ -1,5 +1,5 @@
 #include "common.h"
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/stick.h"
 #include "ba/physics.h"
@@ -9,6 +9,7 @@
 #include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
 #include "core2/1EA0690.h"
+#include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "bs.h"
 

@@ -24,9 +24,8 @@ void func_80800060_bsmumattack(PlayerState *self) {
 }
 
 void func_808000AC_bsmumattack(PlayerState *self, f32 arg1) {
-    s32 temp_a2 = self->unk160.bytes[0];
-    if (temp_a2 != 0) {
-        func_800C31DC(temp_a2 & 0xff, arg1, temp_a2);
+    if (self->unk160.bytes[0] != 0) {
+        func_800C31DC(self->unk160.bytes[0], arg1);
     }
 }
 

@@ -1,5 +1,7 @@
 #include "bs/mum.h"
 
+void bsmum_entrypoint_13(PlayerState *self);
+
 void func_80800000_bsmum(PlayerState *self) {
     func_8009DE38(self, 0x511, func_800DC178(0.8f, 1.1f));
 }

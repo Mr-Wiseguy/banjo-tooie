@@ -20,6 +20,6 @@ extern void _bskaz_entrypoint_0(PlayerState *self, s32 arg1, s32 arg2);
 extern void _bskaz_entrypoint_1(PlayerState *self);
 extern void _bskaz_entrypoint_2(PlayerState *self);
 extern BanjoStateId _bskaz_entrypoint_3(PlayerState *self);
-extern BanjoStateId _bskaz_entrypoint_4(f32 * arg0);
+extern BanjoStateId _bskaz_entrypoint_4(PlayerState *self);
 
 #endif // __BS_KAZ_H__

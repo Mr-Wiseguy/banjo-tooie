@@ -9,6 +9,8 @@
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1E78170.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1EA0AA0.h"
 #include "core2/1ECA640.h"
 
 s32 bababykaz_entrypoint_0(void) {
@@ -64,13 +66,13 @@ void bababykaz_entrypoint_8(PlayerState *self) {
     if (func_800EA068(0x800)) {
         func_800FC660(0x68);
     } else {
-        func_800C77DC(0x4);
+        func_800C77DC(4);
     }
 }
 
 void bababykaz_entrypoint_9(PlayerState *self) {
     if (!func_800EA068(0x800)) {
-        func_800C77DC(0x1);
+        func_800C77DC(1);
     }
 }
 

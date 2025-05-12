@@ -11,44 +11,26 @@
 #include "ba/playerstate.h"
 #include "ba/stick.h"
 #include "ba/yaw.h"
+#include "ba/translate.h"
+#include "ba/packctrl.h"
 #include "bs/rest.h"
 #include "bs/state.h"
+#include "core2/1E66990.h"
+#include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
 #include "core2/1E79FD0.h"
+#include "core2/1E7B250.h"
 #include "core2/1E7D460.h"
 #include "core2/1EB5980.h"
+#include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1EEBA50.h"
 #include "common.h"
 #include "funcs.h"
-
-void func_800EFD24(f32 [3]);
-extern void func_80092880(PlayerState *self, s32);
-extern void func_8009E474(PlayerState *self);
-extern void func_800A2018(PlayerState *self, s32);
-extern void func_8009E4AC(PlayerState *self);
-extern void func_8009E53C(PlayerState *self, s32, f32);
-void func_8009E55C(PlayerState *, s32, f32);
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-
-void _bapackctrl_entrypoint_5(PlayerState *self, s32);
-void _batranslate_entrypoint_3(PlayerState *self, s32);
-void _bsrest_entrypoint_15(PlayerState *self, s32);
-s32 _bsrest_entrypoint_19(PlayerState *self, s32);
-s32 func_8008E0E8(PlayerState *self);
-s32 func_8008E23C(PlayerState *self);
-s32 func_80096388(PlayerState *self);
-f32 func_800974FC();
-s32 func_80097524(PlayerState *self);
-s32 func_80097530(PlayerState *self);
-s32 func_800A3274();
-u8 func_800DC128(s32, s32);
-s32 func_800EEF24(f32[3]);
-void func_800EFCD8(f32[3], f32, f32);
-f32 func_800F1DCC(f32, f32);
-void func_801124D0(s32, s32);
-
 
 extern s16 D_80801340_bsledge[];
 extern s32 D_80801348_bsledge[];
@@ -60,10 +42,14 @@ extern u8 D_80801390_bsledge[];
 extern s32 D_80801398_bsledge[];
 extern s32 D_808013A8_bsledge[];
 
-void func_80800324_bsledge(PlayerState *self);
-s32 func_80800000_bsledge(PlayerState *self);
-s32 func_808003D0_bsledge(PlayerState *self);
-s32 func_80800410_bsledge(PlayerState *self);
-void func_80800D78_bsledge(PlayerState *self, s32);
+extern s32 _bsledge_entrypoint_0(s32 idx);
+extern s32 _bsledge_entrypoint_1(s32 idx);
+extern s32 _bsledge_entrypoint_2(s32 idx);
+extern s32 _bsledge_entrypoint_3(s32 idx);
+extern s32 _bsledge_entrypoint_4(s32 idx);
+extern void _bsledge_entrypoint_5(PlayerState *self);
+extern void _bsledge_entrypoint_6(PlayerState *self);
+extern void _bsledge_entrypoint_7(PlayerState *self);
+extern s32 _bsledge_entrypoint_8(s32 idx);
 
 #endif // __BS_LEDGE_H__

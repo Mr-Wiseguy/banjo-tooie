@@ -3,7 +3,10 @@
 
 #include <ultra64.h>
 
+#include "common.h"
 #include "playerstate.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECE0B0.h"
 
 typedef struct ba_wandglow_s {
     f32 unk0[3];

@@ -9,5 +9,4 @@ typedef struct ba_unknown_c_s {
     u8 pad18[4];
 } BaUnknownC;
 
-
 #endif // __BA_1E67DA0_H__

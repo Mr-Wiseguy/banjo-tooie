@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1ECD170.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F3880.s")
 

@@ -10,11 +10,16 @@ s32 func_8008D0E0(PlayerState *);
 s32 func_8008D3B0(PlayerState *);
 s32 func_8008D544(PlayerState *);
 s32 func_8008D790(PlayerState *);
+s32 func_8008DE24(PlayerState *);
 s32 func_8008DF18(PlayerState *);
+s32 func_8008DD04(PlayerState *);
 s32 func_8008DF8C(PlayerState *, s32);
+s32 func_8008E0E8(PlayerState *);
 s32 func_8008E124(PlayerState *);
+s32 func_8008E23C(PlayerState *);
 s32 func_8008E260(PlayerState *);
 s32 func_8008E39C(PlayerState *);
+s32 func_8008E3E8(PlayerState *);
 s32 func_8008E430(void);
 
 

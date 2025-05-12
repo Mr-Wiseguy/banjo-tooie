@@ -2,7 +2,7 @@
 #define __BS_MUM_H__
 
 #include "an/anctrl.h"
-#include "ba/1E72EA0.h"
+#include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/bounce.h"
 #include "ba/flag.h"
@@ -29,18 +29,6 @@
 #include "player.h"
 #include <ultra64.h>
 
-extern void func_800947EC(PlayerState *self, s32, s32);
-extern void func_8009E474(PlayerState *self);
-extern void func_8009E4AC(PlayerState *self);
-extern void func_8009E53C(PlayerState *self, s32, f32);
-void func_8009E55C(PlayerState *self, s32, f32);
-extern void func_8009E5A4(PlayerState *self, s32, s32);
-extern s32 bs_getCurrentState(PlayerState *self);
-void func_8009FFD8(PlayerState* thisx, BaAnimUpdateType anim_update_type, YawType yaw_state, s32 arg2, BaPhysicsType arg3);
-s32 func_8008DE24(PlayerState *self);
-void func_80093230(PlayerState *self, f32);
-void func_800A0DAC(PlayerState *self, s32);
-
 extern s32 D_80801140_bsmum[];
 extern s32 D_80801150_bsmum[];
 extern s32 D_80801160_bsmum[];
@@ -50,10 +38,19 @@ extern s32 D_80801190_bsmum[];
 extern s32 D_808011A0_bsmum[];
 extern s32 D_808011B0_bsmum[];
 
-void bsmum_entrypoint_13(PlayerState *self);
-void _bsmum_entrypoint_13(PlayerState *self);
-void _bsmum_entrypoint_1(PlayerState *self);
-void _bsmum_entrypoint_2(PlayerState *self);
-void _bamum_entrypoint_5(PlayerState *self, f32);
-
+extern void _bsmum_entrypoint_0(PlayerState *self);
+extern void _bsmum_entrypoint_1(PlayerState *self);
+extern void _bsmum_entrypoint_2(PlayerState *self);
+extern s32 _bsmum_entrypoint_3(s32 idx);
+extern s32 _bsmum_entrypoint_4(s32 idx);
+extern s32 _bsmum_entrypoint_5(s32 idx);
+extern s32 _bsmum_entrypoint_6(s32 idx);
+extern s32 _bsmum_entrypoint_7(s32 idx);
+extern void _bsmum_entrypoint_8(PlayerState *self);
+extern void _bsmum_entrypoint_9(PlayerState *self);
+extern void _bsmum_entrypoint_10(PlayerState *self);
+extern s32 _bsmum_entrypoint_11(s32 idx);
+extern s32 _bsmum_entrypoint_12(s32 idx);
+extern void _bsmum_entrypoint_13(PlayerState *self);
+extern s32 _bsmum_entrypoint_14(s32 idx);
 #endif // __BS_MUM_H__

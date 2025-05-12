@@ -2,6 +2,8 @@
 
 #include "ba/washer.h"
 
+#include "core2/1E6A730.h"
+#include "core2/1E6B900.h"
 #include "core2/1E75920.h"
 #include "core2/1EB2840.h"
 #include "core2/1EBA250.h"
