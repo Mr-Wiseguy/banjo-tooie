@@ -20,6 +20,7 @@
 #include "core2/1E93440.h"
 #include "core2/1E8F430.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
 #include "core2/1ECD070.h"
 #include "core2/1ECD170.h"
 #include "funcs.h"
