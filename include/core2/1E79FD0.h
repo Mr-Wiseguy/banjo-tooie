@@ -5,10 +5,11 @@
 
 #include "ba/playerstate.h"
 
-void func_800A0D14(PlayerState *, s32, f32);
+s32 func_800A0C20(PlayerState *self);
 void func_800A0CDC(PlayerState *, s32);
 void func_800A0CE8(PlayerState *, s32);
 void func_800A0CF4(PlayerState *, s32);
+void func_800A0D14(PlayerState *, s32, f32);
 s32 func_800A0DA0(PlayerState *, s32);
 void func_800A0DAC(PlayerState *, s32);
 void func_800A0DC4(PlayerState *, s32);

@@ -577,7 +577,7 @@ segments:
       - [0x1EEE770, c, 1EEE770]
       - [0x1EEEC40, c, 1EEEC40]
       - [0x1EEEF00, c, 1EEEF00]
-      - [0x1EEF790, hasm]
+      - [0x1EEF790, c, 1EEF790]
       - [0x1EF0140, c, 1EF0140]
       - [0x1EF01E0, c, 1EF01E0]
       - [0x1EF0820, hasm]
