@@ -60,7 +60,8 @@ ASM_PROC := $(PYTHON3_BIN) tools/asm-processor/asm_processor.py
 
 OPT_LEVEL := -O2
 CFLAGS    := -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm $(OPT_LEVEL) -mips2 -woff 807
-CPPFLAGS  := -I include -I $(ULTRALIB_DIR)/include -DBUILD_VERSION=VERSION_$(ULTRALIB_VERSION) -D_FINALROM -DF3DEX_GBI_2
+# The find command below finds all unique directories in the src directory that contain .h files
+CPPFLAGS  := $(shell find $(SRC_ROOT) -type f -name "*.h" -exec dirname \{\} \; | sort -u | awk '{print "-I " $$0}' | tr '\n' ' ') -I include -I $(ULTRALIB_DIR)/include -DBUILD_VERSION=VERSION_$(ULTRALIB_VERSION) -D_FINALROM -DF3DEX_GBI_2
 ASFLAGS   := -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY
 LDFLAGS   := -nostdlib -T undefined_syms.us.txt --build-id=none --emit-relocs --whole-archive --no-warn-mismatch
 BINOFLAGS := -I binary -O elf32-tradbigmips
