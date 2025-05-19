@@ -1,7 +1,4 @@
-#include "common.h"
-#include "types.h"
-#include "an/anctrl.h"
-#include "vector.h"
+#include "seq.h"
 
 void anseq_entrypoint_1(s16 * pSeqIndx, s32 arg1);
 
@@ -16,12 +13,12 @@ typedef struct{
     s32 arg2;
     s32 arg3;
     void *func_ptr; //function_ptr
-}AnSeqElement;
+} AnSeqElement;
 
 struct {
     s32 unk0;
     AnSeqElement *unk4;
-}B_80800490_anseq;
+} B_80800490_anseq;
 
 void func_80800000_anseq(s16 *pSeqIndx, AnSeqElement *element) {
     if (element->unk6) {
