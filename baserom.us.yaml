@@ -631,13 +631,13 @@ segments:
     start: 0x01F01720
     extract: False
   - name: anseq
-    dir: overlays/anseq
+    dir: overlays/an/
     type: code
     vram: 0x80800000
     start: 0x01F017C0
     exclusive_ram_id: overlay
     subsegments: 
-      - [auto, c, anseq]
+      - [auto, c, seq]
   - name: seqdefine_header
     dir: overlays/seqdefine
     type: bin
@@ -15356,7 +15356,7 @@ segments:
     start: 0x0214CD60
     extract: False
   - name: gemarkersDll
-    dir: overlays/gemarkersDll
+    dir: overlays/ge
     type: code
     vram: 0x80800000
     start: 0x0214CDC0
@@ -15365,10 +15365,10 @@ segments:
     symbol_name_format: $VRAM_$SEG
     symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0214CDC0, c, gemarkersDll]
-      - [0x0214CE50, .rodata, gemarkersDll]
-      - [0x0214CE50, data, gemarkersDll]
-      - [0x0214E090, bss, gemarkersDll]
+      - [0x0214CDC0, c, markersDll]
+      - [0x0214CE50, .rodata, markersDll]
+      - [0x0214CE50, data, markersDll]
+      - [0x0214E090, bss, markersDll]
   - name: suexpressjoint_header
     dir: overlays/suexpressjoint
     type: bin
