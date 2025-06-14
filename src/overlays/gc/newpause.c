@@ -1,4 +1,8 @@
-#include "common.h"
+#include "gc/newpause.h"
+#include "gc/newoption.h"
+#include "gl/dbstring.h"
+#include "fx/kern.h"
+#include "core2/1E91790.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_0.s")
 
@@ -34,9 +38,24 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801248_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_808012CC_gcnewpause.s")
+//Draw Page Titles
+void func_808012CC_gcnewpause(PauseState* a0, u32* a1)
+{
+	if (a0->unk1B != 0)
+	{
+		_fxkern_entrypoint_2();
+		func_800B8CE0(0xC28);
+		_fxkern_entrypoint_1(a1,a0->pageTitleOffset+0x20, _gldbstring_entrypoint_1(a0->textPointer, a0->data[1]));
+	}
+	return;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801330_gcnewpause.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80801330_gcnewpause.s")
+u8 func_80801330_gcnewpause(PauseState* a0, u32 a1,u32 a2)
+{
+	a0->unk1B = func_80801248_gcnewpause((&(a0->pageTitleOffset)), &(a0->unk1A), a2, a0);
+	return a0->unk1B;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080136C_gcnewpause.s")
 
