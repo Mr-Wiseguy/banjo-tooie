@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "gfx.h"
+#include "core2/1E99980.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 

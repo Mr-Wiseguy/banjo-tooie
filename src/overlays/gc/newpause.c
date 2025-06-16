@@ -1,8 +1,14 @@
 #include "gc/newpause.h"
-#include "gc/newoption.h"
 #include "gl/dbstring.h"
 #include "fx/kern.h"
 #include "core2/1E91790.h"
+#include "core2/1EC2350.h"
+#include "core2/1E99980.h"
+#include "core2/1EABAC0.h"
+#include "core2/1E2D890.h"
+#include "core2/1E691A0.h"
+#include "core2/1EA78C0.h"
+#include "core2/1EA9160.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_0.s")
 
@@ -24,7 +30,25 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800DE0_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800E10_gcnewpause.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80800E10_gcnewpause.s")
+void func_80800E10_gcnewpause(PauseState* a0, u32 a1)
+{
+	func_8080105C_gcnewpause(0xC,0x7,a1,0x0);
+	func_8008FBE0(a1);
+	func_800CF7F4(a1);
+	if (a1 != 0)
+	{
+		//Display the Jiggy Value
+		func_800D2498(0xD6, func_800D035C(0x1),0);
+		//Display Note Value
+		func_800D2498(0xD0, func_800D035C(0x6),0);
+	}
+	else
+	{
+		func_800D284C(0xD6);
+		func_800D284C(0xD0);
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800EA8_gcnewpause.s")
 
@@ -101,6 +125,22 @@ u8 func_80801330_gcnewpause(PauseState* a0, u32 a1,u32 a2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801E80_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801EF0_gcnewpause.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80801EF0_gcnewpause.s")
+void func_80801EF0_gcnewpause(u32 a0)
+{
+	func_80801E80_gcnewpause(0,0xC);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801F18_gcnewpause.s")
+//Check if any Jinjo is collected
+u32 func_80801F18_gcnewpause(u32 a0)
+{
+	u32 s0;
+	for (s0 = 0; s0 < 9; s0++)
+	{
+		if (func_800D1338(s0) != 0)
+		{
+			return 0x1;
+		}
+	}
+	return 0x0;
+}
