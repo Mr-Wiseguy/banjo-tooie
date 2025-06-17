@@ -10,10 +10,25 @@ typedef struct {
 	s16 pageTitleOffset; //0x18
 	u8 unk1A; //0x1A
 	u8 unk1B; //0x1B
-	u8 pad[0x14];
+	u8 data2[0xE]; //0x1C
+	u16 unk2A; //0x2A
+	u16 unk2C; //0x2C
+	u16 unk2E; //0x2E
 	OptionState optionState;
 } PauseState;
 
+typedef struct {
+	s16 ItemID;
+	u16 unk1;
+} InventoryDisplay;
+
+typedef struct {
+	s8 SubPageToShow;
+	u8 AbilityId;
+} AbilityTracking;
+
+extern InventoryDisplay D_808020D8_gcnewpause[];
+extern AbilityTracking D_8080215C_gcnewpause[];
 void gcnewpause_entrypoint_0(void);
 void func_80800534_gcnewpause(PauseState* a0, u32 a1);
 void func_80800E10_gcnewpause(PauseState* a0, u32 a1);
@@ -22,8 +37,8 @@ u8 func_80801248_gcnewpause(u32* a0, u32* a1, u32 a2, PauseState* a3);
 void func_808012CC_gcnewpause(PauseState* a0, u32* a1);
 u8 func_80801330_gcnewpause(PauseState* a0, u32 a1, u32 a2);
 u8 func_8080152C_gcnewpause(PauseState* a0);
-void func_80801E80_gcnewpause(u32 a0, u32 a1);
-void func_80801EF0_gcnewpause(u32 a0);
+s32 func_80801E80_gcnewpause(s32 a0, s32 a1);
+s32 func_80801EF0_gcnewpause(s32 a0);
 
 u32 func_80801F18_gcnewpause(u32 a0);
 
