@@ -5,6 +5,7 @@
 #include "core2/1EC2350.h"
 #include "core2/1E99980.h"
 #include "core2/1EABAC0.h"
+#include "core2/1ED3900.h"
 #include "core2/1E2D890.h"
 #include "core2/1E691A0.h"
 #include "core2/1EA78C0.h"
@@ -15,8 +16,12 @@
 #include "core2/1EB5E70.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB45C0.h"
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_0.s")
+#include "core2/1ED3900.h"
+#include "core2/1EC2350.h"
+#include "gc/level.h"
+#include "gc/audiolist.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_0.s")
 
 //Close and Free Pause Menu
 void gcnewpause_entrypoint_1(PauseState* a0)
@@ -168,16 +173,131 @@ s32 func_808016F0_gcnewpause(s32 a0)
 {
 	return _gclevel_entrypoint_3(func_808016A4_gcnewpause(a0));
 }
+//Return the subpage you can go to when trying to go to a page from a direction
+s32 func_80801718_gcnewpause(s32 subPage, s32 movementDirection) {
+	s32 temp_v0;
+	s32 var_s0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801718_gcnewpause.s")
+	temp_v0 = subPage + movementDirection;
+	var_s0 = temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_808017C8_gcnewpause.s")
+	if (movementDirection < 0) //Moving Left
+	{
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801844_gcnewpause.s")
+		for (var_s0; var_s0 >= 3; var_s0--)
+		{
+			if (func_808016F0_gcnewpause(var_s0) != 0)
+			{
+				break;
+			}
+		}
+		if (var_s0 < 2) //Check if the next page would be 0x2 and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+		}
+	}
+	else if (movementDirection > 0) //Moving Right
+	{
+		for (var_s0; var_s0 < 0xE; var_s0++)
+		{
+			if (func_808016F0_gcnewpause(var_s0) != 0) //If we can access the next level page, break
+			{
+				break;
+			}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080190C_gcnewpause.s")
+		}
+		if (var_s0 == 0xE) //Check if the next page would be 0xE and return the current page which indicates you cannot go in that direction
+		{
+			var_s0 = subPage;
+		}
+	}
+	return var_s0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_808019A4_gcnewpause.s")
+//Set Subpage
+void func_808017C8_gcnewpause(PauseState* pauseMenu, u32 subPageTarget)
+{
+	u32 temp;
+	temp = subPageTarget;
+	pauseMenu->SubPage = subPageTarget & 0xff;
+	if ((pauseMenu->SubPage == 0) || (pauseMenu->SubPage == 1)) //If we're on the Objects and Items Page/Jinjo Page disable the left/right movement
+	{
+		pauseMenu->unk1F = 0;
+		pauseMenu->unk1E = 0;
+	}
+	else //Check if we can move in either direction and enable the left/right movement if we can
+	{
+		pauseMenu->unk1E = (func_80801718_gcnewpause(pauseMenu->SubPage, -1) != pauseMenu->SubPage);
+		pauseMenu->unk1F = (func_80801718_gcnewpause(pauseMenu->SubPage, 1) != pauseMenu->SubPage);
+	}
+}
+
+//Draw Item Counts for Level Pages
+s32 func_80801844_gcnewpause(u32 arg0, u32 arg1, s32 arg2, s32 arg3, s32 arg4, u32 arg5) 
+{
+	if (arg5 == 1) {
+		if (arg1 != 0) {
+			func_800FA9B4(arg2);
+			func_800FA708(arg0, (s32)arg2, (s32)arg3, (u32)arg4);
+			return 1;
+		}
+		func_800FAAB4((s32)arg2, (s32)arg3);
+		return 1;
+	}
+	if (arg5 == -1U) {
+		func_800FAAB4((s32)arg2, (s32)arg3);
+		return func_800FA934((s32)arg2, (s32)arg3) == 0;
+	}
+	func_800FA818((s32)arg2, (s32)arg3);
+	return func_800FA8E8((s32)arg2, (s32)arg3) == 1;
+}
+
+//Draw Game Totals Inventory Items UI and the timer on non level pages
+s32 func_8080190C_gcnewpause(u32 arg0, s32 arg1, s32 arg2, u32 arg3, u32 arg4) 
+{
+	if (arg4 == 1) {
+		func_800FA708(arg0, arg1, arg2, arg3);
+		return 1;
+	}
+	if (arg4 == -1) {
+		func_800FAAB4((s32)arg1, (s32)arg2);
+		return func_800FA934((s32)arg1, (s32)arg2) == 0;
+	}
+	func_800FA818((s32)arg1, (s32)arg2);
+	return func_800FA8E8((s32)arg1, (s32)arg2) == 1;
+}
+
+s32 func_808019A4_gcnewpause(u32 arg0, u32 arg1)
+{
+	u32 temp_s1;
+	u32 temp_v0;
+	u32 var_s5;
+	u32 temp_a1;
+	u32 index = 0;
+
+	var_s5 = 0;
+	while (D_80802130_gcnewpause[index].itemType != -1)
+	{
+		temp_s1 = func_800D0018(D_80802130_gcnewpause[index].itemType, arg0);
+		temp_a1 = func_800CFC8C(D_80802130_gcnewpause[index].itemType, arg0);
+		if (((arg1 != 1) || (temp_s1 != 0)) && (func_80801844_gcnewpause(temp_s1, temp_a1, D_80802130_gcnewpause[index].uiPosition, D_80802130_gcnewpause[index].itemIcon, 6, arg1) != 0))
+		{
+			var_s5 = 1;
+		}
+		index++;
+	}
+	if (func_8080190C_gcnewpause(func_800DADEC(arg0), 0x22, 0x1B, 4, arg1) != 0)
+	{
+		var_s5 = 1;
+	}
+	temp_v0 = func_80801C3C_gcnewpause(arg0);
+	temp_s1 = temp_v0;
+	if (((arg1 != 1) || (temp_s1 != 0)) && (func_80801844_gcnewpause(temp_s1, func_80801BF0_gcnewpause((u32)arg0), 0x21, 0x1E, 6, arg1) != 0))
+	{
+		var_s5 = 1;
+	}
+	return var_s5;
+}
 
 //Show Game Total Values
 s32 func_80801AF8_gcnewpause(u32 arg0) 
