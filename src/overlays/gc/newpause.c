@@ -47,7 +47,7 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800DE0_gcnewpause.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80800E10_gcnewpause.s")
-void func_80800E10_gcnewpause(PauseState* a0, u32 a1)
+void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 {
 	func_8080105C_gcnewpause(0xC,0x7,a1,0x0);
 	func_8008FBE0(a1);
@@ -79,46 +79,46 @@ void func_80800E10_gcnewpause(PauseState* a0, u32 a1)
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801248_gcnewpause.s")
 
 //Draw Page Titles
-void func_808012CC_gcnewpause(PauseState* a0, u32* a1)
+void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
-	if (a0->unk1B != 0)
+	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
 		func_800B8CE0(0xC28);
-		_fxkern_entrypoint_1(a1,a0->pageTitleOffset+0x20, _gldbstring_entrypoint_1(a0->textPointer, a0->SubPage));
+		_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
 	}
 	return;
 }
 
-u8 func_80801330_gcnewpause(PauseState* a0, u32 a1,u32 a2)
+u8 func_80801330_gcnewpause(PauseState* pauseMenu, u32 a1,u32 a2)
 {
-	a0->unk1B = func_80801248_gcnewpause((&(a0->pageTitleOffset)), &(a0->unk1A), a2, a0);
-	return a0->unk1B;
+	pauseMenu->DrawPageHeader = func_80801248_gcnewpause((&(pauseMenu->pageTitleOffset)), &(pauseMenu->MovePageHeaderTrigger), a2, pauseMenu);
+	return pauseMenu->DrawPageHeader;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080136C_gcnewpause.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801410_gcnewpause.s")
 
-void func_8080152C_gcnewpause(PauseState* a0)
+void func_8080152C_gcnewpause(PauseState* pauseMenu)
 {
-	if (a0->unk1C != 0)
+	if (pauseMenu->ShowBButton != 0)
 	{
-		func_800E8C08(a0->unk1C);
-		a0->unk1C = 0;
+		func_800E8C08(pauseMenu->ShowBButton);
+		pauseMenu->ShowBButton = 0;
 	}
-	if (a0->unk1D != 0)
+	if (pauseMenu->JoystickIndicator != 0)
 	{
-		func_800E8C08(a0->unk1D);
-		a0->unk1D = 0;
+		func_800E8C08(pauseMenu->JoystickIndicator);
+		pauseMenu->JoystickIndicator = 0;
 
 	}
 }
 
-void func_80801580_gcnewpause(PauseState* a0)
+void func_80801580_gcnewpause(PauseState* pauseMenu)
 {
 	s32 a2; 
-	if (a0->unk3 != 0 || a0->unk7 != 0)
+	if (pauseMenu->unk3 != 0 || pauseMenu->CanExitPage != 0)
     {
         a2 = 1;
     }
@@ -126,33 +126,33 @@ void func_80801580_gcnewpause(PauseState* a0)
     {
         a2 = 0;
     }
-	func_80801248_gcnewpause(&(a0->unk28), &(a0->unk22), a2,a0);
-	func_80801248_gcnewpause(&(a0->unk24), &(a0->unk20), a0->unk1E, a0);
-	func_80801248_gcnewpause(&(a0->unk26), &(a0->unk21), a0->unk1F, a0);
+	func_80801248_gcnewpause(&(pauseMenu->B_Button_Pos), &(pauseMenu->MoveBButtonTrigger), a2,pauseMenu);
+	func_80801248_gcnewpause(&(pauseMenu->LeftJoystickPos), &(pauseMenu->MoveLeftJoystickTrigger), pauseMenu->CanMoveLeft, pauseMenu);
+	func_80801248_gcnewpause(&(pauseMenu->RightJoystickPos), &(pauseMenu->MoveRightJoystickTrigger), pauseMenu->CanMoveRight, pauseMenu);
 }
 
-void func_808015F8_gcnewpause(PauseState* a0, u32 a1)
+void func_808015F8_gcnewpause(PauseState* pauseMenu, u32 a1)
 {
-	a0->unk4 = a1;
-	a0->unk3 = -1;
-	a0->unkF = 0x0;
+	pauseMenu->unk4 = a1;
+	pauseMenu->unk3 = -1;
+	pauseMenu->unkF = 0x0;
 	_gcaudiolist_entrypoint_1(0x3, 0x4650);
 }
 
-void func_8080162C_gcnewpause(PauseState* a0,u32 a1)
+void func_8080162C_gcnewpause(PauseState* pauseMenu,u32 a1)
 {
-	a0->unk7 = a1;
-	a0->unk3 = -1;
-	a0->unkF = 0x0;
+	pauseMenu->CanExitPage = a1;
+	pauseMenu->unk3 = -1;
+	pauseMenu->unkF = 0x0;
 	_gcaudiolist_entrypoint_1(0x3, 0x4650);
 }
 
 //Setup the File for the Page titles
-void func_80801660_gcnewpause(PauseState* a0)
+void func_80801660_gcnewpause(PauseState* pauseMenu)
 {
-	a0->textPointer=_gldbstring_entrypoint_0(a0->textPointer, 0x1864);
-	a0->pageTitleOffset = -a0->unk6;
-	a0->unk1A = 0;
+	pauseMenu->textPointer=_gldbstring_entrypoint_0(pauseMenu->textPointer, 0x1864);
+	pauseMenu->pageTitleOffset = -pauseMenu->HeaderAndButtonOffset;
+	pauseMenu->MovePageHeaderTrigger = 0;
 }
 
 //Get the level for the subpage
@@ -222,13 +222,13 @@ void func_808017C8_gcnewpause(PauseState* pauseMenu, u32 subPageTarget)
 	pauseMenu->SubPage = subPageTarget & 0xff;
 	if ((pauseMenu->SubPage == 0) || (pauseMenu->SubPage == 1)) //If we're on the Objects and Items Page/Jinjo Page disable the left/right movement
 	{
-		pauseMenu->unk1F = 0;
-		pauseMenu->unk1E = 0;
+		pauseMenu->CanMoveRight = 0;
+		pauseMenu->CanMoveLeft = 0;
 	}
 	else //Check if we can move in either direction and enable the left/right movement if we can
 	{
-		pauseMenu->unk1E = (func_80801718_gcnewpause(pauseMenu->SubPage, -1) != pauseMenu->SubPage);
-		pauseMenu->unk1F = (func_80801718_gcnewpause(pauseMenu->SubPage, 1) != pauseMenu->SubPage);
+		pauseMenu->CanMoveLeft = (func_80801718_gcnewpause(pauseMenu->SubPage, -1) != pauseMenu->SubPage);
+		pauseMenu->CanMoveRight = (func_80801718_gcnewpause(pauseMenu->SubPage, 1) != pauseMenu->SubPage);
 	}
 }
 
@@ -368,61 +368,60 @@ u32 func_80801C3C_gcnewpause(u32 a0)
 	return MoveCount;
 }
 
-void func_80801CCC_gcnewpause(PauseState* a0)
+void func_80801CCC_gcnewpause(PauseState* pauseMenu)
 {
-	a0->unk2A = 0;
-	a0->unk2C = 0x1;
+	pauseMenu->GameOverTransparency = 0;
+	pauseMenu->GameOverFadingIn = 0x1;
 }
 
 //Handle the Fade in/out speed of the gameover text
-void func_80801CDC_gcnewpause(PauseState* a0)
+void func_80801CDC_gcnewpause(PauseState* pauseMenu)
 {
 	f32 speed = func_800D8FF8();
 	s16 temp_v0;
-	if (a0->unk2C != 0) {
-		temp_v0 = a0->unk2A;
+	if (pauseMenu->GameOverFadingIn != 0) {
+		temp_v0 = pauseMenu->GameOverTransparency;
 		if (temp_v0 < 0xFF) {
-			a0->unk2A = temp_v0 + (speed * 200.0f);
+			pauseMenu->GameOverTransparency = temp_v0 + (speed * 200.0f);
 		}
-		temp_v0 = a0->unk2A;
+		temp_v0 = pauseMenu->GameOverTransparency;
 		if (temp_v0 >= 0x100) {
-			a0->unk2A = 0xFF;
+			pauseMenu->GameOverTransparency = 0xFF;
 		}
 	}
 	else {
-		temp_v0 = a0->unk2A;
+		temp_v0 = pauseMenu->GameOverTransparency;
 		if (temp_v0 > 0) {
-			a0->unk2A = temp_v0 - (speed * 200.0f);
+			pauseMenu->GameOverTransparency = temp_v0 - (speed * 200.0f);
 		}
-		temp_v0 = a0->unk2A;
+		temp_v0 = pauseMenu->GameOverTransparency;
 		if (temp_v0 < 0) {
-			a0->unk2A = 0;
+			pauseMenu->GameOverTransparency = 0;
 		}
 	}
 }
 
 //Draw Gameover Text
-void func_80801DA0_gcnewpause(PauseState* a0,u32 a1)
+void func_80801DA0_gcnewpause(PauseState* pauseMenu,u32 a1)
 {
 	f32 coord[2];
 	coord[0] = 152.0f;
 	coord[1] = 171.0f;
 
-	func_800DF410(a0->unk2A);
+	func_800DF410(pauseMenu->GameOverTransparency);
 	func_800DF944(a1, coord, 0, 0.25f, 0,1, func_800D674C(0x640));
 }
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80801E08_gcnewpause.s")
-void func_80801E08_gcnewpause(PauseState* a0, OptionState* a1)
+void func_80801E08_gcnewpause(PauseState* pauseMenu, OptionState* a1)
 {
-	a0->unkE = a0->unkE + 1;
+	pauseMenu->unkE = pauseMenu->unkE + 1;
 
-	if (a0->unkE >= a0->unk12) {
-		a0->unkE = a0->unk10;
+	if (pauseMenu->unkE >= pauseMenu->unk12) {
+		pauseMenu->unkE = pauseMenu->unk10;
 	}
 
-	_gcnewoption_entrypoint_12(a1, a0->unk5, a0->unkE, a0);
-	a0->unk8 = 1.5f;
+	_gcnewoption_entrypoint_12(a1, pauseMenu->LastOptionSelected, pauseMenu->unkE, pauseMenu);
+	pauseMenu->unk8 = 1.5f;
 }
 
 //Is there any inventory items between a0 and a1
@@ -440,9 +439,9 @@ s32 func_80801E80_gcnewpause(s32 a0, s32 a1)
 	return 0x0;
 }
 
-void func_80801EF0_gcnewpause(u32 a0)
+s32 func_80801EF0_gcnewpause(s32 a0)
 {
-	func_80801E80_gcnewpause(0,0xC);
+	return func_80801E80_gcnewpause(0,0xC);
 }
 
 //Check if any Jinjo is collected

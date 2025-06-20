@@ -5,17 +5,17 @@
 #include "gc/newoption.h"
 
 typedef struct {
-	u8 PageIndex;
-	u8 SubPage;
+	u8 PageIndex; //0x0
+	u8 SubPage; //0x1
 	s8 unk2;
 	s8 unk3;
 	s8 unk4;
-	u8 unk5;
-	s8 unk6; //0x6
-	s8 unk7;
+	u8 LastOptionSelected;//0x5
+	s8 HeaderAndButtonOffset; //0x6
+	s8 CanExitPage;
 	f32 unk8;
-	s8 unkC;
-	s8 unkD;
+	s8 unkC; //0xC
+	s8 ActivePauseMenuVariant;//0xD
 	u8 unkE;
 	s8 unkF;
 	u8 unk10;
@@ -24,21 +24,21 @@ typedef struct {
 	s8 unk13;
 	u32* textPointer;//0x14
 	s16 pageTitleOffset; //0x18
-	u8 unk1A;
-	u8 unk1B;
-	u8 unk1C;
-	u8 unk1D;
-	u8 unk1E;
-	u8 unk1F;
-	u8 unk20;
-	u8 unk21;
-	u8 unk22;
+	u8 MovePageHeaderTrigger; //0x1A
+	u8 DrawPageHeader; //0x1B
+	u8 ShowBButton;//0x1C
+	u8 JoystickIndicator;//0x1D
+	u8 CanMoveLeft;//0x1E
+	u8 CanMoveRight;//0x1F
+	u8 MoveLeftJoystickTrigger;//0x20
+	u8 MoveRightJoystickTrigger; //0x21
+	u8 MoveBButtonTrigger; //0x22
 	s8 unk23;
-	s16 unk24;
-	s16 unk26;
-	s16 unk28;
-	s16 unk2A;
-	s16 unk2C;
+	s16 LeftJoystickPos; //0x24
+	s16 RightJoystickPos; //0x26
+	s16 B_Button_Pos; //0x28
+	s16 GameOverTransparency; //0x2A
+	s16 GameOverFadingIn; //0x2C
 	u16 unk2E;
 	OptionState optionState;
 } PauseState;
