@@ -3,5 +3,6 @@
 #include "common.h"
 
 extern u16 D_80132DC2;
+u16 func_800EA05C();
 
 #endif

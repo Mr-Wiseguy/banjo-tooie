@@ -2,6 +2,11 @@
 #define __CORE2_1EAF950_H__
 
 #include <common.h>
-s16 func_800D674C(int a0);
+typedef struct {
+	u8 pad[0x8];
+	s16 unk8;
+	s16 unkA;
+} ImageStruct;
+s32 func_800D674C(s32 a0);
 
 #endif

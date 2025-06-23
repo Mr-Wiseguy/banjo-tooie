@@ -3,11 +3,13 @@
 #include "fx/kern.h"
 #include "core2/1E91790.h"
 #include "core2/1EC2350.h"
+#include "core2/1EC3810.h"
 #include "core2/1E99980.h"
 #include "core2/1EABAC0.h"
 #include "core2/1ED3900.h"
 #include "core2/1E2D890.h"
 #include "core2/1E691A0.h"
+#include "core2/1E9A960.h"
 #include "core2/1EA78C0.h"
 #include "core2/1EA0690.h"
 #include "core2/1EA9160.h"
@@ -16,12 +18,27 @@
 #include "core2/1EB5E70.h"
 #include "core2/1EB2840.h"
 #include "core2/1EB45C0.h"
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_0.s")
+#include "core2/1EBB4F0.h"
 #include "core2/1ED3900.h"
-#include "core2/1EC2350.h"
+#include "core2/1EB3750.h"
+
 #include "gc/level.h"
 #include "gc/audiolist.h"
 
+
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_0.s")
+//Setup Pause Menu
+/*void gcnewpause_entrypoint_0(void)
+{
+
+	PauseState* pause_memory;
+	int size = _gcnewoption_entrypoint_2();
+	pause_memory = heap_alloc(size+0x30);
+	bzero(pause_memory, 0x30);
+	func_80800534_gcnewpause(pause_memory,0x1);
+	pause_memory->data[0xC] = a0;
+
+}*/
 
 //Close and Free Pause Menu
 void gcnewpause_entrypoint_1(PauseState* a0)
@@ -40,13 +57,28 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800A08_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800C54_gcnewpause.s")
+void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) {
+	s32 index;
+	Option* options;
+	u8 var_s1;
+	s32 size;
+	size = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].Size;
+	options = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].options;
+	index = 0;
+	for (index; index < size; index++)
+	{
+		_gcnewoption_entrypoint_12(arg1, index, options[index].Text);
+	}
+	_gcnewoption_entrypoint_41(arg1, arg0->LastOptionSelected);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800CE4_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800DE0_gcnewpause.s")
+void func_80800DE0_gcnewpause(void) {
+	func_800C4B64();
+	func_800C4AF0(0, &D_808021C0_gcnewpause);
+}
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/func_80800E10_gcnewpause.s")
 void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 {
 	func_8080105C_gcnewpause(0xC,0x7,a1,0x0);
@@ -66,18 +98,105 @@ void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 	}
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800EA8_gcnewpause.s")
+s32 func_80800EA8_gcnewpause(s32 arg0, u32 arg1)
+{
+	s32 sp24;
+	s32 sp20;
+	s32 temp_v0;
+	sp24 = func_8080105C_gcnewpause(0U, 0xCU, arg1, 1U);
+	temp_v0 = func_800D1A04(0x54);
+	sp20 = temp_v0;
+	if ((temp_v0 != 0) && (func_8080190C_gcnewpause((u32)sp20, 0x2F, func_800D27A4(func_800D1C5C(0x54)), 5U, arg1) != 0))
+	{
+		sp24 = 1;
+	}
+	return sp24;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800F2C_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800FA8_gcnewpause.s")
+s32 func_80800FA8_gcnewpause(u32 arg0) {
+	s32 temp_s2;
+	s32 temp_s3;
+	s32 var_s3 = 0;
+	u32 temp_v0;
+	u32 index;
+
+	var_s3 = 0;
+	for (index = 0; index != 9; index++)
+	{
+		if (1) {}
+		temp_v0 = func_800D1338(index);
+		if (temp_v0 != 0)
+		{
+			temp_s2 = func_800D27A4(index + 0xE1);
+			if (func_80801844_gcnewpause(temp_v0, func_800D129C(index), index + 0x11, temp_s2, 1, arg0) != 0)
+			{
+				var_s3 = 1;
+			}
+		}
+	}
+	return var_s3;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080105C_gcnewpause.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_808011BC_gcnewpause.s")
+//Try and go to the subpage for the current level when opening view totals
+s16 func_808011BC_gcnewpause(void)
+{
+	TotalsFlags* var_v0;
+	s32 var_v1;
+	s32 temp_v0;
+	s32 var_a0;
+	u32 var_a1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801248_gcnewpause.s")
+	temp_v0 = func_800EA05C();
+	if ((temp_v0 == 0xD0) || (temp_v0 == 0x121))
+	{
+		var_a1 = _chchuffycont_entrypoint_3();
+	}
+	else
+	{
+		var_a1 = D_8012762D;
+	}
+	var_a0 = 0;
+	var_v1 = D_808020A8_gcnewpause[var_a0].unk1;
+	while (D_808020A8_gcnewpause[var_a0].unk1 != 0)
+	{
+		if (var_a1 == D_808020A8_gcnewpause[var_a0].unk1)
+		{
+			break;
+		}
+		var_a0++;
+	}
+	return D_808020A8_gcnewpause[var_a0].SubPage;
+}
 
+u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
+	u8 temp_t1;
+	u8 var_v1;
+
+	var_v1 = 1;
+	if (a2 == 1)
+	{
+		if (*a1 < 0xAU)
+		{
+			*a0 += D_80802124_gcnewpause[*a1];
+			*a1 += 1;
+		}
+	}
+	else if (*a1 > 0)
+	{
+		temp_t1 = *a1 - 1;
+		*a1 = temp_t1;
+		*a0 -= D_80802124_gcnewpause[temp_t1 & 0xFF];
+	}
+	else
+	{
+		var_v1 = 0;
+	}
+	return var_v1;
+}
 //Draw Page Titles
 void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 {
@@ -92,13 +211,64 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 
 u8 func_80801330_gcnewpause(PauseState* pauseMenu, u32 a1,u32 a2)
 {
-	pauseMenu->DrawPageHeader = func_80801248_gcnewpause((&(pauseMenu->pageTitleOffset)), &(pauseMenu->MovePageHeaderTrigger), a2, pauseMenu);
+	pauseMenu->DrawPageHeader = func_80801248_gcnewpause((&(pauseMenu->pageTitleOffset)), &(pauseMenu->MovePageHeaderTrigger), a2);
 	return pauseMenu->DrawPageHeader;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080136C_gcnewpause.s")
+void func_8080136C_gcnewpause(PauseState* pauseMenu) {
+	s16 temp_t7;
+	u8 temp_v0;
+	u8 temp_v0_2;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80801410_gcnewpause.s")
+	temp_v0 = func_800E8B74(0xB59);
+	pauseMenu->ShowBButton = temp_v0;
+	func_800E8D28(temp_v0 & 0xFF, 0x3F19999A);
+	func_800E8D5C(pauseMenu->ShowBButton, &D_808021CC_gcnewpause, 3);
+	temp_v0_2 = func_800E8B74(0xB57);
+	pauseMenu->JoystickIndicator = temp_v0_2;
+	func_800E8D28(temp_v0_2 & 0xFF, 0x3F4CCCCD);
+	func_800E8D5C(pauseMenu->JoystickIndicator, &D_808021E4_gcnewpause, 3);
+	pauseMenu->MoveRightJoystickTrigger = 0;
+	pauseMenu->MoveLeftJoystickTrigger = 0;
+	temp_t7 = -pauseMenu->HeaderAndButtonOffset;
+	pauseMenu->RightJoystickPos = temp_t7;
+	pauseMenu->LeftJoystickPos = temp_t7;
+	pauseMenu->B_Button_Pos = temp_t7;
+	pauseMenu->MoveBButtonTrigger = 0;
+}
+
+void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
+{
+	Coords2D sp30;
+	ImageStruct* imageData;
+	s32 sp28;
+	s32 pad;
+
+	if (pauseMenu->ShowBButton != 0)
+	{
+		sp30.x = 0x260;
+		sp30.y = (-pauseMenu->B_Button_Pos * 4) + 0x340;
+		imageData = func_800D674C(0xB59);
+
+		sp28 = func_800E8C58(pauseMenu->ShowBButton);
+		func_800E30E0(arg1, imageData, sp28, &sp30);
+	}
+
+	if (pauseMenu->JoystickIndicator != 0)
+	{
+		imageData = func_800D674C(0xB57);
+		sp28 = func_800E8C58(pauseMenu->JoystickIndicator);
+
+		sp30.x = 0x78;
+		sp30.y = (-pauseMenu->LeftJoystickPos * 4) + 0x340;
+		func_800E2568(imageData->unk8 * -4, imageData->unkA * 4);
+		func_800E30E0(arg1, imageData, sp28, &sp30);
+
+		sp30.x = 0x448;
+		sp30.y = (-pauseMenu->RightJoystickPos * 4) + 0x340;
+		func_800E30E0(arg1, imageData, sp28, &sp30);
+	}
+}
 
 void func_8080152C_gcnewpause(PauseState* pauseMenu)
 {
@@ -126,16 +296,16 @@ void func_80801580_gcnewpause(PauseState* pauseMenu)
     {
         a2 = 0;
     }
-	func_80801248_gcnewpause(&(pauseMenu->B_Button_Pos), &(pauseMenu->MoveBButtonTrigger), a2,pauseMenu);
-	func_80801248_gcnewpause(&(pauseMenu->LeftJoystickPos), &(pauseMenu->MoveLeftJoystickTrigger), pauseMenu->CanMoveLeft, pauseMenu);
-	func_80801248_gcnewpause(&(pauseMenu->RightJoystickPos), &(pauseMenu->MoveRightJoystickTrigger), pauseMenu->CanMoveRight, pauseMenu);
+	func_80801248_gcnewpause(&(pauseMenu->B_Button_Pos), &(pauseMenu->MoveBButtonTrigger), a2);
+	func_80801248_gcnewpause(&(pauseMenu->LeftJoystickPos), &(pauseMenu->MoveLeftJoystickTrigger), pauseMenu->CanMoveLeft);
+	func_80801248_gcnewpause(&(pauseMenu->RightJoystickPos), &(pauseMenu->MoveRightJoystickTrigger), pauseMenu->CanMoveRight);
 }
 
 void func_808015F8_gcnewpause(PauseState* pauseMenu, u32 a1)
 {
 	pauseMenu->unk4 = a1;
 	pauseMenu->unk3 = -1;
-	pauseMenu->unkF = 0x0;
+	pauseMenu->SoundEffectTimerPageOpen = 0x0;
 	_gcaudiolist_entrypoint_1(0x3, 0x4650);
 }
 
@@ -143,7 +313,7 @@ void func_8080162C_gcnewpause(PauseState* pauseMenu,u32 a1)
 {
 	pauseMenu->CanExitPage = a1;
 	pauseMenu->unk3 = -1;
-	pauseMenu->unkF = 0x0;
+	pauseMenu->SoundEffectTimerPageOpen = 0x0;
 	_gcaudiolist_entrypoint_1(0x3, 0x4650);
 }
 
@@ -420,7 +590,7 @@ void func_80801E08_gcnewpause(PauseState* pauseMenu, OptionState* a1)
 		pauseMenu->unkE = pauseMenu->unk10;
 	}
 
-	_gcnewoption_entrypoint_12(a1, pauseMenu->LastOptionSelected, pauseMenu->unkE, pauseMenu);
+	_gcnewoption_entrypoint_12(a1, pauseMenu->LastOptionSelected, pauseMenu->unkE);
 	pauseMenu->unk8 = 1.5f;
 }
 

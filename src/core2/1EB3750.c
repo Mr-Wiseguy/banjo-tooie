@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include "memory.h"
 #include "core2/1E29B60.h"
+#include "core2/1EB3750.h"
 
 void _gldbDll_entrypoint_1(void);
 void _gldbDll_entrypoint_2(void);

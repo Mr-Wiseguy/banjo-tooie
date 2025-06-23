@@ -12,12 +12,12 @@ typedef struct {
 	s8 unk4;
 	u8 LastOptionSelected;//0x5
 	s8 HeaderAndButtonOffset; //0x6
-	s8 CanExitPage;
+	s8 CanExitPage; //0x7
 	f32 unk8;
 	s8 unkC; //0xC
 	s8 ActivePauseMenuVariant;//0xD
 	u8 unkE;
-	s8 unkF;
+	s8 SoundEffectTimerPageOpen;
 	u8 unk10;
 	s8 unk11;
 	u8 unk12;
@@ -45,7 +45,8 @@ typedef struct {
 
 typedef struct {
 	s16 ItemID;
-	u16 unk1;
+	u8 uiPosition;
+	u8 AbilityID;
 } InventoryDisplay;
 
 typedef struct {
@@ -64,15 +65,46 @@ typedef struct {
 	u8 AbilityId;
 } AbilityTracking;
 
+typedef struct {
+	s32 x;
+	s32 y;
+} Coords2D;
+
+typedef struct {
+	u16 Icon;
+	u8 Text;
+	u8 Function;
+	u8 SubOption;
+	u8 AreYouSure;
+} Option;
+
+//Information about a given pause menu state, how many options there are
+typedef struct {
+	s16 unk1;
+	s8 unk3;
+	u8 Size;
+	Option* options;
+} PauseOption;
+
+
+extern PauseOption D_80802070_gcnewpause[];
+extern void* D_808021CC_gcnewpause;
+extern void* D_808021E4_gcnewpause;
+
 extern TotalsFlags D_808020A8_gcnewpause[];
 extern InventoryDisplay D_808020D8_gcnewpause[];
+extern s8 D_80802124_gcnewpause[];
 extern ItemCountDisplay D_80802130_gcnewpause[];
 extern AbilityTracking D_8080215C_gcnewpause[];
+extern void* D_808021C0_gcnewpause;
+extern u8 D_8012762D;
 void gcnewpause_entrypoint_0(void);
 void func_80800534_gcnewpause(PauseState* a0, u32 a1);
 void func_80800E10_gcnewpause(PauseState* a0, u32 a1);
-void func_8080105C_gcnewpause(u32 a0, u32 a1, u32 a2, u32 a3);
-u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2, PauseState* a3);
+
+s32 func_8080105C_gcnewpause(u32 a0, u32 a1, u32 a2, u32 a3);
+u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2);
+
 void func_808012CC_gcnewpause(PauseState* a0, u32* a1);
 u8 func_80801330_gcnewpause(PauseState* a0, u32 a1, u32 a2);
 void func_8080162C_gcnewpause(PauseState* a0, u32 a1);
