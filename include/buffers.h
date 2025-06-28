@@ -1,5 +1,5 @@
-#ifndef __BUFERS_H__
-#define __BUFERS_H__
+#ifndef __BUFFERS_H__
+#define __BUFFERS_H__
 
 #include <ultra64.h>
 

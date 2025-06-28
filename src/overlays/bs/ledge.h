@@ -27,6 +27,7 @@
 #include "core2/1EB5980.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1EEBA50.h"
 #include "common.h"

@@ -50,6 +50,7 @@
 #include "core2/1EB5980.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 #include "core2/1ECE0B0.h"
 #include "overlays/nc/badie.h"
 #include "overlays/nc/badive.h"

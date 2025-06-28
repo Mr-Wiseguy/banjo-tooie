@@ -27,6 +27,7 @@
 #include "core2/1E93440.h"
 #include "core2/1EB5980.h"
 #include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 #include "common.h"
 #include "funcs.h"
 #include "player.h"
