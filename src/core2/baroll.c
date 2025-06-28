@@ -1,8 +1,8 @@
-#include "ba/roll.h"
+#include "overlays/ba/roll.h"
 
 #include "common.h"
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 #include "core2/1E2B200.h"
 #include "core2/1EB2840.h"

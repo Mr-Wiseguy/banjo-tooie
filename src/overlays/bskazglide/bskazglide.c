@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazglide.h"
+#include "overlays/bs/kazglide.h"
 
 void func_80800000_bskazglide(PlayerState *self) {
     if (func_8009E69C(self, 0x200) == 0) {

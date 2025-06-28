@@ -1,11 +1,11 @@
 #ifndef __CORE2_1E78BF0_H__
 #define __CORE2_1E78BF0_H__
 
-#include "ba/playerstate.h"
-#include "ba/anim.h"
-#include "ba/yaw.h"
-#include "ba/physics.h"
-#include "bs/state.h"
+#include "overlays/ba/playerstate.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/yaw.h"
+#include "overlays/ba/physics.h"
+#include "overlays/bs/state.h"
 
 f32 func_8009F308(PlayerState *);
 f32 func_8009F3BC(PlayerState *, f32, f32, f32, f32);

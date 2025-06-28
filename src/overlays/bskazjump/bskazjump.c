@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazjump.h"
+#include "overlays/bs/kazjump.h"
 
 extern s32 D_80800C40_bskazjump[];
 extern s32 D_80800C50_bskazjump[];

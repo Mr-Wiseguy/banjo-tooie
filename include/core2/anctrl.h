@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "ba/assets.h"
+#include "overlays/ba/assets.h"
 
 typedef struct anctrl_s {
     // TODO populate this struct

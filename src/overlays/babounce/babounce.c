@@ -1,11 +1,11 @@
 #include "common.h"
 
-#include "ba/bounce.h"
+#include "overlays/ba/bounce.h"
 
-#include "ba/physics.h"
-#include "ba/react.h"
-#include "ba/stick.h"
-#include "ba/timer.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/react.h"
+#include "overlays/ba/stick.h"
+#include "overlays/ba/timer.h"
 #include "core2/1E2B200.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E6E870.h"

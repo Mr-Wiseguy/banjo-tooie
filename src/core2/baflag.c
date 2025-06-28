@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/flag.h"
+#include "overlays/ba/flag.h"
 
 s32 baflag_getStuctSize(void) {
     return sizeof(BaFlag);

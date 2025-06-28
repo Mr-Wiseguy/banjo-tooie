@@ -5,9 +5,9 @@
 // Functions should only be added here if it's unclear what system they belong to.
 // The end goal is to delete this file after moving all the functions out.
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 #include "core2/anctrl.h"
-#include "bs/state.h"
+#include "overlays/bs/state.h"
 
 BanjoStateId _bscrouch_entrypoint_4(PlayerState*, BanjoStateId);
 void func_8008B064(AnimCtrl*);

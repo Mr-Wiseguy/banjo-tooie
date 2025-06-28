@@ -3,8 +3,6 @@
 #include "core2/1E75920.h"
 #include "core2/1E7D460.h"
 
-#include "ba/1E6A480.h"
-
 s32 func_80090B90(void) {
     return sizeof(BaUnknown2C);
 }

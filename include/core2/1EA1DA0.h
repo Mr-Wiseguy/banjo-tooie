@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 
 s32 func_800C8A98(void);

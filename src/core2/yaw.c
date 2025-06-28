@@ -1,7 +1,7 @@
 
 #include "common.h"
 
-#include "ba/yaw.h"
+#include "overlays/ba/yaw.h"
 #include "core2/1E2B200.h"
 #include "core2/1EB2840.h"
 #include "ml.h"

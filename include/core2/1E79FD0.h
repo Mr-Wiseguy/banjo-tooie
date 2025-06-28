@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 s32 func_800A0C20(PlayerState *self);
 void func_800A0CDC(PlayerState *, s32);

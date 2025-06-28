@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazow.h"
+#include "overlays/bs/kazow.h"
 
 extern s32 D_808002D0_bskazow[];
 extern s32 D_808002E0_bskazow[];

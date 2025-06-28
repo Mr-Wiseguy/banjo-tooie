@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazcrouch.h"
+#include "overlays/bs/kazcrouch.h"
 
 s32 D_808007C0_bskazcrouch[];
 

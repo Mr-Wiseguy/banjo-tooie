@@ -5,7 +5,7 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 void func_8009CFD8(PlayerState *, f32);
 void func_8009D2D8(PlayerState *, s32);

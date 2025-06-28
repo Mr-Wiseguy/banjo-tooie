@@ -2,7 +2,7 @@
 #define __CORE2_1EE9AB0_H__
 
 #include <ultra64.h>
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 void func_80110BF0(PlayerState *self);
 void func_80110C2C(PlayerState *self);

@@ -1,4 +1,4 @@
-#include "bs/mumattack.h"
+#include "overlays/bs/mumattack.h"
 
 void func_80800000_bsmumattack(PlayerState *self) {
     if (self->unk160.bytes[0] != 0) {

@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/cough.h"
+#include "overlays/ba/cough.h"
 
 #include "core2/1E76CC0.h"
 #include "core2/1E7BFA0.h"

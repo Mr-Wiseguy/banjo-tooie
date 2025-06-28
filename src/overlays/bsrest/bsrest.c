@@ -1,4 +1,4 @@
-#include "bs/rest.h"
+#include "overlays/bs/rest.h"
 
 extern enum bs_state_e bsrest_entrypoint_13(PlayerState *self);
 extern void bsrest_entrypoint_17(PlayerState *self, s32);

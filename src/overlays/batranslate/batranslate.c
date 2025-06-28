@@ -1,7 +1,7 @@
 #include "common.h"
 
-#include "ba/translate.h"
-#include "ba/yaw.h"
+#include "overlays/ba/translate.h"
+#include "overlays/ba/yaw.h"
 #include "overlays/db/skeleton.h"
 #include "core2/1E6B900.h"
 #include "core2/1E75920.h"

@@ -1,4 +1,4 @@
-#include "bs/kazhatch.h"
+#include "overlays/bs/kazhatch.h"
 
 void func_80800000_bskazhatch(PlayerState *self, s32 arg1) {
     switch (arg1) {

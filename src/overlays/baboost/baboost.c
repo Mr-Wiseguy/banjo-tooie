@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/boost.h"
+#include "overlays/ba/boost.h"
 
 s32 baboost_entrypoint_0(void) {
     return sizeof(BaBoost);
