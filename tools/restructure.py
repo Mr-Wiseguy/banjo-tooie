@@ -55,15 +55,19 @@ PREFIX_MAP = {
     "sucoaster": "su/coaster",
 }
 
+IGNORED_FILES = (
+    "markersDll.c",
+    "seq.c"
+)
+
 PROJECT_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), os.path.pardir))
 OVERLAYS_PATH = os.path.join(PROJECT_ROOT, "src", "overlays")
 SPLAT_CONFIG = os.path.join(PROJECT_ROOT, "baserom.us.yaml")
 
 DRY_RUN = True
 
-
 def main():
-    files = glob(f"{OVERLAYS_PATH}/bs*/*.c")
+    files = glob(f"{OVERLAYS_PATH}/**/*.c")
     config_yaml = None
     config_str = ""
     with open(SPLAT_CONFIG, "r") as c:
@@ -86,19 +90,22 @@ def main():
 
     for file in files:
         file_name = os.path.basename(file)
+
+        if file_name in IGNORED_FILES:
+            print(f"Skipping file {file}")
+            continue
+
         source_name = file_name.replace(".c", "")
         source_file_name = os.path.join(OVERLAYS_PATH, source_name, file_name)
         target_file_name = determine_target_file_name(file_name)
         target_directory = os.path.dirname(target_file_name)
 
         # move file and delete original directory
-        Path(os.path.join(OVERLAYS_PATH, target_directory)).mkdir(
-            parents=True, exist_ok=True
-        )
-
         print(f"Moving {source_file_name} to {target_file_name}.")
-
         if DRY_RUN is False:
+            Path(os.path.join(OVERLAYS_PATH, target_directory)).mkdir(
+                parents=True, exist_ok=True
+            )
             os.rename(
                 source_file_name,
                 target_file_name,
@@ -147,6 +154,34 @@ def main():
                         f", {target_name}]",
                     )
             break  # stop the segments loop as there should only be one segment for the current file
+
+        # create missing .h file
+        expected_h_file_name = target_file_name.replace('.c', '.h')
+        
+        if os.path.exists(expected_h_file_name) is False:
+            define_name = target_file_name.replace(PROJECT_ROOT + "/src/overlays/", "").replace(".c", "").replace("/", "_").upper()
+            print(f"Creating header file: {expected_h_file_name} with #ifndef __{define_name}_H__ and replacing #include \"common.h\" with new header file")
+            if DRY_RUN is False:
+                with open(expected_h_file_name, "w") as f:
+                    f.write(f"""
+#ifndef __{define_name}_H__
+#define __{define_name}_H__
+
+#include "common.h"
+
+#endif // __{define_name}_H__
+""")
+                # Open current file, replace common.h include with overlays header (newly created file) import
+                file_content = ""
+                with open(target_file_name, "r") as f:
+                    file_content = f.read()
+                if file_content == "":
+                    print(f"Failed to read {target_file_name}, could not replace #include statement")
+                    continue
+
+                file_content = file_content.replace('#include "common.h"', f'#include "{expected_h_file_name.replace(PROJECT_ROOT + "/src/", "")}"')
+                with open(target_file_name, "w") as f:
+                    f.write(file_content)
 
     if DRY_RUN is False:
         with open(SPLAT_CONFIG, "w") as c:
