@@ -1,7 +1,7 @@
 #ifndef __ANIM_H__
 #define __ANIM_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 #include "assets.h"
 #include "core2/anctrl.h"
 

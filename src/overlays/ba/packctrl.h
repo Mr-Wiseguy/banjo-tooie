@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 void _bapackctrl_entrypoint_5(PlayerState *self, s32);
 

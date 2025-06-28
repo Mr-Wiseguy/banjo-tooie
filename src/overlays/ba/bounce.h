@@ -2,7 +2,7 @@
 #define __BA_BOUNCE_H__
 
 #include "assets.h"
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef struct ba_bounce_s {
     f32 unk0;

@@ -1,9 +1,9 @@
 #ifndef __BA_PHYSICS_H__
 #define __BA_PHYSICS_H__
 
-#include "anim.h"
-#include "playerstate.h"
-#include "yaw.h" // for YawType
+#include "overlays/ba/anim.h"
+#include "overlays/ba/playerstate.h"
+#include "overlays/ba/yaw.h" // for YawType
 
 typedef enum ba_physics_type_e {
     BA_PHYSICS_0_NONE,

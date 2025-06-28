@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 #define BA_TIMER_COUNT 15
 

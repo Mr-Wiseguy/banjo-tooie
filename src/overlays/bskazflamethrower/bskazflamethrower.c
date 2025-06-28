@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kazflamethrower.h"
+#include "overlays/bs/kaz/flamethrower.h"
 
 s32 D_808003B0_bskazflamethrower[];
 

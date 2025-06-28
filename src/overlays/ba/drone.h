@@ -1,7 +1,7 @@
 #ifndef __BA_DRONE_H__
 #define __BA_DRONE_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 #include "overlays/bs/state.h"
 
 extern s32 _badrone_entrypoint_3(PlayerState *self);

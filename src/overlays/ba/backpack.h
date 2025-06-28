@@ -1,7 +1,7 @@
 #ifndef __BA_BACKPACK_H__
 #define __BA_BACKPACK_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 #include "core2/anctrl.h"
 
 typedef enum ba_backpack_state_e {

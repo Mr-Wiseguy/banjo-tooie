@@ -1,7 +1,7 @@
 #ifndef __BA_EGGS_H__
 #define __BA_EGGS_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 // Functions beginning with an underscore are trampolines. They exist to intercept calls
 // to the real function and load the corresponding overlay if necessary.

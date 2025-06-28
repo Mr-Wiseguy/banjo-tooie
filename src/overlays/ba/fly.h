@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 extern void _bafly_entrypoint_1(PlayerState *self, f32 *, f32 *, f32);
 extern void _bafly_entrypoint_4(PlayerState *self);

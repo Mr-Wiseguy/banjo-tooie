@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kazmove.h"
+#include "overlays/bs/kaz/move.h"
 
 void func_80800000_bskazmove(PlayerState *self, f32 *arg1, f32 *arg2) {
     switch ( _bashoes_entrypoint_1(self)) {

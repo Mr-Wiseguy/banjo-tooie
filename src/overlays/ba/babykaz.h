@@ -1,7 +1,7 @@
 #ifndef __BA_BABYKAZ_H__
 #define __BA_BABYKAZ_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef struct ba_babykaz_s {
     u8 unk0;

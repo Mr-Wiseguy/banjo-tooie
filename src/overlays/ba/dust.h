@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 void _badust_entrypoint_1(PlayerState *self);
 void _badust_entrypoint_3(PlayerState *self, f32, f32);

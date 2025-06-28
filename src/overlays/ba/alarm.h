@@ -1,7 +1,7 @@
 #ifndef __BA_ALARM_H__
 #define __BA_ALARM_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef struct ba_alarm_s {
     u8 id;

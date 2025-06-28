@@ -2,7 +2,7 @@
 #define __BA_SPIN_H__
 
 #include <ultra64.h>
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 extern void _baspin_entrypoint_1();
 extern void _baspin_entrypoint_2(PlayerState *self, s32, f32, s32, s32);

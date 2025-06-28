@@ -2,7 +2,7 @@
 #define __BA_REACT_H__
 
 #include <ultra64.h>
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 void _bareact_entrypoint_1(PlayerState *self, s32);
 f32 _bareact_entrypoint_3(PlayerState *self);

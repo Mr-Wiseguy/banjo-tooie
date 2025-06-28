@@ -24,7 +24,7 @@
 #include "core2/1ECD170.h"
 #include "core2/1EE9AB0.h"
 #include "core2/1EEF790.h"
-#include "overlays/nc/ba1p.h"
+#include "overlays/nc/ba/1p.h"
 #include "common.h"
 #include "player.h"
 

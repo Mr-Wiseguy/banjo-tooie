@@ -1,4 +1,4 @@
-#include "overlays/bs/mumcast.h"
+#include "overlays/bs/mum/cast.h"
 
 #ifndef NONMATCHINGS
 s32 func_80800000_bsmumcast(PlayerState *self, s32);

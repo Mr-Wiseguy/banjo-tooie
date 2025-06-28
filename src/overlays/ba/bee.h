@@ -1,7 +1,7 @@
 #ifndef __BA_BEE_H__
 #define __BA_BEE_H__
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 typedef struct {
     f32 unk0;
     f32 cooldown_time;

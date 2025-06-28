@@ -2,7 +2,7 @@
 #define __BA_YAW_H__
 
 #include <ultra64.h>
-#include "playerstate.h" // for PlayerState
+#include "overlays/ba/playerstate.h" // for PlayerState
 
 typedef enum yaw_type_e{
     YAW_TYPE_0_NONE,

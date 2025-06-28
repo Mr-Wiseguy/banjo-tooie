@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef struct ba_van_s {
     f32 unk0;

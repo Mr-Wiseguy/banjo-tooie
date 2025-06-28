@@ -1,4 +1,4 @@
-#include "overlays/bs/mumsplat.h"
+#include "overlays/bs/mum/splat.h"
 
 void func_80800000_bsmumsplat(PlayerState *self) {
     _bsmum_entrypoint_2(self);

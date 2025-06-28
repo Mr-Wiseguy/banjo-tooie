@@ -31,7 +31,6 @@
 #include "core2/1ECB0F0.h"
 #include "core2/1EEBA50.h"
 #include "common.h"
-#include "funcs.h"
 
 extern s16 D_80801340_bsledge[];
 extern s32 D_80801348_bsledge[];

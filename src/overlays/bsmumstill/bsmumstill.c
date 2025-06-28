@@ -1,4 +1,4 @@
-#include "overlays/bs/mumstill.h"
+#include "overlays/bs/mum/still.h"
 
 enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e next_state) {
     switch (bastick_getZone(self)) {

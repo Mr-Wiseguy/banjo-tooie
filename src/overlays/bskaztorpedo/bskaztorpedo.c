@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaztorpedo.h"
+#include "overlays/bs/kaz/torpedo.h"
 
 extern s32 D_80801730_bskaztorpedo[];
 extern s32 D_80801740_bskaztorpedo[];

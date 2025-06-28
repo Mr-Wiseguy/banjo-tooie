@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef enum bs_stick_zone_id_e {
     BS_STICK_ZONE_ID_0,
