@@ -6,7 +6,7 @@
 // The end goal is to delete this file after moving all the functions out.
 
 #include "ba/playerstate.h"
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "bs/state.h"
 
 BanjoStateId _bscrouch_entrypoint_4(PlayerState*, BanjoStateId);

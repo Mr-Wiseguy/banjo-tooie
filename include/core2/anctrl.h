@@ -1,9 +1,9 @@
-#ifndef __ANIM_CTRL_H__
-#define __ANIM_CTRL_H__
+#ifndef __CORE2_ANCTRL_H__
+#define __CORE2_ANCTRL_H__
 
 #include <ultra64.h>
 
-#include "../ba/assets.h"
+#include "ba/assets.h"
 
 typedef struct anctrl_s {
     // TODO populate this struct

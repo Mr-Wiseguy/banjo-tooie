@@ -4,7 +4,7 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/boost.h"
@@ -51,9 +51,9 @@
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECE0B0.h"
-#include "nc/badie.h"
-#include "nc/badive.h"
-#include "nc/bafly.h"
+#include "overlays/nc/badie.h"
+#include "overlays/nc/badive.h"
+#include "overlays/nc/bafly.h"
 #include "funcs.h"
 #include "player.h"
 

@@ -2,7 +2,7 @@
 #define __BS_REST_H__
 
 #include <ultra64.h>
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/anim.h"
 #include "ba/data.h"
 #include "ba/drone.h"
@@ -24,7 +24,7 @@
 #include "core2/1ECD170.h"
 #include "core2/1EE9AB0.h"
 #include "core2/1EEF790.h"
-#include "nc/ba1p.h"
+#include "overlays/nc/ba1p.h"
 #include "common.h"
 #include "player.h"
 

@@ -1,7 +1,7 @@
 #ifndef __BS_MUMSPLAT_H__
 #define __BS_MUMSPLAT_H__
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/anim.h"
 #include "ba/dust.h"
 #include "ba/physics.h"

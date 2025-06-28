@@ -4,7 +4,7 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/key.h"
 #include "ba/input.h"
 #include "ba/timer.h"

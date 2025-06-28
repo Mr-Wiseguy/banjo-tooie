@@ -91,6 +91,7 @@ def main():
         target_file_name = determine_target_file_name(file_name)
         target_directory = os.path.dirname(target_file_name)
 
+        # move file and delete original directory
         Path(os.path.join(OVERLAYS_PATH, target_directory)).mkdir(
             parents=True, exist_ok=True
         )
@@ -109,6 +110,7 @@ def main():
         if DRY_RUN is False:
             os.removedirs(source_directory)
 
+        # rename file in splat config
         for segment in segments:
             if "name" not in segment:
                 continue
@@ -149,6 +151,7 @@ def main():
     if DRY_RUN is False:
         with open(SPLAT_CONFIG, "w") as c:
             c.write(config_str)
+
 
     # go through each .c file in overlays
     # check if .h file (bskaz.c -> include/bs/kaz.h)

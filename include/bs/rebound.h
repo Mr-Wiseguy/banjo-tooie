@@ -1,7 +1,7 @@
 #ifndef __BS_REBOUND_H__
 #define __BS_REBOUND_H__
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/anim.h"
 #include "ba/bounce.h"
 #include "bs/state.h"

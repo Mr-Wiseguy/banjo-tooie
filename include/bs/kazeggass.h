@@ -4,7 +4,7 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/playerstate.h"
 #include "ba/yaw.h"
 #include "ba/eggs.h"

@@ -1,7 +1,7 @@
 #ifndef __BS_MUM_H__
 #define __BS_MUM_H__
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/bounce.h"

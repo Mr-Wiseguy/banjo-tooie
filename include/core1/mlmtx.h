@@ -1,5 +1,5 @@
-#ifndef __ML_MTX__
-#define __ML_MTX__
+#ifndef __CORE1_ML_MTX__
+#define __CORE1_ML_MTX__
 
 #include <ultra64.h>
 typedef struct {

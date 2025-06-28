@@ -3,7 +3,7 @@
 
 #include "playerstate.h"
 #include "assets.h"
-#include "../an/anctrl.h"
+#include "core2/anctrl.h"
 
 typedef enum baanim_update_type_e {
     BAANIM_UPDATE_0_NONE,

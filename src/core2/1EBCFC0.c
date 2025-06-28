@@ -1,6 +1,6 @@
 #include <ultra64.h>
 #include <PR/gbi.h>
-#include "ml/mtx.h"
+#include "core1/mlmtx.h"
 #include "gfx.h"
 
 typedef struct {

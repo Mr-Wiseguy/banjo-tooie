@@ -2,7 +2,7 @@
 #define __BA_BACKPACK_H__
 
 #include "playerstate.h"
-#include "../an/anctrl.h"
+#include "core2/anctrl.h"
 
 typedef enum ba_backpack_state_e {
     BA_BACKPACK_STATE_0 = 0,

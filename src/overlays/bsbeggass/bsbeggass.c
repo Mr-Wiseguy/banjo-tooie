@@ -1,6 +1,6 @@
 #include "ba/physics.h"
 #include "ba/playerstate.h"
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/anim.h"
 #include "ba/eggs.h"
 #include "core2/1E72EA0.h"

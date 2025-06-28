@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "core2/1E72EA0.h"
 #include "ba/anim.h"
 #include "ba/duo.h"
@@ -52,7 +52,7 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
 #include "core2/1ECE0B0.h"
-#include "pl/su.h"
+#include "overlays/pl/su.h"
 #include "funcs.h"
 #include "player.h"
 

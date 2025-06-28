@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "../buttons.h"     // ButtonId
+#include "buttons.h"     // ButtonId
 #include "ba/playerstate.h" // PlayerState
 #include "core2/1E965B0.h"  // unkfunc_800BCE84
 

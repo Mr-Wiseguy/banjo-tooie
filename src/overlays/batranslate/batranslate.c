@@ -2,7 +2,7 @@
 
 #include "ba/translate.h"
 #include "ba/yaw.h"
-#include "db/skeleton.h"
+#include "overlays/db/skeleton.h"
 #include "core2/1E6B900.h"
 #include "core2/1E75920.h"
 #include "core2/1EC8070.h"

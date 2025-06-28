@@ -4,7 +4,7 @@
 #include "common.h"
 #include <ultra64.h>
 
-#include "an/anctrl.h"
+#include "core2/anctrl.h"
 #include "ba/anim.h"
 #include "ba/dust.h"
 #include "ba/timer.h"
@@ -14,7 +14,7 @@
 #include "ba/roll.h"
 #include "ba/yaw.h"
 #include "bs/kaz.h"
-#include "nc/badie.h"
+#include "overlays/nc/badie.h"
 #include "core2/1E2B200.h"
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"
