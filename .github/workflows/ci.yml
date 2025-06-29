@@ -17,47 +17,47 @@ jobs:
       matrix:
         version: [us]
 
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        ref: ${{ github.event.pull_request.head.ref }}
-        repository: ${{ github.event.pull_request.head.repo.full_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-    - name: Install package requirements
-      run: sudo apt-get install -y make git build-essential binutils-mips-linux-gnu gcc-mips-linux-gnu python3 python3-pip libfmt-dev libtoml11-dev
+      - name: Install package requirements
+        run: sudo apt-get install -y make git build-essential binutils-mips-linux-gnu gcc-mips-linux-gnu python3 python3-pip libfmt-dev libtoml11-dev
 
-    - name: Install Python dependencies
-      run: pip3 install -r tools/requirements.txt
-      
-    - name: Install Splat dependencies
-      run: pip3 install -r tools/splat/requirements.txt
+      - name: Install Python dependencies
+        run: pip3 install -r tools/requirements.txt
+        
+      - name: Install Splat dependencies
+        run: pip3 install -r tools/splat/requirements.txt
 
-    - name: Get extra dependencies
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ secrets.SECRETREPO }}
-        token: ${{ secrets.SECRETTOKEN }}
-        path: deps_repo
-    - name: Get the dependency
-      run: cp deps_repo/baserom.${{ matrix.version }}.z64 baserom.${{ matrix.version }}.z64
+      - name: Get extra dependencies
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SECRETREPO }}
+          token: ${{ secrets.SECRETTOKEN }}
+          path: deps_repo
+      - name: Get the dependency
+        run: cp deps_repo/baserom.${{ matrix.version }}.z64 baserom.${{ matrix.version }}.z64
 
-    - name: Setup
-      run: make setup -j $(nproc)
+      - name: Setup
+        run: make setup -j $(nproc)
 
-    - name: Build Banjo-Tooie
-      run: make -j $(nproc)
+      - name: Build Banjo-Tooie
+        run: make -j $(nproc)
 
-    - name: Print progress
-      run: python3 tools/progress.py --version ${{ matrix.version }}
+      - name: Print progress
+        run: python3 tools/progress.py --version ${{ matrix.version }}
 
-    - name: Upload frogress
-      if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
-      run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
+      - name: Upload frogress
+        if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
+        run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
 
-    - name: Upload map
-      uses: actions/upload-artifact@v4
-      with:
-        name: banjotooie.${{ matrix.version }}.map
-        path: build/${{ matrix.version }}/banjotooie_decompressed.map
+      - name: Upload map
+        uses: actions/upload-artifact@v4
+        with:
+          name: banjotooie.${{ matrix.version }}.map
+          path: build/${{ matrix.version }}/banjotooie_decompressed.map
