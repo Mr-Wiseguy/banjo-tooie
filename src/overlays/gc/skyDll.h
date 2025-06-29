@@ -1,4 +1,3 @@
-
 #ifndef __GC_SKYDLL_H__
 #define __GC_SKYDLL_H__
 

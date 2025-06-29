@@ -1,4 +1,3 @@
-
 #ifndef __DB_TEX_H__
 #define __DB_TEX_H__
 

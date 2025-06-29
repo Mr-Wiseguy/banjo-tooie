@@ -1,4 +1,3 @@
-
 #ifndef __GC_DIALOG_CAMERA_H__
 #define __GC_DIALOG_CAMERA_H__
 

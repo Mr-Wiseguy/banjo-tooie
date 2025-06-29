@@ -1,4 +1,3 @@
-
 #ifndef __CH_NICECAVEMEN_H__
 #define __CH_NICECAVEMEN_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_INTRO_TICKER_H__
 #define __CH_INTRO_TICKER_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __GC_TRANSITIONDLL_H__
 #define __GC_TRANSITIONDLL_H__
 

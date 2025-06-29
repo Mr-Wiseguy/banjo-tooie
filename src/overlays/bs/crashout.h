@@ -1,4 +1,3 @@
-
 #ifndef __BS_CRASHOUT_H__
 #define __BS_CRASHOUT_H__
 

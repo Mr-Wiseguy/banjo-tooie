@@ -1,4 +1,3 @@
-
 #ifndef __DB_ANIM_H__
 #define __DB_ANIM_H__
 

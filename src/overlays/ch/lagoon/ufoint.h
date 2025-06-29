@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAGOON_UFOINT_H__
 #define __CH_LAGOON_UFOINT_H__
 

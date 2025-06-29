@@ -1,4 +1,3 @@
-
 #ifndef __SU_TEMPLEBOSS_H__
 #define __SU_TEMPLEBOSS_H__
 

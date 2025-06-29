@@ -1,4 +1,3 @@
-
 #ifndef __CH_KLUNGO_FORCEFIELD_H__
 #define __CH_KLUNGO_FORCEFIELD_H__
 

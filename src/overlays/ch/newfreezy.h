@@ -1,4 +1,3 @@
-
 #ifndef __CH_NEWFREEZY_H__
 #define __CH_NEWFREEZY_H__
 

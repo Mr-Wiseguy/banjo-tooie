@@ -1,4 +1,3 @@
-
 #ifndef __CH_FISHSHOOTGAME_H__
 #define __CH_FISHSHOOTGAME_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_CRYSTALBADDIE_H__
 #define __CH_CRYSTALBADDIE_H__
 

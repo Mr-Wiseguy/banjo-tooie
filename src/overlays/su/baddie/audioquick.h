@@ -1,4 +1,3 @@
-
 #ifndef __SU_BADDIE_AUDIOQUICK_H__
 #define __SU_BADDIE_AUDIOQUICK_H__
 

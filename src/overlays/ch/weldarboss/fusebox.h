@@ -1,4 +1,3 @@
-
 #ifndef __CH_WELDARBOSS_FUSEBOX_H__
 #define __CH_WELDARBOSS_FUSEBOX_H__
 

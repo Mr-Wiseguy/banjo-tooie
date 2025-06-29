@@ -1,4 +1,3 @@
-
 #ifndef __CH_KLUNGO_SPIRAL_H__
 #define __CH_KLUNGO_SPIRAL_H__
 

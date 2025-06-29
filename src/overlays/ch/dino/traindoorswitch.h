@@ -1,4 +1,3 @@
-
 #ifndef __CH_DINO_TRAINDOORSWITCH_H__
 #define __CH_DINO_TRAINDOORSWITCH_H__
 

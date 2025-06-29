@@ -1,4 +1,3 @@
-
 #ifndef __BS_TAXI_H__
 #define __BS_TAXI_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_CAULDRONENTRYDOOR_H__
 #define __CH_CAULDRONENTRYDOOR_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_FAIR_GROUNDWORKER_H__
 #define __CH_FAIR_GROUNDWORKER_H__
 

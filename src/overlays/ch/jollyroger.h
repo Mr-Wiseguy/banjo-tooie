@@ -1,4 +1,3 @@
-
 #ifndef __CH_JOLLYROGER_H__
 #define __CH_JOLLYROGER_H__
 

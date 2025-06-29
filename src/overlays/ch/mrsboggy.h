@@ -1,4 +1,3 @@
-
 #ifndef __CH_MRSBOGGY_H__
 #define __CH_MRSBOGGY_H__
 

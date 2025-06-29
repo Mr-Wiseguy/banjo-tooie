@@ -1,4 +1,3 @@
-
 #ifndef __BS_HOCK_H__
 #define __BS_HOCK_H__
 

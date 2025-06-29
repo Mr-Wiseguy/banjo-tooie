@@ -1,4 +1,3 @@
-
 #ifndef __GL_OBALSETTINGS_H__
 #define __GL_OBALSETTINGS_H__
 

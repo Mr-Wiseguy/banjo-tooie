@@ -1,4 +1,3 @@
-
 #ifndef __CH_TNT_BLOCKAGE_H__
 #define __CH_TNT_BLOCKAGE_H__
 

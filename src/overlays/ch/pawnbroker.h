@@ -1,4 +1,3 @@
-
 #ifndef __CH_PAWNBROKER_H__
 #define __CH_PAWNBROKER_H__
 

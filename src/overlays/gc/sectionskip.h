@@ -1,4 +1,3 @@
-
 #ifndef __GC_SECTIONSKIP_H__
 #define __GC_SECTIONSKIP_H__
 

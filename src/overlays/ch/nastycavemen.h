@@ -1,4 +1,3 @@
-
 #ifndef __CH_NASTYCAVEMEN_H__
 #define __CH_NASTYCAVEMEN_H__
 

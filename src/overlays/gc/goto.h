@@ -1,4 +1,3 @@
-
 #ifndef __GC_GOTO_H__
 #define __GC_GOTO_H__
 

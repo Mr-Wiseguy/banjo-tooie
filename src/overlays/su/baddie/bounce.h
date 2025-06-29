@@ -1,4 +1,3 @@
-
 #ifndef __SU_BADDIE_BOUNCE_H__
 #define __SU_BADDIE_BOUNCE_H__
 

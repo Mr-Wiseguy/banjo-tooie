@@ -1,4 +1,3 @@
-
 #ifndef __CH_FACTORY_TOXICPOOLS_H__
 #define __CH_FACTORY_TOXICPOOLS_H__
 

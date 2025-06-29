@@ -1,4 +1,3 @@
-
 #ifndef __CH_QUIZEXITDOOR_H__
 #define __CH_QUIZEXITDOOR_H__
 

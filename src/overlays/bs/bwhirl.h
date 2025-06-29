@@ -1,4 +1,3 @@
-
 #ifndef __BS_BWHIRL_H__
 #define __BS_BWHIRL_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __BA_FLAMETHROWER_H__
 #define __BA_FLAMETHROWER_H__
 

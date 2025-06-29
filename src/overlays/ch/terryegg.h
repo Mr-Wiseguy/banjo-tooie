@@ -1,4 +1,3 @@
-
 #ifndef __CH_TERRYEGG_H__
 #define __CH_TERRYEGG_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAVA_ARCHGRILLSWITCH_H__
 #define __CH_LAVA_ARCHGRILLSWITCH_H__
 

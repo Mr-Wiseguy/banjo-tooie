@@ -1,4 +1,3 @@
-
 #ifndef __CH_FLOATY_H__
 #define __CH_FLOATY_H__
 

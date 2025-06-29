@@ -1,4 +1,3 @@
-
 #ifndef __CH_LENSFLARE_H__
 #define __CH_LENSFLARE_H__
 

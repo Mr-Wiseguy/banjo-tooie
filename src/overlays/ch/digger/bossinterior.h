@@ -1,4 +1,3 @@
-
 #ifndef __CH_DIGGER_BOSSINTERIOR_H__
 #define __CH_DIGGER_BOSSINTERIOR_H__
 

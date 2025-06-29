@@ -1,4 +1,3 @@
-
 #ifndef __CH_FACTORY_POSTER_H__
 #define __CH_FACTORY_POSTER_H__
 

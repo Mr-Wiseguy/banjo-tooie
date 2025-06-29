@@ -1,4 +1,3 @@
-
 #ifndef __SU_QUIZ_H__
 #define __SU_QUIZ_H__
 

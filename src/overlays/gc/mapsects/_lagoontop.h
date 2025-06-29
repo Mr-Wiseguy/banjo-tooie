@@ -1,4 +1,3 @@
-
 #ifndef __GC_MAPSECTS__LAGOONTOP_H__
 #define __GC_MAPSECTS__LAGOONTOP_H__
 

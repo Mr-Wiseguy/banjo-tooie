@@ -1,4 +1,3 @@
-
 #ifndef __CH_FLAMER_H__
 #define __CH_FLAMER_H__
 

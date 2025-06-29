@@ -1,4 +1,3 @@
-
 #ifndef __CH_DOUBLOON_H__
 #define __CH_DOUBLOON_H__
 

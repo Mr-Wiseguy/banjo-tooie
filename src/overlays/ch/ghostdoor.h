@@ -1,4 +1,3 @@
-
 #ifndef __CH_GHOSTDOOR_H__
 #define __CH_GHOSTDOOR_H__
 

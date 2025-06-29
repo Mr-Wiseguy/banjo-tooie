@@ -1,4 +1,3 @@
-
 #ifndef __CH_SUNLIGHTSPELL_H__
 #define __CH_SUNLIGHTSPELL_H__
 

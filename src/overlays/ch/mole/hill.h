@@ -1,4 +1,3 @@
-
 #ifndef __CH_MOLE_HILL_H__
 #define __CH_MOLE_HILL_H__
 

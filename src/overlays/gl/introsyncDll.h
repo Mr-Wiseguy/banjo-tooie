@@ -1,4 +1,3 @@
-
 #ifndef __GL_INTROSYNCDLL_H__
 #define __GL_INTROSYNCDLL_H__
 

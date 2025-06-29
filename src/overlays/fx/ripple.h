@@ -1,4 +1,3 @@
-
 #ifndef __FX_RIPPLE_H__
 #define __FX_RIPPLE_H__
 

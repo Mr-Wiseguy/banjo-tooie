@@ -1,4 +1,3 @@
-
 #ifndef __VP_WIBBLE_H__
 #define __VP_WIBBLE_H__
 

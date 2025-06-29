@@ -1,4 +1,3 @@
-
 #ifndef __VP_FLICKER_H__
 #define __VP_FLICKER_H__
 

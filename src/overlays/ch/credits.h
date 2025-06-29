@@ -1,4 +1,3 @@
-
 #ifndef __CH_CREDITS_H__
 #define __CH_CREDITS_H__
 

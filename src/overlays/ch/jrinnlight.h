@@ -1,4 +1,3 @@
-
 #ifndef __CH_JRINNLIGHT_H__
 #define __CH_JRINNLIGHT_H__
 

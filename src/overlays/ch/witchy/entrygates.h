@@ -1,4 +1,3 @@
-
 #ifndef __CH_WITCHY_ENTRYGATES_H__
 #define __CH_WITCHY_ENTRYGATES_H__
 

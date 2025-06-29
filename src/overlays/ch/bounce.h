@@ -1,4 +1,3 @@
-
 #ifndef __CH_BOUNCE_H__
 #define __CH_BOUNCE_H__
 

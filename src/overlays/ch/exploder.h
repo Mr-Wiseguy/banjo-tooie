@@ -1,4 +1,3 @@
-
 #ifndef __CH_EXPLODER_H__
 #define __CH_EXPLODER_H__
 

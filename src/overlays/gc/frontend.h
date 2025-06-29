@@ -1,4 +1,3 @@
-
 #ifndef __GC_FRONTEND_H__
 #define __GC_FRONTEND_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_TRANSPARENTFISH_H__
 #define __CH_TRANSPARENTFISH_H__
 

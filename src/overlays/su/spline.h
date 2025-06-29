@@ -1,4 +1,3 @@
-
 #ifndef __SU_SPLINE_H__
 #define __SU_SPLINE_H__
 

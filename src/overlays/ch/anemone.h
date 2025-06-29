@@ -1,4 +1,3 @@
-
 #ifndef __CH_ANEMONE_H__
 #define __CH_ANEMONE_H__
 

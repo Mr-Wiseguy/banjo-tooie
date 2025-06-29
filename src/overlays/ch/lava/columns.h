@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAVA_COLUMNS_H__
 #define __CH_LAVA_COLUMNS_H__
 

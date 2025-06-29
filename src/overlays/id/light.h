@@ -1,4 +1,3 @@
-
 #ifndef __ID_LIGHT_H__
 #define __ID_LIGHT_H__
 

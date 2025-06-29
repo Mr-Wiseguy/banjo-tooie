@@ -1,4 +1,3 @@
-
 #ifndef __CH_TALTORPWALL_H__
 #define __CH_TALTORPWALL_H__
 

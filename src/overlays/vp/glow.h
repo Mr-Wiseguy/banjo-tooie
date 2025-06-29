@@ -1,4 +1,3 @@
-
 #ifndef __VP_GLOW_H__
 #define __VP_GLOW_H__
 

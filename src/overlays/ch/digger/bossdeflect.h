@@ -1,4 +1,3 @@
-
 #ifndef __CH_DIGGER_BOSSDEFLECT_H__
 #define __CH_DIGGER_BOSSDEFLECT_H__
 

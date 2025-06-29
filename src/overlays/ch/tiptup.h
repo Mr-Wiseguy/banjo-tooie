@@ -1,4 +1,3 @@
-
 #ifndef __CH_TIPTUP_H__
 #define __CH_TIPTUP_H__
 

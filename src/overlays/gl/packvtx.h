@@ -1,4 +1,3 @@
-
 #ifndef __GL_PACKVTX_H__
 #define __GL_PACKVTX_H__
 

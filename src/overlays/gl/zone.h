@@ -1,4 +1,3 @@
-
 #ifndef __GL_ZONE_H__
 #define __GL_ZONE_H__
 

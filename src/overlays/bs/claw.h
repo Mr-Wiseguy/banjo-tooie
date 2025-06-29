@@ -1,4 +1,3 @@
-
 #ifndef __BS_CLAW_H__
 #define __BS_CLAW_H__
 

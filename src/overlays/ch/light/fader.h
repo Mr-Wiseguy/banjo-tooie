@@ -1,4 +1,3 @@
-
 #ifndef __CH_LIGHT_FADER_H__
 #define __CH_LIGHT_FADER_H__
 

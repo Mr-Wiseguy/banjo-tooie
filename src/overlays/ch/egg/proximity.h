@@ -1,4 +1,3 @@
-
 #ifndef __CH_EGG_PROXIMITY_H__
 #define __CH_EGG_PROXIMITY_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_BOILER_BOSS_H__
 #define __CH_BOILER_BOSS_H__
 

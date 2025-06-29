@@ -1,4 +1,3 @@
-
 #ifndef __BS_SPLITUP_H__
 #define __BS_SPLITUP_H__
 

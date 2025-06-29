@@ -1,4 +1,3 @@
-
 #ifndef __DB_VTXNORMAL_H__
 #define __DB_VTXNORMAL_H__
 

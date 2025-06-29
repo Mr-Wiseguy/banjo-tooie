@@ -1,4 +1,3 @@
-
 #ifndef __CH_STATUEBOSSBITS_H__
 #define __CH_STATUEBOSSBITS_H__
 

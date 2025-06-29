@@ -1,4 +1,3 @@
-
 #ifndef __BS_BFLIP_H__
 #define __BS_BFLIP_H__
 

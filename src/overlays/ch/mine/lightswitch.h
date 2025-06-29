@@ -1,4 +1,3 @@
-
 #ifndef __CH_MINE_LIGHTSWITCH_H__
 #define __CH_MINE_LIGHTSWITCH_H__
 

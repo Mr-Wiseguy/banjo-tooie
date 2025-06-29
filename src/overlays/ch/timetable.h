@@ -1,4 +1,3 @@
-
 #ifndef __CH_TIMETABLE_H__
 #define __CH_TIMETABLE_H__
 

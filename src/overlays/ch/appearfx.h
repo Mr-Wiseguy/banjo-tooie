@@ -1,4 +1,3 @@
-
 #ifndef __CH_APPEARFX_H__
 #define __CH_APPEARFX_H__
 

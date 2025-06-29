@@ -1,4 +1,3 @@
-
 #ifndef __CH_JAMJARSDUMMY_H__
 #define __CH_JAMJARSDUMMY_H__
 

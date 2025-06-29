@@ -1,4 +1,3 @@
-
 #ifndef __GC_COLLECTDLL_H__
 #define __GC_COLLECTDLL_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_BOSSKOGSDOOR_H__
 #define __CH_BOSSKOGSDOOR_H__
 

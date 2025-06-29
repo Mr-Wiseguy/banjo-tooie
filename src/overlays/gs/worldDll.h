@@ -1,4 +1,3 @@
-
 #ifndef __GS_WORLDDLL_H__
 #define __GS_WORLDDLL_H__
 

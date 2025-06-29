@@ -1,4 +1,3 @@
-
 #ifndef __CH_INFLATABLEBOSS_H__
 #define __CH_INFLATABLEBOSS_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_FRIENDLYSTONEHEAD_H__
 #define __CH_FRIENDLYSTONEHEAD_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_EVILSPIRIT_H__
 #define __CH_EVILSPIRIT_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_BANJOCURRENT_H__
 #define __CH_BANJOCURRENT_H__
 

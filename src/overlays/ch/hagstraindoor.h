@@ -1,4 +1,3 @@
-
 #ifndef __CH_HAGSTRAINDOOR_H__
 #define __CH_HAGSTRAINDOOR_H__
 

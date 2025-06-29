@@ -1,4 +1,3 @@
-
 #ifndef __NC_BA_TARGET_H__
 #define __NC_BA_TARGET_H__
 

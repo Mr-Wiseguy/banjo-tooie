@@ -1,4 +1,3 @@
-
 #ifndef __GZ_REG_H__
 #define __GZ_REG_H__
 

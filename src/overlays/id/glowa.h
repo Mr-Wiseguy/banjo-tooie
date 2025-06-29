@@ -1,4 +1,3 @@
-
 #ifndef __ID_GLOWA_H__
 #define __ID_GLOWA_H__
 

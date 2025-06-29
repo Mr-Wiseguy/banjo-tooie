@@ -1,4 +1,3 @@
-
 #ifndef __CH_BURGERSTAND_H__
 #define __CH_BURGERSTAND_H__
 

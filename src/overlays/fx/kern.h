@@ -1,4 +1,3 @@
-
 #ifndef __FX_KERN_H__
 #define __FX_KERN_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_MOLE__WITCHY_H__
 #define __CH_MOLE__WITCHY_H__
 

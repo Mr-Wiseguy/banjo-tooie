@@ -1,4 +1,3 @@
-
 #ifndef __SU_COASTER_FLYDATA_H__
 #define __SU_COASTER_FLYDATA_H__
 

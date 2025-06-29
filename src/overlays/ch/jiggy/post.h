@@ -1,4 +1,3 @@
-
 #ifndef __CH_JIGGY_POST_H__
 #define __CH_JIGGY_POST_H__
 

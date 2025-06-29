@@ -1,4 +1,3 @@
-
 #ifndef __GC_EXTRA_H__
 #define __GC_EXTRA_H__
 

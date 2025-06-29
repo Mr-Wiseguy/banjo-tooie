@@ -1,4 +1,3 @@
-
 #ifndef __CH_CAMERAWIBBLE_H__
 #define __CH_CAMERAWIBBLE_H__
 

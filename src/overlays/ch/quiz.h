@@ -1,4 +1,3 @@
-
 #ifndef __CH_QUIZ_H__
 #define __CH_QUIZ_H__
 

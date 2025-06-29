@@ -1,4 +1,3 @@
-
 #ifndef __CH_LINKPIPEFAN_H__
 #define __CH_LINKPIPEFAN_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __GL_IDMAKE_H__
 #define __GL_IDMAKE_H__
 

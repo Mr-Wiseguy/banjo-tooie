@@ -1,4 +1,3 @@
-
 #ifndef __CH_STONEPILLAR_H__
 #define __CH_STONEPILLAR_H__
 

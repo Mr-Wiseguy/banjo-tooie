@@ -1,4 +1,3 @@
-
 #ifndef __CH_DUMBWAITERLIFT_H__
 #define __CH_DUMBWAITERLIFT_H__
 

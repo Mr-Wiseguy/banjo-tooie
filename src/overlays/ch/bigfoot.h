@@ -1,4 +1,3 @@
-
 #ifndef __CH_BIGFOOT_H__
 #define __CH_BIGFOOT_H__
 

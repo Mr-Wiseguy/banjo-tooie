@@ -1,4 +1,3 @@
-
 #ifndef __CH_CAMWAYPOINT_H__
 #define __CH_CAMWAYPOINT_H__
 

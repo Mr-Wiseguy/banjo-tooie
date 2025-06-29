@@ -1,4 +1,3 @@
-
 #ifndef __CH_NEWSHOVEL_H__
 #define __CH_NEWSHOVEL_H__
 

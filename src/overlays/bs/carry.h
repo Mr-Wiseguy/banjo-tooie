@@ -1,4 +1,3 @@
-
 #ifndef __BS_CARRY_H__
 #define __BS_CARRY_H__
 

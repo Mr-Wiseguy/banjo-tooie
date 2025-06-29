@@ -1,4 +1,3 @@
-
 #ifndef __GC_ZOOMBOX_H__
 #define __GC_ZOOMBOX_H__
 

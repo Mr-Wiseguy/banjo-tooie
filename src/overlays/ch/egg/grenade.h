@@ -1,4 +1,3 @@
-
 #ifndef __CH_EGG_GRENADE_H__
 #define __CH_EGG_GRENADE_H__
 

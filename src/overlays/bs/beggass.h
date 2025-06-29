@@ -1,4 +1,3 @@
-
 #ifndef __BS_BEGGASS_H__
 #define __BS_BEGGASS_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CA_DBMGRDLL_H__
 #define __CA_DBMGRDLL_H__
 

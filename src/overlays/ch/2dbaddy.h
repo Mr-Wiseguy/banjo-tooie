@@ -1,4 +1,3 @@
-
 #ifndef __CH_2DBADDY_H__
 #define __CH_2DBADDY_H__
 

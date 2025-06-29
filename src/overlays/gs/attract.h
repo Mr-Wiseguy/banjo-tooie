@@ -1,4 +1,3 @@
-
 #ifndef __GS_ATTRACT_H__
 #define __GS_ATTRACT_H__
 

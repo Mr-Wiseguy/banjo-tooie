@@ -1,4 +1,3 @@
-
 #ifndef __CH_CANARYMARYCAGE_H__
 #define __CH_CANARYMARYCAGE_H__
 

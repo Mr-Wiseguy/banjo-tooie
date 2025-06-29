@@ -1,4 +1,3 @@
-
 #ifndef __CH_MRTANNOY_H__
 #define __CH_MRTANNOY_H__
 

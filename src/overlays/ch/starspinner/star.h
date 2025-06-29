@@ -1,4 +1,3 @@
-
 #ifndef __CH_STARSPINNER_STAR_H__
 #define __CH_STARSPINNER_STAR_H__
 

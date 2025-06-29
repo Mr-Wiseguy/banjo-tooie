@@ -1,4 +1,3 @@
-
 #ifndef __CH_STADIUMDOORS_H__
 #define __CH_STADIUMDOORS_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_AMAZONSTADIUMGUARD_H__
 #define __CH_AMAZONSTADIUMGUARD_H__
 

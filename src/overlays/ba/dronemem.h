@@ -1,4 +1,3 @@
-
 #ifndef __BA_DRONEMEM_H__
 #define __BA_DRONEMEM_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_HOOPSWOOP_H__
 #define __CH_HOOPSWOOP_H__
 

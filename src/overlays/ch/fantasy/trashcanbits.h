@@ -1,4 +1,3 @@
-
 #ifndef __CH_FANTASY_TRASHCANBITS_H__
 #define __CH_FANTASY_TRASHCANBITS_H__
 

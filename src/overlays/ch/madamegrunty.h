@@ -1,4 +1,3 @@
-
 #ifndef __CH_MADAMEGRUNTY_H__
 #define __CH_MADAMEGRUNTY_H__
 

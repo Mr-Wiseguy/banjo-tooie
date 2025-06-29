@@ -1,4 +1,3 @@
-
 #ifndef __VP_MODULE_H__
 #define __VP_MODULE_H__
 

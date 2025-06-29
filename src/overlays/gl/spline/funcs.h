@@ -1,4 +1,3 @@
-
 #ifndef __GL_SPLINE_FUNCS_H__
 #define __GL_SPLINE_FUNCS_H__
 

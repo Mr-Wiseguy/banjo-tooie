@@ -1,4 +1,3 @@
-
 #ifndef __SC_CUSTOM_BANJO_H__
 #define __SC_CUSTOM_BANJO_H__
 

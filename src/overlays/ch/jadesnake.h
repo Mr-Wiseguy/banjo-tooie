@@ -1,4 +1,3 @@
-
 #ifndef __CH_JADESNAKE_H__
 #define __CH_JADESNAKE_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_DODGEMCONTROL_H__
 #define __CH_DODGEMCONTROL_H__
 

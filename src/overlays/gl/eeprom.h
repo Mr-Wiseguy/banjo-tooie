@@ -1,4 +1,3 @@
-
 #ifndef __GL_EEPROM_H__
 #define __GL_EEPROM_H__
 

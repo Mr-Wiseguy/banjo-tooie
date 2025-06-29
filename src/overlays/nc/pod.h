@@ -1,4 +1,3 @@
-
 #ifndef __NC_POD_H__
 #define __NC_POD_H__
 

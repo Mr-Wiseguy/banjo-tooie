@@ -1,4 +1,3 @@
-
 #ifndef __SU_COASTER_H__
 #define __SU_COASTER_H__
 

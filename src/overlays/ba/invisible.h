@@ -1,4 +1,3 @@
-
 #ifndef __BA_INVISIBLE_H__
 #define __BA_INVISIBLE_H__
 

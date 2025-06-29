@@ -1,4 +1,3 @@
-
 #ifndef __CH_JINJOVILLAGECAMERA1_H__
 #define __CH_JINJOVILLAGECAMERA1_H__
 

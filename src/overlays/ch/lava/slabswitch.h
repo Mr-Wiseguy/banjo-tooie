@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAVA_SLABSWITCH_H__
 #define __CH_LAVA_SLABSWITCH_H__
 

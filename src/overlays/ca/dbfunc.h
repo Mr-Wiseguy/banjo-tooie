@@ -1,4 +1,3 @@
-
 #ifndef __CA_DBFUNC_H__
 #define __CA_DBFUNC_H__
 

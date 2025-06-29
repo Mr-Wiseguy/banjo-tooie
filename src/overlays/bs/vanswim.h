@@ -1,4 +1,3 @@
-
 #ifndef __BS_VANSWIM_H__
 #define __BS_VANSWIM_H__
 

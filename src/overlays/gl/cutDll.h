@@ -1,4 +1,3 @@
-
 #ifndef __GL_CUTDLL_H__
 #define __GL_CUTDLL_H__
 

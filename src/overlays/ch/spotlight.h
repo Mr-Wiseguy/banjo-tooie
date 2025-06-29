@@ -1,4 +1,3 @@
-
 #ifndef __CH_SPOTLIGHT_H__
 #define __CH_SPOTLIGHT_H__
 

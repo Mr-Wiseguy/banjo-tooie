@@ -1,4 +1,3 @@
-
 #ifndef __CH_CACTUSOFSTRENGTH_H__
 #define __CH_CACTUSOFSTRENGTH_H__
 

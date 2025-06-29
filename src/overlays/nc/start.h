@@ -1,4 +1,3 @@
-
 #ifndef __NC_START_H__
 #define __NC_START_H__
 

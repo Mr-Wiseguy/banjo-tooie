@@ -1,4 +1,3 @@
-
 #ifndef __ID_GLOW_H__
 #define __ID_GLOW_H__
 

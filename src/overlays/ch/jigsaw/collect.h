@@ -1,4 +1,3 @@
-
 #ifndef __CH_JIGSAW_COLLECT_H__
 #define __CH_JIGSAW_COLLECT_H__
 

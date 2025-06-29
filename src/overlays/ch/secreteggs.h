@@ -1,4 +1,3 @@
-
 #ifndef __CH_SECRETEGGS_H__
 #define __CH_SECRETEGGS_H__
 

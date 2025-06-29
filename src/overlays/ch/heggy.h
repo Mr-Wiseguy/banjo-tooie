@@ -1,4 +1,3 @@
-
 #ifndef __CH_HEGGY_H__
 #define __CH_HEGGY_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_SPIRALGRILL_H__
 #define __CH_SPIRALGRILL_H__
 

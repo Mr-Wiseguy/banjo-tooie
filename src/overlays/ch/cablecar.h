@@ -1,4 +1,3 @@
-
 #ifndef __CH_CABLECAR_H__
 #define __CH_CABLECAR_H__
 

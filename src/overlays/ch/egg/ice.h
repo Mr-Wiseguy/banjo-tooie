@@ -1,4 +1,3 @@
-
 #ifndef __CH_EGG_ICE_H__
 #define __CH_EGG_ICE_H__
 

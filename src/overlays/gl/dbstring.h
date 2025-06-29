@@ -1,4 +1,3 @@
-
 #ifndef __GL_DBSTRING_H__
 #define __GL_DBSTRING_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAGOON_PIRATE_H__
 #define __CH_LAGOON_PIRATE_H__
 

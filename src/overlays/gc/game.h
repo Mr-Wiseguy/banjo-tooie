@@ -1,4 +1,3 @@
-
 #ifndef __GC_GAME_H__
 #define __GC_GAME_H__
 

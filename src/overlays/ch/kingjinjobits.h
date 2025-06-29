@@ -1,4 +1,3 @@
-
 #ifndef __CH_KINGJINJOBITS_H__
 #define __CH_KINGJINJOBITS_H__
 

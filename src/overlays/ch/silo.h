@@ -1,4 +1,3 @@
-
 #ifndef __CH_SILO_H__
 #define __CH_SILO_H__
 

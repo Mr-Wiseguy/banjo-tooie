@@ -1,4 +1,3 @@
-
 #ifndef __DB_LIGHT_H__
 #define __DB_LIGHT_H__
 

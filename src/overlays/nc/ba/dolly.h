@@ -1,4 +1,3 @@
-
 #ifndef __NC_BA_DOLLY_H__
 #define __NC_BA_DOLLY_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_BOXINGGLOVE_H__
 #define __CH_BOXINGGLOVE_H__
 

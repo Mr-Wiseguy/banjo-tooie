@@ -1,4 +1,3 @@
-
 #ifndef __CH_ALIENBEAM_H__
 #define __CH_ALIENBEAM_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_FOG_H__
 #define __CH_FOG_H__
 

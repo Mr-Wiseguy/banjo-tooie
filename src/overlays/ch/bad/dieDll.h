@@ -1,4 +1,3 @@
-
 #ifndef __CH_BAD_DIEDLL_H__
 #define __CH_BAD_DIEDLL_H__
 

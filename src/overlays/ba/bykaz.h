@@ -1,4 +1,3 @@
-
 #ifndef __BA_BYKAZ_H__
 #define __BA_BYKAZ_H__
 

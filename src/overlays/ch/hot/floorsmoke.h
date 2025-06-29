@@ -1,4 +1,3 @@
-
 #ifndef __CH_HOT_FLOORSMOKE_H__
 #define __CH_HOT_FLOORSMOKE_H__
 

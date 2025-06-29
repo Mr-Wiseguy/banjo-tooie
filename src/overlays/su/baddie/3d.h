@@ -1,4 +1,3 @@
-
 #ifndef __SU_BADDIE_3D_H__
 #define __SU_BADDIE_3D_H__
 

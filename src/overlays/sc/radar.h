@@ -1,4 +1,3 @@
-
 #ifndef __SC_RADAR_H__
 #define __SC_RADAR_H__
 

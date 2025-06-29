@@ -1,4 +1,3 @@
-
 #ifndef __CH_DINO_COASTER_H__
 #define __CH_DINO_COASTER_H__
 

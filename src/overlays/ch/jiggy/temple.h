@@ -1,4 +1,3 @@
-
 #ifndef __CH_JIGGY_TEMPLE_H__
 #define __CH_JIGGY_TEMPLE_H__
 

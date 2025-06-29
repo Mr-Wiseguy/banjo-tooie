@@ -1,4 +1,3 @@
-
 #ifndef __GL_HITTABLEDLL_H__
 #define __GL_HITTABLEDLL_H__
 

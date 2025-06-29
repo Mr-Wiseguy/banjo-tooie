@@ -1,4 +1,3 @@
-
 #ifndef __BS_RIDE_H__
 #define __BS_RIDE_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __FX_DIALOG_H__
 #define __FX_DIALOG_H__
 

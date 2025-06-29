@@ -1,4 +1,3 @@
-
 #ifndef __ML_SPLINE_H__
 #define __ML_SPLINE_H__
 

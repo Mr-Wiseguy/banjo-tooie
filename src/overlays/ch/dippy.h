@@ -1,4 +1,3 @@
-
 #ifndef __CH_DIPPY_H__
 #define __CH_DIPPY_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __GZ_THREAD_H__
 #define __GZ_THREAD_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_SPARKLE_H__
 #define __CH_SPARKLE_H__
 

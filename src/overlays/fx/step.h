@@ -1,4 +1,3 @@
-
 #ifndef __FX_STEP_H__
 #define __FX_STEP_H__
 

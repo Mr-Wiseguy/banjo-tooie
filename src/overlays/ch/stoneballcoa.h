@@ -1,4 +1,3 @@
-
 #ifndef __CH_STONEBALLCOA_H__
 #define __CH_STONEBALLCOA_H__
 

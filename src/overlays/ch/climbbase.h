@@ -1,4 +1,3 @@
-
 #ifndef __CH_CLIMBBASE_H__
 #define __CH_CLIMBBASE_H__
 

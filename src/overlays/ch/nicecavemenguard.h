@@ -1,4 +1,3 @@
-
 #ifndef __CH_NICECAVEMENGUARD_H__
 #define __CH_NICECAVEMENGUARD_H__
 

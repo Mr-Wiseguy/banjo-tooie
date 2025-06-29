@@ -1,4 +1,3 @@
-
 #ifndef __CH_BIGTOPTICKET_H__
 #define __CH_BIGTOPTICKET_H__
 

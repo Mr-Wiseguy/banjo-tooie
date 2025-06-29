@@ -1,4 +1,3 @@
-
 #ifndef __CH_ANGLERBOSS_FLARE_H__
 #define __CH_ANGLERBOSS_FLARE_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __ID_FLAME_H__
 #define __ID_FLAME_H__
 

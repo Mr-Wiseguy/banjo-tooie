@@ -1,4 +1,3 @@
-
 #ifndef __DB_VPL_H__
 #define __DB_VPL_H__
 

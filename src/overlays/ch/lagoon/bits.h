@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAGOON_BITS_H__
 #define __CH_LAGOON_BITS_H__
 

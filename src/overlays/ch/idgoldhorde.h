@@ -1,4 +1,3 @@
-
 #ifndef __CH_IDGOLDHORDE_H__
 #define __CH_IDGOLDHORDE_H__
 

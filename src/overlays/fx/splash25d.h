@@ -1,4 +1,3 @@
-
 #ifndef __FX_SPLASH25D_H__
 #define __FX_SPLASH25D_H__
 

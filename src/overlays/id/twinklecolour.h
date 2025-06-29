@@ -1,4 +1,3 @@
-
 #ifndef __ID_TWINKLECOLOUR_H__
 #define __ID_TWINKLECOLOUR_H__
 

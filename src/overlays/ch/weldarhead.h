@@ -1,4 +1,3 @@
-
 #ifndef __CH_WELDARHEAD_H__
 #define __CH_WELDARHEAD_H__
 

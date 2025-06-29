@@ -1,4 +1,3 @@
-
 #ifndef __CH_ATTRACT_H__
 #define __CH_ATTRACT_H__
 

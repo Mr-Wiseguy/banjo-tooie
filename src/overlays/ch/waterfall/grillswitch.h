@@ -1,4 +1,3 @@
-
 #ifndef __CH_WATERFALL_GRILLSWITCH_H__
 #define __CH_WATERFALL_GRILLSWITCH_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __BS_CLIMB_H__
 #define __BS_CLIMB_H__
 

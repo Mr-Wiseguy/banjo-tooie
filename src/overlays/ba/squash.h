@@ -1,4 +1,3 @@
-
 #ifndef __BA_SQUASH_H__
 #define __BA_SQUASH_H__
 

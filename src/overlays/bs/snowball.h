@@ -1,4 +1,3 @@
-
 #ifndef __BS_SNOWBALL_H__
 #define __BS_SNOWBALL_H__
 

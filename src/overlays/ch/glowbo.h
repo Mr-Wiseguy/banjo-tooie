@@ -1,4 +1,3 @@
-
 #ifndef __CH_GLOWBO_H__
 #define __CH_GLOWBO_H__
 

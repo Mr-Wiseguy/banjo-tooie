@@ -1,4 +1,3 @@
-
 #ifndef __CH_GOBI_HAILFIRE_H__
 #define __CH_GOBI_HAILFIRE_H__
 

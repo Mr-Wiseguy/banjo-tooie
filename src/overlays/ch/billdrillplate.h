@@ -1,4 +1,3 @@
-
 #ifndef __CH_BILLDRILLPLATE_H__
 #define __CH_BILLDRILLPLATE_H__
 

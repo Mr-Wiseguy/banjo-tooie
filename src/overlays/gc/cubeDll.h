@@ -1,4 +1,3 @@
-
 #ifndef __GC_CUBEDLL_H__
 #define __GC_CUBEDLL_H__
 

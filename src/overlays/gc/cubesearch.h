@@ -1,4 +1,3 @@
-
 #ifndef __GC_CUBESEARCH_H__
 #define __GC_CUBESEARCH_H__
 

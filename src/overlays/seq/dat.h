@@ -1,4 +1,3 @@
-
 #ifndef __SEQ_DAT_H__
 #define __SEQ_DAT_H__
 

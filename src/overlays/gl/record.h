@@ -1,4 +1,3 @@
-
 #ifndef __GL_RECORD_H__
 #define __GL_RECORD_H__
 

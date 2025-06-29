@@ -1,4 +1,3 @@
-
 #ifndef __FX_EGG_H__
 #define __FX_EGG_H__
 

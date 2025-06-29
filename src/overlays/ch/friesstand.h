@@ -1,4 +1,3 @@
-
 #ifndef __CH_FRIESSTAND_H__
 #define __CH_FRIESSTAND_H__
 

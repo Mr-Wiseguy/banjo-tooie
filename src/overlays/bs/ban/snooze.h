@@ -1,4 +1,3 @@
-
 #ifndef __BS_BAN_SNOOZE_H__
 #define __BS_BAN_SNOOZE_H__
 

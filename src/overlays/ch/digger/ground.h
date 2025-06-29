@@ -1,4 +1,3 @@
-
 #ifndef __CH_DIGGER_GROUND_H__
 #define __CH_DIGGER_GROUND_H__
 

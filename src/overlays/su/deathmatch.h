@@ -1,4 +1,3 @@
-
 #ifndef __SU_DEATHMATCH_H__
 #define __SU_DEATHMATCH_H__
 

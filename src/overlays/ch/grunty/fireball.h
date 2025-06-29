@@ -1,4 +1,3 @@
-
 #ifndef __CH_GRUNTY_FIREBALL_H__
 #define __CH_GRUNTY_FIREBALL_H__
 

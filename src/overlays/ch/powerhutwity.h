@@ -1,4 +1,3 @@
-
 #ifndef __CH_POWERHUTWITY_H__
 #define __CH_POWERHUTWITY_H__
 

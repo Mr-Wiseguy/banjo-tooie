@@ -1,4 +1,3 @@
-
 #ifndef __FX_RAIN_H__
 #define __FX_RAIN_H__
 

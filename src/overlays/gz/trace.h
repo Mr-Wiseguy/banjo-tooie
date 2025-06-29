@@ -1,4 +1,3 @@
-
 #ifndef __GZ_TRACE_H__
 #define __GZ_TRACE_H__
 

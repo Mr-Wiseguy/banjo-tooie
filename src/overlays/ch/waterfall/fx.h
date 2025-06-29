@@ -1,4 +1,3 @@
-
 #ifndef __CH_WATERFALL_FX_H__
 #define __CH_WATERFALL_FX_H__
 

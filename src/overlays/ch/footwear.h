@@ -1,4 +1,3 @@
-
 #ifndef __CH_FOOTWEAR_H__
 #define __CH_FOOTWEAR_H__
 

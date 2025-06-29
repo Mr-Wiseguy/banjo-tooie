@@ -1,4 +1,3 @@
-
 #ifndef __GC_SECTIONDLL_H__
 #define __GC_SECTIONDLL_H__
 

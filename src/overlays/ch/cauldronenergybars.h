@@ -1,4 +1,3 @@
-
 #ifndef __CH_CAULDRONENERGYBARS_H__
 #define __CH_CAULDRONENERGYBARS_H__
 

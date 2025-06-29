@@ -1,4 +1,3 @@
-
 #ifndef __BA_HITSPLINE_H__
 #define __BA_HITSPLINE_H__
 

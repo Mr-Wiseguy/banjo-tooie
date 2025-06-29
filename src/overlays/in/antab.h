@@ -1,4 +1,3 @@
-
 #ifndef __IN_ANTAB_H__
 #define __IN_ANTAB_H__
 

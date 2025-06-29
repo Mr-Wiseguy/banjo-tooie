@@ -1,4 +1,3 @@
-
 #ifndef __CH_PICKUPS_H__
 #define __CH_PICKUPS_H__
 

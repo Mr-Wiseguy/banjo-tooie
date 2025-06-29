@@ -1,4 +1,3 @@
-
 #ifndef __CH_WEATHER_H__
 #define __CH_WEATHER_H__
 

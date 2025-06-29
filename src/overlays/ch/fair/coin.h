@@ -1,4 +1,3 @@
-
 #ifndef __CH_FAIR_COIN_H__
 #define __CH_FAIR_COIN_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_JUJUBAGFX_H__
 #define __CH_JUJUBAGFX_H__
 

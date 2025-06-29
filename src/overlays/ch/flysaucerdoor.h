@@ -1,4 +1,3 @@
-
 #ifndef __CH_FLYSAUCERDOOR_H__
 #define __CH_FLYSAUCERDOOR_H__
 

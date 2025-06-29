@@ -1,4 +1,3 @@
-
 #ifndef __CH_SWAPPY_H__
 #define __CH_SWAPPY_H__
 

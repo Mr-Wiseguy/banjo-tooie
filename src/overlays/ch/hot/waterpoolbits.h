@@ -1,4 +1,3 @@
-
 #ifndef __CH_HOT_WATERPOOLBITS_H__
 #define __CH_HOT_WATERPOOLBITS_H__
 

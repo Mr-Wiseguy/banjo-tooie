@@ -1,4 +1,3 @@
-
 #ifndef __FX_SPGOLD_H__
 #define __FX_SPGOLD_H__
 

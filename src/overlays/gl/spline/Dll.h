@@ -1,4 +1,3 @@
-
 #ifndef __GL_SPLINE_DLL_H__
 #define __GL_SPLINE_DLL_H__
 

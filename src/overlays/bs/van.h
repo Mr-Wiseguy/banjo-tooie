@@ -1,4 +1,3 @@
-
 #ifndef __BS_VAN_H__
 #define __BS_VAN_H__
 

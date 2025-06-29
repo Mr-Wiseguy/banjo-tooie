@@ -1,4 +1,3 @@
-
 #ifndef __CH_SMALLTREXDOOR_H__
 #define __CH_SMALLTREXDOOR_H__
 

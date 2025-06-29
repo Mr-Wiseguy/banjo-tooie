@@ -1,4 +1,3 @@
-
 #ifndef __GC_NEWOPTION_H__
 #define __GC_NEWOPTION_H__
 

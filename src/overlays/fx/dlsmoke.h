@@ -1,4 +1,3 @@
-
 #ifndef __FX_DLSMOKE_H__
 #define __FX_DLSMOKE_H__
 

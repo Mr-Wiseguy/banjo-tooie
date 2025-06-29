@@ -1,4 +1,3 @@
-
 #ifndef __CH_WITCHY_SHOCKPADSWITCH_H__
 #define __CH_WITCHY_SHOCKPADSWITCH_H__
 

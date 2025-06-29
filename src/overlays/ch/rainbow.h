@@ -1,4 +1,3 @@
-
 #ifndef __CH_RAINBOW_H__
 #define __CH_RAINBOW_H__
 

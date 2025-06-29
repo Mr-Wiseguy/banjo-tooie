@@ -1,4 +1,3 @@
-
 #ifndef __BS_BTROT_H__
 #define __BS_BTROT_H__
 

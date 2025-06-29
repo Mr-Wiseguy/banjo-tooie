@@ -1,4 +1,3 @@
-
 #ifndef __CH_SHOCKJUMP_H__
 #define __CH_SHOCKJUMP_H__
 

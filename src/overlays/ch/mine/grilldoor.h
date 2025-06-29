@@ -1,4 +1,3 @@
-
 #ifndef __CH_MINE_GRILLDOOR_H__
 #define __CH_MINE_GRILLDOOR_H__
 

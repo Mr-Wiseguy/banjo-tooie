@@ -1,4 +1,3 @@
-
 #ifndef __CH_RAINRIPPLES_H__
 #define __CH_RAINRIPPLES_H__
 

@@ -1,4 +1,3 @@
-
 #ifndef __CH_CRUSHER_H__
 #define __CH_CRUSHER_H__
 

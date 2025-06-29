@@ -1,4 +1,3 @@
-
 #ifndef __CH_ANGLERBOSS_BUBBLE_H__
 #define __CH_ANGLERBOSS_BUBBLE_H__
 

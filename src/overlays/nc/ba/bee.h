@@ -1,4 +1,3 @@
-
 #ifndef __NC_BA_BEE_H__
 #define __NC_BA_BEE_H__
 

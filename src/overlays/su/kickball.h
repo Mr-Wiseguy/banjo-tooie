@@ -1,4 +1,3 @@
-
 #ifndef __SU_KICKBALL_H__
 #define __SU_KICKBALL_H__
 

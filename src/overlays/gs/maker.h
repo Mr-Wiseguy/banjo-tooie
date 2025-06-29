@@ -1,4 +1,3 @@
-
 #ifndef __GS_MAKER_H__
 #define __GS_MAKER_H__
 

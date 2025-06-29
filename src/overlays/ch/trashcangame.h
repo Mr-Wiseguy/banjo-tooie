@@ -1,4 +1,3 @@
-
 #ifndef __CH_TRASHCANGAME_H__
 #define __CH_TRASHCANGAME_H__
 

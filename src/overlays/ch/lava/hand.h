@@ -1,4 +1,3 @@
-
 #ifndef __CH_LAVA_HAND_H__
 #define __CH_LAVA_HAND_H__
 

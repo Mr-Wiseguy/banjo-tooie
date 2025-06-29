@@ -1,4 +1,3 @@
-
 #ifndef __CH_TORPEDO_H__
 #define __CH_TORPEDO_H__
 

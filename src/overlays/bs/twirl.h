@@ -1,4 +1,3 @@
-
 #ifndef __BS_TWIRL_H__
 #define __BS_TWIRL_H__
 
