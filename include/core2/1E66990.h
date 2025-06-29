@@ -4,7 +4,7 @@
 #include <ultra64.h>
 
 #include "common.h"
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 s32 func_8008D0E0(PlayerState *);
 s32 func_8008D3B0(PlayerState *);

@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/van.h"
+#include "overlays/ba/van.h"
 
 #include "core2/1E6A730.h"
 #include "core2/1E6B900.h"

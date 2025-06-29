@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/buzz.h"
+#include "overlays/ba/buzz.h"
 
 #include "core2/1E9A960.h"
 #include "core2/1EB2840.h"

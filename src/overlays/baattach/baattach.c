@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/attach.h"
+#include "overlays/ba/attach.h"
 
 s32 baattach_entrypoint_0(void) {
     return sizeof(BaAttach);

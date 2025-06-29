@@ -1,4 +1,4 @@
-#include "bs/kazeggass.h"
+#include "overlays/bs/kaz/eggass.h"
 
 s32 D_808002C0_bskazeggass[];
 

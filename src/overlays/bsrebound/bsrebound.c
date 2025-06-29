@@ -1,4 +1,4 @@
-#include "bs/rebound.h"
+#include "overlays/bs/rebound.h"
 
 void func_80800000_bsrebound(PlayerState *self) {
     _babounce_entrypoint_4(self, 2);

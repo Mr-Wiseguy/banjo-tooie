@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 #include "core2/1EBA250.h"
 
 void func_80092864(PlayerState *, f32);

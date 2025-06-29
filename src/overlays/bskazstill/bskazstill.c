@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazstill.h"
+#include "overlays/bs/kaz/still.h"
 
 extern u8 D_808008A0_bskazstill[];
 extern s32 D_808008A4_bskazstill[];

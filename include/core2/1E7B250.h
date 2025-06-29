@@ -4,7 +4,7 @@
 #include <ultra64.h>
 
 #include "common.h"
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 extern void func_800A2018(PlayerState *, s32);
 

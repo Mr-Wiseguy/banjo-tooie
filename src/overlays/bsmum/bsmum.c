@@ -1,4 +1,4 @@
-#include "bs/mum.h"
+#include "overlays/bs/mum.h"
 
 void bsmum_entrypoint_13(PlayerState *self);
 

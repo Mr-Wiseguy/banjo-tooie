@@ -1,7 +1,7 @@
 #ifndef __BS_H__
 #define __BS_H__
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 typedef enum {
     BS_SCRIPT_TYPE_0,

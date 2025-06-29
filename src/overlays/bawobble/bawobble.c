@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/wobble.h"
+#include "overlays/ba/wobble.h"
 
 #include "core2/1E6A730.h"
 #include "core2/1E6B900.h"

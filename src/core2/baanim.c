@@ -1,8 +1,8 @@
 #include "common.h"
 
-#include "an/anctrl.h"
-#include "ba/anim.h"
-#include "ba/physics.h"
+#include "core2/anctrl.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/physics.h"
 
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"

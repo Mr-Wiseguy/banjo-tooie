@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazwingwhack.h"
+#include "overlays/bs/kaz/wingwhack.h"
 
 extern s32 D_80800920_bskazwingwhack[];
 extern s32 D_80800A80_bskazwingwhack[];

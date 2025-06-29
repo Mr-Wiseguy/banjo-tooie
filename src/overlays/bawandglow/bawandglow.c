@@ -1,4 +1,4 @@
-#include "ba/wandglow.h"
+#include "overlays/ba/wandglow.h"
 
 s32 bawandglow_entrypoint_0(void) {
     return sizeof(BaWandGlow);

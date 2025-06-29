@@ -1,4 +1,4 @@
-#include "bs/mummove.h"
+#include "overlays/bs/mum/move.h"
 
 f32 bsmummove_entrypoint_0(PlayerState *self) {
     return 600.0f;

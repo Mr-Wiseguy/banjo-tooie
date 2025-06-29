@@ -5,6 +5,6 @@
 
 #include <ultra64.h>
 
-#include "ba/playerstate.h"
+#include "overlays/ba/playerstate.h"
 
 #endif // __CORE2_PHYSICS_H__

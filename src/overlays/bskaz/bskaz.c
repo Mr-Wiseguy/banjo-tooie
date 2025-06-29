@@ -1,4 +1,4 @@
-#include "bs/kaz.h"
+#include "overlays/bs/kaz.h"
 
 void bskaz_entrypoint_0(PlayerState *self, s32 arg1, s32 arg2) {
     if (arg1 != arg2) {

@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 
-#include "../buttons.h"
+#include "buttons.h"
 
 typedef struct {
     // Counts up every frame.

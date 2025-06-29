@@ -1,12 +1,12 @@
 #include "common.h"
 
-#include "ba/anim.h"
-#include "an/anctrl.h"
-#include "ba/assets.h"
-#include "ba/physics.h"
+#include "overlays/ba/anim.h"
+#include "core2/anctrl.h"
+#include "overlays/ba/assets.h"
+#include "overlays/ba/physics.h"
 #include "bs.h"
 #include "buttons.h"
-#include "bs/state.h"
+#include "overlays/bs/state.h"
 
 #include "core2/1E72EA0.h"
 #include "core2/1E76CC0.h"

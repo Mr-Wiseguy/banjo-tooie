@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazpaddle.h"
+#include "overlays/bs/kaz/paddle.h"
 
 extern s32 D_80800A50_bskazpaddle[];
 extern s32 D_80800A60_bskazpaddle[];

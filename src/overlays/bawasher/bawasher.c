@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "ba/washer.h"
+#include "overlays/ba/washer.h"
 
 #include "core2/1E6A730.h"
 #include "core2/1E6B900.h"

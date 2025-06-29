@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "bs/kazegghead.h"
+#include "overlays/bs/kaz/egghead.h"
 
 s32 D_808002F0_bskazegghead[];
 
