@@ -1,0 +1,7 @@
+
+#ifndef __CH_EGG_FIRE_H__
+#define __CH_EGG_FIRE_H__
+
+#include "common.h"
+
+#endif // __CH_EGG_FIRE_H__
