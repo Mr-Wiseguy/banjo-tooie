@@ -1,0 +1,7 @@
+#include "overlays/su/baddie/sect.h"
+
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/subaddiesect/subaddiesect/subaddiesect_entrypoint_0.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/subaddiesect/subaddiesect/subaddiesect_entrypoint_1.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/subaddiesect/subaddiesect/subaddiesect_entrypoint_2.s")
