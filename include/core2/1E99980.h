@@ -3,5 +3,7 @@
 #include "common.h"
 
 void func_800C0438(void);
+void func_800C06C4();
+void func_800C0710();
 
 #endif

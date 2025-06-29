@@ -7,9 +7,9 @@
 typedef struct {
 	u8 PageIndex; //0x0
 	u8 SubPage; //0x1
-	s8 unk2;
+	u8 unk2;
 	s8 unk3;
-	s8 unk4;
+	u8 unk4;
 	u8 LastOptionSelected;//0x5
 	s8 HeaderAndButtonOffset; //0x6
 	s8 CanExitPage; //0x7
@@ -86,6 +86,9 @@ typedef struct {
 	Option* options;
 } PauseOption;
 
+typedef struct {
+	s8 a1, a2, a3, a4;
+} MemorySetupStruct;
 
 extern PauseOption D_80802070_gcnewpause[];
 extern void* D_808021CC_gcnewpause;
@@ -94,12 +97,21 @@ extern void* D_808021E4_gcnewpause;
 extern TotalsFlags D_808020A8_gcnewpause[];
 extern InventoryDisplay D_808020D8_gcnewpause[];
 extern s8 D_80802124_gcnewpause[];
+extern s8 D_80802125_gcnewpause;
+extern MemorySetupStruct D_80802126_gcnewpause[];
+extern s8 D_8080212E_gcnewpause;
 extern ItemCountDisplay D_80802130_gcnewpause[];
 extern AbilityTracking D_8080215C_gcnewpause[];
 extern void* D_808021C0_gcnewpause;
 extern u8 D_8012762D;
-void gcnewpause_entrypoint_0(void);
+extern s8 D_80802072_gcnewpause;
+extern f32 R_80801F9C_gcnewpause;
+extern f32 R_80801FA4_gcnewpause;
+
+PauseState* gcnewpause_entrypoint_0(u32 arg0);
 void func_80800534_gcnewpause(PauseState* a0, u32 a1);
+void func_80800A08_gcnewpause(PauseState*);
+void func_80800DE0_gcnewpause(f32 a0);
 void func_80800E10_gcnewpause(PauseState* a0, u32 a1);
 
 s32 func_8080105C_gcnewpause(u32 a0, u32 a1, u32 a2, u32 a3);
@@ -107,7 +119,12 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2);
 
 void func_808012CC_gcnewpause(PauseState* a0, u32* a1);
 u8 func_80801330_gcnewpause(PauseState* a0, u32 a1, u32 a2);
+void func_8080136C_gcnewpause(PauseState* pauseMenu);
+void func_8080152C_gcnewpause(PauseState* pauseMenu);
+void func_80801580_gcnewpause(PauseState* pauseMenu);
+void func_808015F8_gcnewpause(PauseState* pauseMenu, u32 a1);
 void func_8080162C_gcnewpause(PauseState* a0, u32 a1);
+void func_80801660_gcnewpause(PauseState* pauseMenu);
 s32 func_808016A4_gcnewpause(s32 a0);
 s32 func_808016F0_gcnewpause(s32 a0);
 s32 func_80801718_gcnewpause(s32, s32);

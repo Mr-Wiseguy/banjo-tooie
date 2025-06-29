@@ -1,5 +1,6 @@
 #ifndef __GC_NEWOPTION_H__
 #define __GC_NEWOPTION_H__
+#include "common.h"
 
 typedef struct {
 	u8 data[0x260];

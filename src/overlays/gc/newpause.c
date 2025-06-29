@@ -1,14 +1,19 @@
 #include "gc/newpause.h"
 #include "gl/dbstring.h"
 #include "fx/kern.h"
+#include "core2/1E2F380.h"
 #include "core2/1E91790.h"
+#include "core2/1EAD060.h"
 #include "core2/1EC2350.h"
 #include "core2/1EC3810.h"
+#include "core2/1ED4E30.h"
+#include "core2/1ED68A0.h"
 #include "core2/1E99980.h"
 #include "core2/1EABAC0.h"
 #include "core2/1ED3900.h"
 #include "core2/1E2D890.h"
 #include "core2/1E691A0.h"
+#include "core2/1E82660.h"
 #include "core2/1E9A960.h"
 #include "core2/1EA78C0.h"
 #include "core2/1EA0690.h"
@@ -26,19 +31,32 @@
 #include "gc/audiolist.h"
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_0.s")
 //Setup Pause Menu
-/*void gcnewpause_entrypoint_0(void)
+PauseState* gcnewpause_entrypoint_0(u32 arg0)
 {
+	u8 dummy[0x8];
+	PauseState* pauseMemory;
+	s8* var_0;
+	u32 index;
+	pauseMemory = heap_alloc(_gcnewoption_entrypoint_2() + 0x30);
+	bzero(pauseMemory, 0x30);
+	pauseMemory->unkC = arg0;
+	func_80800534_gcnewpause(pauseMemory, 1U);
+	pauseMemory->HeaderAndButtonOffset += *D_80802124_gcnewpause;
+	pauseMemory->HeaderAndButtonOffset += D_80802125_gcnewpause;
+	index = 0;
+	do
+	{
+		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a1;
+		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a2;
+		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a3;
+		pauseMemory->HeaderAndButtonOffset += D_80802126_gcnewpause[index].a4;
+		index++;
+		var_0 = (&D_80802126_gcnewpause[index].a1);
+	} while (&D_8080212E_gcnewpause != var_0);
 
-	PauseState* pause_memory;
-	int size = _gcnewoption_entrypoint_2();
-	pause_memory = heap_alloc(size+0x30);
-	bzero(pause_memory, 0x30);
-	func_80800534_gcnewpause(pause_memory,0x1);
-	pause_memory->data[0xC] = a0;
-
-}*/
+	return pauseMemory;
+}
 
 //Close and Free Pause Menu
 void gcnewpause_entrypoint_1(PauseState* a0)
@@ -51,13 +69,110 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800534_gcnewpause.s")
+//Change Page
+void func_80800534_gcnewpause(PauseState* a0, u32 targetPage) 
+{
+
+	if (targetPage != a0->PageIndex) //Ensure our current page is not the target page
+	{
+		switch (a0->PageIndex)  //This handles destroying stuff from specific pages
+		{
+		case 2:
+			func_80800E10_gcnewpause(a0, 0U);
+			_gcnewoption_entrypoint_7(&a0->optionState);
+			break;
+		case 3:
+			_gldbstring_entrypoint_2(0x1864U);
+			a0->textPointer = NULL;
+			func_8080152C_gcnewpause(a0);
+			break;
+		}
+		switch (targetPage) {
+		case 1:
+			func_800FC348(0, 0x7D0, 2);
+			func_800FEC60(1);
+			func_800FC124(0x24);
+			func_80800DE0_gcnewpause(1.1f);
+			func_800C06C4();
+			func_80018634();
+			if (func_800D395C() != 0)
+			{
+				a0->ActivePauseMenuVariant = 4;
+			}
+			else if (func_800D3948() != 0)
+			{
+				if (func_800A946C() == 1)
+				{
+					a0->ActivePauseMenuVariant = 5;
+				}
+				else
+				{
+					a0->ActivePauseMenuVariant = 6;
+				}
+			}
+			else
+			{
+				a0->ActivePauseMenuVariant = 0;
+				if (func_80801EF0_gcnewpause((s32)a0) != 0)
+				{
+					a0->ActivePauseMenuVariant += 1;
+				}
+				if (func_80801F18_gcnewpause((u32)a0) != 0)
+				{
+					a0->ActivePauseMenuVariant += 2;
+				}
+			}
+			break;
+		case 2:
+			func_80800A08_gcnewpause(a0);
+			a0->unk3 = *(&D_80802072_gcnewpause + (a0->ActivePauseMenuVariant * 8));
+			break;
+		case 3:
+			a0->unk3 = 1;
+			a0->CanExitPage = 0;
+			a0->unk8 = 0.2f;
+			func_80801660_gcnewpause(a0);
+			func_8080136C_gcnewpause(a0);
+			_gcaudiolist_entrypoint_1(4U, 0x4650U);
+			a0->SoundEffectTimerPageOpen = 0xB;
+			break;
+		case 4:
+			func_800FECB8(1);
+			switch (a0->unk2) 
+			{
+			case 1:
+				func_800C0710();
+				func_80800DE0_gcnewpause(0.9f);
+				func_800FC348(-1, 0x7D0, 2);
+				func_800FC1A8();
+				break;
+			case 2:
+			case 3:
+			case 4:
+				func_800FC348(-1, 0x7D0, 2);
+				func_800FC1A8();
+				func_800FE4E4();
+				break;
+			}
+			break;
+		case 5:
+			a0->unk8 = 5.0f;
+			func_800FCAE0(0x24, 0, 0x7D0);
+			func_800FCA90(0x24);
+			func_800FC660(0x12);
+			func_80801CCC_gcnewpause(a0);
+			break;
+		}
+		a0->PageIndex = (u8)targetPage;
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800A08_gcnewpause.s")
 
-void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) {
+void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) 
+{
 	s32 index;
 	Option* options;
 	u8 var_s1;
@@ -74,8 +189,9 @@ void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800CE4_gcnewpause.s")
 
-void func_80800DE0_gcnewpause(void) {
-	func_800C4B64();
+void func_80800DE0_gcnewpause(f32 a0) 
+{
+	func_800C4B64(a0);
 	func_800C4AF0(0, &D_808021C0_gcnewpause);
 }
 
@@ -215,7 +331,8 @@ u8 func_80801330_gcnewpause(PauseState* pauseMenu, u32 a1,u32 a2)
 	return pauseMenu->DrawPageHeader;
 }
 
-void func_8080136C_gcnewpause(PauseState* pauseMenu) {
+void func_8080136C_gcnewpause(PauseState* pauseMenu) 
+{
 	s16 temp_t7;
 	u8 temp_v0;
 	u8 temp_v0_2;
