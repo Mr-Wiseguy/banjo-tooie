@@ -95,7 +95,7 @@ void bsbbarge_init(PlayerState *self) {
     bsbbarge_setSubstate(self, 1);
 }
 
-#ifndef NONMATCHING
+#ifndef NON_MATCHING
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsbbarge/bsbbarge/bsbbarge_update.s")
 #else
 void bsbbarge_update(PlayerState *self) {
