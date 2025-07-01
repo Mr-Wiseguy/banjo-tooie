@@ -211,6 +211,22 @@ def main():
             with open(target_file_name, "w") as f:
                 f.write(file_content)
 
+        if DRY_RUN is False:
+            current_asm_path = file.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            target_asm_path = target_file_name.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            print(f"Replacing {current_asm_path} with {target_asm_path}")
+            # Open current file, replace GLOBAL_ASM paths to match new structure
+            file_content = ""
+            with open(target_file_name, "r") as f:
+                file_content = f.read()
+            if file_content == "":
+                print(f"Failed to read {target_file_name}, could not replace #include statement")
+                continue
+
+            file_content = file_content.replace(current_asm_path, target_asm_path)
+            with open(target_file_name, "w") as f:
+                f.write(file_content)
+
     if DRY_RUN is False:
         with open(SPLAT_CONFIG, "w") as c:
             c.write(config_str)
