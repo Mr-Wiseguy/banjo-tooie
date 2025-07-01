@@ -56,6 +56,7 @@ expected/
 .splat_cache
 .splat_cache*
 ctx.c
+ctx.c.m2c
 ctxt.c.m2c
 nonmatchings/
 testing/
