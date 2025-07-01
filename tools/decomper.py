@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import re
 import os
 import subprocess
@@ -93,7 +95,7 @@ def main():
     else:
         if VERBOSE:
             print(f"Could not find header file {header_file_name}. Creating it.")
-        define_name = header_include_name.replace("overlays/", "").replace(".c", "").replace("/", "_").upper()
+        define_name = header_include_name.replace("overlays/", "").replace(".h", "").replace("/", "_").upper()
         with open(header_file_name, "w") as f:
             f.write(f"""#ifndef __{define_name}_H__
 #define __{define_name}_H__
@@ -102,18 +104,24 @@ def main():
 
 #endif // __{define_name}_H__
 """)
-        # Open current file, replace common.h include with overlays header (newly created file) import
-        file_content = ""
-        with open(c_file, "r") as f:
-            file_content = f.read()
-        if file_content == "":
-            if VERBOSE:
-                print(f"Failed to read {c_file}, could not replace #include statement")
+        # Open current file, prepend the new .h file include as the first line
+        # The other imports (like common.h) will be moved into the new .h file afterwards automatically
+        c_file_lines = []
+        with open(c_file, 'r') as file:
+            c_file_lines = file.readlines()
+
+        if len(c_file_lines) == 0:
+            print(f"Failed to read {c_file}, could not replace #include statement. Stopping.")
             return
 
-        file_content = file_content.replace('#include "common.h"', f'#include "{header_file_name.replace(PROJECT_ROOT + "/src/", "").replace(PROJECT_ROOT + "/include/", "")}"')
+        # Add the new header include in the first line, append the original first line after it
+        c_file_lines[0:0] = [
+            f'#include "{header_include_name}"\n',
+            c_file_lines[0],
+        ]
+
         with open(c_file, "w") as f:
-            f.write(file_content)
+            f.writelines(c_file_lines)
 
     header_includes = find_elements_in_file_by_regex(header_file_name, INCLUDE_REGEX)
     for header_include in header_includes:
