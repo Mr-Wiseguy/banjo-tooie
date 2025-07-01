@@ -163,36 +163,57 @@ def main():
             print(f"Creating header file: {expected_h_file_name} with #ifndef __{define_name}_H__ and replacing #include \"common.h\" with new header file")
             if DRY_RUN is False:
                 with open(expected_h_file_name, "w") as f:
-                    f.write(f"""
-#ifndef __{define_name}_H__
+                    f.write(f"""#ifndef __{define_name}_H__
 #define __{define_name}_H__
 
 #include "common.h"
 
 #endif // __{define_name}_H__
 """)
-                # Open current file, replace common.h include with overlays header (newly created file) import
-                file_content = ""
-                with open(target_file_name, "r") as f:
-                    file_content = f.read()
-                if file_content == "":
-                    print(f"Failed to read {target_file_name}, could not replace #include statement")
-                    continue
+        if DRY_RUN is False:
+            # Open current file
+            file_content = ""
+            with open(target_file_name, "r") as f:
+                file_content = f.read()
+            if file_content == "":
+                print(f"Failed to read {target_file_name}, could not replace #include statement")
+                continue
 
-                file_content = file_content.replace('#include "common.h"', f'#include "{expected_h_file_name.replace(PROJECT_ROOT + "/src/", "")}"')
-                with open(target_file_name, "w") as f:
-                    f.write(file_content)
+            if "common.h" in file_content:
+                # Replace common.h include with overlays header (newly created file) import
+                header_include_path = expected_h_file_name.replace(PROJECT_ROOT + "/src/", "")
+                print(f"Replacing common.h with {header_include_path}")
+                file_content = file_content.replace('#include "common.h"', f'#include "{header_include_path}"')
+
+            # Replace GLOBAL_ASM paths to match new structure
+            current_asm_path = file.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            target_asm_path = target_file_name.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            print(f"Replacing {current_asm_path} with {target_asm_path}")
+            file_content = file_content.replace(current_asm_path, target_asm_path)
+
+            # Write back file content
+            with open(target_file_name, "w") as f:
+                f.write(file_content)
+
+        if DRY_RUN is False:
+            current_asm_path = file.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            target_asm_path = target_file_name.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
+            print(f"Replacing {current_asm_path} with {target_asm_path}")
+            # Open current file, replace GLOBAL_ASM paths to match new structure
+            file_content = ""
+            with open(target_file_name, "r") as f:
+                file_content = f.read()
+            if file_content == "":
+                print(f"Failed to read {target_file_name}, could not replace #include statement")
+                continue
+
+            file_content = file_content.replace(current_asm_path, target_asm_path)
+            with open(target_file_name, "w") as f:
+                f.write(file_content)
 
     if DRY_RUN is False:
         with open(SPLAT_CONFIG, "w") as c:
             c.write(config_str)
-
-
-    # go through each .c file in overlays
-    # check if .h file (bskaz.c -> include/bs/kaz.h)
-    # if true -> move .h file
-    # else create .h file
-    pass
 
 
 def determine_target_file_name(file_name: str) -> str:
