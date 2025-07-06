@@ -4,6 +4,7 @@
 
 
 s32 func_800D1A04(s32 a0);
+u32 func_800D1A6C(u32);
 s32 func_800D1C5C(u32);
 
 #endif

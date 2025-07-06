@@ -65,9 +65,164 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 	heap_free(a0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_2.s")
+#ifndef NONMATCHING
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_2.s")
+#else
+//Functionality update
+u32 gcnewpause_entrypoint_2(PauseState* a0) {
+	u32 PageHeaderState;
+	u32 F2COutput;
+	f32 joystick[2]; //X and Y of the Joystick I tried a struct but this matched better
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_3.s")
+	func_800D2574();
+	func_800C0438();
+	func_800E8A68();
+	switch (a0->PageIndex - 0x1)
+	{
+	case 0x0: //Startup Change Page to Main Page
+		func_80800534_gcnewpause(a0, 0x2);
+		break;
+	case 0x1: //Main Page
+		if (func_80015FA0(a0->unkC) == 1 && _gcnewoption_entrypoint_37(&a0->optionState, 0x1) != 0)
+		{
+			a0->unk3 = 0;
+		}
+		if (a0->unkE != 0 && func_800D9078(&a0->unk8) != 0)
+		{
+			func_80801E08_gcnewpause(a0, &a0->optionState);
+		}
+		func_80800E10_gcnewpause(a0, a0->unk3);
+		_gcnewoption_entrypoint_0(&a0->optionState);
+		break;
+	case 0x2: //Totals Pages
+		func_80016068(a0->unkC, &joystick);
+		func_800D9078(&a0->unk8);
+		if (a0->SoundEffectTimerPageOpen != 0)
+		{
+			a0->SoundEffectTimerPageOpen--;
+			if (a0->SoundEffectTimerPageOpen == 0)
+			{
+				_gcaudiolist_entrypoint_1(0x2, 0x4650);
+			}
+		}
+		if (a0->CanExitPage == 0 && a0->unk3 == 1)
+		{
+			if (func_80015FA0(a0->unkC) == 1)
+			{
+				func_808015F8_gcnewpause(a0, 0x1);
+			}
+			else
+			{
+				if (func_80016B30(a0->unkC, 1) == 1)
+				{
+					func_808015F8_gcnewpause(a0, 0x0);
+				}
+				else
+				{
+					if (a0->CanMoveLeft != 0 && joystick[0] < (-0.75f) && a0->unk8 == 0)
+					{
+						func_8080162C_gcnewpause(a0, -1);
+					}
+					else if (a0->CanMoveRight != 0 && 0.75f < joystick[0] && a0->unk8 == 0)
+					{
+						func_8080162C_gcnewpause(a0, 1);
+					}
+				}
+			}
+		}
+
+		PageHeaderState = func_80801330_gcnewpause(a0, a0->SubPage, (a0->CanExitPage == 0 && a0->unk3 == -1) ? 1 : a0->unk3);
+
+		func_80801580_gcnewpause(a0);
+		F2COutput = func_80800F2C_gcnewpause(a0, a0->SubPage, a0->unk3);
+		if (a0->CanExitPage == 0 && a0->unk3 == -1 && F2COutput == 0)
+		{
+			a0->unk3 = 0;
+			a0->CanMoveRight = 0;
+			a0->CanMoveLeft = 0;
+			F2COutput = 1;
+			_gcaudiolist_entrypoint_1(5, 0x4650);
+		}
+		if (F2COutput == 0)
+		{
+			if (PageHeaderState == 0)
+			{
+				if (a0->CanExitPage != 0)
+				{
+					func_808017C8_gcnewpause(a0, func_80801718_gcnewpause(a0->SubPage, a0->CanExitPage));
+					a0->CanExitPage = 0;
+					a0->unk3 = 1;
+					a0->unk8 = 0.2f;
+					_gcaudiolist_entrypoint_1(2, 0x4650);
+					break;
+				}
+				else
+				{
+					if (a0->unk4 != 0)
+					{
+						a0->unk2 = 1;
+						break;
+					}
+					else
+					{
+						func_80800534_gcnewpause(a0, 2);
+					}
+				}
+
+			}
+			else
+			{
+				break;
+			}
+		}
+		else
+		{
+			break;
+		}
+		break;
+
+	case 0x4:
+		func_80801CDC_gcnewpause(a0);
+		if (func_800D9078(&a0->unk8) != 0)
+		{
+			a0->GameOverFadingIn = 0;
+			func_800FCAE0(0x12, 0, 0xc8);
+			func_800FCA90(0x12);
+			func_800A7AD4(1, 0);
+			a0->unk2 = 2;
+			_gcfrontend_entrypoint_13();
+			break;
+		}
+		break;
+	default:
+		if (func_80015FA0(a0->unkC) == 1)
+		{
+			a0->unk2 = 1;
+		}
+	case 0x3:
+		break;
+	}
+	return ((a0->unk2 ^ 1) == 0);
+}
+#endif
+//Draw UI
+void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu) 
+{
+	u8 temp_v0;
+
+	temp_v0 = pauseMenu->PageIndex;
+	switch (temp_v0)
+	{
+	case 2:
+		_gcnewoption_entrypoint_1(&pauseMenu->optionState, arg0);
+		break;
+	case 5:
+		func_80801DA0_gcnewpause(pauseMenu, arg0);
+		break;
+	}
+	func_80801410_gcnewpause(pauseMenu, (s32)arg0);
+	func_808012CC_gcnewpause(pauseMenu, (u32*)arg0);
+}
 
 //Change Page
 void func_80800534_gcnewpause(PauseState* a0, u32 targetPage) 
@@ -166,10 +321,137 @@ void func_80800534_gcnewpause(PauseState* a0, u32 targetPage)
 		a0->PageIndex = (u8)targetPage;
 	}
 }
+//Callback Function for interfacing with option menu
+void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
+{
+	PauseState* pauseMenu;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_4.s")
+	pauseMenu = (PauseState*)(((u8*)arg1) - 0x30);
+	switch (arg3)
+	{
+	case 0: //Setup Option Text
+		func_80800C54_gcnewpause(pauseMenu, arg1);
+		break;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800A08_gcnewpause.s")
+	case 3: //Execute Button Function
+		func_80800CE4_gcnewpause(pauseMenu, arg1, arg2);
+		break;
+
+	case 4: //Handle any Are You Sure Popups/Start Closing Options Page
+		if ((D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].AreYouSure == 0) || (pauseMenu->unkE != 0))
+		{
+			if (_gcnewoption_entrypoint_37(arg1, 0))
+			{
+				if ((pauseMenu->unkE) == pauseMenu->unk11)
+				{
+					_gcaudiolist_entrypoint_0(6);
+				}
+
+				pauseMenu->unk3 = 0;
+				pauseMenu->unkE = 0;
+			}
+		}
+		else
+			if (_gcnewoption_entrypoint_38(arg1, 0) != 0)
+			{
+				if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].Function == 2)
+				{
+					func_800FC6B0(0xE);
+					func_800D389C();
+				}
+				pauseMenu->LastOptionSelected = arg2;
+				pauseMenu->unkE = 7;
+				func_80801E08_gcnewpause(pauseMenu, &pauseMenu->optionState);
+			}
+		break;
+
+	case 5: //Press B to Go Back
+		if ((pauseMenu->unkE == 0))
+		{
+			if ((_gcnewoption_entrypoint_37(arg1, 1) != 0)) 
+			{
+				pauseMenu->unk3 = 0;
+			}
+		}
+		else
+		{
+			if (_gcnewoption_entrypoint_39(arg1) != 0)
+			{
+				if (pauseMenu->unkE == ((u8)pauseMenu->unk11))
+				{
+					_gcaudiolist_entrypoint_0(7);
+				}
+				pauseMenu->unkE = 0;
+				_gcnewoption_entrypoint_12(arg1, arg2, D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].Text);
+			}
+		}
+		break;
+
+	case 2: //Try and Close Pause Menu
+		pauseMenu->unk2 = 1;
+		break;
+
+	}
+
+}
+
+void func_80800A08_gcnewpause(PauseState* arg0) 
+{
+	s32 i;
+	s32 optionSize;
+	s32 menuVariant;
+	Option* options;
+
+	bzero(&arg0->optionState, _gcnewoption_entrypoint_2());
+	_gcnewoption_entrypoint_5(&arg0->optionState, _gcnewpause_entrypoint_4, 0U, D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].unk1, 0);
+	_gcnewoption_entrypoint_10(&arg0->optionState, 2U);
+	optionSize = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].Size;
+	options = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].options;
+	_gcnewoption_entrypoint_8(&arg0->optionState, optionSize);
+	_gcnewoption_entrypoint_9(&arg0->optionState, optionSize);
+	_gcnewoption_entrypoint_46(&arg0->optionState, arg0->unkC);
+
+	for (i = 0; i < optionSize; i++) 
+	{
+		// @fake to swap s0 and s1
+		if ((!arg0->ActivePauseMenuVariant) && (!arg0->ActivePauseMenuVariant)) {}
+		_gcnewoption_entrypoint_31(&arg0->optionState, i, options[i].Icon);
+	}
+	_gcnewoption_entrypoint_36(&arg0->optionState);
+	menuVariant = arg0->ActivePauseMenuVariant;
+
+	if ((menuVariant != 5) && (menuVariant == 6)) 
+	{
+		unk80802190 sp5C[6] = D_80802190_gcnewpause;
+		u8 sp50[12] = D_808021B4_gcnewpause;
+		s32 s1;
+		s32 a0;
+
+		a0 = _gcstatusDll_entrypoint_11();
+		a0 = sp50[arg0->unkC * 3 + a0 - 2];
+		i = sp5C[a0].unk0;
+		s1 = sp5C[a0].unk2;
+
+		if (sp5C[a0].unk4 != 0) 
+		{
+			_gcnewoption_entrypoint_49(&arg0->optionState, 1U);
+		}
+
+		_gcnewoption_entrypoint_40(&arg0->optionState, i, s1, 0x14U, 0.6f, 0.6f);
+		arg0->unk10 = 5;
+		arg0->unk11 = 5;
+		arg0->unk12 = 8;
+	}
+	else 
+	{
+		_gcnewoption_entrypoint_40(&arg0->optionState, 0x3C, 0x25, 0x1AU, 0.65f, 0.99f);
+		arg0->unk10 = 5;
+		arg0->unk11 = 6;
+		arg0->unk12 = 7;
+	}
+	_gcnewoption_entrypoint_42(&arg0->optionState, 0.1f);
+	_gcnewoption_entrypoint_11(&arg0->optionState);
+}
 
 void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) 
 {
@@ -187,7 +469,39 @@ void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1)
 	_gcnewoption_entrypoint_41(arg1, arg0->LastOptionSelected);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800CE4_gcnewpause.s")
+void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOption)
+{
+	Option* new_var;
+	new_var = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options;
+	switch (new_var[selectedOption].Function)
+	{
+	case 0:
+		pauseMenu->unk2 = 1;
+		break;
+
+	case 1:
+		func_808017C8_gcnewpause(pauseMenu, (new_var[selectedOption].SubOption < 0xE) ? (new_var[selectedOption].SubOption) : (func_808011BC_gcnewpause()));
+		func_80800534_gcnewpause(pauseMenu, 3U);
+		break;
+
+	case 2:
+		func_80800534_gcnewpause(pauseMenu, 5U);
+		break;
+
+	case 3:
+		pauseMenu->unk2 = 3;
+		_gcfrontend_entrypoint_11();
+		break;
+
+	case 4:
+		pauseMenu->unk2 = 4;
+		_gcfrontend_entrypoint_12();
+		break;
+
+	}
+
+	pauseMenu->LastOptionSelected = (u8)selectedOption;
+}
 
 void func_80800DE0_gcnewpause(f32 a0) 
 {
@@ -213,8 +527,7 @@ void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 		func_800D284C(0xD0);
 	}
 }
-
-s32 func_80800EA8_gcnewpause(s32 arg0, u32 arg1)
+s32 func_80800EA8_gcnewpause(PauseState* arg0, u32 arg1)
 {
 	s32 sp24;
 	s32 sp20;
@@ -229,7 +542,25 @@ s32 func_80800EA8_gcnewpause(s32 arg0, u32 arg1)
 	return sp24;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_80800F2C_gcnewpause.s")
+s32 func_80800F2C_gcnewpause(PauseState* arg1, u32 arg2, u32 arg3)
+{
+	s32 temp;
+	PauseState* new_var;
+	switch (arg2)
+	{
+		new_var = arg1;
+
+	case 0:
+		return func_80800EA8_gcnewpause(arg1, arg3);
+
+	case 1:
+		return func_80800FA8_gcnewpause(arg3);
+	case 2:
+		return func_80801AF8_gcnewpause(arg3);
+	default:
+		return func_808019A4_gcnewpause(func_808016A4_gcnewpause(arg2), arg3);
+	}
+}
 
 s32 func_80800FA8_gcnewpause(u32 arg0) {
 	s32 temp_s2;
@@ -255,10 +586,58 @@ s32 func_80800FA8_gcnewpause(u32 arg0) {
 	return var_s3;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/func_8080105C_gcnewpause.s")
+s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
+{
+	s32 temp_s0;
+	s32 temp_v0_2;
+	u32 temp_v0_3;
+	u32 new_var;
+	s32 index;
+	u8 temp_a0;
+	u8 temp_s3;
+	u32 ret;
+	ret = a0 + a1;
+	ret = 0;
+	
+	for (index = a0; index < (a0 + a1); index++)
+	{
+		if ((D_808020D8_gcnewpause[index].AbilityID != 0x3C) && (func_800C6E38(D_808020D8_gcnewpause[index].AbilityID) == 0))
+		{
+			continue;
+		}
+		new_var = func_800D1A04(D_808020D8_gcnewpause[index].ItemID);
+		if (a3 != 0)
+		{
+			if (new_var == 0)
+			{
+				continue;
+			}
+		}
+		temp_s3 = D_808020D8_gcnewpause[index].uiPosition;
+		temp_v0_2 = func_800D1C5C(D_808020D8_gcnewpause[index].ItemID);
+		temp_s0 = func_800D27A4(temp_v0_2);
+		temp_v0_3 = func_800D28E8(temp_v0_2);
+		if (temp_v0_3 == 1)
+		{
+			if (func_80801844_gcnewpause(new_var, func_800D1A6C(D_808020D8_gcnewpause[index].ItemID), temp_s3, temp_s0, 1, a2) != 0)
+			{
+				ret = 1;
+				continue;
+			}
+		}
+		else
+			if (func_8080190C_gcnewpause(new_var, temp_s3, temp_s0, temp_v0_3, a2) != 0)
+			{
+				ret = 1;
+			}
+	}
+
+	
+	return ret;
+}
 
 //Try and go to the subpage for the current level when opening view totals
-s16 func_808011BC_gcnewpause(void)
+u32 func_808011BC_gcnewpause(void)
 {
 	TotalsFlags* var_v0;
 	s32 var_v1;
