@@ -69,7 +69,7 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_2.s")
 #else
 //Functionality update
-u32 gcnewpause_entrypoint_2(PauseState* a0) {
+u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 	u32 PageHeaderState;
 	u32 F2COutput;
 	f32 joystick[2]; //X and Y of the Joystick I tried a struct but this matched better
@@ -77,69 +77,69 @@ u32 gcnewpause_entrypoint_2(PauseState* a0) {
 	func_800D2574();
 	func_800C0438();
 	func_800E8A68();
-	switch (a0->PageIndex - 0x1)
+	switch (pauseMenu->PageIndex - 0x1)
 	{
 	case 0x0: //Startup Change Page to Main Page
-		func_80800534_gcnewpause(a0, 0x2);
+		func_80800534_gcnewpause(pauseMenu, 0x2);
 		break;
 	case 0x1: //Main Page
-		if (func_80015FA0(a0->unkC) == 1 && _gcnewoption_entrypoint_37(&a0->optionState, 0x1) != 0)
+		if (func_80015FA0(pauseMenu->unkC) == 1 && _gcnewoption_entrypoint_37(&pauseMenu->optionState, 0x1) != 0)
 		{
-			a0->unk3 = 0;
+			pauseMenu->unk3 = 0;
 		}
-		if (a0->unkE != 0 && func_800D9078(&a0->unk8) != 0)
+		if (pauseMenu->unkE != 0 && func_800D9078(&pauseMenu->Timer) != 0)
 		{
-			func_80801E08_gcnewpause(a0, &a0->optionState);
+			func_80801E08_gcnewpause(pauseMenu, &pauseMenu->optionState);
 		}
-		func_80800E10_gcnewpause(a0, a0->unk3);
-		_gcnewoption_entrypoint_0(&a0->optionState);
+		func_80800E10_gcnewpause(pauseMenu, pauseMenu->unk3);
+		_gcnewoption_entrypoint_0(&pauseMenu->optionState);
 		break;
 	case 0x2: //Totals Pages
-		func_80016068(a0->unkC, &joystick);
-		func_800D9078(&a0->unk8);
-		if (a0->SoundEffectTimerPageOpen != 0)
+		func_80016068(pauseMenu->unkC, &joystick);
+		func_800D9078(&pauseMenu->Timer);
+		if (pauseMenu->SoundEffectTimerPageOpen != 0)
 		{
-			a0->SoundEffectTimerPageOpen--;
-			if (a0->SoundEffectTimerPageOpen == 0)
+			pauseMenu->SoundEffectTimerPageOpen--;
+			if (pauseMenu->SoundEffectTimerPageOpen == 0)
 			{
 				_gcaudiolist_entrypoint_1(0x2, 0x4650);
 			}
 		}
-		if (a0->CanExitPage == 0 && a0->unk3 == 1)
+		if (pauseMenu->CanExitPage == 0 && pauseMenu->unk3 == 1)
 		{
-			if (func_80015FA0(a0->unkC) == 1)
+			if (func_80015FA0(pauseMenu->unkC) == 1)
 			{
-				func_808015F8_gcnewpause(a0, 0x1);
+				func_808015F8_gcnewpause(pauseMenu, 0x1);
 			}
 			else
 			{
-				if (func_80016B30(a0->unkC, 1) == 1)
+				if (func_80016B30(pauseMenu->unkC, 1) == 1)
 				{
-					func_808015F8_gcnewpause(a0, 0x0);
+					func_808015F8_gcnewpause(pauseMenu, 0x0);
 				}
 				else
 				{
-					if (a0->CanMoveLeft != 0 && joystick[0] < (-0.75f) && a0->unk8 == 0)
+					if (pauseMenu->CanMoveLeft != 0 && joystick[0] < (-0.75f) && pauseMenu->Timer == 0)
 					{
-						func_8080162C_gcnewpause(a0, -1);
+						func_8080162C_gcnewpause(pauseMenu, -1);
 					}
-					else if (a0->CanMoveRight != 0 && 0.75f < joystick[0] && a0->unk8 == 0)
+					else if (pauseMenu->CanMoveRight != 0 && 0.75f < joystick[0] && pauseMenu->Timer == 0)
 					{
-						func_8080162C_gcnewpause(a0, 1);
+						func_8080162C_gcnewpause(pauseMenu, 1);
 					}
 				}
 			}
 		}
 
-		PageHeaderState = func_80801330_gcnewpause(a0, a0->SubPage, (a0->CanExitPage == 0 && a0->unk3 == -1) ? 1 : a0->unk3);
+		PageHeaderState = func_80801330_gcnewpause(pauseMenu, pauseMenu->SubPage, (pauseMenu->CanExitPage == 0 && pauseMenu->unk3 == -1) ? 1 : pauseMenu->unk3);
 
-		func_80801580_gcnewpause(a0);
-		F2COutput = func_80800F2C_gcnewpause(a0, a0->SubPage, a0->unk3);
-		if (a0->CanExitPage == 0 && a0->unk3 == -1 && F2COutput == 0)
+		func_80801580_gcnewpause(pauseMenu);
+		F2COutput = func_80800F2C_gcnewpause(pauseMenu, pauseMenu->SubPage, pauseMenu->unk3);
+		if (pauseMenu->CanExitPage == 0 && pauseMenu->unk3 == -1 && F2COutput == 0)
 		{
-			a0->unk3 = 0;
-			a0->CanMoveRight = 0;
-			a0->CanMoveLeft = 0;
+			pauseMenu->unk3 = 0;
+			pauseMenu->CanMoveRight = 0;
+			pauseMenu->CanMoveLeft = 0;
 			F2COutput = 1;
 			_gcaudiolist_entrypoint_1(5, 0x4650);
 		}
@@ -147,25 +147,25 @@ u32 gcnewpause_entrypoint_2(PauseState* a0) {
 		{
 			if (PageHeaderState == 0)
 			{
-				if (a0->CanExitPage != 0)
+				if (pauseMenu->CanExitPage != 0)
 				{
-					func_808017C8_gcnewpause(a0, func_80801718_gcnewpause(a0->SubPage, a0->CanExitPage));
-					a0->CanExitPage = 0;
-					a0->unk3 = 1;
-					a0->unk8 = 0.2f;
+					func_808017C8_gcnewpause(pauseMenu, func_80801718_gcnewpause(pauseMenu->SubPage, pauseMenu->CanExitPage));
+					pauseMenu->CanExitPage = 0;
+					pauseMenu->unk3 = 1;
+					pauseMenu->Timer = 0.2f;
 					_gcaudiolist_entrypoint_1(2, 0x4650);
 					break;
 				}
 				else
 				{
-					if (a0->unk4 != 0)
+					if (pauseMenu->unk4 != 0)
 					{
-						a0->unk2 = 1;
+						pauseMenu->ExitType = 1;
 						break;
 					}
 					else
 					{
-						func_80800534_gcnewpause(a0, 2);
+						func_80800534_gcnewpause(pauseMenu, 2);
 					}
 				}
 
@@ -182,27 +182,27 @@ u32 gcnewpause_entrypoint_2(PauseState* a0) {
 		break;
 
 	case 0x4:
-		func_80801CDC_gcnewpause(a0);
-		if (func_800D9078(&a0->unk8) != 0)
+		func_80801CDC_gcnewpause(pauseMenu);
+		if (func_800D9078(&pauseMenu->Timer) != 0)
 		{
-			a0->GameOverFadingIn = 0;
+			pauseMenu->GameOverFadingIn = 0;
 			func_800FCAE0(0x12, 0, 0xc8);
 			func_800FCA90(0x12);
 			func_800A7AD4(1, 0);
-			a0->unk2 = 2;
+			pauseMenu->ExitType = 2;
 			_gcfrontend_entrypoint_13();
 			break;
 		}
 		break;
 	default:
-		if (func_80015FA0(a0->unkC) == 1)
+		if (func_80015FA0(pauseMenu->unkC) == 1)
 		{
-			a0->unk2 = 1;
+			pauseMenu->ExitType = 1;
 		}
 	case 0x3:
 		break;
 	}
-	return ((a0->unk2 ^ 1) == 0);
+	return ((pauseMenu->ExitType ^ 1) == 0);
 }
 #endif
 //Draw UI
@@ -213,10 +213,10 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 	temp_v0 = pauseMenu->PageIndex;
 	switch (temp_v0)
 	{
-	case 2:
+	case 2: //Draw Options
 		_gcnewoption_entrypoint_1(&pauseMenu->optionState, arg0);
 		break;
-	case 5:
+	case 5: //Draw Gameover
 		func_80801DA0_gcnewpause(pauseMenu, arg0);
 		break;
 	}
@@ -225,25 +225,25 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 }
 
 //Change Page
-void func_80800534_gcnewpause(PauseState* a0, u32 targetPage) 
+void func_80800534_gcnewpause(PauseState* pauseMenu, u32 targetPage) 
 {
 
-	if (targetPage != a0->PageIndex) //Ensure our current page is not the target page
+	if (targetPage != pauseMenu->PageIndex) //Ensure our current page is not the target page
 	{
-		switch (a0->PageIndex)  //This handles destroying stuff from specific pages
+		switch (pauseMenu->PageIndex)  //This handles destroying stuff from specific pages
 		{
-		case 2:
-			func_80800E10_gcnewpause(a0, 0U);
-			_gcnewoption_entrypoint_7(&a0->optionState);
+		case 2: //Main Option Page
+			func_80800E10_gcnewpause(pauseMenu, 0U);
+			_gcnewoption_entrypoint_7(&pauseMenu->optionState);
 			break;
-		case 3:
+		case 3: //Any Totals Page
 			_gldbstring_entrypoint_2(0x1864U);
-			a0->textPointer = NULL;
-			func_8080152C_gcnewpause(a0);
+			pauseMenu->textPointer = NULL;
+			func_8080152C_gcnewpause(pauseMenu);
 			break;
 		}
 		switch (targetPage) {
-		case 1:
+		case 1: //Setup Page
 			func_800FC348(0, 0x7D0, 2);
 			func_800FEC60(1);
 			func_800FC124(0x24);
@@ -252,48 +252,48 @@ void func_80800534_gcnewpause(PauseState* a0, u32 targetPage)
 			func_80018634();
 			if (func_800D395C() != 0)
 			{
-				a0->ActivePauseMenuVariant = 4;
+				pauseMenu->ActivePauseMenuVariant = 4;
 			}
 			else if (func_800D3948() != 0)
 			{
 				if (func_800A946C() == 1)
 				{
-					a0->ActivePauseMenuVariant = 5;
+					pauseMenu->ActivePauseMenuVariant = 5;
 				}
 				else
 				{
-					a0->ActivePauseMenuVariant = 6;
+					pauseMenu->ActivePauseMenuVariant = 6;
 				}
 			}
 			else
 			{
-				a0->ActivePauseMenuVariant = 0;
-				if (func_80801EF0_gcnewpause((s32)a0) != 0)
+				pauseMenu->ActivePauseMenuVariant = 0;
+				if (func_80801EF0_gcnewpause((s32)pauseMenu) != 0)
 				{
-					a0->ActivePauseMenuVariant += 1;
+					pauseMenu->ActivePauseMenuVariant += 1;
 				}
-				if (func_80801F18_gcnewpause((u32)a0) != 0)
+				if (func_80801F18_gcnewpause((u32)pauseMenu) != 0)
 				{
-					a0->ActivePauseMenuVariant += 2;
+					pauseMenu->ActivePauseMenuVariant += 2;
 				}
 			}
 			break;
-		case 2:
-			func_80800A08_gcnewpause(a0);
-			a0->unk3 = *(&D_80802072_gcnewpause + (a0->ActivePauseMenuVariant * 8));
+		case 2: //Main Option Page
+			func_80800A08_gcnewpause(pauseMenu);
+			pauseMenu->unk3 = *(&D_80802072_gcnewpause + (pauseMenu->ActivePauseMenuVariant * 8));
 			break;
-		case 3:
-			a0->unk3 = 1;
-			a0->CanExitPage = 0;
-			a0->unk8 = 0.2f;
-			func_80801660_gcnewpause(a0);
-			func_8080136C_gcnewpause(a0);
+		case 3: //Totals Page
+			pauseMenu->unk3 = 1;
+			pauseMenu->CanExitPage = 0;
+			pauseMenu->Timer = 0.2f;
+			func_80801660_gcnewpause(pauseMenu);
+			func_8080136C_gcnewpause(pauseMenu);
 			_gcaudiolist_entrypoint_1(4U, 0x4650U);
-			a0->SoundEffectTimerPageOpen = 0xB;
+			pauseMenu->SoundEffectTimerPageOpen = 0xB;
 			break;
-		case 4:
+		case 4: //Close Pause Menu
 			func_800FECB8(1);
-			switch (a0->unk2) 
+			switch (pauseMenu->ExitType)
 			{
 			case 1:
 				func_800C0710();
@@ -310,15 +310,15 @@ void func_80800534_gcnewpause(PauseState* a0, u32 targetPage)
 				break;
 			}
 			break;
-		case 5:
-			a0->unk8 = 5.0f;
+		case 5: //GameOver
+			pauseMenu->Timer = 5.0f; //Set The amount of time in seconds to wait before the grunty fade out
 			func_800FCAE0(0x24, 0, 0x7D0);
 			func_800FCA90(0x24);
 			func_800FC660(0x12);
-			func_80801CCC_gcnewpause(a0);
+			func_80801CCC_gcnewpause(pauseMenu);
 			break;
 		}
-		a0->PageIndex = (u8)targetPage;
+		pauseMenu->PageIndex = (u8)targetPage;
 	}
 }
 //Callback Function for interfacing with option menu
@@ -351,7 +351,7 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 				pauseMenu->unkE = 0;
 			}
 		}
-		else
+		else //If we have a confirmation warning
 			if (_gcnewoption_entrypoint_38(arg1, 0) != 0)
 			{
 				if (D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options[arg2].Function == 2)
@@ -388,37 +388,37 @@ void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3)
 		break;
 
 	case 2: //Try and Close Pause Menu
-		pauseMenu->unk2 = 1;
+		pauseMenu->ExitType = 1;
 		break;
 
 	}
 
 }
 
-void func_80800A08_gcnewpause(PauseState* arg0) 
+void func_80800A08_gcnewpause(PauseState* pauseMenu) 
 {
 	s32 i;
 	s32 optionSize;
 	s32 menuVariant;
 	Option* options;
 
-	bzero(&arg0->optionState, _gcnewoption_entrypoint_2());
-	_gcnewoption_entrypoint_5(&arg0->optionState, _gcnewpause_entrypoint_4, 0U, D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].unk1, 0);
-	_gcnewoption_entrypoint_10(&arg0->optionState, 2U);
-	optionSize = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].Size;
-	options = D_80802070_gcnewpause[arg0->ActivePauseMenuVariant].options;
-	_gcnewoption_entrypoint_8(&arg0->optionState, optionSize);
-	_gcnewoption_entrypoint_9(&arg0->optionState, optionSize);
-	_gcnewoption_entrypoint_46(&arg0->optionState, arg0->unkC);
+	bzero(&pauseMenu->optionState, _gcnewoption_entrypoint_2());
+	_gcnewoption_entrypoint_5(&pauseMenu->optionState, _gcnewpause_entrypoint_4, 0U, D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].unk1, 0);
+	_gcnewoption_entrypoint_10(&pauseMenu->optionState, 2U);
+	optionSize = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].Size;
+	options = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options;
+	_gcnewoption_entrypoint_8(&pauseMenu->optionState, optionSize);
+	_gcnewoption_entrypoint_9(&pauseMenu->optionState, optionSize);
+	_gcnewoption_entrypoint_46(&pauseMenu->optionState, pauseMenu->unkC);
 
 	for (i = 0; i < optionSize; i++) 
 	{
 		// @fake to swap s0 and s1
-		if ((!arg0->ActivePauseMenuVariant) && (!arg0->ActivePauseMenuVariant)) {}
-		_gcnewoption_entrypoint_31(&arg0->optionState, i, options[i].Icon);
+		if ((!pauseMenu->ActivePauseMenuVariant) && (!pauseMenu->ActivePauseMenuVariant)) {}
+		_gcnewoption_entrypoint_31(&pauseMenu->optionState, i, options[i].Icon);
 	}
-	_gcnewoption_entrypoint_36(&arg0->optionState);
-	menuVariant = arg0->ActivePauseMenuVariant;
+	_gcnewoption_entrypoint_36(&pauseMenu->optionState);
+	menuVariant = pauseMenu->ActivePauseMenuVariant;
 
 	if ((menuVariant != 5) && (menuVariant == 6)) 
 	{
@@ -428,29 +428,29 @@ void func_80800A08_gcnewpause(PauseState* arg0)
 		s32 a0;
 
 		a0 = _gcstatusDll_entrypoint_11();
-		a0 = sp50[arg0->unkC * 3 + a0 - 2];
+		a0 = sp50[pauseMenu->unkC * 3 + a0 - 2];
 		i = sp5C[a0].unk0;
 		s1 = sp5C[a0].unk2;
 
 		if (sp5C[a0].unk4 != 0) 
 		{
-			_gcnewoption_entrypoint_49(&arg0->optionState, 1U);
+			_gcnewoption_entrypoint_49(&pauseMenu->optionState, 1U);
 		}
 
-		_gcnewoption_entrypoint_40(&arg0->optionState, i, s1, 0x14U, 0.6f, 0.6f);
-		arg0->unk10 = 5;
-		arg0->unk11 = 5;
-		arg0->unk12 = 8;
+		_gcnewoption_entrypoint_40(&pauseMenu->optionState, i, s1, 0x14U, 0.6f, 0.6f);
+		pauseMenu->ConfirmTextStart = 5;
+		pauseMenu->unk11 = 5;
+		pauseMenu->ConfirmTextEnd = 8;
 	}
 	else 
 	{
-		_gcnewoption_entrypoint_40(&arg0->optionState, 0x3C, 0x25, 0x1AU, 0.65f, 0.99f);
-		arg0->unk10 = 5;
-		arg0->unk11 = 6;
-		arg0->unk12 = 7;
+		_gcnewoption_entrypoint_40(&pauseMenu->optionState, 0x3C, 0x25, 0x1AU, 0.65f, 0.99f);
+		pauseMenu->ConfirmTextStart = 5;
+		pauseMenu->unk11 = 6;
+		pauseMenu->ConfirmTextEnd = 7;
 	}
-	_gcnewoption_entrypoint_42(&arg0->optionState, 0.1f);
-	_gcnewoption_entrypoint_11(&arg0->optionState);
+	_gcnewoption_entrypoint_42(&pauseMenu->optionState, 0.1f);
+	_gcnewoption_entrypoint_11(&pauseMenu->optionState);
 }
 
 void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1) 
@@ -469,32 +469,33 @@ void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1)
 	_gcnewoption_entrypoint_41(arg1, arg0->LastOptionSelected);
 }
 
+//Execute Button Function
 void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOption)
 {
 	Option* new_var;
 	new_var = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options;
 	switch (new_var[selectedOption].Function)
 	{
-	case 0:
-		pauseMenu->unk2 = 1;
+	case 0: //Return
+		pauseMenu->ExitType = 1;
 		break;
 
-	case 1:
+	case 1: //Open a Totals Page
 		func_808017C8_gcnewpause(pauseMenu, (new_var[selectedOption].SubOption < 0xE) ? (new_var[selectedOption].SubOption) : (func_808011BC_gcnewpause()));
 		func_80800534_gcnewpause(pauseMenu, 3U);
 		break;
 
-	case 2:
+	case 2: //Game Over
 		func_80800534_gcnewpause(pauseMenu, 5U);
 		break;
 
-	case 3:
-		pauseMenu->unk2 = 3;
+	case 3: //Restart Game
+		pauseMenu->ExitType = 3;
 		_gcfrontend_entrypoint_11();
 		break;
 
-	case 4:
-		pauseMenu->unk2 = 4;
+	case 4: //Back to File Select
+		pauseMenu->ExitType = 4;
 		_gcfrontend_entrypoint_12();
 		break;
 
@@ -509,10 +510,13 @@ void func_80800DE0_gcnewpause(f32 a0)
 	func_800C4AF0(0, &D_808021C0_gcnewpause);
 }
 
+//Draw Main Screen Non Option UI
 void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 {
 	func_8080105C_gcnewpause(0xC,0x7,a1,0x0);
+	//Show Health
 	func_8008FBE0(a1);
+	//Show Air
 	func_800CF7F4(a1);
 	if (a1 != 0)
 	{
@@ -523,10 +527,14 @@ void func_80800E10_gcnewpause(PauseState* pauseMenu, u32 a1)
 	}
 	else
 	{
+		//Hide Jiggy UI Immediately
 		func_800D284C(0xD6);
+		//Hide Note UI Immediately
 		func_800D284C(0xD0);
 	}
 }
+
+
 s32 func_80800EA8_gcnewpause(PauseState* arg0, u32 arg1)
 {
 	s32 sp24;
@@ -586,6 +594,7 @@ s32 func_80800FA8_gcnewpause(u32 arg0) {
 	return var_s3;
 }
 
+//Display the Inventory Counts For Ability Dependent Items
 s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3)
 {
 	s32 temp_s0;
@@ -1016,9 +1025,9 @@ u32 func_80801BF0_gcnewpause(u32 a0)
 }
 
 //Get The Collected Moves for the Jamjars Fraction in the totals page
-u32 func_80801C3C_gcnewpause(u32 a0)
+s32 func_80801C3C_gcnewpause(s32 a0)
 {
-	u32 MoveCount = 0;
+	s32 MoveCount = 0;
 	u32 index = 0;
 	while (D_8080215C_gcnewpause[index].SubPageToShow != -1)
 	{
@@ -1034,6 +1043,7 @@ u32 func_80801C3C_gcnewpause(u32 a0)
 	return MoveCount;
 }
 
+//Set Gameover initial state
 void func_80801CCC_gcnewpause(PauseState* pauseMenu)
 {
 	pauseMenu->GameOverTransparency = 0;
@@ -1078,16 +1088,18 @@ void func_80801DA0_gcnewpause(PauseState* pauseMenu,u32 a1)
 	func_800DF944(a1, coord, 0, 0.25f, 0,1, func_800D674C(0x640));
 }
 
+//Handle Switching between are you sure and the button prompts
 void func_80801E08_gcnewpause(PauseState* pauseMenu, OptionState* a1)
 {
 	pauseMenu->unkE = pauseMenu->unkE + 1;
 
-	if (pauseMenu->unkE >= pauseMenu->unk12) {
-		pauseMenu->unkE = pauseMenu->unk10;
+	if (pauseMenu->unkE >= pauseMenu->ConfirmTextEnd)
+	{
+		pauseMenu->unkE = pauseMenu->ConfirmTextStart;
 	}
 
 	_gcnewoption_entrypoint_12(a1, pauseMenu->LastOptionSelected, pauseMenu->unkE);
-	pauseMenu->unk8 = 1.5f;
+	pauseMenu->Timer = 1.5f;
 }
 
 //Is there any inventory items between a0 and a1

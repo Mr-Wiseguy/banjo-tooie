@@ -7,20 +7,20 @@
 typedef struct {
 	u8 PageIndex; //0x0
 	u8 SubPage; //0x1
-	u8 unk2;
+	u8 ExitType; //Flag for exiting the pause Menu
 	s8 unk3;
 	u8 unk4;
 	u8 LastOptionSelected;//0x5
 	s8 HeaderAndButtonOffset; //0x6
 	s8 CanExitPage; //0x7
-	f32 unk8;
+	f32 Timer; //Used for timing various pause menu events
 	u8 unkC; //0xC
 	s8 ActivePauseMenuVariant;//0xD
 	u8 unkE;
 	s8 SoundEffectTimerPageOpen;
-	u8 unk10;
+	u8 ConfirmTextStart;
 	u8 unk11;
-	u8 unk12;
+	u8 ConfirmTextEnd;
 	s8 unk13;
 	u32* textPointer;//0x14
 	s16 pageTitleOffset; //0x18
