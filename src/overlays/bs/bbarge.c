@@ -96,7 +96,7 @@ void bsbbarge_init(PlayerState *self) {
 }
 
 #ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsbbarge/bsbbarge/bsbbarge_update.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bbarge/bsbbarge_update.s")
 #else
 void bsbbarge_update(PlayerState *self) {
     BanjoStateId next_state = BS_STATE_0_INVALID;

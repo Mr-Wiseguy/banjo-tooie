@@ -6,12 +6,12 @@ s32 baboost_entrypoint_0(void) {
     return sizeof(BaBoost);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/baboost/baboost/baboost_entrypoint_1.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/boost/baboost_entrypoint_1.s")
 
 s32 baboost_entrypoint_2(PlayerState *self, f32 arg1);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/baboost/baboost/baboost_entrypoint_2.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/boost/baboost_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/baboost/baboost/baboost_entrypoint_3.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/boost/baboost_entrypoint_3.s")
 
 void baboost_entrypoint_4(PlayerState *self, s32 arg1) {
     self->boost->unk0 = arg1;
