@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/potogoldbits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/potogoldbits/func_80800000_chpotogoldbits.s")
 

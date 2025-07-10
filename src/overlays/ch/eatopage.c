@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/eatopage.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatopage/chcheatopage_entrypoint_0.s")
 

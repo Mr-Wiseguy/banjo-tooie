@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/audiolist.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/audiolist/gcaudiolist_entrypoint_0.s")
 

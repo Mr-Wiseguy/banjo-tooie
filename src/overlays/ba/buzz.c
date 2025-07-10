@@ -1,10 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/buzz.h"
-
-#include "core2/1E9A960.h"
-#include "core2/1EB2840.h"
-#include "core2/1ECA640.h"
 
 s32 babuzz_entrypoint_0(void) {
     return sizeof(BaBuzz);

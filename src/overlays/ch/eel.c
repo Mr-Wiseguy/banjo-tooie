@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/eel.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eel/func_80800000_cheel.s")
 

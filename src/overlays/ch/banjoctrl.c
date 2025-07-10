@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/banjoctrl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjoctrl/chbanjoctrl_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/coaster.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_0.s")
 

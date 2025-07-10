@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/bgame.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/bgame/susubgame_entrypoint_0.s")
 

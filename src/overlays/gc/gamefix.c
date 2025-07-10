@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/gamefix.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/gamefix/gcgamefix_entrypoint_0.s")
 

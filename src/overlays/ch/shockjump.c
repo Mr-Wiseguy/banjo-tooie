@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/shockjump.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/shockjump/chshockjump_entrypoint_0.s")
 

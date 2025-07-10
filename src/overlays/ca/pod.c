@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ca/pod.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ca/pod/capod_entrypoint_0.s")
 

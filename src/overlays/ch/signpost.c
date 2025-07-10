@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/signpost.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/signpost/chsignpost_entrypoint_0.s")
 

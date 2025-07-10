@@ -1,7 +1,7 @@
 #ifndef __BA_SUDIE_H__
 #define __BA_SUDIE_H__
 
-#include <ultra64.h>
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 extern void _basudie_entrypoint_0(PlayerState *self);

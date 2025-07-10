@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/stonehead.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_80800000_bsstonehead.s")
 

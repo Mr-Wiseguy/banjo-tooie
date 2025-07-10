@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/jiggy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/func_80800000_sujiggy.s")
 

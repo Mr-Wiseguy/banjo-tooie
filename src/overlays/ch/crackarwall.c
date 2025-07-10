@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/crackarwall.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crackarwall/func_80800000_chcrackarchwall.s")
 

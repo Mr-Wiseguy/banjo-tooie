@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/blackeye.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/blackeye/func_80800000_chblackeye.s")
 

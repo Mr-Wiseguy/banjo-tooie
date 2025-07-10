@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/packctrl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/packctrl/bapackctrl_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gs/worldDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/worldDll/gsworldDll_entrypoint_0.s")
 

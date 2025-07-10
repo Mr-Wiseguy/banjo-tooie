@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/doubloon.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/doubloon/func_80800000_chdoubloon.s")
 

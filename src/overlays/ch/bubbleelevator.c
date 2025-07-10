@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bubbleelevator.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bubbleelevator/func_80800000_chbubbleelevator.s")
 

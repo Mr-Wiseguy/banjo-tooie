@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/dumbwaiterlift.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dumbwaiterlift/chdumbwaiterlift_entrypoint_0.s")
 

@@ -1,19 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/anim.h"
-#include "core2/anctrl.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
-#include "bs.h"
-#include "buttons.h"
-#include "overlays/bs/state.h"
-
-#include "core2/1E72EA0.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "core2/1EB5980.h"
+#include "overlays/bs/twirl.h"
 
 void func_80800000_bstwirl(PlayerState *);
 void bstwirl_init(PlayerState *);

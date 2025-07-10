@@ -17,7 +17,6 @@
 #include "core2/1E78BF0.h"
 #include "common.h"
 #include "player.h"
-#include <ultra64.h>
 
 
 s32 func_8008E148(PlayerState *self);

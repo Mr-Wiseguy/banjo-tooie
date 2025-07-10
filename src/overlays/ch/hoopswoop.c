@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/hoopswoop.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/chhoopswoop_entrypoint_0.s")
 

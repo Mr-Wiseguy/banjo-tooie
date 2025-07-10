@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/linkpipefan.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/linkpipefan/func_80800000_chlinkpipefan.s")
 

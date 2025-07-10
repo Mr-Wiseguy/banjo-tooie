@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/crashout.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crashout/func_80800000_bscrashout.s")
 

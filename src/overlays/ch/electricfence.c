@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/electricfence.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/electricfence/chelectricfence_entrypoint_0.s")
 

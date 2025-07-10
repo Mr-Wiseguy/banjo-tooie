@@ -1,4 +1,4 @@
-#include <ultra64.h>
+#include "core2/1EDAEA0.h"
 
 typedef struct {
     /* 0x00 */ s32 unk0;

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/nests.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_80800000_chnests.s")
 

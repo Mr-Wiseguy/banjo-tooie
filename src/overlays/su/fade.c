@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/fade.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/fade/sufade_entrypoint_0.s")
 

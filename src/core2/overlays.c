@@ -1,5 +1,4 @@
-#include "types.h"
-#include "overlays.h"
+#include "core2/overlays.h"
 
 extern s32 D_80126CB8;
 extern u32 D_80126730;

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/handcart.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80800000_chhandcart.s")
 

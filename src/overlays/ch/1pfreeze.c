@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/1pfreeze.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/1pfreeze/ch1pfreeze_entrypoint_0.s")
 

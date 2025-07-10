@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/frontend.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/frontend/gcfrontend_entrypoint_0.s")
 

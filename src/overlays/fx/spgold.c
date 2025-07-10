@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/spgold.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/spgold/fxspgold_entrypoint_0.s")
 

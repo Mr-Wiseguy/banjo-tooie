@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/drawbridgeswites.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/drawbridgeswites/func_80800000_chdrawbridgeswitches.s")
 

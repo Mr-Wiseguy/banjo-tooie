@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/sc/infobar.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/sc/infobar/func_80800000_scinfobar.s")
 

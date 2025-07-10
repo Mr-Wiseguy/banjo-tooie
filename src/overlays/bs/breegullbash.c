@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/breegullbash.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/breegullbash/func_80800000_bsbreegullbash.s")
 

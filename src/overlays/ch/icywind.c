@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/icywind.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/icywind/chicywind_entrypoint_0.s")
 

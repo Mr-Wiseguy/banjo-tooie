@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/squash.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/basquash_entrypoint_0.s")
 

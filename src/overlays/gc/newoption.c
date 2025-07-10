@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/newoption.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800000_gcnewoption.s")
 

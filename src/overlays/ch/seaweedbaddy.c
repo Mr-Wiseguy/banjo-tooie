@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/seaweedbaddy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/seaweedbaddy/chseaweedbaddy_entrypoint_0.s")
 

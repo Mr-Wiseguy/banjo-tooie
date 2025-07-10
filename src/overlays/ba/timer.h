@@ -1,9 +1,11 @@
 #ifndef __BA_TIMER_H__
 #define __BA_TIMER_H__
 
-#include <ultra64.h>
-
+#include "common.h"
+#include "core2/1EB2840.h"
+#include "core2/1ECA640.h"
 #include "overlays/ba/playerstate.h"
+
 
 #define BA_TIMER_COUNT 15
 

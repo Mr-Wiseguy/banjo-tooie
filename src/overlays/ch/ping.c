@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/ping.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ping/func_80800000_chping.s")
 

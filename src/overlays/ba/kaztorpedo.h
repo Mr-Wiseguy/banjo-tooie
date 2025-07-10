@@ -1,9 +1,9 @@
 #ifndef __BA_KAZTORPEDO_H__
 #define __BA_KAZTORPEDO_H__
 
-#include <ultra64.h>
-
+#include "common.h"
 #include "overlays/ba/playerstate.h"
+
 
 extern f32 _bakaztorpedo_entrypoint_1(PlayerState *self);
 extern void _bakaztorpedo_entrypoint_2(PlayerState *self);

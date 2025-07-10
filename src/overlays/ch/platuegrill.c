@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/platuegrill.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/platuegrill/func_80800000_chplatuegrill.s")
 

@@ -1,21 +1,4 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/timer.h"
-#include "overlays/bs/state.h"
-#include "core2/1E72EA0.h"
-#include "core2/1E68670.h"
-#include "core2/1E76880.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E77A20.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "buttons.h"
-#include "bs.h"
+#include "overlays/bs/bbarge.h"
 
 void bsbbarge_end(PlayerState *self);
 void bsbbarge_init(PlayerState *self);

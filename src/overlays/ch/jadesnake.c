@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jadesnake.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jadesnake/func_80800000_chjadesnake.s")
 

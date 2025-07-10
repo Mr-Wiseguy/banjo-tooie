@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/kaztorpedo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/kaztorpedo/bakaztorpedo_entrypoint_0.s")
 

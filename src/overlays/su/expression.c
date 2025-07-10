@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/expression.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/expression/suexpression_entrypoint_0.s")
 

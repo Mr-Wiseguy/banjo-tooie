@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/vp/wibble.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/wibble/func_80800000_vpwibble.s")
 

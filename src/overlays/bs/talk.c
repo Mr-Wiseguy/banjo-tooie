@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/talk.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/talk/bstalk_entrypoint_0.s")
 

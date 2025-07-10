@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/flasha.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/flasha/idflasha_entrypoint_0.s")
 

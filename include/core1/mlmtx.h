@@ -1,7 +1,8 @@
 #ifndef __CORE1_ML_MTX__
 #define __CORE1_ML_MTX__
 
-#include <ultra64.h>
+#include "common.h"
+
 typedef struct {
     f32 m[4][4];
 } MtxF;

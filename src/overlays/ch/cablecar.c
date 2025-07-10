@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/cablecar.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablecar/chcablecar_entrypoint_0.s")
 

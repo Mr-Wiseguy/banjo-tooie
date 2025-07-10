@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/drips.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/drips/chdrips_entrypoint_0.s")
 

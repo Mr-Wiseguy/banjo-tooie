@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/invisible.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/invisible/func_80800000_bainvisible.s")
 

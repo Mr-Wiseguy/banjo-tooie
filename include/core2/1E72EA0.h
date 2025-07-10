@@ -2,10 +2,9 @@
 #define __CORE2_1E72EA0_H__
 
 #include "common.h"
-
-#include <ultra64.h>
-
 #include "overlays/ba/playerstate.h"
+
+
 
 typedef struct ba_unknown_C0_s {
     f32 unk0;

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/inflatablebossdoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/inflatablebossdoor/chinflatablebossdoor_entrypoint_0.s")
 

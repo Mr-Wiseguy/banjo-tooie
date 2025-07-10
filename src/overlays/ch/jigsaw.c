@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jigsaw.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/func_80800000_chjigsaw.s")
 

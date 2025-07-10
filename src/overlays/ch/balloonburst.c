@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/balloonburst.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/chballoonburst_entrypoint_0.s")
 

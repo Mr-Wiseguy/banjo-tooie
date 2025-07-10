@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/mapsects.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/mapsects/gcmapsects_entrypoint_0.s")
 

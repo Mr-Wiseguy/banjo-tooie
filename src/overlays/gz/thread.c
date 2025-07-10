@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gz/thread.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gz/thread/gzthread_entrypoint_0.s")
 

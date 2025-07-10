@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/oildrill.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/func_80800000_choildrill.s")
 

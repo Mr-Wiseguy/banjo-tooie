@@ -1,14 +1,4 @@
-#include "common.h"
-
-#include "types.h" //for SQ()
-
-#include "overlays/ba/stick.h"
-
-#include "overlays/ba/key.h"
-#include "core2/1E2B200.h"
-#include "core2/1E75920.h"
-#include "core2/1E7D460.h"
-#include "core2/1EA3AA0.h"
+#include "core2/bastick.h"
 
 s32 bastick_getStructSize(void){
     return sizeof(BaStick);

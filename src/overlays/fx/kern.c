@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/kern.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/kern/func_80800000_fxkern.s")
 

@@ -1,20 +1,7 @@
 #ifndef __BS_LEDGE_H__
 #define __BS_LEDGE_H__
 
-#include <ultra64.h>
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/motor.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/stick.h"
-#include "overlays/ba/yaw.h"
-#include "overlays/ba/translate.h"
-#include "overlays/ba/packctrl.h"
-#include "overlays/bs/rest.h"
-#include "overlays/bs/state.h"
+#include "common.h"
 #include "core2/1E66990.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
@@ -27,10 +14,22 @@
 #include "core2/1EB5980.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
-#include "core2/1ECB9F0.h"
 #include "core2/1ECB0F0.h"
+#include "core2/1ECB9F0.h"
 #include "core2/1EEBA50.h"
-#include "common.h"
+#include "core2/anctrl.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/key.h"
+#include "overlays/ba/motor.h"
+#include "overlays/ba/packctrl.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/playerstate.h"
+#include "overlays/ba/stick.h"
+#include "overlays/ba/translate.h"
+#include "overlays/ba/yaw.h"
+#include "overlays/bs/rest.h"
+#include "overlays/bs/state.h"
+
 
 extern s16 D_80801340_bsledge[];
 extern s32 D_80801348_bsledge[];

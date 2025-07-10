@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/usefeather.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/usefeather/func_80800000_chusefeather.s")
 

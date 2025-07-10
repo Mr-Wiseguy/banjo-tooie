@@ -1,11 +1,4 @@
-
-#include "common.h"
-
-#include "overlays/ba/yaw.h"
-#include "core2/1E2B200.h"
-#include "core2/1EB2840.h"
-#include "core2/1ECB9F0.h"
-#include "ml.h"
+#include "core2/yaw.h"
 
 s32 yaw_size(void){
     return sizeof(BaYaw);

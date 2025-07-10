@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/introsyncDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/introsyncDll/func_80800000_glintrosyncDll.s")
 

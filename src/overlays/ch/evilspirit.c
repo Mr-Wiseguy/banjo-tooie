@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/evilspirit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilspirit/chevilspirit_entrypoint_0.s")
 

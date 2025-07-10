@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/swampplatform.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swampplatform/func_80800000_chswampplatform.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/multiscore.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/sumultiscore_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/kickball.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/kickball/func_80800000_sukickball.s")
 

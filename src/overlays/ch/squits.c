@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/squits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/squits/chsquits_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/coderoomdoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/coderoomdoor/chcoderoomdoor_entrypoint_0.s")
 

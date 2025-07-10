@@ -1,5 +1,4 @@
-#include "types.h"
-#include "memory.h"
+#include "core1/heap.h"
 
 void* func_8001C0A0(s32);
 void heap_init_empty_block(struct HeapHeader*);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/splitup.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_0.s")
 

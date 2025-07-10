@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bobpanel.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bobpanel/func_80800000_chbobpanel.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/lifeforcespell.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lifeforcespell/chlifeforcespell_entrypoint_0.s")
 

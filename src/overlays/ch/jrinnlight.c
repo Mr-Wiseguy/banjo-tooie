@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jrinnlight.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jrinnlight/func_80800000_chjrinnlight.s")
 

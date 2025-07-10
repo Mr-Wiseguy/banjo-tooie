@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/rainripples.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/rainripples/chrainripples_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/crc.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/crc/func_80800000_glcrc.s")
 

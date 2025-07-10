@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/honey.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honey/func_80800000_chhoney.s")
 

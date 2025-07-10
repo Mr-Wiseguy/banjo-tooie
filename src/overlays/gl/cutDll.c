@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/cutDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/cutDll/func_80800000_glcutDll.s")
 

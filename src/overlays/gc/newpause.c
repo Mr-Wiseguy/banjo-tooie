@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/newpause.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_0.s")
 

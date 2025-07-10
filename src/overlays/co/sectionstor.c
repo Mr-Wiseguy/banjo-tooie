@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/co/sectionstor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/co/sectionstor/cosectionstor_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gz/trace.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gz/trace/func_80800000_gztrace.s")
 

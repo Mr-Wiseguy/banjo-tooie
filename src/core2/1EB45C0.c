@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "types.h"
+#include "core2/1EB45C0.h"
 
 s16 func_800A8184(void);
 f32 func_800D9004(void);

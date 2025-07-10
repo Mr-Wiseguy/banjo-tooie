@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/sounder.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sounder/func_80800000_chsounder.s")
 

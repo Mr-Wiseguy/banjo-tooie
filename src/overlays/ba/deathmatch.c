@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/deathmatch.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/deathmatch/func_80800000_badeathmatch.s")
 

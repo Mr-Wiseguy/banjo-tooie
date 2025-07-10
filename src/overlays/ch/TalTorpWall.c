@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/TalTorpWall.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/TalTorpWall/func_80800000_chTalTorpWall.s")
 

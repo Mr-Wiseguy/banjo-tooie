@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/friesstand.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_0.s")
 

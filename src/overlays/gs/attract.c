@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gs/attract.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/attract/gsattract_entrypoint_0.s")
 

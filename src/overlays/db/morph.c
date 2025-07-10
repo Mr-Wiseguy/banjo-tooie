@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/db/morph.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/db/morph/func_80800000_dbmorph.s")
 

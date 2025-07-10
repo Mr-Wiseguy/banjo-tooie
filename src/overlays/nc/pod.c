@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/nc/pod.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/pod/func_80800000_ncpod.s")
 

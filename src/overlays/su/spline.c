@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/spline.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/spline/suspline_entrypoint_0.s")
 

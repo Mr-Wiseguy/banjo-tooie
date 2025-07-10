@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/savegame.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/savegame/func_80800000_glsavegame.s")
 

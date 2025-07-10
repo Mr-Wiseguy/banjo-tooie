@@ -1,5 +1,4 @@
-#include "memory.h"
-#include "freelist.h"
+#include "core2/freelist.h"
 
 void freelist_clear(FreeList* list) {
     s32 i;

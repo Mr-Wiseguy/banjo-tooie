@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/skyDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/skyDll/func_80800000_gcskyDll.s")
 

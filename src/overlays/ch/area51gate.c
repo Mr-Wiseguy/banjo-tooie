@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/area51gate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/area51gate/charea51gate_entrypoint_0.s")
 

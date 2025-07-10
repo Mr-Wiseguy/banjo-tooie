@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/missilehome.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/missilehome/sumissilehome_entrypoint_0.s")
 

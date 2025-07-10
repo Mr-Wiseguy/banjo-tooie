@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/flash.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/flash/idflash_entrypoint_0.s")
 

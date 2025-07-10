@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/honeyb.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/chhoneyb_entrypoint_0.s")
 

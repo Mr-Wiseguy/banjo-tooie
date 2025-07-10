@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/castleshockpadswit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/castleshockpadswit/chcastleshockpadswitch_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/obalsettings.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/obalsettings/glglobalsettings_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ml/wave.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ml/wave/mlwave_entrypoint_0.s")
 

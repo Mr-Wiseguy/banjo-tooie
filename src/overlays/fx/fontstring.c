@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/fontstring.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/fontstring/func_80800000_fxfontstring.s")
 

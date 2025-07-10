@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/dbDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/dbDll/func_80800000_gldbDll.s")
 

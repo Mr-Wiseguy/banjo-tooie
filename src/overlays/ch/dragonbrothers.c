@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/dragonbrothers.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80800000_chdragonbrothers.s")
 

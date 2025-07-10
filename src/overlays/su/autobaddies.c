@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/autobaddies.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/autobaddies/suautobaddies_entrypoint_0.s")
 

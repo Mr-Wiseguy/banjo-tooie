@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/caveofhorrorsdoors.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/caveofhorrorsdoors/chcaveofhorrorsdoors_entrypoint_0.s")
 

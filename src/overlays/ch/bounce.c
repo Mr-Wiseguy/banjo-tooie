@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bounce.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bounce/chbounce_entrypoint_0.s")
 

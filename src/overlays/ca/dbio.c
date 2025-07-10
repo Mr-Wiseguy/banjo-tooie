@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ca/dbio.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ca/dbio/func_80800000_cadbio.s")
 

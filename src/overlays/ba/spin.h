@@ -1,7 +1,7 @@
 #ifndef __BA_SPIN_H__
 #define __BA_SPIN_H__
 
-#include <ultra64.h>
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 extern void _baspin_entrypoint_1();

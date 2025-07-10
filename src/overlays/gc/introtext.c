@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/introtext.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/introtext/gcintrotext_entrypoint_0.s")
 

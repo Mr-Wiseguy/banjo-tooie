@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/splat.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splat/bssplat_entrypoint_0.s")
 

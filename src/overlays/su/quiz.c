@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/quiz.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/quiz/func_80800000_suquiz.s")
 

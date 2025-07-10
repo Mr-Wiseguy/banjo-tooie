@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/goto.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/func_80800000_gcgoto.s")
 

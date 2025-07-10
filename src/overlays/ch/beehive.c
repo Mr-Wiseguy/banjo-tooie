@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/beehive.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/beehive/func_80800000_chbeehive.s")
 

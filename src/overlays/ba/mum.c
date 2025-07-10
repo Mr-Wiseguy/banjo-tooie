@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/mum.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/bamum_entrypoint_0.s")
 

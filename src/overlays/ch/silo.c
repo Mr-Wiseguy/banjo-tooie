@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/silo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/silo/func_80800000_chsilo.s")
 

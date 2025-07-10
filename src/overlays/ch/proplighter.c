@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/proplighter.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/proplighter/chproplighter_entrypoint_0.s")
 

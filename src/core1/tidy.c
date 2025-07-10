@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "threads.h"
+#include "core1/tidy.h"
 
 // tidy_thread_entry
 void func_80013544(void*);

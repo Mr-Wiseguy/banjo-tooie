@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/terryegg.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/chterryegg_entrypoint_0.s")
 

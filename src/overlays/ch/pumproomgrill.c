@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/pumproomgrill.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomgrill/chpumproomgrill_entrypoint_0.s")
 

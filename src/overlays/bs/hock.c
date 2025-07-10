@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/hock.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/hock/bsbshock_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/LagoonInnBlockedWall.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_80800000_chLagoonInnBlockedWall.s")
 

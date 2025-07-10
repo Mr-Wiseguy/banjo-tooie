@@ -1,8 +1,18 @@
 #ifndef __BS_MUM_H__
 #define __BS_MUM_H__
 
-#include "core2/anctrl.h"
+#include "common.h"
+#include "core2/1E66990.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6E870.h"
 #include "core2/1E72EA0.h"
+#include "core2/1E75710.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1EB5980.h"
+#include "core2/1ECA640.h"
+#include "core2/anctrl.h"
 #include "overlays/ba/anim.h"
 #include "overlays/ba/bounce.h"
 #include "overlays/ba/flag.h"
@@ -16,18 +26,7 @@
 #include "overlays/bs/mum/move.h"
 #include "overlays/bs/rest.h"
 #include "overlays/bs/state.h"
-#include "core2/1E66990.h"
-#include "core2/1E6B900.h"
-#include "core2/1E6E870.h"
-#include "core2/1E75710.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E77A20.h"
-#include "core2/1E78BF0.h"
-#include "core2/1EB5980.h"
-#include "core2/1ECA640.h"
-#include "common.h"
 #include "player.h"
-#include <ultra64.h>
 
 extern s32 D_80801140_bsmum[];
 extern s32 D_80801150_bsmum[];

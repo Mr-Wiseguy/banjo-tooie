@@ -1,7 +1,6 @@
 #ifndef __NC_BA_1P_H__
 #define __NC_BA_1P_H__
 
-#include <ultra64.h>
 #include "overlays/ba/playerstate.h"
 
 extern void _ncba1p_entrypoint_6(PlayerState *self, f32[3]);

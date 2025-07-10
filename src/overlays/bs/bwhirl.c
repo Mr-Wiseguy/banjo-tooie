@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/bwhirl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/func_80800000_bsbwhirl.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/deflect.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/deflect/func_80800000_chdeflect.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/volcanobits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/chvolcanobits_entrypoint_0.s")
 

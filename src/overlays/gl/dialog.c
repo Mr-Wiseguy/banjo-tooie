@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/dialog.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/dialog/gldialog_entrypoint_0.s")
 

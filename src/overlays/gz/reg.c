@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gz/reg.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gz/reg/R_808005A0_gzreg.s")
 

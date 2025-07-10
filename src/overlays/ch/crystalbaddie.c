@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/crystalbaddie.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crystalbaddie/chcrystalbaddie_entrypoint_0.s")
 

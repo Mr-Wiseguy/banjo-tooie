@@ -30,7 +30,6 @@
 #include "core2/1ECB9F0.h"
 #include "common.h"
 #include "player.h"
-#include <ultra64.h>
 
 extern s32 D_80800B30_bsmumswim[];
 extern s32 D_80800B40_bsmumswim[];

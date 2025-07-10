@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/armouredcaveman.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/armouredcaveman/charmouredcaveman_entrypoint_0.s")
 

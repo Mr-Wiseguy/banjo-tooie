@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/gameselect.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/chgameselect_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/pumproomswit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomswit/chpumproomswitch_entrypoint_0.s")
 

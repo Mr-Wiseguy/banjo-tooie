@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/sabreman.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/chsabreman_entrypoint_0.s")
 

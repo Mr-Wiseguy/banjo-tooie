@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/timetable.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/timetable/func_80800000_chtimetable.s")
 

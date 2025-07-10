@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/canarymarycage.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/canarymarycage/func_80800000_chcanarymarycage.s")
 

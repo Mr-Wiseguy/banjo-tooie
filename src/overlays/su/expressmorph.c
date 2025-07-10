@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/expressmorph.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/expressmorph/func_80800000_suexpressmorph.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/2dbaddy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/2dbaddy/ch2dbaddy_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/snowball.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_80800000_bssnowball.s")
 

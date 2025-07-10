@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/crusher.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800000_chcrusher.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/claw.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/claw/bsclaw_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/dingpot.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dingpot/chdingpot_entrypoint_0.s")
 

@@ -1,7 +1,6 @@
 #ifndef __BA_MOVE_GOTO_H__
 #define __BA_MOVE_GOTO_H__
 
-#include <ultra64.h>
 #include "overlays/ba/playerstate.h"
 
 extern void _bamovegoto_entrypoint_0(PlayerState *self);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/exploder.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/chexploder_entrypoint_0.s")
 

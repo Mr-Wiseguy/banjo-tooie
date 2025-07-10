@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/cubesearch.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/cubesearch/gccubesearch_entrypoint_0.s")
 

@@ -1,9 +1,9 @@
 #ifndef __CORE2_ANCTRL_H__
 #define __CORE2_ANCTRL_H__
 
-#include <ultra64.h>
-
+#include "common.h"
 #include "overlays/ba/assets.h"
+
 
 typedef struct anctrl_s {
     // TODO populate this struct

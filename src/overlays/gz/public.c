@@ -1,6 +1,4 @@
-#include "types.h"
-#include "gfx.h"
-#include "memory.h"
+#include "overlays/gz/public.h"
 
 s32 func_80014F00();
 void func_8001D96C();

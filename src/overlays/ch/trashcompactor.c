@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/trashcompactor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcompactor/chtrashcompactor_entrypoint_0.s")
 

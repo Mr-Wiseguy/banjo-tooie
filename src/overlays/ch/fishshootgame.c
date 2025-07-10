@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/fishshootgame.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fishshootgame/chfishshootgame_entrypoint_0.s")
 

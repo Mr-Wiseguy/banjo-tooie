@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/clinker.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_80800000_chclinker.s")
 

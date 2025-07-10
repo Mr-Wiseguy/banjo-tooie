@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/torpedo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/torpedo/func_80800000_chtorpedo.s")
 

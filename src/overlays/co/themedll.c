@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/co/themedll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/co/themedll/func_80800000_cothemedll.s")
 

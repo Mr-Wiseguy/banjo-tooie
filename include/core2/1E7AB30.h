@@ -2,10 +2,9 @@
 #define __CORE2_1E7AB30_H__
 
 #include "common.h"
-
-#include <ultra64.h>
-
 #include "overlays/ba/playerstate.h"
+
+
 
 void func_800A16BC(s32);
 s32 func_800A1718(PlayerState *);

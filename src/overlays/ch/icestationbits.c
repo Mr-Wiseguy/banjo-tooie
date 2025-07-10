@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/icestationbits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/icestationbits/chicestationbits_entrypoint_0.s")
 

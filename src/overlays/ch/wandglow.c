@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/wandglow.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wandglow/func_80800000_chwandglow.s")
 

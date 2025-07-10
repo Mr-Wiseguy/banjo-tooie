@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/evilmumbo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80800000_chevilmumbo.s")
 

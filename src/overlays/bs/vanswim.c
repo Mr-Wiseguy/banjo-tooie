@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/vanswim.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_80800000_bsvanswim.s")
 

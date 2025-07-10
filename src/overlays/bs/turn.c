@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/turn.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/turn/bsturn_entrypoint_0.s")
 

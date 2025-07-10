@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/beanstalkseed.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/beanstalkseed/func_80800000_chbeanstalkseed.s")
 

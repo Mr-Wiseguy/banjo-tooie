@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/flameline.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/flameline/baflameline_entrypoint_0.s")
 

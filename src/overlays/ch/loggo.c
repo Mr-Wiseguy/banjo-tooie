@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/loggo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/loggo/chloggo_entrypoint_0.s")
 

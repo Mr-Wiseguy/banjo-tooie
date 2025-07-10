@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "gfx.h"
+#include "core2/1EC1380.h"
 
 s16 func_800A8184(void);
 

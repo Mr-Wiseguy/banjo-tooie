@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/crouch.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crouch/func_80800000_bscrouch.s")
 

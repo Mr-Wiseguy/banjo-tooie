@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/db/tex.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/db/tex/dbtex_entrypoint_0.s")
 

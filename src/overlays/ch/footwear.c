@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/footwear.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/footwear/func_80800000_chfootwear.s")
 

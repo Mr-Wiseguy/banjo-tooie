@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/kingjinjo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/chkingjinjo_entrypoint_0.s")
 

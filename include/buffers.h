@@ -1,7 +1,7 @@
 #ifndef __BUFFERS_H__
 #define __BUFFERS_H__
 
-#include <ultra64.h>
+#include "common.h"
 
 typedef struct {
     u8* rom_start;

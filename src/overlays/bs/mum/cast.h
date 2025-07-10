@@ -1,7 +1,6 @@
 #ifndef __BS_MUM_CAST_H__
 #define __BS_MUM_CAST_H__
 
-#include <ultra64.h>
 #include "overlays/ba/playerstate.h"
 #include "overlays/bs/mum.h"
 #include "core2/1E67DA0.h"

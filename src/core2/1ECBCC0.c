@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "core1/mlmtx.h"
+#include "core2/1ECBCC0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F23D0.s")
 

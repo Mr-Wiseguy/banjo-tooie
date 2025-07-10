@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/swappy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swappy/func_80800000_chswappy.s")
 

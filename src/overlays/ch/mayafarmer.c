@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/mayafarmer.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/func_80800000_chmayafarmer.s")
 

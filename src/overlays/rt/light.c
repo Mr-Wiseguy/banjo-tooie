@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/rt/light.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/rt/light/func_80800000_rtlight.s")
 

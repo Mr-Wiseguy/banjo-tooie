@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/stonepillar.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/chstonepillar_entrypoint_0.s")
 

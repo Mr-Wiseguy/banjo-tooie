@@ -1,8 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/statetimer.h"
-
-#include "core2/1EB2840.h"
+#include "core2/bastatetimer.h"
 
 s32 bastatetimerList_getSize(void) {
     return sizeof(BaStateTimerList);

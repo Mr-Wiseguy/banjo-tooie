@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/octopus.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/choctopus_entrypoint_0.s")
 

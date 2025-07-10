@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/zubba.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/zubba/chzubba_entrypoint_0.s")
 

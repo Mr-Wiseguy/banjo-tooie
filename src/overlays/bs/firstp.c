@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/firstp.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800000_bsfirstp.s")
 

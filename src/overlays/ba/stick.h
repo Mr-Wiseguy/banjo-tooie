@@ -1,7 +1,6 @@
 #ifndef __BA_STICK_H__
 #define __BA_STICK_H__
 
-#include <ultra64.h>
 
 #include "overlays/ba/playerstate.h"
 

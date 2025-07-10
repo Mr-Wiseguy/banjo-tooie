@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/appearfx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/appearfx/chappearfx_entrypoint_0.s")
 

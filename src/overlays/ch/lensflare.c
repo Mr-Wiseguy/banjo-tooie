@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/lensflare.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lensflare/chlensflare_entrypoint_0.s")
 

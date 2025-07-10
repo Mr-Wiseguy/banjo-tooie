@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/transitionDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/transitionDll/func_80800000_gctransitionDll.s")
 

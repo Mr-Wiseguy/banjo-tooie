@@ -1,5 +1,4 @@
-#include "types.h"
-#include "buffers.h"
+#include "core1/1E33CF0.h"
 
 void func_8001D1E0(void);
 u32 func_8001D31C(void);

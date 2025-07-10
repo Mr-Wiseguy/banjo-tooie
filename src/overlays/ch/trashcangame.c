@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/trashcangame.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_80800000_chtrashcangame.s")
 
