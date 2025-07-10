@@ -20,7 +20,7 @@ void bawandglow_entrypoint_2(s32 arg0) {
 }
 
 #ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bawandglow/bawandglow/bawandglow_entrypoint_3.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/wandglow/bawandglow_entrypoint_3.s")
 #else
 void bawandglow_entrypoint_3(PlayerState *self, s32 arg1) {
     if (self->wandglow->unkC != NULL) {

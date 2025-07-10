@@ -218,7 +218,7 @@ s32 bsmum_entrypoint_5(s32 idx) {
 
 #ifndef NONMATCHINGS
 void func_808007A0_bsmum(PlayerState *self, s32);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmum/bsmum/func_808007A0_bsmum.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/mum/func_808007A0_bsmum.s")
 #else
 // Decomp failure
 #endif

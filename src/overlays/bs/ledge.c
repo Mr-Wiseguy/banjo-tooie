@@ -2,7 +2,7 @@
 
 #ifndef NONMATCHINGS
 // Unmatched as the compiler wants to use a0 and then move a0 into v0 instead of using t registers
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_80800000_bsledge.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800000_bsledge.s")
 #else
 // Probably a check whether kazooie should (or can?) attack
 s32 func_80800000_bsledge(PlayerState *self) {
@@ -110,7 +110,7 @@ void func_80800334_bsledge(PlayerState *self) {
 }
 
 #ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_808003D0_bsledge.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_808003D0_bsledge.s")
 #else
 // Probably a check whether banjo can pull himself up a ledge
 s32 func_808003D0_bsledge(PlayerState *self) {
@@ -121,7 +121,7 @@ s32 func_808003D0_bsledge(PlayerState *self) {
 #endif
 
 #ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_80800410_bsledge.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800410_bsledge.s")
 #else
 s32 func_80800410_bsledge(PlayerState *self) {
     if (((func_80096388(self) ^ 7) == 0) != 0) {
@@ -369,7 +369,7 @@ s32 func_80800D24_bsledge(PlayerState *self) {
 }
 
 #ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsledge/bsledge/func_80800D78_bsledge.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ledge/func_80800D78_bsledge.s")
 #else
 // decomp failure
 #endif
