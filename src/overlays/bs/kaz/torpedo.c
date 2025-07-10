@@ -214,9 +214,9 @@ void func_8080088C_bskaztorpedo(PlayerState *self, s32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskaztorpedo/bskaztorpedo/func_808008D4_bskaztorpedo.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/torpedo/func_808008D4_bskaztorpedo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskaztorpedo/bskaztorpedo/func_80800A34_bskaztorpedo.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/torpedo/func_80800A34_bskaztorpedo.s")
 
 void func_80800AF0_bskaztorpedo(PlayerState *self) {
     _batranslate_entrypoint_3(self, 1);

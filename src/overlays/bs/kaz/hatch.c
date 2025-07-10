@@ -29,7 +29,7 @@ void func_808000D4_bskazhatch(PlayerState *self) {
     func_80800000_bskazhatch(self, 1);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazhatch/bskazhatch/func_80800108_bskazhatch.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/hatch/func_80800108_bskazhatch.s")
 
 BanjoStateId func_808001E4_bskazhatch(PlayerState *self) {
     if (func_8008E124(self) != 0) {
