@@ -17,7 +17,7 @@ void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], f32 arg2[3])
     arg1[1] += 57.0f;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazflamethrower/bskazflamethrower/func_80800094_bskazflamethrower.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/flamethrower/func_80800094_bskazflamethrower.s")
 
 void bskazflamethrower_entrypoint_1(PlayerState *self) {
     func_80800094_bskazflamethrower(self, 0);

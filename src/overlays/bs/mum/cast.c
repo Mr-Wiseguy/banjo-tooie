@@ -2,7 +2,7 @@
 
 #ifndef NONMATCHINGS
 s32 func_80800000_bsmumcast(PlayerState *self, s32);
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmumcast/bsmumcast/func_80800000_bsmumcast.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/mum/cast/func_80800000_bsmumcast.s")
 #else
 // Decomp failure
 #endif
@@ -30,13 +30,13 @@ void bsmumcast_entrypoint_1(PlayerState *self) {
 }
 
 #ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmumcast/bsmumcast/bsmumcast_entrypoint_2.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/mum/cast/bsmumcast_entrypoint_2.s")
 #else
 // Decomp failure
 #endif
 
 #ifndef NONMATCHINGS
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bsmumcast/bsmumcast/bsmumcast_entrypoint_3.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/mum/cast/bsmumcast_entrypoint_3.s")
 #else
 // Decomp failure
 #endif
