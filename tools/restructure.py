@@ -4,6 +4,7 @@ from glob import glob
 from pathlib import Path
 import os
 import yaml
+import subprocess
 
 # Any prefix listed here should, if found, be moved into the respective subdirectory(ies)
 PREFIX_MAP = {
@@ -106,10 +107,7 @@ def main():
             Path(os.path.join(OVERLAYS_PATH, target_directory)).mkdir(
                 parents=True, exist_ok=True
             )
-            os.rename(
-                source_file_name,
-                target_file_name,
-            )
+            subprocess.run(['git', 'mv', source_file_name, target_file_name])
 
         source_directory = os.path.dirname(source_file_name)
 
@@ -154,62 +152,6 @@ def main():
                         f", {target_name}]",
                     )
             break  # stop the segments loop as there should only be one segment for the current file
-
-        # create missing .h file
-        expected_h_file_name = target_file_name.replace('.c', '.h')
-        
-        if os.path.exists(expected_h_file_name) is False:
-            define_name = target_file_name.replace(PROJECT_ROOT + "/src/overlays/", "").replace(".c", "").replace("/", "_").upper()
-            print(f"Creating header file: {expected_h_file_name} with #ifndef __{define_name}_H__ and replacing #include \"common.h\" with new header file")
-            if DRY_RUN is False:
-                with open(expected_h_file_name, "w") as f:
-                    f.write(f"""#ifndef __{define_name}_H__
-#define __{define_name}_H__
-
-#include "common.h"
-
-#endif // __{define_name}_H__
-""")
-        if DRY_RUN is False:
-            # Open current file
-            file_content = ""
-            with open(target_file_name, "r") as f:
-                file_content = f.read()
-            if file_content == "":
-                print(f"Failed to read {target_file_name}, could not replace #include statement")
-                continue
-
-            if "common.h" in file_content:
-                # Replace common.h include with overlays header (newly created file) import
-                header_include_path = expected_h_file_name.replace(PROJECT_ROOT + "/src/", "")
-                print(f"Replacing common.h with {header_include_path}")
-                file_content = file_content.replace('#include "common.h"', f'#include "{header_include_path}"')
-
-            # Replace GLOBAL_ASM paths to match new structure
-            current_asm_path = file.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
-            target_asm_path = target_file_name.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
-            print(f"Replacing {current_asm_path} with {target_asm_path}")
-            file_content = file_content.replace(current_asm_path, target_asm_path)
-
-            # Write back file content
-            with open(target_file_name, "w") as f:
-                f.write(file_content)
-
-        if DRY_RUN is False:
-            current_asm_path = file.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
-            target_asm_path = target_file_name.replace(PROJECT_ROOT + "/src/", "asm/nonmatchings/").replace(".c", "/")
-            print(f"Replacing {current_asm_path} with {target_asm_path}")
-            # Open current file, replace GLOBAL_ASM paths to match new structure
-            file_content = ""
-            with open(target_file_name, "r") as f:
-                file_content = f.read()
-            if file_content == "":
-                print(f"Failed to read {target_file_name}, could not replace #include statement")
-                continue
-
-            file_content = file_content.replace(current_asm_path, target_asm_path)
-            with open(target_file_name, "w") as f:
-                f.write(file_content)
 
     if DRY_RUN is False:
         with open(SPLAT_CONFIG, "w") as c:
