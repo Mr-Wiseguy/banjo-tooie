@@ -1,4 +1,4 @@
-#include <ultra64.h>
+#include "core2/1EC0F10.h"
 
 // compare_vec4i
 int func_800F371C(u32[4], u32[4]);

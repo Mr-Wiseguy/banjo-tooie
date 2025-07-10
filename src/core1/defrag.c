@@ -1,5 +1,4 @@
-#include "types.h"
-#include "memory.h"
+#include "core1/defrag.h"
 
 // defragged_bytes
 s32 D_8007C6F0;

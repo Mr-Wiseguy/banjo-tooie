@@ -2,7 +2,23 @@
 #define __BA_BOUNCE_H__
 
 #include "assets.h"
+#include "common.h"
+#include "core2/1E2B200.h"
+#include "core2/1E67DA0.h"
+#include "core2/1E6E870.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75620.h"
+#include "core2/1E75920.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1EDA900.h"
+#include "overlays/ba/physics.h"
 #include "overlays/ba/playerstate.h"
+#include "overlays/ba/react.h"
+#include "overlays/ba/stick.h"
+#include "overlays/ba/timer.h"
 
 typedef struct ba_bounce_s {
     f32 unk0;

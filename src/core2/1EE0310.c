@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EE0310.h"
 
 void func_80106A20(void) {
 }

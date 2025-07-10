@@ -2,7 +2,6 @@
 #define __BS_KAZ_DIE_H__
 
 #include "common.h"
-#include <ultra64.h>
 
 #include "core2/anctrl.h"
 #include "overlays/ba/anim.h"

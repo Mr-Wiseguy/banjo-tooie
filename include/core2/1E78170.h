@@ -1,7 +1,7 @@
 #ifndef __CORE2_1E78170_H__
 #define __CORE2_1E78170_H__
 
-#include <ultra64.h>
+#include "common.h"
 
 f32  func_8009EA14(void);
 u8 func_8009EA20(void);

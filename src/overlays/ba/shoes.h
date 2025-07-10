@@ -1,9 +1,9 @@
 #ifndef __BA_SHOES_H__
 #define __BA_SHOES_H__
 
-#include <ultra64.h>
-
+#include "common.h"
 #include "overlays/ba/playerstate.h"
+
 
 s32 _bashoes_entrypoint_1(PlayerState *self);
 s32 _bashoes_entrypoint_2(PlayerState *self);

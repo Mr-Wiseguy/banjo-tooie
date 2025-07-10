@@ -1,6 +1,7 @@
 #ifndef __BA_ATTACH_H__
 #define __BA_ATTACH_H__
 
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 typedef struct ba_attach_s {

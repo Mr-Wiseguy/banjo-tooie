@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-#include <ultra64.h>
 
 s32 func_800B5BE4(s32);
 

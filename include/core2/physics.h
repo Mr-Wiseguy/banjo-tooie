@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-#include <ultra64.h>
 
 #include "overlays/ba/playerstate.h"
 

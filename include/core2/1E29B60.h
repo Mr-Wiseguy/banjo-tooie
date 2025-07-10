@@ -2,7 +2,6 @@
 #define __CORE2_1E29B60_H__
 
 #include "common.h"
-#include <ultra64.h>
 
 void func_8001209C(s32);
 void func_800121D0();

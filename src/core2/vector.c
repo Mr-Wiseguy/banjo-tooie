@@ -1,5 +1,4 @@
-#include "memory.h"
-#include "vector.h"
+#include "core2/vector.h"
 
 // Alternate memory management functions?
 s16 func_8001B668(s32, s32); // alloc

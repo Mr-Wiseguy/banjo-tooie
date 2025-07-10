@@ -1,10 +1,9 @@
 #ifndef __CORE2_1E6B900_H__
 #define __CORE2_1E6B900_H__
 
-#include <ultra64.h>
-
-#include "overlays/ba/playerstate.h"
 #include "core2/1EBA250.h"
+#include "overlays/ba/playerstate.h"
+
 
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);

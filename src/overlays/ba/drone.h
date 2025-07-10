@@ -1,6 +1,7 @@
 #ifndef __BA_DRONE_H__
 #define __BA_DRONE_H__
 
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 #include "overlays/bs/state.h"
 

@@ -1,7 +1,7 @@
 #ifndef __CH_USEFEATHER_H__
 #define __CH_USEFEATHER_H__
 
-#include <ultra64.h>
+#include "common.h"
 
 extern void _chusefeather_entrypoint_1(s32, s32);
 

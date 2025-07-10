@@ -21,7 +21,6 @@
 #include "core2/1E7BFA0.h"
 #include "common.h"
 #include "player.h"
-#include <ultra64.h>
 
 void func_8008CA30(PlayerState *self, f32 scale);
 extern void func_8009D2F0(PlayerState *self, s32, f32);

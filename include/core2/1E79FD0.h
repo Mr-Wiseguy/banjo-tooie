@@ -1,9 +1,8 @@
 #ifndef __CORE2_1E79FD0_H__
 #define __CORE2_1E79FD0_H__
 
-#include <ultra64.h>
-
 #include "overlays/ba/playerstate.h"
+
 
 s32 func_800A0C20(PlayerState *self);
 void func_800A0CDC(PlayerState *, s32);

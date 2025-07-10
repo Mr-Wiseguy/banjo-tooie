@@ -1,9 +1,9 @@
 #ifndef __BA_BOOST_H__
 #define __BA_BOOST_H__
 
-#include <ultra64.h>
-
+#include "common.h"
 #include "overlays/ba/playerstate.h"
+
 
 typedef struct ba_boost_s {
     u8 unk0;

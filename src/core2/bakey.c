@@ -1,6 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/key.h"
+#include "core2/bakey.h"
 
 #define AS_BOOL(x) ((x) != 0)
 
