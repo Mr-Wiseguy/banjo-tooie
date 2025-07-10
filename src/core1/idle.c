@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "threads.h"
+#include "core1/idle.h"
 
 void func_800131C0(void);
 void func_80012548(void);

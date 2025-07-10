@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/icekeydoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/icekeydoor/func_80800000_chicekeydoor.s")
 

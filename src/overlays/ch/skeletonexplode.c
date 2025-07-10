@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/skeletonexplode.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/skeletonexplode/func_80800000_chskeletonexplode.s")
 

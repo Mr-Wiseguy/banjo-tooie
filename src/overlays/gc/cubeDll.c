@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/cubeDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/cubeDll/gccubeDll_entrypoint_0.s")
 

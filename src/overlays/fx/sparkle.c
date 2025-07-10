@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/sparkle.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/sparkle/fxsparkle_entrypoint_0.s")
 

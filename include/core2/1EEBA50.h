@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-#include <ultra64.h>
 
 void func_801124D0(s32, s32);
 

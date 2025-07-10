@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/boundDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/gcboundDll_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/uffycont.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffycont/func_80800000_chchuffycont.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/monsterinterior.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_0.s")
 

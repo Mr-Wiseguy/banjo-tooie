@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/lights.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/lights/func_80800000_sulights.s")
 

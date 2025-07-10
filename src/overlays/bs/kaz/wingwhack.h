@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_WINGWHACK__
 #define __BS_KAZ_WINGWHACK__
 
-#include <ultra64.h>
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/flag.h"

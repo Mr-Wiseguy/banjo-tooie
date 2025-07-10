@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/mumbofx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mumbofx/sumumbofx_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/warppad.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/warppad/chwarppad_entrypoint_0.s")
 

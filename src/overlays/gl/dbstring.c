@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/dbstring.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/dbstring/gldbstring_entrypoint_0.s")
 

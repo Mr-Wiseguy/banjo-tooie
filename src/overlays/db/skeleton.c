@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/db/skeleton.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/db/skeleton/dbskeleton_entrypoint_0.s")
 

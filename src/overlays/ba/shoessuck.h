@@ -1,6 +1,7 @@
 #ifndef __BA_SHOWSSUCK_H__
 #define __BA_SHOWSSUCK_H__
 
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 extern void _bashoessuck_entrypoint_1(s32, f32[3]);

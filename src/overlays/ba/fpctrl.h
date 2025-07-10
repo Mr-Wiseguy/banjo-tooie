@@ -1,6 +1,7 @@
 #ifndef __BA_FPCONTROL_H__
 #define __BA_FPCONTROL_H__
 
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 extern s32 _bafpctrl_entrypoint_4(PlayerState *self);

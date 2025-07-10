@@ -1,7 +1,6 @@
 #ifndef __THREADS_H__
 #define __THREADS_H__
 
-#include <ultra64.h>
 
 enum {
     THREAD_ID_VI,

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/fog.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fog/func_80800000_chfog.s")
 

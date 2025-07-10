@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/taxi.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80800000_bstaxi.s")
 

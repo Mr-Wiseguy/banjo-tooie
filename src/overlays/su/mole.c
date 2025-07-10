@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/mole.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/mole/func_80800000_sumole.s")
 

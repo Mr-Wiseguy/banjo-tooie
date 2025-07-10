@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/db/shift.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/db/shift/func_80800000_dbshift.s")
 

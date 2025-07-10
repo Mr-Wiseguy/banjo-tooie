@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/cactusofstrength.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/chcactusofstrength_entrypoint_0.s")
 

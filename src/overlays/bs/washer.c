@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/washer.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80800000_bswasher.s")
 

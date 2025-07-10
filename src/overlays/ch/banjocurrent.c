@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/banjocurrent.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjocurrent/func_80800000_chbanjocurrent.s")
 

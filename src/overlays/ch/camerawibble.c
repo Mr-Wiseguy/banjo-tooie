@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/camerawibble.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/camerawibble/chcamerawibble_entrypoint_0.s")
 

@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_STILT_H__
 #define __BS_KAZ_STILT_H__
 
-#include <ultra64.h>
 
 #include "core2/anctrl.h"
 #include "overlays/ba/playerstate.h"

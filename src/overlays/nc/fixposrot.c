@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/nc/fixposrot.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/fixposrot/ncfixposrot_entrypoint_0.s")
 

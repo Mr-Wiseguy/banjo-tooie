@@ -1,0 +1,6 @@
+#ifndef __CH_AMAZONGOLDHORDEOFFICIAL_H__
+#define __CH_AMAZONGOLDHORDEOFFICIAL_H__
+
+#include "common.h"
+
+#endif // __CH_AMAZONGOLDHORDEOFFICIAL_H__

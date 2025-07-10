@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/anglerboss.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/changlerboss_entrypoint_0.s")
 

@@ -1,9 +1,8 @@
 #ifndef __CORE2_1EA1DA0_H__
 #define __CORE2_1EA1DA0_H__
 
-#include <ultra64.h>
-
 #include "overlays/ba/playerstate.h"
+
 
 
 s32 func_800C8A98(void);

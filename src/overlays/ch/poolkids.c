@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/poolkids.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/poolkids/chpoolkids_entrypoint_0.s")
 

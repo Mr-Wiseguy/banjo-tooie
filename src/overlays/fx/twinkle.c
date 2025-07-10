@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/twinkle.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/twinkle/fxtwinkle_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/packvtx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/packvtx/glpackvtx_entrypoint_0.s")
 

@@ -1,5 +1,7 @@
+#include "core1/core1bss2.h"
+
 // These bss variables were migrated to this standalone file to make bss migration for other C files easier, but they all belong to other C files.
-#include "types.h"
+// These bss variables were migrated to this standalone file to make bss migration for other C files easier, but they all belong to other C files.
 
 u8 D_8007E9C0[0x64];
 

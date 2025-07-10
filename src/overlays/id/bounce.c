@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/bounce.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/bounce/func_80800000_idbounce.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jamjarsdummy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jamjarsdummy/func_80800000_chjamjarsdummy.s")
 

@@ -1,6 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/playerstate.h"
+#include "overlays/ba/airr.h"
 
 void baairbar_entrypoint_0(PlayerState *self, s32 arg1) {
     if (func_800DA298(0xE9) && _gclevel_entrypoint_4(0x10)) {

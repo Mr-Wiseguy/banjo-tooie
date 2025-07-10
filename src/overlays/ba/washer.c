@@ -1,15 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/washer.h"
-
-#include "core2/1E6A730.h"
-#include "core2/1E6B900.h"
-#include "core2/1E75920.h"
-#include "core2/1EB2840.h"
-#include "core2/1EBA250.h"
-#include "core2/1EC8070.h"
-#include "core2/1ECA640.h"
-#include "core2/1ECE0B0.h"
 
 s32 bawasher_entrypoint_0(void){
     return sizeof(BaWasher);

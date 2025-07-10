@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/mrsboggyhome.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mrsboggyhome/chmrsboggyhome_entrypoint_0.s")
 

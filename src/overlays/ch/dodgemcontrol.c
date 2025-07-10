@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/dodgemcontrol.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/chdodgemcontrol_entrypoint_0.s")
 

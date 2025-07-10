@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/collectDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/collectDll/func_80800000_gccollectDll.s")
 

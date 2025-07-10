@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/tiptup.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/chtiptup_entrypoint_0.s")
 

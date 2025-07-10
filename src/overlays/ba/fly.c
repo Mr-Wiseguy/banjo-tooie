@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/fly.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_0.s")
 

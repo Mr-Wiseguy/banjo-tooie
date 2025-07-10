@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/sc/custom_banjo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/sc/custom_banjo/sccustom_banjo_entrypoint_0.s")
 

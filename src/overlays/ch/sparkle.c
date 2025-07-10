@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/sparkle.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sparkle/func_80800000_chsparkle.s")
 

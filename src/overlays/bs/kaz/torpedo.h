@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_TORPEDO_H__
 #define __BS_KAZ_TORPEDO_H__
 
-#include <ultra64.h>
 
 #include "core2/anctrl.h"
 #include "core2/1E72EA0.h"

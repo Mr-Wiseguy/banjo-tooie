@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/leaves.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/leaves/func_80800000_fxleaves.s")
 

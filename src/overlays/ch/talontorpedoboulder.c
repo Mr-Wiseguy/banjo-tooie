@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/talontorpedoboulder.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/talontorpedoboulder/chtalontorpedoboulder_entrypoint_0.s")
 

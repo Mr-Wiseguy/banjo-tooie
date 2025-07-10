@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/climb.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/climb/func_80800000_bsclimb.s")
 

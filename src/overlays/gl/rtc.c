@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/rtc.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/rtc/glrtc_entrypoint_0.s")
 

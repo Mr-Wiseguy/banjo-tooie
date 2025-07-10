@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/stinger.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800000_chstinger.s")
 

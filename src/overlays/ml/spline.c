@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ml/spline.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ml/spline/mlspline_entrypoint_0.s")
 

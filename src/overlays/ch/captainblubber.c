@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/captainblubber.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/captainblubber/func_80800000_chcaptainblubber.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/zoombox.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800000_gczoombox.s")
 

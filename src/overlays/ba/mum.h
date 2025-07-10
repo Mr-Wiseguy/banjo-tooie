@@ -1,7 +1,7 @@
 #ifndef __BA_MUM_H__
 #define __BA_MUM_H__
 
-#include <ultra64.h>
+#include "common.h"
 #include "overlays/ba/playerstate.h"
 
 extern s32 _bamum_entrypoint_4(PlayerState *self, s32 idx);

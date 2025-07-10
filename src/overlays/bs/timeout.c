@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/timeout.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/timeout/bstimeout_entrypoint_0.s")
 

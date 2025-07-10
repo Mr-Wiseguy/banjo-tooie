@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/dialog.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dialog/badialog_entrypoint_0.s")
 

@@ -1,6 +1,10 @@
 #ifndef __BA_COUGH_H__
 #define __BA_COUGH_H__
 
+#include "common.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1EB5980.h"
 #include "overlays/ba/playerstate.h"
 
 typedef struct ba_cough_s {

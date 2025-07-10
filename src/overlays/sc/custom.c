@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/sc/custom.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/sc/custom/func_80800000_sccustom.s")
 

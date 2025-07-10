@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/alienbeam.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienbeam/chalienbeam_entrypoint_0.s")
 

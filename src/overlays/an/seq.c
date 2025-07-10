@@ -1,4 +1,4 @@
-#include "seq.h"
+#include "overlays/an/seq.h"
 
 void anseq_entrypoint_1(s16 * pSeqIndx, s32 arg1);
 

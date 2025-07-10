@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bigfoot.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bigfoot/chbigfoot_entrypoint_0.s")
 

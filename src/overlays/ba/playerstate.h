@@ -1,8 +1,7 @@
 #ifndef __BANJOSTATE_H__
 #define __BANJOSTATE_H__
 
-#include <ultra64.h>
-
+#include "common.h"
 #include "buttons.h"
 
 typedef struct ba_unknown_c_s {

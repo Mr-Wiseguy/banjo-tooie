@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/beemain.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800000_bsbeemain.s")
 

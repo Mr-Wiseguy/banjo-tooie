@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/rain.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/rain/func_80800000_fxrain.s")
 

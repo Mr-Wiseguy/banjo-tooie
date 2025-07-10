@@ -1,7 +1,8 @@
 #ifndef __CORE2_1EBA250_H__
 #define __CORE2_1EBA250_H__
 
-#include <ultra64.h>
+#include "core1/memory.h"
+#include "core2/1EC8070.h"
 
 typedef struct {
     f32 unk0;

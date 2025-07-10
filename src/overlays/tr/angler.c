@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/tr/angler.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/tr/angler/func_80800000_trangler.s")
 

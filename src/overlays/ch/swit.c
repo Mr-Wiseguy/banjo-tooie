@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/swit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swit/chswitch_entrypoint_0.s")
 

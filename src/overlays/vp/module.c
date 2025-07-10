@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/vp/module.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/module/func_80800000_vpmodule.s")
 

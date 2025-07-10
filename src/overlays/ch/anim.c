@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/anim.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anim/chanim_entrypoint_0.s")
 

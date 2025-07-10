@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/podiumbankaz.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/podiumbankaz/func_80800000_chpodiumbankaz.s")
 

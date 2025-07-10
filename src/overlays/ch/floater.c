@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/floater.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/floater/chfloater_entrypoint_0.s")
 

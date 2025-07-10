@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/toothyfish.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800000_chtoothyfish.s")
 

@@ -1,15 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/van.h"
-
-#include "core2/1E6A730.h"
-#include "core2/1E6B900.h"
-#include "core2/1E75920.h"
-#include "core2/1E76CC0.h"
-#include "core2/1EB2840.h"
-#include "core2/1E9A960.h"
-#include "core2/1EBA250.h"
-#include "core2/1ECA640.h"
 
 extern s32 D_808002F0_bavan; // 02 06 00 13 05 06 00 0A  01 00 00 00 00 00 00 00  
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jinjo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjo/func_80800000_chjinjo.s")
 

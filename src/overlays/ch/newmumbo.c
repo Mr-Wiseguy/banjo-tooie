@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/newmumbo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_80800000_chnewmumbo.s")
 

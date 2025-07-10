@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/statuebossbits.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statuebossbits/chstatuebossbits_entrypoint_0.s")
 

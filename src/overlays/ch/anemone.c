@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/anemone.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anemone/chanemone_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include <ultra64.h>
+#include "core1/memory.h"
 
 // A custom version of memcpy. It differs from the standard memcpy by having a void return type instead of void* and a signed length.
 void rare_memcpy(void* dst, void* src, int length) {

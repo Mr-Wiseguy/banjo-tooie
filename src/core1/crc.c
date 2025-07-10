@@ -1,5 +1,4 @@
-#include "types.h"
-#include "overlays/ba/physics.h"
+#include "core1/crc.h"
 
 void init_crc_check();
 void ovl_entrypoint();

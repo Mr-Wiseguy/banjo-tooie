@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/sunlightspell.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sunlightspell/func_80800000_chsunlightspell.s")
 

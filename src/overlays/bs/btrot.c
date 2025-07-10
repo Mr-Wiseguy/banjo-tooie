@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/btrot.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/func_80800000_bsbtrot.s")
 

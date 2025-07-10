@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/in/antab.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/inantab_entrypoint_0.s")
 

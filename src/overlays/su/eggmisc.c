@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/eggmisc.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/eggmisc/sueggmisc_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/amazongoldhordeofficial.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/amazongoldhordeofficial/chamazongoldhordeofficial_entrypoint_0.s")
 

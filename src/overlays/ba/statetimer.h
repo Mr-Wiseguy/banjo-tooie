@@ -1,7 +1,6 @@
 #ifndef __BA_statetimer_H__
 #define __BA_statetimer_H__
 
-#include <ultra64.h>
 
 #include "overlays/ba/playerstate.h"
 

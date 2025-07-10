@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/blongleg.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/func_80800000_bsblongleg.s")
 

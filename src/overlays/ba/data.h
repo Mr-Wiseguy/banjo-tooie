@@ -1,16 +1,15 @@
 #ifndef __BA_DATA_H__
 #define __BA_DATA_H__
 
-#include <ultra64.h>
 #include "common.h"
-
-#include "overlays/ba/assets.h"
-#include "overlays/ba/statetimer.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
 #include "core2/1E76360.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1EB5980.h"
+#include "overlays/ba/assets.h"
+#include "overlays/ba/statetimer.h"
+
 
 typedef struct {
     s16 unk0;

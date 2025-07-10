@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/powerhut.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/powerhut/chpowerhut_entrypoint_0.s")
 

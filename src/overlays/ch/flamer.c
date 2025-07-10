@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/flamer.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flamer/chflamer_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/screenadjust.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/screenadjust/func_80800000_chscreenadjust.s")
 

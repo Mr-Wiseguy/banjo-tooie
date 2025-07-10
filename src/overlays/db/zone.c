@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/db/zone.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/db/zone/dbzone_entrypoint_0.s")
 

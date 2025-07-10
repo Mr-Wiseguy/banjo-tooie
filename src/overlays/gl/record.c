@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/record.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/record/glrecord_entrypoint_0.s")
 

@@ -1,7 +1,6 @@
 #ifndef __GFX_H__
 #define __GFX_H__
 
-#include <ultra64.h>
 
 #define SCREEN_WIDTH 304
 #define SCREEN_HEIGHT 228

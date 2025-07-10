@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/cauldronenergybars.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronenergybars/func_80800000_chcauldronenergybars.s")
 

@@ -17,7 +17,6 @@
 #include "core2/1E7AB30.h"
 #include "common.h"
 #include "player.h"
-#include <ultra64.h>
 
 extern s32 D_808001E0_bsmumsplat[];
 
