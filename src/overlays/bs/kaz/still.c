@@ -15,7 +15,7 @@ u8 func_80800000_bskazstill(PlayerState *self) {
     return D_808008A0_bskazstill[self->unk160.word++];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazstill/bskazstill/func_80800030_bskazstill.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/still/func_80800030_bskazstill.s")
 
 BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState) {
     s32 sp24;

@@ -98,7 +98,7 @@ void bskazcrouch_entrypoint_1(PlayerState *self) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bskazcrouch/bskazcrouch/bskazcrouch_entrypoint_2.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/crouch/bskazcrouch_entrypoint_2.s")
 
 void bskazcrouch_entrypoint_3(PlayerState *self) {
     _bskaz_entrypoint_2(self);
