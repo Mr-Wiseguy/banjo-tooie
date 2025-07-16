@@ -1,13 +1,94 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/chjiggypost_entrypoint_0.s")
+void* chjiggypost_entrypoint_0(void) {
+    return &D_80800380_chjiggypost;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_8080000C_chjiggypost.s")
+void func_8080000C_chjiggypost(s32 arg0) {
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_80800014_chjiggypost.s")
+}
+
+void func_80800014_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1)
+{
+    u8 var_a2;
+
+    if (arg1 == 0x1515)
+    {
+        var_a2 = 0x4E;
+    }
+    else
+    {
+        var_a2 = 0xF;
+    }
+    _subaddiedialog_entrypoint_11(arg0->unk0, arg1, var_a2, &arg0->unk2, 0x97);
+    func_80101FDC(arg0, 2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_80800068_chjiggypost.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_808001C4_chjiggypost.s")
+void func_808001C4_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
+{
+    s32 var_a1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_808002DC_chjiggypost.s")
+    switch (arg1)
+    {
+    case 0x1513:
+    case 0x1514:
+        if (func_800DA298(0x35B) != 0)
+        {
+            if (func_800D035C(1) >= _sujiggy_entrypoint_2(((u32)arg0->unk76 >> 7) - 0x33))
+            {
+                if (func_8008FD48() == 1)
+                {
+                    var_a1 = 0x1515;
+                }
+                else {
+                    var_a1 = 0x152E;
+                }
+            }
+            else
+            {
+                var_a1 = 0x1516;
+            }
+            func_80800014_chjiggypost(arg0, var_a1);
+        }
+        else
+        {
+            func_800C0850();
+            func_800C01A8(0x64, 0);
+            func_80101FDC(arg0, 1U);
+        }
+        break;
+
+    case 0x1512:
+        func_800DA544(0x4E8);
+    default:
+        func_80101FDC(arg0, 1U);
+        break;
+    }
+    if ((arg1 == 0x1515) && (arg2 == 1))
+    {
+        _gcgoto_entrypoint_1(0x151, 4);
+    }
+
+}
+
+s32 func_808002DC_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
+{
+    splitS32* split = (splitS32*)&arg2;
+    switch (arg1)
+    {
+    case 0x2E:
+        func_808001C4_chjiggypost(arg0, split->upper, split->lower);
+    case 0x95:
+        break;
+    case 0x30:
+        return _sujiggy_entrypoint_2(((u32)arg0->unk76 >> 7) - 0x33);
+    case 0x52:
+        _gcdialogcamera_entrypoint_3(&D_808003C8_chjiggypost, arg0->unk38);
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
