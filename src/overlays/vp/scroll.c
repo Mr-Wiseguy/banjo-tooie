@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/vp/scroll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/scroll/vpscroll_entrypoint_0.s")
 

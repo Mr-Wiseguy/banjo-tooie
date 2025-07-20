@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/perspexboxswit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/perspexboxswit/func_80800000_chperspexboxswitch.s")
 

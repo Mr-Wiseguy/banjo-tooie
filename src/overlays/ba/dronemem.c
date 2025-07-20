@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/dronemem.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dronemem/badronemem_entrypoint_0.s")
 

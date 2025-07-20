@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/spin.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/spin/baspin_entrypoint_0.s")
 

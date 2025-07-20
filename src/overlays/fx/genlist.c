@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/genlist.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/genlist/fxgenlist_entrypoint_0.s")
 

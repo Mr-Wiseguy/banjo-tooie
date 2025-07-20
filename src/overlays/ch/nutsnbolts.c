@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/nutsnbolts.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/chnutsnbolts_entrypoint_0.s")
 

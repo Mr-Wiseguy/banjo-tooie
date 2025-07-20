@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/quizremotectrl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quizremotectrl/func_80800000_chquizremotectrl.s")
 

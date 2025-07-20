@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/flamethrower.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/flamethrower/baflamethrower_entrypoint_0.s")
 

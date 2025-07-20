@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/flowerbaddie.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flowerbaddie/chflowerbaddie_entrypoint_0.s")
 

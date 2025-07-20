@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/billdrillplate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/chbilldrillplate_entrypoint_0.s")
 

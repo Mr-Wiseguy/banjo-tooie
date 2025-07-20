@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jujubagfx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jujubagfx/chjujubagfx_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/friendlystonehead.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friendlystonehead/func_80800000_chfriendlystonehead.s")
 

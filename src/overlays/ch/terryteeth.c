@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/terryteeth.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryteeth/func_80800000_chterryteeth.s")
 

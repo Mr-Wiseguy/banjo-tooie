@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/in/drv_fx.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/drv_fx/func_80800000_indrv_fx.s")
 

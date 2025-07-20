@@ -1,5 +1,3 @@
-#include "common.h"
-
 #include "overlays/ba/attach.h"
 
 s32 baattach_entrypoint_0(void) {

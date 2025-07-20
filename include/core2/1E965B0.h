@@ -1,9 +1,10 @@
 #ifndef __CORE2_1E965B0_H__
 #define __CORE2_1E965B0_H__
 
-#include <ultra64.h>
-
 #include "buttons.h"
+#include "core1/memory.h"
+#include "overlays/ba/playerstate.h"
+
 
 typedef struct {
     // Counts up every frame.

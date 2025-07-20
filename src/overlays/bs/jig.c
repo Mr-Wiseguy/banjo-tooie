@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/jig.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/jig/bsjig_entrypoint_0.s")
 

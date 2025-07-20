@@ -1,7 +1,4 @@
-#include <ultra64.h>
-#include "memory.h"
-#include "freelist.h"
-#include "core2/1EB2840.h"
+#include "core2/1EB52C0.h"
 
 FreeList* D_8012C7E0;
 

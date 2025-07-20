@@ -1,7 +1,17 @@
 #ifndef __BA_BEE_H__
 #define __BA_BEE_H__
 
+#include "common.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E93440.h"
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECD170.h"
+#include "core2/1ECE0B0.h"
 #include "overlays/ba/playerstate.h"
+#include "overlays/ba/yaw.h"
+#include "overlays/ch/stinger.h"
 typedef struct {
     f32 unk0;
     f32 cooldown_time;

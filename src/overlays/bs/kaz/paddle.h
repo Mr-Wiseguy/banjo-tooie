@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_PADDLE_H__
 #define __BS_KAZ_PADDLE_H__
 
-#include <ultra64.h>
 
 #include "overlays/bs/drone.h"
 #include "overlays/ba/playerstate.h"

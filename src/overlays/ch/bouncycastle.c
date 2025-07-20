@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bouncycastle.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_0.s")
 

@@ -1,11 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/translate.h"
-#include "overlays/ba/yaw.h"
-#include "overlays/db/skeleton.h"
-#include "core2/1E6B900.h"
-#include "core2/1E75920.h"
-#include "core2/1EC8070.h"
 
 void batranslate_entrypoint_3(PlayerState *self, s32 arg1);
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/newshovel.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newshovel/chnewshovel_entrypoint_0.s")
 

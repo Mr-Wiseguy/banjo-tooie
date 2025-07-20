@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/glowbo.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/glowbo/func_80800000_chglowbo.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/flame.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/flame/func_80800000_idflame.s")
 

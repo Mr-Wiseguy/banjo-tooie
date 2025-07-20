@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/bee.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bee/bsbee_entrypoint_0.s")
 

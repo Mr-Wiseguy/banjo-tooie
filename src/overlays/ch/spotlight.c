@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/spotlight.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/spotlight/chspotlight_entrypoint_0.s")
 

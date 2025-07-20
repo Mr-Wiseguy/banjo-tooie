@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/vp/flicker.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/flicker/vpflicker_entrypoint_0.s")
 

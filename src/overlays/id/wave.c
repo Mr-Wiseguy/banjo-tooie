@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/wave.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/wave/idwave_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "buffers.h"
+#include "core1/1E319F0.h"
 
 void rom_dma_read(u8*, u8*, u32);
 u8* func_8001A0A8();

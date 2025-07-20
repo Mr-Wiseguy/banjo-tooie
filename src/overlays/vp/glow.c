@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/vp/glow.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/glow/vpglow_entrypoint_0.s")
 

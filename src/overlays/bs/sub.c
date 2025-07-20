@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/sub.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_80800000_bssub.s")
 

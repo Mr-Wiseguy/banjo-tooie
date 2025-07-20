@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/babydino.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/chbabydino_entrypoint_0.s")
 

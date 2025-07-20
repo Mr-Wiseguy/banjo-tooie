@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/hittableDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/hittableDll/glhittableDll_entrypoint_0.s")
 

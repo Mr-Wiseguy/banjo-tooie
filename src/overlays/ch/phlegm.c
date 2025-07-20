@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/phlegm.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/chphlegm_entrypoint_0.s")
 

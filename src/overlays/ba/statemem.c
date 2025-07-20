@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/statemem.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/statemem/bastatemem_entrypoint_0.s")
 

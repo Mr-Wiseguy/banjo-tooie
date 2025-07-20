@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/splash.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/splash/fxsplash_entrypoint_0.s")
 

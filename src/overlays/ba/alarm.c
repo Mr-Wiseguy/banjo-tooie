@@ -1,11 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/alarm.h"
-#include "overlays/ba/playerstate.h"
-
-#include "core2/1E75920.h"
-#include "core2/1E9A960.h"
-#include "core2/1ECA640.h"
 
 s32 baalarm_get_size(void) {
     return sizeof(BaAlarm);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/tnt.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800000_bstnt.s")
 

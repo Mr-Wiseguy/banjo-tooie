@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/eggmove.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/eggmove/func_80800000_sueggmove.s")
 

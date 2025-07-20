@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/dust.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dust/badust_entrypoint_0.s")
 

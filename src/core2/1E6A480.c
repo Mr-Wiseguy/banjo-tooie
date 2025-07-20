@@ -1,7 +1,7 @@
+#include "core2/1E6A480.h"
+
 /* This file maps to BK: core2/code_9290.c */
-#include "common.h"
-#include "core2/1E75920.h"
-#include "core2/1E7D460.h"
+/* This file maps to BK: core2/code_9290.c */
 
 s32 func_80090B90(void) {
     return sizeof(BaUnknown2C);

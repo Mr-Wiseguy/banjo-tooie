@@ -1,10 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/cough.h"
-
-#include "core2/1E76CC0.h"
-#include "core2/1E7BFA0.h"
-#include "core2/1EB5980.h"
 
 s32 bacough_entrypoint_0(void) {
     return sizeof(BaCough);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/su/expressjoint.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/expressjoint/func_80800000_suexpressjoint.s")
 

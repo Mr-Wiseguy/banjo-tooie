@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/jinjovillagecamera1.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjovillagecamera1/func_80800000_chjinjovillagecamera1.s")
 

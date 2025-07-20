@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ca/dbfunc.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ca/dbfunc/func_80800000_cadbfunc.s")
 

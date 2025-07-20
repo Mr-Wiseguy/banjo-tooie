@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/wallsnakebaddy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wallsnakebaddy/func_80800000_chwallsnakebaddy.s")
 

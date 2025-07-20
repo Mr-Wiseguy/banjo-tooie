@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/stoneballcoa.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcoa/func_80800000_chstoneballcoach.s")
 

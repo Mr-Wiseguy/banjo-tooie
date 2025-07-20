@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/egg.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/egg/func_80800000_fxegg.s")
 

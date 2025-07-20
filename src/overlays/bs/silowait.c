@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/silowait.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/silowait/func_80800000_bssilowait.s")
 

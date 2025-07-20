@@ -1,9 +1,14 @@
 #ifndef __BA_TRANSLATE_H__
 #define __BA_TRANSLATE_H__
 
-#include <ultra64.h>
-
+#include "common.h"
+#include "core2/1E6B900.h"
+#include "core2/1E75920.h"
+#include "core2/1EC8070.h"
 #include "overlays/ba/playerstate.h"
+#include "overlays/ba/yaw.h"
+#include "overlays/db/skeleton.h"
+
 
 typedef struct ba_translate_s {
     u8 unk0;

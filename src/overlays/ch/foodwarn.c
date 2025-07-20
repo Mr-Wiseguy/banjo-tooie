@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/foodwarn.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/foodwarn/func_80800000_chfoodwarn.s")
 

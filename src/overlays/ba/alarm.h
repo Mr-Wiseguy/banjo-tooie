@@ -1,6 +1,10 @@
 #ifndef __BA_ALARM_H__
 #define __BA_ALARM_H__
 
+#include "common.h"
+#include "core2/1E75920.h"
+#include "core2/1E9A960.h"
+#include "core2/1ECA640.h"
 #include "overlays/ba/playerstate.h"
 
 typedef struct ba_alarm_s {

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/water.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/water/idwater_entrypoint_0.s")
 

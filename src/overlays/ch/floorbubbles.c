@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/floorbubbles.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/floorbubbles/func_80800000_chfloorbubbles.s")
 

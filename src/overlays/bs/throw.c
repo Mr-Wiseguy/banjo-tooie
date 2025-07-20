@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/throw.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/throw/bsthrow_entrypoint_0.s")
 

@@ -1,17 +1,7 @@
 #ifndef __BS_REST_H__
 #define __BS_REST_H__
 
-#include <ultra64.h>
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/data.h"
-#include "overlays/ba/drone.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/fpctrl.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/roll.h"
-#include "overlays/ba/yaw.h"
-#include "overlays/bs/state.h"
+#include "common.h"
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
 #include "core2/1E76500.h"
@@ -24,8 +14,17 @@
 #include "core2/1ECD170.h"
 #include "core2/1EE9AB0.h"
 #include "core2/1EEF790.h"
+#include "core2/anctrl.h"
+#include "overlays/ba/anim.h"
+#include "overlays/ba/data.h"
+#include "overlays/ba/drone.h"
+#include "overlays/ba/flag.h"
+#include "overlays/ba/fpctrl.h"
+#include "overlays/ba/physics.h"
+#include "overlays/ba/roll.h"
+#include "overlays/ba/yaw.h"
+#include "overlays/bs/state.h"
 #include "overlays/nc/ba/1p.h"
-#include "common.h"
 #include "player.h"
 
 extern s32 D_80800910_bsrest[];

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/level.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/level/gclevel_entrypoint_0.s")
 

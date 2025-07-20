@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/amazonstadiumguard.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/amazonstadiumguard/chamazonstadiumguard_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/explodingainlinks.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/explodingainlinks/chexplodingchainlinks_entrypoint_0.s")
 

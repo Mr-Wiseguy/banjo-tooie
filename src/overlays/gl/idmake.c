@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gl/idmake.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/idmake/func_80800000_glidmake.s")
 

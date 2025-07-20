@@ -1,9 +1,5 @@
 #include "core2/1E965B0.h"
 
-#include "overlays/ba/playerstate.h"
-#include "memory.h"
-
-
 typedef struct {
     u32 timestamp : 31;
     u32 pressed : 1;

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/hagstraindoorswit.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hagstraindoorswit/func_80800000_chhagstraindoorswitch.s")
 

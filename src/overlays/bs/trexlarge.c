@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/trexlarge.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800000_bstrexlarge.s")
 

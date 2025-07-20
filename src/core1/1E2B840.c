@@ -1,6 +1,4 @@
-#include "threads.h"
-#include "types.h"
-#include "buffers.h"
+#include "core1/1E2B840.h"
 
 extern long long int n_aspMainTextStart[];
 extern long long int n_aspMainDataStart[];

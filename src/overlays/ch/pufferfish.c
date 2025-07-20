@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/pufferfish.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pufferfish/func_80800000_chpufferfish.s")
 

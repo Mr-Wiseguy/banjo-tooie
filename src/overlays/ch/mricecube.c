@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/mricecube.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mricecube/chmricecube_entrypoint_0.s")
 

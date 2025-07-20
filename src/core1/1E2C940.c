@@ -1,5 +1,4 @@
-#include "types.h"
-#include "gfx.h"
+#include "core1/1E2C940.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/step.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/step/func_80800000_fxstep.s")
 

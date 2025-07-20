@@ -1,8 +1,7 @@
 #ifndef __CORE2_1EC8070_H__
 #define __CORE2_1EC8070_H__
 
-#include <ultra64.h>
-#include "types.h"
+#include "common.h"
 
 void func_800EE780(f32 dst[3], f32 a[3], f32 b[3]); // ml_vec3f_sum
 void func_800EE7B4(f32 dst[3], f32 a[3], f32 b[3], f32 scale); // ml_vec3f_scaled_sum

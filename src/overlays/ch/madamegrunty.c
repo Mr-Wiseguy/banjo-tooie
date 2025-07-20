@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/madamegrunty.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/madamegrunty/chmadamegrunty_entrypoint_0.s")
 

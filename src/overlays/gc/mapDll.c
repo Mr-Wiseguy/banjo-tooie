@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gc/mapDll.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/mapDll/func_80800000_gcmapDll.s")
 

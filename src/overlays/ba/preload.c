@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/preload.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/preload/func_80800000_bapreload.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/lakemonster.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lakemonster/func_80800000_chlakemonster.s")
 

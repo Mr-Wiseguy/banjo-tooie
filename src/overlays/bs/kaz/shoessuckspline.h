@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_SHOESSUCKSPLINE_H__
 #define __BS_KAZ_SHOESSUCKSPLINE_H__
 
-#include <ultra64.h>
 
 #include "core2/1E72EA0.h"
 #include "overlays/ba/drone.h"

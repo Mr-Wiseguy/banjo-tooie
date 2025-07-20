@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/musicmenu.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/func_80800000_chmusicmenu.s")
 

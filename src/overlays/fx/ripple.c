@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/ripple.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/ripple/func_80800000_fxripple.s")
 

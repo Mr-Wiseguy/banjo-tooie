@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/attract.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/attract/chattract_entrypoint_0.s")
 

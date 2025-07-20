@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/gs/propmarker.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gs/propmarker/gspropmarker_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/statictor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statictor/func_80800000_chstatictorch.s")
 

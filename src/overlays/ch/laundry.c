@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/laundry.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/laundry/chlaundry_entrypoint_0.s")
 

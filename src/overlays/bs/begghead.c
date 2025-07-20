@@ -1,17 +1,4 @@
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/eggs.h"
-#include "core2/1E72EA0.h"
-#include "overlays/bs/state.h"
-#include "overlays/bs/crouch.h"
-#include "core2/1E66990.h"
-#include "core2/1E6B900.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1ECA640.h"
-
+#include "overlays/bs/begghead.h"
 
 // bsegghead_init
 void bsbegghead_entrypoint_0(PlayerState* player){

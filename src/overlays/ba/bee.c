@@ -1,17 +1,4 @@
-#include "common.h"
-
 #include "overlays/ba/bee.h"
-#include "overlays/ba/yaw.h"
-
-#include "overlays/ch/stinger.h"
-
-#include "core2/1E75710.h"
-#include "core2/1E75920.h"
-#include "core2/1E93440.h"
-#include "core2/1EB2840.h"
-#include "core2/1EC8070.h"
-#include "core2/1ECE0B0.h"
-#include "core2/1ECD170.h"
 
 extern s32 D_80800390_babee;
 extern s32 D_808003BC_babee;

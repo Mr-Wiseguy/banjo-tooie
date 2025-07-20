@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/blink.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/blink/chblink_entrypoint_0.s")
 

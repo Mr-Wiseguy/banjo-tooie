@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bkcart.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bkcart/func_80800000_chbkcart.s")
 

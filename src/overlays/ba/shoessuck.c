@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ba/shoessuck.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoessuck/bashoessuck_entrypoint_0.s")
 

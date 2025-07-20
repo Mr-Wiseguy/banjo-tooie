@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/id/glow.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/id/glow/idglow_entrypoint_0.s")
 

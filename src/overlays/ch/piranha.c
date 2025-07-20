@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/piranha.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/piranha/func_80800000_chpiranha.s")
 

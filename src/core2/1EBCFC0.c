@@ -1,7 +1,4 @@
-#include <ultra64.h>
-#include <PR/gbi.h>
-#include "core1/mlmtx.h"
-#include "gfx.h"
+#include "core2/1EBCFC0.h"
 
 typedef struct {
     Gfx* unk0;

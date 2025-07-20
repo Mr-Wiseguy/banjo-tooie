@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/toxicroomprops.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroomprops/func_80800000_chtoxicroomprops.s")
 

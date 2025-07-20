@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/fx/dialog.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/dialog/fxdialog_entrypoint_0.s")
 

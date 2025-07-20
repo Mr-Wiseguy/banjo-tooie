@@ -1,7 +1,6 @@
 #ifndef __BS_KAZ_SHOESSPRINGJUMP_H__
 #define __BS_KAZ_SHOESSPRINGJUMP_H__
 
-#include <ultra64.h>
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/physics.h"

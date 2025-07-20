@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/bonfirecavern.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bonfirecavern/chbonfirecavern_entrypoint_0.s")
 

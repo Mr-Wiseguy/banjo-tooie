@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/weldarboss.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/chweldarboss_entrypoint_0.s")
 

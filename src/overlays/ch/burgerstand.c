@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/burgerstand.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_0.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/rainbow.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/rainbow/func_80800000_chrainbow.s")
 

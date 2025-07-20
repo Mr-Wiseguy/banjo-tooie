@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/ch/clockworkmouse.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80800000_chclockworkmouse.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "overlays/bs/chokedie.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/chokedie/bschokedie_entrypoint_0.s")
 
