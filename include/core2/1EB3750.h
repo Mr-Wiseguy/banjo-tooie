@@ -3,4 +3,6 @@
 #include "common.h"
 
 void func_800DA3B8(s32 index, s32 set);
+void func_800DA544(s32);
+
 #endif
