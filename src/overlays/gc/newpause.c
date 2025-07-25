@@ -66,7 +66,7 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 }
 
 #ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gcnewpause/gcnewpause/gcnewpause_entrypoint_2.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_2.s")
 #else
 //Functionality update
 u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
