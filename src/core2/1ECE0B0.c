@@ -1,5 +1,9 @@
 #include "core2/1ECE0B0.h"
 
+
+extern u32 D_801354DC;
+
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F47C0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F482C.s")
@@ -96,7 +100,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F549C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F54E4.s")
+//Get Which Character is in Control
+u32 func_800F54E4(void) {
+	return D_801354DC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F54F0.s")
 

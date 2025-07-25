@@ -1,4 +1,4 @@
-#include "common.h"
+#include "gc/newoption.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800000_gcnewoption.s")
 
@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_2.s")
+int gcnewoption_entrypoint_2(void)
+{
+	return 0x260;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_3.s")
 
