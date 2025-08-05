@@ -1,6 +1,8 @@
 #ifndef __SU_MOLE__
 #define __SU_MOLE__
 
+#include "common.h"
+
 typedef struct {
 	u32 charactersAllowed;
 	u16 CannotAffordDialog;

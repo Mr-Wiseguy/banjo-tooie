@@ -1,10 +1,12 @@
-#include "common.h"
+#include "ch/jiggypost.h"
 
-void* chjiggypost_entrypoint_0(void) {
+void* chjiggypost_entrypoint_0(void) 
+{
     return &D_80800380_chjiggypost;
 }
 
-void func_8080000C_chjiggypost(s32 arg0) {
+void func_8080000C_chjiggypost(s32 arg0) 
+{
 
 }
 

@@ -16,7 +16,9 @@ u8* D_8012C770[3];
 u8 D_8012C780[12];
 u8 D_8012C78C[6];
 
+//Set Flag True
 void func_800DA544(s32);
+//Set Flag False
 void func_800DA524(s32);
 
 // length of D_8012C770[0]
