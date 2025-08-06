@@ -1,5 +1,6 @@
 #include "ch/bubbleelevator.h"
 
+//Setup
 void func_80800000_chbubbleelevator(Actor* arg0)
 {
     s32 sp24;
@@ -14,30 +15,35 @@ void func_80800000_chbubbleelevator(Actor* arg0)
         _gspropctrl_entrypoint_11(temp_v0, &arg0->unk18);
     }
     temp_v0_2 = func_800EA05C();
-    if (temp_v0_2 != 0x136)
+    if (temp_v0_2 != 0x136) //If Map is not CCL
     {
-        if (temp_v0_2 == 0x15A)
+        if (temp_v0_2 == 0x15A) //If Map is Wasteland
         {
             arg0->unk79 = (u8)(arg0->unk79 & 0xFF0F);
         }
     }
-    else {
+    else //If Map is CCL
+    {
         arg0->unk79 = (u8)((arg0->unk79 & 0xFF0F) | 0x10);
     }
+    //If world 7 is unlocked
     if (_sujiggy_entrypoint_20(7) != 0)
     {
         func_800DA544(0x399);
     }
+    //Check if the World Open Cheat is active
     var_a1 = func_800D3E40(0xB) != 0;
     if (var_a1 != 0)
     {
         var_a1 = _glcutDll_entrypoint_19(0x81) == 0;
     }
     sp24 = var_a1;
+    //Check the world 7 unlock flag if false
     if ((func_800DA298(0x399) == 0) && (var_a1 == 0))
     {
         func_808004DC_chbubbleelevator(arg0, 8);
     }
+    //0x6CA Controls whether the elevator is used when entering a level with an elevator
     else if (func_800DA298(0x6CA) != 0)
     {
         func_808004DC_chbubbleelevator(arg0, 1);
@@ -50,7 +56,9 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     arg0->unk54 = 0.0f;
 }
 
-void func_80800124_chbubbleelevator(Actor* arg0) {
+//Functionality Update
+void func_80800124_chbubbleelevator(Actor* arg0) 
+{
     s32 sp44;
     s32 sp38[3];
 
@@ -83,16 +91,20 @@ void func_80800124_chbubbleelevator(Actor* arg0) {
         return;
     case 4:
         sp44 = 0;
+        //Are we touching the bubble
         if (func_8010C500(arg0) != 0)
         {
+            //Check if we're banjo and kazooie
             if (func_800F64A4(func_800F54E4(), 1) != 0)
             {
                 func_808004DC_chbubbleelevator(arg0, 5);
             }
             else
             {
+                //Have we been told about the bubble only being accessible as banjo and kazooie
                 if (func_800DA298(0x6EA) == 0)
                 {
+                    //Set the listened to flag and talk to player
                     func_800DA544(0x6EA);
                     _subaddiedialog_entrypoint_11(arg0->unk0, 0x1229, 3, arg0->position, 0x6F);
                 }
@@ -103,6 +115,7 @@ void func_80800124_chbubbleelevator(Actor* arg0) {
         {
             sp44 = 1;
         }
+        //Repel the player if they're not banjo and kazooie
         if (sp44 != 0)
         {
             _sudeflect_entrypoint_0(arg0->position, 75.0f, 140.0f, 0x1E);
@@ -110,7 +123,10 @@ void func_80800124_chbubbleelevator(Actor* arg0) {
         }
         break;
     case 5:
+        //Used when doing the little popup animation when getting into the bubble
+        //Get Player Coordinates
         func_800F5A00(func_800F54E4(), sp38);
+        //If the player coordinates is within 50.0f of the bubble start moving bubble
         if (func_800EFFB4(arg0->position, 50.0f, sp38) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 6);
@@ -118,12 +134,14 @@ void func_80800124_chbubbleelevator(Actor* arg0) {
         }
         break;
     case 6:
+        //Wait for a few seconds before initiating warp
         if (func_800D91EC(&arg0->unk58, 4.75f) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 7);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk14));
+        //Set Player Position to the bubble's position
         func_800F8294(func_800F54E4(), arg0->position);
         return;
     case 7:
@@ -131,11 +149,13 @@ void func_80800124_chbubbleelevator(Actor* arg0) {
         func_808004DC_chbubbleelevator(arg0, 1);
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk14));
+        //Set Player Position to the bubble's position
         func_800F8294(func_800F54E4(), arg0->position);
         return;
     case 9:
         if (func_800D90A4(&arg0->unk28) != 0)
         {
+            //Set World Unlocked True
             func_800DA544(0x399);
             func_808004DC_chbubbleelevator(arg0, 4);
         }
@@ -152,91 +172,102 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
   switch (arg1)
   {
     case 1:
-      arg0->unk58 = 5.0f;
-      func_808008A8_chbubbleelevator(arg0);
-      func_800F7B9C(func_800F54E4(), 0x7C);
-      func_800F8294(func_800F54E4(), arg0->position);
-      func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, &arg0->unk18), 0.0f);
-      func_800F832C(func_800F54E4(), &sp2C);
-      func_800F80E4(func_800F54E4(), 0);
-      _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk0, 0x2001);
-      arg0->unk6E = ((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00);
-      func_80015178(3);
-      new_var2 = 0;
-      arg0->unk34 = new_var2;
-      _subaddieDll_entrypoint_4(arg0, 1U);
-      func_800FC6B0(0x4A);
-      break;
+        arg0->unk58 = 5.0f;
+        func_808008A8_chbubbleelevator(arg0);
+        func_800F7B9C(func_800F54E4(), 0x7C);
+        func_800F8294(func_800F54E4(), arg0->position);
+        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, &arg0->unk18), 0.0f);
+        func_800F832C(func_800F54E4(), &sp2C);
+        func_800F80E4(func_800F54E4(), 0);
+        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk0, 0x2001);
+        arg0->unk6E = ((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00);
+        func_80015178(3);
+        new_var2 = 0;
+        arg0->unk34 = new_var2;
+        _subaddieDll_entrypoint_4(arg0, 1U);
+        func_800FC6B0(0x4A);
+        break;
 
     case 3:
-      func_800C3F48(0x665F44B1);
-      func_800DA524(0x6CA);
-      arg0->unk58 = 0.0f;
-      func_808008A8_chbubbleelevator(arg0);
-      func_800F78EC(func_800F54E4(), &arg0->unk18, 840.0f, -1500.0f);
-      arg0->unk34 = 2.0f;
-      arg0->unk50 = 3.0f;
-      _subaddieaudioloop_entrypoint_2(arg0);
-      func_800FC74C(0x4A);
-      func_800F80E4(func_800F54E4(), 1);
-      break;
+        func_800C3F48(0x665F44B1);
+        //Set Bubble Flag False
+        func_800DA524(0x6CA);
+        arg0->unk58 = 0.0f;
+        func_808008A8_chbubbleelevator(arg0);
+        func_800F78EC(func_800F54E4(), &arg0->unk18, 840.0f, -1500.0f);
+        arg0->unk34 = 2.0f;
+        arg0->unk50 = 3.0f;
+        _subaddieaudioloop_entrypoint_2(arg0);
+        func_800FC74C(0x4A);
+        func_800F80E4(func_800F54E4(), 1);
+        break;
 
     case 4:
-      arg0->unk34 = 0.0f;
-      arg0->unk58 = 0.0f;
-      _subaddieDll_entrypoint_4(arg0, 0U);
-      if (((*((u32 *) (&arg0->unk6C))) & 0x1FF) != 0)
-    {
-      func_80015178((*((u32 *) (&arg0->unk6C))) & 0x1FF);
-    }
-      break;
+        arg0->unk34 = 0.0f;
+        arg0->unk58 = 0.0f;
+        _subaddieDll_entrypoint_4(arg0, 0U);
+        if (((*((u32 *) (&arg0->unk6C))) & 0x1FF) != 0)
+        {
+            func_80015178((*((u32 *) (&arg0->unk6C))) & 0x1FF);
+        }
+        break;
 
     case 5:
-      func_800C3F48(0x7FF194D5);
-      func_800F78EC(func_800F54E4(), (u32 *) arg0->position, 840.0f, -1500.0f);
-      new_var = arg0;
-      _subaddieDll_entrypoint_4(new_var, 1U);
-      break;
+        //Entering Bubble
+        func_800C3F48(0x7FF194D5);
+        //Move the character towards the bubble
+        func_800F78EC(func_800F54E4(), (u32 *) arg0->position, 840.0f, -1500.0f);
+        new_var = arg0;
+        _subaddieDll_entrypoint_4(new_var, 1U);
+        break;
 
     case 6:
-      func_800C3F48(0x665F44B1);
-      func_800FC6B0(0x4A);
-      func_800DA544(0x6CA);
-      arg0->unk58 = 0.0f;
-      func_808008A8_chbubbleelevator(arg0);
-      func_800F7B9C(func_800F54E4(), 0x7C);
-      func_800F80E4(func_800F54E4(), 0);
-      func_800F8294(func_800F54E4(), arg0->position);
-      _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk1, 0x4001);
-      arg0->unk6E = (u16) (((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00));
-      func_80015178(3);
-      arg0->unk50 = 3.0f;
-      break;
+        //Moving Bubble
+        func_800C3F48(0x665F44B1);
+        func_800FC6B0(0x4A);
+        func_800DA544(0x6CA);
+        arg0->unk58 = 0.0f;
+        func_808008A8_chbubbleelevator(arg0);
+        //Set Bubbled Animation State
+        func_800F7B9C(func_800F54E4(), 0x7C);
+        func_800F80E4(func_800F54E4(), 0);
+        //Move Player to bubble position
+        func_800F8294(func_800F54E4(), arg0->position);
+        //Set Cutscene camera
+        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk1, 0x4001);
+        arg0->unk6E = (u16) (((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00));
+        func_80015178(3);
+        arg0->unk50 = 3.0f;
+        break;
 
     case 7:
-      _gcgoto_entrypoint_1(D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].mapId, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].entranceId);
-      _subaddieaudioloop_entrypoint_2(arg0);
-      func_800FC74C(0x4A);
-      break;
+        //Reached end of bubble route
+        //Warp the player
+        _gcgoto_entrypoint_1(D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].mapId, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].entranceId);
+        _subaddieaudioloop_entrypoint_2(arg0);
+        func_800FC74C(0x4A);
+        break;
 
     case 8:
-      func_80103110(arg0, 0);
-      break;
+        //The world is not unlocked
+        func_80103110(arg0, 0);
+        break;
 
     case 9:
-      func_80103110(arg0, 1);
-      _subaddieDll_entrypoint_4(arg0, 1U);
-      arg0->scale = 0.05f;
-      arg0->unk50 = 3.0f;
-      arg0->unk28 = arg0->unk2C;
-      func_800C3F48(0x7FFF468B);
-      break;
+        func_80103110(arg0, 1);
+        _subaddieDll_entrypoint_4(arg0, 1U);
+        arg0->scale = 0.05f;
+        arg0->unk50 = 3.0f;
+        arg0->unk28 = arg0->unk2C;
+        func_800C3F48(0x7FFF468B);
+        break;
 
   }
-
+  //Delete The Bubble
   func_80101FDC(arg0, (u32) arg1);
 }
 
+//Update bubble vertical position
 void func_808008A8_chbubbleelevator(Actor* arg0)
 {
     arg0->position[1] = func_800F12D4(arg0->unk58, 0.0f, 5.0f, 0.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 / 16].unkC) + arg0->unk24;
@@ -251,10 +282,13 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
         func_808004DC_chbubbleelevator(arg0, 9);
         return 1;
     case 11:
+        //Triggered on bubble reaching the destination
         if (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk0)
         {
+            //Exit Bubble
             func_808004DC_chbubbleelevator(arg0, 3);
         }
+        //If we're in CCL and Canary Mary is not in CCL
         if ((func_800EA05C() == 0x136) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk0 && (func_800DA298(0x504) == 0)))
         {
             return func_80101180(0x383, 0xB, arg2);
@@ -265,6 +299,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
+//Draw Update
 void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
     f32 sp5C;
     f32 sp58;
