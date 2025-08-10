@@ -1,10 +1,9 @@
 #include "ch/witchyentrygates.h"
 
-void func_80800000_chwitchyentrygates(unkArg0* arg0)
+void func_80800000_chwitchyentrygates(Actor* arg0)
 {
     f32 var_f0;
     s32 var_a3;
-
     if (_sujiggy_entrypoint_20(2U) != 0)
     {
         func_800DA544(0x394);
@@ -18,7 +17,7 @@ void func_80800000_chwitchyentrygates(unkArg0* arg0)
     {
         var_a3 = 0x394;
     }
-    if (((u32)arg0->unk76 >> 7) == 0x33)
+    if (arg0->unk74_7 == 0x33)
     {
         var_f0 = 75.0f;
     }

@@ -2,6 +2,7 @@
 #define __SU_EXPRESSION_H__
 #include "common.h"
 
+void _suexpression_entrypoint_7(Actor*, u32, u32);
 void _suexpression_entrypoint_8(Actor*, u32);
-
+void _suexpression_entrypoint_12(u32*, u32, u32);
 #endif

@@ -12,6 +12,7 @@
 #include "core2/1E97EF0.h"
 #include "core2/1E9A960.h"
 
+#include "core2/1EA9160.h"
 #include "core2/1EAF950.h"
 #include "core2/1EB2840.h"
 
@@ -19,6 +20,7 @@
 #include "core2/1EB5980.h"
 #include "core2/1EBA250.h"
 
+#include "core2/1EC3810.h"
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB0F0.h"
@@ -36,9 +38,12 @@
 
 #include "core2/1EDED00.h"
 #include "core2/1EDFED0.h"
+
+#include "core2/1EE1510.h"
 #include "core2/1EE5DF0.h"
 
 #include "gc/cubesearch.h"
+#include "gl/cutDll.h"
 
 #include "su/deflect.h"
 #include "su/baddieaudioquick.h"
@@ -48,6 +53,21 @@
 #include "su/splinet.h"
 
 extern u32 D_80804DA4_chhandcart;
+
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    u16 unkC;
+    s16 unkE;
+}unk80804D84_2;
+
+typedef struct {
+    unk80804D84_2* unk0[4];
+}unk80804D84;
+
+extern unk80804D84 D_80804D84_chhandcart;
+extern unk80804D84 D_80804D94_chhandcart;
 
 
 extern void* D_80804DC4_chhandcart;
@@ -67,26 +87,28 @@ typedef struct {
     u8 unk8F8;
     u8 unk8F9;
     u8 unk8FA;
-    u8 unk8FB[0x08];
+    u8 unk8FB;
+    f32 unk8FC;
+    f32 unk900;
     f32 unk904;
     f32 unk908;
     f32 rewardSpawn[3]; //0x90C Reward Spawn Location
     f32 unk918;
     f32 unk91C;
     f32 unk920;
-    f32 unk924;
+    u8 unk924;
+    u8 unk925;
+    u8 unk926;
+    u8 unk927;
     f32 unk928[3];
-    u32 unk934;
-    u32 unk938;
-    f32 unk93C;
+    f32 unk934[3];
 } HandcartMemory;
 
 typedef struct {
     f32 unk0;
     f32 unk4;
     f32 unk8;
-    u8 unkC;
-    u8 unkD;
+    u16 unkC;
     u8 unkE;
     u8 unkF;
     u8 unk10[0x14];
@@ -108,28 +130,38 @@ extern f32 func_80013970(f32);
 extern u32 D_808046C0_chhandcart;
 extern u32 D_808046D4_chhandcart;
 extern u32 D_808046E8_chhandcart;
+extern f32 D_80804DB8_chhandcart[3];
+
 extern u32 D_80804E0C_chhandcart;
 extern u32 D_80804E18_chhandcart;
 extern u32 D_80804E2C_chhandcart;
 extern u32 D_80804E38_chhandcart;
 
-
+extern f32 D_808046F4_chhandcart;
 extern u32 D_80804704_chhandcart;
 extern u32 D_80804714_chhandcart;
 s32 func_80800000_chhandcart(void);
 s32 func_80800090_chhandcart(void);
 void func_808000B4_chhandcart(Actor* arg0);
+s32 func_80800194_chhandcart(Actor* arg0);
 void func_808002B8_chhandcart(Actor*, s32);
+void func_80800528_chhandcart(Actor*);
 void func_808007F0_chhandcart(Actor* arg0);
 void func_80800998_chhandcart(Actor*, u32, u32, Unk80132ED0*);
+void func_80800B00_chhandcart(Actor*);
 void func_80800CD0_chhandcart(Actor*);
 void func_80800FA0_chhandcart(Actor*, s32);
 void func_80801290_chhandcart(Actor*);
 void func_808014D8_chhandcart(Actor*, u32);
-void func_8080169C_chhandcart(Actor*, u32, f32*);
+f32 func_8080115C_chhandcart(f32* arg0, f32 arg1);
+void func_80801638_chhandcart(Actor*, s32);
+f32 func_8080169C_chhandcart(Actor*, u32, f32*);
 void func_80801850_chhandcart(Actor*);
+void func_80801CBC_chhandcart(Actor*);
 void func_80801FFC_chhandcart(Actor*);
 void func_80802394_chhandcart(Actor*);
+void func_808023B4_chhandcart(Actor* arg0, u32 arg1, u32 arg2);
+void func_80802400_chhandcart(Actor*, s32);
 void func_80802CE8_chhandcart(Actor*, s32);
 void func_808031D0_chhandcart(Actor* arg0, s32 arg1);
 

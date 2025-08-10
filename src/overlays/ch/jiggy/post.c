@@ -10,7 +10,7 @@ void func_8080000C_chjiggypost(s32 arg0)
 
 }
 
-void func_80800014_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1)
+void func_80800014_chjiggypost(Actor* arg0, s32 arg1)
 {
     u8 var_a2;
 
@@ -22,13 +22,13 @@ void func_80800014_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1)
     {
         var_a2 = 0xF;
     }
-    _subaddiedialog_entrypoint_11(arg0->unk0, arg1, var_a2, &arg0->unk2, 0x97);
+    _subaddiedialog_entrypoint_11(arg0->unk0, arg1, var_a2, arg0->position, 0x97);
     func_80101FDC(arg0, 2);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/post/func_80800068_chjiggypost.s")
 
-void func_808001C4_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
+void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
 {
     s32 var_a1;
 
@@ -38,7 +38,7 @@ void func_808001C4_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
     case 0x1514:
         if (func_800DA298(0x35B) != 0)
         {
-            if (func_800D035C(1) >= _sujiggy_entrypoint_2(((u32)arg0->unk76 >> 7) - 0x33))
+            if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33))
             {
                 if (func_8008FD48() == 1)
                 {
@@ -75,7 +75,7 @@ void func_808001C4_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
 
 }
 
-s32 func_808002DC_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
+s32 func_808002DC_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
 {
     splitS32* split = (splitS32*)&arg2;
     switch (arg1)
@@ -85,9 +85,9 @@ s32 func_808002DC_chjiggypost(unkStructChJiggyPost* arg0, s32 arg1, s32 arg2)
     case 0x95:
         break;
     case 0x30:
-        return _sujiggy_entrypoint_2(((u32)arg0->unk76 >> 7) - 0x33);
+        return _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33);
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_808003C8_chjiggypost, arg0->unk38);
+        _gcdialogcamera_entrypoint_3(&D_808003C8_chjiggypost, arg0->scale);
         break;
     default:
         return 0;

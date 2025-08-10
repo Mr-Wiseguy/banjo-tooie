@@ -4,6 +4,8 @@
 
 #include <ultra64.h>
 s32 func_8010C500(Actor*);
+s32 func_8010C9B0(f32*, u32);
+s32 func_8010CB0C(f32*, u32, u32, u32);
 f32 func_8010CD28();
 
 #endif

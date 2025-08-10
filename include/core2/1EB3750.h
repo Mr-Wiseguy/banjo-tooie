@@ -1,7 +1,7 @@
 #ifndef __CORE2_1EB3750_H__
 #define __CORE2_1EB3750_H__
 #include "common.h"
-
+//Get Flag Value
 s32 func_800DA298(s32 index);
 void func_800DA3B8(s32 index, s32 set);
 void func_800DA524(s32);

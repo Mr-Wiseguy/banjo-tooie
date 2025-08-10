@@ -34,6 +34,8 @@ f32 func_800EEFD4(f32[3]);
 void func_800EF04C(f32[3], f32[3]);
 void func_800EF934(f32[3], f32[3], f32);
 void func_800EF2A0(f32[3]);
+void func_800EF4E4(f32*, f32, f32, f32, f32, f32);
+void func_800EF5A0(f32*, f32*, f32, f32, f32);
 void func_800EFA4C(f32[3], f32, f32, f32);
 void func_800EFA98(f32[3], f32[3], f32);
 void func_800EFCD8(f32[3], f32, f32);

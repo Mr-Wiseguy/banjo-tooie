@@ -3,7 +3,6 @@
 #include "common.h"
 
 s32 _subaddiedialog_entrypoint_5(f32*, u32, u32, u32);
-void _subaddiedialog_entrypoint_11(s32, u32, u8, f32*, s32);
-
+void _subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, u32);
 
 #endif

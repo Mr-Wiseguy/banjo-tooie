@@ -24,55 +24,24 @@ s32 func_80800090_chhandcart(void)
 {
     return func_800DA564(0x9DC, 2);
 }
-#ifndef NONMATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_808000B4_chhandcart.s")
-#else
+
 void func_808000B4_chhandcart(Actor* arg0)
 {
-    u32 var_a0;
-    u32 var_a1;
-    u32 var_a1_2;
-    var_a1_2 = ((CanaryMaryMemory*)func_80100094(arg0, 0U))->unkF;
-    switch (var_a1_2)
+    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->unkF)
     {
     case 1:
-        if (((*((s32*)(&arg0->unk64))) << 0xC) < 0)
-        {
-            var_a0 = 0x170;
-        }
-        else
-        {
-            var_a0 = 0x16F;
-        }
-        _gcgoto_entrypoint_1(var_a0, 1);
+        _gcgoto_entrypoint_1(arg0->unk64_19 ? 0x170 : 0x16F, 1);
         return;
-
     case 0:
     case 2:
         if (func_80800090_chhandcart() == 2)
         {
-            if ((*((s32*)(&arg0->unk64))) << 0xC < 0)
-            {
-                var_a1 = 0x15;
-            }
-            else
-            {
-                var_a1 = 0x16;
-            }
-            _gcgoto_entrypoint_1(0xC7, var_a1);
+            _gcgoto_entrypoint_1(0xC7, arg0->unk64_19 ? 0x15 : 0x16);
             return;
         }
         else
         {
-            if (((*((s32*)(&arg0->unk64))) << 0xC) < 0)
-            {
-                var_a1_2 = 0x16;
-            }
-            else
-            {
-                var_a1_2 = 0x15;
-            }
-            _gcgoto_entrypoint_1(0xC7, var_a1_2);
+            _gcgoto_entrypoint_1(0xC7, arg0->unk64_19 ? 0x16 : 0x15);
             return;
         }
 
@@ -80,7 +49,6 @@ void func_808000B4_chhandcart(Actor* arg0)
 
 }
 
-#endif
 s32 func_80800194_chhandcart(Actor* arg0)
 {
     CanaryMaryMemory* new_var;
@@ -121,7 +89,86 @@ void func_80800214_chhandcart(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_808002B8_chhandcart.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80800528_chhandcart.s")
+void func_80800528_chhandcart(Actor* arg0)
+{
+    SplineMemory* sp84;
+    HandcartMemory* temp_s0;
+    f32 gamespeed;
+    Actor* sp78;
+    f32 sp74;
+    f32 new_var;
+    f32 sp6C;
+    f32 sp60[3];
+    f32 sp5c;
+    f32 sp58;
+    f32 sp54;
+    f32 sp50;
+    f32 sp4C;
+    f32 sp48;
+    f32 sp44;
+    s32 sp40;
+    f32 sp34[3];
+    sp84 = (SplineMemory*)func_80100094(arg0, 1U);
+    temp_s0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    gamespeed = func_800D8FF8();
+    sp78 = NULL;
+    if (temp_s0->unk8F4 == 3)
+    {
+        switch (temp_s0->unk8F5)
+        {
+        case 1:
+
+        case 3:
+            sp40 = 0;
+            sp78 = arg0;
+            break;
+
+        case 2:
+
+        case 4:
+            sp78 = func_80106790((s32)arg0->unk3C);
+            sp40 = 1;
+            break;
+
+        }
+
+        _susplinet_entrypoint_11(sp84, _susplinet_entrypoint_9(sp84));
+        _susplinet_entrypoint_10(sp84, func_80105AE8(sp78) * 1000.0f);
+        _susplinet_entrypoint_17(sp84);
+        _susplinet_entrypoint_7(sp84, 0, &sp6C);
+        func_800EF5A0(sp60, &sp6C, 0.0f, 0.0f, -_susplinet_entrypoint_8(sp84, 0.0f));
+        if (sp40 == 1)
+        {
+            func_800EFA4C(sp34, 0.0f, 75.0f, 150.0f);
+        }
+        else
+        {
+            func_800EFA4C(sp34, 0.0f, 75.0f, 0.0f);
+        }
+        if (_susplinet_entrypoint_6(sp84) != 0)
+        {
+            temp_s0->unk8F6 = 0U;
+        }
+        if (temp_s0->unk8F6 != 0)
+        {
+            new_var = 3.0f * gamespeed;
+            temp_s0->unk904 += (func_800F1DCC(sp78->rotation[0], temp_s0->unk904) * new_var);
+            temp_s0->unk908 += (func_800F1DCC(sp78->rotation[1], temp_s0->unk908) * new_var);
+        }
+        else
+        {
+            temp_s0->unk904 = sp78->rotation[0];
+            temp_s0->unk908 = sp78->rotation[1];
+            temp_s0->unk8F6 = 1U;
+        }
+        func_800EF4E4(sp60, temp_s0->unk904, temp_s0->unk908, sp60[0], sp60[1], sp60[2]);
+        func_800EF4E4(&sp48, temp_s0->unk904, temp_s0->unk908, sp34[0], sp34[1], sp34[2] * 1.0f);
+        func_800EF04C(sp60, sp78->position);
+        func_800EF04C(&sp48, sp78->position);
+        func_800A516C(&sp54, &sp48, sp60);
+        _capod_entrypoint_1(sp60, &sp54);
+    }
+}
 
 void func_808007BC_chhandcart(s32* arg0, s32 arg1) 
 {
@@ -437,7 +484,47 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801290_chhandcart.s")
+void func_80801290_chhandcart(Actor* arg0)
+{
+    HandcartMemory* spBC;
+    f32 gamespeed;
+    s32 temp_v0;
+    s32 i;
+    f32 spAC;
+    f32 sp7C[4][3];
+    spBC = (HandcartMemory*)func_80100094(arg0, 0);
+    gamespeed = func_800D8FF8();
+    func_800EF5A0(sp7C[0], arg0->rotation, -52.0f, 0, -49.0f);
+    func_800EF5A0(sp7C[1], arg0->rotation, -52.0f, 0, 30.0f);
+    func_800EF5A0(sp7C[2], arg0->rotation, 52.0f, 0, -49.0f);
+    func_800EF5A0(sp7C[3], arg0->rotation, 52.0f, 0, 30.0f);
+    for (i = 0; i < 4; i++) {
+        func_800EF04C(sp7C[i], arg0->position);
+    }
+    for (i = 0; i < 0x3C; i++) {
+
+        if (spBC->unk87C[i] != 0)
+        {
+            func_800EE7B4(spBC->unkC[i], spBC->unkC[i], spBC->unkC[i + 0x78], gamespeed);
+            if (spBC->unkC[i][1] < (0.0f * 1.0f))
+            {
+                spBC->unk87C[i] = 0U;
+            }
+            else
+            {
+                temp_v0 = func_800DC128(8, 0xF);
+                if (temp_v0 < spBC->unk87C[i])
+                {
+                    spBC->unk87C[i] -= temp_v0;
+                }
+                spBC->unkC[i + 0x78][1] += -300.0f * gamespeed;
+                func_800EE7F8(spBC->unkC[i + 0x3C], sp7C[spBC->unk87C[i + 0x3C]]);
+                func_800EF4E4(&spAC, arg0->rotation[0], arg0->rotation[1], spBC->unkC[i][0], spBC->unkC[i][1], spBC->unkC[i][2]);
+                func_800EF04C(spBC->unkC[i + 0x3C], &spAC);
+            }
+        }
+    }
+}
 
 void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
 {
@@ -470,7 +557,32 @@ void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801638_chhandcart.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_8080169C_chhandcart.s")
+f32 func_8080169C_chhandcart(Actor* arg0, u32 arg1, f32* arg2)
+{
+    f32 var_f0;
+
+    f32 sp38[3];
+    f32 sp2C[3];
+
+    if (arg1 != 0)
+    {
+        var_f0 = 58.0f;
+    }
+    else
+    {
+        var_f0 = -58.0f;
+    }
+    func_800EF4E4(arg2, arg0->rotation[0], arg0->rotation[1], var_f0, 0.0f, 0.0f);
+    func_800EF04C(arg2, arg0->position);
+    func_800EE7F8(sp38, arg2);
+    sp38[1] += 150.0f;
+    arg2[1] -= 150.0f;
+    if (func_800BEF00(sp38, arg2, sp2C, 0x20020U) == 0)
+    {
+        arg2[1] = arg0->position[1];
+    }
+    return arg2[1];
+}
 
 void func_8080176C_chhandcart(Actor* arg0) 
 {
@@ -484,16 +596,99 @@ void func_8080176C_chhandcart(Actor* arg0)
     func_8080169C_chhandcart(arg0, 1, sp38);
     temp_f0 = func_800F1828(sp2C, sp38);
     arg0->position[1] = (sp2C[1] + sp38[1]) * 0.5f;
-    arg0->rotation[2] = sp44->unk93C + temp_f0;
+    arg0->rotation[2] = sp44->unk934[2] + temp_f0;
     if (arg0->rotation[2] > 0.0f) 
     {
-        arg0->position[1] += func_80013970(sp44->unk93C) * 58.0f;
+        arg0->position[1] += func_80013970(sp44->unk934[2]) * 58.0f;
         return;
     }
-    arg0->position[1] -= func_80013970(sp44->unk93C) * 58.0f;
+    arg0->position[1] -= func_80013970(sp44->unk934[2]) * 58.0f;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801850_chhandcart.s")
+void func_80801850_chhandcart(Actor* arg0)
+{
+    HandcartMemory* temp_v0;
+    f32 a0;
+    f32 sp2C;
+
+    s32 var_s0;
+    f32* f0;
+
+    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0->unk91C = temp_v0->unk934[2];
+    if (arg0->unk24 > 12.0f)
+    {
+        if (temp_v0->unk934[2] < temp_v0->unk920)
+        {
+            temp_v0->unk934[2] = (f32)(temp_v0->unk934[2] + 1.0f);
+        }
+        else if (temp_v0->unk920 < temp_v0->unk934[2])
+        {
+            temp_v0->unk934[2] = (f32)(temp_v0->unk934[2] - 1.0f);
+        }
+        if (temp_v0->unk920 > 0.0f)
+        {
+            if (temp_v0->unk920 < temp_v0->unk934[2])
+            {
+                temp_v0->unk934[2] = temp_v0->unk920;
+            }
+        }
+        else if (temp_v0->unk934[2] < temp_v0->unk920)
+        {
+            temp_v0->unk934[2] = temp_v0->unk920;
+        }
+    }
+    else
+    {
+        temp_v0->unk934[2] = (f32)(temp_v0->unk934[2] * 0.65f);
+    }
+    if (((temp_v0->unk934[2] < -5.0f) || (temp_v0->unk934[2] > 5.0f)) && (temp_v0->unk924 != 0))
+    {
+        func_800C4350(temp_v0->unk924, arg0->position, 0);
+    }
+    if ((temp_v0->unk91C >= 2.0f) && (temp_v0->unk934[2] < 2.0f))
+    {
+        _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_808046F4_chhandcart);
+        temp_v0->unk934[0] = 0.1f;
+        if (func_800DC0C0() < 0.5f)
+        {
+            temp_v0->unk934[2] = -3.0f;
+        }
+    }
+    if ((temp_v0->unk91C <= -2.0f) && (temp_v0->unk934[2] > -2.0f))
+    {
+        _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_808046F4_chhandcart);
+        temp_v0->unk934[1] = 0.1f;
+        if (func_800DC0C0() < 0.5f)
+        {
+            temp_v0->unk934[2] = 3.0f;
+        }
+    }
+    if ((func_800DC0C0() < 0.1f) && (arg0->unk24 > 5.0f))
+    {
+        if (temp_v0->unk934[2] < 0.0f)
+        {
+            temp_v0->unk934[0] = 0.1f;
+        }
+        if (temp_v0->unk934[2] > 0.0f)
+        {
+            temp_v0->unk934[1] = 0.1f;
+        }
+    }
+    sp2C = func_800D8FF8();
+    var_s0 = 0;
+    f0 = (f32*)temp_v0;
+    do {
+        if (f0[0x24D] >= 0.0f)
+        {
+            f0[0x24D] = (f0[0x24D] - sp2C);
+            func_80801638_chhandcart(arg0, var_s0);
+        }
+        var_s0 += 1;
+        f0 += 1;
+    } while (var_s0 != 2);
+    func_8080176C_chhandcart(arg0);
+}
 
 void func_80801BA4_chhandcart(Actor* arg0)
 {
@@ -518,7 +713,14 @@ void func_80801BA4_chhandcart(Actor* arg0)
     func_80801290_chhandcart(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801CBC_chhandcart.s")
+void func_80801CBC_chhandcart(Actor* arg0)
+{
+    HandcartMemory* sp1C;
+    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    arg0->unk24 *= 0.95f;
+    arg0->rotation[0] += func_800F1DCC(0.0f, arg0->rotation[0]) * 0.05f;
+    sp1C->unk934[2] += (func_800F1DCC(0, sp1C->unk934[2]) * 0.05f);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801D50_chhandcart.s")
 
@@ -527,7 +729,18 @@ void func_80801FF4_chhandcart(s32 arg0)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801FFC_chhandcart.s")
+void func_80801FFC_chhandcart(Actor* arg0)
+{
+    Actor* temp_v0;
+    f32 sp28;
+    f32 sp1C[3];
+
+    _gspropctrl_entrypoint_11(_gccubesearch_entrypoint_1(0x226, arg0->position), sp1C);
+    temp_v0 = func_80108528(0x51E, sp1C, 0, &arg0);
+    arg0->unk3C = (s32)temp_v0->unk0;
+    temp_v0->unk3C = (s32)arg0->unk0;
+    func_80100120(temp_v0);
+}
 
 void func_80802068_chhandcart(Actor* arg0, s32 arg1) {
     Prop* var_v0;
@@ -555,9 +768,24 @@ void func_80802394_chhandcart(Actor* arg0)
     func_801015D0(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_808023B4_chhandcart.s")
+void func_808023B4_chhandcart(Actor* arg0, u32 arg1, u32 arg2)
+{
+    arg2 = arg2 | 0x4;
+    _subaddiedialog_entrypoint_11(arg0->unk0, arg1, arg2, arg0->position, 0x36);
+    arg0->unk74_30 = 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80802400_chhandcart.s")
+void func_80802400_chhandcart(Actor* arg0, s32 arg1) 
+{
+    f32 sp1C[3];
+
+    func_800EE7F8(sp1C, arg0->position);
+    sp1C[1] += 75.0f;
+    if ((arg1 == 0) || (arg1 == 0x1B) || (arg1 == 0x1F)) 
+    {
+        _capod_entrypoint_19(sp1C);
+    }
+}
 
 s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
 {
@@ -724,7 +952,7 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     f32 gamespeed;
     float new_var;
     u32 temp_v0;
-    if ((*((u32*)(&arg1->unk7C))) & 0xFFF)
+    if (arg1->unk7C_14)
     {
         var_f12 = func_80105AE8(arg1);
     }
@@ -734,11 +962,10 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     }
     sp18 = func_80105AE8(arg0);
     gamespeed = func_800D8FF8();
-    temp_v0 = (u32)((*((s32*)(&arg0->unk64))) << 0xC);
     if (gamespeed && gamespeed)
     {
     }
-    temp_v0 = temp_v0 >> 0x1F;
+    temp_v0 = arg0->unk64_19;
     if (var_f12 <= (sp18 - 0.099990845f))
     {
         func_808031D0_chhandcart(arg0, 0x10);
@@ -767,7 +994,27 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
             }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80803448_chhandcart.s")
+
+
+s32 func_80803448_chhandcart(Actor* arg0)
+{
+    u32 sp48;
+    f32 sp38[3];
+    f32 sp2C[3];
+    f32 sp20[3];
+    f32 gamespeed;
+    gamespeed = func_800D8FF8();
+    func_800EE7F8(sp38, arg0->position);
+    sp38[1] = sp38[1] + 50.0f;
+    func_800EE7F8(sp2C, arg0->position);
+    sp2C[1] -= 50.0f;
+    if ((func_800BEF00(sp38, sp2C, sp20, 0x20020U) == 0) || sp2C[1] < arg0->position[1])
+    {
+        arg0->position[1] = (arg0->position[1] - (250.0f * gamespeed));
+        return 0;
+    }
+    return 1;
+}
 
 void func_80803514_chhandcart(Actor* arg0)
 {
@@ -834,7 +1081,19 @@ void func_808036D0_chhandcart(s32 arg0, Actor* arg1)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80803730_chhandcart.s")
+void func_80803730_chhandcart(Actor* arg0, Actor* arg1)
+{
+    HandcartMemory* sp1C;
+    sp1C = (HandcartMemory*)func_80100094(arg1, 0U);
+    if (arg0->unk0)
+    {
+    }
+    if (func_80105998(arg0, 0.9399872f) != 0)
+    {
+        sp1C->unk8F8 = 0;
+        func_80800998_chhandcart(arg1, 1, 5, arg0->unk0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80803794_chhandcart.s")
 

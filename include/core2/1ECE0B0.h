@@ -13,8 +13,10 @@ PlayerState* func_800F53E4(s32 arg0);
 u32 func_800F54E4(void);
 
 void func_800F5A00(s32, f32*);
-s32 func_800F64A4(s32, s32);
-void func_800F78EC(s32, u32*, f32, f32);
+//Does the character match the given transformation type
+s32 func_800F64A4(s32 characterIndex, s32 transformationType);
+//The moving object is moved towards/away from the target
+void func_800F78EC(s32 moving, u32* target, f32 verticalSpeed, f32 horizontalSpeed);
 void func_800F7B9C(s32, u32);
 void func_800F80E4(s32, u32);
 void func_800F8294(s32, f32*);
