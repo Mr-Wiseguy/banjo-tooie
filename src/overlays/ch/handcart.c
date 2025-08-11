@@ -285,7 +285,50 @@ void func_80800AB0_chhandcart(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80800B00_chhandcart.s")
+void func_80800B00_chhandcart(Actor* arg0) 
+{
+    s32 temp_v1;
+    s32 var_s4;
+    HandcartMemory* temp_v0;
+
+    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v1 = temp_v0->unk8F5 - 1;
+    if (D_80804D84_chhandcart[temp_v1] != 0) 
+    {
+        if (arg0->unk7C_14)
+        {
+            for (var_s4 = 0; var_s4 < D_80804D94_chhandcart[temp_v1]; var_s4++) 
+            {
+                if (func_80105998(arg0, D_80804D84_chhandcart[temp_v1][var_s4].unk0) != 0) 
+                {
+                    switch (D_80804D84_chhandcart[temp_v1][var_s4].unkC) 
+                    {
+                    case 1:
+                        if (temp_v0->unk8F8 != 0)
+                        {
+                            func_80800A24_chhandcart(arg0, temp_v0->unk8F5, 4);
+                        }
+                        break;
+                    case 2:
+                        if (temp_v0->unk8F8 != 0)
+                        {
+                            func_80800998_chhandcart(arg0, D_80804D84_chhandcart[temp_v1][var_s4].unkE, 5U, arg0->unk0);
+                        }
+                        break;
+                    case 3:
+                        if (temp_v0->unk8F8 != 0) {
+                            temp_v0->unk8FC = D_80804D84_chhandcart[temp_v1][var_s4].unk4;
+                            temp_v0->unk900 = D_80804D84_chhandcart[temp_v1][var_s4].unk8;
+                            func_8080090C_chhandcart(arg0, D_80804D84_chhandcart[temp_v1][var_s4].unkE, 4, arg0->unk0);
+                        }
+                        break;
+                    }
+                    temp_v0->unk8F9 = D_80804D84_chhandcart[temp_v1][var_s4].unkC;
+                }
+            }
+        }
+    }
+}
 
 void func_80800CD0_chhandcart(Actor* arg0)
 {
@@ -555,7 +598,20 @@ void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801638_chhandcart.s")
+void func_80801638_chhandcart(Actor* arg0, s32 arg1)
+{
+    if (arg0->unk7C_12)
+    {
+        if (arg1 != 0)
+        {
+            func_808014D8_chhandcart(arg0, 0);
+            func_808014D8_chhandcart(arg0, 1);
+            return;
+        }
+        func_808014D8_chhandcart(arg0, 2);
+        func_808014D8_chhandcart(arg0, 3);
+    }
+}
 
 f32 func_8080169C_chhandcart(Actor* arg0, u32 arg1, f32* arg2)
 {
@@ -722,7 +778,97 @@ void func_80801CBC_chhandcart(Actor* arg0)
     sp1C->unk934[2] += (func_800F1DCC(0, sp1C->unk934[2]) * 0.05f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80801D50_chhandcart.s")
+void func_80801D50_chhandcart(Actor* arg0)
+{
+    Actor* sp3C;
+    f32 gameSpeed;
+    HandcartMemory* sp34;
+
+    if (arg0->unk3C == 0)
+    {
+        func_80800830_chhandcart((s32)arg0);
+        return;
+    }
+    gameSpeed = func_800D8FF8();
+    sp3C = func_80106790(arg0->unk3C);
+    sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
+    switch ((u32)arg0->unk72 >> 0xA)
+    {
+    case 2:
+        func_80800830_chhandcart((s32)arg0);
+        //Check if the player is Banjo and Kazooie
+        if ((func_80090178(1) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
+        {
+            //Set Flag True Canary Mary Race Intro
+            func_800DA544(0x508);
+            func_80800214_chhandcart(sp3C);
+        }
+        break;
+    case 3:
+        if (func_8010CB0C(arg0->position, 0x32, 0x32, 0) != 0)
+        {
+            //Set Flag True Canary Mary Race Intro
+            func_800DA544(0x508);
+            func_808010D8_chhandcart(arg0, 4);
+        }
+        break;
+    case 4:
+    {
+        f32 sp28[3] = D_80804DB8_chhandcart;
+        f32 temp_f0;
+        func_800907C0(arg0->position);
+        sp28[1] = func_80090010();
+        temp_f0 = func_800F1DCC(arg0->rotation[1], sp28[1]);
+        if ((temp_f0 < -35.0f) || (temp_f0 > 35.0f))
+        {
+            sp28[1] += temp_f0 * gameSpeed * 5.0f;
+            func_800906DC(sp28);
+        }
+        else
+        {
+            func_80800214_chhandcart(sp3C);
+        }
+        break;
+    }
+    case 5:
+        func_8080111C_chhandcart(arg0);
+        break;
+    case 6:
+        arg0->unk24 = func_8080115C_chhandcart(&(sp34->unk4), arg0->unk24);
+        func_80801BA4_chhandcart(arg0);
+        func_8080111C_chhandcart(arg0);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_80800EA0_chhandcart((u32*)arg0);
+            func_808010D8_chhandcart(arg0, 7);
+        }
+        break;
+    case 9:
+    case 10:
+    case 11:
+        arg0->unk24 = func_8080115C_chhandcart(&(sp34->unk4), arg0->unk24);
+        func_80801BA4_chhandcart(arg0);
+        func_8080111C_chhandcart(arg0);
+        break;
+    case 7:
+    case 8:
+    case 12:
+    case 13:
+        func_80801CBC_chhandcart(arg0);
+        func_80801290_chhandcart(arg0);
+        break;
+    case 14:
+    case 15:
+        func_80800830_chhandcart((s32)arg0);
+        func_80801CBC_chhandcart(arg0);
+        break;
+    }
+    if ((sp34->unk8F5 == 1) || (sp34->unk8F5 == 3))
+    {
+        func_80800B00_chhandcart(arg0);
+        func_80800528_chhandcart(arg0);
+    }
+}
 
 void func_80801FF4_chhandcart(s32 arg0) 
 {
@@ -761,7 +907,80 @@ void func_80802068_chhandcart(Actor* arg0, s32 arg1) {
     arg0->rotation[1] = var_v0->unkC >> 0x17;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80802120_chhandcart.s")
+void func_80802120_chhandcart(Actor* arg0)
+{
+    HandcartMemory* sp34;
+    Prop* var_v0;
+    Prop* var_v0_2;
+    sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
+    arg0->scale = 0.425f;
+    arg0->unk64_19 = func_800D0A9C(0xC, 1);
+    sp34->unk8F4 = 0;
+    sp34->unk4 = 0.0f;
+    if (_glcutDll_entrypoint_20() != 0)
+    {
+        if (func_800EA05C() == 0xC7)
+        {
+            func_80108B04(arg0, 0);
+        }
+    }
+    else
+    {
+        if ((func_800DA298(0x66) == 0) || (func_800D0A9C(4, 4) != 0))
+        {
+            func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
+            return;
+        }
+        switch (func_80800000_chhandcart())
+        {
+        case 0:
+            if (func_800DA298(0x507) == 0)
+            {
+                func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
+            }
+            func_80802068_chhandcart(arg0, 1 - arg0->unk64_19);
+            break;
+
+        case 1:
+            if (arg0->unk64_19)
+            {
+                sp34->unk0 = _glsplinefind_entrypoint_0(0x314, arg0->position);
+                var_v0 = _gccubesearch_entrypoint_1(0x15U, arg0->position);
+            }
+            else
+            {
+                sp34->unk0 = _glsplinefind_entrypoint_0(0x313, arg0->position);
+                var_v0 = _gccubesearch_entrypoint_1(0x16U, arg0->position);
+            }
+            // @fake
+            if (sp34->unk928[0]) {}
+            func_800EE88C(sp34->unk928, var_v0->position);
+            func_801058C4(arg0, sp34->unk0, arg0->unk24, 0);
+            func_80801BA4_chhandcart(arg0);
+            break;
+
+        case 2:
+            if (arg0->unk64_19)
+            {
+                var_v0_2 = _gccubesearch_entrypoint_0(0x201, arg0);
+            }
+            else
+            {
+                var_v0_2 = _gccubesearch_entrypoint_0(0x1F6, arg0);
+            }
+            func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
+            func_80802068_chhandcart(arg0, arg0->unk64_19);
+            if (arg0->unk64_19 && (func_80800090_chhandcart() == 2))
+            {
+                func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
+            }
+            break;
+
+        }
+
+        func_80108B04(arg0, 0);
+    }
+}
 
 void func_80802394_chhandcart(Actor* arg0) 
 {
@@ -832,8 +1051,33 @@ s32 func_80802468_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
 
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_8080256C_chhandcart.s")
+void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
+{
+    s32 temp_s0;
+    s32 var_s0;
+    f32 filler;
+    f32 sp50[3];
+    HandcartMemory* temp_s5;
+    temp_s5 = (HandcartMemory*)func_80100094(arg0, 0U);
+    func_801018A4(arg0, arg1);
+    if (arg0->unk7C_12)
+    {
+        temp_s0 = func_800D674C(0x9E2);
+        func_800E2588(2);
+        func_800E2594(arg1, temp_s0);
+        func_800EFA4C(sp50, 0.06f, 0.03f, 0.06f);
+        var_s0 = 0;
+        for (var_s0 = 0; var_s0 != 0x3C; var_s0++)
+        {
+            if (temp_s5->unk87C[var_s0] != 0)
+            {
+                func_800E2720(arg1, 0, 0, temp_s5->unkC[var_s0 + 0x3C], sp50, temp_s5->unk87C[var_s0]);
+            }
+        }
 
+        func_800E2A14(arg1);
+    }
+}
 
 void* chhandcart_entrypoint_0(void) 
 {
@@ -897,7 +1141,85 @@ void func_8080282C_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
     arg0->rotation[1] = var_v0->unkC >> 0x17;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_808028F0_chhandcart.s")
+void func_808028F0_chhandcart(Actor* arg0)
+{
+    f32 sp2C[3];
+    CanaryMaryMemory* maryMemory;
+    maryMemory = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    arg0->unk64_19 = func_800D0A9C(0xC, 1);
+    if (_glcutDll_entrypoint_20() != 0)
+    {
+        if (func_800EA05C() == 0xC7)
+        {
+            func_8080282C_chhandcart(arg0, 0, 1);
+            func_808031D0_chhandcart(arg0, 0x11);
+        }
+        else
+        {
+            func_800FFAB0(arg0);
+            return;
+        }
+    }
+    else
+        if (func_800DA298(0x66) != 0)
+        {
+            if (func_800EA05C() == 0xDB)
+            {
+                func_800FFAB0(arg0);
+                return;
+            }
+            switch (func_80800194_chhandcart(arg0))
+            {
+            case 0:
+                func_8080282C_chhandcart(arg0, 1 - arg0->unk64_19, 0);
+                break;
+
+            case 1:
+                if (arg0->unk64_19)
+                {
+                    maryMemory->unkC = _glsplinefind_entrypoint_0(0x385, sp2C);
+                }
+                else
+                {
+                    maryMemory->unkC = _glsplinefind_entrypoint_0(0x384, sp2C);
+                }
+                func_80800024_chhandcart(0);
+                func_808031D0_chhandcart(arg0, 5);
+                break;
+
+            case 2:
+                func_8080282C_chhandcart(arg0, arg0->unk64_19, 0);
+                func_808031D0_chhandcart(arg0, 0xF);
+                if (arg0->unk64_19)
+                {
+                    maryMemory->unkC = _glsplinefind_entrypoint_0(0x389, sp2C);
+                }
+                func_80800214_chhandcart(arg0);
+                break;
+
+            }
+
+            if (func_800DA298(0x507) == 0)
+            {
+                maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
+                func_801058C4(arg0, maryMemory->unkC, arg0->unk24, 0);
+                func_808031D0_chhandcart(arg0, 0x14);
+            }
+        }
+        else
+            if (func_800EA05C() != 0xDB)
+            {
+                func_800FFAB0(arg0);
+                return;
+            }
+            else
+            {
+                maryMemory->unkC = _glsplinefind_entrypoint_0(0x384, sp2C);
+                func_80802CE8_chhandcart(arg0, 0x18);
+            }
+    _suexpression_entrypoint_7(arg0, 1, 0x36);
+    _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0x42340000, 0x41700000);
+}
 
 void func_80802B74_chhandcart(Actor* arg0) 
 {
@@ -932,7 +1254,210 @@ void func_80802BC8_chhandcart(Actor* arg0)
     arg0->rotation[1] += func_800F1DCC(arg0->unk54, arg0->rotation[1]) * sp20;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80802CE8_chhandcart.s")
+void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
+{
+    Actor* sp2C;
+    CanaryMaryMemory* sp28;
+    s32 sp24;
+    s32 sp20;
+    Unk80132ED0* temp_a0_2;
+    s32 temp_v0;
+    s32 temp_v0_2;
+    u32 temp_a0;
+    u32 temp_t1;
+    u32 temp_t6;
+    sp28 = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    temp_a0 = arg0->unk3C;
+    if (temp_a0 != 0)
+    {
+        sp2C = func_80106790((s32)temp_a0);
+    }
+    else
+    {
+        sp2C = NULL;
+    }
+    switch (((u32)((arg0->unk72))) >> 0xA)
+    {
+    case 19:
+        arg0->unk64_16 = 1;
+        break;
+
+    case 23:
+        func_80800AB0_chhandcart(sp2C);
+        break;
+
+    case 15:
+        func_80090708(0);
+        break;
+
+    }
+
+    func_80102424(arg0, arg1);
+    temp_t1 = ((u32)arg0->unk72 & 0xFFFF) >> 0xA;
+    switch (temp_t1)
+    {
+    case 24:
+        _subaddieDll_entrypoint_0(arg0);
+        break;
+
+    case 25:
+        temp_v0 = func_8008FD70();
+        if (temp_v0 != 1)
+        {
+            if (temp_v0 == 0x4000)
+            {
+                func_808023B4_chhandcart(arg0, 0xFA9, 0xB);
+                break;
+            }
+        }
+        else
+        {
+            func_808023B4_chhandcart(arg0, 0xF7F, 0xB);
+            break;
+        }
+        func_80802CE8_chhandcart(arg0, 0x1A);
+        break;
+
+    case 26:
+        arg0->unk24 = 40.0f;
+        func_801058C4(arg0, *((s16*)(&sp28->unkC)), 40.0f, 0);
+        func_80802BC8_chhandcart(arg0);
+        func_800C01A8(0x6B, 0);
+        temp_a0_2 = arg0->unk0;
+        _capod_entrypoint_13(temp_a0_2, temp_a0_2, 0, 0x28B0);
+        break;
+
+    case 19:
+        arg0->unk64_16 = 0;
+        break;
+
+    case 20:
+        func_800DA544(0x507);
+        arg0->unk24 = 40.0f;
+        func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, (s32)arg0->unk0);
+        break;
+
+    case 23:
+        arg0->unk58 = 1.0f;
+        break;
+
+    case 5:
+        func_80800998_chhandcart(sp2C, 0U, 5U, sp2C->unk0);
+        func_808023B4_chhandcart(arg0, 0xCEC, 3);
+        func_801058C4(arg0, *((s16*)(&sp28->unkC)), arg0->unk24, 0);
+        break;
+
+    case 6:
+        func_800FDC28(0x15U);
+        if (arg0->unk64_19)
+        {
+            arg0->unk24 = 25.0f;
+        }
+        else
+        {
+            arg0->unk24 = 15.0f;
+        }
+        break;
+
+    case 7:
+        func_80800024_chhandcart(2);
+        func_80090658(1);
+        break;
+
+    case 8:
+        if (func_80105AE8(arg0) < 0.93f)
+        {
+            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (4) : (2), 4);
+        }
+        else
+        {
+            func_80800998_chhandcart(sp2C, 1U, 5U, arg0->unk0);
+        }
+        break;
+
+    case 9:
+        func_80800024_chhandcart(1);
+        func_800FDC28(0U);
+        func_80800EE4_chhandcart(sp2C, 0);
+        func_80800214_chhandcart(arg0);
+        break;
+
+    case 10:
+        if (func_80105AE8(sp2C) < 0.93f)
+        {
+            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (3) : (1), 4);
+        }
+        else
+        {
+            func_80800998_chhandcart(sp2C, 1U, 5U, sp2C->unk0);
+        }
+        break;
+
+    case 14:
+        arg0->unk58 = 0.5f;
+        break;
+
+    case 16:
+        if (func_800D0A9C(0xC, 1) != 0)
+        {
+            sp24 = 0xF88;
+        }
+        else
+        {
+            sp24 = 0xF83;
+        }
+        func_80800858_chhandcart(sp2C, arg0, 3, 1);
+        func_808023B4_chhandcart(arg0, sp24, 3);
+        func_800FDC28(0U);
+        func_800FC660(0x17U);
+        break;
+
+    case 15:
+        sp20 = 0;
+        func_80090658(0);
+        func_80090734(1, arg0->position);
+        func_80800858_chhandcart(sp2C, arg0, 2, 1);
+        temp_v0_2 = func_80800090_chhandcart();
+        switch (temp_v0_2)
+        {
+        case 1:
+            if (func_800D0A9C(0xC, 1) != 0)
+            {
+                sp20 = 0xF87;
+            }
+            else
+            {
+                sp20 = 0xF82;
+            }
+            break;
+
+        case 2:
+            if (func_800D0A9C(0xC, 1) != 0)
+            {
+                sp20 = 0xF89;
+            }
+            else
+            {
+                sp20 = 0xF84;
+            }
+            break;
+
+        }
+
+        func_808023B4_chhandcart(arg0, sp20, 0xB);
+        break;
+
+    case 18:
+        arg0->unk24 = 40.0f;
+        func_801058C4(arg0, *((s16*)(&sp28->unkC)), 40.0f, 0);
+        func_80802BC8_chhandcart(arg0);
+        func_8080090C_chhandcart(sp2C, 0x1B, 0x20B0, (s32)arg0->unk0);
+        break;
+
+    }
+
+    func_80800F4C_chhandcart(arg0);
+}
 
 void func_808031D0_chhandcart(Actor* arg0, s32 arg1) {
     s32 temp_a0;
@@ -1095,9 +1620,397 @@ void func_80803730_chhandcart(Actor* arg0, Actor* arg1)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80803794_chhandcart.s")
+void func_80803794_chhandcart(Actor* arg0)
+{
+    f32 sp44;
+    Actor* sp40;
+    HandcartMemory* sp3C;
+    s32 temp_a0;
+    u8 temp_a1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_80803FC4_chhandcart.s")
+    sp44 = func_800D8FF8();
+    temp_a0 = arg0->unk3C;
+    if (temp_a0 != 0)
+    {
+        sp40 = func_80106790(temp_a0);
+        sp3C = (HandcartMemory*)func_80100094(sp40, 0U);
+    }
+    else
+    {
+        sp40 = NULL;
+        sp3C = NULL;
+    }
+    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0);
+    switch ((u32)arg0->unk72 >> 0xA)
+    {
+    case 24:
+        if (func_800DA298(0) != 0)
+        {
+            if (func_80090270() == 0)
+            {
+                func_80802CE8_chhandcart(arg0, 0x19);
+            }
+        }
+        else if (func_800DA298(1) == 0)
+        {
+            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(0x4001) != 0))
+            {
+                if (func_800DA9E4(0x42A, 1) == 0)
+                {
+                    func_808023B4_chhandcart(arg0, 0xF7E, 0xB);
+                }
+                else if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0)
+                {
+                    func_808023B4_chhandcart(arg0, 0xFA7, 0xB);
+                }
+            }
+        }
+        break;
+    case 26:
+        func_80802BC8_chhandcart(arg0);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_800DA544(0x66);
+            _glcutDll_entrypoint_6(0xC7, 0x1A);
+        }
+        break;
+    case 20:
+        func_80802BC8_chhandcart(arg0);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_80105634(arg0);
+            func_808031D0_chhandcart(arg0, 0x15);
+        }
+        break;
+    case 21:
+        if ((func_80803448_chhandcart(arg0) != 0) && (func_80101E14(arg0, 0x3F7FBE77) != 0))
+        {
+            func_808031D0_chhandcart(arg0, 0x16);
+        }
+        break;
+    case 22:
+        if (func_80101DDC(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 0x17);
+        }
+        break;
+    case 23:
+        if (arg0->unk58 > 0.0f)
+        {
+            arg0->unk58 = (f32)(arg0->unk58 - sp44);
+        }
+        else
+        {
+            _glcutDll_entrypoint_17();
+            func_808031D0_chhandcart(arg0, 2);
+        }
+        break;
+    case 2:
+        func_80803698_chhandcart((s32)arg0);
+        func_80803514_chhandcart(arg0);
+        if (!arg0->unk74_30)
+        {
+            if (func_80090178(1) != 0)
+            {
+                if (func_800DA298(0x508) != 0)
+                {
+                    if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
+                    {
+                        func_808023B4_chhandcart(arg0, arg0->unk64_19 ? 0xFAE : 0xFAD, 0xB);
+                    }
+                }
+                else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
+                {
+                    func_800DA544(0x508);
+                    func_80800858_chhandcart(sp40, arg0, 2, 0);
+                    if (func_800DA298(0x57A) != 0)
+                    {
+                        func_808023B4_chhandcart(arg0, 0xF80, 0xB);
+                    }
+                    else
+                    {
+                        func_808023B4_chhandcart(arg0, 0xFB7, 0xB);
+                    }
+                }
+            }
+            else if (func_800DA298(0x54) != 0)
+            {
+                if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
+                {
+                    func_808023B4_chhandcart(arg0, arg0->unk64_19 ? 0xFB2 : 0xFB1, 0xB);
+                }
+            }
+            else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
+            {
+                func_800DA544(0x54);
+                func_808023B4_chhandcart(arg0, 0xFB0, 0xB);
+            }
+        }
+        break;
+    case 5:
+        func_80803514_chhandcart(arg0);
+        func_80803698_chhandcart((s32)arg0);
+        func_80802BC8_chhandcart(arg0);
+        break;
+    case 6:
+        func_80803218_chhandcart(arg0, sp40);
+        func_80802BC8_chhandcart(arg0);
+        if (func_80105998(sp40, 0.05f) != 0)
+        {
+            sp3C->unk8F8 = 1;
+            func_80800A24_chhandcart(sp40, sp40->unk64_19 ? 3 : 1, 4);
+        }
+        func_808036D0_chhandcart((s32)arg0, sp40);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 9);
+        }
+        break;
+    case 7:
+        func_80803218_chhandcart(arg0, sp40);
+        func_80802BC8_chhandcart(arg0);
+        func_80803730_chhandcart(arg0, sp40);
+        if (func_80090248() != 0)
+        {
+            func_808031D0_chhandcart(arg0, 8);
+        }
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 0xC);
+        }
+        break;
+    case 8:
+        func_80803218_chhandcart(arg0, sp40);
+        func_80802BC8_chhandcart(arg0);
+        func_80803730_chhandcart(arg0, sp40);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 0xC);
+        }
+        break;
+    case 9:
+        func_808036D0_chhandcart((s32)arg0, sp40);
+        if (func_80105A5C(sp40) != 0)
+        {
+            func_80800EA0_chhandcart((u32*)sp40);
+            func_80800EE4_chhandcart(sp40, 0);
+        }
+        if ((func_80803448_chhandcart(arg0) != 0) && (func_80101E14(arg0, 0x3F7FBE77) != 0))
+        {
+            func_808031D0_chhandcart(arg0, 0xA);
+        }
+        break;
+    case 10:
+        func_808036D0_chhandcart((s32)arg0, sp40);
+        func_80803698_chhandcart((s32)arg0);
+        if (func_80105A5C(sp40) != 0)
+        {
+            func_80800EA0_chhandcart((u32*)sp40);
+            func_80800EE4_chhandcart(sp40, 0);
+        }
+        if (func_80101DDC(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 0xB);
+        }
+        break;
+    case 11:
+        func_808036D0_chhandcart((s32)arg0, sp40);
+        func_80803698_chhandcart((s32)arg0);
+        func_80803514_chhandcart(arg0);
+        if (func_80105A5C(sp40) != 0)
+        {
+            func_80800EE4_chhandcart(sp40, 0);
+            func_808031D0_chhandcart(arg0, 0xE);
+        }
+        break;
+    case 12:
+        if ((func_80803448_chhandcart(arg0) != 0) && (func_80101E14(arg0, 0x3F7FBE77) != 0))
+        {
+            func_808031D0_chhandcart(arg0, 0xD);
+        }
+        break;
+    case 13:
+        func_80803698_chhandcart((s32)arg0);
+        if (func_80101DDC(arg0) != 0)
+        {
+            func_808031D0_chhandcart(arg0, 0xE);
+        }
+        break;
+    case 14:
+        if (arg0->unk58 > 0.0f)
+        {
+            arg0->unk58 = (f32)(arg0->unk58 - sp44);
+        }
+        else
+        {
+            func_80800214_chhandcart(arg0);
+        }
+        break;
+    case 15:
+        func_80803514_chhandcart(arg0);
+        func_80803698_chhandcart((s32)arg0);
+        break;
+    case 18:
+        if (arg0->unk24 < 150.0f)
+        {
+            arg0->unk24 = arg0->unk24 + (50.0f * sp44);
+        }
+        func_80802BC8_chhandcart(arg0);
+        if (func_80105A5C(arg0) != 0)
+        {
+            func_80105634(arg0);
+            if (_gclevel_entrypoint_3(0x18) != 0)
+            {
+                _glcutDll_entrypoint_6(0x136, 0x55);
+            }
+            else
+            {
+                func_80800AB0_chhandcart(sp40);
+                sp40->unk3C = 0;
+                func_800FFAB0(arg0);
+            }
+        }
+        break;
+    }
+    func_80802690_chhandcart(arg0);
+    if ((sp3C != NULL))
+    {
+        switch (sp3C->unk8F5)
+        {
+        case 2:
+        case 4:
+            func_80800B00_chhandcart(sp40);
+            func_80800528_chhandcart(sp40);
+            break;
+        }
+    }
+}
+
+
+s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
+{
+    u32 temp_a0;
+    Actor* temp_s0;
+    HandcartMemory* temp_t0;
+    Actor* var_a2;
+
+    if (arg1 >= 0x30)
+    {
+        if (arg1 == 0x52)
+        {
+            goto case52;
+        }
+        return 0;
+    }
+    switch (arg1)
+    {                                 /* switch 1 */
+    case 14:                                        /* switch 1 */
+        func_80802400_chhandcart(arg0, arg2);
+        return 3;
+    case 47:                                        /* switch 1 */
+        temp_t0 = (HandcartMemory*)func_80100094(func_80106790((s32)arg0->unk3C), 0U);
+        switch (*(s16*)&arg2)
+        {
+        case 0xF84:
+            //Spawn jiggy of flag C
+            func_800D1000(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
+            break;
+        case 0xF89:
+            //Spawn Cheato page of flag 4
+            func_800D1000(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
+            break;
+        }
+        break;
+    case 13:                                        /* switch 1 */
+        temp_s0 = func_80106790((s32)arg0->unk3C);
+        switch (arg2 & 0xFFFF)
+        {                          /* switch 4; irregular */
+        case 1:                                     /* switch 4 */
+            func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
+            break;
+        case 4:                                     /* switch 4 */
+            func_8080090C_chhandcart(temp_s0, 0x19, 0x2000, func_80101080());
+            break;
+        }
+        break;
+    case 0x28:                                        /* switch 1 */
+        temp_a0 = arg0->unk3C;
+        if (arg0->unk3C != 0)
+        {
+            var_a2 = func_80106790(temp_a0);
+        }
+        else
+        {
+            var_a2 = NULL;
+        }
+        switch (*(s16*)&arg2)
+        {
+        case 0xF7F:
+        case 0xFA9:
+            func_800DA544(0x57A);
+            func_80802CE8_chhandcart(arg0, 0x1A);
+            break;
+        case 0xF80:
+        case 0xFB7:
+            func_80800AB0_chhandcart(var_a2);
+            func_808031D0_chhandcart(arg0, 2);
+            break;
+        case 0xCEC:
+            func_808031D0_chhandcart(arg0, 6);
+            break;
+        case 0xF83:
+        case 0xF88:
+            func_808001D0_chhandcart(arg0, 0);
+            func_808000B4_chhandcart(arg0);
+            func_800904C8(0x28U);
+            break;
+        case 0xF82:                                 /* switch 5 */
+            func_80800AB0_chhandcart(var_a2);
+            func_808031D0_chhandcart(arg0, 2);
+            break;
+        case 0xF87:                                 /* switch 5 */
+            func_80800AB0_chhandcart(var_a2);
+            func_808031D0_chhandcart(arg0, 2);
+            break;
+        case 0xF85:                                 /* switch 5 */
+            func_80800AB0_chhandcart(var_a2);
+            func_808031D0_chhandcart(arg0, 2);
+            arg0->unk64_19 = 1;
+            var_a2->unk64_19 = 1;
+            break;
+        case 0xFAF:                                 /* switch 5 */
+            func_80800AB0_chhandcart(var_a2);
+            func_808031D0_chhandcart(arg0, 0x12);
+            break;
+        }
+        arg0->unk74_30 = 0;
+        break;
+    case52://Such a weird thing to do
+        if (func_801022E4(arg0) == 0x7D)
+        {
+            _gcdialogcamera_entrypoint_3(&D_80804E4C_chhandcart, arg0->scale);
+        }
+        else
+        {
+            _gcdialogcamera_entrypoint_3(&D_80804E5C_chhandcart, arg0->scale);
+        }
+        break;
+    case 31:                                        /* switch 1 */
+        func_801015D0(arg0);
+        if (((u32)arg0->unk72 >> 0xA == 0x18) || ((u32)arg0->unk72 >> 0xA == 0x19))
+        {
+            func_800DF744(3, 1);
+        }
+        else
+        {
+            func_800DF744(3, 0);
+        }
+        break;
+    default:                                        /* switch 1 */
+        return 0;
+    }
+    return 1;
+}
 
 void func_8080436C_chhandcart(void) 
 {

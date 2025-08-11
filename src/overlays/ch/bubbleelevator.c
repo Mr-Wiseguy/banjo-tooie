@@ -325,7 +325,7 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
         func_800EF04C(sp4C, sp40);
         sp38[0] = (func_80013970(sp5C) * sp58) + 1.0f;
         sp38[1] = (func_800138D0(sp5C) * sp58) + 1.0f;
-        arg0->unk7E = (((_chbubble_entrypoint_0(arg1, sp4C, sp38, arg0->scale, 4000.0f) << 3 << 1) & 0x10) | (arg0->unk7E & 0xFFEF));
+        arg0->unk7C_12 = _chbubble_entrypoint_0(arg1, sp4C, sp38, arg0->scale, 4000.0f);
     }
 }
 

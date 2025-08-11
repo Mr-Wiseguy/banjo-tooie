@@ -6,8 +6,11 @@
 
 #include "core2/1E2D890.h"
 
+#include "core2/1EB5E70.h"
+
 #include "core2/1E691A0.h"
 #include "core2/1E78170.h"
+#include "core2/1E7E9A0.h"
 
 #include "core2/1E97EF0.h"
 #include "core2/1E9A960.h"
@@ -29,6 +32,8 @@
 #include "core2/1ED4E30.h"
 #include "core2/1ED68A0.h"
 #include "core2/1ED8C80.h"
+
+#include "core2/1EDA900.h"
 #include "core2/1EDAEA0.h"
 
 #include "core2/1EDB4D0.h"
@@ -42,8 +47,16 @@
 #include "core2/1EE1510.h"
 #include "core2/1EE5DF0.h"
 
+#include "ca/pod.h"
+
 #include "gc/cubesearch.h"
+#include "gc/dialogcamera.h"
+#include "gc/level.h"
+#include "gc/goto.h"
+#include "gc/introtext.h"
+
 #include "gl/cutDll.h"
+#include "gl/splinefind.h"
 
 #include "su/deflect.h"
 #include "su/baddieaudioquick.h"
@@ -58,16 +71,11 @@ typedef struct {
     f32 unk0;
     f32 unk4;
     f32 unk8;
-    u16 unkC;
+    s16 unkC;
     s16 unkE;
-}unk80804D84_2;
-
-typedef struct {
-    unk80804D84_2* unk0[4];
 }unk80804D84;
-
-extern unk80804D84 D_80804D84_chhandcart;
-extern unk80804D84 D_80804D94_chhandcart;
+extern unk80804D84* (D_80804D84_chhandcart[4]);
+extern s32 D_80804D94_chhandcart[4];
 
 
 extern void* D_80804DC4_chhandcart;
@@ -136,7 +144,8 @@ extern u32 D_80804E0C_chhandcart;
 extern u32 D_80804E18_chhandcart;
 extern u32 D_80804E2C_chhandcart;
 extern u32 D_80804E38_chhandcart;
-
+extern u32 D_80804E4C_chhandcart;
+extern u32 D_80804E5C_chhandcart;
 extern f32 D_808046F4_chhandcart;
 extern u32 D_80804704_chhandcart;
 extern u32 D_80804714_chhandcart;

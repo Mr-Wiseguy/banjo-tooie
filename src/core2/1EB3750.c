@@ -16,8 +16,6 @@ u8* D_8012C770[3];
 u8 D_8012C780[12];
 u8 D_8012C78C[6];
 
-//Set Flag True
-void func_800DA544(s32);
 //Set Flag False
 void func_800DA524(s32);
 
@@ -149,6 +147,7 @@ void func_800DA268(void) {
     }
 }
 
+//Get Flag Value
 s32 func_800DA298(s32 index) {
     if ((index >= 0) && (index < 32)) {
         return ((1 << index) & D_8011B990) ? 1 : 0;
@@ -171,6 +170,7 @@ s32 func_800DA298(s32 index) {
     return 0;
 }
 
+//Set Flag Value
 void func_800DA3B8(s32 index, s32 set) {
     if ((index >= 0) && (index < 32)) {
         if (set != 0) {
@@ -200,10 +200,12 @@ void func_800DA3B8(s32 index, s32 set) {
     }
 }
 
+//Set Flag False
 void func_800DA524(s32 index) {
     func_800DA3B8(index, 0);
 }
 
+//Set Flag True
 void func_800DA544(s32 index) {
     func_800DA3B8(index, 1);
 }
@@ -281,6 +283,7 @@ s32 func_800DA980(s32 startIndex, s32 length) {
     return ret;
 }
 
+//Return Previous Flag State and Set New Flag State
 s32 func_800DA9E4(s32 index, s32 set) {
     s32 ret = func_800DA298(index);
     func_800DA3B8(index, set);

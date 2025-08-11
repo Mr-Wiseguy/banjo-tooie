@@ -3,6 +3,8 @@
 #include "common.h"
 
 void func_80101CDC(Actor*, f32);
+s32 func_80101DDC(Actor*);
+s32 func_80101E14(Actor*, u32);
 f32 func_80101F24();
 void func_80101FDC(void*, u32);
 s32 func_801022E4(Actor*);

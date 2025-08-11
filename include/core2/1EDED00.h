@@ -2,6 +2,7 @@
 #define __CORE2_1EDED00_H__
 #include "common.h"
 
+void func_80105634(Actor*);
 void func_80105834(Actor*);
 void func_801058C4(Actor*, s16, f32, u32);
 s32 func_80105998(Actor*, f32); 
