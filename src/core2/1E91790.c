@@ -13,9 +13,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B81CC.s")
 
+#ifndef NON_MATCHING
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8C50.s")
-
-/* Wasn't matching only diff was Registers being used were different
+#else
 //Reset Text Parameters
 void func_800B8C50(void)
 {
@@ -29,7 +29,7 @@ void func_800B8C50(void)
 	D_801282C0.data[6] = 0; //Font
 	D_801282C0.value = 1.0f; //Size
 }
-*/
+#endif
 
 //Set Text Transparency
 void func_800B8C8C(s32 Transparency)
@@ -53,8 +53,6 @@ void func_800B8CB0(s32 unk)
 {
 	D_801282C0.data[7] = unk;
 }
-
-//#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8CBC.s")
 
 void func_800B8CBC(s8 arg0, s8 arg1, s8 arg2)
 {
