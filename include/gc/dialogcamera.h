@@ -3,7 +3,7 @@
 #include "common.h"
 
 void _gcdialogcamera_entrypoint_3(u32*, f32);
-void _gcdialogcamera_entrypoint_6(u32*);
+void _gcdialogcamera_entrypoint_6(Unk80132ED0*);
 void _gcdialogcamera_entrypoint_8();
 
 #endif

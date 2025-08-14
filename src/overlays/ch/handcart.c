@@ -87,7 +87,62 @@ void func_80800214_chhandcart(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/handcart/func_808002B8_chhandcart.s")
+void func_808002B8_chhandcart(Actor* arg0, s32 arg1)
+{
+    f32* sp6C[1];
+    f32* sp68[1];
+    s16* var_s3;
+    s16* var_s4;
+    s32 var_s0;
+    SplineMemory* temp_v0;
+    u32 tempA1;
+    s32 pad;
+    HandcartMemory* sp4C;
+
+    tempA1 = arg1 - 1;
+    sp4C = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (SplineMemory*)func_80100074(arg0, 1U, _susplinet_entrypoint_18(D_80804B94_chhandcart[tempA1], 1, 1));
+    _susplinet_entrypoint_19(temp_v0, D_80804B94_chhandcart[tempA1], 1, 1);
+    for (var_s0 = 0; var_s0 <= 0; var_s0++)
+    {
+        sp6C[var_s0] = _susplinet_entrypoint_14(temp_v0, var_s0);
+    }
+
+    for (var_s0 = 0; var_s0 <= 0; var_s0++)
+    {
+        sp68[var_s0] = _susplinet_entrypoint_15(temp_v0, var_s0);
+    }
+
+    var_s3 = _susplinet_entrypoint_12(temp_v0);
+    var_s4 = _susplinet_entrypoint_13(temp_v0);
+    for (var_s0 = 0; var_s0 < D_80804B94_chhandcart[tempA1]; var_s0++)
+    {
+        func_800EE7F8(sp68[1], D_80804B84_chhandcart[tempA1][var_s0].unk0);
+        var_s3[0] = D_80804B84_chhandcart[tempA1][var_s0].unk10;
+        var_s4[0] = -1;
+        *sp68[0] = D_80804B84_chhandcart[tempA1][var_s0].unk0[3];
+        _susplinet_entrypoint_0(temp_v0, var_s0, 2, ((D_80804B84_chhandcart[tempA1][var_s0].unk12 & 1) != 0) ? (1) : (0));
+        _susplinet_entrypoint_0(temp_v0, var_s0, 4, ((D_80804B84_chhandcart[tempA1][var_s0].unk12 & 2) != 0) ? (1) : (0));
+        var_s3++;
+        var_s4++;
+        *sp68 += 1;
+        *sp6C += 3;
+    }
+
+    for (var_s0 = 0; var_s0 <= 0; var_s0++)
+    {
+        sp6C[var_s0] = _susplinet_entrypoint_14(temp_v0, var_s0);
+    }
+
+    for (var_s0 = 0; var_s0 <= 0; var_s0++)
+    {
+        sp68[var_s0] = _susplinet_entrypoint_15(temp_v0, var_s0);
+    }
+
+    func_800F0EF0(D_80804B94_chhandcart[tempA1], sp6C[0]);
+    sp4C->unk8F5 = arg1;
+    sp4C->unk8F6 = 0;
+}
 
 void func_80800528_chhandcart(Actor* arg0)
 {
@@ -1886,12 +1941,11 @@ void func_80803794_chhandcart(Actor* arg0)
     }
 }
 
-
 s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
 {
+    HandcartMemory* temp_t0;
     u32 temp_a0;
     Actor* temp_s0;
-    HandcartMemory* temp_t0;
     Actor* var_a2;
 
     if (arg1 >= 0x30)
@@ -1903,11 +1957,11 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         return 0;
     }
     switch (arg1)
-    {                                 /* switch 1 */
-    case 14:                                        /* switch 1 */
+    {
+    case 14:
         func_80802400_chhandcart(arg0, arg2);
         return 3;
-    case 47:                                        /* switch 1 */
+    case 47:
         temp_t0 = (HandcartMemory*)func_80100094(func_80106790((s32)arg0->unk3C), 0U);
         switch (*(s16*)&arg2)
         {
@@ -1921,19 +1975,19 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         break;
-    case 13:                                        /* switch 1 */
+    case 13:
         temp_s0 = func_80106790((s32)arg0->unk3C);
         switch (arg2 & 0xFFFF)
-        {                          /* switch 4; irregular */
-        case 1:                                     /* switch 4 */
+        {
+        case 1:
             func_8080090C_chhandcart(temp_s0, 0x1D, 0x2000, func_80101080());
             break;
-        case 4:                                     /* switch 4 */
+        case 4:
             func_8080090C_chhandcart(temp_s0, 0x19, 0x2000, func_80101080());
             break;
         }
         break;
-    case 0x28:                                        /* switch 1 */
+    case 46:
         temp_a0 = arg0->unk3C;
         if (arg0->unk3C != 0)
         {
@@ -1964,21 +2018,21 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             func_808000B4_chhandcart(arg0);
             func_800904C8(0x28U);
             break;
-        case 0xF82:                                 /* switch 5 */
+        case 0xF82:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             break;
-        case 0xF87:                                 /* switch 5 */
+        case 0xF87:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             break;
-        case 0xF85:                                 /* switch 5 */
+        case 0xF85:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
             arg0->unk64_19 = 1;
             var_a2->unk64_19 = 1;
             break;
-        case 0xFAF:                                 /* switch 5 */
+        case 0xFAF:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 0x12);
             break;
@@ -1995,7 +2049,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             _gcdialogcamera_entrypoint_3(&D_80804E5C_chhandcart, arg0->scale);
         }
         break;
-    case 31:                                        /* switch 1 */
+    case 31:
         func_801015D0(arg0);
         if (((u32)arg0->unk72 >> 0xA == 0x18) || ((u32)arg0->unk72 >> 0xA == 0x19))
         {
@@ -2006,7 +2060,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             func_800DF744(3, 0);
         }
         break;
-    default:                                        /* switch 1 */
+    default:
         return 0;
     }
     return 1;

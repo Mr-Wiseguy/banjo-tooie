@@ -132,6 +132,14 @@ typedef struct {
     u8 unk100;
 } CanaryMaryMemory;
 
+typedef struct {
+    f32 unk0[4];
+    s16 unk10;
+    s16 unk12;
+}unk80804B84;
+extern unk80804B84* D_80804B84_chhandcart[4];
+extern s32 D_80804B94_chhandcart[4];
+
 extern f32 func_80013970(f32);
 
 //Size 0x9C
