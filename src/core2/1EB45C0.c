@@ -1,5 +1,4 @@
-#include <ultra64.h>
-#include "types.h"
+#include "core2/1EB45C0.h"
 
 s16 func_800A8184(void);
 f32 func_800D9004(void);
@@ -136,6 +135,7 @@ void func_800DB8BC(char* arg0, s32 time) {
     func_800E6A10(arg0, "");
 }
 
-void func_800DB9B0(void) {
-    func_800DA298(1601);
+//Is in a cutscene
+int func_800DB9B0(void) {
+    return func_800DA298(1601);
 }
