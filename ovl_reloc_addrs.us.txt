@@ -11424,8 +11424,8 @@ rom:0x01FD0A58 symbol:jtbl_80801210_chterryegg reloc:MIPS_LO16
 rom:0x01FD0B58 symbol:func_808010B0_chterryegg reloc:MIPS_26
 rom:0x01FD0CA4 symbol:func_80801188_chterryegg reloc:MIPS_26
 rom:0x01FD0F08 symbol:func_80801188_chterryegg reloc:MIPS_26
-rom:0x01FD0F74 symbol:jtbl_80801228_chterryegg reloc:MIPS_HI16
-rom:0x01FD0F7C symbol:jtbl_80801228_chterryegg reloc:MIPS_LO16
+rom:0x01FD0F74 symbol:R_80801228_chterryegg reloc:MIPS_HI16
+rom:0x01FD0F7C symbol:R_80801228_chterryegg reloc:MIPS_LO16
 rom:0x01FD0FB4 symbol:func_80800FE0_chterryegg reloc:MIPS_26
 rom:0x01FD1014 symbol:func_808010DC_chterryegg reloc:MIPS_26
 rom:0x01FD112C symbol:func_80801080_chterryegg reloc:MIPS_26
