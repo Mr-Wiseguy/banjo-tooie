@@ -65,7 +65,7 @@ void gcnewpause_entrypoint_1(PauseState* a0)
 	heap_free(a0);
 }
 
-#ifndef NONMATCHING
+#ifndef NON_MATCHING
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newpause/gcnewpause_entrypoint_2.s")
 #else
 //Functionality update
