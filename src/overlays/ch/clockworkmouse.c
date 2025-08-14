@@ -87,7 +87,7 @@ void func_8080019C_chclockworkmouse(Actor *actor) {
 }
 
 void func_80800240_chclockworkmouse(Actor *actor, s32 arg1) {
-    Vec3f *sp6C[1]; // vec3f ref?
+    Vec3f *sp6C[1];
     f32 *sp68[1];
     s16* var_s3;
     s16* var_s4;
@@ -226,14 +226,66 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
     }
 }
 
-// jump table issues
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80800850_chclockworkmouse.s")
+void func_80800850_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+    Unk80100094* sp1C;
 
-// jump table issues
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_808008DC_chclockworkmouse.s")
+    sp1C = func_80100094(arg0, 0);
+    func_80800734_chclockworkmouse(arg0);
+    switch (sp1C->unkFA) {
+    case 0:
+        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        /* fallthrough */
+    case 2:
+    case 3:
+    case 4:
+        sp1C->unkFA = 1;
+        /* fallthrough */
+    case 1:
+        _capod_entrypoint_6(arg3, arg1, arg2);
+        break;
+    }
+}
 
-// jump table issues
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80800968_chclockworkmouse.s")
+void func_808008DC_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+    Unk80100094* sp1C;
+
+    sp1C = func_80100094(arg0, 0);
+    func_80800734_chclockworkmouse(arg0);
+    switch (sp1C->unkFA) {
+    case 0:
+        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        /* fallthrough */
+    case 1:
+    case 2:
+    case 3:
+        sp1C->unkFA = 4;
+        /* fallthrough */
+    case 4:
+        _capod_entrypoint_20(arg3, (s32) arg1, arg2);
+        break;
+    }
+}
+
+void func_80800968_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2) {
+    Unk80100094* sp1C;
+
+    sp1C = func_80100094(arg0, 0);
+    func_80800734_chclockworkmouse(arg0);
+    switch (sp1C->unkFA) {
+    case 0:
+        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        /* fallthrough */
+    case 1:
+    case 2:
+    case 4:
+        sp1C->unkFA = 3;
+        /* fallthrough */
+    case 3:
+        _capod_entrypoint_8(0);
+        func_80800240_chclockworkmouse(arg0, arg1);
+        break;
+    }
+}
 
 void func_808009F4_chclockworkmouse(Actor *actor) {
     Unk80100094 *sp1C;
@@ -320,8 +372,58 @@ void func_80800CC0_chclockworkmouse(Actor *actor) {
     _subaddieDll_entrypoint_4(actor, 1);
 }
 
-// jump table issues
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80800D14_chclockworkmouse.s")
+void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
+    Unk80100094* sp24;
+    s32 var_a0;
+
+    sp24 = func_80100094(actor, 0);
+    switch (((u32)actor->unk72) >> 0xA) {
+    case 11:
+        break;
+    case 4: 
+        func_800F4CC0(func_800F54E4());
+        break;
+    case 23:
+        func_80103140(actor, 0x8A0, ((u16*)actor->unk0)[0xB]);
+        break;
+    }
+    func_80102424(actor, arg1);
+    switch (((u32)actor->unk72) >> 0xA) {
+    case 3:
+        func_800903D0(actor->pos);
+        break;
+    case 4:
+        func_800904F4(0x27, actor->unk0);
+        sp24->unk100 = 1;
+        func_800F4CEC(func_800F54E4(), 0x3B);
+        break;
+    case 5:
+        func_800904F4(0x27, actor->unk0);
+        sp24->unk100 = 1;
+        break;
+    case 6:
+        sp24->unkDC = 0.15f;
+        for (var_a0 = 0; var_a0 < 10; var_a0++) {
+            sp24->unkF0[var_a0] = 1;
+        }
+        break;
+    case 7:
+        func_80800C64_chclockworkmouse(actor);
+        break;
+
+        // ?????????
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+        break;
+    }
+    func_80800CC0_chclockworkmouse(actor);
+}
 
 void func_80800E8C_chclockworkmouse(Actor *actor, s32 arg1) {
     Actor *sp1C;

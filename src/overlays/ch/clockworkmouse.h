@@ -154,9 +154,6 @@ Actor *func_80106790(s32);
 void _capod_entrypoint_2(s32, s32, s32);                 /* extern */
 void func_8008FB58(f32[3], f32, f32);                         /* extern */
 s32 func_80105998(Actor *, s32);                        /* extern */
-void func_80800850_chclockworkmouse(Actor *, s16, s32, s32); /* extern */
-void func_808008DC_chclockworkmouse(Actor *, s16, s32, s32); /* extern */
-void func_80800968_chclockworkmouse(Actor *, u8, s32);       /* extern */
 void _subaddieDll_entrypoint_4(Actor *, s32);                     /* extern */
 void func_800903D0(f32[3]);                             /* extern */
 void func_800904C8(s32);                                 /* extern */
@@ -218,4 +215,11 @@ s32 func_800D0A9C(s32, s32);                            /* extern */
 s32 func_800DA298(s32);                               /* extern */
 void func_801058C4(Actor*, s16, f32, s32);               /* extern */
 void func_808026E0_chclockworkmouse(Actor*, s32);        /* extern */
+void _capod_entrypoint_6(s32, s32, s32);               /* extern */
+void func_800904F4(s32, s32);                            /* extern */
+void func_800F4CC0(s32);                               /* extern */
+void func_800F4CEC(s32, s32);                            /* extern */
+s32 func_800F54E4(void);                                /* extern */
+void func_80102424(Actor*, s32);                       /* extern */
+
 #endif // __CH_CLOCKWORKMOUSE_H__
