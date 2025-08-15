@@ -6,8 +6,9 @@ extern s32 D_80803CE8_chclockworkmouse[4];
 extern Unk80803E08 *D_80803E08_chclockworkmouse[4];
 extern s32 D_80803E18_chclockworkmouse[4];
 extern s32 D_80803E28_chclockworkmouse[4];
-extern s32 *D_80803E48_chclockworkmouse;
-extern s32 *D_80803EF0_chclockworkmouse;
+extern ActorData *D_80803E48_chclockworkmouse;
+extern ActorData *D_80803EF0_chclockworkmouse;
+
 extern f32 D_80803E3C_chclockworkmouse[3]; // all 0s
 
 extern void *D_80803950_chclockworkmouse; // unknown data
@@ -17,6 +18,8 @@ extern void *D_80803E90_chclockworkmouse; // unknown data
 extern void *D_80803E9C_chclockworkmouse; // unknown data
 extern void *D_80803EB0_chclockworkmouse; // unknown data
 extern void *D_80803EBC_chclockworkmouse; // unknown data
+extern void *D_80803ED0_chclockworkmouse; // unknown data
+extern void *D_80803EE0_chclockworkmouse; // unknown data
 
 s32 func_80800000_chclockworkmouse(void) {
     return func_800DA564(0xA37, 3);
@@ -226,14 +229,14 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
     }
 }
 
-void func_80800850_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, s32 arg3) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(arg0, 0);
-    func_80800734_chclockworkmouse(arg0);
+    sp1C = func_80100094(actor, 0);
+    func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
-        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        func_80800700_chclockworkmouse(&actor->unk0, arg2);
         /* fallthrough */
     case 2:
     case 3:
@@ -246,14 +249,14 @@ void func_80800850_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-void func_808008DC_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, s32 arg3) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(arg0, 0);
-    func_80800734_chclockworkmouse(arg0);
+    sp1C = func_80100094(actor, 0);
+    func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
-        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        func_80800700_chclockworkmouse(&actor->unk0, arg2);
         /* fallthrough */
     case 1:
     case 2:
@@ -266,14 +269,14 @@ void func_808008DC_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-void func_80800968_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2) {
+void func_80800968_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(arg0, 0);
-    func_80800734_chclockworkmouse(arg0);
+    sp1C = func_80100094(actor, 0);
+    func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
-        func_80800700_chclockworkmouse(&arg0->unk0, arg2);
+        func_80800700_chclockworkmouse(&actor->unk0, arg2);
         /* fallthrough */
     case 1:
     case 2:
@@ -282,7 +285,7 @@ void func_80800968_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2) {
         /* fallthrough */
     case 3:
         _capod_entrypoint_8(0);
-        func_80800240_chclockworkmouse(arg0, arg1);
+        func_80800240_chclockworkmouse(actor, arg1);
         break;
     }
 }
@@ -361,11 +364,7 @@ void func_80800C64_chclockworkmouse(Actor *actor) {
 }
 
 void func_80800CC0_chclockworkmouse(Actor *actor) {
-    u32 temp_t6;
-
-    temp_t6 = actor->unk72;
-    temp_t6 >>= 0xA;
-    if (temp_t6 == 0 || temp_t6 == 1 || temp_t6 == 2) {
+    if (actor->unk70_10 == 0 || actor->unk70_10 == 1 || actor->unk70_10 == 2) {
         _subaddieDll_entrypoint_4(actor, 0);
         return;
     }
@@ -377,7 +376,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     s32 var_a0;
 
     sp24 = func_80100094(actor, 0);
-    switch (((u32)actor->unk72) >> 0xA) {
+    switch (actor->unk70_10) {
     case 11:
         break;
     case 4: 
@@ -388,7 +387,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
         break;
     }
     func_80102424(actor, arg1);
-    switch (((u32)actor->unk72) >> 0xA) {
+    switch (actor->unk70_10) {
     case 3:
         func_800903D0(actor->pos);
         break;
@@ -516,7 +515,7 @@ void func_80801240_chclockworkmouse(Actor* actor) {
     temp_f20 = func_80105AE8(actor);
     temp_v0 = func_80100094(actor, 0);
     temp_s5 = func_800D7520(temp_v0->unk0.shorts.unk0);
-    temp_f28 = func_800D8FF8();
+    temp_f28 = func_800D8FF8(); 
     for (var_s3 = 0; var_s3 < 10; var_s3++) {
         if (temp_v0->unkF0[var_s3] == 1) {
             temp_f0 = func_800C7B7C(temp_s5, temp_v0->unkEC, 250.0f, 1.0f);
@@ -577,7 +576,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
     sp3C = func_80106790(actor->unk3C);
     sp34 = func_80100094(actor, 0);
     sp34->unk8 += 5.0f * actor->unk24 * sp38;
-    switch (((u32)actor->unk72) >> 0xA) {
+    switch (actor->unk70_10) {
     case 2:
     case 17:
         func_80800774_chclockworkmouse(actor);
@@ -722,7 +721,7 @@ void func_80801A94_chclockworkmouse(Actor* actor) {
 void func_80801B44_chclockworkmouse(Actor *actor, s32 arg1, s32 arg2) {
     arg2 |= 4;
     _subaddiedialog_entrypoint_11(actor->unk0, arg1, arg2, actor->pos, 0x36);
-    actor->unk74 = (actor->unk74 & 0xFF) | 0x40;
+    actor->unk74.bytes[0] = (actor->unk74.bytes[0] & 0xFF) | 0x40;
 }
 
 void func_80801B90_chclockworkmouse(Actor *actor, s32 arg1) {
@@ -793,7 +792,9 @@ void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/chclockworkmouse_entrypoint_0.s")
+s32 **chclockworkmouse_entrypoint_0(void) {
+    return &D_80803E48_chclockworkmouse;
+}
 
 void func_80801E2C_chclockworkmouse(Actor* actor) {
     Unk80100094* sp2C;
@@ -867,30 +868,577 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
     _suexpression_entrypoint_12(func_80100094(actor, 1), 45.0f, 15.0f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802170_chclockworkmouse.s")
+void func_80802170_chclockworkmouse(Actor *actor) {
+    if (actor->unk70_10 == 0x10) {
+        func_800904C8(0x28);
+    }
+    if (func_80100094(actor, 1) != NULL) {
+        _suexpression_entrypoint_8(actor, 1);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_808021C4_chclockworkmouse.s")
+void func_808021C4_chclockworkmouse(Actor* actor) {
+    Unk80100094* temp_s1;
+    f32 sp20;
+    f32 f2;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_808022E4_chclockworkmouse.s")
+    sp20 = 0.1f;
+    temp_s1 = func_80100094(actor, 0);
+    func_80105A9C(actor, actor->unk24 * 10.0f);
+    func_80105834(actor);
+    f2 = (actor->unk24 * func_800F1DCC(actor->rotation[1], temp_s1->unk4) * 0.5f);
+    temp_s1->unk8 = (f2 - temp_s1->unk8) * 0.02f;
+    actor->rotation[2] = temp_s1->unk8;
+    temp_s1->unk4 = actor->rotation[1];
+    if (temp_s1->unkC.bytes[2] == 0) {
+        sp20 = 1.0f;
+        temp_s1->unkC.bytes[2] = 1;
+    }
+    actor->rotation[0] += func_800F1DCC(actor->unk50 * 0.1f, actor->rotation[0]) * sp20;
+    actor->rotation[1] += func_800F1DCC(actor->unk54, actor->rotation[1]) * sp20;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_808026E0_chclockworkmouse.s")
+void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
+    Actor* sp2C;
+    Unk80100094* sp28;
+    s32 sp24;
+    s32 sp20;
+    s32 temp_v0;
+    u16 temp_a1;
+    u32 temp_t1;
+    u32 temp_t6;
+    u8 var_a1;
+    u8 var_a1_2;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802724_chclockworkmouse.s")
+    sp2C = func_80106790(actor->unk3C);
+    sp28 = func_80100094(actor, 0);
+    switch (actor->unk70_10) {
+    case 19:
+        actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFF) | 1;
+        break;
+    case 23:
+        func_808009F4_chclockworkmouse(sp2C);
+        break;
+    case 15:
+        func_80090708(0);
+        break;
+    }
+    func_80102424(actor, arg1);
+    switch (actor->unk70_10) {
+    case 19:
+        actor->unk64.bytes[1] &= 0xFFFE;
+        break;
+    case 20:
+        func_800DA544(0x504);
+        actor->unk24 = 40.0f;
+        func_80800850_chclockworkmouse(sp2C, 0x47, 0x20B0, actor->unk0);
+        break;
+    case 23:
+        actor->unk58 = 1.0f;
+        break;
+    case 5:
+        func_808008DC_chclockworkmouse(sp2C, 4, 5, sp2C->unk0);
+        func_80801B44_chclockworkmouse(actor, 0xCEC, 3);
+        func_801058C4(actor, sp28->unkC.shorts[0], actor->unk24, 0);
+        break;
+    case 6:
+        func_800FDC28(0x13);
+        if (actor->unk64.bits.unk64_19) {
+            actor->unk24 = 55.0f;
+        } else {
+            actor->unk24 = 35.0f;
+        }
+        break;
+    case 7:
+        func_80800024_chclockworkmouse(2);
+        func_80090658(1);
+        break;
+    case 8:
+        if (func_80105AE8(actor) < 0.93f) {
+            func_80800968_chclockworkmouse(sp2C, actor->unk64.bits.unk64_19 ? 4 : 2, 4);
+        } else {
+            func_808008DC_chclockworkmouse(sp2C, 5, 5, actor->unk0);
+        }
+        break;
+    case 9:
+        func_80800024_chclockworkmouse(1);
+        break;
+    case 10:
+        if (func_80105AE8(sp2C) < 0.93f) {
+            func_80800968_chclockworkmouse(sp2C, actor->unk64.bits.unk64_19 ? 3 : 1, 4);
+        } else {
+            func_808008DC_chclockworkmouse(sp2C, 5, 5, sp2C->unk0);
+        }
+        break;
+    case 14:
+        actor->unk58 = 0.5f;
+        break;
+    case 16:
+        if (func_800D0A9C(0x4A, 1) != 0) {
+            sp24 = 0x142D;
+        } else {
+            sp24 = 0x1429;
+        }
+        func_8080079C_chclockworkmouse(sp2C, actor, 3, 1);
+        func_80801B44_chclockworkmouse(actor, sp24, 3);
+        func_800FDC28(0);
+        func_800FC660(0x17);
+        break;
+    case 15:
+        sp20 = 0;
+        func_80090658(0);
+        func_80090734(1, actor->pos);
+        func_8080079C_chclockworkmouse(sp2C, actor, 2, 1);
+        temp_v0 = func_80800090_chclockworkmouse();
+        switch (temp_v0) {                          /* switch 2; irregular */
+        case 1:                                     /* switch 2 */
+            if (func_800D0A9C(0x4A, 1) != 0) {
+                sp20 = 0x142C;
+            } else {
+                sp20 = 0x1428;
+            }
+            break;
+        case 2:                                     /* switch 2 */
+            if (func_800D0A9C(0x4A, 1) != 0) {
+                sp20 = 0x142E;
+            } else {
+                sp20 = 0x142A;
+            }
+            break;
+        }
+        func_80801B44_chclockworkmouse(actor, sp20, 0xB);
+        break;
+    case 18:
+        actor->unk24 = 40.0f;
+        func_801058C4(actor, sp28->unkC.shorts[0], 40.0f, 0);
+        func_808021C4_chclockworkmouse(actor);
+        func_80800850_chclockworkmouse(sp2C, 0x4B, 0x20B0, actor->unk0);
+        break;
+    }
+    func_80800CC0_chclockworkmouse(actor);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_8080297C_chclockworkmouse.s")
+void func_808026E0_chclockworkmouse(Actor *actor, s32 arg1) {
+    Actor *sp1C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802A48_chclockworkmouse.s")
+    sp1C = func_80106790(actor->unk3C);
+    func_808022E4_chclockworkmouse(actor, arg1);
+    func_80800D14_chclockworkmouse(sp1C, arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802BCC_chclockworkmouse.s")
+void func_80802724_chclockworkmouse(Actor* actor, Actor* arg1) {
+    f32 sp1C;
+    f32 sp18;
+    f32 temp_f0;
+    f32 var_f2;
+    u32 temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802C04_chclockworkmouse.s")
+    if (arg1->unk7C.flags & 0xFFF) {
+        sp1C = func_80105AE8(arg1);
+    } else {
+        sp1C = 1.0f;
+    }
+    sp1C = sp1C;
+    sp18 = func_80105AE8(actor);
+    temp_f0 = func_800D8FF8();
+    temp_v0 = (u32) (actor->unk64.flags << 0xC) >> 0x1F;
+    if (sp1C <= (sp18 - 0.099990845f)) {
+        func_808026E0_chclockworkmouse(actor, 0x10);
+        return;
+    }
+    if (temp_v0 != 0) {
+        var_f2 = 0.004989624f;
+    } else {
+        var_f2 = 0.009994507f;
+    }
+    if (sp1C <= (sp18 - var_f2)) {
+        if (temp_v0 != 0) {
+            sp18 = 185.0f;
+        } else {
+            sp18 = 165.0f;
+        }
+        if (temp_v0 != 0) {
+            var_f2 = 15.0f;
+        } else {
+            var_f2 = 25.0f;
+        }
+        if ((sp18 - var_f2) < actor->unk24) {
+            if (temp_v0 != 0) {
+                var_f2 = 65.0f;
+            } else {
+                var_f2 = 45.0f;
+            }
+            actor->unk24 -= (var_f2 * temp_f0);
+        }
+        return;
+    }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802C64_chclockworkmouse.s")
+    if (temp_v0 != 0) {
+        var_f2 = 0.004989624f;
+    } else {
+        var_f2 = 0.019989014f;
+    }
+    if ((var_f2 + sp18) <= sp1C) {
+        if (temp_v0 != 0) {
+            sp18 = 185.0f;
+        } else {
+            sp18 = 165.0f;
+        }
+        if (actor->unk24 < (15.0f + sp18)) {
+            if (temp_v0 != 0) {
+                var_f2 = 65.0f;
+            } else {
+                var_f2 = 45.0f;
+            }
+            actor->unk24 += (var_f2 * temp_f0);
+        }
+    } else {
+        if (temp_v0 != 0) {
+            var_f2 = 185.0f;
+        } else {
+            var_f2 = 165.0f;
+        }
+        if (actor->unk24 < var_f2) {
+            if (temp_v0 != 0) {
+                var_f2 = 65.0f;
+            } else {
+                var_f2 = 45.0f;
+            }
+            actor->unk24 += (var_f2 * temp_f0);
+        }
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80802CC8_chclockworkmouse.s")
+s32 func_8080297C_chclockworkmouse(Actor* actor) {
+    s32 pad;
+    f32 sp38[3];
+    f32 sp2C[3];
+    f32 sp20[3];
+    f32 sp1C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_808032F8_chclockworkmouse.s")
+    sp1C = func_800D8FF8();
+    func_800EE7F8(sp38, actor->pos);
+    sp38[1] += 50.0f;
+    func_800EE7F8(sp2C, actor->pos);
+    sp2C[1] -= 50.0f;
+    if (func_800BEF00(sp38, sp2C, sp20, 0x20020) == 0 || sp2C[1] < actor->pos[1]) {
+        actor->pos[1] -= 250.0f * sp1C;
+        return 0;
+    }
+    return 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_8080364C_chclockworkmouse.s")
+void func_80802A48_chclockworkmouse(Actor* actor) {
+    f32 sp24;
+    f32 sp20;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/chclockworkmouse_entrypoint_1.s")
+    actor->unk54 = func_8010CD28(actor);
+    sp24 = func_800F1DCC(actor->rotation[1], actor->unk54);
+    if ((sp24 < -10.0f) || (sp24 > 10.0f)) {
+        sp20 = func_80101F24(actor);
+        switch (func_801022E4(actor)) {
+        case 0x80:
+            if ((sp20 > 0.75f) && (sp20 < 0.88f)) {
+                func_80102B2C(actor, 6.0f);
+                return;
+            }
+            break;
+        case 0x85:
+            if (((sp20 > 0.76f) && (sp20 < 0.99f)) || ((sp20 > 0.25f) && (sp20 < 0.51f))) {
+                actor->rotation[1] += sp24 > 0.0f ? -6.0f : 6.0f;
+            }
+            break;
+        }
+    }
+}
+
+void func_80802BCC_chclockworkmouse(Actor *actor) {
+    _sudeflect_entrypoint_1(actor->pos, 180.0f, 0.0f, 65.0f, 0x1E);
+}
+
+void func_80802C04_chclockworkmouse(Actor *actor, Actor *actor2) {
+    Unk80100094 *sp1C;
+
+    sp1C = func_80100094(actor2, 0);
+    if (func_80105998(actor2, 0.94f) != 0) {
+        sp1C->unkFE = 0;
+        func_808008DC_chclockworkmouse(actor2, 5, 5, actor2->unk0);
+    }
+}
+
+void func_80802C64_chclockworkmouse(Actor *actor, Actor *actor2) {
+    Unk80100094 *sp1C;
+
+    sp1C = func_80100094(actor2, 0);
+    if (func_80105998(actor, 0.94f) != 0) {
+        sp1C->unkFE = 0;
+        func_808008DC_chclockworkmouse(actor2, 5, 5, actor->unk0);
+    }
+}
+
+void func_80802CC8_chclockworkmouse(Actor* arg0) {
+    Actor* sp34;
+    Unk80100094* sp30;
+    f32 sp2C;
+
+    sp34 = func_80106790(arg0->unk3C);
+    sp30 = func_80100094(sp34, 0);
+    sp2C = func_800D8FF8();
+    _suexpression_entrypoint_10(func_80100094(arg0, 1), arg0->unk0, 0);
+    switch (arg0->unk70_10) {
+    case 20:
+        func_808021C4_chclockworkmouse(arg0);
+        if (func_80105A5C(arg0) != 0) {
+            func_80105634(arg0);
+            func_808026E0_chclockworkmouse(arg0, 0x15);
+        }
+        break;
+    case 21:
+        if ((func_8080297C_chclockworkmouse(arg0) != 0) && (func_80101E14(arg0, 0.999f) != 0)) {
+            func_808026E0_chclockworkmouse(arg0, 0x16);
+        }
+        break;
+    case 22:
+        if (func_80101DDC(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 0x17);
+        }
+        break;
+    case 23:
+        if (arg0->unk58 > 0.0f) {
+            arg0->unk58 -= sp2C;
+        } else if (_glcutDll_entrypoint_19(0x55) != 0) {
+            _glcutDll_entrypoint_17();
+        } else {
+            func_808026E0_chclockworkmouse(arg0, 0x11);
+        }
+        break;
+    case 17:
+        func_80802BCC_chclockworkmouse(arg0);
+        func_80802A48_chclockworkmouse(arg0);
+        if (func_800DA298(0x42B) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 2);
+        } else if (!(arg0->unk74.bits.unk74_30) && (func_80090178(1) != 0) && (_subaddiedialog_entrypoint_3(arg0->pos, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+            func_800DA544(0x42B);
+            func_8080079C_chclockworkmouse(sp34, arg0, 2, 0);
+            func_80801B44_chclockworkmouse(arg0, 0x1426, 0xB);
+        }
+        break;
+    case 2:
+        func_80802BCC_chclockworkmouse(arg0);
+        func_80802A48_chclockworkmouse(arg0);
+        if (!arg0->unk74.bits.unk74_30 && (func_80090178(1) != 0) && (_subaddiedialog_entrypoint_6(arg0->pos, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+            func_80801B44_chclockworkmouse(arg0, arg0->unk64.bits.unk64_19 ? 0x1436 : 0x1427 , 0xB);
+        }
+        break;
+    case 5:
+        func_80802A48_chclockworkmouse(arg0);
+        func_80802BCC_chclockworkmouse(arg0);
+        func_808021C4_chclockworkmouse(arg0);
+        break;
+    case 6:
+        func_80802724_chclockworkmouse(arg0, sp34);
+        func_808021C4_chclockworkmouse(arg0);
+        if (func_80105998(sp34, 0.05f) != 0) {
+            sp30->unkFE = 1;
+            func_80800968_chclockworkmouse(sp34, sp34->unk64.bits.unk64_19 ? 3 : 1, 4);
+        }
+        func_80802C04_chclockworkmouse(arg0, sp34);
+        if (func_80105A5C(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 9);
+        }
+        break;
+    case 7:
+        func_80802724_chclockworkmouse(arg0, sp34);
+        func_808021C4_chclockworkmouse(arg0);
+        func_80802C64_chclockworkmouse(arg0, sp34);
+        if (func_80090248() != 0) {
+            func_808026E0_chclockworkmouse(arg0, 8);
+        }
+        if (func_80105A5C(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 0xC);
+        }
+        break;
+    case 8:
+        func_80802724_chclockworkmouse(arg0, sp34);
+        func_808021C4_chclockworkmouse(arg0);
+        func_80802C64_chclockworkmouse(arg0, sp34);
+        if (func_80105A5C(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 0xC);
+        }
+        break;
+    case 9:
+        func_80802C04_chclockworkmouse(arg0, sp34);
+        if (func_80105A5C(sp34) != 0) {
+            func_80800C64_chclockworkmouse(sp34);
+        }
+        if ((func_8080297C_chclockworkmouse(arg0) != 0) && (func_80101E14(arg0, 0.999f) != 0)) {
+            func_808026E0_chclockworkmouse(arg0, 0xA);
+        }
+        break;
+    case 10:
+        func_80802C04_chclockworkmouse(arg0, sp34);
+        func_80802BCC_chclockworkmouse(arg0);
+        if (func_80105A5C(sp34) != 0) {
+            func_80800C64_chclockworkmouse(sp34);
+        }
+        if (func_80101DDC(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 0xB);
+        }
+        break;
+    case 11:
+        func_80802C04_chclockworkmouse(arg0, sp34);
+        func_80802BCC_chclockworkmouse(arg0);
+        func_80802A48_chclockworkmouse(arg0);
+        if (func_80105A5C(sp34) != 0) {
+            func_80800C64_chclockworkmouse(sp34);
+            func_808026E0_chclockworkmouse(arg0, 0xE);
+        }
+        break;
+    case 12:
+        if ((func_8080297C_chclockworkmouse(arg0) != 0) && (func_80101E14(arg0, 0.999f) != 0)) {
+            func_808026E0_chclockworkmouse(arg0, 0xD);
+        }
+        break;
+    case 13:
+        func_80802BCC_chclockworkmouse(arg0);
+        if (func_80101DDC(arg0) != 0) {
+            func_808026E0_chclockworkmouse(arg0, 0xE);
+        }
+        break;
+    case 14:
+        if (arg0->unk58 > 0.0f) {
+            arg0->unk58 -= sp2C;
+        } else {
+            func_8080019C_chclockworkmouse(arg0);
+        }
+        break;
+    case 15:
+        func_80802A48_chclockworkmouse(arg0);
+        func_80802BCC_chclockworkmouse(arg0);
+        break;
+    case 18:
+        if (arg0->unk24 < 150.0f) {
+            arg0->unk24 += 50.0f * sp2C;
+        }
+        func_808021C4_chclockworkmouse(arg0);
+        if (func_80105A5C(arg0) != 0) {
+            func_80105634(arg0);
+            func_808009F4_chclockworkmouse(sp34);
+            sp34->unk3C = 0;
+            func_800FFAB0(arg0);
+        }
+        break;
+    }
+    func_80801E2C_chclockworkmouse(arg0);
+    switch (sp30->unkFB) {
+        case 2:
+        case 4:
+            func_80800A44_chclockworkmouse(sp34);
+            func_808004B0_chclockworkmouse(sp34);
+            break;
+    }
+}
+
+s32 func_808032F8_chclockworkmouse(Actor* arg0, s32 arg1, s32 arg2) {
+    s16 *new_var;
+    s32 pad;
+    Actor* sp28;
+    Actor* temp_a2;
+    Unk80100094* temp_t0;
+
+    new_var = (s16 *) &arg2;
+    switch (arg1) {
+    case 14:
+        func_80801B90_chclockworkmouse(arg0, arg2);
+        return 3;
+    case 47:
+        temp_t0 = func_80100094(func_80106790(arg0->unk3C), 0);
+        switch (*new_var) {
+        case 0x142A:
+            func_800D1000(0x4A, 1, &temp_t0->unk114, 1, arg0->unk0);
+            break;
+        case 0x142E:
+            func_800D1000(0x16, 4, &temp_t0->unk114, 1, arg0->unk0);
+            break;
+        }
+        break;
+    case 13:
+        sp28 = func_80106790(arg0->unk3C);
+        switch (*((s32 *)new_var) & 0xFFFF) {
+        case 1:
+            func_80800850_chclockworkmouse(sp28, 0x17, 0x2000, func_80101080());
+            break;
+        case 4:
+            func_80800850_chclockworkmouse(sp28, 0x19, 0x2000, func_80101080());
+            break;
+        }
+        break;
+    case 46:
+        temp_a2 = func_80106790(arg0->unk3C);
+        switch (*new_var) {
+        case 0x1426:
+            func_808009F4_chclockworkmouse(temp_a2);
+            func_808026E0_chclockworkmouse(arg0, 2);
+            break;
+        case 0xCEC:
+            func_808026E0_chclockworkmouse(arg0, 6);
+            break;
+        case 0x1429:
+        case 0x142D:
+            func_80800158_chclockworkmouse(arg0, 0);
+            func_808000B4_chclockworkmouse(arg0);
+            func_800904C8(0x28);
+            break;
+        case 0x1428:
+            func_808009F4_chclockworkmouse(temp_a2);
+            func_808026E0_chclockworkmouse(arg0, 2);
+            break;
+        case 0x142C:
+            func_808009F4_chclockworkmouse(temp_a2);
+            func_808026E0_chclockworkmouse(arg0, 2);
+            break;
+        case 0x142B:
+            func_808009F4_chclockworkmouse(temp_a2);
+            func_808026E0_chclockworkmouse(arg0, 2);
+            arg0->unk64.bytes[1] = (arg0->unk64.bytes[1] & 0xFF) | 8;
+            temp_a2->unk64.bytes[1] = (temp_a2->unk64.bytes[1] & 0xFF) | 8;
+            break;
+        case 0x142F:
+            func_808009F4_chclockworkmouse(temp_a2);
+            func_808026E0_chclockworkmouse(arg0, 0x12);
+            break;
+        }
+        arg0->unk74.bytes[0] &= 0xFFBF;
+        break;
+        case 0x52:
+        
+        if (func_801022E4(arg0) == 0x7D) {
+            _gcdialogcamera_entrypoint_3(&D_80803ED0_chclockworkmouse, arg0->unk38);
+        } else {
+            _gcdialogcamera_entrypoint_3(&D_80803EE0_chclockworkmouse, arg0->unk38);
+        }
+        return 1;
+    case 11:
+        if ((arg2 == 0x1F) && (arg0->unk70_10 == 0x13)) {
+            _capod_entrypoint_14();
+            func_808026E0_chclockworkmouse(arg0, 0x14);
+            return 4;
+        }
+        return 3;
+    case 31:
+        func_801015D0(arg0);
+        func_800DF744(3, 0);
+        break;
+    default:
+        return 0;
+    }
+    return 1;
+}
+
+void func_8080364C_chclockworkmouse(void) {
+    func_801018A4();
+}
+
+s32 **chclockworkmouse_entrypoint_1(void) {
+    return &D_80803EF0_chclockworkmouse;
+}

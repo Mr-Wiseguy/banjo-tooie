@@ -18,13 +18,17 @@ typedef struct Actor {
     f32 pos[3];
     u8 pad10[0x24 - 0x10];
     f32 unk24;
-    u8 pad28[0x3C - 0x28];
+    u8 pad28[0x38 - 0x28];
+    s32 unk38;
     s32 unk3C;
     s32 pad40;
     f32 rotation[3];
     f32 unk50;
     f32 unk54;
-    u8 pad58[0x5F - 0x58];
+    f32 unk58;
+    u8 pad5C;
+    u8 pad5D;
+    u8 pad5E;
     u8 unk5F;
     s32 pad60;
     union {
@@ -33,16 +37,25 @@ typedef struct Actor {
         struct {
             u32 unk64_24 : 8;
             u32 unk64_20 : 4;
-            u32 unk64_19 : 1;
+            u32 unk64_19 : 1; // flags & 0x80000
             u32 unk64_18 : 1;
             u32 unk64_17 : 1;
             u32 unk64_16 : 1;
             u32 unk64_15 : 1;
         } bits;
     } unk64;
-    u8 pad68[0x72 - 0x68];
-    u16 unk72;
-    u8 unk74;
+    u8 pad68[0x70 - 0x68];
+    u32 unk70_16: 16;
+    u32 unk70_10: 6; // unk72 >> 0xA
+    u32 unk70_A: 0xA;
+    union {
+        u32 flags;
+        u8 bytes[4];
+        struct {
+            u32 unk74_31 : 1;
+            u32 unk74_30 : 1;
+        } bits;
+    } unk74;
     s32 pad78;
     union {
         u32 flags;
@@ -51,21 +64,37 @@ typedef struct Actor {
             s32 unk7C_12 : 1;
         } bits;
     } unk7C;
-    s32 pad80;
-    f32 unk84;
-    f32 unk88;
-    u8 pad8C[0xAC - 0x8C];
-    f32 unkAC;
-    f32 unkB0;
-    u8 padB4[0xD4 - 0xB4];
-    f32 unkD4;
-    f32 unkD8;
-    f32 unkDC;
-    u8 unkE0[0xA];
-    u8 padEA[0xEC - 0xEA];
-    f32 unkEC;
-    u8 unkF0[0xA];
 } Actor;
+
+typedef struct ActorData {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    void *unk8;
+    void (*unkC_func)(Actor* actor);
+    void (*unk10_func)(Actor* actor);
+    void (*unk14_func)(s32 arg0, s32 arg1);
+    s32 unk18;
+    s32 unk1C;
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
+    s16 unk26;
+    void (*unk28_func)(Actor* actor);
+    s32 unk2C;
+    s16 unk30;
+    s16 unk32;
+    void (*unk34_func)(Actor* actor);
+    void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
+    s16 unk3C;
+    s16 unk3E;
+    void (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
+    s16 unk44;
+    s16 unk46;
+    void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
+    s32 unk4C;
+} ActorData;
 
 // size: 0x14
 typedef struct Unk80803CD8 {
@@ -77,7 +106,7 @@ typedef struct Unk80803CD8 {
 
 // size: 0x10
 typedef struct Unk80803E08  {
-    s32 unk0;
+    f32 unk0;
     f32 unk4;
     f32 unk8;
     s16 unkC;
@@ -153,7 +182,7 @@ f32 func_80105AE8(Actor *);
 Actor *func_80106790(s32);
 void _capod_entrypoint_2(s32, s32, s32);                 /* extern */
 void func_8008FB58(f32[3], f32, f32);                         /* extern */
-s32 func_80105998(Actor *, s32);                        /* extern */
+s32 func_80105998(Actor *, f32);                        /* extern */
 void _subaddieDll_entrypoint_4(Actor *, s32);                     /* extern */
 void func_800903D0(f32[3]);                             /* extern */
 void func_800904C8(s32);                                 /* extern */
@@ -221,5 +250,29 @@ void func_800F4CC0(s32);                               /* extern */
 void func_800F4CEC(s32, s32);                            /* extern */
 s32 func_800F54E4(void);                                /* extern */
 void func_80102424(Actor*, s32);                       /* extern */
-
+void _suexpression_entrypoint_8(Actor*, s32);            /* extern */
+void func_80090658(s32);                                 /* extern */
+void func_80090708(s32);                            /* extern */
+void func_80090734(s32, f32[3]);                           /* extern */
+s32 func_800BEF00(f32[3], f32[3], f32[3], s32);               /* extern */
+f32 func_80101F24(Actor*);                          /* extern */
+void func_80102B2C(Actor*, f32);                         /* extern */
+f32 func_8010CD28(Actor *);                                /* extern */
+void _sudeflect_entrypoint_1(f32[3], f32, f32, f32, s32); /* extern */
+void _glcutDll_entrypoint_17(void);                  /* extern */
+s32 _subaddiedialog_entrypoint_3(f32[3], s32, s32, s32, s32); /* extern */
+s32 _subaddiedialog_entrypoint_6(f32[3], s32, s32, s32, s32); /* extern */
+void _suexpression_entrypoint_10(Unk80100094*, s32, s32); /* extern */
+s32 func_80090248(void);                                /* extern */
+void func_800FFAB0(Actor*);                            /* extern */
+s32 func_80101DDC(Actor*);                          /* extern */
+s32 func_80101E14(Actor*, f32);                       /* extern */
+void func_80105634(Actor*);                            /* extern */
+void _capod_entrypoint_14(void);                           /* extern */
+void _gcdialogcamera_entrypoint_3(void**, s32);            /* extern */
+void func_800D1000(s32, s32, f32*, s32, s32);                /* extern */
+void func_800DF744(s32, s32);                              /* extern */
+s32 func_80101080(void);                                /* extern */
+void func_801018A4(void);
+void func_800E2594(s32, s32);
 #endif // __CH_CLOCKWORKMOUSE_H__
