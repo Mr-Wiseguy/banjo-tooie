@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/factoryentrydoors.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/entrydoors/func_80800000_chfactoryentrydoors.s")
 

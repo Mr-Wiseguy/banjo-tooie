@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/lagoonentrygate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/entrygate/func_80800000_chlagoonentrygate.s")
 
