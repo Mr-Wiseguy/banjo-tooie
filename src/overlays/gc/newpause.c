@@ -31,6 +31,24 @@
 #include "gc/audiolist.h"
 
 
+extern PauseOption D_80802070_gcnewpause[];
+extern void* D_808021CC_gcnewpause;
+extern void* D_808021E4_gcnewpause;
+
+extern TotalsFlags D_808020A8_gcnewpause[];
+extern InventoryDisplay D_808020D8_gcnewpause[];
+extern s8 D_80802124_gcnewpause[];
+extern s8 D_80802125_gcnewpause;
+extern MemorySetupStruct D_80802126_gcnewpause[];
+extern s8 D_8080212E_gcnewpause;
+extern ItemCountDisplay D_80802130_gcnewpause[];
+extern AbilityTracking D_8080215C_gcnewpause[];
+extern unk80802190 D_80802190_gcnewpause[6];
+extern u8 D_808021B4_gcnewpause[12];
+extern void* D_808021C0_gcnewpause;
+extern u8 D_8012762D;
+extern s8 D_80802072_gcnewpause;
+
 //Setup Pause Menu
 PauseState* gcnewpause_entrypoint_0(u32 arg0)
 {
@@ -655,7 +673,7 @@ u32 func_808011BC_gcnewpause(void)
 	u32 var_a1;
 
 	temp_v0 = func_800EA05C();
-	if ((temp_v0 == 0xD0) || (temp_v0 == 0x121))
+	if ((temp_v0 == MAP_D0_CHUFFYS_CAB) || (temp_v0 == MAP_121_INSIDE_CHUFFY_WAGON))
 	{
 		var_a1 = _chchuffycont_entrypoint_3();
 	}

@@ -13,7 +13,6 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B81CC.s")
 
-
 #ifndef NON_MATCHING
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8C50.s")
 #else

@@ -2,6 +2,8 @@
 #define __GC_NEWPAUSE_H__
 #include "common.h"
 #include "memory.h"
+#include "maps.h"
+
 #include "gc/newoption.h"
 
 typedef struct {
@@ -96,24 +98,6 @@ typedef struct unk80802190 {
 	s16 unk2;
 	s16 unk4;
 } unk80802190;
-
-extern PauseOption D_80802070_gcnewpause[];
-extern void* D_808021CC_gcnewpause;
-extern void* D_808021E4_gcnewpause;
-
-extern TotalsFlags D_808020A8_gcnewpause[];
-extern InventoryDisplay D_808020D8_gcnewpause[];
-extern s8 D_80802124_gcnewpause[];
-extern s8 D_80802125_gcnewpause;
-extern MemorySetupStruct D_80802126_gcnewpause[];
-extern s8 D_8080212E_gcnewpause;
-extern ItemCountDisplay D_80802130_gcnewpause[];
-extern AbilityTracking D_8080215C_gcnewpause[];
-extern unk80802190 D_80802190_gcnewpause[6];
-extern u8 D_808021B4_gcnewpause[12];
-extern void* D_808021C0_gcnewpause;
-extern u8 D_8012762D;
-extern s8 D_80802072_gcnewpause;
 
 PauseState* gcnewpause_entrypoint_0(u32 arg0);
 PauseState* _gcnewpause_entrypoint_0(u32 arg0);
