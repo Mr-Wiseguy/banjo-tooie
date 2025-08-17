@@ -1,7 +1,9 @@
 #include <fstream>
 #include <filesystem>
-#include <fmt/core.h>
-#include <librarezip.h>
+
+#include "fmt/core.h"
+#include "librarezip.h"
+
 #include "tooie_utils.h"
 
 // Reads a binary file and returns a vector containing its contents

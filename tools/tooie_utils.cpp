@@ -1,5 +1,5 @@
-#include <toml.hpp>
-#include <fmt/core.h>
+#include "toml.hpp"
+#include "fmt/core.h"
 #include "tooie_utils.h"
 #include "elfio/elfio.hpp"
 
@@ -66,9 +66,11 @@ ElfHandler::ElfHandler(const char* elf_path) :
 ElfHandler::~ElfHandler() = default;
 
 std::vector<Segment> read_config(const char* path) {
+    toml::array empty_array{};
+    std::string empty_string{};
     try {
 		const toml::value config_data = toml::parse(path);
-		const toml::array& overlay_array = toml::find<toml::array>(config_data, "overlay");
+		const toml::array& overlay_array = toml::find_or<toml::array>(config_data, "overlay", empty_array);
 
         std::vector<Segment> overlays{};
         overlays.reserve(overlay_array.size());
@@ -76,15 +78,15 @@ std::vector<Segment> read_config(const char* path) {
         for (const auto& overlay_data : overlay_array) {
             bool is_empty = toml::find_or<bool>(overlay_data, "empty", false);
             if (!is_empty) {
-                const toml::value& entrypoint_name = toml::find<toml::value>(overlay_data, "name");
-                const toml::array& entrypoint_array = toml::find<toml::array>(overlay_data, "entrypoints");
+                const std::string& entrypoint_name = toml::find_or<std::string>(overlay_data, "name", empty_string);
+                const toml::array& entrypoint_array = toml::find_or<toml::array>(overlay_data, "entrypoints", empty_array);
                 std::vector<Symbol> entrypoints{};
                 entrypoints.resize(entrypoint_array.size());
                 for (size_t i = 0; i < entrypoint_array.size(); i++) {
                     entrypoints[i].name = entrypoint_array[i].as_string();
                     entrypoints[i].value = symbol_not_found;
                 }
-                overlays.emplace_back(entrypoint_name.as_string().str, std::move(entrypoints));
+                overlays.emplace_back(entrypoint_name, std::move(entrypoints));
             }
             else {
                 overlays.emplace_back("");
@@ -93,11 +95,11 @@ std::vector<Segment> read_config(const char* path) {
         return overlays;
     }
 	catch (const toml::syntax_error& err) {
-		fmt::print(stderr, "Syntax error in config file on line {}, full error:\n{}\n", err.location().line(), err.what());
+		fmt::print(stderr, "Syntax error in config file on line {}, full error:\n{}\n", err.errors().front().locations().front().first.first_line_number(), err.errors().front().title());
         std::exit(EXIT_FAILURE);
 	}
 	catch (const toml::type_error& err) {
-		fmt::print(stderr, "Incorrect type in config file on line {}, full error:\n{}\n", err.location().line(), err.what());
+		fmt::print(stderr, "Incorrect type in config file on line {}, full error:\n{}\n", err.location().first_line_number(), err.what());
         std::exit(EXIT_FAILURE);
 	}
 	catch (const std::out_of_range& err) {

@@ -14,3 +14,9 @@
 	path = lib/ultralib
 	url = https://github.com/Mr-Wiseguy/ultralib
 	branch = tooie
+[submodule "tools/toml11"]
+	path = tools/toml11
+	url = https://github.com/ToruNiina/toml11
+[submodule "tools/fmt"]
+	path = tools/fmt
+	url = https://github.com/fmtlib/fmt

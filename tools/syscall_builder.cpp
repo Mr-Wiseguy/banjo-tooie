@@ -1,8 +1,10 @@
 #include <filesystem>
 #include <unordered_set>
 #include <fstream>
-#include <fmt/core.h>
-#include <fmt/ostream.h>
+
+#include "fmt/core.h"
+#include "fmt/ostream.h"
+
 #include "tooie_utils.h"
 
 // These entrypoints have an xori instead of an addi after them for some reason.
