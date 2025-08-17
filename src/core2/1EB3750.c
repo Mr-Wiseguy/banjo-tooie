@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include "memory.h"
 #include "core2/1E29B60.h"
+#include "core2/1EB3750.h"
 
 void _gldbDll_entrypoint_1(void);
 void _gldbDll_entrypoint_2(void);
@@ -15,7 +16,7 @@ u8* D_8012C770[3];
 u8 D_8012C780[12];
 u8 D_8012C78C[6];
 
-void func_800DA544(s32);
+//Set Flag False
 void func_800DA524(s32);
 
 // length of D_8012C770[0]
@@ -146,6 +147,7 @@ void func_800DA268(void) {
     }
 }
 
+//Get Flag Value
 s32 func_800DA298(s32 index) {
     if ((index >= 0) && (index < 32)) {
         return ((1 << index) & D_8011B990) ? 1 : 0;
@@ -168,6 +170,7 @@ s32 func_800DA298(s32 index) {
     return 0;
 }
 
+//Set Flag Value
 void func_800DA3B8(s32 index, s32 set) {
     if ((index >= 0) && (index < 32)) {
         if (set != 0) {
@@ -197,14 +200,17 @@ void func_800DA3B8(s32 index, s32 set) {
     }
 }
 
+//Set Flag False
 void func_800DA524(s32 index) {
     func_800DA3B8(index, 0);
 }
 
+//Set Flag True
 void func_800DA544(s32 index) {
     func_800DA3B8(index, 1);
 }
 
+//Get Number of True flags in range
 s32 func_800DA564(s32 startIndex, s32 length) {
     if ((startIndex >= 0) && (startIndex < 32)) {
         s32 ret = 0;
@@ -235,6 +241,7 @@ s32 func_800DA564(s32 startIndex, s32 length) {
     }
 }
 
+//Set Flags Value
 void func_800DA7A8(s32 startIndex, s32 set, s32 length) {
     if ((startIndex >= 0) && (startIndex < 32)) {
         s32 i = 0;
@@ -278,6 +285,7 @@ s32 func_800DA980(s32 startIndex, s32 length) {
     return ret;
 }
 
+//Return Previous Flag State and Set New Flag State
 s32 func_800DA9E4(s32 index, s32 set) {
     s32 ret = func_800DA298(index);
     func_800DA3B8(index, set);

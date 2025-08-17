@@ -2,10 +2,12 @@
 #include <string>
 #include <filesystem>
 #include <unordered_set>
-#include <fmt/core.h>
-#include <fmt/ostream.h>
 #include <fstream>
 #include <sstream>
+
+#include "fmt/core.h"
+#include "fmt/ostream.h"
+
 #include "tooie_utils.h"
 
 constexpr uint32_t section_size_divisor = 0x10;

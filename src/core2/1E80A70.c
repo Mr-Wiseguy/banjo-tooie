@@ -1,5 +1,8 @@
 #include <ultra64.h>
 
+
+extern u8 D_80127642;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7180.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A718C.s")
@@ -38,7 +41,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7AD4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7B18.s")
+//Set Warp Bit To On
+void func_800A7B18(u32 warpVal)
+{
+    D_80127642 = warpVal;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7B24.s")
 

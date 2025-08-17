@@ -7,7 +7,7 @@
 // coord->x, coord->y and coord->z, but also as
 // coord->f[0], coord->f[1] and coord->f[2].
 // In some places code only matches when using the float array.
-typedef union Vec3f {
+typedef union {
     struct {
         f32 x;
         f32 y;
@@ -15,5 +15,103 @@ typedef union Vec3f {
     } pos;
     f32 f[3];
 } Vec3f;
+
+// size: unknown
+typedef struct {
+    /* 0x00 */ u32* unk0;
+    /* 0x04 */ u32* unk4;
+    /* 0x08 */ u32* unk8;
+    /* 0x0C */ u32 unkC;
+    /* 0x10 */ u32 unk10;
+    /* 0x14 */ u16 unk14;
+    /* 0x16 */ u16 unk16;
+    /* 0x18 */ u32 unk18;
+    /* 0x1C */ u32 unk1C;
+    /* 0x20 */ u32 unk20;
+    /* 0x24 */ u32 unk24;
+    /* 0x28 */ u32 unk28;
+    /* 0x2C */ u32 unk2C;
+} Unk80132ED0;
+
+// size: unknown
+typedef struct Actor {
+    /* 0x00 */ Unk80132ED0* unk0;
+    /* 0x04 */ f32 position[3];
+    /* 0x10 */ u32* pointerToSyscallEntry;
+    /* 0x14 */ u32 unk14;
+    /* 0x18 */ f32 unk18[3];
+    /* 0x24 */ f32 unk24;
+    /* 0x28 */ f32 unk28;
+    /* 0x2C */ f32 unk2C;
+    /* 0x30 */ u32 pad30;
+    /* 0x34 */ f32 unk34;
+    /* 0x38 */ f32 scale;
+    /* 0x3C */ Unk80132ED0 *unk3C;
+    /* 0x40 */ s32 pad40;
+    /* 0x44 */ f32 rotation[3];
+    /* 0x50 */ f32 unk50;
+    /* 0x54 */ f32 unk54;
+    /* 0x58 */ f32 unk58;
+    /* 0x5C */ u8 pad5C;
+    /* 0x5D */ u8 pad5D;
+    /* 0x5E */ u8 pad5E;
+    /* 0x5F */ u8 unk5F;
+    /* 0x60 */ s32 pad60;
+    /* 0x64 */ union {
+        u32 flags;
+        u8 bytes[4];
+        struct {
+            u32 pad64_20 : 12;
+            u32 unk64_19 : 1; // flags & 0x80000
+            u32 unk64_18 : 1;
+            u32 unk64_17 : 1;
+            u32 unk64_16 : 1;
+            u32 pad64_15 : 1;
+        } bits;
+    } unk64;
+    /* 0x68 */ s32 pad68;
+    /* 0x6C */ u32 pad6C_9 : 23;
+    /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
+    /* 0x70 */ u32 pad70_16: 16;
+    /* 0x70 */ u32 unk70_10: 6; // unk72 >> 0xA
+    /* 0x70 */ u32 pad70_0: 10;
+    /* 0x74 */ union {
+        u32 flags;
+        u8 bytes[4];
+        struct {    
+            u32 unk74_31 : 1;
+            u32 unk74_30 : 1;
+            u32 unk74_16 : 14;
+            u32 unk74_7 : 9;
+        } bits;
+    } unk74;    
+    /* 0x78 */ u8 unk78;
+    /* 0x79 */ u8 unk79_4 : 4;
+    /* 0x79 */ u8 unk79_3 : 1;
+    /* 0x79 */ u8 unk79_2 : 1;
+    /* 0x79 */ u8 unk79_1 : 1;
+    /* 0x79 */ u8 unk79_0 : 1;
+    /* 0x7A */ u16 unk7A;
+    /* 0x7C */ union {
+        u32 flags;
+        struct {
+            u32 pad7C_13 : 19;
+            u32 unk7C_12 : 1;
+            u32 unk7C_0 : 12;
+        } bits;
+    } unk7C;
+} Actor;
+
+typedef struct {
+    /* 0x0 */ s16 position[3];
+    /* 0x6 */ u16 unk6;
+    /* 0x8 */ u16 ItemID;
+    /* 0x0A */ u16 unkA; //0xA
+    /* 0x0C */ u32 unkC; //0xC
+    /* 0x10 */ u16 unk10; //0x10
+    /* 0x12 */ u16 unk12; //0x12
+    /* 0x14 */ u8 unk14; //0x14
+} Prop;
+
 
 #endif // __COMMON_H__

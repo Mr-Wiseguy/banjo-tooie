@@ -1,7 +1,5 @@
 #include <fstream>
 #include <filesystem>
-#include <fmt/core.h>
-#include <fmt/ostream.h>
 #include <cstdint>
 #include <vector>
 #include <bit>
@@ -9,8 +7,12 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <string_view>
+
+#include "fmt/ostream.h"
+#include "fmt/core.h"
 #define ZLIB_CONST
 #include "zlib.h"
+
 #include "tooie_utils.h"
 
 constexpr bool generate_splat_files = false;

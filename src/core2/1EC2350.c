@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EC2350.h"
 
 void func_800E8A60(void) {
 }
