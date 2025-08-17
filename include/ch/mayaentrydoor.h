@@ -14,6 +14,5 @@ typedef struct {
 	u32 unk8[0xC];
 	f32 unk38;
 } unkArg0;
-extern u32 D_808000E0_chmayaentrydoor;
 
 #endif
