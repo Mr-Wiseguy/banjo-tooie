@@ -17,7 +17,7 @@ void func_80800000_bskazhatch(PlayerState *self, s32 arg1) {
     self->unk15C.bytes[0] = (s8)arg1;
 }
 
-void func_808000A8_bskazhatch(s32 self) {
+void func_808000A8_bskazhatch(PlayerState *self) {
     func_80800000_bskazhatch(self, 0);
     _bskaz_entrypoint_2(self);
 }

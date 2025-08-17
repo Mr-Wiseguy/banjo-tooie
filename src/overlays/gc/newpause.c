@@ -488,7 +488,7 @@ void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1)
 }
 
 //Execute Button Function
-void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOption)
+void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 selectedOption)
 {
 	Option* new_var;
 	new_var = D_80802070_gcnewpause[pauseMenu->ActivePauseMenuVariant].options;
@@ -525,7 +525,7 @@ void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOptio
 void func_80800DE0_gcnewpause(f32 a0) 
 {
 	func_800C4B64(a0);
-	func_800C4AF0(0, &D_808021C0_gcnewpause);
+	func_800C4AF0(NULL, &D_808021C0_gcnewpause);
 }
 
 //Draw Main Screen Non Option UI
@@ -726,7 +726,7 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
 	{
 		_fxkern_entrypoint_2();
 		func_800B8CE0(0xC28);
-		_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1(pauseMenu->textPointer, pauseMenu->SubPage));
+		_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1((u32 *)pauseMenu->textPointer, pauseMenu->SubPage));
 	}
 	return;
 }
@@ -1103,7 +1103,7 @@ void func_80801DA0_gcnewpause(PauseState* pauseMenu,u32 a1)
 	coord[1] = 171.0f;
 
 	func_800DF410(pauseMenu->GameOverTransparency);
-	func_800DF944(a1, coord, 0, 0.25f, 0,1, func_800D674C(0x640));
+	func_800DF944(a1, coord, 0.0f, 0.25f, 0, 1, func_800D674C(0x640));
 }
 
 //Handle Switching between are you sure and the button prompts

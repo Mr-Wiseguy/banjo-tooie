@@ -1,5 +1,6 @@
 #ifndef __CH_BUBBLE_ELEVATOR_H__
 #define __CH_BUBBLE_ELEVATOR_H__
+
 #include "common.h"
 #include "maps.h"
 
@@ -57,6 +58,5 @@ typedef struct {
 
 void func_808004DC_chbubbleelevator(Actor*, s32);
 void func_808008A8_chbubbleelevator(Actor* arg0);
-
 
 #endif

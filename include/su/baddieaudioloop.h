@@ -1,5 +1,6 @@
 #ifndef __SU_BADDIE_AUDIO_LOOP_H__
 #define __SU_BADDIE_AUDIO_LOOP_H__
+
 #include "common.h"
 
 void _subaddieaudioloop_entrypoint_0(Actor*, f32);

@@ -60,7 +60,7 @@ void anseq_entrypoint_0(s16 *pSeqIndx) {
     vector_clear(func_800B2890(*pSeqIndx));
 }
 
-void* func_80800134_anseq(s16 *pSeqIndx, f32 duration, s32 arg_count, void * func_ptr, void * a0, s32 a1, s32 a2, s32 a3){
+void* func_80800134_anseq(s16 *pSeqIndx, f32 duration, s32 arg_count, void * func_ptr, s32 a0, s32 a1, s32 a2, s32 a3){
     AnSeqElement *v0 = func_800B2A58(*pSeqIndx);
     v0->duration = duration;
     v0->argCount = arg_count;
@@ -84,20 +84,20 @@ void anseq_entrypoint_1(s16 * pSeqIndx, s32 arg1) {
     B_80800490_anseq.unk4->unk5 = arg1;
 }
 
-void anseq_entrypoint_2(s16 *pSeqIndx, f32 duration, void *func_ptr, void *arg3, s32 arg4) {
+void anseq_entrypoint_2(s16 *pSeqIndx, f32 duration, void *func_ptr, s32 arg3, s32 arg4) {
     func_80800134_anseq(pSeqIndx, duration, 2, func_ptr, arg3, arg4, NULL, NULL);
 }
 
-void anseq_entrypoint_3(s16 *pSeqIndx, f32 duration, void *func_ptr, void *arg3, s32 arg4, s32 arg5) {
+void anseq_entrypoint_3(s16 *pSeqIndx, f32 duration, void *func_ptr, s32 arg3, s32 arg4, s32 arg5) {
     func_80800134_anseq(pSeqIndx, duration, 3, func_ptr, arg3, arg4, arg5, NULL);
 }
 
-void anseq_entrypoint_4(s16 *pSeqIndx, f32 duration, void *func_ptr, void *arg3, s32 arg4, s32 arg5, s32 arg6) {
+void anseq_entrypoint_4(s16 *pSeqIndx, f32 duration, void *func_ptr, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     func_80800134_anseq(pSeqIndx, duration, 4, func_ptr, arg3, arg4, arg5, arg6);
 }
 
 void anseq_entrypoint_5(s16 arg0) {
-    s16* v0 = func_8001B798(arg0);
+    s16* v0 = (s16 *) func_8001B798(arg0);
     func_800B2D48(*v0);
     func_8001B754(arg0);
 }
@@ -105,7 +105,7 @@ void anseq_entrypoint_5(s16 arg0) {
 s16 anseq_entrypoint_6(void) {
     s16* sp1C;
     s16 sp18 = func_8001B668(0, 2);
-    sp1C = func_8001B798(sp18);
+    sp1C = (s16 *) func_8001B798(sp18);
     *sp1C = func_800B2DC0(sizeof(AnSeqElement), 0x2); //vector_new
     anseq_entrypoint_0(sp1C);
     return sp18;

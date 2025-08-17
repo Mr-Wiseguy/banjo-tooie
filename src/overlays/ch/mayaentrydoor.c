@@ -2,7 +2,7 @@
 
 extern u32 D_808000E0_chmayaentrydoor;
 
-void func_80800000_chmayaentrydoor(unkArg0* arg0)
+void func_80800000_chmayaentrydoor(Unk80800000MayaEntryDoor* arg0)
 {
     s32 sp2C;
     if ((_glcutDll_entrypoint_19(0x67) == 0) && (_sujiggy_entrypoint_20(0) != 0))

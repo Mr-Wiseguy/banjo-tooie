@@ -1,6 +1,8 @@
 #ifndef __SU_JIGGY_H__
 #define __SU_JIGGY_H__
+
 #include "common.h"
+
 s32 _sujiggy_entrypoint_0();
 
 //Get the required amount of jiggies for the given world
