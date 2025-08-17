@@ -5,21 +5,23 @@ s32 func_80800000_chhandcart(void)
     return func_800DA564(0xA4C, 3);
 }
 
+//Start/End
 void func_80800024_chhandcart(s32 arg0)
 {
     func_800DA7A8(0x9DC, arg0, 2);
     func_800FDC28(0U);
     switch (arg0) 
     {
-    case 1:
+    case 1: //Lose
         func_800FC660(0x17U);
         return;
-    case 2:
+    case 2: //Win
         func_800FC660(0x16U);
         return;
     }
 }
 
+//Get Cart Progress
 s32 func_80800090_chhandcart(void) 
 {
     return func_800DA564(0x9DC, 2);
@@ -27,21 +29,24 @@ s32 func_80800090_chhandcart(void)
 
 void func_808000B4_chhandcart(Actor* arg0)
 {
-    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->unkF)
+    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
     {
     case 1:
-        _gcgoto_entrypoint_1(arg0->unk64_19 ? 0x170 : 0x16F, 1);
+        //Control which race to go to
+        _gcgoto_entrypoint_1(arg0->unk64_19>0 ? MAP_170_GGM_RACE_2 : MAP_16F_GGM_RACE_1, 1);
         return;
     case 0:
     case 2:
         if (func_80800090_chhandcart() == 2)
         {
-            _gcgoto_entrypoint_1(0xC7, arg0->unk64_19 ? 0x15 : 0x16);
+            //Success Teleport
+            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64_19>0 ? 0x15 : 0x16);
             return;
         }
         else
         {
-            _gcgoto_entrypoint_1(0xC7, arg0->unk64_19 ? 0x16 : 0x15);
+            //Failure Teleport
+            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64_19>0 ? 0x16 : 0x15);
             return;
         }
 
@@ -49,38 +54,44 @@ void func_808000B4_chhandcart(Actor* arg0)
 
 }
 
+//Get the Race State
 s32 func_80800194_chhandcart(Actor* arg0)
 {
     CanaryMaryMemory* new_var;
-    u8 temp_v0;
+    u8 tempRaceState;
     new_var = (CanaryMaryMemory*)func_80100094(arg0, 0U);
-    temp_v0 = func_800DA564(0xA4C, 3);
-    return new_var->unkF = temp_v0;
+    //Load the Race State into the actor's memory
+    tempRaceState = func_800DA564(0xA4C, 3);
+    return new_var->RaceState = tempRaceState;
 }
 
+//Set Cart Progress State
 void func_808001D0_chhandcart(Actor* arg0, s32 arg1) 
 {
     CanaryMaryMemory* sp1C;
 
     sp1C = (CanaryMaryMemory*)func_80100094(arg0, 0U);
     func_800DA7A8(0xA4C, arg1, 3);
-    sp1C->unkF = (u8)arg1;
+    sp1C->RaceState = (u8)arg1;
 }
 
+//Progress the Race
 void func_80800214_chhandcart(Actor* arg0)
 {
-    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->unkF)
+    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
     {
-    case 0:
+    case 0: //If we are in the default state enter the race state
+        //Mid Race
         func_808001D0_chhandcart(arg0, 1);
         func_808000B4_chhandcart(arg0);
         return;
-    case 1:
+    case 1: //If we are in the race state enter the win state
+        //Won Race
         func_808001D0_chhandcart(arg0, 2);
         _gcintrotext_entrypoint_0();
         func_808000B4_chhandcart(arg0);
         return;
-    case 2:
+    case 2: //If we are in the win state reset to default
         func_808001D0_chhandcart(arg0, 0);
         func_80800024_chhandcart(0);
         return;
@@ -541,39 +552,44 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
     f32 temp_f12;
     s32 temp_v0;
     gamespeed = func_800D8FF8();
+
     //Get Button Hold Time
     temp_v0 = func_80016B30(0, 0);
     temp_f12 = *arg0;
-
+    //If the button has not been pressed in a bit
     if (temp_f12 < 0.0f)
     {
+        //If we're holding the button
         if (temp_v0 != 0)
         {
             arg1 += func_800F10B4(temp_f12, -1.0f, -0.01f, 0.0f, 3.0f);
             *arg0 = 0.01f;
             return arg1;
         }
-        else
+        else //Slow the player
         {
             *arg0 = temp_f12 - gamespeed;
             arg1 *= 0.98f;
         }
     }
+    //If the button has just been pressed
     else
     {
+        //If we're not holding the button
         if (temp_v0 == 0)
         {
             arg1 += func_800F10B4(temp_f12, 1.0f, 0.01f, 0.0f, 3.0f);
             *arg0 = -0.01f;
             return arg1;
         }
-        else
+        else//Slow the player
         {
 
             *arg0 = temp_f12 + gamespeed;
             arg1 *= 0.98f;
         }
     }
+    //Cap the player speed at 90
     if (arg1 > 90.0f)
     {
         arg1 = 90.0f;
@@ -974,7 +990,7 @@ void func_80802120_chhandcart(Actor* arg0)
     sp34->unk4 = 0.0f;
     if (_glcutDll_entrypoint_20() != 0)
     {
-        if (func_800EA05C() == 0xC7)
+        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_80108B04(arg0, 0);
         }
@@ -1204,32 +1220,34 @@ void func_808028F0_chhandcart(Actor* arg0)
     arg0->unk64_19 = func_800D0A9C(0xC, 1);
     if (_glcutDll_entrypoint_20() != 0)
     {
-        if (func_800EA05C() == 0xC7)
+        //Are we in GGM
+        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_8080282C_chhandcart(arg0, 0, 1);
             func_808031D0_chhandcart(arg0, 0x11);
         }
-        else
+        else //If we're not in GGM
         {
             func_800FFAB0(arg0);
             return;
         }
     }
-    else
-        if (func_800DA298(0x66) != 0)
+    else if (func_800DA298(0x66) != 0) //Canary Mary has been freed from Cage
+    {
+        //Are we in Canary Cave
+        if (func_800EA05C() == MAP_DB_GGM_CANARY_CAVE)
         {
-            if (func_800EA05C() == 0xDB)
-            {
-                func_800FFAB0(arg0);
-                return;
-            }
-            switch (func_80800194_chhandcart(arg0))
-            {
-            case 0:
+            func_800FFAB0(arg0);
+            return;
+        }
+        switch (func_80800194_chhandcart(arg0))
+        {
+            case 0: //Default State
                 func_8080282C_chhandcart(arg0, 1 - arg0->unk64_19, 0);
                 break;
 
-            case 1:
+            case 1: //In Race
+                //Race Starting (in the Race Map)
                 if (arg0->unk64_19)
                 {
                     maryMemory->unkC = _glsplinefind_entrypoint_0(0x385, sp2C);
@@ -1242,7 +1260,7 @@ void func_808028F0_chhandcart(Actor* arg0)
                 func_808031D0_chhandcart(arg0, 5);
                 break;
 
-            case 2:
+            case 2: //Won Race
                 func_8080282C_chhandcart(arg0, arg0->unk64_19, 0);
                 func_808031D0_chhandcart(arg0, 0xF);
                 if (arg0->unk64_19)
@@ -1251,27 +1269,25 @@ void func_808028F0_chhandcart(Actor* arg0)
                 }
                 func_80800214_chhandcart(arg0);
                 break;
-
-            }
-
-            if (func_800DA298(0x507) == 0)
-            {
-                maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
-                func_801058C4(arg0, maryMemory->unkC, arg0->unk24, 0);
-                func_808031D0_chhandcart(arg0, 0x14);
-            }
         }
-        else
-            if (func_800EA05C() != 0xDB)
-            {
-                func_800FFAB0(arg0);
-                return;
-            }
-            else
-            {
-                maryMemory->unkC = _glsplinefind_entrypoint_0(0x384, sp2C);
-                func_80802CE8_chhandcart(arg0, 0x18);
-            }
+
+        if (func_800DA298(0x507) == 0) //If Canary Mary isn't ready yet
+        {
+            maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
+            func_801058C4(arg0, maryMemory->unkC, arg0->unk24, 0);
+            func_808031D0_chhandcart(arg0, 0x14);
+        }
+    }
+    else if (func_800EA05C() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
+    {
+        func_800FFAB0(arg0);
+        return;
+    }
+    else
+    {
+        maryMemory->unkC = _glsplinefind_entrypoint_0(0x384, sp2C);
+        func_80802CE8_chhandcart(arg0, 0x18);
+    }
     _suexpression_entrypoint_7(arg0, 1, 0x36);
     _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0x42340000, 0x41700000);
 }
@@ -1290,20 +1306,20 @@ void func_80802B74_chhandcart(Actor* arg0)
 
 void func_80802BC8_chhandcart(Actor* arg0)
 {
-    CanaryMaryMemory* temp_s1;
+    CanaryMaryMemory* canaryMary;
     f32 sp20;
     float new_var;
     sp20 = 0.1f;
-    temp_s1 = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    canaryMary = (CanaryMaryMemory*)func_80100094(arg0, 0U);
     func_80105A9C(arg0, arg0->unk24 * 10.0f);
     func_80105834(arg0);
-    new_var = (func_800F1DCC(arg0->rotation[1], temp_s1->unk4) * arg0->unk24) * 0.5f;
-    temp_s1->unk8 = (f32)((new_var - temp_s1->unk8) * 0.02f);    arg0->rotation[2] = temp_s1->unk8;
-    temp_s1->unk4 = (f32)arg0->rotation[1];
-    if (temp_s1->unkE == 0)
+    new_var = (func_800F1DCC(arg0->rotation[1], canaryMary->unk4) * arg0->unk24) * 0.5f;
+    canaryMary->unk8 = (f32)((new_var - canaryMary->unk8) * 0.02f);    arg0->rotation[2] = canaryMary->unk8;
+    canaryMary->unk4 = (f32)arg0->rotation[1];
+    if (canaryMary->unkE == 0)
     {
         sp20 = 1.0f;
-        temp_s1->unkE = 1U;
+        canaryMary->unkE = 1U;
     }
     arg0->rotation[0] += func_800F1DCC(arg0->unk50 * 0.1f, arg0->rotation[0]) * sp20;
     arg0->rotation[1] += func_800F1DCC(arg0->unk54, arg0->rotation[1]) * sp20;
@@ -1312,7 +1328,7 @@ void func_80802BC8_chhandcart(Actor* arg0)
 void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
 {
     Actor* sp2C;
-    CanaryMaryMemory* sp28;
+    CanaryMaryMemory* canaryMary;
     s32 sp24;
     s32 sp20;
     Unk80132ED0* temp_a0_2;
@@ -1321,7 +1337,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     u32 temp_a0;
     u32 temp_t1;
     u32 temp_t6;
-    sp28 = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    canaryMary = (CanaryMaryMemory*)func_80100094(arg0, 0U);
     temp_a0 = arg0->unk3C;
     if (temp_a0 != 0)
     {
@@ -1375,7 +1391,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
 
     case 26:
         arg0->unk24 = 40.0f;
-        func_801058C4(arg0, *((s16*)(&sp28->unkC)), 40.0f, 0);
+        func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
         func_80802BC8_chhandcart(arg0);
         func_800C01A8(0x6B, 0);
         temp_a0_2 = arg0->unk0;
@@ -1387,6 +1403,8 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         break;
 
     case 20:
+        //Loading into GGM from canary cave for cutscene
+        //Canary Mary Freed and ready to race
         func_800DA544(0x507);
         arg0->unk24 = 40.0f;
         func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, (s32)arg0->unk0);
@@ -1399,7 +1417,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     case 5:
         func_80800998_chhandcart(sp2C, 0U, 5U, sp2C->unk0);
         func_808023B4_chhandcart(arg0, 0xCEC, 3);
-        func_801058C4(arg0, *((s16*)(&sp28->unkC)), arg0->unk24, 0);
+        func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), arg0->unk24, 0);
         break;
 
     case 6:
@@ -1415,6 +1433,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         break;
 
     case 7:
+        //Win the Race
         func_80800024_chhandcart(2);
         func_80090658(1);
         break;
@@ -1431,6 +1450,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         break;
 
     case 9:
+        //Start the Race (Touching the Cart)
         func_80800024_chhandcart(1);
         func_800FDC28(0U);
         func_80800EE4_chhandcart(sp2C, 0);
@@ -1504,7 +1524,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
 
     case 18:
         arg0->unk24 = 40.0f;
-        func_801058C4(arg0, *((s16*)(&sp28->unkC)), 40.0f, 0);
+        func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
         func_80802BC8_chhandcart(arg0);
         func_8080090C_chhandcart(sp2C, 0x1B, 0x20B0, (s32)arg0->unk0);
         break;
@@ -1546,32 +1566,30 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     {
     }
     temp_v0 = arg0->unk64_19;
-    if (var_f12 <= (sp18 - 0.099990845f))
+    if (var_f12 <= (sp18 - 6553 / 65536.0f))
     {
         func_808031D0_chhandcart(arg0, 0x10);
         return;
     }
-    if (var_f12 <= (sp18 - ((temp_v0 != 0) ? (0.019989014f) : (0.009994507f))))
+    if (var_f12 <= (sp18 - ((temp_v0 != 0) ? (1310 / 65536.0f) : (655 / 65536.0f))))
     {
         if ((((temp_v0 != 0) ? (80.0f) : (75.0f)) - 10.0f) < arg0->unk24)
         {
             arg0->unk24 = arg0->unk24 - (((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed);
         }
     }
-    else
-        if ((.019989014f + sp18) <= var_f12)
+    else if ((1310 / 65536.0f + sp18) <= var_f12)
+    {
+        new_var = (temp_v0 != 0) ? (80.0f) : (75.0f);
+        if (arg0->unk24 < (10.0f + new_var))
         {
-            new_var = (temp_v0 != 0) ? (80.0f) : (75.0f);
-            if (arg0->unk24 < (10.0f + new_var))
-            {
-                arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
-            }
+            arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
         }
-        else
-            if (arg0->unk24 < ((temp_v0 != 0) ? (80.0f) : (75.0f)))
-            {
-                arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
-            }
+    }
+    else if (arg0->unk24 < ((temp_v0 != 0) ? (80.0f) : (75.0f)))
+    {
+        arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
+    }
 }
 
 
@@ -1725,8 +1743,9 @@ void func_80803794_chhandcart(Actor* arg0)
         func_80802BC8_chhandcart(arg0);
         if (func_80105A5C(arg0) != 0)
         {
+            //Set Canary Mary Freed (Cutscene leaving Canary Cave inside)
             func_800DA544(0x66);
-            _glcutDll_entrypoint_6(0xC7, 0x1A);
+            _glcutDll_entrypoint_6(MAP_C7_GGM_GLITTER_GULCH_MINE, 0x1A);
         }
         break;
     case 20:
@@ -2001,6 +2020,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         {
         case 0xF7F:
         case 0xFA9:
+            //Set Canary Mary Cage Opened
             func_800DA544(0x57A);
             func_80802CE8_chhandcart(arg0, 0x1A);
             break;
@@ -2014,6 +2034,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         case 0xF83:
         case 0xF88:
+            //Reset the race state
             func_808001D0_chhandcart(arg0, 0);
             func_808000B4_chhandcart(arg0);
             func_800904C8(0x28U);

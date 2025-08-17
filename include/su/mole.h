@@ -13,8 +13,8 @@ typedef struct {
 	u16 price;
 	u16 TitleToShow;
 } MoveData;
-
-void _sumole_entrypoint_3(void*, u32, u32, MoveData*);
-void _sumole_entrypoint_4(void*, MoveData*);
+void _sumole_entrypoint_0(Actor*, u32);
+void _sumole_entrypoint_3(Actor*, u32, u32, MoveData*);
+void _sumole_entrypoint_4(Actor*, MoveData*);
 
 #endif

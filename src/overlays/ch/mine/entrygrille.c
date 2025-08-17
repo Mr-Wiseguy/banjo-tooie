@@ -13,7 +13,7 @@ s32 func_80800000_chmineentrygrille(unkArg0* arg0, s32 arg1, u32 arg2) {
     case 0x90:
         temp_v0 = func_80106790(func_80101080());
         _chexploder_entrypoint_13(temp_v0, 6);
-        _chexploder_entrypoint_15(temp_v0, 2, 0x3F800000);
+        _chexploder_entrypoint_15(temp_v0, 2, 1.0f);
 
         func_800BABB8(0, &arg0->unk4, &arg0->unk4, arg0->unk38, D_80800140_chmineentrygrille);
         func_800C4AF0(&arg0->unk4, &D_80800180_chmineentrygrille);

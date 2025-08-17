@@ -1,5 +1,8 @@
 #include "ch/bubbleelevator.h"
 
+extern f32 func_80013970(f32);
+extern f32 func_800138D0(f32);
+
 //Setup
 void func_80800000_chbubbleelevator(Actor* arg0)
 {
@@ -12,19 +15,19 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     temp_v0 = _gccubesearch_entrypoint_0(0x299, arg0);
     if (temp_v0 != 0)
     {
-        _gspropctrl_entrypoint_11(temp_v0, &arg0->unk18);
+        _gspropctrl_entrypoint_11(temp_v0, arg0->unk18);
     }
     temp_v0_2 = func_800EA05C();
-    if (temp_v0_2 != 0x136) //If Map is not CCL
+    if (temp_v0_2 != MAP_136_CCL_CLOUD_CUCKOOLAND) //If Map is not CCL
     {
-        if (temp_v0_2 == 0x15A) //If Map is Wasteland
+        if (temp_v0_2 == MAP_15A_IOH_WASTELAND) //If Map is Wasteland
         {
-            arg0->unk79 = (u8)(arg0->unk79 & 0xFF0F);
+            arg0->unk79_4 = 0;
         }
     }
     else //If Map is CCL
     {
-        arg0->unk79 = (u8)((arg0->unk79 & 0xFF0F) | 0x10);
+        arg0->unk79_4 = 1;
     }
     //If world 7 is unlocked
     if (_sujiggy_entrypoint_20(7) != 0)
@@ -71,7 +74,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
             func_808004DC_chbubbleelevator(arg0, 2);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
-        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk14));
+        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
         func_800F8294(func_800F54E4(), arg0->position);
         return;
     case 2:
@@ -140,7 +143,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
             func_808004DC_chbubbleelevator(arg0, 7);
         }
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
-        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk14));
+        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
         //Set Player Position to the bubble's position
         func_800F8294(func_800F54E4(), arg0->position);
         return;
@@ -148,7 +151,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         func_800D91EC(&arg0->unk58, 5.0f);
         func_808004DC_chbubbleelevator(arg0, 1);
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
-        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk14));
+        _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
         //Set Player Position to the bubble's position
         func_800F8294(func_800F54E4(), arg0->position);
         return;
@@ -176,11 +179,11 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         func_808008A8_chbubbleelevator(arg0);
         func_800F7B9C(func_800F54E4(), 0x7C);
         func_800F8294(func_800F54E4(), arg0->position);
-        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, &arg0->unk18), 0.0f);
+        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, arg0->unk18), 0.0f);
         func_800F832C(func_800F54E4(), &sp2C);
         func_800F80E4(func_800F54E4(), 0);
-        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk0, 0x2001);
-        arg0->unk6E = ((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00);
+        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk0, 0x2001);
+        arg0->unk6C_0 = func_80015184();
         func_80015178(3);
         new_var2 = 0;
         arg0->unk34 = new_var2;
@@ -194,7 +197,7 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         func_800DA524(0x6CA);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
-        func_800F78EC(func_800F54E4(), &arg0->unk18, 840.0f, -1500.0f);
+        func_800F78EC(func_800F54E4(), arg0->unk18, 840.0f, -1500.0f);
         arg0->unk34 = 2.0f;
         arg0->unk50 = 3.0f;
         _subaddieaudioloop_entrypoint_2(arg0);
@@ -206,9 +209,9 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         arg0->unk34 = 0.0f;
         arg0->unk58 = 0.0f;
         _subaddieDll_entrypoint_4(arg0, 0U);
-        if (((*((u32 *) (&arg0->unk6C))) & 0x1FF) != 0)
+        if (arg0->unk6C_0 != 0)
         {
-            func_80015178((*((u32 *) (&arg0->unk6C))) & 0x1FF);
+            func_80015178(arg0->unk6C_0);
         }
         break;
 
@@ -216,7 +219,7 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         //Entering Bubble
         func_800C3F48(0x7FF194D5);
         //Move the character towards the bubble
-        func_800F78EC(func_800F54E4(), (u32 *) arg0->position, 840.0f, -1500.0f);
+        func_800F78EC(func_800F54E4(), arg0->position, 840.0f, -1500.0f);
         new_var = arg0;
         _subaddieDll_entrypoint_4(new_var, 1U);
         break;
@@ -225,6 +228,7 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         //Moving Bubble
         func_800C3F48(0x665F44B1);
         func_800FC6B0(0x4A);
+        //Set Bubbled Flag True
         func_800DA544(0x6CA);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
@@ -234,8 +238,8 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
         //Move Player to bubble position
         func_800F8294(func_800F54E4(), arg0->position);
         //Set Cutscene camera
-        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].unk1, 0x4001);
-        arg0->unk6E = (u16) (((u16)func_80015184() & 0x1FF) | (arg0->unk6E & 0xFE00));
+        _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk1, 0x4001);
+        arg0->unk6C_0 = func_80015184();
         func_80015178(3);
         arg0->unk50 = 3.0f;
         break;
@@ -243,7 +247,7 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
     case 7:
         //Reached end of bubble route
         //Warp the player
-        _gcgoto_entrypoint_1(D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].mapId, D_80800C20_chbubbleelevator[((u32) arg0->unk79) >> 4].entranceId);
+        _gcgoto_entrypoint_1(D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].mapId, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].entranceId);
         _subaddieaudioloop_entrypoint_2(arg0);
         func_800FC74C(0x4A);
         break;
@@ -270,7 +274,7 @@ void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
 //Update bubble vertical position
 void func_808008A8_chbubbleelevator(Actor* arg0)
 {
-    arg0->position[1] = func_800F12D4(arg0->unk58, 0.0f, 5.0f, 0.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79 / 16].unkC) + arg0->unk24;
+    arg0->position[1] = func_800F12D4(arg0->unk58, 0.0f, 5.0f, 0.0f, D_80800C20_chbubbleelevator[arg0->unk79_4].unkC) + arg0->unk24;
 }
 
 s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
@@ -283,13 +287,13 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
         return 1;
     case 11:
         //Triggered on bubble reaching the destination
-        if (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk0)
+        if (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0)
         {
             //Exit Bubble
             func_808004DC_chbubbleelevator(arg0, 3);
         }
         //If we're in CCL and Canary Mary is not in CCL
-        if ((func_800EA05C() == 0x136) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79 >> 4].unk0 && (func_800DA298(0x504) == 0)))
+        if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (func_800DA298(0x504) == 0)))
         {
             return func_80101180(0x383, 0xB, arg2);
         }

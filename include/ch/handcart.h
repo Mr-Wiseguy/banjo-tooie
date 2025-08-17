@@ -1,6 +1,7 @@
 #ifndef __CH_HANDCART_H__
 #define __CH_HANDCART_H__
 #include "common.h"
+#include "maps.h"
 
 #include "core2/1E2B200.h"
 
@@ -118,7 +119,7 @@ typedef struct {
     f32 unk8;
     u16 unkC;
     u8 unkE;
-    u8 unkF;
+    u8 RaceState; //The state the race is in 0 = Default, 1 = Racing, 2 = Won
     u8 unk10[0x14];
     u8 unk24;
     u8 unk25[0x62];

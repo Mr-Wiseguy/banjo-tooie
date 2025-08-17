@@ -17,7 +17,7 @@ void func_80800000_chmayaentrydoor(unkArg0* arg0)
     {
         sp2C = 0x392;
     }
-    _chdoormake_entrypoint_3(arg0, 0, 0x42B40000, arg0->unk38 * 220.0f, 1, sp2C);
+    _chdoormake_entrypoint_3(arg0, 0, 90.0f, arg0->unk38 * 220.0f, 1, sp2C);
     _chdoormake_entrypoint_8(arg0, 0xD);
     _chdoormake_entrypoint_5(arg0, 0);
 }

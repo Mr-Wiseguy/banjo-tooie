@@ -25,13 +25,6 @@ typedef struct {
 
 } D_808000D0;
 
-typedef struct
-{
-	u16 unk1[0x2A];
-	f32 unk2;
-	u16 unk3[0x62];
-} unkStruct_chmole;
-
 extern MoveData D_808000C0_chmole_cuckoo[];
 extern D_808000D0 D_808000D0_chmole_cuckoo;
 #endif 

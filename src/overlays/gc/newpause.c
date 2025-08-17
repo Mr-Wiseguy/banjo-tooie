@@ -655,7 +655,7 @@ u32 func_808011BC_gcnewpause(void)
 	u32 var_a1;
 
 	temp_v0 = func_800EA05C();
-	if ((temp_v0 == 0xD0) || (temp_v0 == 0x121))
+	if ((temp_v0 == MAP_D0_CHUFFYS_CAB) || (temp_v0 == MAP_121_INSIDE_CHUFFY_WAGON))
 	{
 		var_a1 = _chchuffycont_entrypoint_3();
 	}

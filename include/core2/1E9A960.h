@@ -2,7 +2,6 @@
 #define __CORE2_1E9A960_H__
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
 
 s32 func_800C2E04(void);
 void func_800C2FDC(u8 id);

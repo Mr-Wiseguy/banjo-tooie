@@ -24,9 +24,7 @@ typedef struct {
     f32 position[3];
     u32* pointerToSyscallEntry;
     u32 unk14;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
+    f32 unk18[3];
     f32 unk24;
     f32 unk28;
     f32 unk2C;
@@ -50,8 +48,10 @@ typedef struct {
     u32 unk64_17 : 1;
     u32 unk64_16 : 1;
     u32 unk68;
-    u16 unk6C;
-    u16 unk6E;
+    u32 unk6C_24 : 7;
+    u32 unk6C_16 : 9;
+    u32 unk6C_8 : 7;
+    u32 unk6C_0 : 9;
     u16 unk70;
     u16 unk72;
     u32 unk74_31 : 1;
@@ -59,7 +59,11 @@ typedef struct {
     u32 unk74_16 : 14;
     u32 unk74_7 : 9;
     u8 unk78;
-    u8 unk79;
+    u8 unk79_4 : 4;
+    u8 unk79_3 : 1;
+    u8 unk79_2 : 1;
+    u8 unk79_1 : 1;
+    u8 unk79_0 : 1;
     u16 unk7A;
     u32 unk7C_13 : 19;
     u32 unk7C_12 : 1;

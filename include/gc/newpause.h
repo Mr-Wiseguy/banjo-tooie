@@ -2,6 +2,8 @@
 #define __GC_NEWPAUSE_H__
 #include "common.h"
 #include "memory.h"
+#include "maps.h"
+
 #include "gc/newoption.h"
 
 typedef struct {

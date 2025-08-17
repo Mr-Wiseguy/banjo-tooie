@@ -210,6 +210,7 @@ void func_800DA544(s32 index) {
     func_800DA3B8(index, 1);
 }
 
+//Get Number of True flags in range
 s32 func_800DA564(s32 startIndex, s32 length) {
     if ((startIndex >= 0) && (startIndex < 32)) {
         s32 ret = 0;
@@ -240,6 +241,7 @@ s32 func_800DA564(s32 startIndex, s32 length) {
     }
 }
 
+//Set Flags Value
 void func_800DA7A8(s32 startIndex, s32 set, s32 length) {
     if ((startIndex >= 0) && (startIndex < 32)) {
         s32 i = 0;

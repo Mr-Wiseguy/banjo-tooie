@@ -1,6 +1,8 @@
 #ifndef __CH_BUBBLE_ELEVATOR_H__
 #define __CH_BUBBLE_ELEVATOR_H__
 #include "common.h"
+#include "maps.h"
+
 #include "core1/1E2C940.h"
 
 #include "core2/1E9A960.h"
@@ -53,8 +55,6 @@ typedef struct {
     f32 unk14;
 } BubbleWarpData;
 
-extern f32 func_80013970(f32);
-extern f32 func_800138D0(f32);
 void func_808004DC_chbubbleelevator(Actor*, s32);
 void func_808008A8_chbubbleelevator(Actor* arg0);
 extern BubbleWarpData D_80800C20_chbubbleelevator[2];

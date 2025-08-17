@@ -29,7 +29,7 @@ void func_808000B4_chclockworkmouse(u32 a0)
 {
     u8 temp_v1;
 
-    temp_v1 = func_80100094(a0, 0)->unkF;
+    temp_v1 = ((objectMemory*)func_80100094(a0, 0))->unkF;
     switch (temp_v1) {                              /* irregular */
     case 1:
         _gcgoto_entrypoint_1(0x161, 1);
@@ -47,7 +47,7 @@ void func_80800158_chclockworkmouse(u32 arg0, s32 arg1)
 {
     objectMemory* sp1C;
 
-    sp1C = func_80100094(arg0, 0U);
+    sp1C = (objectMemory*)func_80100094(arg0, 0U);
     func_800DA7A8(0xA37, arg1, 3);
     sp1C->unkF = (u8)arg1;
 }
@@ -56,7 +56,7 @@ void func_8080019C_chclockworkmouse(u32 arg0)
 {
     u8 temp_v1;
 
-    temp_v1 = func_80100094(arg0, 0U)->unkF;
+    temp_v1 = ((objectMemory*)func_80100094(arg0, 0U))->unkF;
     switch (temp_v1) 
     {                              /* irregular */
     case 0:
@@ -84,9 +84,9 @@ void func_80800700_chclockworkmouse(s32* arg0, s32 arg1)
     _capod_entrypoint_2(*arg0, 0x1C, arg1 | 0x800);
 }
 
-void func_80800734_chclockworkmouse(u32 arg0)
+void func_80800734_chclockworkmouse(Actor* arg0)
 {
-    if (func_80100094(arg0, 0U)->unkFA == 3)
+    if (((objectMemory*)func_80100094(arg0, 0U))->unkFA == 3)
     {
         func_80100074(arg0, 1, 0);
     }
@@ -109,7 +109,7 @@ void func_808009F4_chclockworkmouse(Actor* arg0)
 {
     objectMemory* sp1C;
 
-    sp1C = func_80100094(arg0, 0U);
+    sp1C = (objectMemory*)func_80100094(arg0, 0U);
     func_80800734_chclockworkmouse(arg0);
     if (sp1C->unkFA != 0) 
     {
