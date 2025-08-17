@@ -1,5 +1,7 @@
 #include "ch/mayaentrydoor.h"
 
+extern u32 D_808000E0_chmayaentrydoor;
+
 void func_80800000_chmayaentrydoor(unkArg0* arg0)
 {
     s32 sp2C;

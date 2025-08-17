@@ -1,5 +1,7 @@
 #include "ch/witchyentrygates.h"
 
+extern u32 D_808001F0_chwitchyentrygates;
+
 void func_80800000_chwitchyentrygates(Actor* arg0)
 {
     f32 var_f0;

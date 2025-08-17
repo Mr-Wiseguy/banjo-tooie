@@ -25,6 +25,5 @@ typedef struct {
 
 } D_808000D0;
 
-extern MoveData D_808000C0_chmole_cuckoo[];
-extern D_808000D0 D_808000D0_chmole_cuckoo;
+
 #endif 

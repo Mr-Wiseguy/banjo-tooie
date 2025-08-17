@@ -8,10 +8,6 @@
 #include "su/jiggy.h"
 #include "gl/cutDll.h"
 
-extern s32 D_80800140_chmineentrygrille[];
-extern u32 D_80800180_chmineentrygrille;
-extern u32 D_80800194_chmineentrygrille;
-
 typedef struct {
 	s32* unk0;
 	f32 unk4;

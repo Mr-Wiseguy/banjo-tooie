@@ -1,5 +1,8 @@
 #include "ch/mole_cuckoo.h"
 
+extern MoveData D_808000C0_chmole_cuckoo[];
+extern D_808000D0 D_808000D0_chmole_cuckoo;
+
 void func_80800000_chmole_cuckoo(Actor* a0, u32 a1,u32 a2)
 {
 	_sumole_entrypoint_3(a0, a1, a2, D_808000C0_chmole_cuckoo);

@@ -10,9 +10,6 @@
 #include "core2/1EDAEA0.h"
 #include "su/deflect.h"
 
-extern void* D_80803E48_chclockworkmouse;
-extern void* D_80803EF0_chclockworkmouse;
-
 typedef struct
 {
     u8 unk0[0xF];

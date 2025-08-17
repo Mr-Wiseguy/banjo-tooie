@@ -7,6 +7,5 @@
 #include "core2/1EAD6C0.h"
 
 
-extern u32 D_808001F0_chwitchyentrygates;
 
 #endif

@@ -75,12 +75,7 @@ typedef struct {
     s16 unkC;
     s16 unkE;
 }unk80804D84;
-extern unk80804D84* (D_80804D84_chhandcart[4]);
-extern s32 D_80804D94_chhandcart[4];
 
-
-extern void* D_80804DC4_chhandcart;
-extern void* D_80804E6C_chhandcart;
 
 typedef struct {
     u16 unk0;
@@ -138,26 +133,7 @@ typedef struct {
     s16 unk10;
     s16 unk12;
 }unk80804B84;
-extern unk80804B84* D_80804B84_chhandcart[4];
-extern s32 D_80804B94_chhandcart[4];
 
-extern f32 func_80013970(f32);
-
-//Size 0x9C
-extern u32 D_808046C0_chhandcart;
-extern u32 D_808046D4_chhandcart;
-extern u32 D_808046E8_chhandcart;
-extern f32 D_80804DB8_chhandcart[3];
-
-extern u32 D_80804E0C_chhandcart;
-extern u32 D_80804E18_chhandcart;
-extern u32 D_80804E2C_chhandcart;
-extern u32 D_80804E38_chhandcart;
-extern u32 D_80804E4C_chhandcart;
-extern u32 D_80804E5C_chhandcart;
-extern f32 D_808046F4_chhandcart;
-extern u32 D_80804704_chhandcart;
-extern u32 D_80804714_chhandcart;
 s32 func_80800000_chhandcart(void);
 s32 func_80800090_chhandcart(void);
 void func_808000B4_chhandcart(Actor* arg0);

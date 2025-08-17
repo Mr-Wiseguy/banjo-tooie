@@ -1,5 +1,8 @@
 #include "ch/clockworkmouse.h"
 
+extern void* D_80803E48_chclockworkmouse;
+extern void* D_80803EF0_chclockworkmouse;
+
 void func_80800000_chclockworkmouse(void)
 {
     func_800DA564(0xA37, 3);

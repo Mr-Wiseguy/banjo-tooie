@@ -12,9 +12,6 @@ typedef struct {
     s16 lower;
 } splitS32;
 
-extern void* D_80800380_chjiggypost;
-extern void* D_808003C8_chjiggypost;
-
 void func_80800014_chjiggypost(Actor* arg0, s32 arg1);
 
 #endif

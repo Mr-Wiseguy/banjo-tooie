@@ -3,7 +3,6 @@
 
 #include "common.h"
 
-extern u32 D_80800190_chminegrilldoor;
 
 
 #endif

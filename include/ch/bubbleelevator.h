@@ -57,8 +57,6 @@ typedef struct {
 
 void func_808004DC_chbubbleelevator(Actor*, s32);
 void func_808008A8_chbubbleelevator(Actor* arg0);
-extern BubbleWarpData D_80800C20_chbubbleelevator[2];
-extern u32 D_80800C50_chbubbleelevator[2];
-extern u32 D_80800C58_chbubbleelevator;
+
 
 #endif
