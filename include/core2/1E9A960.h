@@ -17,7 +17,7 @@ void func_800C3BDC(u8 id);
 void func_800C3CE8(u8 id);
 void func_800C3F48(u32);
 s32 func_800C4350(s32, f32[3], s32 *); // changed from u8 return
-void func_800C4AF0(u32, void*);
+void func_800C4AF0(f32 *, void*);
 void func_800C4B64(f32);
 
 #endif // __CORE2_1E9A960_H__

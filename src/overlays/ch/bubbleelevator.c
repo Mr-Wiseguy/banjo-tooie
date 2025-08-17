@@ -66,7 +66,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
 void func_80800124_chbubbleelevator(Actor* arg0) 
 {
     s32 sp44;
-    s32 sp38[3];
+    f32 sp38[3];
 
     func_808008A8_chbubbleelevator(arg0);
     switch (arg0->unk70_10)

@@ -2,7 +2,7 @@
 
 #include "overlays/bs/kaz/flamethrower.h"
 
-s32 D_808003B0_bskazflamethrower[];
+extern s32 D_808003B0_bskazflamethrower[];
 
 void bskazflamethrower_entrypoint_0(PlayerState *self, f32 arg1[3], f32 arg2[3]) {
     f32 unk0[3];

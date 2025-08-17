@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-void func_80018634();
+void func_80018634(void);
 
 #endif

@@ -2,9 +2,8 @@
 #define __CORE2_1EEBA50_H__
 
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
-#include <ultra64.h>
-
-void func_801124D0(s32, s32);
+void func_801124D0(PlayerState *, s32);
 
 #endif // __CORE2_1EEBA50_H__

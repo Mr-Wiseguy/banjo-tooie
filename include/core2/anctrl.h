@@ -25,6 +25,7 @@ s32 anctrl_isStopped(AnimCtrl *);
 AssetId anctrl_getIndex(AnimCtrl *);
 
 AnimCtrl *func_8008AD80(s32);
+AnimCtrl *func_8008AEB4(AnimCtrl *);
 void func_8008B1C8(AnimCtrl *, f32);
 void func_8008B188(AnimCtrl *, s32);
 s32 func_8008B28C(AnimCtrl *);

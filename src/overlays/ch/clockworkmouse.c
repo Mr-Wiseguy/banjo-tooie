@@ -773,15 +773,15 @@ s32 func_80801BF0_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
 void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
     Unk80100094* temp_s4;
     f32 sp50[3];
-    s32 temp_s1;
+    ImageStruct *imageStruct;
     s32 var_s0;
 
     func_801018A4();
     if (actor->unk7C_12) {
-        temp_s1 = func_800D674C(0x9E2);
+        imageStruct = func_800D674C(0x9E2);
         temp_s4 = ((Unk80100094 *)func_80100094(actor, 0));
         func_800E2588(2);
-        func_800E2594(arg1, temp_s1);
+        func_800E2594(arg1, imageStruct);
         for (var_s0 = 0; var_s0 < 10; var_s0++) {
             if (temp_s4->unkF0[var_s0] == 2) {
                 func_800EFA4C(sp50, temp_s4->unkAC[var_s0], temp_s4->unkAC[var_s0], temp_s4->unkAC[var_s0]);

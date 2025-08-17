@@ -14,6 +14,6 @@ typedef struct {
 	f32 unk4;
 	u32 unk8[0xC];
 	f32 unk38;
-} unkArg0;
+} Unk80800000MayaEntryDoor;
 
 #endif

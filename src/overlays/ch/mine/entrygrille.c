@@ -4,7 +4,7 @@ extern s32 D_80800140_chmineentrygrille[];
 extern u32 D_80800180_chmineentrygrille;
 extern u32 D_80800194_chmineentrygrille;
 
-s32 func_80800000_chmineentrygrille(unkArg0* arg0, s32 arg1, u32 arg2) {
+s32 func_80800000_chmineentrygrille(Unk80800000MineEntryGrilleArg0* arg0, s32 arg1, u32 arg2) {
     s32 temp_v0;
 
     switch (arg1) 

@@ -114,7 +114,7 @@ void _gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3);
 void func_80800534_gcnewpause(PauseState* a0, u32 a1);
 void func_80800A08_gcnewpause(PauseState*);
 void func_80800C54_gcnewpause(PauseState* arg0, OptionState* arg1);
-void func_80800CE4_gcnewpause(PauseState* pauseMenu, u32 arg1, s32 selectedOption);
+void func_80800CE4_gcnewpause(PauseState* pauseMenu, OptionState *arg1, s32 selectedOption);
 void func_80800DE0_gcnewpause(f32 a0);
 void func_80800E10_gcnewpause(PauseState* a0, u32 a1);
 s32 func_80800EA8_gcnewpause(PauseState* arg1, u32);
