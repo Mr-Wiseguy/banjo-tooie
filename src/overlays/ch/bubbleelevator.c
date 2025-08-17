@@ -12,7 +12,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     s32 sp24;
     Prop* temp_v0;
     s32 var_a1;
-    u32 temp_v0_2;
+    MapId temp_v0_2;
 
     arg0->unk24 = arg0->position[1];
     temp_v0 = _gccubesearch_entrypoint_0(0x299, arg0);
@@ -170,7 +170,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     }
 }
 
-void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
+void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
 {
   int new_var2;
   Actor *new_var;
@@ -332,7 +332,7 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
         func_800EF04C(sp4C, sp40);
         sp38[0] = (func_80013970(sp5C) * sp58) + 1.0f;
         sp38[1] = (func_800138D0(sp5C) * sp58) + 1.0f;
-        arg0->unk7C.bits.unk7C_12 = _chbubble_entrypoint_0(arg1, sp4C, sp38, arg0->scale, 4000.0f);
+        arg0->unk7C_12 = _chbubble_entrypoint_0(arg1, sp4C, sp38, arg0->scale, 4000.0f);
     }
 }
 

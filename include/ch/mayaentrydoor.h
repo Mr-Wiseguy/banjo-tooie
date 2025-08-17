@@ -1,5 +1,6 @@
 #ifndef __CH_MAYA_ENTRY_DOOR_H__
 #define __CH_MAYA_ENTRY_DOOR_H__
+
 #include "common.h"
 #include "gl/cutDll.h"
 #include "su/jiggy.h"

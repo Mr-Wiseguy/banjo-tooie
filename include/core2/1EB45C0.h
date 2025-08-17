@@ -5,5 +5,4 @@
 
 s32 func_800DAD10(void);
 
-
 #endif

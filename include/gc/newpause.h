@@ -1,5 +1,6 @@
 #ifndef __GC_NEWPAUSE_H__
 #define __GC_NEWPAUSE_H__
+
 #include "common.h"
 #include "memory.h"
 #include "maps.h"

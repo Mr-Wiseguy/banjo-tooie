@@ -63,28 +63,28 @@ typedef struct Actor {
         struct {
             u32 pad64_20 : 12;
             u32 unk64_19 : 1; // flags & 0x80000
-            u32 unk64_18 : 1;
-            u32 unk64_17 : 1;
+            u32 pad64_17 : 2;
             u32 unk64_16 : 1;
-            u32 pad64_15 : 1;
+            u32 pad64_0 : 16;
         } bits;
     } unk64;
     /* 0x68 */ s32 pad68;
     /* 0x6C */ u32 pad6C_9 : 23;
-    /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
+    /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
     /* 0x70 */ u32 pad70_16: 16;
-    /* 0x70 */ u32 unk70_10: 6; // unk72 >> 0xA
+    /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10
     /* 0x70 */ u32 pad70_0: 10;
     /* 0x74 */ union {
         u32 flags;
         u8 bytes[4];
         struct {    
-            u32 unk74_31 : 1;
-            u32 unk74_30 : 1;
-            u32 unk74_16 : 14;
-            u32 unk74_7 : 9;
+            u32 pad74_31 : 1;
+            u32 unk74_30 : 1; // unk74 & 0x40000000
+            u32 pad74_16 : 14;
+            u32 unk74_7 : 9; // unk76 >> 7
+            u32 pad74_0 : 7;
         } bits;
-    } unk74;    
+    } unk74;
     /* 0x78 */ u8 unk78;
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1;
@@ -92,15 +92,40 @@ typedef struct Actor {
     /* 0x79 */ u8 unk79_1 : 1;
     /* 0x79 */ u8 unk79_0 : 1;
     /* 0x7A */ u16 unk7A;
-    /* 0x7C */ union {
-        u32 flags;
-        struct {
-            u32 pad7C_13 : 19;
-            u32 unk7C_12 : 1;
-            u32 unk7C_0 : 12;
-        } bits;
-    } unk7C;
+    /* 0x7C */ u32 pad7C_13 : 19;
+    /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
+    /* 0x7C */ u32 unk7C_0 : 12; // unk7C & 0xFFF
 } Actor;
+
+typedef struct ActorData {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    void *unk8;
+    void (*unkC_func)(Actor* actor);
+    void (*unk10_func)(Actor* actor);
+    void (*unk14_func)(s32 arg0, s32 arg1);
+    s32 unk18;
+    s32 unk1C;
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
+    s16 unk26;
+    void (*unk28_func)(Actor* actor);
+    s32 unk2C;
+    s16 unk30;
+    s16 unk32;
+    void (*unk34_func)(Actor* actor);
+    void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
+    s16 unk3C;
+    s16 unk3E;
+    void (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
+    s16 unk44;
+    s16 unk46;
+    void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
+    s32 unk4C;
+} ActorData;
 
 typedef struct {
     /* 0x0 */ s16 position[3];

@@ -44,7 +44,7 @@ s32 func_80800090_chclockworkmouse(void) {
 
 void func_808000B4_chclockworkmouse(Actor *actor) {
 
-    switch (func_80100094(actor, 0)->unkC.bytes[3]) {
+    switch (((Unk80100094 *)func_80100094(actor, 0))->unkC.bytes[3]) {
     case 1:
         _gcgoto_entrypoint_1(0x161, 1);
         return;
@@ -58,7 +58,7 @@ void func_808000B4_chclockworkmouse(Actor *actor) {
 u8 func_8080011C_chclockworkmouse(Actor *actor) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     sp1C->unkC.bytes[3] = func_800DA564(0xA37, 3);
     return sp1C->unkC.bytes[3];
 }
@@ -66,13 +66,13 @@ u8 func_8080011C_chclockworkmouse(Actor *actor) {
 void func_80800158_chclockworkmouse(Actor *actor, s32 arg1) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_800DA7A8(0xA37, arg1, 3);
     sp1C->unkC.bytes[3] = arg1;
 }
 
 void func_8080019C_chclockworkmouse(Actor *actor) {
-    switch (func_80100094(actor, 0)->unkC.bytes[3]) {
+    switch (((Unk80100094 *)func_80100094(actor, 0))->unkC.bytes[3]) {
     case 0:
         func_80800158_chclockworkmouse(actor, 1);
         func_808000B4_chclockworkmouse(actor);
@@ -94,31 +94,31 @@ void func_80800240_chclockworkmouse(Actor *actor, s32 arg1) {
     f32 *sp68[1];
     s16* var_s3;
     s16* var_s4;
-    s32 temp_v0;
+    SplineMemory * splineMemory;
     s32 var_s0;
     s32 temp_s0;
     s32 pad;
     Unk80100094* sp4C;
 
     temp_s0 = arg1 - 1;
-    sp4C = func_80100094(actor, 0);
-    temp_v0 = func_80100074(actor, 1, _susplinet_entrypoint_18(D_80803CE8_chclockworkmouse[temp_s0], 1, 1));
-    _susplinet_entrypoint_19(temp_v0, D_80803CE8_chclockworkmouse[temp_s0], 1, 1);
+    sp4C = ((Unk80100094 *)func_80100094(actor, 0));
+    splineMemory = (SplineMemory *)func_80100074(actor, 1, _susplinet_entrypoint_18(D_80803CE8_chclockworkmouse[temp_s0], 1, 1));
+    _susplinet_entrypoint_19(splineMemory, D_80803CE8_chclockworkmouse[temp_s0], 1, 1);
     for (var_s0 = 0; var_s0 < 1; var_s0++) {
-        sp6C[var_s0] = _susplinet_entrypoint_14(temp_v0, var_s0);
+        sp6C[var_s0] = _susplinet_entrypoint_14(splineMemory, var_s0);
     }
     for (var_s0 = 0; var_s0 < 1; var_s0++) {
-        sp68[var_s0] = _susplinet_entrypoint_15(temp_v0, var_s0);
+        sp68[var_s0] = _susplinet_entrypoint_15(splineMemory, var_s0);
     }
-    var_s3 = _susplinet_entrypoint_12(temp_v0);
-    var_s4 = _susplinet_entrypoint_13(temp_v0);
+    var_s3 = _susplinet_entrypoint_12(splineMemory);
+    var_s4 = _susplinet_entrypoint_13(splineMemory);
     for (var_s0 = 0; var_s0 < D_80803CE8_chclockworkmouse[temp_s0];) {
-        func_800EE7F8((f32 *)sp6C[0], (f32 *)&D_80803CD8_chclockworkmouse[temp_s0][var_s0]);
+        func_800EE7F8(sp6C[0]->f, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk0);
         var_s3[0] = D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk10;
         var_s4[0] = -1;
         sp68[0][0] = D_80803CD8_chclockworkmouse[temp_s0][var_s0].unkC;
-        _susplinet_entrypoint_0(temp_v0, var_s0, 2, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk12 & 1 ? 1 : 0);
-        _susplinet_entrypoint_0(temp_v0, var_s0, 4, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk12 & 2 ? 1 : 0);
+        _susplinet_entrypoint_0(splineMemory, var_s0, 2, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk12 & 1 ? 1 : 0);
+        _susplinet_entrypoint_0(splineMemory, var_s0, 4, D_80803CD8_chclockworkmouse[temp_s0][var_s0].unk12 & 2 ? 1 : 0);
         var_s0++;
         var_s3++;
         var_s4++;
@@ -126,18 +126,18 @@ void func_80800240_chclockworkmouse(Actor *actor, s32 arg1) {
         sp6C[0]++;
     }
     for (var_s0 = 0; var_s0 < 1; var_s0++) {
-        sp6C[var_s0] = _susplinet_entrypoint_14(temp_v0, var_s0);
+        sp6C[var_s0] = _susplinet_entrypoint_14(splineMemory, var_s0);
     }
     for (var_s0 = 0; var_s0 < 1; var_s0++) {
-        sp68[var_s0] = _susplinet_entrypoint_15(temp_v0, var_s0);
+        sp68[var_s0] = _susplinet_entrypoint_15(splineMemory, var_s0);
     }
-    func_800F0EF0(D_80803CE8_chclockworkmouse[temp_s0], sp6C[0]);
+    func_800F0EF0(D_80803CE8_chclockworkmouse[temp_s0], sp6C[0]->f);
     sp4C->unkFB = arg1;
     sp4C->unkFC = 0;
 }
 
 void func_808004B0_chclockworkmouse(Actor* actor) {
-    Unk80100094* sp74;
+    SplineMemory* splineMemory;
     Unk80100094* temp_s0;
     f32 sp6C;
     Actor* sp68;
@@ -147,8 +147,8 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
     f32 sp38[3];
     f32 temp_f2;
 
-    sp74 = func_80100094(actor, 1);
-    temp_s0 = func_80100094(actor, 0);
+    splineMemory = (SplineMemory *)func_80100094(actor, 1);
+    temp_s0 = ((Unk80100094 *)func_80100094(actor, 0));
     sp6C = func_800D8FF8();
     sp68 = NULL;
     if (temp_s0->unkFA == 3) {
@@ -162,12 +162,12 @@ void func_808004B0_chclockworkmouse(Actor* actor) {
             sp68 = func_80106790(actor->unk3C);
             break;
         }
-        _susplinet_entrypoint_11(sp74, _susplinet_entrypoint_9(sp74));
-        _susplinet_entrypoint_10(sp74, func_80105AE8(sp68) * 1000.0f);
-        _susplinet_entrypoint_17(sp74);
-        _susplinet_entrypoint_7(sp74, 0, sp5C);
-        func_800EF5A0(sp50, sp5C, 0.0f, 0.0f, -_susplinet_entrypoint_8(sp74, 0));
-        if (_susplinet_entrypoint_6(sp74) != 0) {
+        _susplinet_entrypoint_11(splineMemory, _susplinet_entrypoint_9(splineMemory));
+        _susplinet_entrypoint_10(splineMemory, func_80105AE8(sp68) * 1000.0f);
+        _susplinet_entrypoint_17(splineMemory);
+        _susplinet_entrypoint_7(splineMemory, 0, sp5C);
+        func_800EF5A0(sp50, sp5C, 0.0f, 0.0f, -_susplinet_entrypoint_8(splineMemory, 0));
+        if (_susplinet_entrypoint_6(splineMemory) != 0) {
             temp_s0->unkFC = 0;
         }
         if (temp_s0->unkFC != 0) {
@@ -193,7 +193,7 @@ void func_80800700_chclockworkmouse(Unk80132ED0 **arg0, s32 arg1) {
 }
 
 void func_80800734_chclockworkmouse(Actor *actor) {
-    if (func_80100094(actor, 0)->unkFA == 3) {
+    if (((Unk80100094 *)func_80100094(actor, 0))->unkFA == 3) {
         func_80100074(actor, 1, 0);
     }
 }
@@ -206,7 +206,7 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
     Unk80100094 *sp1C;
     u8 temp_t8;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_80800734_chclockworkmouse(actor);
     if (arg1 == NULL) {
         arg1 = actor;
@@ -232,7 +232,7 @@ void func_8080079C_chclockworkmouse(Actor *actor, Actor *arg1, s32 arg2, s32 arg
 void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
@@ -252,7 +252,7 @@ void func_80800850_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED
 void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED0 *arg3) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
@@ -272,7 +272,7 @@ void func_808008DC_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2, Unk80132ED
 void func_80800968_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
     Unk80100094* sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_80800734_chclockworkmouse(actor);
     switch (sp1C->unkFA) {
     case 0:
@@ -293,7 +293,7 @@ void func_80800968_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
 void func_808009F4_chclockworkmouse(Actor *actor) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     func_80800734_chclockworkmouse(actor);
     if (sp1C->unkFA != 0) {
         _capod_entrypoint_3(0);
@@ -307,13 +307,13 @@ void func_80800A44_chclockworkmouse(Actor *actor) {
     s32 var_s0;
     s32 var_s4;
 
-    temp_v0 = func_80100094(actor, 0);
+    temp_v0 = ((Unk80100094 *)func_80100094(actor, 0));
     temp_v1 = temp_v0->unkFB - 1;
     if (D_80803E08_chclockworkmouse[temp_v1] == NULL) {
         return;
     }
 
-    if (!(actor->unk7C.flags & 0xFFF)) {
+    if (!actor->unk7C_0) {
         return;
     }
 
@@ -355,7 +355,7 @@ void func_80800C14_chclockworkmouse(Actor *actor) {
 void func_80800C64_chclockworkmouse(Actor *actor) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor, 0);
+    sp1C = ((Unk80100094 *)func_80100094(actor, 0));
     if ((func_8009EA64() == 0x171) && (sp1C->unk100 != 0)) {
         sp1C->unk100 = 0;
         func_80800C14_chclockworkmouse(actor);
@@ -375,7 +375,7 @@ void func_80800D14_chclockworkmouse(Actor* actor, s32 arg1) {
     Unk80100094* sp24;
     s32 var_a0;
 
-    sp24 = func_80100094(actor, 0);
+    sp24 = ((Unk80100094 *)func_80100094(actor, 0));
     switch (actor->unk70_10) {
     case 11:
         break;
@@ -489,7 +489,7 @@ void func_8080111C_chclockworkmouse(Actor* actor) {
     f32 sp28;
  
     sp28 = 0.1f;
-    temp_s1 = func_80100094(actor, 0);
+    temp_s1 = ((Unk80100094 *)func_80100094(actor, 0));
     func_80105A9C(actor, actor->unk24 * 10.0f);
     func_80105834(actor);
     temp_s1->unkD8 = (((func_800F1DCC(actor->rotation[1], temp_s1->unkD4) * 10.0f) - temp_s1->unkD8) * 0.02f);
@@ -509,19 +509,19 @@ void func_80801240_chclockworkmouse(Actor* actor) {
     f32 temp_f0;
     f32 temp_f20;
     f32 temp_f28;
-    s32 temp_s5;
+    Unk800C7A68 *temp_s5;
     s32 var_s3;
 
     temp_f20 = func_80105AE8(actor);
-    temp_v0 = func_80100094(actor, 0);
-    temp_s5 = func_800D7520(temp_v0->unk0.shorts.unk0);
+    temp_v0 = (Unk80100094 *)func_80100094(actor, 0);
+    temp_s5 = (Unk800C7A68 *)func_800D7520(temp_v0->unk0.shorts.unk0);
     temp_f28 = func_800D8FF8(); 
     for (var_s3 = 0; var_s3 < 10; var_s3++) {
         if (temp_v0->unkF0[var_s3] == 1) {
             temp_f0 = func_800C7B7C(temp_s5, temp_v0->unkEC, 250.0f, 1.0f);
             temp_v0->unkEC = temp_f0;
             temp_v0->unk84[var_s3] = temp_f0;
-            func_800C7A68(temp_s5, temp_v0->unkEC, &temp_v0->unkC.vecs[var_s3]);
+            func_800C7A68(temp_s5, temp_v0->unkEC, (s32)&temp_v0->unkC.vecs[var_s3]);
             temp_v0->unkF0[var_s3] = 2U;
             temp_v0->unkAC[var_s3] = temp_v0->unkDC;
             temp_v0->unkDC += 0.0075000003f;
@@ -574,7 +574,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
     }
     sp38 = func_800D8FF8();
     sp3C = func_80106790(actor->unk3C);
-    sp34 = func_80100094(actor, 0);
+    sp34 = ((Unk80100094 *)func_80100094(actor, 0));
     sp34->unk8 += 5.0f * actor->unk24 * sp38;
     switch (actor->unk70_10) {
     case 2:
@@ -649,7 +649,7 @@ void func_80801848_chclockworkmouse(s32 actor) {
 void func_80801850_chclockworkmouse(Actor *actor) {
     Actor *temp_v0;
     s32 pad;
-    s32 sp1C[3];
+    f32 sp1C[3];
 
     _gspropctrl_entrypoint_11(_gccubesearch_entrypoint_1(0x226, actor->position), sp1C);
     temp_v0 = func_80108528(0x383, sp1C, 0, &actor);
@@ -660,9 +660,9 @@ void func_80801850_chclockworkmouse(Actor *actor) {
 
 void func_808018BC_chclockworkmouse(Actor* actor) {
     Unk80100094* sp24;
-    s16 *var_v0;
+    Prop *prop;
 
-    sp24 = func_80100094(actor, 0);
+    sp24 = ((Unk80100094 *)func_80100094(actor, 0));
     actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFFF7) | (((u8)func_800D0A9C(0x4A, 1) * 8) & 8);
     sp24->unkFA = 0;
     sp24->unk4 = 0.0f;
@@ -687,11 +687,11 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
         break;
     case 2:
         if (actor->unk64.bits.unk64_19) {
-            var_v0 = _gccubesearch_entrypoint_0(0x201, actor);
+            prop = _gccubesearch_entrypoint_0(0x201, actor);
         } else {
-            var_v0 = _gccubesearch_entrypoint_0(0x1F6, actor);
+            prop = _gccubesearch_entrypoint_0(0x1F6, actor);
         }
-        func_800EE88C(&sp24->unk114, var_v0);
+        func_800EE88C(&sp24->unk114, prop->position);
         if ((actor->unk64.bits.unk64_19) && (func_80800090_chclockworkmouse() == 2)) {
             func_80103140(actor, 0x8A1, ((u16**)actor)[0][0xB]);
         }
@@ -706,7 +706,7 @@ void func_80801A94_chclockworkmouse(Actor* actor) {
     f32 sp2C[3];
     f32 sp1C[4];
 
-    sp3C = func_80100094(actor, 0);
+    sp3C = ((Unk80100094 *)func_80100094(actor, 0));
     sp38 = func_801040D0();
     func_801015D0(actor);
     func_800DF41C(sp38);
@@ -777,9 +777,9 @@ void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
     s32 var_s0;
 
     func_801018A4();
-    if (actor->unk7C.bits.unk7C_12) {
+    if (actor->unk7C_12) {
         temp_s1 = func_800D674C(0x9E2);
-        temp_s4 = func_80100094(actor, 0);
+        temp_s4 = ((Unk80100094 *)func_80100094(actor, 0));
         func_800E2588(2);
         func_800E2594(arg1, temp_s1);
         for (var_s0 = 0; var_s0 < 10; var_s0++) {
@@ -800,11 +800,11 @@ void func_80801E2C_chclockworkmouse(Actor* actor) {
     Unk80100094* sp2C;
     s32 pad;
 
-    sp2C = func_80100094(actor, 0);
+    sp2C = ((Unk80100094 *)func_80100094(actor, 0));
     sp2C->unk0.f = (f32) (sp2C->unk0.f - func_800D8FF8());
     switch (func_801022E4(actor)) {
     case 0x7D:
-        _subaddieaudioquick_entrypoint_3(actor, actor->position, &D_80803964_chclockworkmouse, 0.1f);
+        _subaddieaudioquick_entrypoint_3(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, 0.1f);
         if ((sp2C->unk0.f <= 0.0f) && (func_800DC298(0.03f) != 0) && (func_800C0638() == 0)) {
             _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80803950_chclockworkmouse);
             sp2C->unk0.f = 1.5f;
@@ -813,17 +813,17 @@ void func_80801E2C_chclockworkmouse(Actor* actor) {
     default:
         return;
     case 0x89:
-        _subaddieaudioquick_entrypoint_4(actor, actor->position, &D_80803964_chclockworkmouse, &D_80803E90_chclockworkmouse);
+        _subaddieaudioquick_entrypoint_4(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, (u32 *)&D_80803E90_chclockworkmouse);
         return;
     case 0x8A:
-        _subaddieaudioquick_entrypoint_4(actor, actor->position, &D_80803964_chclockworkmouse, &D_80803E9C_chclockworkmouse);
+        _subaddieaudioquick_entrypoint_4(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, (u32 *)&D_80803E9C_chclockworkmouse);
         return;
     case 0x85:
-        _subaddieaudioquick_entrypoint_4(actor, actor->position, &D_80803978_chclockworkmouse, &D_80803EB0_chclockworkmouse);
+        _subaddieaudioquick_entrypoint_4(actor, actor->position, (u32 *)&D_80803978_chclockworkmouse, (u32 *)&D_80803EB0_chclockworkmouse);
         return;
     case 0x80:
-        _subaddieaudioquick_entrypoint_4(actor, actor->position, &D_80803964_chclockworkmouse, &D_80803EBC_chclockworkmouse);
-        _subaddieaudioquick_entrypoint_3(actor, actor->position, &D_80803978_chclockworkmouse, 0.9f);
+        _subaddieaudioquick_entrypoint_4(actor, actor->position, (u32 *)&D_80803964_chclockworkmouse, (u32 *)&D_80803EBC_chclockworkmouse);
+        _subaddieaudioquick_entrypoint_3(actor, actor->position, (u32 *)&D_80803978_chclockworkmouse, 0.9f);
         break;
     }
 }
@@ -833,7 +833,7 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
     f32 sp2C;
     Unk80100094* sp28;
 
-    sp28 = func_80100094(actor, 0);
+    sp28 = ((Unk80100094 *)func_80100094(actor, 0));
     actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFFF7) | (((u8)func_800D0A9C(0x4A, 1) * 8) & 8);
     switch (func_8080011C_chclockworkmouse(actor)) {
     case 0:
@@ -883,7 +883,7 @@ void func_808021C4_chclockworkmouse(Actor* actor) {
     f32 f2;
 
     sp20 = 0.1f;
-    temp_s1 = func_80100094(actor, 0);
+    temp_s1 = ((Unk80100094 *)func_80100094(actor, 0));
     func_80105A9C(actor, actor->unk24 * 10.0f);
     func_80105834(actor);
     f2 = (actor->unk24 * func_800F1DCC(actor->rotation[1], temp_s1->unk4) * 0.5f);
@@ -911,7 +911,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
     u8 var_a1_2;
 
     sp2C = func_80106790(actor->unk3C);
-    sp28 = func_80100094(actor, 0);
+    sp28 = ((Unk80100094 *)func_80100094(actor, 0));
     switch (actor->unk70_10) {
     case 19:
         actor->unk64.bytes[1] = (actor->unk64.bytes[1] & 0xFF) | 1;
@@ -1033,7 +1033,7 @@ void func_80802724_chclockworkmouse(Actor* actor, Actor* arg1) {
     f32 var_f2;
     u32 temp_v0;
 
-    if (arg1->unk7C.flags & 0xFFF) {
+    if (arg1->unk7C_0) {
         sp1C = func_80105AE8(arg1);
     } else {
         sp1C = 1.0f;
@@ -1159,7 +1159,7 @@ void func_80802BCC_chclockworkmouse(Actor *actor) {
 void func_80802C04_chclockworkmouse(Actor *actor, Actor *actor2) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor2, 0);
+    sp1C = (Unk80100094 *)func_80100094(actor2, 0);
     if (func_80105998(actor2, 0.94f) != 0) {
         sp1C->unkFE = 0;
         func_808008DC_chclockworkmouse(actor2, 5, 5, actor2->unk0);
@@ -1169,7 +1169,7 @@ void func_80802C04_chclockworkmouse(Actor *actor, Actor *actor2) {
 void func_80802C64_chclockworkmouse(Actor *actor, Actor *actor2) {
     Unk80100094 *sp1C;
 
-    sp1C = func_80100094(actor2, 0);
+    sp1C = (Unk80100094 *)func_80100094(actor2, 0);
     if (func_80105998(actor, 0.94f) != 0) {
         sp1C->unkFE = 0;
         func_808008DC_chclockworkmouse(actor2, 5, 5, actor->unk0);
@@ -1182,7 +1182,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
     f32 sp2C;
 
     sp34 = func_80106790(arg0->unk3C);
-    sp30 = func_80100094(sp34, 0);
+    sp30 = (Unk80100094 *)func_80100094(sp34, 0);
     sp2C = func_800D8FF8();
     _suexpression_entrypoint_10(func_80100094(arg0, 1), arg0->unk0, 0);
     switch (arg0->unk70_10) {
@@ -1352,7 +1352,7 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         func_80801B90_chclockworkmouse(actor, arg2);
         return 3;
     case 47:
-        temp_t0 = func_80100094(func_80106790(actor->unk3C), 0);
+        temp_t0 = (Unk80100094 *)func_80100094(func_80106790(actor->unk3C), 0);
         switch (*new_var) {
         case 0x142A:
             func_800D1000(0x4A, 1, &temp_t0->unk114, 1, actor->unk0);
@@ -1413,9 +1413,9 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         case 0x52:
         
         if (func_801022E4(actor) == 0x7D) {
-            _gcdialogcamera_entrypoint_3(&D_80803ED0_chclockworkmouse, actor->scale);
+            _gcdialogcamera_entrypoint_3((u32 *)&D_80803ED0_chclockworkmouse, actor->scale);
         } else {
-            _gcdialogcamera_entrypoint_3(&D_80803EE0_chclockworkmouse, actor->scale);
+            _gcdialogcamera_entrypoint_3((u32 *)&D_80803EE0_chclockworkmouse, actor->scale);
         }
         return 1;
     case 11:
@@ -1439,6 +1439,6 @@ void func_8080364C_chclockworkmouse(void) {
     func_801018A4();
 }
 
-s32 **chclockworkmouse_entrypoint_1(void) {
+ActorData **chclockworkmouse_entrypoint_1(void) {
     return &D_80803EF0_chclockworkmouse;
 }

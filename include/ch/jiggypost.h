@@ -1,5 +1,6 @@
 #ifndef __CH_JIGGY_POST_H__
 #define __CH_JIGGY_POST_H__
+
 #include "common.h"
 #include "su/baddiedialog.h"
 #include "su/jiggy.h"

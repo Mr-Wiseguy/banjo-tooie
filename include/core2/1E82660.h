@@ -1,8 +1,7 @@
 #ifndef __CORE2_1E82660_H__
 #define __CORE2_1E82660_H__
-#include "common.h"
 
-#include <ultra64.h>
+#include "common.h"
 
 s32 func_800A946C();
 

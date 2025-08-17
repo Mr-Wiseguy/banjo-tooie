@@ -1,5 +1,6 @@
 #ifndef __CH_CLOCKWORK_MOUSE_H__
 #define __CH_CLOCKWORK_MOUSE_H__
+
 #include "common.h"
 
 #include "core2/1E691A0.h"

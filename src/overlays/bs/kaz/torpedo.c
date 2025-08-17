@@ -175,10 +175,8 @@ void func_8080076C_bskaztorpedo(PlayerState *self) {
 
 void func_8080078C_bskaztorpedo(PlayerState *self) {
     s32 sp44;
-    f32 sp3C[2];
-    f32 sp38;
-    f32 sp30[2];
-    f32 sp2C;
+    f32 sp38[3];
+    f32 sp2C[3];
     f32 temp_f0;
     s32 temp_v0;
 
@@ -187,11 +185,11 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
         self->unk15C.word = 1;
     }
     if (sp44 != -1) {
-        func_800F5A00(sp44, &sp38);
-        func_8009C128(self, &sp2C);
-        sp3C[0] += 50.0f;
-        sp30[0] += 50.0f;
-        temp_f0 = func_800EEB40(&sp38, &sp2C);
+        func_800F5A00(sp44, sp38);
+        func_8009C128(self, sp2C);
+        sp38[1] += 50.0f;
+        sp2C[1] += 50.0f;
+        temp_f0 = func_800EEB40(sp38, sp2C);
         temp_v0 = self->unk160.word;
         if (temp_v0 != 0) {
             if (temp_f0 < 14400.0f) {
@@ -331,12 +329,11 @@ s32 bskaztorpedo_entrypoint_3(s32 idx) {
 }
 
 void func_80800E98_bskaztorpedo(PlayerState *self) {
-    f32 sp20[2];
-    f32 sp1C;
+    f32 sp1C[3];
 
-    func_800F5A00(_plsu_entrypoint_1(0xA), &sp1C);
-    sp20[0] += 50.0f;
-    _bamovegoto_entrypoint_12(self, &sp1C);
+    func_800F5A00(_plsu_entrypoint_1(0xA), sp1C);
+    sp1C[1] += 50.0f;
+    _bamovegoto_entrypoint_12(self, sp1C);
 }
 
 void func_80800EE8_bskaztorpedo(PlayerState *self) {

@@ -1,5 +1,6 @@
 #ifndef __CORE2_1E9A960_H__
 #define __CORE2_1E9A960_H__
+
 #include "common.h"
 
 
