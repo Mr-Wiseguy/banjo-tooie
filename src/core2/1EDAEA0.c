@@ -1,11 +1,5 @@
-#include <ultra64.h>
+#include "core2/1EDAEA0.h"
 
-typedef struct {
-    /* 0x00 */ s32 unk0;
-    /* 0x04 */ float position[3];
-    /* 0x10 */ u8 pad10[0x28];
-    /* 0x38 */ f32 unk38; // scale?
-} Actor;
 
 void* func_800DE448(f32*, f32*, f32, f32*, s32);
 void func_800DF47C(s32 (*arg0)(Actor*), Actor*);
@@ -33,7 +27,7 @@ void func_80101808(Actor* arg0, s32 (*arg1)(Actor*)) {
     func_800DF47C(arg1, arg0);
     sp28 = func_801027F4(arg0);
     sp2C = func_801018D8(arg0);
-    func_800DE448(arg0->position, sp28, arg0->unk38, sp2C, func_8010347C(arg0->unk0));
+    func_800DE448(arg0->position, sp28, arg0->scale, sp2C, func_8010347C(arg0->unk0));
 }
 
 void func_80101870(Actor* arg0, void* arg1) {
