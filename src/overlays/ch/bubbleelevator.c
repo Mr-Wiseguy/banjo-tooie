@@ -69,7 +69,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     s32 sp38[3];
 
     func_808008A8_chbubbleelevator(arg0);
-    switch ((u32)arg0->unk72 >> 0xA)
+    switch (arg0->unk72_10)
     {
     case 1:
         if (func_800D90A4(&arg0->unk58) != 0)
@@ -314,7 +314,7 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
     f32 sp40[3];
     f32 sp38[2];
 
-    if (((u32)arg0->unk72 >> 0xA) != 8)
+    if ((arg0->unk72_10) != 8)
     {
         func_800D90A4(&arg0->unk50);
         arg0->unk54 += (func_800D8FF8() * func_800F10B4(arg0->unk50, 0.0f, 3.0f, 1.0f, 3.0f));
