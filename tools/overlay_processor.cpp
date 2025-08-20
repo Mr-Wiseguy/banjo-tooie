@@ -4,6 +4,7 @@
 #include <unordered_set>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 #include "fmt/core.h"
 #include "fmt/ostream.h"
@@ -11,7 +12,7 @@
 #include "tooie_utils.h"
 
 constexpr uint32_t section_size_divisor = 0x10;
-
+std::vector<std::string> editedFilePaths;
 std::vector<uint16_t> read_original_relocs(const std::string& original_reloc_path) {
     std::ifstream reloc_file{original_reloc_path, std::ios_base::binary};
     reloc_file.seekg(0, std::ios_base::end);
@@ -27,6 +28,23 @@ std::vector<uint16_t> read_original_relocs(const std::string& original_reloc_pat
     return ret;
 }
 
+std::vector<std::string> readEditedFiles()
+{
+    //Read the file that contains a list of all the edited files to skip in the reloc process
+    std::string str;
+    std::vector<std::string> file_contents;
+
+    std::fstream file;
+    file.open("edited_files.txt", std::ios::in);
+
+    while (getline(file, str))
+    {
+        if(str.find("//") != 0)
+            file_contents.push_back(str);
+    }
+    return file_contents;
+}
+
 // Sorts relocs by their offset, but keeps HI16/LO16 pairs together
 void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_reloc_path) {
     // Read the original relocs that were pulled from the ROM
@@ -35,6 +53,14 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
     std::unordered_set<uint16_t> reloc_set{relocs.begin(), relocs.end()};
     // Create a vector for placing the sorted relocs.
     std::vector<uint16_t> relocs_out;
+    editedFilePaths = readEditedFiles();
+    for(std::string var : editedFilePaths)
+    {
+        if (original_reloc_path.find(var) != std::string::npos)
+        {
+            return;
+        }
+    } 
 
     // Iterate over every original reloc and check if it exists in the generated relocs
     for (size_t i = 0; i < original_relocs.size(); i++) {
@@ -91,6 +117,8 @@ void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_relo
 
     relocs = std::move(relocs_out);
 }
+
+
 
 bool write_if_different(const std::filesystem::path& filepath, const std::string& data) {
     bool do_write = false;
@@ -234,6 +262,8 @@ int main(int argc, const char **argv) {
         ".data\n"
         "    .word overlay_table_ROM_END - 0x{:08X}\n", overlay_table_sym.value);
 
+    //readEditedFiles("edited_files.txt");
+
     std::vector<uint16_t> reloc_values;
     reloc_values.reserve(128); 
     const char* prev_overlay_name = "overlay_table";
@@ -251,7 +281,7 @@ int main(int argc, const char **argv) {
             reloc_values.clear();
             elf_file.get_tooie_relocs(ovl, reloc_values);
             sort_relocs(reloc_values, "assets/overlays/" + ovl.name + "/relocs.bin");
-
+         
             fmt::print(header, 
                 ".data\n"
                 "  /* Text Size */\n"
