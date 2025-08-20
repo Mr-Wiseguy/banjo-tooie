@@ -49,6 +49,7 @@ s32 func_80800090_chhandcart(void)
     return func_800DA564(0x9DC, 2);
 }
 
+//Goto Map
 void func_808000B4_chhandcart(Actor* arg0)
 {
     switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
