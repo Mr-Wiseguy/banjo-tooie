@@ -262,8 +262,6 @@ int main(int argc, const char **argv) {
         ".data\n"
         "    .word overlay_table_ROM_END - 0x{:08X}\n", overlay_table_sym.value);
 
-    //readEditedFiles("edited_files.txt");
-
     std::vector<uint16_t> reloc_values;
     reloc_values.reserve(128); 
     const char* prev_overlay_name = "overlay_table";
