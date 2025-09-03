@@ -1,4 +1,4 @@
-spimdisasm>=1.17.0
+spimdisasm==1.35.0
 toml>=0.10.2
 mapfile-parser>=2.4.0,<3.0.0
 
