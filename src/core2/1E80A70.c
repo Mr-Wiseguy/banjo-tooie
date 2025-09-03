@@ -1,5 +1,4 @@
-#include <ultra64.h>
-
+#include "core2/1E80A70.h"
 
 extern u8 D_80127642;
 

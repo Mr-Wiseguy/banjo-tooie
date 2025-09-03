@@ -127,10 +127,10 @@ void func_808009F4_chclockworkmouse(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clockworkmouse/func_80800C64_chclockworkmouse.s")
 
-void func_80800CC0_chclockworkmouse(objectMemory* arg0) {
+void func_80800CC0_chclockworkmouse(Actor* arg0) {
     u32 temp_t6;
 
-    temp_t6 = (u32)arg0->unk72 >> 0xA;
+    temp_t6 = arg0->unk72_10;
     if ((temp_t6 == 0) || (temp_t6 == 1) || (temp_t6 == 2))
     {
         _subaddieDll_entrypoint_4(arg0, 0);
