@@ -1,7 +1,6 @@
 #ifndef __CORE2_1E80A70_H__
 #define __CORE2_1E80A70_H__
-
-#include <ultra64.h>
+#include "common.h"
 #include "core2/1EC3810.h"
 
 void func_800A7990(s32, s32, s32);
