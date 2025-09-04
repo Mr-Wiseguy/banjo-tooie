@@ -9,6 +9,7 @@ extern unk80804B84* D_80804B84_chhandcart[4];
 extern s32 D_80804B94_chhandcart[4];
 extern unk80804D84* (D_80804D84_chhandcart[4]);
 extern s32 D_80804D94_chhandcart[4];
+extern s32 D_80804DA4_chhandcart;
 extern f32 D_80804DB8_chhandcart[3];
 extern void* D_80804DC4_chhandcart;
 extern void* D_80804E6C_chhandcart;

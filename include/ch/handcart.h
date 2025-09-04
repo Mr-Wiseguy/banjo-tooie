@@ -69,8 +69,6 @@
 #include "su/baddiedialog.h"
 #include "su/splinet.h"
 
-extern s32 D_80804DA4_chhandcart;
-
 typedef struct {
     f32 unk0;
     f32 unk4;
