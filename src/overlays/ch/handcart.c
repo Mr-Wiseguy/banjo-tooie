@@ -55,20 +55,20 @@ void func_808000B4_chhandcart(Actor* arg0)
     {
     case 1:
         //Control which race to go to
-        _gcgoto_entrypoint_1(arg0->unk64.bits.unk64_19>0 ? MAP_170_GGM_RACE_2 : MAP_16F_GGM_RACE_1, 1);
+        _gcgoto_entrypoint_1(arg0->unk64_19>0 ? MAP_170_GGM_RACE_2 : MAP_16F_GGM_RACE_1, 1);
         return;
     case 0:
     case 2:
         if (func_80800090_chhandcart() == 2)
         {
             //Success Teleport
-            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64.bits.unk64_19>0 ? 0x15 : 0x16);
+            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64_19>0 ? 0x15 : 0x16);
             return;
         }
         else
         {
             //Failure Teleport
-            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64.bits.unk64_19>0 ? 0x16 : 0x15);
+            _gcgoto_entrypoint_1(MAP_C7_GGM_GLITTER_GULCH_MINE, arg0->unk64_19>0 ? 0x16 : 0x15);
             return;
         }
 
@@ -1007,7 +1007,7 @@ void func_80802120_chhandcart(Actor* arg0)
     Prop* var_v0_2;
     sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
     arg0->scale = 0.425f;
-    arg0->unk64.bits.unk64_19 = func_800D0A9C(0xC, 1);
+    arg0->unk64_19 = func_800D0A9C(0xC, 1);
     sp34->unk8F4 = 0;
     sp34->unk4 = 0.0f;
     if (_glcutDll_entrypoint_20() != 0)
@@ -1031,11 +1031,11 @@ void func_80802120_chhandcart(Actor* arg0)
             {
                 func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             }
-            func_80802068_chhandcart(arg0, 1 - arg0->unk64.bits.unk64_19);
+            func_80802068_chhandcart(arg0, 1 - arg0->unk64_19);
             break;
 
         case 1:
-            if (arg0->unk64.bits.unk64_19)
+            if (arg0->unk64_19)
             {
                 sp34->unk0 = _glsplinefind_entrypoint_0(0x314, arg0->position);
                 var_v0 = _gccubesearch_entrypoint_1(0x15U, arg0->position);
@@ -1053,7 +1053,7 @@ void func_80802120_chhandcart(Actor* arg0)
             break;
 
         case 2:
-            if (arg0->unk64.bits.unk64_19)
+            if (arg0->unk64_19)
             {
                 var_v0_2 = _gccubesearch_entrypoint_0(0x201, arg0);
             }
@@ -1062,8 +1062,8 @@ void func_80802120_chhandcart(Actor* arg0)
                 var_v0_2 = _gccubesearch_entrypoint_0(0x1F6, arg0);
             }
             func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
-            func_80802068_chhandcart(arg0, arg0->unk64.bits.unk64_19);
-            if (arg0->unk64.bits.unk64_19 && (func_80800090_chhandcart() == 2))
+            func_80802068_chhandcart(arg0, arg0->unk64_19);
+            if (arg0->unk64_19 && (func_80800090_chhandcart() == 2))
             {
                 func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             }
@@ -1084,7 +1084,7 @@ void func_808023B4_chhandcart(Actor* arg0, u32 arg1, u32 arg2)
 {
     arg2 = arg2 | 0x4;
     _subaddiedialog_entrypoint_11(arg0->unk0, arg1, arg2, arg0->position, 0x36);
-    arg0->unk74.bits.unk74_30 = 1;
+    arg0->unk74_30 = 1;
 }
 
 void func_80802400_chhandcart(Actor* arg0, s32 arg1) 
@@ -1239,7 +1239,7 @@ void func_808028F0_chhandcart(Actor* arg0)
     f32 sp2C[3];
     CanaryMaryMemory* maryMemory;
     maryMemory = (CanaryMaryMemory*)func_80100094(arg0, 0U);
-    arg0->unk64.bits.unk64_19 = func_800D0A9C(0xC, 1);
+    arg0->unk64_19 = func_800D0A9C(0xC, 1);
     if (_glcutDll_entrypoint_20() != 0)
     {
         //Are we in GGM
@@ -1265,12 +1265,12 @@ void func_808028F0_chhandcart(Actor* arg0)
         switch (func_80800194_chhandcart(arg0))
         {
             case 0: //Default State
-                func_8080282C_chhandcart(arg0, 1 - arg0->unk64.bits.unk64_19, 0);
+                func_8080282C_chhandcart(arg0, 1 - arg0->unk64_19, 0);
                 break;
 
             case 1: //In Race
                 //Race Starting (in the Race Map)
-                if (arg0->unk64.bits.unk64_19)
+                if (arg0->unk64_19)
                 {
                     maryMemory->unkC = _glsplinefind_entrypoint_0(0x385, sp2C);
                 }
@@ -1283,9 +1283,9 @@ void func_808028F0_chhandcart(Actor* arg0)
                 break;
 
             case 2: //Won Race
-                func_8080282C_chhandcart(arg0, arg0->unk64.bits.unk64_19, 0);
+                func_8080282C_chhandcart(arg0, arg0->unk64_19, 0);
                 func_808031D0_chhandcart(arg0, 0xF);
-                if (arg0->unk64.bits.unk64_19)
+                if (arg0->unk64_19)
                 {
                     maryMemory->unkC = _glsplinefind_entrypoint_0(0x389, sp2C);
                 }
@@ -1369,7 +1369,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     switch (arg0->unk70_10)
     {
     case 19:
-        arg0->unk64.bits.unk64_16 = 1;
+        arg0->unk64_16 = 1;
         break;
 
     case 23:
@@ -1416,7 +1416,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         break;
 
     case 19:
-        arg0->unk64.bits.unk64_16 = 0;
+        arg0->unk64_16 = 0;
         break;
 
     case 20:
@@ -1439,7 +1439,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
 
     case 6:
         func_800FDC28(0x15U);
-        if (arg0->unk64.bits.unk64_19)
+        if (arg0->unk64_19)
         {
             arg0->unk24 = 25.0f;
         }
@@ -1458,7 +1458,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     case 8:
         if (func_80105AE8(arg0) < 0.93f)
         {
-            func_80800A24_chhandcart(sp2C, arg0->unk64.bits.unk64_19 ? (4) : (2), 4);
+            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (4) : (2), 4);
         }
         else
         {
@@ -1477,7 +1477,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     case 10:
         if (func_80105AE8(sp2C) < 0.93f)
         {
-            func_80800A24_chhandcart(sp2C, arg0->unk64.bits.unk64_19 ? (3) : (1), 4);
+            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (3) : (1), 4);
         }
         else
         {
@@ -1579,7 +1579,7 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     if (gamespeed && gamespeed)
     {
     }
-    temp_v0 = arg0->unk64.bits.unk64_19;
+    temp_v0 = arg0->unk64_19;
     if (var_f12 <= (sp18 - 6553 / 65536.0f))
     {
         func_808031D0_chhandcart(arg0, 0x10);
@@ -1794,7 +1794,7 @@ void func_80803794_chhandcart(Actor* arg0)
     case 2:
         func_80803698_chhandcart(arg0);
         func_80803514_chhandcart(arg0);
-        if (!arg0->unk74.bits.unk74_30)
+        if (!arg0->unk74_30)
         {
             if (func_80090178(1) != 0)
             {
@@ -1802,7 +1802,7 @@ void func_80803794_chhandcart(Actor* arg0)
                 {
                     if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                     {
-                        func_808023B4_chhandcart(arg0, arg0->unk64.bits.unk64_19 ? 0xFAE : 0xFAD, 0xB);
+                        func_808023B4_chhandcart(arg0, arg0->unk64_19 ? 0xFAE : 0xFAD, 0xB);
                     }
                 }
                 else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
@@ -1823,7 +1823,7 @@ void func_80803794_chhandcart(Actor* arg0)
             {
                 if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                 {
-                    func_808023B4_chhandcart(arg0, arg0->unk64.bits.unk64_19 ? 0xFB2 : 0xFB1, 0xB);
+                    func_808023B4_chhandcart(arg0, arg0->unk64_19 ? 0xFB2 : 0xFB1, 0xB);
                 }
             }
             else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
@@ -1844,7 +1844,7 @@ void func_80803794_chhandcart(Actor* arg0)
         if (func_80105998(sp40, 0.05f) != 0)
         {
             sp3C->unk8F8 = 1;
-            func_80800A24_chhandcart(sp40, sp40->unk64.bits.unk64_19 ? 3 : 1, 4);
+            func_80800A24_chhandcart(sp40, sp40->unk64_19 ? 3 : 1, 4);
         }
         func_808036D0_chhandcart((s32)arg0, sp40);
         if (func_80105A5C(arg0) != 0)
@@ -2061,15 +2061,15 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         case 0xF85:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 2);
-            arg0->unk64.bits.unk64_19 = 1;
-            var_a2->unk64.bits.unk64_19 = 1;
+            arg0->unk64_19 = 1;
+            var_a2->unk64_19 = 1;
             break;
         case 0xFAF:
             func_80800AB0_chhandcart(var_a2);
             func_808031D0_chhandcart(arg0, 0x12);
             break;
         }
-        arg0->unk74.bits.unk74_30 = 0;
+        arg0->unk74_30 = 0;
         break;
     case52://Such a weird thing to do
         if (func_801022E4(arg0) == 0x7D)

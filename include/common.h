@@ -57,34 +57,22 @@ typedef struct Actor {
     /* 0x5E */ u8 pad5E;
     /* 0x5F */ u8 unk5F;
     /* 0x60 */ s32 pad60;
-    /* 0x64 */ union {
-        u32 flags;
-        u8 bytes[4];
-        struct {
-            u32 pad64_20 : 12;
-            u32 unk64_19 : 1; // flags & 0x80000
-            u32 pad64_17 : 2;
-            u32 unk64_16 : 1;
-            u32 pad64_0 : 16;
-        } bits;
-    } unk64;
+    /* 0x64 */ u32 pad64_20 : 12;
+    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
+    /* 0x64 */ u32 pad64_17 : 2;
+    /* 0x64 */ u32 unk64_16 : 1;
+    /* 0x64 */ u32 pad64_0 : 16;
     /* 0x68 */ s32 pad68;
     /* 0x6C */ u32 pad6C_9 : 23;
     /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
     /* 0x70 */ u32 pad70_16: 16;
     /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10
     /* 0x70 */ u32 pad70_0: 10;
-    /* 0x74 */ union {
-        u32 flags;
-        u8 bytes[4];
-        struct {    
-            u32 pad74_31 : 1;
-            u32 unk74_30 : 1; // unk74 & 0x40000000
-            u32 pad74_16 : 14;
-            u32 unk74_7 : 9; // unk76 >> 7
-            u32 pad74_0 : 7;
-        } bits;
-    } unk74;
+    /* 0x74 */ u32 pad74_31 : 1;
+    /* 0x74 */ u32 unk74_30 : 1; // unk74 & 0x40000000
+    /* 0x74 */ u32 pad74_16 : 14;
+    /* 0x74 */ u32 unk74_7 : 9; // unk76 >> 7
+    /* 0x74 */ u32 pad74_0 : 7;
     /* 0x78 */ u8 unk78;
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1;

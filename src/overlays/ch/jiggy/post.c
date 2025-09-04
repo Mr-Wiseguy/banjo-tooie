@@ -41,7 +41,7 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
     case 0x1514:
         if (func_800DA298(0x35B) != 0)
         {
-            if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74.bits.unk74_7 - 0x33))
+            if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33))
             {
                 if (func_8008FD48() == 1)
                 {
@@ -88,7 +88,7 @@ s32 func_808002DC_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
     case 0x95:
         break;
     case 0x30:
-        return _sujiggy_entrypoint_2(arg0->unk74.bits.unk74_7 - 0x33);
+        return _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33);
     case 0x52:
         _gcdialogcamera_entrypoint_3((u32 *) &D_808003C8_chjiggypost, arg0->scale);
         break;

@@ -19,7 +19,7 @@ void func_80800000_chwitchyentrygates(Actor* arg0)
     {
         var_a3 = 0x394;
     }
-    if (arg0->unk74.bits.unk74_7 == 0x33)
+    if (arg0->unk74_7 == 0x33)
     {
         var_f0 = 75.0f;
     }

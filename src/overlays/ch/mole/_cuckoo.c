@@ -11,8 +11,8 @@ void func_80800000_chmole_cuckoo(Actor* a0, u32 a1,u32 a2)
 void func_80800024_chmole_cuckoo(Actor* a0)
 {
 	_sumole_entrypoint_0(a0, 0);
-	a0->unk74.bits.unk74_7 = a0->unk74.bits.unk74_7 - 0x32;
-	a0->unk54 = a0->unk74.bits.unk74_7;
+	a0->unk74_7 = a0->unk74_7 - 0x32;
+	a0->unk54 = a0->unk74_7;
 }
 
 void func_80800090_chmole_cuckoo(Actor* a0)
