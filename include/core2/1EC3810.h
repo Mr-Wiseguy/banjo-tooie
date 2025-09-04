@@ -5,5 +5,6 @@
 #include "maps.h"
 
 MapId func_800EA05C(void);
+void func_800EA334(s32);
 
 #endif

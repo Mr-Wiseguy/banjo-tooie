@@ -49,6 +49,7 @@ s32 func_80800090_chhandcart(void)
     return func_800DA564(0x9DC, 2);
 }
 
+//Goto Map
 void func_808000B4_chhandcart(Actor* arg0)
 {
     switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
@@ -1007,6 +1008,7 @@ void func_80802120_chhandcart(Actor* arg0)
     Prop* var_v0_2;
     sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
     arg0->scale = 0.425f;
+    //Based on if we've spawned the first Item set which location canary mary should think we're at
     arg0->unk64_19 = func_800D0A9C(0xC, 1);
     sp34->unk8F4 = 0;
     sp34->unk4 = 0.0f;
@@ -1080,6 +1082,7 @@ void func_80802394_chhandcart(Actor* arg0)
     func_801015D0(arg0);
 }
 
+//Play Canary Mary Dialog
 void func_808023B4_chhandcart(Actor* arg0, u32 arg1, u32 arg2)
 {
     arg2 = arg2 | 0x4;
@@ -1385,27 +1388,27 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     func_80102424(arg0, arg1);
     switch (arg0->unk70_10)
     {
-    case 24:
-        _subaddieDll_entrypoint_0(arg0);
-        break;
+        case 24:
+            _subaddieDll_entrypoint_0(arg0);
+            break;
 
-    case 25:
-        temp_v0 = func_8008FD70();
-        if (temp_v0 != 1)
-        {
-            if (temp_v0 == 0x4000)
+        case 25:
+            temp_v0 = func_8008FD70();
+            if (temp_v0 != 1)
             {
-                func_808023B4_chhandcart(arg0, 0xFA9, 0xB);
+                if (temp_v0 == 0x4000)
+                {
+                    func_808023B4_chhandcart(arg0, 0xFA9, 0xB);
+                    break;
+                }
+            }
+            else //Play Open
+            {
+                func_808023B4_chhandcart(arg0, 0xF7F, 0xB);
                 break;
             }
-        }
-        else
-        {
-            func_808023B4_chhandcart(arg0, 0xF7F, 0xB);
+            func_80802CE8_chhandcart(arg0, 0x1A);
             break;
-        }
-        func_80802CE8_chhandcart(arg0, 0x1A);
-        break;
 
     case 26:
         arg0->unk24 = 40.0f;
@@ -1415,136 +1418,136 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, 0, 0x28B0);
         break;
 
-    case 19:
-        arg0->unk64_16 = 0;
-        break;
+        case 19:
+            arg0->unk64_16 = 0;
+            break;
 
-    case 20:
-        //Loading into GGM from canary cave for cutscene
-        //Canary Mary Freed and ready to race
-        func_800DA544(0x507);
-        arg0->unk24 = 40.0f;
-        func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, arg0->unk0);
-        break;
+        case 20:
+            //Loading into GGM from canary cave for cutscene
+            //Canary Mary Freed and ready to race
+            func_800DA544(0x507);
+            arg0->unk24 = 40.0f;
+            func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, arg0->unk0);
+            break;
 
-    case 23:
-        arg0->unk58 = 1.0f;
-        break;
+        case 23:
+            arg0->unk58 = 1.0f;
+            break;
 
-    case 5:
-        func_80800998_chhandcart(sp2C, 0U, 5U, sp2C->unk0);
-        func_808023B4_chhandcart(arg0, 0xCEC, 3);
-        func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), arg0->unk24, 0);
-        break;
+        case 5:
+            func_80800998_chhandcart(sp2C, 0U, 5U, sp2C->unk0);
+            func_808023B4_chhandcart(arg0, 0xCEC, 3);
+            func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), arg0->unk24, 0);
+            break;
 
-    case 6:
-        func_800FDC28(0x15U);
-        if (arg0->unk64_19)
-        {
-            arg0->unk24 = 25.0f;
-        }
-        else
-        {
-            arg0->unk24 = 15.0f;
-        }
-        break;
-
-    case 7:
-        //Win the Race
-        func_80800024_chhandcart(2);
-        func_80090658(1);
-        break;
-
-    case 8:
-        if (func_80105AE8(arg0) < 0.93f)
-        {
-            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (4) : (2), 4);
-        }
-        else
-        {
-            func_80800998_chhandcart(sp2C, 1U, 5U, arg0->unk0);
-        }
-        break;
-
-    case 9:
-        //Start the Race (Touching the Cart)
-        func_80800024_chhandcart(1);
-        func_800FDC28(0U);
-        func_80800EE4_chhandcart(sp2C, 0);
-        func_80800214_chhandcart(arg0);
-        break;
-
-    case 10:
-        if (func_80105AE8(sp2C) < 0.93f)
-        {
-            func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (3) : (1), 4);
-        }
-        else
-        {
-            func_80800998_chhandcart(sp2C, 1U, 5U, sp2C->unk0);
-        }
-        break;
-
-    case 14:
-        arg0->unk58 = 0.5f;
-        break;
-
-    case 16:
-        if (func_800D0A9C(0xC, 1) != 0)
-        {
-            sp24 = 0xF88;
-        }
-        else
-        {
-            sp24 = 0xF83;
-        }
-        func_80800858_chhandcart(sp2C, arg0, 3, 1);
-        func_808023B4_chhandcart(arg0, sp24, 3);
-        func_800FDC28(0U);
-        func_800FC660(0x17U);
-        break;
-
-    case 15:
-        sp20 = 0;
-        func_80090658(0);
-        func_80090734(1, arg0->position);
-        func_80800858_chhandcart(sp2C, arg0, 2, 1);
-        temp_v0_2 = func_80800090_chhandcart();
-        switch (temp_v0_2)
-        {
-        case 1:
-            if (func_800D0A9C(0xC, 1) != 0)
+        case 6:
+            func_800FDC28(0x15U);
+            if (arg0->unk64_19)
             {
-                sp20 = 0xF87;
+                arg0->unk24 = 25.0f;
             }
             else
             {
-                sp20 = 0xF82;
+                arg0->unk24 = 15.0f;
             }
             break;
 
-        case 2:
-            if (func_800D0A9C(0xC, 1) != 0)
+        case 7:
+            //Win the Race
+            func_80800024_chhandcart(2);
+            func_80090658(1);
+            break;
+
+        case 8:
+            if (func_80105AE8(arg0) < 0.93f)
             {
-                sp20 = 0xF89;
+                func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (4) : (2), 4);
             }
             else
             {
-                sp20 = 0xF84;
+                func_80800998_chhandcart(sp2C, 1U, 5U, arg0->unk0);
             }
             break;
 
-        }
+        case 9:
+            //Start the Race (Touching the Cart)
+            func_80800024_chhandcart(1);
+            func_800FDC28(0U);
+            func_80800EE4_chhandcart(sp2C, 0);
+            func_80800214_chhandcart(arg0);
+            break;
 
-        func_808023B4_chhandcart(arg0, sp20, 0xB);
-        break;
+        case 10:
+            if (func_80105AE8(sp2C) < 0.93f)
+            {
+                func_80800A24_chhandcart(sp2C, arg0->unk64_19 ? (3) : (1), 4);
+            }
+            else
+            {
+                func_80800998_chhandcart(sp2C, 1U, 5U, sp2C->unk0);
+            }
+            break;
 
-    case 18:
-        arg0->unk24 = 40.0f;
-        func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
-        func_80802BC8_chhandcart(arg0);
-        func_8080090C_chhandcart(sp2C, 0x1B, 0x20B0, arg0->unk0);
-        break;
+        case 14:
+            arg0->unk58 = 0.5f;
+            break;
+
+        case 16:
+            if (func_800D0A9C(0xC, 1) != 0) //If we've spawned the first object
+            {
+                sp24 = 0xF88;
+            }
+            else
+            {
+                sp24 = 0xF83;
+            }
+            func_80800858_chhandcart(sp2C, arg0, 3, 1);
+            func_808023B4_chhandcart(arg0, sp24, 3);
+            func_800FDC28(0U);
+            func_800FC660(0x17U);
+            break;
+
+        case 15:
+            sp20 = 0;
+            func_80090658(0);
+            func_80090734(1, arg0->position);
+            func_80800858_chhandcart(sp2C, arg0, 2, 1);
+            temp_v0_2 = func_80800090_chhandcart();
+            switch (temp_v0_2)
+            {
+            case 1:
+                if (func_800D0A9C(0xC, 1) != 0)
+                {
+                    sp20 = 0xF87;
+                }
+                else
+                {
+                    sp20 = 0xF82;
+                }
+                break;
+
+            case 2:
+                if (func_800D0A9C(0xC, 1) != 0)
+                {
+                    sp20 = 0xF89;
+                }
+                else
+                {
+                    sp20 = 0xF84;
+                }
+                break;
+
+            }
+
+            func_808023B4_chhandcart(arg0, sp20, 0xB);
+            break;
+
+        case 18:
+            arg0->unk24 = 40.0f;
+            func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
+            func_80802BC8_chhandcart(arg0);
+            func_8080090C_chhandcart(sp2C, 0x1B, 0x20B0, arg0->unk0);
+            break;
 
     }
 
@@ -1729,18 +1732,18 @@ void func_80803794_chhandcart(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 24:
-        if (func_800DA298(0) != 0)
+        if (func_800DA298(0) != 0) //If we have spoken to canary mary in the cage
         {
             if (func_80090270() == 0)
             {
                 func_80802CE8_chhandcart(arg0, 0x19);
             }
         }
-        else if (func_800DA298(1) == 0)
+        else if (func_800DA298(1) == 0) //If we haven't spoken to canary mary in the cage
         {
             if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(0x4001) != 0))
             {
-                if (func_800DA9E4(0x42A, 1) == 0)
+                if (func_800DA9E4(0x42A, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {
                     func_808023B4_chhandcart(arg0, 0xF7E, 0xB);
                 }
@@ -1802,6 +1805,7 @@ void func_80803794_chhandcart(Actor* arg0)
                 {
                     if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                     {
+                        //Play the dialog for interacting with Canary Mary while she's next to the cart
                         func_808023B4_chhandcart(arg0, arg0->unk64_19 ? 0xFAE : 0xFAD, 0xB);
                     }
                 }
@@ -1809,17 +1813,17 @@ void func_80803794_chhandcart(Actor* arg0)
                 {
                     func_800DA544(0x508);
                     func_80800858_chhandcart(sp40, arg0, 2, 0);
-                    if (func_800DA298(0x57A) != 0)
+                    if (func_800DA298(0x57A) != 0) //If canary Mary has been freed get the race rules talk
                     {
                         func_808023B4_chhandcart(arg0, 0xF80, 0xB);
                     }
-                    else
+                    else //Alternate canary Mary introduces herself them gives the race rules talk
                     {
                         func_808023B4_chhandcart(arg0, 0xFB7, 0xB);
                     }
                 }
             }
-            else if (func_800DA298(0x54) != 0)
+            else if (func_800DA298(0x54) != 0) //if the Detonator has talked to canary mary
             {
                 if (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
                 {
@@ -1828,6 +1832,7 @@ void func_80803794_chhandcart(Actor* arg0)
             }
             else if (_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0xC8, 0x46, 6) != 0)
             {
+                //Set Detonator talks to canary mary flag
                 func_800DA544(0x54);
                 func_808023B4_chhandcart(arg0, 0xFB0, 0xB);
             }
@@ -1972,6 +1977,7 @@ void func_80803794_chhandcart(Actor* arg0)
     }
 }
 
+//Update Function
 s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
 {
     HandcartMemory* temp_t0;
@@ -1992,15 +1998,17 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     case 14:
         func_80802400_chhandcart(arg0, arg2);
         return 3;
-    case 47:
+    case 47: //Callback from dialog ending
         temp_t0 = (HandcartMemory*)func_80100094(func_80106790(arg0->unk3C), 0U);
         switch (*(s16*)&arg2)
         {
         case 0xF84:
+            //Won Race 1
             //Spawn jiggy of flag C
             func_800D1000(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
         case 0xF89:
+            //Won Race 2
             //Spawn Cheato page of flag 4
             func_800D1000(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
@@ -2018,7 +2026,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
             break;
         }
         break;
-    case 46:
+    case 46: //Callback from dialog ending
         if (arg0->unk3C != 0)
         {
             var_a2 = func_80106790(arg0->unk3C);
@@ -2029,45 +2037,51 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         }
         switch (*(s16*)&arg2)
         {
-        case 0xF7F:
-        case 0xFA9:
-            //Set Canary Mary Cage Opened
-            func_800DA544(0x57A);
-            func_80802CE8_chhandcart(arg0, 0x1A);
-            break;
-        case 0xF80:
-        case 0xFB7:
-            func_80800AB0_chhandcart(var_a2);
-            func_808031D0_chhandcart(arg0, 2);
-            break;
-        case 0xCEC:
-            func_808031D0_chhandcart(arg0, 6);
-            break;
-        case 0xF83:
-        case 0xF88:
-            //Reset the race state
-            func_808001D0_chhandcart(arg0, 0);
-            func_808000B4_chhandcart(arg0);
-            func_800904C8(0x28U);
-            break;
-        case 0xF82:
-            func_80800AB0_chhandcart(var_a2);
-            func_808031D0_chhandcart(arg0, 2);
-            break;
-        case 0xF87:
-            func_80800AB0_chhandcart(var_a2);
-            func_808031D0_chhandcart(arg0, 2);
-            break;
-        case 0xF85:
-            func_80800AB0_chhandcart(var_a2);
-            func_808031D0_chhandcart(arg0, 2);
-            arg0->unk64_19 = 1;
-            var_a2->unk64_19 = 1;
-            break;
-        case 0xFAF:
-            func_80800AB0_chhandcart(var_a2);
-            func_808031D0_chhandcart(arg0, 0x12);
-            break;
+            case 0xF7F:
+            case 0xFA9:
+                //Set Canary Mary Cage Opened
+                func_800DA544(0x57A);
+                func_80802CE8_chhandcart(arg0, 0x1A);
+                break;
+            case 0xF80:
+            case 0xFB7:
+                //Canary Mary talk before race 1
+                func_80800AB0_chhandcart(var_a2);
+                func_808031D0_chhandcart(arg0, 2);
+                break;
+            case 0xCEC:
+                //3..2..1..Go
+                func_808031D0_chhandcart(arg0, 6);
+                break;
+            case 0xF83:
+            case 0xF88:
+                //Just too slow Reset the race state
+                func_808001D0_chhandcart(arg0, 0);
+                func_808000B4_chhandcart(arg0);
+                func_800904C8(0x28U);
+                break;
+            case 0xF82:
+                //Mary Wins
+                func_80800AB0_chhandcart(var_a2);
+                func_808031D0_chhandcart(arg0, 2);
+                break;
+            case 0xF87:
+                //Mary Wins
+                func_80800AB0_chhandcart(var_a2);
+                func_808031D0_chhandcart(arg0, 2);
+                break;
+            case 0xF85:
+                //Canary Mary Wants another Race
+                func_80800AB0_chhandcart(var_a2);
+                func_808031D0_chhandcart(arg0, 2);
+                arg0->unk64_19 = 1;
+                var_a2->unk64_19 = 1;
+                break;
+            case 0xFAF:
+                //Canary Mary Leaves CCL
+                func_80800AB0_chhandcart(var_a2);
+                func_808031D0_chhandcart(arg0, 0x12);
+                break;
         }
         arg0->unk74_30 = 0;
         break;
