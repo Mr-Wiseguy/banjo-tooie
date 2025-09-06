@@ -1,8 +1,7 @@
 #ifndef __CORE2_1EC8070_H__
 #define __CORE2_1EC8070_H__
 
-#include <ultra64.h>
-#include "types.h"
+#include "common.h"
 
 void func_800EE780(f32 dst[3], f32 a[3], f32 b[3]); // ml_vec3f_sum
 void func_800EE7B4(f32 dst[3], f32 a[3], f32 b[3], f32 scale); // ml_vec3f_scaled_sum
@@ -29,12 +28,13 @@ void func_800EFD24(f32 vec[3]); // ml_vec3f_clear
 void func_800EFD3C(s32 vec[3]); // ml_vec3i_clear
 void func_800EFD4C(s16 vec[3]); // ml_vec3s_clear
 
+void func_800EEB9C(f32[3], f32, f32);
 void func_800EEC30(f32[3], f32, f32, f32);
 f32 func_800EEFD4(f32[3]);
 void func_800EF04C(f32[3], f32[3]);
 void func_800EF934(f32[3], f32[3], f32);
 void func_800EF2A0(f32[3]);
-void func_800EF4E4(f32*, f32, f32, f32, f32, f32);
+void func_800EF4E4(f32[3], f32, f32, f32, f32, f32);
 void func_800EF5A0(f32*, f32*, f32, f32, f32);
 void func_800EFA4C(f32[3], f32, f32, f32);
 void func_800EFA98(f32[3], f32[3], f32);

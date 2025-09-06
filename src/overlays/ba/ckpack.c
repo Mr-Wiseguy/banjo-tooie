@@ -7,6 +7,8 @@
 
 #include "core2/1EB5E70.h"
 
+s32 func_8008CA74(PlayerState *self);
+
 s32 babackpack_get_size(void) {
     return sizeof(BaBackpack);
 }

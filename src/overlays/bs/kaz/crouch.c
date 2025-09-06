@@ -2,7 +2,7 @@
 
 #include "overlays/bs/kaz/crouch.h"
 
-s32 D_808007C0_bskazcrouch[];
+extern s32 D_808007C0_bskazcrouch[];
 
 void func_80800000_bskazcrouch(PlayerState *self) {
     baanim_playForDuration_loopSmooth(self, ASSET_28F_ANIM_BSKAZCROUCH_UNKNOWN, 0.5f);

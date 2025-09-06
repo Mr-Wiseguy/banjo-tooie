@@ -12,7 +12,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     s32 sp24;
     Prop* temp_v0;
     s32 var_a1;
-    u32 temp_v0_2;
+    MapId temp_v0_2;
 
     arg0->unk24 = arg0->position[1];
     temp_v0 = _gccubesearch_entrypoint_0(0x299, arg0);
@@ -66,10 +66,10 @@ void func_80800000_chbubbleelevator(Actor* arg0)
 void func_80800124_chbubbleelevator(Actor* arg0) 
 {
     s32 sp44;
-    s32 sp38[3];
+    f32 sp38[3];
 
     func_808008A8_chbubbleelevator(arg0);
-    switch (arg0->unk72_10)
+    switch (arg0->unk70_10)
     {
     case 1:
         if (func_800D90A4(&arg0->unk58) != 0)
@@ -170,7 +170,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     }
 }
 
-void func_808004DC_chbubbleelevator(Actor *arg0, s32 arg1)
+void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
 {
   int new_var2;
   Actor *new_var;
@@ -314,7 +314,7 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
     f32 sp40[3];
     f32 sp38[2];
 
-    if ((arg0->unk72_10) != 8)
+    if (arg0->unk70_10 != 8)
     {
         func_800D90A4(&arg0->unk50);
         arg0->unk54 += (func_800D8FF8() * func_800F10B4(arg0->unk50, 0.0f, 3.0f, 1.0f, 3.0f));

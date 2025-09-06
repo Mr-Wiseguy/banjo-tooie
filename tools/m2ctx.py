@@ -15,6 +15,7 @@ src_dir = root_dir / "src"
 CPP_FLAGS = [
     "-Iinclude",
     "-Ilib/ultralib/include",
+    "-Isrc/",
 
     "-DBUILD_VERSION=VERSION_J",
     "-D_FINALROM",

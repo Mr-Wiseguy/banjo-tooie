@@ -3,6 +3,20 @@
 
 #include "types.h"
 
+// This hacky structure allows coords to be accessed using
+// coord->x, coord->y and coord->z, but also as
+// coord->f[0], coord->f[1] and coord->f[2].
+// In some places code only matches when using the float array.
+typedef union {
+    struct {
+        f32 x;
+        f32 y;
+        f32 z;
+    } pos;
+    f32 f[3];
+} Vec3f;
+
+// size: unknown
 typedef struct {
     /* 0x00 */ u32* unk0;
     /* 0x04 */ u32* unk4;
@@ -19,7 +33,8 @@ typedef struct {
     /* 0x2C */ u32 unk2C;
 } Unk80132ED0;
 
-typedef struct {
+// size: unknown
+typedef struct Actor {
     /* 0x00 */ Unk80132ED0* unk0;
     /* 0x04 */ f32 position[3];
     /* 0x10 */ u32* pointerToSyscallEntry;
@@ -28,37 +43,36 @@ typedef struct {
     /* 0x24 */ f32 unk24;
     /* 0x28 */ f32 unk28;
     /* 0x2C */ f32 unk2C;
-    /* 0x30 */ u32 unk30;
+    /* 0x30 */ u32 pad30;
     /* 0x34 */ f32 unk34;
     /* 0x38 */ f32 scale;
-    /* 0x3C */ u32 unk3C;
-    /* 0x40 */ u32 unk40;
+    /* 0x3C */ Unk80132ED0 *unk3C;
+    /* 0x40 */ s32 pad40;
     /* 0x44 */ f32 rotation[3];
     /* 0x50 */ f32 unk50;
     /* 0x54 */ f32 unk54;
-    /* 0x58 */  f32 unk58;
-    /* 0x5C */  u8 unk5C;
-    /* 0x5D */ u8 unk5D;
-    /* 0x5E */ u8 unk5E;
+    /* 0x58 */ f32 unk58;
+    /* 0x5C */ u8 pad5C;
+    /* 0x5D */ u8 pad5D;
+    /* 0x5E */ u8 pad5E;
     /* 0x5F */ u8 unk5F;
-    /* 0x60 */ f32 unk60;
-    /* 0x64 */ u32 unk64_20 : 12;
-    /* 0x64 */ u32 unk64_19 : 1;
-    /* 0x64 */ u32 unk64_18 : 1;
-    /* 0x64 */ u32 unk64_17 : 1;
+    /* 0x60 */ s32 pad60;
+    /* 0x64 */ u32 pad64_20 : 12;
+    /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
+    /* 0x64 */ u32 pad64_17 : 2;
     /* 0x64 */ u32 unk64_16 : 1;
-    /* 0x68 */ u32 unk68;
-    /* 0x68 */ u32 unk6C_24 : 7;
-    /* 0x68 */ u32 unk6C_16 : 9;
-    /* 0x68 */ u32 unk6C_8 : 7;
-    /* 0x68 */ u32 unk6C_0 : 9;
-    /* 0x70 */ u16 unk70;
-    /* 0x72 */ u16 unk72_10 : 6;
-    /* 0x72 */ u16 unk72_0 : 10;
-    /* 0x74 */ u32 unk74_31 : 1;
-    /* 0x74 */ u32 unk74_30 : 1;
-    /* 0x74 */ u32 unk74_16 : 14;
-    /* 0x74 */ u32 unk74_7 : 9;
+    /* 0x64 */ u32 pad64_0 : 16;
+    /* 0x68 */ s32 pad68;
+    /* 0x6C */ u32 pad6C_9 : 23;
+    /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
+    /* 0x70 */ u32 pad70_16: 16;
+    /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10
+    /* 0x70 */ u32 pad70_0: 10;
+    /* 0x74 */ u32 pad74_31 : 1;
+    /* 0x74 */ u32 unk74_30 : 1; // unk74 & 0x40000000
+    /* 0x74 */ u32 pad74_16 : 14;
+    /* 0x74 */ u32 unk74_7 : 9; // unk76 >> 7
+    /* 0x74 */ u32 pad74_0 : 7;
     /* 0x78 */ u8 unk78;
     /* 0x79 */ u8 unk79_4 : 4;
     /* 0x79 */ u8 unk79_3 : 1;
@@ -66,14 +80,40 @@ typedef struct {
     /* 0x79 */ u8 unk79_1 : 1;
     /* 0x79 */ u8 unk79_0 : 1;
     /* 0x7A */ u16 unk7A;
-    /* 0x7C */ u32 unk7C_13 : 19;
-    /* 0x7C */ u32 unk7C_12 : 1;
-    /* 0x7C */ u32 unk7C_14 : 12;
-    /* 0x80 */ u16 unk80;
-    /* 0x82 */ s16 IndexForMemory;
-    /* 0x84 */ u8 unk84[0x18];
+    /* 0x7C */ u32 pad7C_13 : 19;
+    /* 0x7C */ u32 unk7C_12 : 1; // unk7C & 0x1000
+    /* 0x7C */ u32 unk7C_0 : 12; // unk7C & 0xFFF
 } Actor;
 
+typedef struct ActorData {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    s16 unk6;
+    void *unk8;
+    void (*unkC_func)(Actor* actor);
+    void (*unk10_func)(Actor* actor);
+    void (*unk14_func)(s32 arg0, s32 arg1);
+    s32 unk18;
+    s32 unk1C;
+    s16 unk20;
+    s16 unk22;
+    s16 unk24;
+    s16 unk26;
+    void (*unk28_func)(Actor* actor);
+    s32 unk2C;
+    s16 unk30;
+    s16 unk32;
+    void (*unk34_func)(Actor* actor);
+    void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
+    s16 unk3C;
+    s16 unk3E;
+    void (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
+    s16 unk44;
+    s16 unk46;
+    void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
+    s32 unk4C;
+} ActorData;
 
 typedef struct {
     /* 0x0 */ s16 position[3];

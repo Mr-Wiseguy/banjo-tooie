@@ -1,5 +1,6 @@
 #ifndef __CH_MAYA_ENTRY_DOOR_H__
 #define __CH_MAYA_ENTRY_DOOR_H__
+
 #include "common.h"
 #include "gl/cutDll.h"
 #include "su/jiggy.h"
@@ -13,6 +14,6 @@ typedef struct {
 	f32 unk4;
 	u32 unk8[0xC];
 	f32 unk38;
-} unkArg0;
+} Unk80800000MayaEntryDoor;
 
 #endif

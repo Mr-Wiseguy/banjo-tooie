@@ -1,5 +1,6 @@
 #ifndef __CORE2_1EB3750_H__
 #define __CORE2_1EB3750_H__
+
 #include "common.h"
 
 s32 func_800DA298(s32 index);

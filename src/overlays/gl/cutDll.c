@@ -21,6 +21,10 @@ typedef struct
 
 extern CutsceneInformation D_801275E8;
 extern u8 D_8012762C;
+void glcutDll_entrypoint_16(void);
+void glcutDll_entrypoint_11(u32 arg0);
+void glcutDll_entrypoint_10(u32 arg0);
+void glcutDll_entrypoint_7(u32 arg0);
 
 void func_80800000_glcutDll(u32 arg0)
 {

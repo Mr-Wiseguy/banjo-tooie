@@ -1,5 +1,6 @@
 #ifndef __CH_HANDCART_H__
 #define __CH_HANDCART_H__
+
 #include "common.h"
 #include "maps.h"
 
@@ -47,6 +48,8 @@
 
 #include "core2/1EE1510.h"
 #include "core2/1EE5DF0.h"
+#include "core2/1E99980.h"
+#include "core2/1EBB4F0.h"
 
 #include "ca/pod.h"
 
@@ -65,8 +68,6 @@
 #include "su/baddieDll.h"
 #include "su/baddiedialog.h"
 #include "su/splinet.h"
-
-extern u32 D_80804DA4_chhandcart;
 
 typedef struct {
     f32 unk0;

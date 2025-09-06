@@ -3,8 +3,6 @@
 
 #include "common.h"
 
-#include <ultra64.h>
-
 f32 func_800F1828(f32*, f32*);
 void func_800F18FC(f32*, f32*, f32*);
 f32 func_800F1DCC(f32, f32);

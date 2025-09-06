@@ -38,12 +38,11 @@ s32 _susplinet_entrypoint_6(SplineMemory*);
 void _susplinet_entrypoint_7(SplineMemory*, u32, f32*);
 f32 _susplinet_entrypoint_8(SplineMemory*, u32);
 f32 _susplinet_entrypoint_9(SplineMemory*);
-
 void _susplinet_entrypoint_10(SplineMemory*, f32);
 void _susplinet_entrypoint_11(SplineMemory*, f32);
 s16* _susplinet_entrypoint_12(SplineMemory*);
 s16* _susplinet_entrypoint_13(SplineMemory*);
-f32* _susplinet_entrypoint_14(SplineMemory*, s32);
+Vec3f* _susplinet_entrypoint_14(SplineMemory*, s32);
 f32* _susplinet_entrypoint_15(SplineMemory*, s32);
 void _susplinet_entrypoint_17(SplineMemory*);
 u32 _susplinet_entrypoint_18(s32, u32, u32);

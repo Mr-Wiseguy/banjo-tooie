@@ -1,5 +1,6 @@
 #ifndef __CORE2_1E9A960_H__
 #define __CORE2_1E9A960_H__
+
 #include "common.h"
 
 
@@ -15,8 +16,8 @@ s32 func_800C39A0(u8 id);
 void func_800C3BDC(u8 id);
 void func_800C3CE8(u8 id);
 void func_800C3F48(u32);
-u8 func_800C4350(u32, f32*, u32*);
-void func_800C4AF0(u32, void*);
+s32 func_800C4350(s32, f32[3], s32 *); // changed from u8 return
+void func_800C4AF0(f32 *, void*);
 void func_800C4B64(f32);
 
 #endif // __CORE2_1E9A960_H__
