@@ -11,6 +11,7 @@ void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
 PlayerState* func_800F53D0(s32 arg0);
 PlayerState* func_800F53E4(s32 arg0);
+//Get the character control index
 u32 func_800F54E4(void);
 
 void func_800F5A00(s32, f32[3]);

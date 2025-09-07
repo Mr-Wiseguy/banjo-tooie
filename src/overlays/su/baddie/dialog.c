@@ -2,7 +2,8 @@
 
 s32 func_80800000_subaddiedialog(f32* a0, s32 a1, s32 arg2)
 {
-    if (arg2 & 7) {
+    if (arg2 & 7) 
+    {
         return func_8010CAC0(a0, a1);
     }
     return func_8010CB0C(a0, a1, 0x96, -0x96);
@@ -76,6 +77,7 @@ s32 subaddiedialog_entrypoint_4(f32* arg0, s32 arg1, s32 arg2)
     {
         return 0;
     }
+    //If B button is being held
     if (func_80016B30(0, 1) != 1)
     {
         return 0;
@@ -93,6 +95,7 @@ s32 subaddiedialog_entrypoint_5(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         return 0;
     }
+    //If B button is being held
     if (func_80016B30(0U, 1U) != 1)
     {
         return 0;
@@ -109,6 +112,7 @@ s32 subaddiedialog_entrypoint_6(f32* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg
     if ((func_8080110C_subaddiedialog(arg0, arg2, arg3) == 0) || (func_8080118C_subaddiedialog(arg0, arg1, arg2, arg3) == 0)) {
         return 0;
     }
+    //If B button is being held
     if (func_80016B30(0U, 1U) != 1) {
         return 0;
     }
@@ -295,15 +299,16 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     {
         do
         {
-            if (((sp48 == 0) && (func_800F64A4(sp34, arg3[var_s1].unk0) != 0)) && (arg3[var_s1].unk6 == 1))
+
+            if (((sp48 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 1))
             {
                 sp48 = arg3[var_s1].unk4;
             }
-            if (((sp44 == 0) && (func_800F64A4(sp34, arg3[var_s1].unk0) != 0)) && (arg3[var_s1].unk6 == 2))
+            if (((sp44 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 2))
             {
                 sp44 = arg3[var_s1].unk4;
             }
-            if (((sp40 == 0) && (func_800F64A4(sp34, arg3[var_s1].unk0) != 0)) && (arg3[var_s1].unk6 == 3))
+            if (((sp40 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 3))
             {
                 sp40 = arg3[var_s1].unk4;
             }
@@ -313,7 +318,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     if (sp48 != 0)
     {
         var_s0 = arg2->unk8;
-        if (func_80801394_subaddiedialog(arg0, sp3C, arg2->unk0) != 0)
+        if (func_80801394_subaddiedialog(arg0, sp3C, arg2->DialogFlag) != 0)
         {
             if (sp3C & 0x20)
             {
@@ -344,7 +349,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
             sp48 = temp_v0;
             if (subaddiedialog_entrypoint_11(arg0->unk0, temp_v0, var_s0, arg1, arg2->unk6) != 0)
             {
-                func_808013E4_subaddiedialog(arg0, sp3C, arg2->unk0);
+                func_808013E4_subaddiedialog(arg0, sp3C, arg2->DialogFlag);
                 temp_v0 = arg2->unkE;
                 if (arg2->unkE != 0)
                 {
@@ -465,14 +470,13 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
 u8 subaddiedialog_entrypoint_9(s32 arg0, s32 arg1, subaddiedialog_UnkStruct1* arg2, s32 arg3) {
     s32 var_s1;
     u32 temp_s2;
-
     temp_s2 = func_800F54E4();
     var_s1 = 0;
     if (arg3 > 0)
     {
         do
         {
-            if ((func_800F64A4(temp_s2, arg2[var_s1].unk0) != 0) && (func_808010C8_subaddiedialog(arg0, arg2[var_s1].unk4, arg2[var_s1].unk6) == arg1))
+            if ((func_800F64A4(temp_s2, arg2[var_s1].TransformationType) != 0) && (func_808010C8_subaddiedialog(arg0, arg2[var_s1].unk4, arg2[var_s1].unk6) == arg1))
             {
                 return arg2[var_s1].unk6;
             }
@@ -538,6 +542,7 @@ s32 func_80801208_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         return 0;
     }
+    //If B button is being held
     if (func_80016B30(0U, 1U) != 1)
     {
         return 0;
@@ -545,9 +550,9 @@ s32 func_80801208_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     return func_800F4BB8(func_800F54E4(), -1U, arg2);
 }
 
-u32 subaddiedialog_entrypoint_11(Unk80132ED0* arg0, u32 arg1, u32 arg2, f32* arg3, s16 arg4)
+u32 subaddiedialog_entrypoint_11(Unk80132ED0* arg0, u32 dialogId, u32 arg2, f32* CameraTarget, s16 arg4)
 {
-    return func_800C0534(arg1, arg2, arg3, arg0, 0, 0, 0, arg4);
+    return func_800C0534(DialogId, arg2, CameraTarget, arg0, 0, 0, 0, arg4);
 }
 
 void subaddiedialog_entrypoint_12(s32 arg1, s32 arg2, s32 arg3)
@@ -582,7 +587,8 @@ void subaddiedialog_entrypoint_15(s32 arg1, s32 arg2, s32 arg3)
     func_8010114C(arg1, 0x3a, ((s32*)combined)[0]);
 }
 
-s32 func_80801394_subaddiedialog(Actor* arg0, s32 arg1, s32 arg2)
+/// Get the value of dialog flag
+s32 func_80801394_subaddiedialog(Actor* arg0, s32 arg1, s32 Flag)
 {
     s32 var_v0;
 
@@ -590,24 +596,25 @@ s32 func_80801394_subaddiedialog(Actor* arg0, s32 arg1, s32 arg2)
     {
         return arg0->unk74_30 == 0;
     }
-    if (arg2)
+    if (Flag)
     {
     }
-    var_v0 = (arg2 != 0) != 0;
+    var_v0 = (Flag != 0) != 0;
     if (var_v0)
     {
-        var_v0 = func_800DA298(arg2) == 0;
+        var_v0 = func_800DA298(Flag) == 0;
         return var_v0;
     }
 }
 
-void func_808013E4_subaddiedialog(Actor* arg0, s32 arg1, u32 arg2) {
+/// Set Dialog Flag True
+void func_808013E4_subaddiedialog(Actor* actor, s32 arg1, u32 Flag) {
     if (arg1 & 0x40)
     {
-        arg0->unk74_30 = 1;
+        actor->unk74_30 = 1;
         return;
     }
-    func_800DA544(arg2);
+    func_800DA544(Flag);
 }
 
 s32 func_8080141C_subaddiedialog(void)
@@ -619,18 +626,17 @@ s32 func_8080141C_subaddiedialog(void)
 s32 subaddiedialog_entrypoint_16(void)
 {
     u32 temp_v0;
-    u32 sp1C;
 
     if (func_800DB9B0() != 0)
     {
         return 0;
     }
     temp_v0 = func_800F54E4();
-    if ((temp_v0 == -1U) || (sp1C = temp_v0, (func_800F6438(temp_v0) == 0)))
+    if ((temp_v0 == -1U) || (func_800F6438(temp_v0) == 0))
     {
         return 0;
     }
-    if (func_800F6774(sp1C) == 0)
+    if (func_800F6774(temp_v0) == 0)
     {
         return 0;
     }
