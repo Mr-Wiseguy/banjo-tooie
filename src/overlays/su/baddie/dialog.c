@@ -467,7 +467,7 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
 }
 
 
-u8 subaddiedialog_entrypoint_9(s32 arg0, s32 arg1, subaddiedialog_UnkStruct1* arg2, s32 arg3) {
+u8 subaddiedialog_entrypoint_9(Actor* arg0, s32 arg1, subaddiedialog_UnkStruct1* arg2, s32 arg3) {
     s32 var_s1;
     u32 temp_s2;
     temp_s2 = func_800F54E4();
@@ -500,7 +500,7 @@ s32 subaddiedialog_entrypoint_10(s32 arg0)
     }
 }
 
-s32 func_808010C8_subaddiedialog(s32 a0, s32 arg1, s32 arg2)
+s32 func_808010C8_subaddiedialog(Actor* a0, s32 arg1, s32 arg2)
 {
     if (arg1 < 0)
     {
@@ -550,7 +550,7 @@ s32 func_80801208_subaddiedialog(f32* arg0, s32 arg1, s32 arg2, s32 arg3)
     return func_800F4BB8(func_800F54E4(), -1U, arg2);
 }
 
-u32 subaddiedialog_entrypoint_11(Unk80132ED0* arg0, u32 dialogId, u32 arg2, f32* CameraTarget, s16 arg4)
+u32 subaddiedialog_entrypoint_11(Unk80132ED0* arg0, u32 DialogId, u32 arg2, f32* CameraTarget, s16 arg4)
 {
     return func_800C0534(DialogId, arg2, CameraTarget, arg0, 0, 0, 0, arg4);
 }

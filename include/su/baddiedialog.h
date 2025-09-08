@@ -49,8 +49,8 @@ typedef struct {
 
 }subaddiedialog_UnkStruct2;
 
-s32 func_80800000_subaddiedialog(f32* a0, s32 a1, s32 arg2);
-s32 func_808010C8_subaddiedialog(s32 a0, s32 arg1, s32 arg2);
+s32 func_80800000_subaddiedialog(f32*, s32, s32);
+s32 func_808010C8_subaddiedialog(Actor* a0, s32 arg1, s32 arg2);
 s32 func_8080110C_subaddiedialog(f32*, s32, s32);
 s32 func_8080118C_subaddiedialog(f32*, s32, s32, s32);
 s32 func_80801208_subaddiedialog(f32*, s32, s32, s32);
@@ -61,7 +61,7 @@ s32 subaddiedialog_entrypoint_1(f32* a0, u32 a1, s32 arg2);
 s32 _subaddiedialog_entrypoint_3(f32*, s32, u32, u32, s32);
 s32 _subaddiedialog_entrypoint_5(f32*, u32, u32, u32);
 s32 _subaddiedialog_entrypoint_6(f32*, s32, u32, u32, s32);
-u32 subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, s16 );
+u32 subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, s16);
 void _subaddiedialog_entrypoint_11(Unk80132ED0*, u32, u32, f32*, u32);
 
 #endif
