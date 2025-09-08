@@ -13,7 +13,7 @@
 #include "overlays/ba/wandglow.h"
 #include "overlays/bs/mum.h"
 #include "overlays/bs/state.h"
-#include "core2/1E29B60.h"
+#include "core1/1E29B60.h"
 #include "core2/1E6B900.h"
 #include "core2/1E76CC0.h"
 #include "core2/1E78BF0.h"

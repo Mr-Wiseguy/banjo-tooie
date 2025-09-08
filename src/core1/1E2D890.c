@@ -1,6 +1,6 @@
 #include "threads.h"
 #include "types.h"
-#include "core2/1E2D890.h"
+#include "core1/1E2D890.h"
 
 // .data
 extern s32 D_8003F5F0;

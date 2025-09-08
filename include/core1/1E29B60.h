@@ -1,10 +1,11 @@
-#ifndef __CORE2_1E29B60_H__
-#define __CORE2_1E29B60_H__
+#ifndef __CORE1_1E29B60_H__
+#define __CORE1_1E29B60_H__
 
 #include "common.h"
 #include <ultra64.h>
 
 void func_8001209C(s32);
+void func_80012128();
 void func_800121D0();
 void func_8001253C(s32);
 void func_800125B0();
@@ -54,4 +55,4 @@ extern u8 core2_BSS_END[]; // core2 bss end
 s32 func_8001210C(s32);
 s32 func_8001211C(void);
 
-#endif // __CORE2_1E29B60_H__
+#endif // __CORE1_1E29B60_H__
