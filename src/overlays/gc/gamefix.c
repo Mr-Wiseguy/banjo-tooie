@@ -22,7 +22,7 @@ void gcgamefix_entrypoint_1(s32 arg0)
         //Compare collected number of jinjos to the total number of jinjos for a type
         if (func_800D129C(var_s0) == temp_s1)
         {
-            temp_s1_2 = var_s0 + 0x51;
+            temp_s1_2 = var_s0 + IoH_JV_JINJO_FAMILY_WHITE;
             //Check if we've collected the associated jiggy
             if (func_800D0B68(temp_s1_2, 1U) == 0)
             {
@@ -65,9 +65,9 @@ void func_8080011C_gcgamefix(void)
 void func_80800164_gcgamefix(void)
 {
     //Check if we've given dippy water but didnt get the reward
-    if ((func_800DA298(0x327) != 0) && (func_800D0B68(0x2A, 1) == 0))
+    if ((func_800DA298(0x327) != 0) && (func_800D0B68(TDL_DIPPY, 1) == 0))
     {
         //Give the dippy reward
-        func_800D0C78(0x2A, 1, 1);
+        func_800D0C78(TDL_DIPPY, 1, 1);
     }
 }

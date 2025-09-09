@@ -4,6 +4,7 @@
 #include "core2/1EA9160.h"
 #include "core2/1EAAD80.h"
 #include "core2/1EB3750.h"
+#include "jiggies.h"
 
 void _gcgamefix_entrypoint_0(); 
 void func_808000D0_gcgamefix(void);
