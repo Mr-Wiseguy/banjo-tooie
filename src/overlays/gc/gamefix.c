@@ -11,27 +11,21 @@ void gcgamefix_entrypoint_0(void)
 
 void gcgamefix_entrypoint_1(s32 arg0)
 {
-    u32 temp_s1;
-    u32 temp_s1_2;
-    u32 var_s0;
+    u32 i;
 
-    var_s0 = 0;
-    do {
+    for (i = 0; i < 9; i++) 
+    {
         //Get the number of Jinjos collected for a certain type
-        temp_s1 = func_800D1338(var_s0);
-        //Compare collected number of jinjos to the total number of jinjos for a type
-        if (func_800D129C(var_s0) == temp_s1)
+        if (func_800D1338(i) == func_800D129C(i))
         {
-            temp_s1_2 = var_s0 + IoH_JV_JINJO_FAMILY_WHITE;
             //Check if we've collected the associated jiggy
-            if (func_800D0B68(temp_s1_2, 1U) == 0)
+            if (func_800D0B68(i + IoH_JV_JINJO_FAMILY_WHITE, 1U) == 0)
             {
                 //Set Jiggy Collected
-                func_800D0C78(temp_s1_2, 1U, 1U);
+                func_800D0C78(i + IoH_JV_JINJO_FAMILY_WHITE, 1U, 1U);
             }
         }
-        var_s0 += 1;
-    } while (var_s0 != 9);
+    }
 }
 
 void func_808000D0_gcgamefix(void)
