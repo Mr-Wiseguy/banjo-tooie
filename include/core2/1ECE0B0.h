@@ -5,14 +5,20 @@
 
 
 #include <ultra64.h>
-
+s32 func_800F4B8C(u32, u32, s32);
+s32 func_800F4BB8(u32, u32, s32);
 void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
 PlayerState* func_800F53D0(s32 arg0);
 PlayerState* func_800F53E4(s32 arg0);
+//Get the character control index
 u32 func_800F54E4(void);
 
 void func_800F5A00(s32, f32[3]);
+f32 func_800F5F24(u32);
+s32 func_800F5FE0(s32);
+s32 func_800F6438(u32);
+s32 func_800F6774(u32);
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, s32 transformationType);
 //The moving object is moved towards/away from the target

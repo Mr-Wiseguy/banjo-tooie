@@ -14,7 +14,7 @@
 #include "overlays/ba/stick.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/bs/rest.h"
-#include "core2/1E29B60.h"
+#include "core1/1E29B60.h"
 #include "core2/1E6B900.h"
 #include "core2/1E6F080.h"
 #include "core2/1E75920.h"
