@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_800CEF6C();
 void func_800CF7F4(u32 a0);
 
 #endif
