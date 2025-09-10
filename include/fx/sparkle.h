@@ -3,5 +3,6 @@
 
 #include "common.h"
 
+void _fxsparkle_entrypoint_1(f32*, u32);
 
 #endif

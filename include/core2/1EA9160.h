@@ -9,6 +9,8 @@ u32 func_800D035C(s16 a0);
 s32 func_800D0A9C(u32, u32);
 s32 func_800D0B68(u32, u32);
 void func_800D0C78(u32, u32, u32);
+//Set Item Collected Flag
+void func_800D0BD4(s32, u32);
 //Spawn Collectable
 void func_800D1000(u32, u32, f32*, u32, Unk80132ED0*);
 //Get Total Number of Jinjos of Type
