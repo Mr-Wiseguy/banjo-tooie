@@ -5,6 +5,7 @@
 
 
 #include <ultra64.h>
+s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
 void func_800F4CC0(s32);
@@ -29,6 +30,8 @@ void func_800F8294(s32, f32*);
 void func_800F82C0(s32);
 void func_800F832C(s32, f32*);
 s32 func_800F8B64(void);
+void func_800F8DD8();
+void func_800F8E08();
 void func_800F911C(s32);
 // Might take in a PlayerState *
 void func_800F9BC4(void);

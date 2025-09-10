@@ -7,7 +7,7 @@
 
 //Has Ability
 s32 func_800C6E38(s32 AbilityID) {
-    return func_800DA298(AbilityID + 0xED);
+    return func_800DA298(AbilityID + FLAG_0ED_ABILITY_BK_BEAK_BARGE);
 }
 
 //Immediate Return
@@ -76,12 +76,12 @@ void func_800C7074(s32 arg0, s32 arg1) {
 
 //Set Ability Flag
 void func_800C70B0(s32 arg0, s32 set) {
-    func_800DA3B8(arg0 + 0xED, set);
+    func_800DA3B8(arg0 + FLAG_0ED_ABILITY_BK_BEAK_BARGE, set);
 }
 
 //Set Ability Flag offset by 1
 void func_800C70D0(s32 arg0, s32 set) {
-    func_800DA3B8(arg0 + 0xEE, set);
+    func_800DA3B8(arg0 + FLAG_0EE_ABILITY_BK_BEAK_BOMB, set);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C70F0.s")

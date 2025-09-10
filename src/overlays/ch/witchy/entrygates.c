@@ -8,7 +8,7 @@ void func_80800000_chwitchyentrygates(Actor* arg0)
     s32 var_a3;
     if (_sujiggy_entrypoint_20(2U) != 0)
     {
-        func_800DA544(0x394);
+        func_800DA544(FLAG_394_PROGRESS_OPENED_WORLD_WW);
     }
     if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7CU) == 0))
     {

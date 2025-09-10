@@ -137,5 +137,5 @@ void func_800DB8BC(char* arg0, s32 time) {
 
 //Is in a cutscene
 int func_800DB9B0(void) {
-    return func_800DA298(0x641);
+    return func_800DA298(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
 }

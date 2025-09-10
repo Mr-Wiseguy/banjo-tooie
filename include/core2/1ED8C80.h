@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_800FFA88(Unk80132ED0*);
 void func_800FFAB0(Actor*);
 u32* func_80100074(Actor*, u32, u32);
 void* func_80100094(Actor*, u32);

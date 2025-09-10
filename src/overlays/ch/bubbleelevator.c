@@ -35,7 +35,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     //If world 7 is unlocked
     if (_sujiggy_entrypoint_20(7) != 0)
     {
-        func_800DA544(0x399);
+        func_800DA544(FLAG_399_PROGRESS_OPENED_WORLD_CCL);
     }
     //Check if the World Open Cheat is active
     var_a1 = func_800D3E40(0xB) != 0;
@@ -45,12 +45,12 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     }
     sp24 = var_a1;
     //Check the world 7 unlock flag if false
-    if ((func_800DA298(0x399) == 0) && (var_a1 == 0))
+    if ((func_800DA298(FLAG_399_PROGRESS_OPENED_WORLD_CCL) == 0) && (var_a1 == 0))
     {
         func_808004DC_chbubbleelevator(arg0, 8);
     }
     //0x6CA Controls whether the elevator is used when entering a level with an elevator
-    else if (func_800DA298(0x6CA) != 0)
+    else if (func_800DA298(FLAG2_6CA_USING_BUBBLEELEVATOR) != 0)
     {
         func_808004DC_chbubbleelevator(arg0, 1);
     }
@@ -108,10 +108,10 @@ void func_80800124_chbubbleelevator(Actor* arg0)
             else
             {
                 //Have we been told about the bubble only being accessible as banjo and kazooie
-                if (func_800DA298(0x6EA) == 0)
+                if (func_800DA298(FLAG2_6EA_BUBBLE_AS_BK_WARNING) == 0)
                 {
                     //Set the listened to flag and talk to player
-                    func_800DA544(0x6EA);
+                    func_800DA544(FLAG2_6EA_BUBBLE_AS_BK_WARNING);
                     _subaddiedialog_entrypoint_11(arg0->unk0, 0x1229, 3, arg0->position, 0x6F);
                 }
                 sp44 = 1;
@@ -162,7 +162,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         if (func_800D90A4(&arg0->unk28) != 0)
         {
             //Set World Unlocked True
-            func_800DA544(0x399);
+            func_800DA544(FLAG_399_PROGRESS_OPENED_WORLD_CCL);
             func_808004DC_chbubbleelevator(arg0, 4);
         }
         arg0->scale = func_800F12D4(arg0->unk28, arg0->unk2C, 0.0f, 0.05f, 1.0f);
@@ -197,7 +197,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
     case 3:
         func_800C3F48(0x665F44B1);
         //Set Bubble Flag False
-        func_800DA524(0x6CA);
+        func_800DA524(FLAG2_6CA_USING_BUBBLEELEVATOR);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
         func_800F78EC(func_800F54E4(), arg0->unk18, 840.0f, -1500.0f);
@@ -232,7 +232,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         func_800C3F48(0x665F44B1);
         func_800FC6B0(0x4A);
         //Set Bubbled Flag True
-        func_800DA544(0x6CA);
+        func_800DA544(FLAG2_6CA_USING_BUBBLEELEVATOR);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
         //Set Bubbled Animation State
@@ -296,7 +296,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
             func_808004DC_chbubbleelevator(arg0, 3);
         }
         //If we're in CCL and Canary Mary is not in CCL
-        if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (func_800DA298(0x504) == 0)))
+        if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (func_800DA298(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
         {
             return func_80101180(0x383, 0xB, arg2);
         }
