@@ -7,7 +7,7 @@ extern u32 D_808003F4_chhoneycarrier;
 //Called when the object is touched
 void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
 {
-    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (func_800DA298(0x663) == 0))
+    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (func_800DA298(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
     {
         if (arg0->unk6C_0 != 0)
         {
@@ -18,7 +18,7 @@ void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
         //Play collected sound effect
         func_800FC63C(9, 0x6D60);
         //Wait 2 seconds before trying to show the tutorial
-        func_800C9E20(2.0f, &_sudialog_entrypoint_0, 0x32, 0);
+        func_800C9E20(2.0f, &_sudialog_entrypoint_0, FLAG_032_FTT_ITEM_EMPTY_HONEYCOMB, 0);
         //Increment Inventory Value for honeycomb
         func_800D1844(0x49);
         _fxsparkle_entrypoint_1(arg0->position, 0);

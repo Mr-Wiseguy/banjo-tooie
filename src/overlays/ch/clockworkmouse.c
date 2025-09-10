@@ -22,11 +22,11 @@ extern void *D_80803ED0_chclockworkmouse; // unknown data
 extern void *D_80803EE0_chclockworkmouse; // unknown data
 
 s32 func_80800000_chclockworkmouse(void) {
-    return func_800DA564(0xA37, 3);
+    return func_800DA564(FLAG3_A37_CANARY_MARY_RACE_STATE_1, 3);
 }
 
 void func_80800024_chclockworkmouse(s32 arg0) {
-    func_800DA7A8(0x9DA, arg0, 2);
+    func_800DA7A8(FLAG3_9DA_UNK, arg0, 2);
     func_800FDC28(0);
     switch (arg0) { 
     case 1:
@@ -39,7 +39,7 @@ void func_80800024_chclockworkmouse(s32 arg0) {
 }
 
 s32 func_80800090_chclockworkmouse(void) {
-    return func_800DA564(0x9DA, 2);
+    return func_800DA564(FLAG3_9DA_UNK, 2);
 }
 
 void func_808000B4_chclockworkmouse(Actor *actor) {
@@ -59,7 +59,7 @@ u8 func_8080011C_chclockworkmouse(Actor *actor) {
     Unk80100094 *sp1C;
 
     sp1C = ((Unk80100094 *)func_80100094(actor, 0));
-    sp1C->unkC.bytes[3] = func_800DA564(0xA37, 3);
+    sp1C->unkC.bytes[3] = func_800DA564(FLAG3_A37_CANARY_MARY_RACE_STATE_1, 3);
     return sp1C->unkC.bytes[3];
 }
 
@@ -67,7 +67,7 @@ void func_80800158_chclockworkmouse(Actor *actor, s32 arg1) {
     Unk80100094 *sp1C;
 
     sp1C = ((Unk80100094 *)func_80100094(actor, 0));
-    func_800DA7A8(0xA37, arg1, 3);
+    func_800DA7A8(FLAG3_A37_CANARY_MARY_RACE_STATE_1, arg1, 3);
     sp1C->unkC.bytes[3] = arg1;
 }
 
@@ -586,7 +586,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
         break;
     case 3:
         if (func_8010CB0C(actor->position, 0x32, 0x32, 0) != 0) {
-            func_800DA544(0x42B);
+            func_800DA544(FLAG_42B_UNK);
             func_80800E8C_chclockworkmouse(actor, 4);
         }
         break;
@@ -672,7 +672,7 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
     }
     switch (func_80800000_chclockworkmouse()) {
     case 0:
-        if (func_800DA298(0x504) == 0) {
+        if (func_800DA298(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0) {
             func_80103140(actor, 0x8A1, ((u16**)actor)[0][0xB]);
         }
         break;
@@ -855,7 +855,7 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
         func_8080019C_chclockworkmouse(actor);
         break;
     }
-    if ((func_800D0A9C(4, 4) != 0) && (func_800DA298(0x504) == 0)) {
+    if ((func_800D0A9C(4, 4) != 0) && (func_800DA298(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)) {
         sp28->unkC.shorts[0] = _glsplinefind_entrypoint_0(0x388, actor->position);
         func_801058C4(actor, sp28->unkC.shorts[0], actor->unk24, 0);
         if (_glcutDll_entrypoint_19(0x55) != 0) {
@@ -929,7 +929,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
         actor->unk64_16 = 0;
         break;
     case 20:
-        func_800DA544(0x504);
+        func_800DA544(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL);
         actor->unk24 = 40.0f;
         func_80800850_chclockworkmouse(sp2C, 0x47, 0x20B0, actor->unk0);
         break;
@@ -1215,10 +1215,11 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
     case 17:
         func_80802BCC_chclockworkmouse(arg0);
         func_80802A48_chclockworkmouse(arg0);
-        if (func_800DA298(0x42B) != 0) {
+        if (func_800DA298(FLAG_42B_UNK) != 0) 
+        {
             func_808026E0_chclockworkmouse(arg0, 2);
         } else if (!(arg0->unk74_30) && (func_80090178(1) != 0) && (_subaddiedialog_entrypoint_3(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
-            func_800DA544(0x42B);
+            func_800DA544(FLAG_42B_UNK);
             func_8080079C_chclockworkmouse(sp34, arg0, 2, 0);
             func_80801B44_chclockworkmouse(arg0, 0x1426, 0xB);
         }

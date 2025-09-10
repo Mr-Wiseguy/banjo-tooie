@@ -26,6 +26,9 @@
 #include "fx/sparkle.h"
 #include "fx/twinkle.h"
 
+#include "gameflags.h"
+
+
 typedef struct {
     u16 pad0[0xD];
     u16 unk1A;

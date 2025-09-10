@@ -39,7 +39,7 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x1513:
     case 0x1514:
-        if (func_800DA298(0x35B) != 0)
+        if (func_800DA298(FLAG_35B_FTT_CS_JIGGYWIGGY) != 0)
         {
             if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33))
             {
@@ -66,14 +66,14 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
         break;
 
     case 0x1512:
-        func_800DA544(0x4E8);
+        func_800DA544(FLAG_4E8_FTT_ALTAR_OF_KNOWLEDGE);
     default:
         func_80101FDC(arg0, 1U);
         break;
     }
     if ((arg1 == 0x1515) && (arg2 == 1))
     {
-        _gcgoto_entrypoint_1(0x151, 4);
+        _gcgoto_entrypoint_1(MAP_151_IOH_JIGGYWIGGY_TEMPLE, 4);
     }
 
 }
