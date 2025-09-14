@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/packctrl/bapackctrl_entrypoint_0.s")
+s32 bapackctrl_entrypoint_0() 
+{
+return 0x20;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/packctrl/func_80800008_bapackctrl.s")
 

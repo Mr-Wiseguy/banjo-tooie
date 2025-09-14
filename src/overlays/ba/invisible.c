@@ -6,7 +6,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/invisible/func_808003AC_bainvisible.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/invisible/bainvisible_entrypoint_0.s")
+s32 bainvisible_entrypoint_0() 
+{
+return 0x7C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/invisible/bainvisible_entrypoint_1.s")
 

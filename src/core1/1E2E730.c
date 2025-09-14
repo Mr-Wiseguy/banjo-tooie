@@ -46,4 +46,5 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2E730/func_80017810.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2E730/func_80017840.s")
+void func_80017840(void) {
+}

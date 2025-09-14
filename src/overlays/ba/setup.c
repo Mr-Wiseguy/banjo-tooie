@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/setup/basetup_entrypoint_0.s")
+s32 basetup_entrypoint_0() 
+{
+return 0x4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/setup/func_80800008_basetup.s")
 

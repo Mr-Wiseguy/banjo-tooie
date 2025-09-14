@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/jig/ncbajig_entrypoint_0.s")
+s32 ncbajig_entrypoint_0() 
+{
+return 0xC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/jig/func_80800008_ncbajig.s")
 

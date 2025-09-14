@@ -52,7 +52,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E64F00/func_8008C0AC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E64F00/func_8008C0B8.s")
+s32 func_8008C0B8(void)
+{
+	return 0x20;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E64F00/func_8008C0C0.s")
 

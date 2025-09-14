@@ -1,6 +1,9 @@
 #include "core2/1E79FD0.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A06E0.s")
+s32 func_800A06E0() 
+{
+return 0x18;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A06E8.s")
 
@@ -46,7 +49,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0DDC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0E50.s")
+s32 func_800A0E50() 
+{
+return 0x14;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0E58.s")
 

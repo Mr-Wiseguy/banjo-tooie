@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/dive/ncbadive_entrypoint_0.s")
+s32 ncbadive_entrypoint_0() 
+{
+return 0x10;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/dive/ncbadive_entrypoint_1.s")
 

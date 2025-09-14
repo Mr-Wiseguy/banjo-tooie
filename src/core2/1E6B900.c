@@ -1,6 +1,9 @@
 #include "core2/1E6B900.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092010.s")
+s32 func_80092010(void)
+{
+	return 0x118;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092018.s")
 
@@ -188,7 +191,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_800942D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094340.s")
+s32 func_80094340(void)
+{
+	return 0x4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094348.s")
 
