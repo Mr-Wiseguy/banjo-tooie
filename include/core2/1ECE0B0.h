@@ -5,6 +5,7 @@
 
 
 #include <ultra64.h>
+s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
 void func_800F4CC0(s32);

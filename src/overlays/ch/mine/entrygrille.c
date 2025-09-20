@@ -12,7 +12,7 @@ s32 func_80800000_chmineentrygrille(Unk80800000MineEntryGrilleArg0* arg0, s32 ar
     case 0x7:
         _chexploder_entrypoint_3(arg0, &arg0->unk4, 8);
         //Set Flag True
-        func_800DA544(0x393);
+        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         return 1;
     case 0x90:
         temp_v0 = func_80106790(func_80101080());
@@ -31,7 +31,7 @@ void func_808000C4_chmineentrygrille(s32 arg0)
 {
     if (_sujiggy_entrypoint_20(1) != 0)
     {
-        func_800DA544(0x393);
+        func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         func_800FFAB0(arg0);
         return;
     }

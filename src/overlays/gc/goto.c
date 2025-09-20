@@ -19,7 +19,7 @@ void func_8080011C_gcgoto(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
     {
         if ((arg0 == 0xCE) && (arg1 == 4))
         {
-            func_800DA544(0x503);
+            func_800DA544(FLAG_503_UNK);
         }
         gcgoto_entrypoint_0(&arg0, &arg1);
         func_800A7990(arg0, arg1, arg3);

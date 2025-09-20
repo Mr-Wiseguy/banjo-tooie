@@ -7,7 +7,7 @@ void func_80800000_chmayaentrydoor(Unk80800000MayaEntryDoor* arg0)
     s32 sp2C;
     if ((_glcutDll_entrypoint_19(0x67) == 0) && (_sujiggy_entrypoint_20(0) != 0))
     {
-        func_800DA544(0x392);
+        func_800DA544(FLAG_392_PROGRESS_OPENED_WORLD_MT);
     }
     
     if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7A) == 0))

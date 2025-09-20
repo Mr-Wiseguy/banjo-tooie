@@ -61,7 +61,7 @@ typedef struct Actor {
     /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
     /* 0x64 */ u32 pad64_17 : 2;
     /* 0x64 */ u32 unk64_16 : 1;
-    /* 0x64 */ u32 pad64_0 : 16;
+    /* 0x64 */ u32 unk64_0 : 16;
     /* 0x68 */ s32 pad68;
     /* 0x6C */ u32 pad6C_9 : 23;
     /* 0x6C */ u32 unk6C_0 : 9; // if accessed directly: unk6C & 0x1FF, if assigned: ((u16)valueToAssign & 0x1FF) | (unk6E & 0xFE00);
