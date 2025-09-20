@@ -3,6 +3,6 @@
 
 #include "common.h"
 
-u32 _sudialog_entrypoint_0();
+void _sudialog_entrypoint_0(s32, s32);
 
 #endif

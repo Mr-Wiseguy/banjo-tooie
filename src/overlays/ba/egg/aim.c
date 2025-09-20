@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/baeggaim_entrypoint_0.s")
+s32 baeggaim_entrypoint_0() 
+{
+    return 0x4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/func_80800008_baeggaim.s")
 

@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fpctrl/bafpctrl_entrypoint_0.s")
+s32 bafpctrl_entrypoint_0() 
+{
+    return 0x1C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fpctrl/func_80800008_bafpctrl.s")
 

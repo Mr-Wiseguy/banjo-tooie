@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/ncbastring_entrypoint_0.s")
+s32 ncbastring_entrypoint_0() 
+{
+    return 0xC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/func_80800008_ncbastring.s")
 

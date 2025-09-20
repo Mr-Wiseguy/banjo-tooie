@@ -1,6 +1,9 @@
 #include "overlays/ba/physics.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD70.s")
+s32 func_8009AD70() 
+{
+    return 0xF;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD78.s")
 
@@ -10,7 +13,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009ADF0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AE00.s")
+s32 func_8009AE00() 
+{
+    return 0xC4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AE08.s")
 

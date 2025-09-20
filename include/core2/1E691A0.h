@@ -5,7 +5,9 @@
 
 void func_8008FB58(f32[3], f32, f32);
 void func_8008FBE0(u32 a0);
+void func_8008FE94(s32, f32*);
 f32 func_80090010(void);
+s32 func_80090128();
 //Does the current character match given transformation
 s32 func_80090178(u32);
 s32 func_80090248(void);

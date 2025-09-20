@@ -4,7 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_1.s")
+s32 sujiggy_entrypoint_1() 
+{
+    return 0xB;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_2.s")
 

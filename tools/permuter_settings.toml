@@ -1,5 +1,5 @@
 compiler_type = "ido"  # adjusts default weights for permuting
-compiler_command = "tools/ido/cc -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm -O2 -mips2 -woff 807 -I include -I lib/ultralib/include -DBUILD_VERSION=VERSION_J -D_FINALROM -DF3DEX_GBI_2 -c"
+compiler_command = "tools/ido/cc -c -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm -O2 -mips2 -woff 807 -I src -I include -I lib/ultralib/include -DBUILD_VERSION=VERSION_J -D_FINALROM -DF3DEX_GBI_2 -c"
 assembler_command = "mips-linux-gnu-gcc -march=vr4300 -mabi=32 -mgp32 -mfp32 -mips3 -mno-abicalls -G0 -fno-pic -gdwarf -c -x assembler-with-cpp -D_LANGUAGE_ASSEMBLY -I include -I lib/ultralib/include -DBUILD_VERSION=VERSION_J -D_FINALROM -DF3DEX_GBI_2"
 asm_prelude_file = "include/prelude.inc"
 

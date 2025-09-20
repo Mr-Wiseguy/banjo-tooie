@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_0.s")
+s32 badrone_entrypoint_0() 
+{
+    return 0x4C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_1.s")
 

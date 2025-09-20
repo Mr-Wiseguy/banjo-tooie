@@ -1,5 +1,11 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/co/section/cosection_entrypoint_0.s")
+s32 cosection_entrypoint_0() 
+{
+    return 0xAF;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/co/section/cosection_entrypoint_1.s")
+s32 cosection_entrypoint_1() 
+{
+    return 0x18B;
+}

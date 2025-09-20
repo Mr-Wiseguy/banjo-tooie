@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_80108474(u32, f32*, s32);
 Actor *func_80108528(s32, f32[3], s32, Actor **);
 void func_80108B04(Actor*, u32);
 

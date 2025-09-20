@@ -1,4 +1,4 @@
-#include "common.h"
+#include "su/baddiefade.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/baddie/fade/subaddiefade_entrypoint_0.s")
 

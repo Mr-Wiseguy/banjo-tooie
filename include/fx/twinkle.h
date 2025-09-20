@@ -4,5 +4,6 @@
 #include "common.h"
 
 void _fxtwinkle_entrypoint_0(f32*);
-
+void _fxtwinkle_entrypoint_1(f32*, s32);
 #endif
+

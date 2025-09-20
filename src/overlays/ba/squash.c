@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/basquash_entrypoint_0.s")
+s32 basquash_entrypoint_0() 
+{
+    return 0xC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/func_80800008_basquash.s")
 

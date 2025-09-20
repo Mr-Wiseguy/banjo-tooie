@@ -1,6 +1,9 @@
 #include "core2/1EEF790.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEF790/func_80115EA0.s")
+s32 func_80115EA0() 
+{
+    return 0x5C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEF790/func_80115EA8.s")
 

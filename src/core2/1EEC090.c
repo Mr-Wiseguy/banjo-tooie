@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A0.s")
+s32 func_801127A0() 
+{
+    return 0x24;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A8.s")
 
@@ -22,7 +25,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E84.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E90.s")
+s32 func_80112E90() 
+{
+    return 0x80;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E98.s")
 

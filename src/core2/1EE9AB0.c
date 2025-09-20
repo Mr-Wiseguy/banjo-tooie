@@ -114,7 +114,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80111310.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80111340.s")
+s32 func_80111340() 
+{
+    return 0x8C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80111348.s")
 

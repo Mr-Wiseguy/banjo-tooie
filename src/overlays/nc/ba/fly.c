@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/fly/ncbafly_entrypoint_0.s")
+s32 ncbafly_entrypoint_0() 
+{
+    return 0x4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/fly/ncbafly_entrypoint_1.s")
 

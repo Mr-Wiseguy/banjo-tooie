@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/setup/baeggsetup_entrypoint_0.s")
+s32 baeggsetup_entrypoint_0() 
+{
+    return 0x28;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/setup/func_80800008_baeggsetup.s")
 
