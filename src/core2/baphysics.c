@@ -2,7 +2,7 @@
 
 s32 func_8009AD70() 
 {
-return 0xF;
+    return 0xF;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD78.s")
@@ -15,7 +15,7 @@ return 0xF;
 
 s32 func_8009AE00() 
 {
-return 0xC4;
+    return 0xC4;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AE08.s")

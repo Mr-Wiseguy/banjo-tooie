@@ -2,7 +2,7 @@
 
 s32 bareact_entrypoint_0() 
 {
-return 0x4;
+    return 0x4;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/react/bareact_entrypoint_1.s")

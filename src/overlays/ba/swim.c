@@ -2,7 +2,7 @@
 
 s32 baswim_entrypoint_0() 
 {
-return 0x8;
+    return 0x8;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/swim/baswim_entrypoint_1.s")

@@ -2,7 +2,7 @@
 
 s32 bafpctrl_entrypoint_0() 
 {
-return 0x1C;
+    return 0x1C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fpctrl/func_80800008_bafpctrl.s")

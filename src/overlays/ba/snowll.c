@@ -2,7 +2,7 @@
 
 s32 basnowball_entrypoint_0() 
 {
-return 0x30;
+    return 0x30;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/snowll/func_80800008_basnowball.s")

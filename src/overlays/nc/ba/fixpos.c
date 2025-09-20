@@ -2,7 +2,7 @@
 
 s32 ncbafixpos_entrypoint_0() 
 {
-return 0x1C;
+    return 0x1C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/fixpos/ncbafixpos_entrypoint_1.s")

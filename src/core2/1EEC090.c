@@ -2,7 +2,7 @@
 
 s32 func_801127A0() 
 {
-return 0x24;
+    return 0x24;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A8.s")
@@ -27,7 +27,7 @@ return 0x24;
 
 s32 func_80112E90() 
 {
-return 0x80;
+    return 0x80;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112E98.s")

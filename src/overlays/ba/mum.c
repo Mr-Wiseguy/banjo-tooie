@@ -2,7 +2,7 @@
 
 s32 bamum_entrypoint_0() 
 {
-return 0x8;
+    return 0x8;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/func_80800008_bamum.s")

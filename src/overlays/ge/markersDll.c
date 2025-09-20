@@ -1,6 +1,6 @@
 #include "ge/markersDll.h"
 
-extern s32* D_80800090_gemarkersDll;
+extern s32* D_80800090_gemarkersDll[490];
 
 s32 gemarkersDll_entrypoint_0(s32 arg0)
 {
@@ -8,8 +8,7 @@ s32 gemarkersDll_entrypoint_0(s32 arg0)
     {
         return 0;
     }
-    //Get the entrypoint address for a given object id
-    return *(&D_80800090_gemarkersDll - 0xB6 + (arg0));
+    return D_80800090_gemarkersDll[arg0 - 0xB6];
 }
 
 s32 gemarkersDll_entrypoint_1(s32 arg0)

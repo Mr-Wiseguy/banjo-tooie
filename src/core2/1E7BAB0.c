@@ -2,7 +2,7 @@
 
 s32 func_800A21C0() 
 {
-return 0x14;
+    return 0x14;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7BAB0/func_800A21C8.s")

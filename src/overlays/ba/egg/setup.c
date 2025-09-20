@@ -2,7 +2,7 @@
 
 s32 baeggsetup_entrypoint_0() 
 {
-return 0x28;
+    return 0x28;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/setup/func_80800008_baeggsetup.s")

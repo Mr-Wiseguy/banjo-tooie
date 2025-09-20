@@ -2,7 +2,7 @@
 
 s32 func_8009CF90() 
 {
-return 0x8;
+    return 0x8;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E76880/func_8009CF98.s")

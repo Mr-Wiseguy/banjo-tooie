@@ -2,7 +2,7 @@
 
 s32 func_80800000_glgamedata() 
 {
-return 0x2;
+    return 0x2;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/gamedata/func_80800008_glgamedata.s")

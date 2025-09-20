@@ -2,7 +2,7 @@
 
 s32 ncbaspiral_entrypoint_0() 
 {
-return 0x10;
+    return 0x10;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spiral/func_80800008_ncbaspiral.s")

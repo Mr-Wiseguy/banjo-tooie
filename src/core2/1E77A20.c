@@ -2,7 +2,7 @@
 
 s32 func_8009E130() 
 {
-return 0xF4;
+    return 0xF4;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E77A20/func_8009E138.s")
@@ -29,7 +29,7 @@ return 0xF4;
 
 s32 func_8009E5C0() 
 {
-return 0x14;
+    return 0x14;
 }
 
 

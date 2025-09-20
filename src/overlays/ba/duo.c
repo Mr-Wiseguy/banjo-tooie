@@ -2,7 +2,7 @@
 
 s32 baduo_entrypoint_0() 
 {
-return 0x14;
+    return 0x14;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/duo/func_80800008_baduo.s")

@@ -2,7 +2,7 @@
 
 s32 badust_entrypoint_0() 
 {
-return 0xC;
+    return 0xC;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dust/func_80800008_badust.s")

@@ -97,7 +97,7 @@ typedef struct Actor {
     /* 0x98 */ u8 pad98;
     /* 0x99 */ u8 pad99;
     /* 0x9A */ u8 pad9A;
-    /* 0x9B */ u8 Transparency;
+    /* 0x9B */ u8 alpha;
 } Actor;
 
 typedef struct ActorData {

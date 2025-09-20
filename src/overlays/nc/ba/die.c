@@ -2,7 +2,7 @@
 
 s32 ncbadie_entrypoint_0() 
 {
-return 0x4;
+    return 0x4;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/die/func_80800008_ncbadie.s")

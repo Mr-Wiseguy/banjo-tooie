@@ -2,7 +2,7 @@
 
 s32 func_800A3B70() 
 {
-return 0x40;
+    return 0x40;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A3B78.s")

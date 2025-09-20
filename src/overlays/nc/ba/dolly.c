@@ -2,7 +2,7 @@
 
 s32 ncbadolly_entrypoint_0() 
 {
-return 0x2C;
+    return 0x2C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/dolly/ncbadolly_entrypoint_1.s")

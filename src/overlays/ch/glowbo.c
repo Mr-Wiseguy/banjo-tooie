@@ -7,7 +7,7 @@ extern u32 D_8080143C_chglowbo;
 extern u32 D_80801448_chglowbo;
 extern u32 D_80801454_chglowbo;
 extern s32 D_80801460_chglowbo[3];
-extern f32 D_8080146C_chglowbo[3];
+extern f32 D_8080146C_chglowbo[18];
 extern Vec3s32 D_808014B4_chglowbo;
 extern u32 D_808014C0_chglowbo;
 extern u32 D_80801508_chglowbo;
@@ -334,9 +334,9 @@ void func_80800B10_chglowbo(Actor* arg0)
         return;
     case 6:
         func_800C8FB0(temp_v0->unk4, 0, 0, 0);
-        if ((s32)arg0->Transparency >= 0xF)
+        if ((s32)arg0->alpha >= 0xF)
         {
-            arg0->Transparency -= 0xF;
+            arg0->alpha -= 0xF;
         }
         if (arg0->unk18[1] < arg0->position[1])
         {

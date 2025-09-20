@@ -2,7 +2,7 @@
 
 s32 bafly_entrypoint_0() 
 {
-return 0x10;
+    return 0x10;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_1.s")

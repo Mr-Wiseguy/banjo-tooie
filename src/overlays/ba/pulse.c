@@ -2,7 +2,7 @@
 
 s32 bapulse_entrypoint_0() 
 {
-return 0xC;
+    return 0xC;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/pulse/bapulse_entrypoint_1.s")

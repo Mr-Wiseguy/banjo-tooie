@@ -2,7 +2,7 @@
 
 s32 bakaztorpedo_entrypoint_0() 
 {
-return 0x20;
+    return 0x20;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/kaztorpedo/bakaztorpedo_entrypoint_1.s")

@@ -2,7 +2,7 @@
 
 s32 func_800A06E0() 
 {
-return 0x18;
+    return 0x18;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A06E8.s")
@@ -51,7 +51,7 @@ return 0x18;
 
 s32 func_800A0E50() 
 {
-return 0x14;
+    return 0x14;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0E58.s")

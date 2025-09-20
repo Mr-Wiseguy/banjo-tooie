@@ -4,7 +4,7 @@
 
 s32 baeggcursor_entrypoint_0() 
 {
-return 0x1C;
+    return 0x1C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/baeggcursor_entrypoint_1.s")

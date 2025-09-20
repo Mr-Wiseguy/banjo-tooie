@@ -2,7 +2,7 @@
 
 s32 basub_entrypoint_0() 
 {
-return 0x6C;
+    return 0x6C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sub/func_80800008_basub.s")

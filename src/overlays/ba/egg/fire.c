@@ -2,7 +2,7 @@
 
 s32 baeggfire_entrypoint_0() 
 {
-return 0x14;
+    return 0x14;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/fire/func_80800008_baeggfire.s")

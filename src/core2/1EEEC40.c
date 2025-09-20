@@ -2,7 +2,7 @@
 
 s32 func_80115350() 
 {
-return 0x1C;
+    return 0x1C;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_80115358.s")

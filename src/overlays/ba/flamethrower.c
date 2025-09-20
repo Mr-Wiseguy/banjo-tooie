@@ -2,7 +2,7 @@
 
 s32 baflamethrower_entrypoint_0() 
 {
-return 0x10;
+    return 0x10;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/flamethrower/func_80800008_baflamethrower.s")

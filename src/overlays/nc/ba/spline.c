@@ -2,7 +2,7 @@
 
 s32 ncbaspline_entrypoint_0() 
 {
-return 0x30;
+    return 0x30;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/func_80800008_ncbaspline.s")
