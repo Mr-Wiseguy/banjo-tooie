@@ -1,4 +1,5 @@
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/func_80800000_bsstand.s")
 
@@ -29,8 +30,10 @@ void bsstand_entrypoint_6(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_9.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_10.s")
-
+void bsstand_entrypoint_10(PlayerState* self)
+{
+    _bsdrone_entrypoint_1(self);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_11.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_12.s")

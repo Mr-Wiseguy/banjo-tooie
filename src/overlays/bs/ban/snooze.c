@@ -1,4 +1,5 @@
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800000_bsbansnooze.s")
 
@@ -34,8 +35,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_80800674_bsbansnooze.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_8080069C_bsbansnooze.s")
-
+void func_8080069C_bsbansnooze(PlayerState* self)
+{
+    _bsdrone_entrypoint_1(self);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_3.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_808006D0_bsbansnooze.s")
