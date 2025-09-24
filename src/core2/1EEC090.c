@@ -86,8 +86,10 @@ s32 func_80112E90()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114BD4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114C7C.s")
-
+void func_80114C7C(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114C9C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CB0.s")

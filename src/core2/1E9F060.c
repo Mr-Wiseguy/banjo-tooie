@@ -19,8 +19,10 @@ void func_800C5770(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5B84.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5BA4.s")
-
+void func_800C5BA4(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5BC4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9F060/func_800C5BE4.s")

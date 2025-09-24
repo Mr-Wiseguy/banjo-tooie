@@ -2,8 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8CC00/func_800B3310.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8CC00/func_800B3370.s")
-
+void func_800B3370(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8CC00/func_800B3390.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8CC00/func_800B3494.s")
