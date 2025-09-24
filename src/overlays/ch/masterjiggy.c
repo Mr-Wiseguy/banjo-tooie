@@ -4,8 +4,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_8080000C_chmasterjiggy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_808001A8_chmasterjiggy.s")
-
+void func_808001A8_chmasterjiggy(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_808001B0_chmasterjiggy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/masterjiggy/func_808001D0_chmasterjiggy.s")

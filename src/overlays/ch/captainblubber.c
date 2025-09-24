@@ -14,6 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/captainblubber/func_8080143C_chcaptainblubber.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/captainblubber/func_808014C8_chcaptainblubber.s")
-
+void func_808014C8_chcaptainblubber(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/captainblubber/chcaptainblubber_entrypoint_0.s")

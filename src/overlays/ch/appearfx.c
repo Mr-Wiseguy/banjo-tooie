@@ -2,8 +2,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/appearfx/chappearfx_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/appearfx/func_8080000C_chappearfx.s")
-
+void func_8080000C_chappearfx(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/appearfx/func_80800014_chappearfx.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/appearfx/func_8080031C_chappearfx.s")

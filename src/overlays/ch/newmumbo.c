@@ -30,8 +30,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/chnewmumbo_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_8080172C_chnewmumbo.s")
-
+void func_8080172C_chnewmumbo(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_80801760_chnewmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/chnewmumbo_entrypoint_1.s")

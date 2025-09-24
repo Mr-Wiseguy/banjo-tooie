@@ -2,8 +2,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatomenu/chcheatomenu_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatomenu/func_8080000C_chcheatomenu.s")
-
+void func_8080000C_chcheatomenu(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatomenu/func_80800014_chcheatomenu.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatomenu/func_808000D4_chcheatomenu.s")

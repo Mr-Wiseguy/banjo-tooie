@@ -12,8 +12,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_8010381C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103930.s")
-
+void func_80103930(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103938.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103964.s")

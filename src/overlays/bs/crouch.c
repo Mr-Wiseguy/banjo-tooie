@@ -14,8 +14,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crouch/bscrouch_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crouch/bscrouch_entrypoint_2.s")
-
+void bscrouch_entrypoint_2(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crouch/bscrouch_entrypoint_3.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/crouch/func_808006A4_bscrouch.s")

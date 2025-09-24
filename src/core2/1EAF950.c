@@ -76,8 +76,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D7754.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D7900.s")
-
+void func_800D7900(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D7908.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D7948.s")

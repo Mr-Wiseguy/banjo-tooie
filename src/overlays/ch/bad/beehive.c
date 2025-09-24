@@ -12,8 +12,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_8080070C_chbadbeehive.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_808008F0_chbadbeehive.s")
-
+void func_808008F0_chbadbeehive(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_808008F8_chbadbeehive.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_80800990_chbadbeehive.s")

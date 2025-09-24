@@ -10,8 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E95650/func_800BC3B8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E95650/func_800BC3F0.s")
-
+void* func_800BC3F0(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E95650/func_800BC410.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E95650/func_800BC474.s")

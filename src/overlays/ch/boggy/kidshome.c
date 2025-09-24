@@ -10,8 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/kidshome/func_80800068_chboggykidshome.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/kidshome/func_808000DC_chboggykidshome.s")
-
+void func_808000DC_chboggykidshome(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/kidshome/func_808000FC_chboggykidshome.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/kidshome/func_80800214_chboggykidshome.s")

@@ -23,8 +23,9 @@ s32 func_800A3B70()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4074.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4160.s")
-
+void func_800A4160(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4168.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4190.s")

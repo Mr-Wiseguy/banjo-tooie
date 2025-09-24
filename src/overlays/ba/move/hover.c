@@ -1,7 +1,8 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/hover/bamovehover_entrypoint_0.s")
-
+void bamovehover_entrypoint_0(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/hover/bamovehover_entrypoint_1.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/hover/bamovehover_entrypoint_2.s")

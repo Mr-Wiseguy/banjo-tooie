@@ -5,8 +5,9 @@ s32 func_80091E10(void)
 	return 0x4;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B700/func_80091E18.s")
-
+void func_80091E18(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B700/func_80091E20.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B700/func_80091E48.s")

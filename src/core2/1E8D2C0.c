@@ -28,8 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B42A0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B42DC.s")
-
+void func_800B42DC(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B42FC.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B4354.s")

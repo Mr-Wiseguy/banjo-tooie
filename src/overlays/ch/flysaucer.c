@@ -104,8 +104,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803B60_chflysaucer.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803BE8_chflysaucer.s")
-
+void func_80803BE8_chflysaucer(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803BF0_chflysaucer.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803C3C_chflysaucer.s")

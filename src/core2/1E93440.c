@@ -92,8 +92,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BABA0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BABB0.s")
-
+void func_800BABB0(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BABB8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E93440/func_800BBCB8.s")

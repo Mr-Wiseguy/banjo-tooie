@@ -132,13 +132,15 @@ typedef struct ActorData {
 
 typedef struct {
     /* 0x0 */ s16 position[3];
-    /* 0x6 */ u16 unk6;
+    /* 0x6 */ u16 unk6_7 : 9;
+    /* 0x6 */ u16 unk6_1 : 6; //unk4 << 0x19 >> 0x1A
+    /* 0x6 */ u16 unk6_0 : 1; //unk6 >> 0x7 << 0x7
     /* 0x8 */ u16 ItemID;
     /* 0x0A */ u16 unkA; //0xA
-    /* 0x0C */ u32 unkC; //0xC
+    /* 0x0C */ u32 FlagOrRotation : 9; //unkC >> 0x17
+    /* 0x0C */ u32 unkC_0 : 23; //0xC
     /* 0x10 */ u16 unk10; //0x10
     /* 0x12 */ u16 unk12; //0x12
-    /* 0x14 */ u8 unk14; //0x14
 } Prop;
 
 

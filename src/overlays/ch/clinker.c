@@ -42,10 +42,12 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/chclinker_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_80800FFC_chclinker.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_80801004_chclinker.s")
-
+void func_80800FFC_chclinker(s32 arg0) 
+{
+}
+void func_80801004_chclinker(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_8080100C_chclinker.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_8080112C_chclinker.s")

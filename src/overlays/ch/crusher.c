@@ -14,8 +14,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800508_chcrusher.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_808005C0_chcrusher.s")
-
+void func_808005C0_chcrusher(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_808005C8_chcrusher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800684_chcrusher.s")
@@ -32,8 +33,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800A98_chcrusher.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800ACC_chcrusher.s")
-
+void func_80800ACC_chcrusher(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800AD4_chcrusher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/chcrusher_entrypoint_3.s")

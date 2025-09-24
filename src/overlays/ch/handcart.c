@@ -999,7 +999,7 @@ void func_80802068_chhandcart(Actor* arg0, s32 arg1) {
     }
     func_800EE88C(arg0->position, var_v0->position);
     //Controls the rotation of the cart when spawned in normal GGM
-    arg0->rotation[1] = var_v0->unkC >> 0x17;
+    arg0->rotation[1] = var_v0->FlagOrRotation;
 }
 
 void func_80802120_chhandcart(Actor* arg0)
@@ -1235,7 +1235,7 @@ void func_8080282C_chhandcart(Actor* arg0, s32 arg1, s32 arg2)
     }
     func_800EE88C(arg0->position, var_v0->position);
     //Controls the rotation of canary mary when spawned in normal GGM
-    arg0->rotation[1] = var_v0->unkC >> 0x17;
+    arg0->rotation[1] = var_v0->FlagOrRotation;
 }
 
 void func_808028F0_chhandcart(Actor* arg0)

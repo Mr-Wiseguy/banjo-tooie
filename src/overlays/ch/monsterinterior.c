@@ -48,8 +48,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_808014E8_chmonsterinterior.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_808017E8_chmonsterinterior.s")
-
+void func_808017E8_chmonsterinterior(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_808017F0_chmonsterinterior.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_80801930_chmonsterinterior.s")

@@ -1,4 +1,5 @@
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_80800000_bscarry.s")
 
@@ -38,8 +39,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_80800684_bscarry.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_808006AC_bscarry.s")
-
+void func_808006AC_bscarry(PlayerState* self)
+{
+    _bsdrone_entrypoint_1(self);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/bscarry_entrypoint_3.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_808006E0_bscarry.s")

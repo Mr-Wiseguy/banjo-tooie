@@ -16,8 +16,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_8080061C_chvolcanobits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_8080065C_chvolcanobits.s")
-
+void func_8080065C_chvolcanobits(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_80800664_chvolcanobits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_8080086C_chvolcanobits.s")
