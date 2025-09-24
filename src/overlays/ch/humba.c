@@ -66,8 +66,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/humba/func_80801F74_chhumba.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/humba/func_808021F4_chhumba.s")
-
+void func_808021F4_chhumba(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/humba/chhumba_entrypoint_0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/humba/func_80802234_chhumba.s")

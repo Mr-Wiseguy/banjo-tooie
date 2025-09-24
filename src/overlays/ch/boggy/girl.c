@@ -20,6 +20,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800ABC_chboggygirl.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800B28_chboggygirl.s")
-
+void func_80800B28_chboggygirl(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800B5C_chboggygirl.s")

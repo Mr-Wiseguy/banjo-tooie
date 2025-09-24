@@ -48,8 +48,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_80801E28_chaliendad.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_80801E80_chaliendad.s")
-
+void func_80801E80_chaliendad(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_80801EB4_chaliendad.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_80801F98_chaliendad.s")

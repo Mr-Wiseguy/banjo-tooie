@@ -22,8 +22,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808006B4_chburgerstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800720_chburgerstand.s")
-
+void func_80800720_chburgerstand(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800754_chburgerstand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808007A0_chburgerstand.s")
