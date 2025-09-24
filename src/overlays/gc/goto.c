@@ -47,8 +47,8 @@ void gcgoto_entrypoint_1(u32 a0, u32 a1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/gcgoto_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/gcgoto_entrypoint_7.s")
-
+void gcgoto_entrypoint_7(s32 arg0, s32 arg1) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/gcgoto_entrypoint_8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/goto/gcgoto_entrypoint_9.s")

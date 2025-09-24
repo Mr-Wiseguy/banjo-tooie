@@ -70,8 +70,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C2A08.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C2A5C.s")
-
+void func_800C2A5C(s32 arg0, s32 arg1) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C2A68.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E9A960/func_800C2A90.s")
