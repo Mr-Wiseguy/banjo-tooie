@@ -42,6 +42,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800DE8_chpawnbroker.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800E34_chpawnbroker.s")
-
+void func_80800E34_chpawnbroker(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pawnbroker/func_80800E3C_chpawnbroker.s")

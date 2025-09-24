@@ -44,8 +44,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802030_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080245C_chjiggygamenew.s")
-
+void func_8080245C_chjiggygamenew(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802464_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808024C8_chjiggygamenew.s")
@@ -64,8 +65,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802F3C_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803564_chjiggygamenew.s")
-
+void func_80803564_chjiggygamenew(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080356C_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803598_chjiggygamenew.s")

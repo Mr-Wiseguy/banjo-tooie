@@ -32,8 +32,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/func_80800918_chboilerid.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/func_80800998_chboilerid.s")
-
+void func_80800998_chboilerid(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/chboilerid_entrypoint_5.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/chboilerid_entrypoint_6.s")

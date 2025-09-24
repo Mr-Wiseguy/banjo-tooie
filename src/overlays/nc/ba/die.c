@@ -11,8 +11,9 @@ s32 ncbadie_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/die/ncbadie_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/die/ncbadie_entrypoint_2.s")
-
+void ncbadie_entrypoint_2(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/die/ncbadie_entrypoint_3.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/die/ncbadie_entrypoint_4.s")

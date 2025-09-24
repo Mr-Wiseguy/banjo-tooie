@@ -13,6 +13,7 @@ s32 ncbapan_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/pan/ncbapan_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/pan/ncbapan_entrypoint_2.s")
-
+void ncbapan_entrypoint_2(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/pan/ncbapan_entrypoint_3.s")

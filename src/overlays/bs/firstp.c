@@ -170,10 +170,12 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802BD8_bsfirstp.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802BE0_bsfirstp.s")
-
+void func_80802BD8_bsfirstp(s32 arg0) 
+{
+}
+void func_80802BE0_bsfirstp(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802BE8_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80802C30_bsfirstp.s")
@@ -286,8 +288,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_18.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804A34_bsfirstp.s")
-
+void func_80804A34_bsfirstp(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804A3C_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804A64_bsfirstp.s")

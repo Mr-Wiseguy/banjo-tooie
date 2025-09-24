@@ -34,8 +34,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800BB0_chfriesstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800C34_chfriesstand.s")
-
+void func_80800C34_chfriesstand(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800C3C_chfriesstand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800CF0_chfriesstand.s")

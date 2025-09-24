@@ -6,4 +6,6 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/proplight/func_80800168_chmineproplight.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/proplight/func_80800228_chmineproplight.s")
+void func_80800228_chmineproplight(s32 arg0) 
+{
+}

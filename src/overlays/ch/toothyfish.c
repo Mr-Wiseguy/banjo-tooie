@@ -26,8 +26,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800E04_chtoothyfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800EDC_chtoothyfish.s")
-
+void func_80800EDC_chtoothyfish(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800EE4_chtoothyfish.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800F6C_chtoothyfish.s")

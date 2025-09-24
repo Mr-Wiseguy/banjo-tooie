@@ -14,8 +14,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_808005D4_chnicecavemenguard.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_80800600_chnicecavemenguard.s")
-
+void func_80800600_chnicecavemenguard(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_80800608_chnicecavemenguard.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_80800730_chnicecavemenguard.s")

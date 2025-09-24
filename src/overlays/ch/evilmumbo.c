@@ -68,8 +68,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803700_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803918_chevilmumbo.s")
-
+void func_80803918_chevilmumbo(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803920_chevilmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_8080395C_chevilmumbo.s")
@@ -82,8 +83,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803B28_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803B48_chevilmumbo.s")
-
+void func_80803B48_chevilmumbo(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803B50_chevilmumbo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803C88_chevilmumbo.s")

@@ -9,8 +9,9 @@ s32 bamum_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/func_80800018_bamum.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/bamum_entrypoint_1.s")
-
+void bamum_entrypoint_1(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/bamum_entrypoint_2.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/mum/bamum_entrypoint_3.s")

@@ -4,8 +4,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800028_bstnt.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800060_bstnt.s")
-
+void func_80800060_bstnt(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800068_bstnt.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_8080009C_bstnt.s")

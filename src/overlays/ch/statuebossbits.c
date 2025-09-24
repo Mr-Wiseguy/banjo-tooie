@@ -8,8 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statuebossbits/chstatuebossbits_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statuebossbits/func_80800030_chstatuebossbits.s")
-
+void func_80800030_chstatuebossbits(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statuebossbits/func_80800038_chstatuebossbits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/statuebossbits/func_80800224_chstatuebossbits.s")

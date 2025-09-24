@@ -32,8 +32,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800940_chburgerstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808009C4_chburgerstand.s")
-
+void func_808009C4_chburgerstand(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808009CC_chburgerstand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800A8C_chburgerstand.s")

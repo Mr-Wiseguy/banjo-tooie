@@ -6,8 +6,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/temple/func_80800034_chjiggytemple.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/temple/func_808000A8_chjiggytemple.s")
-
+void func_808000A8_chjiggytemple(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/temple/func_808000B0_chjiggytemple.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/temple/chjiggytemple_entrypoint_1.s")

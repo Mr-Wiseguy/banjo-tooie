@@ -64,6 +64,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/gen/func_8080110C_chfiregen.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/gen/func_808012F8_chfiregen.s")
-
+void func_808012F8_chfiregen(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/gen/func_80801300_chfiregen.s")

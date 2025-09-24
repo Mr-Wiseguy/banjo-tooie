@@ -36,8 +36,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_14.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_15.s")
-
+void suegg_entrypoint_15(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_16.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_17.s")

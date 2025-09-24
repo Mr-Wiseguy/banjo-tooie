@@ -6,8 +6,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800100_chfactoryworkerwear.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800124_chfactoryworkerwear.s")
-
+void func_80800124_chfactoryworkerwear(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_8080012C_chfactoryworkerwear.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800260_chfactoryworkerwear.s")

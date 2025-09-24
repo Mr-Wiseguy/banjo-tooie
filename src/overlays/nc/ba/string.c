@@ -9,8 +9,9 @@ s32 ncbastring_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/ncbastring_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/ncbastring_entrypoint_2.s")
-
+void ncbastring_entrypoint_2(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/func_8080007C_ncbastring.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/string/ncbastring_entrypoint_3.s")

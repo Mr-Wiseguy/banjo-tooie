@@ -64,8 +64,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80803574_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808036E4_chdragonbrothers.s")
-
+void func_808036E4_chdragonbrothers(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808036EC_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808037B0_chdragonbrothers.s")
@@ -80,8 +81,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80803F4C_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808040A0_chdragonbrothers.s")
-
+void func_808040A0_chdragonbrothers(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808040A8_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804318_chdragonbrothers.s")
@@ -96,8 +98,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808046CC_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808048A4_chdragonbrothers.s")
-
+void func_808048A4_chdragonbrothers(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808048AC_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808049D4_chdragonbrothers.s")
@@ -112,8 +115,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804CD0_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804DB0_chdragonbrothers.s")
-
+void func_80804DB0_chdragonbrothers(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804DB8_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804E1C_chdragonbrothers.s")

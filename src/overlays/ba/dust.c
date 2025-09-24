@@ -5,8 +5,9 @@ s32 badust_entrypoint_0()
     return 0xC;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dust/func_80800008_badust.s")
-
+void func_80800008_badust(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dust/func_80800010_badust.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/dust/badust_entrypoint_1.s")

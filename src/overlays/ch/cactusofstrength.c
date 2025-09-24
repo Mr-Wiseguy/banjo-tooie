@@ -8,8 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/func_80800024_chcactusofstrength.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/func_80800108_chcactusofstrength.s")
-
+void func_80800108_chcactusofstrength(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/func_80800110_chcactusofstrength.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/func_808001C4_chcactusofstrength.s")

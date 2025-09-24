@@ -6,8 +6,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800218_chstinger.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_8080025C_chstinger.s")
-
+void func_8080025C_chstinger(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_80800264_chstinger.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stinger/func_808003B0_chstinger.s")

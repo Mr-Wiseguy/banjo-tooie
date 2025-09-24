@@ -30,8 +30,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_80800800_chcredits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_80800BCC_chcredits.s")
-
+void func_80800BCC_chcredits(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_80800BD4_chcredits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_80800C84_chcredits.s")

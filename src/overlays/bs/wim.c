@@ -116,8 +116,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801B84_bsbswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801C04_bsbswim.s")
-
+void func_80801C04_bsbswim(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801C0C_bsbswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_13.s")
