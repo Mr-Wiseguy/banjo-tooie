@@ -30,6 +30,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/func_80800E58_chkingjinjo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/func_80800F60_chkingjinjo.s")
-
+s32 func_80800F60_chkingjinjo(s32 arg0, s32 arg1, s32 arg2) 
+{
+    return 0;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/func_80800F74_chkingjinjo.s")
