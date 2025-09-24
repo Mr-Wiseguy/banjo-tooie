@@ -212,8 +212,10 @@ void func_80802BE0_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808032C0_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80803320_bsfirstp.s")
-
+void func_80803320_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80803340_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_9.s")
@@ -297,32 +299,40 @@ void func_80804A34_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804B10_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804B84_bsfirstp.s")
-
+void func_80804B84_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804BA4_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_19.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804D18_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804D80_bsfirstp.s")
-
+void func_80804D80_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804DA0_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_20.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804E1C_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804EB4_bsfirstp.s")
-
+void func_80804EB4_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804ED4_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_21.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804F28_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804FB4_bsfirstp.s")
-
+void func_80804FB4_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80804FD4_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_22.s")
@@ -517,8 +527,10 @@ void func_80804A34_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808A24_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808A8C_bsfirstp.s")
-
+void func_80808A8C_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80808AAC_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_35.s")
@@ -551,8 +563,10 @@ void func_80804A34_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80809334_bsfirstp.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80809384_bsfirstp.s")
-
+void func_80809384_bsfirstp(void)
+{
+    func_80807C8C_bsfirstp();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808093A4_bsfirstp.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_36.s")
