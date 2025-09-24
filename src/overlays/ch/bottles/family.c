@@ -28,8 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_80800720_chbottlesfamily.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_8080086C_chbottlesfamily.s")
-
+void func_8080086C_chbottlesfamily(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_8080088C_chbottlesfamily.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/family/func_8080099C_chbottlesfamily.s")

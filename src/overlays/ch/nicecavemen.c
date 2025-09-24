@@ -12,8 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_80800128_chnicecavemen.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_808003B8_chnicecavemen.s")
-
+void func_808003B8_chnicecavemen(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_808003D8_chnicecavemen.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_80800624_chnicecavemen.s")

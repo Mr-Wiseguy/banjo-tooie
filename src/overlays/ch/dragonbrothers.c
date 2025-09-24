@@ -4,8 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80800070_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808003D8_chdragonbrothers.s")
-
+void func_808003D8_chdragonbrothers(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808003F8_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80800438_chdragonbrothers.s")

@@ -6,8 +6,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_8080011C_chbabydino.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_8080028C_chbabydino.s")
-
+void func_8080028C_chbabydino(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_808002AC_chbabydino.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_808003BC_chbabydino.s")
