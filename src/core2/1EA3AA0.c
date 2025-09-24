@@ -14,8 +14,10 @@ void func_800CA364(void* arg0)
 {
     heap_free(arg0);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA384.s")
-
+void* func_800CA384(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA3A4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA3F4.s")

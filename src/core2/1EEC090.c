@@ -96,6 +96,8 @@ void func_80114C7C(void* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CC0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CD4.s")
-
+void* func_80114CD4(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80114CF4.s")
