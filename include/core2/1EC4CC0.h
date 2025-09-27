@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+s32 func_800EB854();
 void func_800EBB5C();
 
 #endif

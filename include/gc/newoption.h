@@ -11,7 +11,7 @@ void _gcnewoption_entrypoint_1(OptionState*, u32);
 //Get Memory Size of option menu
 int gcnewoption_entrypoint_2(void);
 int _gcnewoption_entrypoint_2(void);
-
+void _gcnewoption_entrypoint_6(OptionState*, u32);
 void gcnewoption_entrypoint_7(OptionState* a0);
 void _gcnewoption_entrypoint_7(OptionState* a0);
 
@@ -31,9 +31,13 @@ void _gcnewoption_entrypoint_11(OptionState*);
 //Setup Option Text
 void gcnewoption_entrypoint_12(OptionState* a0, u32 optionIndex, s16 textIndex);
 void _gcnewoption_entrypoint_12(OptionState* a0, u32 optionIndex, s16 textIndex);
+void _gcnewoption_entrypoint_13(OptionState*, u32, u32*);
+s32 _gcnewoption_entrypoint_19(OptionState*, s32);
+void _gcnewoption_entrypoint_23(OptionState*, u32);
 
 void _gcnewoption_entrypoint_31(OptionState*, s32, s16);
-
+void _gcnewoption_entrypoint_32(OptionState*, u32);
+void _gcnewoption_entrypoint_34(OptionState*, u32);
 void _gcnewoption_entrypoint_36(OptionState*);
 
 //Hide Options

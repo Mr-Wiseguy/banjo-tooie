@@ -43,7 +43,7 @@ typedef struct Actor {
     /* 0x24 */ f32 unk24;
     /* 0x28 */ f32 unk28;
     /* 0x2C */ f32 unk2C;
-    /* 0x30 */ u32 pad30;
+    /* 0x30 */ u32 unk30;
     /* 0x34 */ f32 unk34;
     /* 0x38 */ f32 scale;
     /* 0x3C */ Unk80132ED0 *unk3C;
@@ -57,9 +57,11 @@ typedef struct Actor {
     /* 0x5E */ u8 pad5E;
     /* 0x5F */ u8 unk5F;
     /* 0x60 */ s32 pad60;
-    /* 0x64 */ u32 pad64_20 : 12;
+    /* 0x64 */ u32 pad64_21 : 11;
+    /* 0x64 */ u32 unk64_20 : 1;
     /* 0x64 */ u32 unk64_19 : 1; // flags & 0x80000
-    /* 0x64 */ u32 pad64_17 : 2;
+    /* 0x64 */ u32 unk64_18 : 1;
+    /* 0x64 */ u32 unk64_17 : 1;
     /* 0x64 */ u32 unk64_16 : 1;
     /* 0x64 */ u32 unk64_0 : 16;
     /* 0x68 */ s32 pad68;
