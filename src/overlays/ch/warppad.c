@@ -8,6 +8,7 @@ extern u8 D_80801080_chwarppad[0x20];
 extern D_808010A0 D_808010A0_chwarppad[4];
 extern D_808010B0 D_808010B0_chwarppad[31];
 extern u32 D_80801344_chwarppad;
+extern u32 _gcnewoption_entrypoint_35;
 
 u32* chwarppad_entrypoint_0(void) {
     return &D_808012FC_chwarppad;
@@ -134,7 +135,66 @@ void func_808003B8_chwarppad(Actor* arg0)
     _chappearfx_entrypoint_1(arg0, 2, 3, 0.8f);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/warppad/func_80800418_chwarppad.s")
+void func_80800418_chwarppad(Actor* arg0, u32 arg1)
+{
+    s32 temp_v0;
+    OptionState* sp28;
+
+    if (arg1 != arg0->unk70_10)
+    {
+        switch (arg0->unk70_10)
+        {
+        case 2:
+            if (func_800DA298(0x3EE) == 0)
+            {
+                func_80090708(0);
+            }
+            if (func_808000B4_chwarppad(arg0) > 0)
+            {
+                func_800DA544(0x3EE);
+            }
+            break;
+        case 3:
+            _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
+            func_80090708(0);
+            func_8010A828(arg0, 2);
+            break;
+        }
+        arg0->unk70_10 = arg1;
+        switch (arg1)
+        {
+        case 2:
+            if (func_800DA298(0x3EE) == 0)
+            {
+                func_80090708(1);
+                return;
+            }
+            func_808003B8_chwarppad(arg0);
+            return;
+        case 3:                                     /* switch 1 */
+            temp_v0 = func_808000B4_chwarppad(arg0);
+            _gcnewoption_entrypoint_4(arg0, 0, &_gcnewoption_entrypoint_35, 0, *(s32*)&arg0->unk2C + 0x185A);
+            sp28 = func_80100094(arg0, 0U);
+            func_800C78CC(1U);
+            _gcnewoption_entrypoint_8(sp28, temp_v0 >= 5 ? 4 : temp_v0);
+            _gcnewoption_entrypoint_9(sp28, temp_v0);
+            _gcnewoption_entrypoint_10(sp28, 0U);
+            func_80800124_chwarppad(arg0, sp28);
+            _gcnewoption_entrypoint_14(sp28, 0, 0, 0, 0.0f);
+            _gcnewoption_entrypoint_40(sp28, 0x41, 0x22, 0x20U, 0.8f, 1.0f);
+            _gcnewoption_entrypoint_42(sp28, 0.1f);
+            _gcnewoption_entrypoint_11(sp28);
+            func_80090708(2);
+            func_80800F34_chwarppad(arg0, 5, 1);
+            func_8010A828(arg0, 0xA);
+            return;
+        case 4:                                     /* switch 1 */
+            func_800DA544(FLAG3_9FE_UNK);
+            _gcgoto_entrypoint_1(func_80800E10_chwarppad(D_808010B0_chwarppad[*(s32*)&arg0->unk28 + *(u32*)&arg0->unk30].unk0), D_808010B0_chwarppad[*(u32*)&arg0->unk28 + *(s32*)&arg0->unk30].unk4);
+            break;
+        }
+    }
+}
 
 s16 func_808006C0_chwarppad(s32 arg0)
 {
@@ -155,7 +215,77 @@ s16 func_808006C0_chwarppad(s32 arg0)
     return D_808010A0_chwarppad[var_a1].unk0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/warppad/func_80800748_chwarppad.s")
+void func_80800748_chwarppad(Actor* arg0)
+{
+
+    s32 sp3C;
+    s32 sp38;
+    s32 sp34;
+
+    func_800DA524(FLAG3_9FE_UNK);
+    switch (arg0->unk70_10)
+    {
+    case 1:
+        if (func_8010C9FC(arg0->position, 0xFA, 0xC8, -0x32) != 0)
+        {
+            sp3C = func_808000B4_chwarppad(arg0);
+            sp38 = func_800F54E4();
+            if (func_80800380_chwarppad(arg0) == 0)
+            {
+                func_80800418_chwarppad(arg0, 2U);
+            }
+            else if ((sp3C > 0) && (func_800F64A4(sp38, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28 * 0xC) + ((arg0->unk74_7) * 0xC)]) == 0) && (_subaddiedialog_entrypoint_4(arg0->position, 0x64, 4) != 0))
+            {
+                func_80800418_chwarppad(arg0, 3U);
+            }
+            else if ((func_80016B30(0, 1) == 1) && (func_800F8004(sp38) == 0) && (func_800F4BB8(sp38, -1, 4) != 0))
+            {
+                if (sp3C > 0)
+                {
+                    if (func_800F64A4(sp38, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) {
+                        sp34 = func_808006C0_chwarppad((s32)arg0);
+                    }
+                    else
+                    {
+                        sp34 = 0xCF0;
+                    }
+                }
+                else
+                {
+                    sp34 = 0xCEF;
+                }
+                func_80800F34_chwarppad(arg0, 5, 1);
+                _subaddiedialog_entrypoint_11(arg0->unk0, sp34, 0xF, NULL, 0);
+            }
+        }
+        break;
+    case 2:
+        if ((func_800DA298(0x3EE) == 0) && !(arg0->unk74_30))
+        {
+            if (_subaddiedialog_entrypoint_11(arg0->unk0, func_808000B4_chwarppad(arg0) == 0 ? 0xCED : 0xCEE, 0xA, arg0->position, 0) != 0)
+            {
+                arg0->unk74_30 = 1;
+                func_808003B8_chwarppad(arg0);
+                if (func_800F64A4(func_800F54E4(), 0x42000) == 0)
+                {
+                    func_80800F34_chwarppad(arg0, 4, 1);
+                }
+            }
+        }
+        if (_subaddiefade_entrypoint_0(arg0) == 0xFF)
+        {
+            func_80800418_chwarppad(arg0, 1U);
+        }
+        break;
+    case 3:
+        _gcnewoption_entrypoint_0(func_80100094(arg0, 0U));
+        break;
+    }
+    if (arg0->unk64_19)
+    {
+        arg0->unk64_19 = 0;
+    }
+}
 
 s32 func_80800A1C_chwarppad(Actor* arg0, u32 arg1, s32 arg2)
 {

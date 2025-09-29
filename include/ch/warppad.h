@@ -8,17 +8,22 @@
 
 #include "core2/1EC4CC0.h"
 #include "core2/1EC8070.h"
+#include "core2/1ECE0B0.h"
 
 #include "core2/1ED8C80.h"
 #include "core2/1EDA900.h"
 #include "core2/1EDAEA0.h"
 
 #include "core2/1EA0AA0.h"
+#include "core2/1EE4020.h"
 #include "core2/1EE5DF0.h"
 
+#include "gc/goto.h"
 #include "gc/dialogcamera.h"
 #include "gc/newoption.h"
 #include "ca/pod.h"
+#include "su/baddiedialog.h"
+
 #include "su/baddieDll.h"
 #include "su/baddiefade.h"
 #include "ch/appearfx.h"
@@ -41,6 +46,8 @@ s32 func_80800064_chwarppad(Actor*, s32);
 void func_80800418_chwarppad(Actor*, u32);
 void func_80800AB8_chwarppad(Actor* arg0, s32 arg1, s32 arg2);
 void func_80800B34_chwarppad(Actor*, OptionState*, s32, s32);
+s32 func_80800E10_chwarppad(s32);
+void func_80800F34_chwarppad(Actor* arg0, s32 arg1, s32 arg2);
 void func_80801018_chwarppad(Actor* arg0);
 
 #endif

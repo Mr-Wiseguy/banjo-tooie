@@ -6,19 +6,21 @@
 typedef struct {
 	u8 data[0x260];
 } OptionState;
+
+void _gcnewoption_entrypoint_0(OptionState*);
 void _gcnewoption_entrypoint_1(OptionState*, u32);
 
 //Get Memory Size of option menu
 int gcnewoption_entrypoint_2(void);
 int _gcnewoption_entrypoint_2(void);
+
+void _gcnewoption_entrypoint_4(Actor*, u32, u32*, u32, s32);
+void _gcnewoption_entrypoint_5(OptionState*, void*, u8, s16, s32);
 void _gcnewoption_entrypoint_6(OptionState*, u32);
 void gcnewoption_entrypoint_7(OptionState* a0);
 void _gcnewoption_entrypoint_7(OptionState* a0);
-
-void _gcnewoption_entrypoint_5(OptionState*, void*, u8, s16, s32);
-
 //Setup number of visible options
-void _gcnewoption_entrypoint_8(OptionState*, u8);
+void _gcnewoption_entrypoint_8(OptionState*, u32);
 
 //Setup number of usable options
 void _gcnewoption_entrypoint_9(OptionState*, u32);
@@ -32,6 +34,7 @@ void _gcnewoption_entrypoint_11(OptionState*);
 void gcnewoption_entrypoint_12(OptionState* a0, u32 optionIndex, s16 textIndex);
 void _gcnewoption_entrypoint_12(OptionState* a0, u32 optionIndex, s16 textIndex);
 void _gcnewoption_entrypoint_13(OptionState*, u32, u32*);
+void _gcnewoption_entrypoint_14(OptionState*, u32, u32, u32, f32);
 s32 _gcnewoption_entrypoint_19(OptionState*, s32);
 void _gcnewoption_entrypoint_23(OptionState*, u32);
 
