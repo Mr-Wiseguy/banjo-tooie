@@ -32,33 +32,34 @@ void func_8080000C_chwarppad(Actor* arg0, u32 arg1)
     }
 }
 
-s32 func_80800064_chwarppad(Actor* arg0, s32 arg1)
+//Is the warppad at index available
+s32 func_80800064_chwarppad(Actor* arg0, s32 warppadIndex)
 {
-    if ((arg0->unk74_7 == (arg1 + 0x32)))
+    if ((arg0->unk74_7 == (warppadIndex + 0x32)))
     {
         return 0;
     }
-    return func_800DA298((*(s32*)&arg0->unk2C * 5) + arg1 + 0x3AB);
+    return func_800DA298((*(s32*)&arg0->unk2C * 5) + warppadIndex + 0x3AB);
 }
-
+//Get the number of warppads unlocked in the level
 s32 func_808000B4_chwarppad(Actor* arg0)
 {
     s32 var_s0;
-    s32 var_s1;
+    s32 numPads;
 
-    var_s1 = 0;
+    numPads = 0;
     var_s0 = 1;
     if (*(s32*)&arg0->unk18[1] > 0)
     {
         do {
             if (func_80800064_chwarppad(arg0, var_s0) != 0)
             {
-                var_s1 += 1;
+                numPads += 1;
             }
             var_s0 += 1;
         } while (*(s32*)&arg0->unk18[1] >= var_s0);
     }
-    return var_s1;
+    return numPads;
 }
 
 void func_80800124_chwarppad(Actor* arg0, OptionState* arg1)
@@ -123,11 +124,13 @@ s32 func_808002F4_chwarppad(Actor* arg0, s32 arg1)
     return -1;
 }
 
+//Is this warp pad active
 s32 func_80800380_chwarppad(Actor* arg0)
 {
     return func_800DA298((*(s32*)&arg0->unk2C) * 5 + (arg0->unk74_7) + 0x379);
 }
 
+//Enable warppad
 void func_808003B8_chwarppad(Actor* arg0)
 {
     func_800DA544((*(s32*)&arg0->unk2C * 5) + (arg0->unk74_7) + 0x379);
@@ -139,23 +142,25 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
 {
     s32 temp_v0;
     OptionState* sp28;
-
+    //If we want to change the warp pad state
     if (arg1 != arg0->unk70_10)
     {
-        switch (arg0->unk70_10)
+        switch (arg0->unk70_10) //Check previous state
         {
-        case 2:
-            if (func_800DA298(0x3EE) == 0)
+        case 2: //We Just activated a warp pad
+            if (func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
             {
+                //Enable Movement
                 func_80090708(0);
             }
             if (func_808000B4_chwarppad(arg0) > 0)
             {
-                func_800DA544(0x3EE);
+                func_800DA544(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE);
             }
             break;
-        case 3:
+        case 3: //Close the option menu
             _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
+            //Enable Movement
             func_80090708(0);
             func_8010A828(arg0, 2);
             break;
@@ -163,19 +168,22 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
         arg0->unk70_10 = arg1;
         switch (arg1)
         {
-        case 2:
-            if (func_800DA298(0x3EE) == 0)
+        case 2: //This warp pad was disabled and someone walked near it
+            if (func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0)
             {
+                //Disable Movement
                 func_80090708(1);
                 return;
             }
             func_808003B8_chwarppad(arg0);
             return;
-        case 3:                                     /* switch 1 */
+        case 3:
+            //Open the options menu
             temp_v0 = func_808000B4_chwarppad(arg0);
             _gcnewoption_entrypoint_4(arg0, 0, &_gcnewoption_entrypoint_35, 0, *(s32*)&arg0->unk2C + 0x185A);
             sp28 = func_80100094(arg0, 0U);
             func_800C78CC(1U);
+            //If the number of warppads exceeds 4 only show up to 4 at a time
             _gcnewoption_entrypoint_8(sp28, temp_v0 >= 5 ? 4 : temp_v0);
             _gcnewoption_entrypoint_9(sp28, temp_v0);
             _gcnewoption_entrypoint_10(sp28, 0U);
@@ -188,8 +196,8 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
             func_80800F34_chwarppad(arg0, 5, 1);
             func_8010A828(arg0, 0xA);
             return;
-        case 4:                                     /* switch 1 */
-            func_800DA544(FLAG3_9FE_UNK);
+        case 4: //Actually Warp
+            func_800DA544(FLAG3_9FE_WARPING_VIA_WARPPAD);
             _gcgoto_entrypoint_1(func_80800E10_chwarppad(D_808010B0_chwarppad[*(s32*)&arg0->unk28 + *(u32*)&arg0->unk30].unk0), D_808010B0_chwarppad[*(u32*)&arg0->unk28 + *(s32*)&arg0->unk30].unk4);
             break;
         }
@@ -218,31 +226,35 @@ s16 func_808006C0_chwarppad(s32 arg0)
 void func_80800748_chwarppad(Actor* arg0)
 {
 
-    s32 sp3C;
-    s32 sp38;
+    s32 numUnlockedWarppads;
+    s32 controlledCharacter;
     s32 sp34;
 
-    func_800DA524(FLAG3_9FE_UNK);
+    func_800DA524(FLAG3_9FE_WARPING_VIA_WARPPAD);
     switch (arg0->unk70_10)
     {
-    case 1:
+    case 1: //If we are standing near the warppad
         if (func_8010C9FC(arg0->position, 0xFA, 0xC8, -0x32) != 0)
         {
-            sp3C = func_808000B4_chwarppad(arg0);
-            sp38 = func_800F54E4();
+            numUnlockedWarppads = func_808000B4_chwarppad(arg0);
+            controlledCharacter = func_800F54E4();
             if (func_80800380_chwarppad(arg0) == 0)
             {
+                //Activate Warp Pad
                 func_80800418_chwarppad(arg0, 2U);
             }
-            else if ((sp3C > 0) && (func_800F64A4(sp38, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28 * 0xC) + ((arg0->unk74_7) * 0xC)]) == 0) && (_subaddiedialog_entrypoint_4(arg0->position, 0x64, 4) != 0))
+            else if ((numUnlockedWarppads > 0) && (func_800F64A4(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28 * 0xC) + ((arg0->unk74_7) * 0xC)]) == 0) && (_subaddiedialog_entrypoint_4(arg0->position, 0x64, 4) != 0))
             {
+                //Open the Options Menu
                 func_80800418_chwarppad(arg0, 3U);
             }
-            else if ((func_80016B30(0, 1) == 1) && (func_800F8004(sp38) == 0) && (func_800F4BB8(sp38, -1, 4) != 0))
+            //Handles when you press the B button while standing near the warppad
+            else if ((func_80016B30(0, 1) == 1) && (func_800F8004(controlledCharacter) == 0) && (func_800F4BB8(controlledCharacter, -1, 4) != 0))
             {
-                if (sp3C > 0)
+                if (numUnlockedWarppads > 0)
                 {
-                    if (func_800F64A4(sp38, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) {
+                    if (func_800F64A4(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(*(s32*)&arg0->unk28) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) 
+                    {
                         sp34 = func_808006C0_chwarppad((s32)arg0);
                     }
                     else
@@ -260,7 +272,7 @@ void func_80800748_chwarppad(Actor* arg0)
         }
         break;
     case 2:
-        if ((func_800DA298(0x3EE) == 0) && !(arg0->unk74_30))
+        if ((func_800DA298(FLAG_3EE_FTT_FIRST_WARP_AVAILABLE) == 0) && !(arg0->unk74_30))
         {
             if (_subaddiedialog_entrypoint_11(arg0->unk0, func_808000B4_chwarppad(arg0) == 0 ? 0xCED : 0xCEE, 0xA, arg0->position, 0) != 0)
             {
@@ -367,11 +379,11 @@ void func_80800B34_chwarppad(Actor* arg0, OptionState* arg1, s32 arg2, s32 arg3)
 void func_80800C00_chwarppad(Actor* arg0)
 {
     s32 var_a2;
-    u32 temp_t0;
+    u32 levelIndex;
     s32 sp3C;
     f32 sp30[3];
 
-    temp_t0 = D_8012762C;
+    levelIndex = D_8012762C;
     //Get Character in control
     sp3C = func_800F54E4();
     var_a2 = 0;
@@ -379,18 +391,18 @@ void func_80800C00_chwarppad(Actor* arg0)
     {
         if (D_808010B0_chwarppad[var_a2].unk0 == -1)
         {
-            if (temp_t0 == D_808010B0_chwarppad[var_a2].unk4)
+            if (levelIndex == D_808010B0_chwarppad[var_a2].unk4)
             {
                 break;
             }
-
             *(s32*)&arg0->unk2C += 1;
         }
         var_a2++;
     }
     *(s32*)&arg0->unk18[2] = _subaddiesect_entrypoint_1(arg0);
     *(s32*)&arg0->unk28 = var_a2++;
-    while (D_808010B0_chwarppad[var_a2].unk0 != -2) {
+    while (D_808010B0_chwarppad[var_a2].unk0 != -2) 
+    {
         if (D_808010B0_chwarppad[var_a2].unk0 == -1)
         {
             break;
@@ -406,7 +418,7 @@ void func_80800C00_chwarppad(Actor* arg0)
         _subaddiesect_entrypoint_2(arg0, *(s32*)&arg0->unk18[2], 1);
     }
     func_8010A828(arg0, 2);
-    if ((func_800DA298(FLAG3_9FE_UNK) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(*(s32*)&arg0->unk28) * 0xC + arg0->unk74_7 * 0xC]))
+    if ((func_800DA298(FLAG3_9FE_WARPING_VIA_WARPPAD) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(*(s32*)&arg0->unk28) * 0xC + arg0->unk74_7 * 0xC]))
     {
         func_800EE7F8(sp30, arg0->position);
         sp30[1] += 15.0f * arg0->scale;
@@ -414,7 +426,7 @@ void func_80800C00_chwarppad(Actor* arg0)
         func_800F8294(sp3C, sp30);
         func_800F497C(sp3C);
         func_800C78CC(0U);
-        func_800DA524(FLAG3_9FE_UNK);
+        func_800DA524(FLAG3_9FE_WARPING_VIA_WARPPAD);
     }
 }
 
