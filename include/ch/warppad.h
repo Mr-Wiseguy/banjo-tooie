@@ -26,6 +26,8 @@
 
 #include "su/baddieDll.h"
 #include "su/baddiefade.h"
+#include "su/baddiesect.h"
+
 #include "ch/appearfx.h"
 typedef struct {
     u16 unk0;

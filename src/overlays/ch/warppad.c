@@ -364,9 +364,97 @@ void func_80800B34_chwarppad(Actor* arg0, OptionState* arg1, s32 arg2, s32 arg3)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/warppad/func_80800C00_chwarppad.s")
+void func_80800C00_chwarppad(Actor* arg0)
+{
+    s32 var_a2;
+    u32 temp_t0;
+    s32 sp3C;
+    f32 sp30[3];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/warppad/func_80800E10_chwarppad.s")
+    temp_t0 = D_8012762C;
+    //Get Character in control
+    sp3C = func_800F54E4();
+    var_a2 = 0;
+    while (D_808010B0_chwarppad[var_a2].unk0 != -2)
+    {
+        if (D_808010B0_chwarppad[var_a2].unk0 == -1)
+        {
+            if (temp_t0 == D_808010B0_chwarppad[var_a2].unk4)
+            {
+                break;
+            }
+
+            *(s32*)&arg0->unk2C += 1;
+        }
+        var_a2++;
+    }
+    *(s32*)&arg0->unk18[2] = _subaddiesect_entrypoint_1(arg0);
+    *(s32*)&arg0->unk28 = var_a2++;
+    while (D_808010B0_chwarppad[var_a2].unk0 != -2) {
+        if (D_808010B0_chwarppad[var_a2].unk0 == -1)
+        {
+            break;
+        }
+        var_a2++;
+    }
+
+    *(s32*)&arg0->unk18[1] = ((var_a2 - *(s32*)&arg0->unk28) - 1);
+    func_80800418_chwarppad(arg0, 1U);
+    _subaddiefade_entrypoint_8(arg0, func_80800380_chwarppad(arg0) != 0 ? 0xFF : 0x87);
+    if (*(s32*)&arg0->unk18[2] != -1U)
+    {
+        _subaddiesect_entrypoint_2(arg0, *(s32*)&arg0->unk18[2], 1);
+    }
+    func_8010A828(arg0, 2);
+    if ((func_800DA298(FLAG3_9FE_UNK) != 0) && (func_800EA090() == (D_80801080_chwarppad - 0x224)[(*(s32*)&arg0->unk28) * 0xC + arg0->unk74_7 * 0xC]))
+    {
+        func_800EE7F8(sp30, arg0->position);
+        sp30[1] += 15.0f * arg0->scale;
+        func_800F608C(sp3C, 1);
+        func_800F8294(sp3C, sp30);
+        func_800F497C(sp3C);
+        func_800C78CC(0U);
+        func_800DA524(FLAG3_9FE_UNK);
+    }
+}
+
+s32 func_80800E10_chwarppad(s32 arg0)
+{
+    u32 sp2C;
+    u32 temp_a2;
+    u32 temp_t6;
+
+    temp_a2 = (arg0 & 0xFFFF) + 0xB0000000;
+    temp_t6 = ((arg0 & 0xFFFF0000) >> 0x10);
+    if (temp_a2 & 2) 
+    {
+        temp_a2 = (temp_a2 >> 2) << 2;
+        rom_read_word(temp_a2, &sp2C);
+        arg0 = (sp2C & 0xFFFF0000) >> 0x10;
+    }
+    else 
+    {
+        rom_read_word(temp_a2, &sp2C);
+        arg0 = sp2C & 0xFFFF;
+    }
+
+    if (temp_t6 != 0) 
+    {
+        temp_t6 += 0xB0000000;
+        if (temp_t6 & 2) 
+        {
+            temp_t6 = (temp_t6 >> 2) << 2;
+            rom_read_word(temp_t6, &sp2C);
+            arg0 += (sp2C & 0xFFFF0000) >> 0x10;
+        }
+        else 
+        {
+            rom_read_word(temp_t6, &sp2C);
+            arg0 += sp2C & 0xFFFF;
+        }
+    }
+    return arg0 + 0xA0;
+}
 
 void func_80800EF8_chwarppad(Actor* arg0)
 {
