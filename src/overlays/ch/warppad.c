@@ -44,42 +44,35 @@ s32 func_80800064_chwarppad(Actor* arg0, s32 warppadIndex)
 //Get the number of warppads unlocked in the level
 s32 func_808000B4_chwarppad(Actor* arg0)
 {
-    s32 var_s0;
+    s32 i;
     s32 numPads;
 
     numPads = 0;
-    var_s0 = 1;
-    if (*(s32*)&arg0->unk18[1] > 0)
+    for (i = 1; i <= *(s32*)&arg0->unk18[1]; i++)
     {
-        do {
-            if (func_80800064_chwarppad(arg0, var_s0) != 0)
-            {
-                numPads += 1;
-            }
-            var_s0 += 1;
-        } while (*(s32*)&arg0->unk18[1] >= var_s0);
+        if (func_80800064_chwarppad(arg0, i) != 0)
+        {
+            numPads += 1;
+        }
     }
     return numPads;
 }
 
 void func_80800124_chwarppad(Actor* arg0, OptionState* arg1)
 {
-    s32 var_s0;
+    s32 i;
     s32 var_s1;
 
     var_s1 = 0;
     _gcnewoption_entrypoint_32(arg1, 0x6F);
-    var_s0 = 1;
-    if (*(s32*)&arg0->unk18[1] > 0)
+
+    for (i = 1; i <= *(s32*)&arg0->unk18[1]; i++) 
     {
-        do {
-            if (func_80800064_chwarppad(arg0, var_s0) != 0)
-            {
-                _gcnewoption_entrypoint_31(arg1, var_s1, (s16)(&D_808010B0_chwarppad[*(s32*)&arg0->unk28])[var_s0].unk5);
-                var_s1 += 1;
-            }
-            var_s0 += 1;
-        } while (*(s32*)&arg0->unk18[1] >= var_s0);
+        if (func_80800064_chwarppad(arg0, i) != 0)
+        {
+            _gcnewoption_entrypoint_31(arg1, var_s1, (s16)(&D_808010B0_chwarppad[*(s32*)&arg0->unk28])[i].unk5);
+            var_s1 += 1;
+        }
     }
 }
 
