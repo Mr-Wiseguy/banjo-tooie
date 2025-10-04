@@ -16,7 +16,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/bsbabykaz_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/func_808003D0_bsbabykaz.s")
+void func_808003D0_bsbabykaz()
+{
+    bsbabykaz_entrypoint_3();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/func_808003F0_bsbabykaz.s")
 
@@ -44,7 +47,10 @@ void func_80800754_bsbabykaz(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/bsbabykaz_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/func_808007EC_bsbabykaz.s")
+void func_808007EC_bsbabykaz()
+{
+    bsbabykaz_entrypoint_3();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/func_8080080C_bsbabykaz.s")
 

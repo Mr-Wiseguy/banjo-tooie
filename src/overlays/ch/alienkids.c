@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/alienkids.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/chalienkids_entrypoint_0.s")
 
@@ -30,7 +30,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80800FA4_chalienkids.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80801138_chalienkids.s")
+void func_80801138_chalienkids(Actor* arg0)
+{
+    func_80801994_chalienkids(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80801158_chalienkids.s")
 

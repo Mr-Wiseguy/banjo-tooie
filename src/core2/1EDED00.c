@@ -20,7 +20,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_8010573C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105834.s")
+void func_80105834()
+{
+    func_801054D4();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105854.s")
 

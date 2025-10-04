@@ -20,7 +20,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_8080049C_bsvanswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_808005E8_bsvanswim.s")
+void func_808005E8_bsvanswim()
+{
+    func_80800174_bsvanswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/bsvanswim_entrypoint_1.s")
 
@@ -28,7 +31,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_808006D0_bsvanswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_80800808_bsvanswim.s")
+void func_80800808_bsvanswim()
+{
+    func_80800174_bsvanswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/bsvanswim_entrypoint_2.s")
 

@@ -27,7 +27,10 @@ void func_80800688_bsswim(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/swim/func_808007F8_bsswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/swim/func_808009F0_bsswim.s")
+void func_808009F0_bsswim()
+{
+    func_80800270_bsswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/swim/bsswim_entrypoint_1.s")
 

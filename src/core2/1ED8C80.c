@@ -39,7 +39,10 @@ void func_800FFBE4(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFECC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_80100074.s")
+u32* func_80100074(Actor* a0, u32 a1, u32 a2)
+{
+    return func_800FFECC(a0,a1,a2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_80100094.s")
 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/boggy/fatboy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_entrypoint_0.s")
 
@@ -16,7 +16,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800808_chboggyfatboy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800978_chboggyfatboy.s")
+void func_80800978_chboggyfatboy(Actor* arg0)
+{
+    func_80800FAC_chboggyfatboy(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800998_chboggyfatboy.s")
 

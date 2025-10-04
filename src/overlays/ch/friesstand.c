@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/friesstand.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/chfriesstand_entrypoint_0.s")
 
@@ -12,7 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_808000C4_chfriesstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800398_chfriesstand.s")
+void func_80800398_chfriesstand(Actor* arg0)
+{
+    func_80800970_chfriesstand(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_808003B8_chfriesstand.s")
 

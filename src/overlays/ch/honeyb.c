@@ -30,7 +30,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800B58_chhoneyb.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800B78_chhoneyb.s")
+void func_80800B78_chhoneyb()
+{
+    _gcextra_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800B98_chhoneyb.s")
 
@@ -40,7 +43,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800C34_chhoneyb.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800C58_chhoneyb.s")
+void func_80800C58_chhoneyb()
+{
+    func_8010C964();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800C78_chhoneyb.s")
 

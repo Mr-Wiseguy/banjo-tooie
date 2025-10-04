@@ -36,7 +36,10 @@ MapId func_800EA05C(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA364.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA370.s")
+void func_800EA370()
+{
+    func_800EA3A0();
+}
 
 void func_800EA390(void) {
 }

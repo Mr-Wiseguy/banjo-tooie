@@ -11,7 +11,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_80800208_bscarry.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_8080027C_bscarry.s")
+void func_8080027C_bscarry()
+{
+    func_808001D4_bscarry();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_8080029C_bscarry.s")
 
@@ -19,7 +22,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/bscarry_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_808003D8_bscarry.s")
+void func_808003D8_bscarry()
+{
+    func_808001D4_bscarry();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_808003F8_bscarry.s")
 
@@ -27,7 +33,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/bscarry_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_80800500_bscarry.s")
+void func_80800500_bscarry()
+{
+    func_808001D4_bscarry();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/carry/func_80800520_bscarry.s")
 

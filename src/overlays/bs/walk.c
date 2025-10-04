@@ -15,7 +15,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/walk/bswalk_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/walk/bswalk_entrypoint_1.s")
+void bswalk_entrypoint_1()
+{
+    func_80800000_bswalk();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/walk/bswalk_entrypoint_2.s")
 

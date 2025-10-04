@@ -234,7 +234,10 @@ s32 func_800F5898(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F61E4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6204.s")
+void func_800F6204()
+{
+    func_800F6140();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6224.s")
 
@@ -323,7 +326,10 @@ u8 func_800F6B34(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6DA0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6DE0.s")
+void func_800F6DE0()
+{
+    _bsbabykaz_entrypoint_14();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6E00.s")
 

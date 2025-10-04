@@ -8,7 +8,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_808000B4_chcredits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_808000C8_chcredits.s")
+void func_808000C8_chcredits()
+{
+    _glcutDll_entrypoint_17();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/credits/func_808000E8_chcredits.s")
 

@@ -28,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_6.s")
+void bsbwhirl_entrypoint_6()
+{
+    func_8080017C_bsbwhirl();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_7.s")
 
@@ -36,7 +39,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_9.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_10.s")
+void bsbwhirl_entrypoint_10()
+{
+    func_8080017C_bsbwhirl();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_11.s")
 
@@ -55,11 +61,17 @@ void bsbwhirl_entrypoint_14(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_17.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_18.s")
+void bsbwhirl_entrypoint_18()
+{
+    func_8080017C_bsbwhirl();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_19.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_20.s")
+void bsbwhirl_entrypoint_20()
+{
+    _bsdrone_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_21.s")
 
@@ -75,7 +87,10 @@ void bsbwhirl_entrypoint_24(s32 arg0)
     _bsrest_entrypoint_14();
     func_8080017C_bsbwhirl(arg0);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_25.s")
+void bsbwhirl_entrypoint_25()
+{
+    _bsrest_entrypoint_16();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_26.s")
 

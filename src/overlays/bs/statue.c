@@ -77,7 +77,10 @@ void func_80800EAC_bsstatue(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/bsstatue_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800FCC_bsstatue.s")
+void func_80800FCC_bsstatue()
+{
+    func_80800130_bsstatue();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800FEC_bsstatue.s")
 
@@ -85,7 +88,10 @@ void func_80800EAC_bsstatue(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/bsstatue_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_808010B4_bsstatue.s")
+void func_808010B4_bsstatue()
+{
+    func_80800130_bsstatue();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_808010D4_bsstatue.s")
 
@@ -93,7 +99,10 @@ void func_80800EAC_bsstatue(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/bsstatue_entrypoint_8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80801218_bsstatue.s")
+void func_80801218_bsstatue()
+{
+    func_80800130_bsstatue();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80801238_bsstatue.s")
 

@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/inantab_entrypoint_0.s")
+void inantab_entrypoint_0()
+{
+    func_800BF744();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/func_80800020_inantab.s")
 

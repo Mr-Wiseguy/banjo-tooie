@@ -2,7 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/freezy/sufreezy_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/freezy/sufreezy_entrypoint_1.s")
+void sufreezy_entrypoint_1()
+{
+    sufreezy_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/freezy/sufreezy_entrypoint_2.s")
 

@@ -27,7 +27,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_6.s")
+void bsstonehead_entrypoint_6()
+{
+    _basudie_entrypoint_6();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_7.s")
 
@@ -114,7 +117,10 @@ void bsstonehead_entrypoint_33(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_35.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_36.s")
+void bsstonehead_entrypoint_36()
+{
+    func_80800000_bsstonehead();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_37.s")
 

@@ -13,7 +13,10 @@
 void func_80800370_chcauldronentrydoor(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/chcauldronentrydoor_entrypoint_0.s")
+void chcauldronentrydoor_entrypoint_0()
+{
+    func_800E1720();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/func_80800398_chcauldronentrydoor.s")
 

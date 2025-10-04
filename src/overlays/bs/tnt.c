@@ -31,7 +31,10 @@ void func_80800060_bstnt(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800668_bstnt.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80800694_bstnt.s")
+void func_80800694_bstnt()
+{
+    func_8009E4AC();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_808006B4_bstnt.s")
 

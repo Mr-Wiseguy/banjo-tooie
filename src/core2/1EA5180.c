@@ -4,13 +4,22 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB8BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB8F0.s")
+void func_800CB8F0()
+{
+    func_800CB890();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB910.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB948.s")
+void func_800CB948()
+{
+    func_800CB910();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB968.s")
+void func_800CB968()
+{
+    func_800CB8BC();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB988.s")
 

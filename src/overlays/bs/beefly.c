@@ -8,7 +8,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_808001C4_bsbeefly.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_808002B0_bsbeefly.s")
+void func_808002B0_bsbeefly()
+{
+    _bsbee_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/bsbeefly_entrypoint_0.s")
 

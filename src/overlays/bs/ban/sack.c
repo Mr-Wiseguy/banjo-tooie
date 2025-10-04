@@ -137,7 +137,10 @@ void func_8080160C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801CB4_bsbansack.s")
+void func_80801CB4_bsbansack()
+{
+    func_80800238_bsbansack();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801CD4_bsbansack.s")
 

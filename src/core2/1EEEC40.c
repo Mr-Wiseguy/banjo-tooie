@@ -19,7 +19,10 @@ s32 func_80115350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_80115478.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_80115484.s")
+void func_80115484()
+{
+    func_80112524();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_801154A4.s")
 

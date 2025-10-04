@@ -43,7 +43,10 @@ void func_80800788_bsbeemain(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800874_bsbeemain.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/func_80800A74_bsbeemain.s")
+void func_80800A74_bsbeemain()
+{
+    _bsbee_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beemain/bsbeemain_entrypoint_3.s")
 

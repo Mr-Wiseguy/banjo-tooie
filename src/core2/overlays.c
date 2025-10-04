@@ -22,7 +22,10 @@ s32 D_80117C64 = 0;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_8008160C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081724.s")
+void func_80081724()
+{
+    func_80081744();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081744.s")
 

@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_808000C8_chstoneballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_808000F4_chstoneballcontrol.s")
+void func_808000F4_chstoneballcontrol()
+{
+    func_808000C8_chstoneballcontrol();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80800114_chstoneballcontrol.s")
 

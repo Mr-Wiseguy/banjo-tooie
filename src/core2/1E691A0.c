@@ -32,7 +32,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FBC0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FBE0.s")
+void func_8008FBE0(u32 arg0)
+{
+    func_800A1624(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FC00.s")
 
@@ -106,7 +109,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_800901CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090200.s")
+void func_80090200()
+{
+    func_800F5310();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_80090220.s")
 

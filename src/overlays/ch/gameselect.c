@@ -165,21 +165,45 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803604_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803638_chgameselect.s")
+void func_80803638_chgameselect()
+{
+    _glsavegame_entrypoint_0();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803658_chgameselect.s")
+void func_80803658_chgameselect()
+{
+    _glsavegame_entrypoint_9();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803678_chgameselect.s")
+void func_80803678_chgameselect()
+{
+    func_800D37C0();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803698_chgameselect.s")
+void func_80803698_chgameselect()
+{
+    _glsavegame_entrypoint_10();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036B8_chgameselect.s")
+void func_808036B8_chgameselect()
+{
+    func_800D37D4();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036D8_chgameselect.s")
+void func_808036D8_chgameselect()
+{
+    _glsavegame_entrypoint_1();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036F8_chgameselect.s")
+void func_808036F8_chgameselect()
+{
+    _glsavegame_entrypoint_2();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803718_chgameselect.s")
+void func_80803718_chgameselect()
+{
+    _glsavegame_entrypoint_3();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803738_chgameselect.s")
 
@@ -365,11 +389,17 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806A30_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806A88_chgameselect.s")
+void func_80806A88_chgameselect()
+{
+    _gcstatusDll_entrypoint_5();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AA8_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AD4_chgameselect.s")
+void func_80806AD4_chgameselect()
+{
+    _gcstatusDll_entrypoint_10();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AF4_chgameselect.s")
 

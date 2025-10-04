@@ -8,7 +8,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/func_8080011C_bsride.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/func_8080016C_bsride.s")
+void func_8080016C_bsride()
+{
+    func_8080008C_bsride();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/func_8080018C_bsride.s")
 
@@ -26,7 +29,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/bsride_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/func_808005B8_bsride.s")
+void func_808005B8_bsride()
+{
+    func_8080008C_bsride();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ride/func_808005D8_bsride.s")
 

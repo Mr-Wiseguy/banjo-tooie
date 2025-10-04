@@ -4,7 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_8080009C_bsdronegoto.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_808000C0_bsdronegoto.s")
+void func_808000C0_bsdronegoto()
+{
+    func_8009B7C0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_808000E0_bsdronegoto.s")
 

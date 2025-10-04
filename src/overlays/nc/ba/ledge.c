@@ -1,8 +1,14 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/func_80800000_ncbaledge.s")
+void func_80800000_ncbaledge()
+{
+    func_80112524();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/func_80800020_ncbaledge.s")
+void func_80800020_ncbaledge()
+{
+    func_80112524();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/ncbaledge_entrypoint_0.s")
 

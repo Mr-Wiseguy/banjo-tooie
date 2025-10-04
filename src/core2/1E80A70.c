@@ -54,7 +54,10 @@ void func_800A7B18(u32 warpVal)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7D84.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7FB4.s")
+void func_800A7FB4()
+{
+    func_800A7584();
+}
 
 extern s16 D_80127632;
 extern s16 D_80127634;

@@ -28,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/func_808011AC_chsabreman.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/func_808011F8_chsabreman.s")
+void func_808011F8_chsabreman()
+{
+    func_80102424();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/func_80801218_chsabreman.s")
 

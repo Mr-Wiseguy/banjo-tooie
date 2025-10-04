@@ -48,9 +48,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D731C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D738C.s")
+void func_800D738C()
+{
+    func_800D58FC();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D73AC.s")
+void func_800D73AC()
+{
+    func_800D59C0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D73CC.s")
 

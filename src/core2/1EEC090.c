@@ -5,7 +5,10 @@ s32 func_801127A0()
     return 0x24;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A8.s")
+void func_801127A8()
+{
+    func_80112550();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127C8.s")
 

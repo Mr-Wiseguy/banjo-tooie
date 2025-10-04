@@ -23,7 +23,10 @@ void func_8001A010(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A270.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A290.s")
+void func_8001A290()
+{
+    func_80015190();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A2B0.s")
 

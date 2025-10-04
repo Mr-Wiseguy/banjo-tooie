@@ -9,7 +9,10 @@ void bsdronebitten_entrypoint_0(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_2.s")
+void bsdronebitten_entrypoint_2()
+{
+    func_80099AA8();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_3.s")
 
@@ -21,7 +24,10 @@ void bsdronebitten_entrypoint_0(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/bsdronebitten_entrypoint_8.s")
+void bsdronebitten_entrypoint_8()
+{
+    func_80099AA8();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/bitten/func_80800478_bsdronebitten.s")
 

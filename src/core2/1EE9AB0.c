@@ -66,19 +66,34 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110CC0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110D08.s")
+void func_80110D08()
+{
+    func_80115864();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110D28.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110D58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110D80.s")
+void func_80110D80()
+{
+    func_8011396C();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110DA0.s")
+void func_80110DA0()
+{
+    func_80115460();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110DC0.s")
+void func_80110DC0()
+{
+    func_8011546C();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110DE0.s")
+void func_80110DE0()
+{
+    func_80115478();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE9AB0/func_80110E00.s")
 

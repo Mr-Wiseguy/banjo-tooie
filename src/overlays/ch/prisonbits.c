@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_8080003C_chprisonbits.s")
+void func_8080003C_chprisonbits()
+{
+    _chswitch_entrypoint_7();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_8080005C_chprisonbits.s")
 
@@ -22,7 +25,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_80800224_chprisonbits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_80800280_chprisonbits.s")
+void func_80800280_chprisonbits()
+{
+    func_800DA298();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_808002A0_chprisonbits.s")
 

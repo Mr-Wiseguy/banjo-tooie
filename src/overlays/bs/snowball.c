@@ -21,7 +21,10 @@ void func_808003B0_bssnowball(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_808003D8_bssnowball.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_808004AC_bssnowball.s")
+void func_808004AC_bssnowball()
+{
+    _basudie_entrypoint_10();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/bssnowball_entrypoint_3.s")
 
@@ -58,9 +61,15 @@ void func_80800530_bssnowball(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/bssnowball_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_808008F0_bssnowball.s")
+void func_808008F0_bssnowball()
+{
+    func_80099B94();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_80800910_bssnowball.s")
+void func_80800910_bssnowball()
+{
+    bssnowball_entrypoint_0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/snowball/func_80800930_bssnowball.s")
 

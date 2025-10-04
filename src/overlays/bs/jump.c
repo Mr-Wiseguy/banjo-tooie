@@ -31,7 +31,10 @@ void bsjump_entrypoint_6(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/jump/bsjump_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/jump/bsjump_entrypoint_14.s")
+void bsjump_entrypoint_14()
+{
+    func_8008E95C();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/jump/bsjump_entrypoint_15.s")
 

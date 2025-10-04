@@ -6,7 +6,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80800104_bsbswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_808001A8_bsbswim.s")
+void func_808001A8_bsbswim()
+{
+    func_80800104_bsbswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_808001C8_bsbswim.s")
 
@@ -69,7 +72,10 @@ void func_80800D30_bsbswim(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80800F64_bsbswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801084_bsbswim.s")
+void func_80801084_bsbswim()
+{
+    func_80800104_bsbswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_7.s")
 
@@ -93,7 +99,10 @@ void func_80800D30_bsbswim(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_808016B8_bsbswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_808017F8_bsbswim.s")
+void func_808017F8_bsbswim()
+{
+    func_80800104_bsbswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_10.s")
 
@@ -133,6 +142,9 @@ void func_80801C04_bsbswim(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801CE4_bsbswim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/func_80801D30_bsbswim.s")
+void func_80801D30_bsbswim()
+{
+    func_80800104_bsbswim();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/wim/bsbswim_entrypoint_14.s")

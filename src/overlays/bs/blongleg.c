@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/func_80800000_bsblongleg.s")
+void func_80800000_bsblongleg()
+{
+    player_inWater();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/func_80800020_bsblongleg.s")
 
@@ -28,7 +31,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_6.s")
+void bsblongleg_entrypoint_6()
+{
+    func_80800204_bsblongleg();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_7.s")
 
@@ -36,7 +42,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_9.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_10.s")
+void bsblongleg_entrypoint_10()
+{
+    func_80800204_bsblongleg();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_11.s")
 
@@ -67,7 +76,10 @@ void bsblongleg_entrypoint_18(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_21.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_22.s")
+void bsblongleg_entrypoint_22()
+{
+    func_80800204_bsblongleg();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_23.s")
 

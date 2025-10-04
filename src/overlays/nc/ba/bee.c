@@ -5,6 +5,9 @@
 void ncbabee_entrypoint_1(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/bee/func_80800070_ncbabee.s")
+void func_80800070_ncbabee()
+{
+    func_80112550();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/bee/ncbabee_entrypoint_2.s")

@@ -5,9 +5,15 @@ s32 ncbajig_entrypoint_0()
     return 0xC;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/jig/func_80800008_ncbajig.s")
+void func_80800008_ncbajig()
+{
+    func_80112524();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/jig/func_80800028_ncbajig.s")
+void func_80800028_ncbajig()
+{
+    func_80112524();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/jig/ncbajig_entrypoint_1.s")
 

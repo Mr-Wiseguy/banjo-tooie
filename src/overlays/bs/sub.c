@@ -22,9 +22,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_808009B0_bssub.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_80800AEC_bssub.s")
+void func_80800AEC_bssub()
+{
+    _basub_entrypoint_14();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_80800B0C_bssub.s")
+void func_80800B0C_bssub()
+{
+    _baspin_entrypoint_1();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/sub/func_80800B2C_bssub.s")
 

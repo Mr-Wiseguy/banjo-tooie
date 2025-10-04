@@ -20,7 +20,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/chfantasycannon_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/func_80800B84_chfantasycannon.s")
+void func_80800B84_chfantasycannon()
+{
+    func_80101870();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/func_80800BA4_chfantasycannon.s")
 

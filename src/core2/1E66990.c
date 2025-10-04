@@ -86,7 +86,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_isStable.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E0C8.s")
+void func_8008E0C8()
+{
+    _bapackctrl_entrypoint_1();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E0E8.s")
 
@@ -106,9 +109,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E300.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/player_inWater.s")
+void player_inWater()
+{
+    func_800A0FD8();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E37C.s")
+void func_8008E37C()
+{
+    func_800A0FE4();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008E39C.s")
 

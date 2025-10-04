@@ -10,7 +10,10 @@ s32 ncbafly_entrypoint_0()
 void ncbafly_entrypoint_2(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/fly/func_808000A4_ncbafly.s")
+void func_808000A4_ncbafly()
+{
+    func_80112550();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/fly/ncbafly_entrypoint_3.s")
 

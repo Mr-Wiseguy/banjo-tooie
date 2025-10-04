@@ -15,7 +15,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_8080037C_bsbansnooze.s")
+void func_8080037C_bsbansnooze()
+{
+    func_80800000_bsbansnooze();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_8080039C_bsbansnooze.s")
 
@@ -23,7 +26,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/bsbansnooze_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_808004C0_bsbansnooze.s")
+void func_808004C0_bsbansnooze()
+{
+    func_80800000_bsbansnooze();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/snooze/func_808004E0_bsbansnooze.s")
 

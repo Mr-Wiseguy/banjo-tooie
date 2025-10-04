@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sudie/basudie_entrypoint_0.s")
+void basudie_entrypoint_0()
+{
+    func_80091EF0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sudie/basudie_entrypoint_1.s")
 

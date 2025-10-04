@@ -1,8 +1,14 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/suck/func_80800000_ncbasuck.s")
+void func_80800000_ncbasuck()
+{
+    func_80112524();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/suck/func_80800020_ncbasuck.s")
+void func_80800020_ncbasuck()
+{
+    func_80112524();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/suck/ncbasuck_entrypoint_0.s")
 

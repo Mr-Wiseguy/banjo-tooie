@@ -16,7 +16,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/baddie/Dll/subaddieDll_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/baddie/Dll/subaddieDll_entrypoint_7.s")
+void subaddieDll_entrypoint_7()
+{
+    func_80800260_subaddieDll();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/baddie/Dll/subaddieDll_entrypoint_8.s")
 

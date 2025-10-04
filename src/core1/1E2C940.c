@@ -1,6 +1,8 @@
 #include "types.h"
 #include "gfx.h"
 
+extern OSMesgQueue D_80079010;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E6C.s")
@@ -45,7 +47,10 @@ void func_80014F64(OSMesgQueue* queue, OSMesg mesg) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80015184.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80015190.s")
+void func_80015190(void) 
+{
+    osSendMesg(&D_80079010, NULL, 0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_800151BC.s")
 
