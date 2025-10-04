@@ -70,6 +70,15 @@
 #include "su/splinet.h"
 
 typedef struct {
+    f32 unk0[3];
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+}HandcartActorData;
+
+
+typedef struct {
     f32 unk0;
     f32 unk4;
     f32 unk8;

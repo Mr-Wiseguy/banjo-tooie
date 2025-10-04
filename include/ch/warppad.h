@@ -29,6 +29,18 @@
 #include "su/baddiesect.h"
 
 #include "ch/appearfx.h"
+
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+}WarppadActorData;
+
+
 typedef struct {
     u16 unk0;
     u8 unk2;

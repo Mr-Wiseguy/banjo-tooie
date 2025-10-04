@@ -1,5 +1,7 @@
 #include "ch/bubbleelevator.h"
 
+#define ELEVATOR_DATA(arg0) ((BubbleElevatorActorData*)(arg0->actorData))
+
 extern f32 func_80013970(f32);
 extern f32 func_800138D0(f32);
 extern BubbleWarpData D_80800C20_chbubbleelevator[2];
@@ -14,11 +16,11 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     s32 var_a1;
     MapId temp_v0_2;
 
-    arg0->unk24 = arg0->position[1];
+    ELEVATOR_DATA(arg0)->unkC = arg0->position[1];
     temp_v0 = _gccubesearch_entrypoint_0(0x299, arg0);
     if (temp_v0 != 0)
     {
-        _gspropctrl_entrypoint_11(temp_v0, arg0->unk18);
+        _gspropctrl_entrypoint_11(temp_v0, ELEVATOR_DATA(arg0)->unk0);
     }
     temp_v0_2 = func_800EA05C();
     if (temp_v0_2 != MAP_136_CCL_CLOUD_CUCKOOLAND) //If Map is not CCL
@@ -159,13 +161,13 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         func_800F8294(func_800F54E4(), arg0->position);
         return;
     case 9:
-        if (func_800D90A4(&arg0->unk28) != 0)
+        if (func_800D90A4(&ELEVATOR_DATA(arg0)->unk10) != 0)
         {
             //Set World Unlocked True
             func_800DA544(FLAG_399_PROGRESS_OPENED_WORLD_CCL);
             func_808004DC_chbubbleelevator(arg0, 4);
         }
-        arg0->scale = func_800F12D4(arg0->unk28, arg0->unk2C, 0.0f, 0.05f, 1.0f);
+        arg0->scale = func_800F12D4(ELEVATOR_DATA(arg0)->unk10, ELEVATOR_DATA(arg0)->unk14, 0.0f, 0.05f, 1.0f);
         break;
     }
 }
@@ -182,7 +184,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         func_808008A8_chbubbleelevator(arg0);
         func_800F7B9C(func_800F54E4(), 0x7C);
         func_800F8294(func_800F54E4(), arg0->position);
-        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, arg0->unk18), 0.0f);
+        func_800EFA4C(&sp2C, 0.0f, func_800F1DF4(arg0->position, ELEVATOR_DATA(arg0)->unk0), 0.0f);
         func_800F832C(func_800F54E4(), &sp2C);
         func_800F80E4(func_800F54E4(), 0);
         _capod_entrypoint_13(arg0->unk0, arg0->unk0, D_80800C20_chbubbleelevator[(u32) arg0->unk79_4].unk0, 0x2001);
@@ -200,7 +202,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         func_800DA524(FLAG2_6CA_USING_BUBBLEELEVATOR);
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
-        func_800F78EC(func_800F54E4(), arg0->unk18, 840.0f, -1500.0f);
+        func_800F78EC(func_800F54E4(), ELEVATOR_DATA(arg0)->unk0, 840.0f, -1500.0f);
         arg0->unk34 = 2.0f;
         arg0->unk50 = 3.0f;
         _subaddieaudioloop_entrypoint_2(arg0);
@@ -265,7 +267,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         _subaddieDll_entrypoint_4(arg0, 1U);
         arg0->scale = 0.05f;
         arg0->unk50 = 3.0f;
-        arg0->unk28 = arg0->unk2C;
+        ELEVATOR_DATA(arg0)->unk10 = ELEVATOR_DATA(arg0)->unk14;
         func_800C3F48(0x7FFF468B);
         break;
 
@@ -277,7 +279,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
 //Update bubble vertical position
 void func_808008A8_chbubbleelevator(Actor* arg0)
 {
-    arg0->position[1] = func_800F12D4(arg0->unk58, 0.0f, 5.0f, 0.0f, D_80800C20_chbubbleelevator[arg0->unk79_4].unkC) + arg0->unk24;
+    arg0->position[1] = func_800F12D4(arg0->unk58, 0.0f, 5.0f, 0.0f, D_80800C20_chbubbleelevator[arg0->unk79_4].unkC) + ELEVATOR_DATA(arg0)->unkC;
 }
 
 s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
@@ -285,7 +287,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 7:
-        arg0->unk2C = arg2;
+        ELEVATOR_DATA(arg0)->unk14 = arg2;
         func_808004DC_chbubbleelevator(arg0, 9);
         return 1;
     case 11:
