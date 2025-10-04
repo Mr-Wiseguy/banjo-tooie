@@ -2,6 +2,7 @@
 #define __CORE2_1ECE0B0_H__
 
 #include "../../src/overlays/ba/playerstate.h"
+#include "overlays/ba/yaw.h"
 
 
 #include <ultra64.h>
