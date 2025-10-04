@@ -1,7 +1,10 @@
 #include "core2/1ECD170.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F3880.s")
-
+void func_800F3880(s32 arg0)
+{
+    func_80098E64();
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F38A8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECD170/func_800F3930.s")

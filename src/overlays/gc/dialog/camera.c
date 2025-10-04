@@ -22,8 +22,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/camera/func_808002A4_gcdialogcamera.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/camera/gcdialogcamera_entrypoint_6.s")
-
+void gcdialogcamera_entrypoint_6(s32 arg0)
+{
+    func_808002A4_gcdialogcamera();
+    func_8080026C_gcdialogcamera(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/camera/func_8080030C_gcdialogcamera.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/camera/gcdialogcamera_entrypoint_7.s")

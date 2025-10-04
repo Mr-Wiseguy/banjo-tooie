@@ -66,8 +66,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800DB8_bsstatue.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800EAC_bsstatue.s")
-
+void func_80800EAC_bsstatue(s32 arg0)
+{
+    func_8008E95C();
+    func_80800130_bsstatue(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800ED4_bsstatue.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800F3C_bsstatue.s")

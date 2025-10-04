@@ -56,8 +56,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_17.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_18.s")
-
+void bsblongleg_entrypoint_18(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_80800204_bsblongleg(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_19.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_20.s")
@@ -68,18 +71,30 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_23.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_24.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_25.s")
-
+void bsblongleg_entrypoint_24(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_80800204_bsblongleg(arg0);
+}
+void bsblongleg_entrypoint_25(s32 arg0)
+{
+    func_8080013C_bsblongleg();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_26.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_27.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_28.s")
-
+void bsblongleg_entrypoint_28(s32 arg0)
+{
+    func_8080013C_bsblongleg();
+    _bsdrone_entrypoint_0(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_29.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_30.s")
-
+void bsblongleg_entrypoint_30(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_80800204_bsblongleg(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/bsblongleg_entrypoint_31.s")

@@ -17,8 +17,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/bsbfly_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_8080042C_bsbfly.s")
-
+void func_8080042C_bsbfly(s32 arg0)
+{
+    func_8009E6EC();
+    func_80801BB4_bsbfly(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_80800454_bsbfly.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_8080050C_bsbfly.s")
@@ -83,8 +86,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_80801A1C_bsbfly.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_80801A44_bsbfly.s")
-
+void func_80801A44_bsbfly(s32 arg0)
+{
+    _bafly_entrypoint_18();
+    func_80800188_bsbfly(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/bsbfly_entrypoint_7.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_80801A80_bsbfly.s")
@@ -103,6 +109,9 @@ void func_80801C9C_bsbfly(PlayerState* self)
 {
     _bsdrone_entrypoint_1(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/func_80801CBC_bsbfly.s")
-
+void func_80801CBC_bsbfly(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_80800188_bsbfly(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bfly/bsbfly_entrypoint_9.s")

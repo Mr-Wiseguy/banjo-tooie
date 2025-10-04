@@ -84,8 +84,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_31.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_32.s")
-
+void bstaxi_entrypoint_32(s32 arg0)
+{
+    func_80090A2C();
+    bstaxi_entrypoint_0(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_33.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_34.s")

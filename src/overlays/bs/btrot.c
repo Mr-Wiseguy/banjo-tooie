@@ -72,8 +72,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_14.s")
-
+void bsbtrot_entrypoint_14(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_15.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/func_8080163C_bsbtrot.s")
@@ -102,8 +105,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_27.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_28.s")
-
+void bsbtrot_entrypoint_28(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_29.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_30.s")
@@ -120,10 +126,16 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_36.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_37.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_38.s")
-
+void bsbtrot_entrypoint_37(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    func_808004B4_bsbtrot(arg0);
+}
+void bsbtrot_entrypoint_38(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_39.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/func_80802380_bsbtrot.s")
@@ -138,8 +150,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/func_808025D8_bsbtrot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_44.s")
-
+void bsbtrot_entrypoint_44(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_45.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_46.s")
@@ -154,14 +169,20 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_49.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_50.s")
-
+void bsbtrot_entrypoint_50(s32 arg0)
+{
+    func_80802A4C_bsbtrot();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_51.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_52.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_53.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_54.s")
-
+void bsbtrot_entrypoint_54(s32 arg0)
+{
+    func_80802A4C_bsbtrot();
+    func_8080061C_bsbtrot(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_55.s")

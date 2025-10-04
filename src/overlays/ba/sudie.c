@@ -22,6 +22,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sudie/basudie_entrypoint_10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sudie/basudie_entrypoint_11.s")
-
+void basudie_entrypoint_11(s32 arg0)
+{
+    func_8009E6EC();
+    func_80099AA8(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sudie/basudie_entrypoint_12.s")

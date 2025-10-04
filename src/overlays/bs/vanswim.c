@@ -32,18 +32,33 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/bsvanswim_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_8080083C_bsvanswim.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_80800864_bsvanswim.s")
-
+void func_8080083C_bsvanswim(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_80800174_bsvanswim(arg0);
+}
+void func_80800864_bsvanswim(s32 arg0)
+{
+    func_80800114_bsvanswim();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_8080088C_bsvanswim.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/bsvanswim_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_808008E4_bsvanswim.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_8080090C_bsvanswim.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/func_80800934_bsvanswim.s")
-
+void func_808008E4_bsvanswim(s32 arg0)
+{
+    func_80800114_bsvanswim();
+    _bsdrone_entrypoint_0(arg0);
+}
+void func_8080090C_bsvanswim(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    _bsvan_entrypoint_3(arg0);
+}
+void func_80800934_bsvanswim(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_80800174_bsvanswim(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/vanswim/bsvanswim_entrypoint_4.s")

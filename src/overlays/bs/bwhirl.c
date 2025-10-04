@@ -44,8 +44,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_14.s")
-
+void bsbwhirl_entrypoint_14(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_8080017C_bsbwhirl(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_15.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_16.s")
@@ -60,12 +63,18 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_21.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_22.s")
-
+void bsbwhirl_entrypoint_22(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_8080017C_bsbwhirl(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_23.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_24.s")
-
+void bsbwhirl_entrypoint_24(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_8080017C_bsbwhirl(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_25.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_26.s")

@@ -38,8 +38,11 @@ void func_800A4160(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4A14.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4A4C.s")
-
+void func_800A4A4C(s32 arg0)
+{
+    func_800A4190();
+    func_800A4878(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4A74.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7D460/func_800A4AD0.s")

@@ -54,12 +54,21 @@ void func_80800834_bstrexlarge(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/bstrexlarge_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_808008A8_bstrexlarge.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_808008D0_bstrexlarge.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_808008F8_bstrexlarge.s")
-
+void func_808008A8_bstrexlarge(s32 arg0)
+{
+    bstrexlarge_entrypoint_1();
+    _bsdrone_entrypoint_2(arg0);
+}
+void func_808008D0_bstrexlarge(s32 arg0)
+{
+    bstrexlarge_entrypoint_2();
+    _bsdrone_entrypoint_0(arg0);
+}
+void func_808008F8_bstrexlarge(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    bstrexlarge_entrypoint_3(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/bstrexlarge_entrypoint_5.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800934_bstrexlarge.s")
@@ -96,18 +105,27 @@ void func_80800F2C_bstrexlarge(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/bstrexlarge_entrypoint_9.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800FA0_bstrexlarge.s")
-
+void func_80800FA0_bstrexlarge(s32 arg0)
+{
+    _babounce_entrypoint_3();
+    bstrexlarge_entrypoint_1(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800FC8_bstrexlarge.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80801008_bstrexlarge.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/bstrexlarge_entrypoint_10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80801060_bstrexlarge.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80801088_bstrexlarge.s")
-
+void func_80801060_bstrexlarge(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    bstrexlarge_entrypoint_1(arg0);
+}
+void func_80801088_bstrexlarge(s32 arg0)
+{
+    bstrexlarge_entrypoint_2();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_808010B0_bstrexlarge.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/bstrexlarge_entrypoint_11.s")
@@ -120,8 +138,11 @@ void func_80800F2C_bstrexlarge(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80801230_bstrexlarge.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80801244_bstrexlarge.s")
-
+void func_80801244_bstrexlarge(s32 arg0)
+{
+    bstrexlarge_entrypoint_1();
+    func_80801208_bstrexlarge(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_8080126C_bstrexlarge.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_808012EC_bstrexlarge.s")

@@ -14,8 +14,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B52EC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B537C.s")
-
+void func_800B537C(s32 arg0)
+{
+    func_800B525C();
+    func_800B52EC(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B53A4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8DFA0/func_800B5450.s")

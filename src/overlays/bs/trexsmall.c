@@ -40,12 +40,21 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800998_bstrexsmall.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808009C0_bstrexsmall.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808009E8_bstrexsmall.s")
-
+void func_80800998_bstrexsmall(s32 arg0)
+{
+    bstrexsmall_entrypoint_1();
+    _bsdrone_entrypoint_2(arg0);
+}
+void func_808009C0_bstrexsmall(s32 arg0)
+{
+    bstrexsmall_entrypoint_2();
+    _bsdrone_entrypoint_0(arg0);
+}
+void func_808009E8_bstrexsmall(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    bstrexsmall_entrypoint_3(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_5.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800A24_bstrexsmall.s")
@@ -70,26 +79,38 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801004_bstrexsmall.s")
-
+void func_80801004_bstrexsmall(s32 arg0)
+{
+    _babounce_entrypoint_3();
+    bstrexsmall_entrypoint_1(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_8080102C_bstrexsmall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_8080106C_bstrexsmall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_9.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808010E8_bstrexsmall.s")
-
+void func_808010E8_bstrexsmall(s32 arg0)
+{
+    _babounce_entrypoint_3();
+    bstrexsmall_entrypoint_1(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801110_bstrexsmall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801150_bstrexsmall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808011A8_bstrexsmall.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808011D0_bstrexsmall.s")
-
+void func_808011A8_bstrexsmall(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    bstrexsmall_entrypoint_1(arg0);
+}
+void func_808011D0_bstrexsmall(s32 arg0)
+{
+    bstrexsmall_entrypoint_2();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_808011F8_bstrexsmall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_11.s")

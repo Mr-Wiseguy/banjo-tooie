@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/door/chdoor_entrypoint_0.s")
-
+void chdoor_entrypoint_0(s32 arg0)
+{
+    func_80800028_chdoor();
+    func_8080050C_chdoor(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/door/func_80800028_chdoor.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/door/func_8080032C_chdoor.s")

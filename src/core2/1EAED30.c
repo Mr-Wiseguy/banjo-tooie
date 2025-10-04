@@ -49,7 +49,10 @@ s32 func_800D593C()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAED30/func_800D5E54.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAED30/func_800D5E74.s")
+void func_800D5E74(void) 
+{
+    func_800D55DC();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAED30/func_800D5E94.s")
 

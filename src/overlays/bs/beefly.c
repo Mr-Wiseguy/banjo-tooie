@@ -24,8 +24,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800708_bsbeefly.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800B18_bsbeefly.s")
-
+void func_80800B18_bsbeefly(s32 arg0)
+{
+    func_808002E4_bsbeefly();
+    _bsbee_entrypoint_0(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/bsbeefly_entrypoint_1.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800B54_bsbeefly.s")

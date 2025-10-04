@@ -45,20 +45,32 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/bsbanshack_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800AD0_bsbanshack.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800AF8_bsbanshack.s")
-
+void func_80800AD0_bsbanshack(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_80800164_bsbanshack(arg0);
+}
+void func_80800AF8_bsbanshack(s32 arg0)
+{
+    func_8080021C_bsbanshack();
+    _bsdrone_entrypoint_0(arg0);
+}
 void func_80800B20_bsbanshack(PlayerState* self)
 {
     _bsdrone_entrypoint_1(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/bsbanshack_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800B54_bsbanshack.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800B7C_bsbanshack.s")
-
+void func_80800B54_bsbanshack(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_80800164_bsbanshack(arg0);
+}
+void func_80800B7C_bsbanshack(s32 arg0)
+{
+    func_8080021C_bsbanshack();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800BA4_bsbanshack.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/bsbanshack_entrypoint_5.s")

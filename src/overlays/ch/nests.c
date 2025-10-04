@@ -12,8 +12,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_808002E0_chnests.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_80800324_chnests.s")
-
+void func_80800324_chnests(s32 arg0)
+{
+    func_80800144_chnests();
+    func_808002E0_chnests(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_8080034C_chnests.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nests/func_808003AC_chnests.s")

@@ -25,8 +25,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800400_bsbansack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800434_bsbansack.s")
-
+void func_80800434_bsbansack(s32 arg0)
+{
+    func_80800400_bsbansack();
+    func_80800238_bsbansack(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080045C_bsbansack.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808004B0_bsbansack.s")
@@ -43,8 +46,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800710_bsbansack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080077C_bsbansack.s")
-
+void func_8080077C_bsbansack(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_80800238_bsbansack(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808007A4_bsbansack.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800810_bsbansack.s")
@@ -91,20 +97,32 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801560_bsbansack.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801588_bsbansack.s")
-
+void func_80801560_bsbansack(s32 arg0)
+{
+    _bsdrone_entrypoint_2();
+    func_80800238_bsbansack(arg0);
+}
+void func_80801588_bsbansack(s32 arg0)
+{
+    func_808002D4_bsbansack();
+    _bsdrone_entrypoint_0(arg0);
+}
 void func_808015B0_bsbansack(PlayerState* self)
 {
     _bsdrone_entrypoint_1(self);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_6.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808015E4_bsbansack.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_8080160C_bsbansack.s")
-
+void func_808015E4_bsbansack(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_80800238_bsbansack(arg0);
+}
+void func_8080160C_bsbansack(s32 arg0)
+{
+    func_808002D4_bsbansack();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801634_bsbansack.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_7.s")

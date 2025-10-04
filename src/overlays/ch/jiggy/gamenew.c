@@ -49,8 +49,11 @@ void func_8080245C_chjiggygamenew(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802464_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808024C8_chjiggygamenew.s")
-
+void func_808024C8_chjiggygamenew(s32 arg0)
+{
+    func_800E4208();
+    func_800E44FC(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_808024F0_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802858_chjiggygamenew.s")
