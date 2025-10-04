@@ -12,8 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mrsboggy/func_808004F4_chmrsboggy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mrsboggy/func_80800548_chmrsboggy.s")
-
+void func_80800548_chmrsboggy(Actor* arg0) 
+{
+    _suexpression_entrypoint_8(arg0, 1);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mrsboggy/func_80800568_chmrsboggy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mrsboggy/func_808005D8_chmrsboggy.s")

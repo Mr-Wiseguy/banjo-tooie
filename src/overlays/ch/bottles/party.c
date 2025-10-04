@@ -14,8 +14,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/party/func_80800170_chbottlesparty.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/party/func_8080022C_chbottlesparty.s")
-
+void func_8080022C_chbottlesparty(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/party/func_80800234_chbottlesparty.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bottles/party/func_80800330_chbottlesparty.s")

@@ -7,8 +7,9 @@ s32 func_8009AD70()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD78.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD88.s")
-
+void func_8009AD88(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009AD90.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baphysics/func_8009ADF0.s")

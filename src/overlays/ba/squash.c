@@ -7,8 +7,9 @@ s32 basquash_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/func_80800008_basquash.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/basquash_entrypoint_1.s")
-
+void basquash_entrypoint_1(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/basquash_entrypoint_2.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/squash/basquash_entrypoint_3.s")

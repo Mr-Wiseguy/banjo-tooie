@@ -2,8 +2,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/chexploder_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/func_8080000C_chexploder.s")
-
+void func_8080000C_chexploder(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/func_80800014_chexploder.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/func_80800078_chexploder.s")

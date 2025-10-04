@@ -20,14 +20,14 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/func_80800D24_sumultiscore.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/func_80800D54_sumultiscore.s")
-
+void func_80800D54_sumultiscore(s32 arg0, s32 arg1, s32 arg2) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/func_80800D64_sumultiscore.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/func_80800DD0_sumultiscore.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/func_80800E84_sumultiscore.s")
-
+void func_80800E84_sumultiscore(s32 arg0, s32 arg1, s32 arg2) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/sumultiscore_entrypoint_7.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/multiscore/sumultiscore_entrypoint_8.s")

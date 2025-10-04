@@ -1,4 +1,5 @@
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800000_bsbanshack.s")
 
@@ -48,8 +49,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800AF8_bsbanshack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800B20_bsbanshack.s")
-
+void func_80800B20_bsbanshack(PlayerState* self)
+{
+    _bsdrone_entrypoint_1(self);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/bsbanshack_entrypoint_4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800B54_bsbanshack.s")

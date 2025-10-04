@@ -50,8 +50,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_8080193C_chalienkids.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80801994_chalienkids.s")
-
+void func_80801994_chalienkids(Actor* arg0) 
+{
+    if (func_80100094(arg0,1) != 0)
+    {
+        _suexpression_entrypoint_8(arg0, 1);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_808019C8_chalienkids.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80801A50_chalienkids.s")

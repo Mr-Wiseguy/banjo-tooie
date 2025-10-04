@@ -8,8 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_808000E0_bsdronegoto.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_80800148_bsdronegoto.s")
-
+void func_80800148_bsdronegoto(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_80800150_bsdronegoto.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/goto/func_8080026C_bsdronegoto.s")

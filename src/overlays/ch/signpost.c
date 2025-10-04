@@ -10,6 +10,6 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/signpost/func_80800230_chsignpost.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/signpost/func_80800264_chsignpost.s")
-
+void func_80800264_chsignpost(s32 arg0, s32 arg1, s32 arg2) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/signpost/func_80800274_chsignpost.s")

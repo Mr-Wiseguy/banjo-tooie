@@ -28,6 +28,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/func_80800774_chbouncycastle.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/func_80800828_chbouncycastle.s")
-
+void func_80800828_chbouncycastle(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/func_80800830_chbouncycastle.s")

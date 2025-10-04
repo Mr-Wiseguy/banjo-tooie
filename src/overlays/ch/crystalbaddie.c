@@ -8,8 +8,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crystalbaddie/func_808002E0_chcrystalbaddie.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crystalbaddie/func_80800384_chcrystalbaddie.s")
-
+void func_80800384_chcrystalbaddie(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crystalbaddie/func_8080038C_chcrystalbaddie.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crystalbaddie/func_808003C4_chcrystalbaddie.s")

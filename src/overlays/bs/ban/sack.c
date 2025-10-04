@@ -1,4 +1,5 @@
 #include "common.h"
+#include "overlays/ba/playerstate.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800000_bsbansack.s")
 
@@ -94,8 +95,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801588_bsbansack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808015B0_bsbansack.s")
-
+void func_808015B0_bsbansack(PlayerState* self)
+{
+    _bsdrone_entrypoint_1(self);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/bsbansack_entrypoint_6.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_808015E4_bsbansack.s")

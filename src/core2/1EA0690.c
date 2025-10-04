@@ -88,8 +88,10 @@ void func_800C70D0(s32 arg0, s32 set) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C710C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C7150.s")
-
+void* func_800C7150(void* arg0) 
+{
+    return defrag(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C7170.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA0690/func_800C718C.s")

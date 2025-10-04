@@ -2,8 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/light/vplight_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/light/vplight_entrypoint_1.s")
-
+void vplight_entrypoint_1(void* arg0) 
+{
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/light/func_80800134_vplight.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/vp/light/vplight_entrypoint_2.s")

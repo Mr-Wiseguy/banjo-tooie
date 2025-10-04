@@ -24,8 +24,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_808007EC_chphlegm.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_80800848_chphlegm.s")
-
+void func_80800848_chphlegm(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_80800850_chphlegm.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_808009DC_chphlegm.s")

@@ -18,8 +18,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_80800C90_chbadjinjo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_80800DF0_chbadjinjo.s")
-
+void func_80800DF0_chbadjinjo(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_80800DF8_chbadjinjo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/jinjo/func_80800E28_chbadjinjo.s")

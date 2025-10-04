@@ -4,10 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC5BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC61C.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC628.s")
-
+void func_800DC61C(s32 arg0, s32 arg1) {
+}
+void func_800DC628(s32 arg0, s32 arg1) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC634.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC740.s")

@@ -1,11 +1,12 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC6180/func_800EC890.s")
-
+void func_800EC890(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC6180/func_800EC898.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC6180/func_800EC9E0.s")
-
+void func_800EC9E0(s32 arg0, s32 arg1, s32 arg2) {
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC6180/func_800EC9F0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC6180/func_800ECD60.s")

@@ -1,4 +1,4 @@
-#include "ch/mole_cuckoo.h"
+#include "ch/mole.h"
 
 extern MoveData D_808000C0_chmole_cuckoo[];
 extern D_808000D0 D_808000D0_chmole_cuckoo;

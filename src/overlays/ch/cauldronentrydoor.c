@@ -10,8 +10,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/func_80800274_chcauldronentrydoor.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/func_80800370_chcauldronentrydoor.s")
-
+void func_80800370_chcauldronentrydoor(s32 arg0) 
+{
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/chcauldronentrydoor_entrypoint_0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/func_80800398_chcauldronentrydoor.s")
