@@ -5,6 +5,7 @@
 
 
 #include <ultra64.h>
+void func_800F497C(s32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
@@ -18,6 +19,7 @@ u32 func_800F54E4(void);
 void func_800F5A00(s32, f32[3]);
 f32 func_800F5F24(u32);
 s32 func_800F5FE0(s32);
+void func_800F608C(s32, s32);
 s32 func_800F6438(u32);
 s32 func_800F6774(u32);
 //Does the character match the given transformation type
@@ -25,6 +27,7 @@ s32 func_800F64A4(s32 characterIndex, s32 transformationType);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 void func_800F7B9C(s32, u32);
+s32 func_800F8004(s32);
 void func_800F80E4(s32, u32);
 void func_800F8294(s32, f32*);
 void func_800F82C0(s32);

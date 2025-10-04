@@ -5,6 +5,7 @@
 
 #include "overlays/ba/playerstate.h"
 #include "core2/1EBA250.h"
+void func_80092778(PlayerState*);
 
 void func_80092864(PlayerState *, f32);
 void func_80092880(PlayerState *, s32);

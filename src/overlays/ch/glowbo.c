@@ -1,5 +1,7 @@
 #include "ch/glowbo.h"
 
+#define GLOWBO_DATA(arg0) ((GlowboActorData*)(arg0->actorData))
+
 extern u32 D_808013B0_chglowbo;
 extern u32 D_80801420_chglowbo;
 extern u32 D_80801430_chglowbo;
@@ -79,7 +81,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     {
         arg0->unk58 = 0.0f;
         func_80101FDC(arg0, 0xA);
-        func_800EE7F8(&arg0->unk28, arg0->position);
+        func_800EE7F8(&GLOWBO_DATA(arg0)->unk10, arg0->position);
     }
     else if (arg0->unk74_29)
     {
@@ -89,7 +91,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     {
         arg0->unk58 = D_8080146C_chglowbo[sp2C->unk0];
     }
-    arg0->unk24 = 100.0f;
+    GLOWBO_DATA(arg0)->unkC = 100.0f;
 
     switch (func_800EA05C()) {
     case MAP_1A7_JRL_JOLLY_ROGERS_LAGOON:
@@ -122,7 +124,7 @@ void func_808002F4_chglowbo(Actor* arg0)
             func_800EFA4C(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
             _fxtwinkle_entrypoint_1(sp60, 0x9E4);
         }
-        func_8010D254(arg0->unk18);
+        func_8010D254(GLOWBO_DATA(arg0)->unk0);
         if (arg0->unk70_10 != 1)
         {
             switch (arg0->unk70_10)
@@ -150,8 +152,8 @@ void func_808002F4_chglowbo(Actor* arg0)
                 {
                     sp74->unk10 = 100.0f;
                 }
-                arg0->unk24 = func_800F15F8(arg0->unk24, sp74->unk10, gamespeed * 250.0f);
-                func_801026CC(arg0, D_808014B4_chglowbo, arg0->unk24);
+                GLOWBO_DATA(arg0)->unkC = func_800F15F8(GLOWBO_DATA(arg0)->unkC, sp74->unk10, gamespeed * 250.0f);
+                func_801026CC(arg0, D_808014B4_chglowbo, GLOWBO_DATA(arg0)->unkC);
                 func_8010C3A8(arg0, 0x305425, func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3));
                 if (sp74->unk4 != 0)
                 {
@@ -174,7 +176,7 @@ void func_808002F4_chglowbo(Actor* arg0)
                 break;
 
             case 0xa:
-                func_800EE7F8(arg0->position, &arg0->unk28);
+                func_800EE7F8(arg0->position, &GLOWBO_DATA(arg0)->unk10);
                 func_800EF1B8(arg0->position, arg0->rotation[1] - 90.0f, arg0->unk74_7);
                 arg0->rotation[1] += (func_800D8FF8() * 100.0f) * func_800F3780(func_80101F24(arg0), &D_808013B0_chglowbo, 3);
                 if (sp74->unk4 != 0)
@@ -279,7 +281,7 @@ void func_80800A48_chglowbo(Actor* arg0)
     {
         arg0->scale = 0.25f;
     }
-    arg0->unk24 = 100.0f;
+    GLOWBO_DATA(arg0)->unkC = 100.0f;
     temp_v0 = func_800C8A98();
     sp1C->unk4 = temp_v0;
     func_800C8E54(temp_v0, 100.0f, 750.0f);
@@ -302,22 +304,22 @@ void func_80800B10_chglowbo(Actor* arg0)
     default:
         return;
     case 3:
-        arg0->unk54 = func_800F1DF4(arg0->position, arg0->unk18);
-        arg0->unk2C = func_800EFB8C(arg0->position, arg0->unk18) / 25.0f;
+        arg0->unk54 = func_800F1DF4(arg0->position, GLOWBO_DATA(arg0)->unk0);
+        GLOWBO_DATA(arg0)->unk14 = func_800EFB8C(arg0->position, GLOWBO_DATA(arg0)->unk0) / 25.0f;
         arg0->unk34 = -80.0f;
         func_80801258_chglowbo(arg0);
-        arg0->unk2C = 50.0f;
+        GLOWBO_DATA(arg0)->unk14 = 50.0f;
         arg0->unk6C_0 = 0;
         func_800C9C70(0.25f, 0x4DEU, 1.0f, 0x4650U, arg0->position, 500.0f, 2500.0f);
         func_80101FDC(arg0, 5U);
         return;
     case 5:
         func_80801258_chglowbo(arg0);
-        if ((arg0->unk18[1] < arg0->position[1]) || (arg0->unk2C > 0.0f))
+        if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            arg0->unk2C += arg0->unk34 * func_800D8FF8();
-            func_800EFCD8(&arg0->unk28, arg0->unk54, arg0->unk24);
-            func_800EF04C(arg0->position, &arg0->unk28);
+            GLOWBO_DATA(arg0)->unk14 += arg0->unk34 * func_800D8FF8();
+            func_800EFCD8(&GLOWBO_DATA(arg0)->unk10, arg0->unk54, GLOWBO_DATA(arg0)->unkC);
+            func_800EF04C(arg0->position, &GLOWBO_DATA(arg0)->unk10);
             arg0->unk6C_0 += 1;
         }
         else if (arg0->unk64_19)
@@ -326,7 +328,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         }
         else
         {
-            arg0->unk18[1] -= 75.0f;
+            GLOWBO_DATA(arg0)->unk0[1] -= 75.0f;
             func_80101FDC(arg0, 6U);
         }
         arg0->rotation[0] += 18.0f;
@@ -338,12 +340,12 @@ void func_80800B10_chglowbo(Actor* arg0)
         {
             arg0->alpha -= 0xF;
         }
-        if (arg0->unk18[1] < arg0->position[1])
+        if (GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1])
         {
             arg0->position[1] += -6.0f;
             return;
         }
-        if (arg0->unk18[1] < arg0->position[1])
+        if (GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1])
         {
             arg0->position[1] += -6.0f;
             return;
@@ -390,11 +392,11 @@ void func_80800E28_chglowbo(Actor* arg0)
     }
     arg0->rotation[1] = (func_80090010() + func_800DC178(-110.0f, 110.0f));
     func_8010D254(sp3C);
-    func_800EEB9C(arg0->unk18, arg0->rotation[1], 400.0f);
-    func_800EF04C(arg0->unk18, arg0->position);
-    arg0->unk18[1] = (f32)(sp3C[1] + 20.0f);
+    func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
+    func_800EF04C(GLOWBO_DATA(arg0)->unk0, arg0->position);
+    GLOWBO_DATA(arg0)->unk0[1] = (f32)(sp3C[1] + 20.0f);
     arg0->unk34 = -80.0f;
-    arg0->unk2C = 30.0f;
+    GLOWBO_DATA(arg0)->unk14 = 30.0f;
     func_800C9C70(0.25f, 0x4DE, 0.5f, 0x4650, arg0->position, 500.0f, 2500.0f);
 }
 
@@ -405,18 +407,18 @@ void func_80800F64_chglowbo(Actor* arg0)
     case 8:
         func_80801258_chglowbo(arg0);
         arg0->rotation[0] = (f32)(arg0->rotation[0] + 18.0f);
-        if ((arg0->unk18[1] < arg0->position[1]) || (arg0->unk2C > 0.0f))
+        if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            arg0->unk2C += (arg0->unk34 * func_800D8FF8());
-            func_800EF1B8(arg0->position, arg0->rotation[1], arg0->unk24);
-            arg0->position[1] = (f32)(arg0->position[1] + arg0->unk2C);
+            GLOWBO_DATA(arg0)->unk14 += (arg0->unk34 * func_800D8FF8());
+            func_800EF1B8(arg0->position, arg0->rotation[1], GLOWBO_DATA(arg0)->unkC);
+            arg0->position[1] = (f32)(arg0->position[1] + GLOWBO_DATA(arg0)->unk14);
         }
-        if ((arg0->position[1] <= arg0->unk18[1]) && (arg0->unk2C <= 0.0f))
+        if ((arg0->position[1] <= GLOWBO_DATA(arg0)->unk0[1]) && (GLOWBO_DATA(arg0)->unk14 <= 0.0f))
         {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80801448_chglowbo);
-            arg0->position[1] = (f32)arg0->unk18[1];
-            arg0->unk2C = 0.0f;
-            arg0->unk24 = 100.0f;
+            arg0->position[1] = (f32)GLOWBO_DATA(arg0)->unk0[1];
+            GLOWBO_DATA(arg0)->unk14 = 0.0f;
+            GLOWBO_DATA(arg0)->unkC = 100.0f;
             arg0->rotation[0] = func_800136E4(arg0->rotation[0]);
             arg0->unk58 = 6.0f;
             func_80101FDC(arg0, 9);
@@ -477,23 +479,23 @@ void chglowbo_entrypoint_6(void)
 void func_80801258_chglowbo(Actor* arg0)
 {
     f32 sp44[3];
-    f32 var_f20 = arg0->unk2C;
+    f32 var_f20 = GLOWBO_DATA(arg0)->unk14;
     s32 var_s1 = 0;
 
     func_800EE7F8(sp44, arg0->position);
 
-    while ((arg0->unk18[1] < sp44[1]) || (var_f20 > 0.0f))
+    while ((GLOWBO_DATA(arg0)->unk0[1] < sp44[1]) || (var_f20 > 0.0f))
     {
         var_f20 += arg0->unk34 * func_800D8FF8();
         var_s1++;
         sp44[1] = sp44[1] + var_f20;
     }
 
-    arg0->unk24 = func_800EFB8C(arg0->position, arg0->unk18);
+    GLOWBO_DATA(arg0)->unkC = func_800EFB8C(arg0->position, GLOWBO_DATA(arg0)->unk0);
     if (var_s1 > 0)
     {
-        arg0->unk24 = (f32)(arg0->unk24 / (f32)var_s1);
+        GLOWBO_DATA(arg0)->unkC = (f32)(GLOWBO_DATA(arg0)->unkC / (f32)var_s1);
         return;
     }
-    arg0->unk24 = 0.0f;
+    GLOWBO_DATA(arg0)->unkC = 0.0f;
 }

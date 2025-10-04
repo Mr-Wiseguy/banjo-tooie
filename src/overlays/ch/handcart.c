@@ -1,5 +1,7 @@
 #include "ch/handcart.h"
 
+#define HANDCART_DATA(arg0) ((HandcartActorData*)(arg0->actorData))
+
 extern f32 func_80013970(f32);
 
 extern u32 D_808046C0_chhandcart;
@@ -433,15 +435,15 @@ void func_80800CD0_chhandcart(Actor* arg0)
     {
     }
     sp30 = (Unkfunc_800E0960_1 *)func_8010262C(arg0->unk0, 2);
-    temp_v0->unk918 = func_800136E4(temp_v0->unk918 + (arg0->unk24 * 0.5f));
+    temp_v0->unk918 = func_800136E4(temp_v0->unk918 + (HANDCART_DATA(arg0)->unkC * 0.5f));
     if (sp30 != 0)
     {
         func_800E0AFC(sp30, 0x2B, -1.0f, temp_v0->unk918, 0.0f, 0.0f);
         func_800E0AFC(sp30, 0x2C, -1.0f, temp_v0->unk918, 0.0f, 0.0f);
     }
-    if (arg0->unk24 > 10.0f)
+    if (HANDCART_DATA(arg0)->unkC > 10.0f)
     {
-        temp_f0_2 = func_800F10B4(1.0f - (arg0->unk24 / 90.0f), 0.0f, 1.f, 0.5f, 3.0f);
+        temp_f0_2 = func_800F10B4(1.0f - (HANDCART_DATA(arg0)->unkC / 90.0f), 0.0f, 1.f, 0.5f, 3.0f);
         func_80101CDC(arg0, temp_f0_2);
         if (arg0->unk5F == 0)
         {
@@ -482,7 +484,7 @@ void func_80800EE4_chhandcart(Actor* arg0, s32 arg1)
     {
         sp1C->unk8FA = 0U;
         func_80800E58_chhandcart(arg0, arg1);
-        arg0->unk24 = 0;
+        HANDCART_DATA(arg0)->unkC = 0;
         func_80800CD0_chhandcart(arg0);
     }
 }
@@ -767,7 +769,7 @@ void func_80801850_chhandcart(Actor* arg0)
 
     temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
     temp_v0->unk91C = temp_v0->unk934[2];
-    if (arg0->unk24 > 12.0f)
+    if (HANDCART_DATA(arg0)->unkC > 12.0f)
     {
         if (temp_v0->unk934[2] < temp_v0->unk920)
         {
@@ -815,7 +817,7 @@ void func_80801850_chhandcart(Actor* arg0)
             temp_v0->unk934[2] = 3.0f;
         }
     }
-    if ((func_800DC0C0() < 0.1f) && (arg0->unk24 > 5.0f))
+    if ((func_800DC0C0() < 0.1f) && (HANDCART_DATA(arg0)->unkC > 5.0f))
     {
         if (temp_v0->unk934[2] < 0.0f)
         {
@@ -848,9 +850,9 @@ void func_80801BA4_chhandcart(Actor* arg0)
 
     sp28 = 0.1f;
     temp_s1 = (HandcartMemory*)func_80100094(arg0, 0U);
-    func_80105A9C(arg0, arg0->unk24 * 10.0f);
+    func_80105A9C(arg0, HANDCART_DATA(arg0)->unkC * 10.0f);
     func_80105834(arg0);
-    temp_s1->unk920 = func_800F10B4(arg0->unk24, 0.0f, 100.0f, 0.0f, func_800F1DCC(arg0->rotation[1], temp_s1->unk8) * 3.0f);
+    temp_s1->unk920 = func_800F10B4(HANDCART_DATA(arg0)->unkC, 0.0f, 100.0f, 0.0f, func_800F1DCC(arg0->rotation[1], temp_s1->unk8) * 3.0f);
     temp_s1->unk8 = (f32)arg0->rotation[1];
     if (temp_s1->unk8F7 == 0)
     {
@@ -868,7 +870,7 @@ void func_80801CBC_chhandcart(Actor* arg0)
 {
     HandcartMemory* sp1C;
     sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
-    arg0->unk24 *= 0.95f;
+    HANDCART_DATA(arg0)->unkC *= 0.95f;
     arg0->rotation[0] += func_800F1DCC(0.0f, arg0->rotation[0]) * 0.05f;
     sp1C->unk934[2] += (func_800F1DCC(0, sp1C->unk934[2]) * 0.05f);
 }
@@ -929,7 +931,7 @@ void func_80801D50_chhandcart(Actor* arg0)
         func_8080111C_chhandcart(arg0);
         break;
     case 6:
-        arg0->unk24 = func_8080115C_chhandcart(&(sp34->unk4), arg0->unk24);
+        HANDCART_DATA(arg0)->unkC = func_8080115C_chhandcart(&(sp34->unk4), HANDCART_DATA(arg0)->unkC);
         func_80801BA4_chhandcart(arg0);
         func_8080111C_chhandcart(arg0);
         if (func_80105A5C(arg0) != 0)
@@ -941,7 +943,7 @@ void func_80801D50_chhandcart(Actor* arg0)
     case 9:
     case 10:
     case 11:
-        arg0->unk24 = func_8080115C_chhandcart(&(sp34->unk4), arg0->unk24);
+        HANDCART_DATA(arg0)->unkC = func_8080115C_chhandcart(&(sp34->unk4), HANDCART_DATA(arg0)->unkC);
         func_80801BA4_chhandcart(arg0);
         func_8080111C_chhandcart(arg0);
         break;
@@ -1051,7 +1053,7 @@ void func_80802120_chhandcart(Actor* arg0)
             // @fake
             if (sp34->unk928[0]) {}
             func_800EE88C(sp34->unk928, var_v0->position);
-            func_801058C4(arg0, sp34->unk0, arg0->unk24, 0);
+            func_801058C4(arg0, sp34->unk0, HANDCART_DATA(arg0)->unkC, 0);
             func_80801BA4_chhandcart(arg0);
             break;
 
@@ -1300,7 +1302,7 @@ void func_808028F0_chhandcart(Actor* arg0)
         if (func_800DA298(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0) //If Canary Mary isn't ready yet
         {
             maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
-            func_801058C4(arg0, maryMemory->unkC, arg0->unk24, 0);
+            func_801058C4(arg0, maryMemory->unkC, HANDCART_DATA(arg0)->unkC, 0);
             func_808031D0_chhandcart(arg0, 0x14);
         }
     }
@@ -1337,9 +1339,9 @@ void func_80802BC8_chhandcart(Actor* arg0)
     float new_var;
     sp20 = 0.1f;
     canaryMary = (CanaryMaryMemory*)func_80100094(arg0, 0U);
-    func_80105A9C(arg0, arg0->unk24 * 10.0f);
+    func_80105A9C(arg0, HANDCART_DATA(arg0)->unkC * 10.0f);
     func_80105834(arg0);
-    new_var = (func_800F1DCC(arg0->rotation[1], canaryMary->unk4) * arg0->unk24) * 0.5f;
+    new_var = (func_800F1DCC(arg0->rotation[1], canaryMary->unk4) * HANDCART_DATA(arg0)->unkC) * 0.5f;
     canaryMary->unk8 = (f32)((new_var - canaryMary->unk8) * 0.02f);    arg0->rotation[2] = canaryMary->unk8;
     canaryMary->unk4 = (f32)arg0->rotation[1];
     if (canaryMary->unkE == 0)
@@ -1412,7 +1414,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
     case 26:
-        arg0->unk24 = 40.0f;
+        HANDCART_DATA(arg0)->unkC = 40.0f;
         func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
         func_80802BC8_chhandcart(arg0);
         func_800C01A8(0x6B, 0);
@@ -1427,7 +1429,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             //Loading into GGM from canary cave for cutscene
             //Canary Mary Freed and ready to race
             func_800DA544(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE);
-            arg0->unk24 = 40.0f;
+            HANDCART_DATA(arg0)->unkC = 40.0f;
             func_8080090C_chhandcart(sp2C, 0x1F, 0x28B0, arg0->unk0);
             break;
 
@@ -1438,18 +1440,18 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
         case 5:
             func_80800998_chhandcart(sp2C, 0U, 5U, sp2C->unk0);
             func_808023B4_chhandcart(arg0, 0xCEC, 3);
-            func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), arg0->unk24, 0);
+            func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), HANDCART_DATA(arg0)->unkC, 0);
             break;
 
         case 6:
             func_800FDC28(0x15U);
             if (arg0->unk64_19)
             {
-                arg0->unk24 = 25.0f;
+                HANDCART_DATA(arg0)->unkC = 25.0f;
             }
             else
             {
-                arg0->unk24 = 15.0f;
+                HANDCART_DATA(arg0)->unkC = 15.0f;
             }
             break;
 
@@ -1544,7 +1546,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
         case 18:
-            arg0->unk24 = 40.0f;
+            HANDCART_DATA(arg0)->unkC = 40.0f;
             func_801058C4(arg0, *((s16*)(&canaryMary->unkC)), 40.0f, 0);
             func_80802BC8_chhandcart(arg0);
             func_8080090C_chhandcart(sp2C, 0x1B, 0x20B0, arg0->unk0);
@@ -1591,22 +1593,22 @@ void func_80803218_chhandcart(Actor* arg0, Actor* arg1)
     }
     if (var_f12 <= (sp18 - ((temp_v0 != 0) ? (1310 / 65536.0f) : (655 / 65536.0f))))
     {
-        if ((((temp_v0 != 0) ? (80.0f) : (75.0f)) - 10.0f) < arg0->unk24)
+        if ((((temp_v0 != 0) ? (80.0f) : (75.0f)) - 10.0f) < HANDCART_DATA(arg0)->unkC)
         {
-            arg0->unk24 = arg0->unk24 - (((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed);
+            HANDCART_DATA(arg0)->unkC = HANDCART_DATA(arg0)->unkC - (((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed);
         }
     }
     else if ((1310 / 65536.0f + sp18) <= var_f12)
     {
         new_var = (temp_v0 != 0) ? (80.0f) : (75.0f);
-        if (arg0->unk24 < (10.0f + new_var))
+        if (HANDCART_DATA(arg0)->unkC < (10.0f + new_var))
         {
-            arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
+            HANDCART_DATA(arg0)->unkC += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
         }
     }
-    else if (arg0->unk24 < ((temp_v0 != 0) ? (80.0f) : (75.0f)))
+    else if (HANDCART_DATA(arg0)->unkC < ((temp_v0 != 0) ? (80.0f) : (75.0f)))
     {
-        arg0->unk24 += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
+        HANDCART_DATA(arg0)->unkC += ((temp_v0 != 0) ? (30.0f) : (20.0f)) * gamespeed;
     }
 }
 
@@ -1943,9 +1945,9 @@ void func_80803794_chhandcart(Actor* arg0)
         func_80803698_chhandcart(arg0);
         break;
     case 18:
-        if (arg0->unk24 < 150.0f)
+        if (HANDCART_DATA(arg0)->unkC < 150.0f)
         {
-            arg0->unk24 = arg0->unk24 + (50.0f * sp44);
+            HANDCART_DATA(arg0)->unkC = HANDCART_DATA(arg0)->unkC + (50.0f * sp44);
         }
         func_80802BC8_chhandcart(arg0);
         if (func_80105A5C(arg0) != 0)

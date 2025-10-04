@@ -3,5 +3,6 @@
 
 #include "common.h"
 s32 _subaddiesect_entrypoint_0(Actor*, u8, u32);
-s8 _subaddiesect_entrypoint_1(Actor*);
+s32 _subaddiesect_entrypoint_1(Actor*);
+void _subaddiesect_entrypoint_2(Actor*, s32, s32);
 #endif

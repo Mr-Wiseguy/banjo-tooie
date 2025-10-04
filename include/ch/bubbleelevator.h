@@ -45,6 +45,14 @@
 #include "gs/propctrl.h"
 
 typedef struct {
+    f32 unk0[3];
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+}BubbleElevatorActorData;
+
+typedef struct {
     u8 unk0;
     u8 unk1;
     u8 unk2;

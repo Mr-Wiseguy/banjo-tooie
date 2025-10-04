@@ -45,6 +45,14 @@
 #include "core2/1EE5DF0.h"
 
 typedef struct {
+    f32 unk0[3];
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+}GlowboActorData;
+
+typedef struct {
     s32 unk0;
     s32 unk4;
     f32 unk8;
