@@ -11,11 +11,11 @@ void func_8008FE94(s32, f32*);
 f32 func_80090010(void);
 s32 func_80090128();
 //Does the current character match given transformation
-s32 func_80090178(u32);
+s32 func_80090178(s32);
 s32 func_80090248(void);
 s32 func_80090270(void);
 void func_800903D0(f32[3]);
-void func_800904C8(u32);
+void func_800904C8(s32);
 void func_800904F4(u32, Unk80132ED0*);
 void func_80090658(s32);
 void func_800906DC(f32[3]);
