@@ -1,8 +1,8 @@
-#include "common.h"
+#include "ch/factoryworkerdirty.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/chfactoryworkerdirty_entrypoint_0.s")
 
-void func_8080000C_chfactoryworkerdirty(s32 arg0)
+void func_8080000C_chfactoryworkerdirty(Actor* arg0)
 {
     func_80108B04(arg0,1);
 }
@@ -15,7 +15,11 @@ void func_8080000C_chfactoryworkerdirty(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_8080025C_chfactoryworkerdirty.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_80800340_chfactoryworkerdirty.s")
+void func_80800340_chfactoryworkerdirty(Actor* arg0)
+{
+    func_80100094(arg0,0);
+    func_80800DB4_chfactoryworkerdirty(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_8080036C_chfactoryworkerdirty.s")
 

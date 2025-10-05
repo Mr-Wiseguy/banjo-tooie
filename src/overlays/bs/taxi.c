@@ -43,7 +43,11 @@ void bstaxi_entrypoint_7()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80800A18_bstaxi.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_11.s")
+void bstaxi_entrypoint_11(s32 arg0)
+{
+    func_80800A18_bstaxi(arg0,0);
+    bstaxi_entrypoint_0(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_12.s")
 
@@ -83,7 +87,11 @@ void bstaxi_entrypoint_23()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80801600_bstaxi.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_27.s")
+void bstaxi_entrypoint_27(s32 arg0)
+{
+    func_80801600_bstaxi(arg0,0);
+    bstaxi_entrypoint_0(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_28.s")
 

@@ -55,7 +55,11 @@ void bsstonehead_entrypoint_10(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_808008CC_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_12.s")
+void bsstonehead_entrypoint_12(s32 arg0)
+{
+    func_808008CC_bsstonehead(arg0,0);
+    func_80800000_bsstonehead(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_13.s")
 
@@ -65,7 +69,11 @@ void bsstonehead_entrypoint_10(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_80800B38_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_16.s")
+void bsstonehead_entrypoint_16(s32 arg0)
+{
+    func_80800B38_bsstonehead(arg0,0);
+    func_80800000_bsstonehead(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_17.s")
 

@@ -80,7 +80,11 @@ void func_80800AF0_bstrexsmall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800CA4_bstrexsmall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800E94_bstrexsmall.s")
+void func_80800E94_bstrexsmall(s32 arg0)
+{
+    func_80800CA4_bstrexsmall(arg0,0);
+    bstrexsmall_entrypoint_1(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800EC0_bstrexsmall.s")
 

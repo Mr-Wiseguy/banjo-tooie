@@ -32,7 +32,11 @@ void func_80800430_bsbanshack()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_808005DC_bsbanshack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800744_bsbanshack.s")
+void func_80800744_bsbanshack(s32 arg0)
+{
+    func_808005DC_bsbanshack(arg0,0);
+    func_80800164_bsbanshack(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/shack/func_80800770_bsbanshack.s")
 

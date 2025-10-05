@@ -65,7 +65,11 @@ void func_8080077C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800AF4_bsbansack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800D4C_bsbansack.s")
+void func_80800D4C_bsbansack(s32 arg0)
+{
+    func_80800AF4_bsbansack(arg0,0);
+    func_80800238_bsbansack(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80800D78_bsbansack.s")
 
@@ -132,7 +136,11 @@ void func_8080160C_bsbansack(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801680_bsbansack.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801A04_bsbansack.s")
+void func_80801A04_bsbansack(s32 arg0)
+{
+    func_80801680_bsbansack(arg0,0);
+    func_80800238_bsbansack(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/ban/sack/func_80801A30_bsbansack.s")
 

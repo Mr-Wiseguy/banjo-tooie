@@ -128,7 +128,11 @@ void func_8080121C_bstnt(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80801C3C_bstnt.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/func_80801E20_bstnt.s")
+void func_80801E20_bstnt(s32 arg0)
+{
+    func_80801980_bstnt(arg0,0);
+    bstnt_entrypoint_2(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/tnt/bstnt_entrypoint_11.s")
 

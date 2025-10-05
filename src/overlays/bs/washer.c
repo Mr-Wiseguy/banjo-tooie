@@ -119,7 +119,11 @@ void func_8080142C_bswasher(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_808015EC_bswasher.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801744_bswasher.s")
+void func_80801744_bswasher(s32 arg0)
+{
+    func_808015EC_bswasher(arg0,0);
+    func_808000F0_bswasher(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/washer/func_80801770_bswasher.s")
 
