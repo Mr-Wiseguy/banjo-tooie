@@ -64,13 +64,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DD04.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DD70.s")
+void func_8008DD70(s32 arg0)
+{
+    func_8009E71C(arg0,0x5);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DD90.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DDEC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DE24.s")
+s32 func_8008DE24(PlayerState* arg0)
+{
+    func_80096568(arg0,0xE00);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008DE44.s")
 

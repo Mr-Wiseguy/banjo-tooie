@@ -21,7 +21,10 @@ void bamovespline_entrypoint_5(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/spline/bamovespline_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/spline/bamovespline_entrypoint_8.s")
+void bamovespline_entrypoint_8(s32 arg0)
+{
+    func_808000F4_bamovespline(arg0,0x2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/spline/bamovespline_entrypoint_9.s")
 

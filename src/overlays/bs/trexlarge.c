@@ -10,9 +10,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800044_bstrexlarge.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800140_bstrexlarge.s")
+void func_80800140_bstrexlarge(s32 arg0)
+{
+    bakey_pressed(arg0,0x9);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800160_bstrexlarge.s")
+void func_80800160_bstrexlarge(s32 arg0)
+{
+    bakey_pressed(arg0,0x8);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800180_bstrexlarge.s")
 

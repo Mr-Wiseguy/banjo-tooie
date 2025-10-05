@@ -12,7 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800158_chhellterskelter.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800274_chhellterskelter.s")
+void func_80800274_chhellterskelter(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,0xA4B);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800294_chhellterskelter.s")
 

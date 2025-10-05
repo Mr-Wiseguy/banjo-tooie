@@ -2,7 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800000_bstrexsmall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_8080003C_bstrexsmall.s")
+void func_8080003C_bstrexsmall(s32 arg0)
+{
+    bakey_pressed(arg0,0x8);
+}
 
 void func_8080005C_bstrexsmall()
 {

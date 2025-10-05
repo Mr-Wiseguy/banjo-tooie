@@ -20,7 +20,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_808007FC_chnewmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_80800878_chnewmumbo.s")
+void func_80800878_chnewmumbo(s32 arg0)
+{
+    func_80800264_chnewmumbo(arg0,0xE);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newmumbo/func_80800898_chnewmumbo.s")
 

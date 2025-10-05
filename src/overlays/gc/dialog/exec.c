@@ -61,7 +61,10 @@ void gcdialogexec_entrypoint_7()
     func_80800164_gcdialogexec();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_8.s")
+void gcdialogexec_entrypoint_8(s32 arg0)
+{
+    func_80800A50_gcdialogexec(arg0,0x2);
+}
 
 void gcdialogexec_entrypoint_9()
 {

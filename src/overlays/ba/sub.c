@@ -19,7 +19,10 @@ s32 basub_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sub/func_808004C8_basub.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sub/basub_entrypoint_1.s")
+void basub_entrypoint_1(s32 arg0)
+{
+    func_80800458_basub(arg0,0x5);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sub/basub_entrypoint_2.s")
 

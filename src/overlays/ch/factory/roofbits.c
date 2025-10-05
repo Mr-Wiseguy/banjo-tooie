@@ -24,7 +24,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/roofbits/chfactoryroofbits_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/roofbits/func_808006E8_chfactoryroofbits.s")
+void func_808006E8_chfactoryroofbits(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,0xA08);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/roofbits/func_80800708_chfactoryroofbits.s")
 

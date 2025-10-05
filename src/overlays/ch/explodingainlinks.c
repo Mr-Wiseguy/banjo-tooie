@@ -5,7 +5,10 @@
 void func_8080000C_chexplodingchainlinks(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/explodingainlinks/func_80800014_chexplodingchainlinks.s")
+void func_80800014_chexplodingchainlinks(s32 arg0)
+{
+    _subaddieDll_entrypoint_7(arg0,0xB);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/explodingainlinks/func_80800034_chexplodingchainlinks.s")
 

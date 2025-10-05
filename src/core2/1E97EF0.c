@@ -44,7 +44,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED18.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED50.s")
+void func_800BED50(s32 arg0)
+{
+    func_800BE600(arg0,0x1F00);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED70.s")
 
