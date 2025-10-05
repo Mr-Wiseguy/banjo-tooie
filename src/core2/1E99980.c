@@ -2,6 +2,8 @@
 #include "gfx.h"
 #include "core2/1E99980.h"
 
+extern s32 D_80128AF4;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C00BC.s")
@@ -69,7 +71,10 @@ void func_800C0A2C(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0A34.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0BB4.s")
+s32 func_800C0BB4()
+{
+    return D_80128AF4;
+}
 
 // Probably a file split here based on bk decomp and bss (D_80128AF4)
 

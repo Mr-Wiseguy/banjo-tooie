@@ -1,5 +1,7 @@
 #include "core2/1E8F430.h"
 
+extern s32 D_801282B4;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5B40.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B5B88.s")
@@ -65,7 +67,10 @@ void func_800B5DFC(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B7C54.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8F430/func_800B7C98.s")
+s32 func_800B7C98()
+{
+    return D_801282B4;
+}
 
 void func_800B7CA4()
 {

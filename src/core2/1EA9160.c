@@ -1,8 +1,13 @@
 #include "core2/1EA9160.h"
 
+extern s32 D_8011AE60;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CF870.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CF87C.s")
+s32 func_800CF87C()
+{
+    return D_8011AE60;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CF888.s")
 

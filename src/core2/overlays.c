@@ -202,7 +202,10 @@ void defragment_overlays(void) {
     D_80126CBC = FALSE;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081D28.s")
+s32 func_80081D28()
+{
+    return D_80126CBC;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081D34.s")
 

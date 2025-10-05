@@ -1,6 +1,7 @@
 #include "core2/1E80A70.h"
 
 extern u8 D_80127642;
+extern s32 D_80127674;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7180.s")
 
@@ -246,7 +247,10 @@ int func_800A8264(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A89BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A89F8.s")
+s32 func_800A89F8()
+{
+    return D_80127674;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A8A04.s")
 

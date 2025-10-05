@@ -1,5 +1,7 @@
 #include "common.h"
 
+extern s32 D_80128434;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD570.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD594.s")
@@ -31,7 +33,10 @@ void func_800BDBC4()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDC44.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDC50.s")
+s32 func_800BDC50()
+{
+    return D_80128434;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDC5C.s")
 
