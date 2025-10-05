@@ -613,7 +613,10 @@ void func_800F78C8(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F78EC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F796C.s")
+void func_800F796C(s32 arg0,s32 arg1)
+{
+    func_800F798C(arg0,arg1,0x1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F798C.s")
 
