@@ -22,7 +22,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/xform/bsdronexform_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/xform/func_8080069C_bsdronexform.s")
+void func_8080069C_bsdronexform(s32 arg0)
+{
+    func_8008C9D8(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/xform/func_808006BC_bsdronexform.s")
 

@@ -13,7 +13,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_808003F4_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_0.s")
+void bsstonehead_entrypoint_0(s32 arg0)
+{
+    func_80800194_bsstonehead(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_1.s")
 

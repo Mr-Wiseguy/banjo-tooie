@@ -12,7 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/goto/bamovegoto_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/goto/bamovegoto_entrypoint_5.s")
+void bamovegoto_entrypoint_5(s32 arg0)
+{
+    func_80800000_bamovegoto(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/move/goto/bamovegoto_entrypoint_6.s")
 

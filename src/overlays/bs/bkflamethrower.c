@@ -4,7 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bkflamethrower/func_80800094_bsbkflamethrower.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bkflamethrower/bsbkflamethrower_entrypoint_1.s")
+void bsbkflamethrower_entrypoint_1(s32 arg0)
+{
+    func_80800094_bsbkflamethrower(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bkflamethrower/bsbkflamethrower_entrypoint_2.s")
 

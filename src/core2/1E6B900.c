@@ -201,7 +201,10 @@ s32 func_80094340(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094348.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094370.s")
+void func_80094370(s32 arg0)
+{
+    func_800946C4(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80094390.s")
 

@@ -72,7 +72,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_8010A430.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_8010A570.s")
+void func_8010A570(s32 arg0)
+{
+    func_8010A5B0(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_8010A590.s")
 

@@ -42,7 +42,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_17.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_18.s")
+void sucoaster_entrypoint_18(s32 arg0)
+{
+    func_80105230(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/sucoaster_entrypoint_19.s")
 

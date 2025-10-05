@@ -34,6 +34,9 @@ void func_800B42DC(void* arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B42FC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B4354.s")
+void func_800B4354(s32 arg0)
+{
+    func_800B3EDC(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E8D2C0/func_800B4374.s")
