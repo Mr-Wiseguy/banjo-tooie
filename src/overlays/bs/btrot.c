@@ -136,7 +136,12 @@ void bsbtrot_entrypoint_28(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_35.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/btrot/bsbtrot_entrypoint_36.s")
+void bsbtrot_entrypoint_36(s32 arg0)
+{
+    func_808004B4_bsbtrot();
+    func_80800538_bsbtrot(arg0);
+    _bsdrone_entrypoint_0(arg0);
+}
 
 void bsbtrot_entrypoint_37(s32 arg0)
 {

@@ -38,11 +38,21 @@ void func_80800B18_bsbeefly(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800BA4_bsbeefly.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800BE8_bsbeefly.s")
+void func_80800BE8_bsbeefly(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_808002E4_bsbeefly(arg0);
+    _bsbee_entrypoint_0(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/bsbeefly_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800C2C_bsbeefly.s")
+void func_80800C2C_bsbeefly(s32 arg0)
+{
+    _bafly_entrypoint_18();
+    func_808002E4_bsbeefly(arg0);
+    _bsbee_entrypoint_0(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800C5C_bsbeefly.s")
 
@@ -50,7 +60,12 @@ void func_80800B18_bsbeefly(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/bsbeefly_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800CE0_bsbeefly.s")
+void func_80800CE0_bsbeefly(s32 arg0)
+{
+    _bafly_entrypoint_15();
+    func_808002E4_bsbeefly(arg0);
+    _bsbee_entrypoint_0(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/beefly/func_80800D10_bsbeefly.s")
 

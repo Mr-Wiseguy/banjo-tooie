@@ -73,7 +73,12 @@ void bsbwhirl_entrypoint_20()
     _bsdrone_entrypoint_0();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/bwhirl/bsbwhirl_entrypoint_21.s")
+void bsbwhirl_entrypoint_21(s32 arg0)
+{
+    func_80800200_bsbwhirl();
+    func_80800008_bsbwhirl(arg0);
+    _bsdrone_entrypoint_1(arg0);
+}
 
 void bsbwhirl_entrypoint_22(s32 arg0)
 {

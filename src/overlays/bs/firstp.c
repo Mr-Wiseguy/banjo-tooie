@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/firstp.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80800000_bsfirstp.s")
 
@@ -371,7 +371,12 @@ void func_808050B0_bsfirstp(s32 arg0)
     _bsdrone_entrypoint_2();
     func_80807C8C_bsfirstp(arg0);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808050D8_bsfirstp.s")
+void func_808050D8_bsfirstp(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    func_80807D48_bsfirstp(arg0);
+    func_80809D24_bsfirstp(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_23.s")
 
@@ -382,7 +387,12 @@ void func_8080519C_bsfirstp(s32 arg0)
     _bsdrone_entrypoint_2();
     func_80807C8C_bsfirstp(arg0);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808051C4_bsfirstp.s")
+void func_808051C4_bsfirstp(s32 arg0)
+{
+    _bsdrone_entrypoint_1();
+    func_80807D48_bsfirstp(arg0);
+    func_80809D24_bsfirstp(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_24.s")
 
@@ -479,7 +489,12 @@ void func_80806E9C_bsfirstp(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/bsfirstp_entrypoint_30.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_808071D8_bsfirstp.s")
+void func_808071D8_bsfirstp(s32 arg0)
+{
+    func_80091E6C();
+    _bsbabykaz_entrypoint_3(arg0);
+    func_80807C8C_bsfirstp(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/firstp/func_80807208_bsfirstp.s")
 

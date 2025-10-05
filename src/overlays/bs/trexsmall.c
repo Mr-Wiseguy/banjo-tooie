@@ -151,7 +151,12 @@ void func_808015BC_bstrexsmall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/bstrexsmall_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801718_bstrexsmall.s")
+void func_80801718_bstrexsmall(s32 arg0)
+{
+    func_80090A2C();
+    func_800951B4(arg0);
+    bstrexsmall_entrypoint_1(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80801748_bstrexsmall.s")
 
