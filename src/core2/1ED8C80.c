@@ -26,9 +26,17 @@ void func_800FFA88(Unk80132ED0* a0)
 void func_800FFBE4(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFBEC.s")
+void func_800FFBEC()
+{
+    func_800FFC3C();
+    func_8010DEFC();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFC14.s")
+void func_800FFC14()
+{
+    func_800FFC3C();
+    func_8010DEFC();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_800FFC3C.s")
 
