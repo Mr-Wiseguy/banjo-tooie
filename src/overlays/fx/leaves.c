@@ -14,7 +14,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/leaves/fxleaves_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/leaves/fxleaves_entrypoint_5.s")
+void fxleaves_entrypoint_5(s32 arg0)
+{
+    func_80800288_fxleaves(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/fx/leaves/fxleaves_entrypoint_6.s")
 

@@ -114,6 +114,9 @@ void func_808012C4_bsbabykaz(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/bsbabykaz_entrypoint_12.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/bsbabykaz_entrypoint_13.s")
+void bsbabykaz_entrypoint_13(s32 arg0)
+{
+    _bababykaz_entrypoint_7(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/babykaz/bsbabykaz_entrypoint_14.s")

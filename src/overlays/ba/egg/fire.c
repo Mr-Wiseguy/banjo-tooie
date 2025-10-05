@@ -21,7 +21,10 @@ s32 baeggfire_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/fire/baeggfire_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/fire/baeggfire_entrypoint_4.s")
+void baeggfire_entrypoint_4(s32 arg0)
+{
+    func_8009E0AC(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/fire/baeggfire_entrypoint_5.s")
 

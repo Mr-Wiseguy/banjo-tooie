@@ -19,7 +19,10 @@ void func_8080003C_chprisonbits()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_808000C0_chprisonbits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_808001E0_chprisonbits.s")
+void func_808001E0_chprisonbits(s32 arg0)
+{
+    func_8080003C_chprisonbits(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_80800200_chprisonbits.s")
 

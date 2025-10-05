@@ -2,7 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/chfactoryworkerdirty_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_8080000C_chfactoryworkerdirty.s")
+void func_8080000C_chfactoryworkerdirty(s32 arg0)
+{
+    func_80108B04(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_8080002C_chfactoryworkerdirty.s")
 

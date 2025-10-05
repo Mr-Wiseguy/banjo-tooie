@@ -2,7 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/statue/func_80800000_chgoldstatue.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/statue/func_80800094_chgoldstatue.s")
+void func_80800094_chgoldstatue(s32 arg0)
+{
+    _sumumbofx_entrypoint_1(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/statue/func_808000B4_chgoldstatue.s")
 
