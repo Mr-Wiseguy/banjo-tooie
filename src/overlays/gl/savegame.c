@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/savegame/func_80800000_glsavegame.s")
+void func_80800000_glsavegame()
+{
+    heap_alloc(0x1C0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/savegame/func_80800020_glsavegame.s")
 

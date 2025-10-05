@@ -83,7 +83,10 @@ void func_8008FC28()
     func_800F55A4(func_800F54E4());
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FC50.s")
+void func_8008FC50()
+{
+    func_8008FB94(0x1);
+}
 
 void func_8008FC70(s32 arg0)
 {

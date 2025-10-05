@@ -25,7 +25,7 @@ s32 func_80095790()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A08.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A40.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A40.s") 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6F080/func_80095A64.s")
 

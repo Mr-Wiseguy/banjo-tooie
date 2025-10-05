@@ -28,7 +28,10 @@ void func_8001A290()
     func_80015190();
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A2B0.s")
+void func_8001A2B0()
+{
+    func_80013D10(0x3);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A2D0.s")
 

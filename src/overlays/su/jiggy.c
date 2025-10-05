@@ -1,4 +1,4 @@
-#include "common.h"
+#include "su/jiggy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/func_80800000_sujiggy.s")
 
@@ -23,7 +23,10 @@ s32 sujiggy_entrypoint_1()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_9.s")
+void sujiggy_entrypoint_9()
+{
+    func_800DA544(FLAG5_D4D_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_10.s")
 
@@ -31,7 +34,10 @@ s32 sujiggy_entrypoint_1()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_12.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_13.s")
+s32 sujiggy_entrypoint_13()
+{
+    return func_800DA298(FLAG5_D4F_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_14.s")
 

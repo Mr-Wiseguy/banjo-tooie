@@ -28,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800B2C_chhoneyb.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/honeyb/func_80800B58_chhoneyb.s")
+void func_80800B58_chhoneyb()
+{
+    func_800D1A04(0x49);
+}
 
 void func_80800B78_chhoneyb()
 {

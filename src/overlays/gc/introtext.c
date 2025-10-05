@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/introtext/gcintrotext_entrypoint_0.s")
+void gcintrotext_entrypoint_0()
+{
+    func_800DA544(0x6CB);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/introtext/gcintrotext_entrypoint_1.s")
 

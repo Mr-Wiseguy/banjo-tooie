@@ -41,7 +41,10 @@ void func_80800340_chfactoryworkerdirty(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_808009C0_chfactoryworkerdirty.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_808009E4_chfactoryworkerdirty.s")
+s32 func_808009E4_chfactoryworkerdirty()
+{
+    return func_800DA298(FLAG_433_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_80800A04_chfactoryworkerdirty.s")
 

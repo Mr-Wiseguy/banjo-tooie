@@ -2,6 +2,7 @@
 #define __CORE2_1ED68A0_H__
 
 #include "common.h"
+#include "core2/1EB3750.h"
 
 u32 func_800FDC28(u32);
 void func_800FE4E4(void);

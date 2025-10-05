@@ -236,15 +236,30 @@ void func_80803718_chgameselect()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803BE8_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803C60_chgameselect.s")
+void func_80803C60_chgameselect()
+{
+    func_800FC660(0xF);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803C80_chgameselect.s")
+void func_80803C80_chgameselect()
+{
+    func_800FC660(0xE);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CA0_chgameselect.s")
+void func_80803CA0_chgameselect()
+{
+    func_800FC660(0x10);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CC0_chgameselect.s")
+void func_80803CC0_chgameselect()
+{
+    func_800FC660(0x96);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CE0_chgameselect.s")
+void func_80803CE0_chgameselect()
+{
+    func_800FC660(0x97);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803D00_chgameselect.s")
 
