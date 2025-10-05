@@ -47,6 +47,10 @@ void func_80800C34_chfriesstand(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800C3C_chfriesstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800CF0_chfriesstand.s")
+void func_80800CF0_chfriesstand(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,0xA0);
+    _chswitch_entrypoint_9(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friesstand/func_80800D1C_chfriesstand.s")

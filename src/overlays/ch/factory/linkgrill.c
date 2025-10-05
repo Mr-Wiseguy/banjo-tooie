@@ -6,7 +6,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/linkgrill/chfactorylinkgrill_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/linkgrill/func_80800124_chfactorylinkgrill.s")
+void func_80800124_chfactorylinkgrill(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,0x1D9);
+    _chswitch_entrypoint_9(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/linkgrill/func_80800150_chfactorylinkgrill.s")
 
