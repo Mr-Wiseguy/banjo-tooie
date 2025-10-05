@@ -345,7 +345,10 @@ void func_80803CE0_chgameselect()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080537C_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80805474_chgameselect.s")
+void func_80805474_chgameselect(s32 arg0,s32 arg1)
+{
+    func_8080537C_chgameselect(arg0,0x1,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80805498_chgameselect.s")
 

@@ -13,7 +13,10 @@ void inantab_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/inantab_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/inantab_entrypoint_2.s")
+void inantab_entrypoint_2(s32 arg0,s32 arg1)
+{
+    func_8010114C(arg0,0x5A,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/in/antab/inantab_entrypoint_3.s")
 

@@ -44,7 +44,10 @@ void func_80103AA0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103CDC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103D00.s")
+void func_80103D00(s32 arg0,s32 arg1)
+{
+    func_80103B24(arg0,0x1,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDCA30/func_80103D24.s")
 

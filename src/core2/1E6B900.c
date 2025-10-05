@@ -74,13 +74,25 @@ void func_80092AB0(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092BF4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092C00.s")
+void func_80092C00(PlayerState* arg0, f32* arg1)
+{
+    func_800921E0(arg0, 0x1, arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092C24.s")
+void func_80092C24(PlayerState* arg0, f32* arg1)
+{
+    func_800921E0(arg0,0x2,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092C48.s")
+void func_80092C48(PlayerState* arg0,f32* arg1)
+{
+    func_800921E0(arg0,0x7,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092C6C.s")
+void func_80092C6C(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x6,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092C90.s")
 
@@ -90,19 +102,37 @@ void func_80092AB0(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092D44.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092D9C.s")
+void func_80092D9C(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x3,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092DC0.s")
+void func_80092DC0(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x4,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092DE4.s")
+void func_80092DE4(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x8,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092E08.s")
+void func_80092E08(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x9,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092E2C.s")
+void func_80092E2C(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0xA,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092E50.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092E5C.s")
+void func_80092E5C(s32 arg0,s32 arg1)
+{
+    func_800921E0(arg0,0x5,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092E80.s")
 
