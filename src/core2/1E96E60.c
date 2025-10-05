@@ -22,7 +22,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDB9C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDBC4.s")
+void func_800BDBC4()
+{
+    func_800BDB9C(func_800BD97C());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDBEC.s")
 

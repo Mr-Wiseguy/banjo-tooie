@@ -86,7 +86,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80802C40_chdiggerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80802CB4_chdiggerboss.s")
+void func_80802CB4_chdiggerboss()
+{
+    func_800F4B20(func_80802248_chdiggerboss());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80802CDC_chdiggerboss.s")
 

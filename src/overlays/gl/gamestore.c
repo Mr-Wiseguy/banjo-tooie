@@ -20,6 +20,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/gamestore/func_808001E0_glgamestore.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/gamestore/glgamestore_entrypoint_4.s")
+void glgamestore_entrypoint_4()
+{
+    func_808001E0_glgamestore(func_80800038_glgamestore());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/gamestore/glgamestore_entrypoint_5.s")

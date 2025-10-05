@@ -2,6 +2,7 @@
 #define __CORE2_1E691A0_H__
 
 #include "common.h"
+#include "core2/1ECE0B0.h"
 
 void func_8008FB58(f32[3], f32, f32);
 void func_8008FBE0(u32 a0);

@@ -127,7 +127,10 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802AD4_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802BE8_chgameselect.s")
+void func_80802BE8_chgameselect()
+{
+    func_808029D8_chgameselect(func_80106790());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802C10_chgameselect.s")
 
