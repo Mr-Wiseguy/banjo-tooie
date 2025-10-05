@@ -6,11 +6,17 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D14C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D18C.s")
+void func_8008D18C(s32 arg0)
+{
+    func_800C6E38(0x3);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D1B0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D1F0.s")
+void func_8008D1F0(s32 arg0)
+{
+    func_800C6E38(0x5);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D214.s")
 
@@ -24,7 +30,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D40C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D544.s")
+s32 func_8008D544(PlayerState* arg0)
+{
+    return func_800C6E38(0xA);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E66990/func_8008D568.s")
 

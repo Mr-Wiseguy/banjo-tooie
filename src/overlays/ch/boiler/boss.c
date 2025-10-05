@@ -82,7 +82,10 @@ void func_80800304_chboilerboss(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/func_80802414_chboilerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/func_808024B8_chboilerboss.s")
+void func_808024B8_chboilerboss(s32 arg0)
+{
+    func_800FDC28(0x1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/func_808024DC_chboilerboss.s")
 

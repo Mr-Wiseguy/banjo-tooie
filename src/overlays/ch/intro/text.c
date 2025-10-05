@@ -4,7 +4,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_8080000C_chintrotext.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_80800130_chintrotext.s")
+void func_80800130_chintrotext(s32 arg0)
+{
+    func_800DA524(0x6AD);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_80800154_chintrotext.s")
 

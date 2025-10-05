@@ -4,9 +4,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800050_bsstatue.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_80800078_bsstatue.s")
+void func_80800078_bsstatue(s32 arg0)
+{
+    func_800CEAD0(0x2);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_8080009C_bsstatue.s")
+void func_8080009C_bsstatue(s32 arg0)
+{
+    func_800CEAA8(0x2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/statue/func_808000C0_bsstatue.s")
 
