@@ -1,12 +1,19 @@
 #include "common.h"
 
+extern s32 D_80128410;
 extern s32 D_80128434;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD570.s")
+void func_800BD570()
+{
+    _gccubeDll_entrypoint_1(&D_80128410);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD594.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD5DC.s")
+void func_800BD5DC()
+{
+    _gccubeDll_entrypoint_2(&D_80128410);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BD600.s")
 
@@ -44,11 +51,20 @@ s32 func_800BDC50()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDC90.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDCB8.s")
+void func_800BDCB8()
+{
+    _gccubeDll_entrypoint_0(&D_80128410);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDCDC.s")
+void func_800BDCDC()
+{
+    _gccubeDll_entrypoint_5(&D_80128410);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDD00.s")
+void func_800BDD00()
+{
+    _gccubeDll_entrypoint_6(&D_80128410);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E96E60/func_800BDD24.s")
 

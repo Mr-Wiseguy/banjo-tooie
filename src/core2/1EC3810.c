@@ -1,6 +1,7 @@
 #include "core2/1EC3810.h"
 
 extern u16 D_80132DC2;
+extern s32 D_80132DC0;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800E9F20.s")
 
@@ -16,11 +17,17 @@ MapId func_800EA05C(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA09C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA0A8.s")
+void func_800EA0A8()
+{
+    _gsworldDll_entrypoint_1(&D_80132DC0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA0CC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA124.s")
+void func_800EA124()
+{
+    _gsworldDll_entrypoint_4(&D_80132DC0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC3810/func_800EA148.s")
 

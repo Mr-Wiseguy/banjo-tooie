@@ -1,6 +1,11 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7F4D0/func_800A5BE0.s")
+extern s32 D_80127110;
+
+void func_800A5BE0()
+{
+    _chbaddieDll_entrypoint_0(&D_80127110);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7F4D0/func_800A5C04.s")
 

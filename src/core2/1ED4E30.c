@@ -1,5 +1,7 @@
 #include "core2/1ED4E30.h"
 
+extern s32 D_80135960;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB540.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB5BC.s")
@@ -26,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FC124.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FC1A8.s")
+void func_800FC1A8()
+{
+    func_800FB774(&D_80135960);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FC1CC.s")
 

@@ -1,5 +1,7 @@
 #include "core2/1EAF950.h"
 
+extern s32 D_8012BE70;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D6060.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D61B4.s")
@@ -64,9 +66,15 @@ void func_800D73AC()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D740C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D7418.s")
+void func_800D7418()
+{
+    _glsplineDll_entrypoint_0(&D_8012BE70);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D743C.s")
+void func_800D743C()
+{
+    _glsplineDll_entrypoint_1(&D_8012BE70);
+}
 
 void func_800D7460()
 {
@@ -109,7 +117,10 @@ void func_800D7900(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D8744.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D87B0.s")
+void func_800D87B0()
+{
+    _glsplineDll_entrypoint_2(&D_8012BE70);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAF950/func_800D87D4.s")
 

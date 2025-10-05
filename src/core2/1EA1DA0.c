@@ -1,5 +1,7 @@
 #include "core2/1EA1DA0.h"
 
+extern s32 D_8012AB00;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C84B0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C8560.s")
@@ -66,9 +68,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9074.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90AC.s")
+void func_800C90AC()
+{
+    _gclightsDll_entrypoint_0(&D_8012AB00);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90D0.s")
+void func_800C90D0()
+{
+    _gclightsDll_entrypoint_1(&D_8012AB00);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90F4.s")
 

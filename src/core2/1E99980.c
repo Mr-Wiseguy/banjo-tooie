@@ -2,11 +2,15 @@
 #include "gfx.h"
 #include "core2/1E99980.h"
 
+extern s32 D_801288B0;
 extern s32 D_80128AF4;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C00BC.s")
+void func_800C00BC()
+{
+    _gcdialogDll_entrypoint_0(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C00E0.s")
 
@@ -36,7 +40,10 @@ extern s32 D_80128AF4;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C064C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0658.s")
+void func_800C0658()
+{
+    _gcdialogexec_entrypoint_2(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C067C.s")
 
@@ -48,7 +55,10 @@ extern s32 D_80128AF4;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C07F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0808.s")
+void func_800C0808()
+{
+    _gcdialogexec_entrypoint_8(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C082C.s")
 
