@@ -1,9 +1,10 @@
 #include <vector>
 #include <string>
 #include <filesystem>
-#include <unordered_set>
+#include <unordered_map>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 #include "fmt/core.h"
 #include "fmt/ostream.h"
@@ -27,69 +28,103 @@ std::vector<uint16_t> read_original_relocs(const std::string& original_reloc_pat
     return ret;
 }
 
-// Sorts relocs by their offset, but keeps HI16/LO16 pairs together
-void sort_relocs(std::vector<uint16_t>& relocs, const std::string& original_reloc_path) {
+// Replace the generated relocs with the original reloc list if they have the same entries to preserve the original order for matching.
+void replace_relocs(std::vector<uint16_t>& relocs, const std::string& original_reloc_path) {
     // Read the original relocs that were pulled from the ROM
     std::vector<uint16_t> original_relocs = read_original_relocs(original_reloc_path);
-    // Convert the generated relocs into a set for quick lookups
-    std::unordered_set<uint16_t> reloc_set{relocs.begin(), relocs.end()};
-    // Create a vector for placing the sorted relocs.
-    std::vector<uint16_t> relocs_out;
 
-    // Iterate over every original reloc and check if it exists in the generated relocs
-    for (size_t i = 0; i < original_relocs.size(); i++) {
-        uint16_t cur_reloc = original_relocs[i];
+    // Convert the generated relocs into a map (with index as the values) for quick lookups.
+    std::unordered_map<uint16_t, size_t> reloc_set{};
+    for (size_t i = 0; i < relocs.size(); i++) {
+        reloc_set.emplace(relocs[i], i);
+    }
 
-        auto find_it = reloc_set.find(cur_reloc);
-        // If the reloc does exist, pull it into the output vector
-        if (find_it != reloc_set.end()) {
-            // If this is a HI16 reloc, pull any paired LO16 relocs with it
-            if (TooieRelocType(cur_reloc & 0x3) == TooieRelocType::R_MIPS_HI16) {
-                // Determine how many LO16 relocs are paired to this HI16
-                // Pulling isn't done here, as we don't want to pull a HI16 unless all of its paired LO16 relocs are present as well
+    std::vector<uint16_t> original_paired_lo16s{};
+    std::vector<uint16_t> generated_paired_lo16s{};
+
+    bool matching = true;
+    if (original_relocs.size() != relocs.size()) {
+        matching = false;
+    }
+    else {
+        // Iterate over every original reloc and check if it exists in the generated relocs.
+        for (size_t i = 0; i < original_relocs.size(); i++) {
+            uint16_t cur_reloc = original_relocs[i];
+            TooieRelocType reloc_type = TooieRelocType(cur_reloc & 0x3);
+
+            // LO16s should have been processed as part of the HI16 they were paired to, so if one is found here then it's unpaired.
+            // The presence of an unpaired LO16 reloc is risky for replacement, so just mark this as not matching if one is found.
+            if (reloc_type == TooieRelocType::R_MIPS_LO16) {
+                matching = false;
+                break;
+            }
+
+            // Check if the reloc exists, if not then the relocs don't match.
+            auto find_it = reloc_set.find(cur_reloc);
+            if (find_it == reloc_set.end()) {
+                matching = false;
+                break;
+            }
+
+            // The reloc existing isn't enough to confirm matching, as order can affect behavior even when the lists are the same
+            // due to reloc pairing. Therefore, we need to check that reloc pairings are the same as well.
+            // If this is a HI16 reloc, check that it's paired to the same set of LO16 relocs in the original reloc list.
+            if (reloc_type == TooieRelocType::R_MIPS_HI16) {
+                size_t original_start_index = i + 1;
+                size_t generated_start_index = find_it->second + 1;
                 size_t lo16_count = 0;
-                while ((i + lo16_count + 1) < original_relocs.size() && TooieRelocType(original_relocs[i + lo16_count + 1] & 0x3) == TooieRelocType::R_MIPS_LO16) {
-                    // Check if the current LO16 is in the generated relocs
-                    if (reloc_set.contains(original_relocs[i + lo16_count + 1])) {
-                        lo16_count++;
-                    }
-                    else {
-                        lo16_count = size_t(-1);
+
+                original_paired_lo16s.clear();
+                generated_paired_lo16s.clear();
+
+                // Scan forward from the HI16 reloc until a reloc that isn't a LO16 is found.
+                // For each LO16 found, check if it exists in both lists.
+                while (original_start_index + lo16_count < original_relocs.size() && generated_start_index + lo16_count < relocs.size()) {
+                    uint16_t next_original_reloc = original_relocs[original_start_index + lo16_count];
+                    uint16_t next_generated_reloc = relocs[generated_start_index + lo16_count];
+                    TooieRelocType next_original_type = TooieRelocType(next_original_reloc & 0x3);
+                    TooieRelocType next_generated_type = TooieRelocType(next_generated_reloc & 0x3);
+
+                    // If both next relocs are not LO16, then end pairing.
+                    if (next_original_type != TooieRelocType::R_MIPS_LO16) {
                         break;
                     }
-                }
-                // If all of the paired LO16 relocs were found, pull them all into the generated reloc vector
-                if (lo16_count != size_t(-1)) {
-                    // Pull the HI16
-                    relocs_out.push_back(cur_reloc);
-                    reloc_set.erase(find_it);
-                    // Pull all the LO16
-                    for (size_t count_copied = 0; count_copied < lo16_count; count_copied++) {
-                        uint16_t reloc_to_copy = original_relocs[i + count_copied + 1];
-                        relocs_out.push_back(reloc_to_copy);
-                        reloc_set.erase(reloc_to_copy);
+                    // Otherwise if either reloc isn't LO16 then there's a mismatch in paired reloc count, so these sets don't match.
+                    else if (next_original_type != TooieRelocType::R_MIPS_LO16 || next_generated_type != TooieRelocType::R_MIPS_LO16) {                       
+                        matching = false;
+                        break;
                     }
-
-                    i += lo16_count;
+                    lo16_count++;
                 }
-            }
-            // Otherwise, just pull this reloc on its own
-            else {
-                reloc_set.erase(find_it);
-                relocs_out.push_back(cur_reloc);
+
+                // If paired reloc counting determined that the sets don't match, exit scanning.
+                if (!matching) {
+                    break;
+                }
+
+                // Check that the paired relocs contain the same ones. They may not be in the same order, so they must be extracted and sorted.
+                original_paired_lo16s.resize(lo16_count);
+                generated_paired_lo16s.resize(lo16_count);
+                for (size_t i = 0; i < lo16_count; i++) {
+                    original_paired_lo16s[i] = original_relocs[original_start_index + i];
+                    generated_paired_lo16s[i] = relocs[generated_start_index + i];
+                }
+                std::sort(original_paired_lo16s.begin(), original_paired_lo16s.end());
+                std::sort(generated_paired_lo16s.begin(), generated_paired_lo16s.end());
+                if (original_paired_lo16s != generated_paired_lo16s) {
+                    matching = false;
+                    break;
+                }
+
+                // Skip the processed LO16 relocs.
+                i += lo16_count;
             }
         }
     }
 
-    // Copy any remaining generated relocs that weren't found during sorting back into the vector.
-    // They must be copied in the original order to maintain hi/lo pairing.
-    for (uint16_t reloc : relocs) {
-        if (reloc_set.contains(reloc)) {
-            relocs_out.push_back(reloc);
-        }
+    if (matching) {
+        relocs = std::move(original_relocs);
     }
-
-    relocs = std::move(relocs_out);
 }
 
 bool write_if_different(const std::filesystem::path& filepath, const std::string& data) {
@@ -250,7 +285,7 @@ int main(int argc, const char **argv) {
             // Get the relocs for this overlay and sort them based on their original order
             reloc_values.clear();
             elf_file.get_tooie_relocs(ovl, reloc_values);
-            sort_relocs(reloc_values, "assets/overlays/" + ovl.name + "/relocs.bin");
+            replace_relocs(reloc_values, "assets/overlays/" + ovl.name + "/relocs.bin");
 
             fmt::print(header, 
                 ".data\n"
