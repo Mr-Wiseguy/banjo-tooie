@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/factory/maindoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/maindoor/func_80800000_chfactorymaindoor.s")
 
@@ -16,7 +16,7 @@
 
 void func_8080041C_chfactorymaindoor(s32 arg0)
 {
-    _chswitch_entrypoint_3(arg0,0x188);
+    _chswitch_entrypoint_3(arg0,FLAG_188_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/maindoor/func_8080043C_chfactorymaindoor.s")

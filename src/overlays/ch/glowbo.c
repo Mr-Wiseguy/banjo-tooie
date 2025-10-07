@@ -122,7 +122,7 @@ void func_808002F4_chglowbo(Actor* arg0)
         if (arg0->unk7C_12 && (func_800DC298(0.05f) != 0))
         {
             func_800EFA4C(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
-            _fxtwinkle_entrypoint_1(sp60, 0x9E4);
+            _fxtwinkle_entrypoint_1(sp60, RED_SPARKLE);
         }
         func_8010D254(GLOWBO_DATA(arg0)->unk0);
         if (arg0->unk70_10 != 1)

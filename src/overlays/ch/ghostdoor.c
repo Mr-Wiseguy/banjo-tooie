@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/ghostdoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ghostdoor/chghostdoor_entrypoint_0.s")
 
@@ -10,7 +10,7 @@
 
 void func_80800190_chghostdoor(s32 arg0)
 {
-    _chswitch_entrypoint_7(arg0,0x96);
+    _chswitch_entrypoint_7(arg0,FLAG_096_STATION_UNLOCKED_WW);
     _chswitch_entrypoint_9(arg0);
 }
 

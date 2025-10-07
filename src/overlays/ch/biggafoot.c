@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/biggafoot.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/chbiggafoot_entrypoint_0.s")
 
@@ -10,7 +10,7 @@
 
 void func_808004B0_chbiggafoot(s32 arg0)
 {
-    func_800DA524(0x6CD);
+    func_800DA524(FLAG2_6CD_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/func_808004D4_chbiggafoot.s")

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/introtext.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/chintrotext_entrypoint_0.s")
 
@@ -6,7 +6,7 @@
 
 void func_80800130_chintrotext(s32 arg0)
 {
-    func_800DA524(0x6AD);
+    func_800DA524(FLAG2_6AD_CURRENTLY_SHOWING_INTROTEXT);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/text/func_80800154_chintrotext.s")

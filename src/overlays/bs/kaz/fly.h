@@ -52,9 +52,9 @@
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
 #include "core2/1ECE0B0.h"
-#include "overlays/nc/ba/die.h"
-#include "overlays/nc/ba/dive.h"
-#include "overlays/nc/ba/fly.h"
+#include "nc/ba/die.h"
+#include "nc/ba/dive.h"
+#include "nc/ba/fly.h"
 #include "player.h"
 
 typedef struct bs_kazfly_s {

@@ -7,9 +7,9 @@ s32 func_80112160()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEBA50/func_80112168.s")
 
-void func_801121B8()
+void func_801121B8(PlayerState* arg0, f32* arg1)
 {
-    func_80112168();
+    func_80112168(arg0,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEBA50/func_801121D8.s")
@@ -30,9 +30,9 @@ void func_801121B8()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEBA50/func_80112524.s")
 
-void func_80112550()
+void func_80112550(PlayerState* arg0, f32* arg1)
 {
-    func_80112168();
+    func_80112168(arg0,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEBA50/func_80112570.s")

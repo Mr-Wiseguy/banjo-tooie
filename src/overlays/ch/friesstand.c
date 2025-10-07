@@ -49,7 +49,7 @@ void func_80800C34_chfriesstand(s32 arg0)
 
 void func_80800CF0_chfriesstand(s32 arg0)
 {
-    _chswitch_entrypoint_7(arg0,0xA0);
+    _chswitch_entrypoint_7(arg0,FLAG_0A0_UNK);
     _chswitch_entrypoint_9(arg0);
 }
 

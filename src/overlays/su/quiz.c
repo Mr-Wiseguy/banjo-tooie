@@ -1,4 +1,4 @@
-#include "common.h"
+#include "su/quiz.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/quiz/func_80800000_suquiz.s")
 
@@ -44,7 +44,7 @@
 
 s32 suquiz_entrypoint_17()
 {
-    return func_800DA298(0x6E3);
+    return func_800DA298(FLAG2_6E3_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/quiz/suquiz_entrypoint_18.s")

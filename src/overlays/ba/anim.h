@@ -2,7 +2,7 @@
 #define __ANIM_H__
 
 #include "overlays/ba/playerstate.h"
-#include "assets.h"
+#include "overlays/ba/assets.h"
 #include "core2/anctrl.h"
 
 typedef enum baanim_update_type_e {

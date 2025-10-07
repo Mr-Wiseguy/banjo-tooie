@@ -1,18 +1,18 @@
-#include "common.h"
+#include "nc/ba/spiral.h"
 
 s32 ncbaspiral_entrypoint_0() 
 {
     return 0x10;
 }
 
-void func_80800008_ncbaspiral()
+void func_80800008_ncbaspiral(PlayerState* arg0, f32* arg1)
 {
-    func_80112524();
+    func_80112524(arg0,arg1);
 }
 
-void func_80800028_ncbaspiral()
+void func_80800028_ncbaspiral(PlayerState* arg0, f32* arg1)
 {
-    func_80112524();
+    func_80112524(arg0,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spiral/ncbaspiral_entrypoint_1.s")

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/crusher.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/func_80800000_chcrusher.s")
 
@@ -38,7 +38,7 @@ void func_80800ACC_chcrusher(s32 arg0)
 }
 void func_80800AD4_chcrusher(s32 arg0)
 {
-    _chswitch_entrypoint_14(arg0,0x4FB);
+    _chswitch_entrypoint_14(arg0,FLAG_4FB_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusher/chcrusher_entrypoint_3.s")

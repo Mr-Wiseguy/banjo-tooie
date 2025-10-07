@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EEEC40.h"
 
 s32 func_80115350() 
 {
@@ -19,9 +19,9 @@ s32 func_80115350()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_80115478.s")
 
-void func_80115484()
+void func_80115484(PlayerState* arg0, f32* arg1)
 {
-    func_80112524();
+    func_80112524(arg0,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEEC40/func_801154A4.s")

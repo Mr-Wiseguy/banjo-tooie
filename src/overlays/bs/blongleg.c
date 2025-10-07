@@ -1,8 +1,8 @@
-#include "common.h"
+#include "bs/blongleg.h"
 
-void func_80800000_bsblongleg()
+s32 func_80800000_bsblongleg(PlayerState* arg0)
 {
-    player_inWater();
+    return player_inWater(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/blongleg/func_80800020_bsblongleg.s")

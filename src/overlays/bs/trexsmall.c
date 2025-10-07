@@ -1,10 +1,10 @@
-#include "common.h"
+#include "bs/trexsmall.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexsmall/func_80800000_bstrexsmall.s")
 
-void func_8080003C_bstrexsmall(s32 arg0)
+int func_8080003C_bstrexsmall(PlayerState* arg0)
 {
-    bakey_pressed(arg0,0x8);
+    return bakey_pressed(arg0, BUTTON_A);
 }
 
 void func_8080005C_bstrexsmall()

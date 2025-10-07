@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/flysaucerdoor.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucerdoor/chflysaucerdoor_entrypoint_0.s")
 
@@ -10,6 +10,6 @@
 
 void func_80800140_chflysaucerdoor(s32 arg0)
 {
-    _chswitch_entrypoint_14(arg0,0x8);
+    _chswitch_entrypoint_14(arg0,FLAG0_008_UNK);
 }
 

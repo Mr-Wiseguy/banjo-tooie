@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/trexlarge.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800000_bstrexlarge.s")
 
@@ -10,14 +10,14 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800044_bstrexlarge.s")
 
-void func_80800140_bstrexlarge(s32 arg0)
+int func_80800140_bstrexlarge(s32 arg0)
 {
-    bakey_pressed(arg0,0x9);
+    return bakey_pressed(arg0,BUTTON_B);
 }
 
-void func_80800160_bstrexlarge(s32 arg0)
+int func_80800160_bstrexlarge(s32 arg0)
 {
-    bakey_pressed(arg0,0x8);
+    return bakey_pressed(arg0,BUTTON_A);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/trexlarge/func_80800180_bstrexlarge.s")

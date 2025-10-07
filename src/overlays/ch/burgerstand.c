@@ -47,7 +47,7 @@ void func_808009C4_chburgerstand(s32 arg0)
 
 void func_80800A8C_chburgerstand(s32 arg0)
 {
-    _chswitch_entrypoint_7(arg0,0x9F);
+    _chswitch_entrypoint_7(arg0,FLAG_09F_UNK);
     _chswitch_entrypoint_9(arg0);
 }
 

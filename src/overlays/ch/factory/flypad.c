@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/factory/flypad.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/flypad/chfactoryflypad_entrypoint_0.s")
 
@@ -6,7 +6,7 @@
 
 void func_80800018_chfactoryflypad(s32 arg0)
 {
-    _chswitch_entrypoint_7(arg0,0x16B);
+    _chswitch_entrypoint_7(arg0,FLAG_16B_UNK);
     _chswitch_entrypoint_9(arg0);
 }
 

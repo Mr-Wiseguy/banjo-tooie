@@ -1,4 +1,4 @@
-#include "ch/factoryworkerdirty.h"
+#include "ch/factory/workerdirty.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/chfactoryworkerdirty_entrypoint_0.s")
 
