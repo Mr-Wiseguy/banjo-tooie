@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAEB40/func_800D5250.s")
+void func_800D5250()
+{
+    func_800D52B0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAEB40/func_800D5270.s")
 

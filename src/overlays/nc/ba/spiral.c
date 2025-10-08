@@ -1,13 +1,19 @@
-#include "common.h"
+#include "nc/ba/spiral.h"
 
 s32 ncbaspiral_entrypoint_0() 
 {
     return 0x10;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spiral/func_80800008_ncbaspiral.s")
+void func_80800008_ncbaspiral(PlayerState* arg0, f32* arg1)
+{
+    func_80112524(arg0,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spiral/func_80800028_ncbaspiral.s")
+void func_80800028_ncbaspiral(PlayerState* arg0, f32* arg1)
+{
+    func_80112524(arg0,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spiral/ncbaspiral_entrypoint_1.s")
 

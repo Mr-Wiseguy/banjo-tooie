@@ -13,8 +13,16 @@ s32 baeggaim_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/func_80800264_baeggaim.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/baeggaim_entrypoint_1.s")
+void baeggaim_entrypoint_1(s32 arg0)
+{
+    _baeggcursor_entrypoint_7(arg0,0x4);
+    _baeggfire_entrypoint_4(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/baeggaim_entrypoint_2.s")
+void baeggaim_entrypoint_2(s32 arg0)
+{
+    _baeggcursor_entrypoint_7(arg0,0x3);
+    _baeggfire_entrypoint_5(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/aim/baeggaim_entrypoint_3.s")

@@ -14,7 +14,7 @@
 #include "overlays/ba/roll.h"
 #include "overlays/ba/yaw.h"
 #include "overlays/bs/kaz.h"
-#include "overlays/nc/ba/die.h"
+#include "nc/ba/die.h"
 #include "core2/1E2B200.h"
 #include "core2/1E66990.h"
 #include "core2/1E67DA0.h"

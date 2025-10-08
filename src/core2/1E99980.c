@@ -2,9 +2,15 @@
 #include "gfx.h"
 #include "core2/1E99980.h"
 
+extern s32 D_801288B0;
+extern s32 D_80128AF4;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C00BC.s")
+void func_800C00BC()
+{
+    _gcdialogDll_entrypoint_0(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C00E0.s")
 
@@ -34,7 +40,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C064C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0658.s")
+void func_800C0658()
+{
+    _gcdialogexec_entrypoint_2(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C067C.s")
 
@@ -46,7 +55,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C07F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0808.s")
+void func_800C0808()
+{
+    _gcdialogexec_entrypoint_8(&D_801288B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C082C.s")
 
@@ -69,7 +81,10 @@ void func_800C0A2C(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0A34.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0BB4.s")
+s32 func_800C0BB4()
+{
+    return D_80128AF4;
+}
 
 // Probably a file split here based on bk decomp and bss (D_80128AF4)
 

@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friendlystonehead/func_80800000_chfriendlystonehead.s")
+void func_80800000_chfriendlystonehead(s32 arg0)
+{
+    func_80102424(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friendlystonehead/func_80800020_chfriendlystonehead.s")
 

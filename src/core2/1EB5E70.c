@@ -1,5 +1,8 @@
 #include "core2/1EB5E70.h"
 
+extern s32 D_8012C824;
+extern s32 D_8012C940;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC580.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DC5BC.s")
@@ -91,13 +94,19 @@ void* func_800DE448(f32* position, f32* arg1, f32 scale, f32* arg3, s32 arg4) {
 // the real modelRender_draw?
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DE498.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF324.s")
+s32 func_800DF324()
+{
+    return D_8012C824;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF330.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF33C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF350.s")
+s32 func_800DF350()
+{
+    return D_8012C940;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DF35C.s")
 

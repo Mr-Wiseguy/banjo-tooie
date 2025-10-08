@@ -43,7 +43,10 @@ s32 badrone_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_18.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_19.s")
+void badrone_entrypoint_19(s32 arg0)
+{
+    func_80800348_badrone(arg0,0xD);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_20.s")
 
@@ -53,17 +56,29 @@ s32 badrone_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_23.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_24.s")
+void badrone_entrypoint_24(s32 arg0)
+{
+    func_80800348_badrone(arg0,0x2);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_25.s")
+void badrone_entrypoint_25(s32 arg0)
+{
+    func_80800348_badrone(arg0,0x9);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_26.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_27.s")
+void badrone_entrypoint_27(s32 arg0)
+{
+    func_80800348_badrone(arg0,0x6);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_28.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_29.s")
+void badrone_entrypoint_29(s32 arg0)
+{
+    func_80800348_badrone(arg0,0xE);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/drone/badrone_entrypoint_30.s")
 

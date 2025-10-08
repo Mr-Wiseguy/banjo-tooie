@@ -26,8 +26,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_80800C08_chterryegg.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_80800C48_chterryegg.s")
-
+void func_80800C48_chterryegg(s32 arg0)
+{
+    func_8010C964();
+    func_80801080_chterryegg(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_80800C70_chterryegg.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/terryegg/func_80800CF4_chterryegg.s")

@@ -46,15 +46,30 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_5.s")
+void gcdialogexec_entrypoint_5()
+{
+    func_80800D30_gcdialogexec();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_6.s")
+void gcdialogexec_entrypoint_6()
+{
+    func_80800A50_gcdialogexec();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_7.s")
+void gcdialogexec_entrypoint_7()
+{
+    func_80800164_gcdialogexec();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_8.s")
+void gcdialogexec_entrypoint_8(s32 arg0)
+{
+    func_80800A50_gcdialogexec(arg0,0x2);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/gcdialogexec_entrypoint_9.s")
+void gcdialogexec_entrypoint_9()
+{
+    func_80800F60_gcdialogexec();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/dialog/exec/func_80801DB4_gcdialogexec.s")
 

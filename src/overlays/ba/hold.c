@@ -18,7 +18,10 @@ void bahold_entrypoint_2(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/hold/bahold_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/hold/bahold_entrypoint_4.s")
+void bahold_entrypoint_4(s32 arg0)
+{
+    func_80800008_bahold(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/hold/bahold_entrypoint_5.s")
 

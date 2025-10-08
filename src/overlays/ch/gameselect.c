@@ -127,7 +127,10 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802AD4_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802BE8_chgameselect.s")
+void func_80802BE8_chgameselect()
+{
+    func_808029D8_chgameselect(func_80106790());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80802C10_chgameselect.s")
 
@@ -165,21 +168,45 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803604_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803638_chgameselect.s")
+void func_80803638_chgameselect()
+{
+    _glsavegame_entrypoint_0();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803658_chgameselect.s")
+void func_80803658_chgameselect()
+{
+    _glsavegame_entrypoint_9();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803678_chgameselect.s")
+void func_80803678_chgameselect()
+{
+    func_800D37C0();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803698_chgameselect.s")
+void func_80803698_chgameselect()
+{
+    _glsavegame_entrypoint_10();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036B8_chgameselect.s")
+void func_808036B8_chgameselect()
+{
+    func_800D37D4();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036D8_chgameselect.s")
+void func_808036D8_chgameselect()
+{
+    _glsavegame_entrypoint_1();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_808036F8_chgameselect.s")
+void func_808036F8_chgameselect()
+{
+    _glsavegame_entrypoint_2();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803718_chgameselect.s")
+void func_80803718_chgameselect()
+{
+    _glsavegame_entrypoint_3();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803738_chgameselect.s")
 
@@ -209,15 +236,30 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803BE8_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803C60_chgameselect.s")
+void func_80803C60_chgameselect()
+{
+    func_800FC660(0xF);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803C80_chgameselect.s")
+void func_80803C80_chgameselect()
+{
+    func_800FC660(0xE);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CA0_chgameselect.s")
+void func_80803CA0_chgameselect()
+{
+    func_800FC660(0x10);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CC0_chgameselect.s")
+void func_80803CC0_chgameselect()
+{
+    func_800FC660(0x96);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803CE0_chgameselect.s")
+void func_80803CE0_chgameselect()
+{
+    func_800FC660(0x97);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80803D00_chgameselect.s")
 
@@ -303,7 +345,10 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_8080537C_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80805474_chgameselect.s")
+void func_80805474_chgameselect(s32 arg0,s32 arg1)
+{
+    func_8080537C_chgameselect(arg0,0x1,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80805498_chgameselect.s")
 
@@ -365,11 +410,17 @@ void func_808027D4_chgameselect(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806A30_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806A88_chgameselect.s")
+void func_80806A88_chgameselect()
+{
+    _gcstatusDll_entrypoint_5();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AA8_chgameselect.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AD4_chgameselect.s")
+void func_80806AD4_chgameselect()
+{
+    _gcstatusDll_entrypoint_10();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gameselect/func_80806AF4_chgameselect.s")
 

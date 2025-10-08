@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/archgrill3switches/func_80800000_chlavaarchgrill3switches.s")
+void func_80800000_chlavaarchgrill3switches()
+{
+    _chswitch_entrypoint_7();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/archgrill3switches/func_80800020_chlavaarchgrill3switches.s")
 

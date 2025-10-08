@@ -17,7 +17,10 @@ s32 bashoes_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/func_80800180_bashoes.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/bashoes_entrypoint_3.s")
+void bashoes_entrypoint_3(s32 arg0)
+{
+    bashoes_entrypoint_6(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/bashoes_entrypoint_4.s")
 

@@ -9,11 +9,17 @@ s32 ncbaspline_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/func_8080002C_ncbaspline.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/ncbaspline_entrypoint_1.s")
+void ncbaspline_entrypoint_1()
+{
+    func_8080002C_ncbaspline();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/ncbaspline_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/ncbaspline_entrypoint_3.s")
+void ncbaspline_entrypoint_3()
+{
+    func_8080002C_ncbaspline();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/spline/func_80800130_ncbaspline.s")
 

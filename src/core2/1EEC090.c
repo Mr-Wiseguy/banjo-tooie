@@ -1,11 +1,14 @@
-#include "common.h"
+#include "core2/1EEC090.h"
 
 s32 func_801127A0() 
 {
     return 0x24;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127A8.s")
+void func_801127A8(PlayerState* arg0, f32* arg1)
+{
+    func_80112550(arg0, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_801127C8.s")
 

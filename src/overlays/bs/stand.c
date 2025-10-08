@@ -26,14 +26,24 @@ void bsstand_entrypoint_6(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_8.s")
+void bsstand_entrypoint_8()
+{
+    func_80800038_bsstand();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_9.s")
+void bsstand_entrypoint_9()
+{
+    _bsdrone_entrypoint_0();
+}
 
 void bsstand_entrypoint_10(PlayerState* self)
 {
     _bsdrone_entrypoint_1(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_11.s")
+void bsstand_entrypoint_11(s32 arg0)
+{
+    _bafpctrl_entrypoint_10(arg0,0);
+    _bsdrone_entrypoint_2(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stand/bsstand_entrypoint_12.s")

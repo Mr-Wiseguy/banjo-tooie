@@ -13,7 +13,10 @@ s32 baeggcursor_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/baeggcursor_entrypoint_3.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/baeggcursor_entrypoint_4.s")
+void baeggcursor_entrypoint_4(s32 arg0)
+{
+    baeggcursor_entrypoint_7(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/egg/cursor/baeggcursor_entrypoint_5.s")
 

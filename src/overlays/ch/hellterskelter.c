@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/hellterskelter.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/chhellterskelter_entrypoint_0.s")
 
@@ -12,7 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800158_chhellterskelter.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800274_chhellterskelter.s")
+void func_80800274_chhellterskelter(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,FLAG3_A4B_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800294_chhellterskelter.s")
 

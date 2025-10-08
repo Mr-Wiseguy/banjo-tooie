@@ -6,8 +6,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800018_chstonepillar.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_808001FC_chstonepillar.s")
-
+void func_808001FC_chstonepillar(s32 arg0)
+{
+    _subaddiefade_entrypoint_14();
+    func_80800EE0_chstonepillar(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_80800224_chstonepillar.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stonepillar/func_8080031C_chstonepillar.s")

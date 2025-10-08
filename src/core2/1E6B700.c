@@ -21,7 +21,10 @@ s32 func_80091EA0(void)
 	return 0x1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B700/func_80091EA8.s")
+void func_80091EA8(s32 arg0)
+{
+    func_80091F74(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B700/func_80091EC8.s")
 

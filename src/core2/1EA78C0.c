@@ -94,7 +94,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA78C0/func_800CF67C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA78C0/func_800CF6B0.s")
+void func_800CF6B0()
+{
+    func_800CEA84(0x1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA78C0/func_800CF6D0.s")
 

@@ -86,7 +86,10 @@ void func_80803918_chevilmumbo(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803A24_chevilmumbo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilmumbo/func_80803B28_chevilmumbo.s")
+void func_80803B28_chevilmumbo(s32 arg0)
+{
+    func_80803A24_chevilmumbo(arg0,0x2);
+}
 
 void func_80803B48_chevilmumbo(s32 arg0) 
 {

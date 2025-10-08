@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_3.s")
+void suegg_entrypoint_3(s32 arg0)
+{
+    suegg_entrypoint_4(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_4.s")
 
@@ -22,7 +25,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/func_80800390_suegg.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_8.s")
+void suegg_entrypoint_8(s32 arg0)
+{
+    suegg_entrypoint_9(arg0,1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/egg/suegg_entrypoint_9.s")
 

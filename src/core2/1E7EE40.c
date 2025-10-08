@@ -1,5 +1,7 @@
 #include "common.h"
 
+extern s32 D_80119540;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7EE40/func_800A5550.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7EE40/func_800A5598.s")
@@ -8,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7EE40/func_800A5608.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7EE40/func_800A5630.s")
+void func_800A5630()
+{
+    _cadbmgrDll_entrypoint_1(&D_80119540);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7EE40/func_800A5654.s")
 

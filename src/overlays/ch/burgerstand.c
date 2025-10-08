@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/burgerstand.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_0.s")
 
@@ -12,7 +12,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808000C4_chburgerstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800284_chburgerstand.s")
+void func_80800284_chburgerstand(Actor* arg0)
+{
+    func_80800720_chburgerstand(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808002A4_chburgerstand.s")
 
@@ -42,6 +45,10 @@ void func_808009C4_chburgerstand(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808009CC_chburgerstand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800A8C_chburgerstand.s")
+void func_80800A8C_chburgerstand(s32 arg0)
+{
+    _chswitch_entrypoint_7(arg0,FLAG_09F_UNK);
+    _chswitch_entrypoint_9(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800AB8_chburgerstand.s")

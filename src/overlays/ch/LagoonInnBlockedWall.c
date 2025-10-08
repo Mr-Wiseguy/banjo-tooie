@@ -2,7 +2,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_80800000_chLagoonInnBlockedWall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_808000C0_chLagoonInnBlockedWall.s")
+void func_808000C0_chLagoonInnBlockedWall()
+{
+    func_8010A63C();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_808000E0_chLagoonInnBlockedWall.s")
 

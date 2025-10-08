@@ -39,8 +39,11 @@ s32 bafly_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_17.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_18.s")
-
+void bafly_entrypoint_18(s32 arg0)
+{
+    baphysics_reset_gravity();
+    func_8008E95C(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_19.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/fly/bafly_entrypoint_20.s")

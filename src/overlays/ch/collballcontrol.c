@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_808000C8_chcollballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_808000F4_chcollballcontrol.s")
+void func_808000F4_chcollballcontrol()
+{
+    func_808000C8_chcollballcontrol();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80800114_chcollballcontrol.s")
 
@@ -100,7 +103,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_808030D0_chcollballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80803208_chcollballcontrol.s")
+void func_80803208_chcollballcontrol(s32 arg0)
+{
+    func_80801764_chcollballcontrol(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_2.s")
 

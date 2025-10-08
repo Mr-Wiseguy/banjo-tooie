@@ -2,10 +2,16 @@
 #define __CORE2_1ECE0B0_H__
 
 #include "../../src/overlays/ba/playerstate.h"
+#include "overlays/ba/yaw.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7AB30.h"
+
+#include "overlays/ba/anim.h"
+#include "overlays/ba/key.h"
 
 
 #include <ultra64.h>
-void func_800F497C(s32);
+s32 func_800F497C(s32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);

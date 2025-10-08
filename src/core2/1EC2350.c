@@ -45,7 +45,10 @@ void func_800E8A60(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E90D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E9300.s")
+void func_800E9300(s32 arg0,s32 arg1)
+{
+    func_800E90D8(arg0,arg1,0x1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E9320.s")
 

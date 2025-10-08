@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/transparentfish.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/func_80800000_chtransparentfish.s")
 
@@ -14,7 +14,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/func_80800AC4_chtransparentfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/func_80800B30_chtransparentfish.s")
+void func_80800B30_chtransparentfish(s32 arg0)
+{
+    func_800DA524(FLAG3_9F4_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/chtransparentfish_entrypoint_0.s")
 

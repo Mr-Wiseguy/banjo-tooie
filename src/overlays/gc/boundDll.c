@@ -22,13 +22,22 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_80800654_gcboundDll.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_80800688_gcboundDll.s")
+void func_80800688_gcboundDll()
+{
+    func_80800630_gcboundDll();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_808006A8_gcboundDll.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_808006E0_gcboundDll.s")
+void func_808006E0_gcboundDll()
+{
+    func_808006A8_gcboundDll();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_80800700_gcboundDll.s")
+void func_80800700_gcboundDll()
+{
+    func_80800654_gcboundDll();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/boundDll/func_80800720_gcboundDll.s")
 

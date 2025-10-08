@@ -31,7 +31,10 @@ void bssplitup_entrypoint_10(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_14.s")
+void bssplitup_entrypoint_14(s32 arg0)
+{
+    func_800A0CF4(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_15.s")
 
@@ -39,6 +42,9 @@ void bssplitup_entrypoint_10(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_17.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_18.s")
+void bssplitup_entrypoint_18(s32 arg0)
+{
+    func_800A0CF4(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_19.s")

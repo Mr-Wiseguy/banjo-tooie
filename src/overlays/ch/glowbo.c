@@ -71,7 +71,7 @@ void func_8080013C_chglowbo(Actor* arg0)
     {
         arg0->scale = 0.4f;
     }
-    if ((arg0->unk74_29) && (func_800DA298(0x56) != 0))
+    if ((arg0->unk74_29) && (func_800DA298(FLAG_056_STATE_MEGA_GLOWBO) != 0))
     {
         func_800FFAB0(arg0);
         return;
@@ -122,7 +122,7 @@ void func_808002F4_chglowbo(Actor* arg0)
         if (arg0->unk7C_12 && (func_800DC298(0.05f) != 0))
         {
             func_800EFA4C(sp60, arg0->position[0] + func_800DC178(-30.0f, 30.0f), arg0->position[1] + func_800DC178(25.0f, 55.0f), arg0->position[2] + func_800DC178(-30.0f, 30.0f));
-            _fxtwinkle_entrypoint_1(sp60, 0x9E4);
+            _fxtwinkle_entrypoint_1(sp60, RED_SPARKLE);
         }
         func_8010D254(GLOWBO_DATA(arg0)->unk0);
         if (arg0->unk70_10 != 1)
@@ -219,13 +219,13 @@ s32 func_80800880_chglowbo(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x95:
         _subaddierouteDll_entrypoint_1(arg0);
-        func_8010A5B0(arg0, func_800DA298(0x64E));
+        func_8010A5B0(arg0, func_800DA298(FLAG2_64E_UNK));
         break;
     case 0x3E:
         _fxsparkle_entrypoint_1(arg0->position, 6U);
         if (arg0->unk74_29) {
             _subaddiedialog_entrypoint_11(arg0->unk0, 0xD03U, 0U, arg0->position, 0U);
-            func_800DA544(0x56);
+            func_800DA544(FLAG_056_STATE_MEGA_GLOWBO);
             func_800D1844(0x54U);
         }
         else {

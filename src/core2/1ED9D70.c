@@ -11,7 +11,10 @@ void func_8010052C(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED9D70/func_80100610.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED9D70/func_80100670.s")
+void func_80100670()
+{
+    func_80100610();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED9D70/func_80100690.s")
 

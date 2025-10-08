@@ -1,31 +1,60 @@
 #include "common.h"
 
+extern s32 D_8012AE80;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB890.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB8BC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB8F0.s")
+void func_800CB8F0()
+{
+    func_800CB890();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB910.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB948.s")
+void func_800CB948()
+{
+    func_800CB910();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB968.s")
+void func_800CB968()
+{
+    func_800CB8BC();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB988.s")
+void func_800CB988()
+{
+    _gcboundDll_entrypoint_0(&D_8012AE80);
+}
 
 void func_800CB9AC(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB9B4.s")
+void func_800CB9B4()
+{
+    _gcboundDll_entrypoint_1(&D_8012AE80);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB9D8.s")
+void func_800CB9D8()
+{
+    _gcboundDll_entrypoint_2(&D_8012AE80);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CB9FC.s")
+void func_800CB9FC()
+{
+    _gcboundDll_entrypoint_6(&D_8012AE80);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CBA20.s")
+void func_800CBA20()
+{
+    _gcboundDll_entrypoint_7(&D_8012AE80);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CBA44.s")
+void func_800CBA44()
+{
+    _gcboundDll_entrypoint_8(&D_8012AE80);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CBA68.s")
 
@@ -55,7 +84,10 @@ void func_800CB9AC(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CC4D4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CC5E8.s")
+s32 func_800CC5E8()
+{
+    return D_8012AE80;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA5180/func_800CC5F4.s")
 

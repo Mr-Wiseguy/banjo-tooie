@@ -12,8 +12,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008AD80.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008ADBC.s")
-
+void func_8008ADBC(s32 arg0)
+{
+    func_8008B5E8();
+    heap_free(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/anctrl/func_8008ADE4.s")
 
 AnimCtrl* func_8008AEB4(AnimCtrl* arg0)

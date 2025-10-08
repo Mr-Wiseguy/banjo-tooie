@@ -12,7 +12,10 @@ void ncfixposrot_entrypoint_1(void* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/fixposrot/ncfixposrot_entrypoint_4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/fixposrot/ncfixposrot_entrypoint_5.s")
+void ncfixposrot_entrypoint_5()
+{
+    func_800EE7F8();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/fixposrot/ncfixposrot_entrypoint_6.s")
 

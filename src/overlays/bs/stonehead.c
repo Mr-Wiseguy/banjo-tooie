@@ -13,7 +13,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_808003F4_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_0.s")
+void bsstonehead_entrypoint_0(s32 arg0)
+{
+    func_80800194_bsstonehead(arg0,0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_1.s")
 
@@ -27,23 +30,36 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_6.s")
+void bsstonehead_entrypoint_6()
+{
+    _basudie_entrypoint_6();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_8.s")
-
+void bsstonehead_entrypoint_8(s32 arg0)
+{
+    func_80800060_bsstonehead();
+    _bsdrone_entrypoint_0(arg0);
+}
 void bsstonehead_entrypoint_9(PlayerState* self)
 {
     _bsdrone_entrypoint_1(self);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_10.s")
-
+void bsstonehead_entrypoint_10(s32 arg0)
+{
+    func_80800000_bsstonehead();
+    _bsdrone_entrypoint_2(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_11.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_808008CC_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_12.s")
+void bsstonehead_entrypoint_12(s32 arg0)
+{
+    func_808008CC_bsstonehead(arg0,0);
+    func_80800000_bsstonehead(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_13.s")
 
@@ -53,7 +69,11 @@ void bsstonehead_entrypoint_9(PlayerState* self)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/func_80800B38_bsstonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_16.s")
+void bsstonehead_entrypoint_16(s32 arg0)
+{
+    func_80800B38_bsstonehead(arg0,0);
+    func_80800000_bsstonehead(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_17.s")
 
@@ -65,35 +85,53 @@ void bsstonehead_entrypoint_9(PlayerState* self)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_21.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_22.s")
-
+void bsstonehead_entrypoint_22(s32 arg0)
+{
+    func_80800000_bsstonehead();
+    func_80090A2C(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_23.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_24.s")
-
+void bsstonehead_entrypoint_24(s32 arg0)
+{
+    _baspin_entrypoint_1();
+    func_80800000_bsstonehead(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_25.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_26.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_27.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_28.s")
-
+void bsstonehead_entrypoint_28(s32 arg0)
+{
+    _babounce_entrypoint_3();
+    func_80800000_bsstonehead(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_29.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_30.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_31.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_32.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_33.s")
-
+void bsstonehead_entrypoint_32(s32 arg0)
+{
+    _bsrest_entrypoint_14();
+    func_80800000_bsstonehead(arg0);
+}
+void bsstonehead_entrypoint_33(s32 arg0)
+{
+    func_80800060_bsstonehead();
+    _bsrest_entrypoint_16(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_34.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_35.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_36.s")
+void bsstonehead_entrypoint_36()
+{
+    func_80800000_bsstonehead();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_37.s")
 
@@ -101,8 +139,11 @@ void bsstonehead_entrypoint_9(PlayerState* self)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_39.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_40.s")
-
+void bsstonehead_entrypoint_40(s32 arg0)
+{
+    func_80800000_bsstonehead();
+    func_80090A2C(arg0);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_41.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/stonehead/bsstonehead_entrypoint_42.s")

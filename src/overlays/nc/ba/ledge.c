@@ -1,8 +1,14 @@
-#include "common.h"
+#include "nc/ba/ledge.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/func_80800000_ncbaledge.s")
+void func_80800000_ncbaledge(PlayerState* arg0, f32* arg1)
+{
+    func_80112524(arg0,arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/func_80800020_ncbaledge.s")
+void func_80800020_ncbaledge(PlayerState* arg0, f32* arg1)
+{
+    func_80112524(arg0,arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/nc/ba/ledge/ncbaledge_entrypoint_0.s")
 

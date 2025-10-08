@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjocurrent/func_80800000_chbanjocurrent.s")
+void func_80800000_chbanjocurrent()
+{
+    func_800F4C24(func_800F54E4());
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjocurrent/chbanjocurrent_entrypoint_0.s")
 

@@ -1,9 +1,13 @@
 #include "core2/1E78170.h"
 
+extern s32 D_80127080;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E880.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E8B4.s")
-
+void func_8009E8B4(void)
+{
+    func_800C6E58();
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E8D4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009E958.s")
@@ -37,11 +41,17 @@ void func_8009E9A0(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA20.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA2C.s")
+s32 func_8009EA2C()
+{
+    return func_800DA298(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA4C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA58.s")
+s32 func_8009EA58()
+{
+    return D_80127080;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78170/func_8009EA64.s")
 

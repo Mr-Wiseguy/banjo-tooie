@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/nicecavemenguard.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/chnicecavemenguard_entrypoint_0.s")
 
@@ -6,7 +6,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_808000D4_chnicecavemenguard.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_80800388_chnicecavemenguard.s")
+void func_80800388_chnicecavemenguard(Actor* arg0)
+{
+    func_8080080C_chnicecavemenguard(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_808003A8_chnicecavemenguard.s")
 

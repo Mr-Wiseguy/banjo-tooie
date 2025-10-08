@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/boggy/girl.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/chboggygirl_entrypoint_0.s")
 
@@ -10,7 +10,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_80800708_chboggygirl.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_8080091C_chboggygirl.s")
+void func_8080091C_chboggygirl(Actor* arg0)
+{
+    func_80800B28_chboggygirl(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_8080093C_chboggygirl.s")
 

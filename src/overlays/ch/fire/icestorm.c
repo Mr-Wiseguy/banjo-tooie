@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/fireicestorm.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/chfireicestorm_entrypoint_0.s")
 
@@ -8,7 +8,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_808001CC_chfireicestorm.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_80800360_chfireicestorm.s")
+void func_80800360_chfireicestorm(s32 arg0)
+{
+    func_800DA524(FLAG3_9FB_UNK);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_80800384_chfireicestorm.s")
 

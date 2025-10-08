@@ -1,10 +1,13 @@
-#include "common.h"
+#include "su/coasterfly.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_2.s")
+void sucoasterfly_entrypoint_2(Actor* arg0)
+{
+    func_80802128_sucoasterfly(arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_3.s")
 
@@ -55,4 +58,8 @@ void func_80802128_sucoasterfly(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/coaster/fly/sucoasterfly_entrypoint_6.s")
+void sucoasterfly_entrypoint_6()
+{
+    func_80101870();
+}
+

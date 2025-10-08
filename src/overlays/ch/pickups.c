@@ -28,7 +28,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pickups/func_808001A0_chpickups.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pickups/func_80800344_chpickups.s")
+void func_80800344_chpickups(s32 arg0)
+{
+    func_80101FDC(arg0,0x2);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pickups/func_80800364_chpickups.s")
 

@@ -2,6 +2,9 @@
 #define __CORE2_1E78170_H__
 
 #include "common.h"
+#include "gameflags.h"
+#include "core2/1EB3750.h"
+
 void func_8009E8B4();
 void func_8009E8D4();
 f32  func_8009EA14(void);

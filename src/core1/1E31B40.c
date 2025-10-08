@@ -1,5 +1,7 @@
 #include "common.h"
 
+extern s32 D_8007BCC4;
+
 void func_8001A010(void) {
 }
 
@@ -7,7 +9,10 @@ void func_8001A010(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A080.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A0A8.s")
+s32 func_8001A0A8()
+{
+    return D_8007BCC4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A0B4.s")
 
@@ -23,9 +28,15 @@ void func_8001A010(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A270.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A290.s")
+void func_8001A290()
+{
+    func_80015190();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A2B0.s")
+void func_8001A2B0()
+{
+    func_80013D10(0x3);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E31B40/func_8001A2D0.s")
 

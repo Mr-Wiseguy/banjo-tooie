@@ -1,5 +1,11 @@
 #include "common.h"
 
+extern s32 D_801285B0;
+extern s32 D_80128728;
+extern s32 D_8012872C;
+extern s32 D_80128760;
+
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BE600.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BE7F8.s")
@@ -20,7 +26,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEB28.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEB4C.s")
+s32 func_800BEB4C()
+{
+    return D_80128760;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEB58.s")
 
@@ -30,9 +39,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEBD4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEC10.s")
+s32 func_800BEC10()
+{
+    return D_80128728;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEC1C.s")
+s32 func_800BEC1C()
+{
+    return D_8012872C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BEC28.s")
 
@@ -44,7 +59,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED18.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED50.s")
+void func_800BED50(s32 arg0)
+{
+    func_800BE600(arg0,0x1F00);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BED70.s")
 
@@ -60,7 +78,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BF3E4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BF420.s")
+void func_800BF420()
+{
+    _gcmapDll_entrypoint_4(&D_801285B0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E97EF0/func_800BF444.s")
 

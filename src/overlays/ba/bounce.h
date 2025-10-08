@@ -1,7 +1,7 @@
 #ifndef __BA_BOUNCE_H__
 #define __BA_BOUNCE_H__
 
-#include "assets.h"
+#include "overlays/ba/assets.h"
 #include "overlays/ba/playerstate.h"
 
 typedef struct ba_bounce_s {

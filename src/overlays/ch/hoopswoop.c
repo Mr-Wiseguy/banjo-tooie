@@ -52,7 +52,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80801A10_chhoopswoop.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80801A94_chhoopswoop.s")
+void func_80801A94_chhoopswoop()
+{
+    func_80101870();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80801AB4_chhoopswoop.s")
 

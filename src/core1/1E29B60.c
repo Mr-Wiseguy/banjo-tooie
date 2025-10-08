@@ -2,13 +2,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012030.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001207C.s")
+void func_8001207C(void) 
+{
+    func_800D5E74();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001209C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001210C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001211C.s")
+s32 func_8001211C(void) 
+{
+    return D_800459C8;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012128.s")
 
@@ -62,7 +68,10 @@ void func_80012214(void) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012214.s")
 #endif
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123B0.s")
+s32 func_800123B0()
+{
+    return D_800459D0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_800123BC.s")
 
@@ -72,7 +81,10 @@ void func_80012214(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012520.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_80012530.s")
+s32 func_80012530()
+{
+    return D_80043380;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E29B60/func_8001253C.s")
 

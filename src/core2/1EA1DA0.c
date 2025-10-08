@@ -1,5 +1,7 @@
 #include "core2/1EA1DA0.h"
 
+extern s32 D_8012AB00;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C84B0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C8560.s")
@@ -66,9 +68,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9074.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90AC.s")
+void func_800C90AC()
+{
+    _gclightsDll_entrypoint_0(&D_8012AB00);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90D0.s")
+void func_800C90D0()
+{
+    _gclightsDll_entrypoint_1(&D_8012AB00);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C90F4.s")
 
@@ -121,9 +129,15 @@ void func_800C929C()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C986C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9974.s")
+void func_800C9974()
+{
+    func_800FC63C();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C9994.s")
+void func_800C9994()
+{
+    func_800FCAE0();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA1DA0/func_800C99B4.s")
 

@@ -6,7 +6,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/func_80800054_choctopus.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/func_80800210_choctopus.s")
+void func_80800210_choctopus()
+{
+    func_808007E4_choctopus();
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/func_80800230_choctopus.s")
 
