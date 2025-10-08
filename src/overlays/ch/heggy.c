@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/heggy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/heggy/func_80800000_chheggy.s")
 

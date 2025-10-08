@@ -80,7 +80,9 @@ typedef struct Actor {
     /* 0x79 */ u8 unk79_2 : 1;
     /* 0x79 */ u8 unk79_1 : 1;
     /* 0x79 */ u8 unk79_0 : 1;
-    /* 0x7A */ u16 unk7A;
+    /* 0x7A */ u16 pad7A_15:10;
+    /* 0x7A */ u16 unk7A_5:1;
+    /* 0x7A */ u16 pad7A_0:5;
     /* 0x7C */ u32 pad7C_29 : 3;
     /* 0x7C */ u32 unk7C_28 : 1;
     /* 0x7C */ u32 pad7C_13 : 15;
