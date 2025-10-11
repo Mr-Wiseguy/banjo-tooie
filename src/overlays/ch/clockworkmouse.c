@@ -684,7 +684,7 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
         } else {
             sp24->unk0.shorts.unk0 = _glsplinefind_entrypoint_0(0x313, actor->position);
         }
-        func_801058C4(actor, sp24->unk0.shorts.unk0, CLOCKWORK_DATA(actor)->unkC, 0);
+        func_801058C4(actor, (s16)sp24->unk0.shorts.unk0, CLOCKWORK_DATA(actor)->unkC, 0);
         func_8080111C_chclockworkmouse(actor);
         break;
     case 2:
@@ -859,7 +859,7 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
     }
     if ((func_800D0A9C(4, 4) != 0) && (func_800DA298(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)) {
         sp28->unkC.shorts[0] = _glsplinefind_entrypoint_0(0x388, actor->position);
-        func_801058C4(actor, sp28->unkC.shorts[0], CLOCKWORK_DATA(actor)->unkC, 0);
+        func_801058C4(actor, (s16)sp28->unkC.shorts[0], CLOCKWORK_DATA(actor)->unkC, 0);
         if (_glcutDll_entrypoint_19(0x55) != 0) {
             func_808026E0_chclockworkmouse(actor, 0x14);
         } else {
@@ -1012,7 +1012,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
         break;
     case 18:
         CLOCKWORK_DATA(actor)->unkC = 40.0f;
-        func_801058C4(actor, sp28->unkC.shorts[0], 40.0f, 0);
+        func_801058C4(actor, (s16)sp28->unkC.shorts[0], 40.0f, 0);
         func_808021C4_chclockworkmouse(actor);
         func_80800850_chclockworkmouse(sp2C, 0x4B, 0x20B0, actor->unk0);
         break;

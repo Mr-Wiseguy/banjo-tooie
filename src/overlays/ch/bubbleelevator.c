@@ -86,11 +86,11 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         func_800F8294(func_800F54E4(), arg0->position);
         return;
     case 3:
-        if (arg0->unk34 < 1.0f)
+        if (ELEVATOR_DATA(arg0)->unk1C < 1.0f)
         {
             _sudeflect_entrypoint_0(arg0->position, 75.0f, 140.0f, 0x1E);
         }
-        if (func_800D90A4(&arg0->unk34) != 0)
+        if (func_800D90A4(&ELEVATOR_DATA(arg0)->unk1C) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 4);
             return;
@@ -191,7 +191,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         arg0->unk6C_0 = func_80015184();
         func_80015178(3);
         new_var2 = 0;
-        arg0->unk34 = new_var2;
+        ELEVATOR_DATA(arg0)->unk1C = new_var2;
         _subaddieDll_entrypoint_4(arg0, 1U);
         func_800FC6B0(0x4A);
         break;
@@ -203,7 +203,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         arg0->unk58 = 0.0f;
         func_808008A8_chbubbleelevator(arg0);
         func_800F78EC(func_800F54E4(), ELEVATOR_DATA(arg0)->unk0, 840.0f, -1500.0f);
-        arg0->unk34 = 2.0f;
+        ELEVATOR_DATA(arg0)->unk1C = 2.0f;
         arg0->unk50 = 3.0f;
         _subaddieaudioloop_entrypoint_2(arg0);
         func_800FC74C(0x4A);
@@ -211,7 +211,7 @@ void func_808004DC_chbubbleelevator(Actor* arg0, s32 arg1)
         break;
 
     case 4:
-        arg0->unk34 = 0.0f;
+        ELEVATOR_DATA(arg0)->unk1C = 0.0f;
         arg0->unk58 = 0.0f;
         _subaddieDll_entrypoint_4(arg0, 0U);
         if (arg0->unk6C_0 != 0)

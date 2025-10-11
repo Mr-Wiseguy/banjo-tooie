@@ -5,5 +5,6 @@
 
 void func_8010A570(Actor*);
 void func_8010A5B0(Actor*, s32);
+void func_8010A624(Actor*);
 
 #endif
