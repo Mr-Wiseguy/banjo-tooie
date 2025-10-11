@@ -11,38 +11,22 @@ extern s32 D_80801F58_chheggy;
 
 extern void* func_8010D5DC;
 
-void func_80800000_chheggy(Actor* arg0, void* arg1, s32 arg2)
+void func_80800ECC_chheggy(Actor*, s32);
+
+void func_80800000_chheggy(Actor* arg0, Unk80100094* arg1, s32 arg2)
 {
     func_8008F8B0();
     func_8008F8D8(1);
     func_8008F904(&func_8010D5DC, arg0->unk0);
     func_8008F938(1);
-    func_8008F990((u8*)arg1 + arg2 * 0xC, 500.0f);
+    func_8008F990(arg1->unk0[arg2].f, 500.0f);
 }
 
 s32 func_8080006C_chheggy(void) 
 {
-    s32 pad;
-    s32 var_a1;
-    s32 var_v1;
-
-    if (func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0)
-    {
-        var_a1 = 1;
-    }
-    else
-    {
-        var_a1 = 0;
-    }
-    if (func_800DA298(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0)
-    {
-        var_v1 = 1;
-    }
-    else
-    {
-        var_v1 = 0;
-    }
-    return var_v1 + var_a1;
+    return
+        (func_800DA298(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE) != 0 ? 1 : 0) +
+        (func_800DA298(FLAG_3E5_SNS_EGG_ACQUIRED_PINK) != 0 ? 1 : 0);
 }
 
 s32 func_808000C0_chheggy(Actor* arg0)
@@ -246,7 +230,6 @@ void func_808009DC_chheggy(Actor* arg0)
     f32 sp3C;
     u32 var_a1;
 
-    // Switch cases should be correct but don't equal to what original m2c spat out. Might cause a diff when copying into project
     switch (arg0->unk70_10)
     {
     case 7:

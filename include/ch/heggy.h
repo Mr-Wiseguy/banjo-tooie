@@ -56,7 +56,13 @@ typedef struct Unk80100094 {
     f32 unk70[3];
 } Unk80100094;
 
-void func_80800ECC_chheggy(Actor*, s32);
+
+s32* chheggy_entrypoint_0(void);
+s32* _chheggy_entrypoint_0(void);
+
+s32* chheggy_entrypoint_1(void);
+s32* _chheggy_entrypoint_1(void);
+
 
 #endif
 
