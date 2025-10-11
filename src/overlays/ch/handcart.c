@@ -1053,7 +1053,7 @@ void func_80802120_chhandcart(Actor* arg0)
             // @fake
             if (sp34->unk928[0]) {}
             func_800EE88C(sp34->unk928, var_v0->position);
-            func_801058C4(arg0, sp34->unk0, HANDCART_DATA(arg0)->unkC, 0);
+            func_801058C4(arg0, (s16)sp34->unk0, HANDCART_DATA(arg0)->unkC, 0);
             func_80801BA4_chhandcart(arg0);
             break;
 
@@ -1302,7 +1302,7 @@ void func_808028F0_chhandcart(Actor* arg0)
         if (func_800DA298(FLAG_507_PROGRESS_GGM_CANARY_MARY_FREED_READY_TO_RACE) == 0) //If Canary Mary isn't ready yet
         {
             maryMemory->unkC = _glsplinefind_entrypoint_0(0x388, arg0->position);
-            func_801058C4(arg0, maryMemory->unkC, HANDCART_DATA(arg0)->unkC, 0);
+            func_801058C4(arg0, (s16)maryMemory->unkC, HANDCART_DATA(arg0)->unkC, 0);
             func_808031D0_chhandcart(arg0, 0x14);
         }
     }

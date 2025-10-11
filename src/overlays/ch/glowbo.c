@@ -306,7 +306,7 @@ void func_80800B10_chglowbo(Actor* arg0)
     case 3:
         arg0->unk54 = func_800F1DF4(arg0->position, GLOWBO_DATA(arg0)->unk0);
         GLOWBO_DATA(arg0)->unk14 = func_800EFB8C(arg0->position, GLOWBO_DATA(arg0)->unk0) / 25.0f;
-        arg0->unk34 = -80.0f;
+        GLOWBO_DATA(arg0)->unk1C = -80.0f;
         func_80801258_chglowbo(arg0);
         GLOWBO_DATA(arg0)->unk14 = 50.0f;
         arg0->unk6C_0 = 0;
@@ -317,7 +317,7 @@ void func_80800B10_chglowbo(Actor* arg0)
         func_80801258_chglowbo(arg0);
         if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            GLOWBO_DATA(arg0)->unk14 += arg0->unk34 * func_800D8FF8();
+            GLOWBO_DATA(arg0)->unk14 += GLOWBO_DATA(arg0)->unk1C * func_800D8FF8();
             func_800EFCD8(&GLOWBO_DATA(arg0)->unk10, arg0->unk54, GLOWBO_DATA(arg0)->unkC);
             func_800EF04C(arg0->position, &GLOWBO_DATA(arg0)->unk10);
             arg0->unk6C_0 += 1;
@@ -395,7 +395,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
     func_800EF04C(GLOWBO_DATA(arg0)->unk0, arg0->position);
     GLOWBO_DATA(arg0)->unk0[1] = (f32)(sp3C[1] + 20.0f);
-    arg0->unk34 = -80.0f;
+    GLOWBO_DATA(arg0)->unk1C = -80.0f;
     GLOWBO_DATA(arg0)->unk14 = 30.0f;
     func_800C9C70(0.25f, 0x4DE, 0.5f, 0x4650, arg0->position, 500.0f, 2500.0f);
 }
@@ -409,7 +409,7 @@ void func_80800F64_chglowbo(Actor* arg0)
         arg0->rotation[0] = (f32)(arg0->rotation[0] + 18.0f);
         if ((GLOWBO_DATA(arg0)->unk0[1] < arg0->position[1]) || (GLOWBO_DATA(arg0)->unk14 > 0.0f))
         {
-            GLOWBO_DATA(arg0)->unk14 += (arg0->unk34 * func_800D8FF8());
+            GLOWBO_DATA(arg0)->unk14 += (GLOWBO_DATA(arg0)->unk1C * func_800D8FF8());
             func_800EF1B8(arg0->position, arg0->rotation[1], GLOWBO_DATA(arg0)->unkC);
             arg0->position[1] = (f32)(arg0->position[1] + GLOWBO_DATA(arg0)->unk14);
         }
@@ -486,7 +486,7 @@ void func_80801258_chglowbo(Actor* arg0)
 
     while ((GLOWBO_DATA(arg0)->unk0[1] < sp44[1]) || (var_f20 > 0.0f))
     {
-        var_f20 += arg0->unk34 * func_800D8FF8();
+        var_f20 += GLOWBO_DATA(arg0)->unk1C * func_800D8FF8();
         var_s1++;
         sp44[1] = sp44[1] + var_f20;
     }

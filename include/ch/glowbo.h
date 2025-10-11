@@ -50,6 +50,7 @@ typedef struct {
     f32 unk10;
     f32 unk14;
     f32 unk18;
+    f32 unk1C;
 }GlowboActorData;
 
 typedef struct {

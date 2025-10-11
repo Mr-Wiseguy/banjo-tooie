@@ -4,5 +4,6 @@
 #include "common.h"
 
 s16 _glsplinefind_entrypoint_0(u32, f32*);
+s32 _glsplinefind_entrypoint_3(f32*);
 
 #endif
