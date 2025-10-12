@@ -209,7 +209,8 @@ void func_800DA524(GameFlag index) {
 }
 
 //Set Flag True
-void func_800DA544(GameFlag index) {
+void func_800DA544(GameFlag index) 
+{
     func_800DA3B8(index, 1);
 }
 
