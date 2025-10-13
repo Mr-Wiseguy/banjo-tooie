@@ -62,8 +62,36 @@ void func_808000B8_chcauldronenergybars(Actor* arg0)
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronenergybars/func_808001C4_chcauldronenergybars.s")
+s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
+{
+    f32 temp;
+    f32 sp30[3];
+    s32 new_var[1];
+    f32 pad;
 
+    switch (arg1)
+    {
+    case 0x7:
+        temp = arg2;
+        ((CauldronEnergyBarsData*)arg0->actorData)->unk1C = temp;
+        arg0->unk58 = temp;
+        func_80101FDC(arg0, 2);
+        _subaddieDll_entrypoint_4(arg0, 1);
+        func_8010A570(arg0);
+        func_800DA544((arg0->unk74_7 == 0x32) ? (0x39A) : (0x39B));
+        return 1;
+
+    case 0x3F:
+        new_var[0] = *(s32*)&arg2;
+        func_800EC75C(new_var[0], sp30);
+        _chelectricfence_entrypoint_1(arg0, sp30);
+        ((CauldronEnergyBarsData*)arg0->actorData)->unk10 = 0.2f;
+        func_8010A570(arg0);
+        return 1;
+    }
+
+    return 0;
+}
 
 s32* chcauldronenergybars_entrypoint_0(void) 
 {
