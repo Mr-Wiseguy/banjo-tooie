@@ -133,9 +133,9 @@ void func_8008FDC4()
     func_800F55FC(func_800F54E4());
 }
 
-void func_8008FDEC()
+Unk80132ED0* func_8008FDEC()
 {
-    func_800F56D8(func_800F54E4());
+    return func_800F56D8(func_800F54E4());
 }
 
 void func_8008FE14()

@@ -228,9 +228,9 @@ void func_800F56AC(s32 arg0)
     func_80096694(D_80135490[arg0]);
 }
 
-void func_800F56D8(s32 arg0)
+Unk80132ED0* func_800F56D8(s32 arg0)
 {
-    _bahold_entrypoint_5(D_80135490[arg0]);
+    return _bahold_entrypoint_5(D_80135490[arg0]);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F5704.s")
@@ -348,9 +348,9 @@ void func_800F5D18(s32 arg0)
     func_800F40EC(D_80135490[arg0]);
 }
 
-void func_800F5D44(s32 arg0)
+void func_800F5D44(s32 arg0,f32* arg1)
 {
-    func_800A33CC(D_80135490[arg0]);
+    func_800A33CC(D_80135490[arg0],arg1);
 }
 
 void func_800F5D70(s32 arg0)
@@ -425,9 +425,9 @@ void func_800F6204()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECE0B0/func_800F6308.s")
 
-void func_800F6388(s32 arg0)
+void func_800F6388(s32 arg0,s32 arg1)
 {
-    func_8008F788(D_80135490[arg0]);
+    func_8008F788(D_80135490[arg0],arg1);
 }
 
 void func_800F63B4(s32 arg0)
@@ -435,9 +435,9 @@ void func_800F63B4(s32 arg0)
     func_8008F7B4(D_80135490[arg0]);
 }
 
-void func_800F63E0(s32 arg0)
+void func_800F63E0(s32 arg0,u32 arg1)
 {
-    func_8008F854(D_80135490[arg0]);
+    func_8008F854(D_80135490[arg0],arg1);
 }
 
 void func_800F640C(s32 arg0)

@@ -9,6 +9,7 @@
 #include "overlays/ba/anim.h"
 #include "overlays/ba/key.h"
 #include "overlays/ba/drone.h"
+#include "ba/hold.h"
 
 
 #include <ultra64.h>
@@ -24,11 +25,14 @@ PlayerState* func_800F53D0(s32 arg0);
 PlayerState* func_800F53E4(s32 arg0);
 //Get the character control index
 u32 func_800F54E4(void);
-
+Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F5A00(s32, f32[3]);
+void func_800F5D44(s32, f32*);
 f32 func_800F5F24(u32);
 s32 func_800F5FE0(s32);
 void func_800F608C(s32, s32);
+void func_800F6388(s32, s32);
+void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6774(u32);
 //Does the character match the given transformation type
