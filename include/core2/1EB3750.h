@@ -4,6 +4,7 @@
 #include "common.h"
 #include "gameflags.h"
 
+void func_800DA104();
 s32 func_800DA298(GameFlag index);
 void func_800DA3B8(GameFlag index, s32 set);
 void func_800DA524(GameFlag);
