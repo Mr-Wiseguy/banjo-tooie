@@ -4,7 +4,43 @@ extern JiggyData D_808008E0_sujiggy[8];
 
 s32 func_80800000_sujiggy(s32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/func_80800000_sujiggy.s")
+s32 func_80800000_sujiggy(s32 arg0)
+{
+    u32 sp2C;
+    u32 temp_a2;
+    u32 temp_t6;
+
+    temp_a2 = (arg0 & 0xFFFF) + 0xB0000000;
+    temp_t6 = ((arg0 & 0xFFFF0000) >> 0x10);
+    if (temp_a2 & 2)
+    {
+        temp_a2 = (temp_a2 >> 2) << 2;
+        rom_read_word(temp_a2, &sp2C);
+        arg0 = (sp2C & 0xFFFF0000) >> 0x10;
+    }
+    else
+    {
+        rom_read_word(temp_a2, &sp2C);
+        arg0 = sp2C & 0xFFFF;
+    }
+
+    if (temp_t6 != 0)
+    {
+        temp_t6 += 0xB0000000;
+        if (temp_t6 & 2)
+        {
+            temp_t6 = (temp_t6 >> 2) << 2;
+            rom_read_word(temp_t6, &sp2C);
+            arg0 += (sp2C & 0xFFFF0000) >> 0x10;
+        }
+        else
+        {
+            rom_read_word(temp_t6, &sp2C);
+            arg0 += sp2C & 0xFFFF;
+        }
+    }
+    return arg0 + 0xA0;
+}
 
 s32 sujiggy_entrypoint_0()
 {
@@ -85,9 +121,30 @@ void sujiggy_entrypoint_9()
     func_800DA544(FLAG5_D4D_UNK);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_10.s")
+void sujiggy_entrypoint_10(void)
+{
+    func_800FE844(2U);
+    func_800FE734(1U);
+    func_800DA544(FLAG5_D4F_UNK);
+    if (func_800DA298(FLAG5_D4D_UNK) != 0)
+    {
+        func_800DA7A8(FLAG5_D57_UNK, 0, 4);
+    }
+    else
+    {
+        func_800DA7A8(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
+    }
+    func_800A9C50();
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_11.s")
+void sujiggy_entrypoint_11(s32 arg0)
+{
+    func_800FC6B0(0x2EU);
+    func_800FE844(2U);
+    func_800FE734(1U);
+    func_800DA7A8(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
+    func_800A9BA0(1, sujiggy_entrypoint_4(arg0), sujiggy_entrypoint_5(arg0));
+}
 
 s32 sujiggy_entrypoint_12(void)
 {
@@ -146,11 +203,70 @@ s32 sujiggy_entrypoint_14(void)
     return sp1C;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_15.s")
+void sujiggy_entrypoint_15(s32 arg0, s32 arg1)
+{
+    if (func_800DA298(FLAG_58A_UNK) != 0)
+    {
+        _glcutDll_entrypoint_6(func_80800000_sujiggy(D_808008E0_sujiggy[arg0].unkC), arg0 + 0x7A);
+        return;
+    }
+    if (arg1 != 0)
+    {
+        _glcutDll_entrypoint_6(0x14FU, 0x67U);
+        return;
+    }
+    func_800DA544(FLAG_58A_UNK);
+    _glcutDll_entrypoint_24(func_80800000_sujiggy(D_808008E0_sujiggy[arg0].unkC), 0x151, arg0 + 0x7A);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_16.s")
+s32 sujiggy_entrypoint_16(void)
+{
+    s32 sp24;
+    s32 temp_v1;
+    s32 sp1C;
+    s32 a1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_17.s")
+    sp24 = sujiggy_entrypoint_0();
+    if (sujiggy_entrypoint_1() == sp24)
+    {
+        return 0;
+    }
+    sp1C = sujiggy_entrypoint_2(sp24);
+    temp_v1 = sp1C - func_800D035C(1);
+    if (temp_v1 > 0)
+    {
+        sp1C = temp_v1;
+    }
+    else
+    {
+        sp1C = 0;
+    }
+    return sp1C;
+}
+
+s32 sujiggy_entrypoint_17(void)
+{
+    s32 sp24;
+    s32 sp20;
+    s32 sp1C;
+    s32 var_v1;
+
+    sp24 = sujiggy_entrypoint_0();
+    if (sujiggy_entrypoint_1() == sp24)
+    {
+        return -1;
+    }
+    sp1C = func_800D035C(1);
+    if (sp1C >= sujiggy_entrypoint_2(sp24))
+    {
+        var_v1 = 1;
+    }
+    else
+    {
+        var_v1 = 0;
+    }
+    return var_v1;
+}
 
 s32 sujiggy_entrypoint_18(void) 
 {
@@ -162,11 +278,29 @@ s32 sujiggy_entrypoint_19(void)
     return func_800DA564(FLAG5_D57_UNK, 4);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_20.s")
+int sujiggy_entrypoint_20(s32 arg0)
+{
+    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && func_800DA298(arg0 + 0x392) == 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_21.s")
+s32 sujiggy_entrypoint_21(void)
+{
+    s32 var_v0;
+    if (func_800DA298(FLAG5_D4E_UNK) != 0)
+    {
+        var_v0 = func_800DA564(FLAG5_D50_UNK, 4);
+    }
+    else
+    {
+        var_v0 = sujiggy_entrypoint_0();
+    }
+    return var_v0 >= 10;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_22.s")
+u8 sujiggy_entrypoint_22(s32 arg0)
+{
+    return D_808008E0_sujiggy[arg0].unk13;
+}
 
 u16 sujiggy_entrypoint_23(s32 arg0) 
 {
@@ -178,4 +312,23 @@ s32 sujiggy_entrypoint_24(void)
     return func_800DA564(GFLAG_C0D_UNK, 8);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/jiggy/sujiggy_entrypoint_25.s")
+s32 sujiggy_entrypoint_25(s32 arg0)
+{
+    s32 temp_v0;
+
+    temp_v0 = sujiggy_entrypoint_24();
+    if (arg0 == 0)
+    {
+        return 0;
+    }
+    if ((temp_v0 == 0) || (arg0 < temp_v0))
+    {
+        func_800DA7A8(GFLAG_C0D_UNK, arg0, 8);
+        return 2;
+    }
+    if (temp_v0 == arg0)
+    {
+        return 1;
+    }
+    return 0;
+}

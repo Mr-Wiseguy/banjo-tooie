@@ -29,6 +29,18 @@ typedef struct {
     f32 unk1C;
 }PickupsData;
 
+s32* _chpickups_entrypoint_0(void);
+s32* _chpickups_entrypoint_1(void);
+s32* _chpickups_entrypoint_2(void);
+s32* _chpickups_entrypoint_3(void);
+s32* _chpickups_entrypoint_4(void);
+s32* _chpickups_entrypoint_5(void);
+s32* _chpickups_entrypoint_6(void);
+s32* _chpickups_entrypoint_7(void);
+s32* _chpickups_entrypoint_8(void);
+s32* _chpickups_entrypoint_9(void);
+s32* _chpickups_entrypoint_10(void);
 
+void func_80800110_chpickups(Actor* arg0);
 
 #endif

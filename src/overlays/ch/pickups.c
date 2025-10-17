@@ -70,7 +70,25 @@ s32* chpickups_entrypoint_10(void)
     return &D_80800A60_chpickups;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pickups/func_80800084_chpickups.s")
+s32 func_80800084_chpickups(Actor* arg0, s32 arg1, s32 arg2)
+{
+    switch (arg1)
+    {
+    case 0x3E:
+        func_80800110_chpickups(arg0);
+        return 1;
+    case 0x95:
+        if (arg0->unk64_23)
+        {
+            func_800F822C(func_800F54E4(), 0, 0);
+            func_80101FDC(arg0, 3);
+        }
+
+        return 1;
+    default:
+        return 0;
+    }
+}
 
 void func_80800110_chpickups(Actor* arg0)
 {

@@ -2,6 +2,7 @@
 #define __SU_JIGGY_H__
 
 #include "common.h"
+#include "core2/1EA9160.h"
 #include "core2/1EB3750.h"
 #include "core2/1EAB8B0.h"
 #include "core2/1E831D0.h"
@@ -37,10 +38,9 @@ s32 _sujiggy_entrypoint_0();
 s32 _sujiggy_entrypoint_2(s32);
 s32 sujiggy_entrypoint_4(s32);
 s32 sujiggy_entrypoint_5(s32);
-
 s32 sujiggy_entrypoint_19(void);
-
 //Check if world is unlocked
 s32 _sujiggy_entrypoint_20(u32);
+s32 sujiggy_entrypoint_21(void);
 s32 sujiggy_entrypoint_24(void);
 #endif
