@@ -42,7 +42,9 @@ typedef struct player_state_s {
     /* 0x44 */ struct ba_cough_s *cough;
     u8 pad48[0x38];
     /* 0x80 */ struct ba_flag_s *flag;
-    u8 pad84[0x20];
+    u8 pad84[0x18];
+    /* 0x9C */ struct ba_unk_9C* unk9C;
+    u8 padA0[0x4];
     /* 0xA4 */ struct ba_input_s *input;
     u8 padA8[0x18];
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0

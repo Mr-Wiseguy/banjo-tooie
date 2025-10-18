@@ -7,6 +7,8 @@
 
 void func_8009E8B4();
 void func_8009E8D4();
+void func_8009E9A0();
+void func_8009E9A8();
 f32  func_8009EA14(void);
 u8 func_8009EA20(void);
 s32 func_8009EA64(void);
