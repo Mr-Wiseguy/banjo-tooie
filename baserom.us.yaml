@@ -16426,13 +16426,8 @@ segments:
     start: 0x02172C20
     bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02172C20, c, jiggy]
-      - [0x02173500, .rodata, jiggy]
-      - [0x02173500, data, jiggy]
-      - [0x02173610, bss, jiggy]
+      - [auto, c, jiggy]
   - name: sumissilehome_header
     dir: overlays/sumissilehome
     type: bin
