@@ -8,10 +8,13 @@
 
 #include "overlays/ba/anim.h"
 #include "overlays/ba/key.h"
+#include "overlays/ba/drone.h"
 
 
 #include <ultra64.h>
-s32 func_800F497C(s32);
+void func_800F497C(s32);
+void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
+void func_800F4A58(s32,s32,f32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
@@ -30,13 +33,16 @@ s32 func_800F6438(u32);
 s32 func_800F6774(u32);
 //Does the character match the given transformation type
 s32 func_800F64A4(s32 characterIndex, s32 transformationType);
+void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 void func_800F7B9C(s32, u32);
+void func_800F7BC8(s32, s32, Unk80132ED0*);
 s32 func_800F8004(s32);
 void func_800F80E4(s32, u32);
 void func_800F8294(s32, f32*);
 void func_800F82C0(s32);
+void func_800F82D4(s32, s32);
 void func_800F832C(s32, f32*);
 s32 func_800F8B64(void);
 void func_800F8DD8();
