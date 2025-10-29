@@ -1,5 +1,13 @@
 #include "ch/secreteggs.h"
 
+typedef struct unkEggData
+{
+    u16 unk0;
+    u16 unk4;
+    u16 unk8;
+    u16 unkC;
+} unkEggData;
+
 extern unkEggData D_80800494_chsecreteggs[0x3];
 extern s32 D_808004A8_chsecreteggs;
 extern f32 D_808004EC_chsecreteggs[5];

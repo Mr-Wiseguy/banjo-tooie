@@ -11,6 +11,15 @@ extern s32 D_80801F58_chheggy;
 
 extern void* func_8010D5DC;
 
+typedef struct Unk80100094 {
+    Vec3f unk0[1]; // unknown size, could be up to 5
+    u8 padC[0x3C - 0xC];
+    Vec3f unk3C;
+    s32 unk48[7]; // unknown size
+    f32 unk64[3];
+    f32 unk70[3];
+} Unk80100094;
+
 void func_80800ECC_chheggy(Actor*, s32);
 
 void func_80800000_chheggy(Actor* arg0, Unk80100094* arg1, s32 arg2)

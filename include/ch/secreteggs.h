@@ -26,13 +26,7 @@
 
 #include "overlays/pl/su.h"
 
-typedef struct unkEggData
-{
-    u16 unk0;
-    u16 unk4;
-    u16 unk8;
-    u16 unkC;
-} unkEggData;
+
 
 
 #endif
