@@ -26,12 +26,12 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     temp_v0 = _gccubesearch_entrypoint_1(0x387U, arg0->position);
     if (temp_v0 == NULL)
     {
-        func_800EE7F8((f32*)arg0->actorData, arg0->position);
-        func_800EF1B8((f32*)arg0->actorData, arg0->rotation[1] - 90.0f, 200.0f);
+        func_800EE7F8(MOLE_DATA(arg0)->unk0, arg0->position);
+        func_800EF1B8(MOLE_DATA(arg0)->unk0, arg0->rotation[1] - 90.0f, 200.0f);
     }
     else
     {
-        _gspropctrl_entrypoint_11(temp_v0, (f32*)arg0->actorData);
+        _gspropctrl_entrypoint_11(temp_v0, MOLE_DATA(arg0)->unk0);
     }
     if ((arg0->unk3C == NULL) && !(arg0->unk64_20))
     {
@@ -163,7 +163,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         case 4:
         case 5:
         case 6:
-            temp_v0 = func_80108528(0xB7, (f32*)arg0->actorData, (s32)arg0->rotation[1], &arg0);
+            temp_v0 = func_80108528(0xB7, MOLE_DATA(arg0)->unk0, (s32)arg0->rotation[1], &arg0);
             temp_v0->unk6C_0 = arg2.i - 4;
             func_8080037C_sumole(arg0, D_80802530_sumole[arg2.i], 0x6000, 0);
             break;
@@ -172,7 +172,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         case 2:
         case 3:
             func_8080037C_sumole(arg0, D_8080254C_sumole[arg2.i], 0x6000, 0);
-            _chappearfx_entrypoint_2(_chbounce_entrypoint_7(0x1D, arg0->actorData, D_8080255C_sumole[arg2.i]), 0x2A, 0, 0x3F800000);
+            _chappearfx_entrypoint_2(_chbounce_entrypoint_7(0x1D, MOLE_DATA(arg0)->unk0, D_8080255C_sumole[arg2.i]), 0x2A, 0, 1.0f);
             break;
         }
         break;
@@ -299,7 +299,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
         switch (arg0->unk70_10)
         {
         case 1:
-            if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)(s8)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
+            if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
             {
                 if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                 {
@@ -582,51 +582,57 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
     var_a1 = func_800DC128(0xD7B, 0xD7D);
     switch (arg1)
     {
-    case 0x200:
-        sp1E = var_a1;
-        if (func_8010D278() == 0xB)
-        {
-            var_a1 = func_800DC128(0xD71, 0xD73);
-        }
-        else
-        {
+        case 0x200: //Banjo Moves
             sp1E = var_a1;
-            if (func_8010D278() == 1)
+            if (func_8010D278() == 0xB)
             {
-                var_a1 = func_800DC128(0xD6F, 0xD71);
+                //Randomize kazooie Refusal message to use for Banjo Move
+                var_a1 = func_800DC128(0xD71, 0xD73);
             }
-        }
-        break;
-    case 0x400:
-        sp1E = var_a1;
-        if (func_8010D278() == 0xA)
-        {
-            var_a1 = func_800DC128(0xD73, 0xD75);
-        }
-        else
-        {
-            sp1E = var_a1;
-            if (func_8010D278() == 1)
+            else
             {
-                var_a1 = func_800DC128(0xD75, 0xD77);
+                sp1E = var_a1;
+                if (func_8010D278() == 1)
+                {
+                    //Randomize message saying to get rid of kazooie
+                    var_a1 = func_800DC128(0xD6F, 0xD71);
+                }
             }
-        }
-        break;
-    case 0x1:
-        sp1E = var_a1;
-        if (func_8010D278() == 0xB)
-        {
-            var_a1 = func_800DC128(0xD79, 0xD7B);
-        }
-        else
-        {
+            break;
+        case 0x400: //Kazooie Moves
             sp1E = var_a1;
             if (func_8010D278() == 0xA)
             {
-                var_a1 = func_800DC128(0xD77, 0xD79);
+                //Randomize Banjo Refusal message to use for Kazooie Move
+                var_a1 = func_800DC128(0xD73, 0xD75);
             }
-        }
-        break;
+            else
+            {
+                sp1E = var_a1;
+                if (func_8010D278() == 1)
+                {
+                    //Randomize message saying to get rid of Banjo
+                    var_a1 = func_800DC128(0xD75, 0xD77);
+                }
+            }
+            break;
+        case 0x1: //BK Moves
+            sp1E = var_a1;
+            if (func_8010D278() == 0xB)
+            {
+                //Randomize Kazooie Refusal message to use for BK Move
+                var_a1 = func_800DC128(0xD79, 0xD7B);
+            }
+            else
+            {
+                sp1E = var_a1;
+                if (func_8010D278() == 0xA)
+                {
+                    //Randomize Banjo Refusal message to use for BK Move
+                    var_a1 = func_800DC128(0xD77, 0xD79);
+                }
+            }
+            break;
     }
     return sumole_entrypoint_17(arg0, var_a1, arg2, 0);
 }
@@ -729,7 +735,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
     }
 }
 
-s32 sumole_entrypoint_17(Actor* arg0, s16 arg1, s32 arg2, s32 arg3)
+s32 sumole_entrypoint_17(Actor* arg0, s16 message, s32 arg2, s32 arg3)
 {
     Unk80132ED0* temp_a3;
     Unk80132ED0* temp_v0;
@@ -742,17 +748,17 @@ s32 sumole_entrypoint_17(Actor* arg0, s16 arg1, s32 arg2, s32 arg3)
     case 0:
         if (temp_v0 != NULL)
         {
-            func_800C05B8(arg1, 7, arg0->position, temp_a3, 0, 0, 0);
+            func_800C05B8(message, 7, arg0->position, temp_a3, 0, 0, 0);
         }
         else
         {
-            func_800C05B8(arg1, 7, arg0->position, NULL, 0, 0, func_800DA298(FLAG_578_PROGRESS_BOTTLES_ENERGY_RESTORED) != 0 ? 0xF : 0x84);
+            func_800C05B8(message, 7, arg0->position, NULL, 0, 0, func_800DA298(FLAG_578_PROGRESS_BOTTLES_ENERGY_RESTORED) != 0 ? 0xF : 0x84);
         }
         arg0->unk58 = 1.0f;
     default:
         break;
     case 1:
-        if (func_800C064C() == arg1)
+        if (func_800C064C() == message)
         {
             arg0->unk58 = 2.0f;
         }
