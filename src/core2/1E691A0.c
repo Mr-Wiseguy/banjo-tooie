@@ -73,14 +73,14 @@ void func_8008FBE0(u32 arg0)
     func_800A1624(arg0);
 }
 
-void func_8008FC00()
+s32 func_8008FC00()
 {
-    func_800F5578(func_800F54E4());
+    return func_800F5578(func_800F54E4());
 }
 
-void func_8008FC28()
+s32 func_8008FC28()
 {
-    func_800F55A4(func_800F54E4());
+    return func_800F55A4(func_800F54E4());
 }
 
 void func_8008FC50()
@@ -133,9 +133,9 @@ void func_8008FDC4()
     func_800F55FC(func_800F54E4());
 }
 
-void func_8008FDEC()
+Unk80132ED0* func_8008FDEC()
 {
-    func_800F56D8(func_800F54E4());
+    return func_800F56D8(func_800F54E4());
 }
 
 void func_8008FE14()

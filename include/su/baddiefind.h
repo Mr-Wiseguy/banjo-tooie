@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+Actor* _subaddiefind_entrypoint_0(f32*, s32, s32, s32);
 Actor* _subaddiefind_entrypoint_2(s32, s32);
 
 #endif

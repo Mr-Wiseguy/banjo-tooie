@@ -1,4 +1,4 @@
-#include "common.h"
+#include "gc/sectionskip.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/sectionskip/func_80800000_gcsectionskip.s")
 

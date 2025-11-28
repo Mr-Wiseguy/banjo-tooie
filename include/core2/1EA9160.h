@@ -2,13 +2,15 @@
 #define __CORE2_1EA9160_H__
 
 #include "common.h"
+#include "ch/baddiesetup.h"
+#include "core2/1EC8070.h"
 
 s32 func_800CF87C();
 s32 func_800CFA90();
 void func_800CFBC8(Actor*, u32, s32, s32);
 u32 func_800CFC8C(s16, s32);
 s32 func_800D0018(s16, s32);
-u32 func_800D035C(s16 a0);
+s32 func_800D035C(s16 a0);
 void func_800D053C(u32, u32);
 void func_800D0594(s32, s32, s32);
 void func_800D05E4(s32, s32, s32);

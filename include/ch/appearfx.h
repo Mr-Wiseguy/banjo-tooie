@@ -4,5 +4,6 @@
 #include "common.h"
 
 void _chappearfx_entrypoint_1(Actor*, u32, u32, f32);
+void _chappearfx_entrypoint_2(s32, s32, s32, s32);
 
 #endif
