@@ -273,7 +273,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), ALLOW_BIGTREX | ALLOW_GOLDENGOLIATH) == 0)
+                if (func_800F64A4(func_800F54E4(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }

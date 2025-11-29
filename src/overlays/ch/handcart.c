@@ -1744,7 +1744,7 @@ void func_80803794_chhandcart(Actor* arg0)
         }
         else if (func_800DA298(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
         {
-            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_PLUNGER) != 0))
+            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_DETONATOR) != 0))
             {
                 if (func_800DA9E4(FLAG_42A_FTT_CANARY_MARY_CANARY_CAVE, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {

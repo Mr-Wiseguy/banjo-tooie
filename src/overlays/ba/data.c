@@ -69,7 +69,7 @@ s32 func_80800000_badata(PlayerState *self) {
         case TRANSFORM_E_GOLDENGOLIATH:
             return 0x13;
 
-        case TRANSFORM_F_PLUNGER:
+        case TRANSFORM_F_DETONATOR:
             return 0x14;
         
         case TRANSFORM_10_VAN:
@@ -81,10 +81,10 @@ s32 func_80800000_badata(PlayerState *self) {
         case TRANSFORM_11_CLOCKWORK:
             return 0x17;
 
-        case TRANSFORM_12_SMALLTREX:
+        case TRANSFORM_12_TREXSMALL:
             return 0x18;
 
-        case TRANSFORM_13_BIGTREX:
+        case TRANSFORM_13_TREXLARGE:
             return 0x19;
 
         case TRANSFORM_9_FIRSTPERSON:
@@ -200,7 +200,7 @@ s32 func_80800388_badata(PlayerState *self) {
         case TRANSFORM_E_GOLDENGOLIATH:
             return 0x13;
 
-        case TRANSFORM_F_PLUNGER:
+        case TRANSFORM_F_DETONATOR:
             return 0x14;
 
         case TRANSFORM_10_VAN:
@@ -212,10 +212,10 @@ s32 func_80800388_badata(PlayerState *self) {
         case TRANSFORM_11_CLOCKWORK:
             return 0x17;
 
-        case TRANSFORM_12_SMALLTREX:
+        case TRANSFORM_12_TREXSMALL:
             return 0x18;
         
-        case TRANSFORM_13_BIGTREX:
+        case TRANSFORM_13_TREXLARGE:
             return 0x19;
 
 
