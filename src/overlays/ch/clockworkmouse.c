@@ -582,7 +582,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
     case 2:
     case 17:
         func_80800774_chclockworkmouse(actor);
-        if ((func_80090178(1) != 0) && (func_8010C9B0(actor->position, 0x96) != 0)) {
+        if ((func_80090178(ALLOW_BK) != 0) && (func_8010C9B0(actor->position, 0x96) != 0)) {
             func_80800E8C_chclockworkmouse(actor, 3);
         }
         break;
@@ -1220,7 +1220,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
         if (func_800DA298(FLAG_42B_UNK) != 0) 
         {
             func_808026E0_chclockworkmouse(arg0, 2);
-        } else if (!(arg0->unk74_30) && (func_80090178(1) != 0) && (_subaddiedialog_entrypoint_3(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+        } else if (!(arg0->unk74_30) && (func_80090178(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_3(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
             func_800DA544(FLAG_42B_UNK);
             func_8080079C_chclockworkmouse(sp34, arg0, 2, 0);
             func_80801B44_chclockworkmouse(arg0, 0x1426, 0xB);
@@ -1229,7 +1229,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
     case 2:
         func_80802BCC_chclockworkmouse(arg0);
         func_80802A48_chclockworkmouse(arg0);
-        if (!arg0->unk74_30 && (func_80090178(1) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+        if (!arg0->unk74_30 && (func_80090178(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
             func_80801B44_chclockworkmouse(arg0, arg0->unk64_19 ? 0x1436 : 0x1427 , 0xB);
         }
         break;

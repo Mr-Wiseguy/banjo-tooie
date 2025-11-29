@@ -201,7 +201,7 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
 
 s16 func_808006C0_chwarppad(s32 arg0)
 {
-    s32 temp_v0;
+    TransformationId temp_v0;
     u32 temp_a2;
     s32 var_a1;
 
@@ -273,7 +273,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(func_800F54E4(), 0x42000) == 0)
+                if (func_800F64A4(func_800F54E4(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }

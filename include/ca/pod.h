@@ -12,6 +12,7 @@ void _capod_entrypoint_8(s32);
 void _capod_entrypoint_9(u32, f32*);
 void _capod_entrypoint_10(u32, f32*);
 void _capod_entrypoint_11(u32, f32*);
+void _capod_entrypoint_12(s32);
 void _capod_entrypoint_13(Unk80132ED0*, Unk80132ED0*, u32, u32); 
 void _capod_entrypoint_14(void);                           /* extern */
 void _capod_entrypoint_19(f32[3]);

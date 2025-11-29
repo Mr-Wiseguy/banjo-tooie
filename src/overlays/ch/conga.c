@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ch/conga.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/conga/chconga_entrypoint_0.s")
 

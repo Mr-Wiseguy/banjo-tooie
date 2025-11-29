@@ -5,6 +5,6 @@
 #include <ultra64.h>
 
 void func_800E3980(f32*);
-
+void func_800E42B4(s32);
 
 #endif

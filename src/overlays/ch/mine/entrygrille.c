@@ -4,13 +4,14 @@ extern s32 D_80800140_chmineentrygrille[];
 extern u32 D_80800180_chmineentrygrille;
 extern u32 D_80800194_chmineentrygrille;
 
-s32 func_80800000_chmineentrygrille(Unk80800000MineEntryGrilleArg0* arg0, s32 arg1, u32 arg2) {
-    s32 temp_v0;
+s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) 
+{
+    Actor* temp_v0;
 
     switch (arg1) 
     {
     case 0x7:
-        _chexploder_entrypoint_3(arg0, &arg0->unk4, 8);
+        _chexploder_entrypoint_3(arg0, arg0->position, 8);
         //Set Flag True
         func_800DA544(FLAG_393_PROGRESS_OPENED_WORLD_GGM);
         return 1;
@@ -19,8 +20,8 @@ s32 func_80800000_chmineentrygrille(Unk80800000MineEntryGrilleArg0* arg0, s32 ar
         _chexploder_entrypoint_13(temp_v0, 6);
         _chexploder_entrypoint_15(temp_v0, 2, 1.0f);
 
-        func_800BABB8(0, &arg0->unk4, &arg0->unk4, arg0->unk38, D_80800140_chmineentrygrille);
-        func_800C4AF0(&arg0->unk4, &D_80800180_chmineentrygrille);
+        func_800BABB8(0, arg0->position, arg0->position, arg0->scale, D_80800140_chmineentrygrille);
+        func_800C4AF0(arg0->position, &D_80800180_chmineentrygrille); 
         return 1;
     default:
         return 0;

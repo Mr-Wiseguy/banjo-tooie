@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/hold.h"
 
 s32 bahold_entrypoint_0() 
 {

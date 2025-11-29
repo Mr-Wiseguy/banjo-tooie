@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_8010A800(Actor*, s32);
 u32 func_8010A828(Actor*, u32);
 
 #endif
