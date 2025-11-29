@@ -3,22 +3,22 @@
 s32 func_80800000_badata(PlayerState *self) {
     s32 sp1C  = bs_getCurrentState(self);
     switch(func_800A3274(self)) {
-        case 2: 
+        case TRANSFORM_2_SNOWBALL:
             return 2;
 
-        case 6:
+        case TRANSFORM_6_BEE:
             if(func_8009CA70(self, sp1C, 0x4000)) {
                 return 0x1E;
             }
             return 0xB;
 
-        case 7:
+        case TRANSFORM_7_WASHINGMACHINE:
             return 0;
 
-        case 8:
+        case TRANSFORM_8_STONY:
             return 0xE;
 
-        case 0xA:
+        case TRANSFORM_A_BANJO:
             if(func_8009E71C(self, 0x12)) {
                 return 0xA;
             } else if (func_8009E71C(self, 0x13)) {
@@ -42,7 +42,7 @@ s32 func_80800000_badata(PlayerState *self) {
             } else {
                 return 0xF;
             }
-        case 0xB:
+        case TRANSFORM_B_KAZOOIE:
             if (func_8009CA70(self, sp1C, 0x200)) {
                 return 0x22;
             } else if (func_8009CBDC(self, sp1C) == 0x9) {
@@ -58,7 +58,7 @@ s32 func_80800000_badata(PlayerState *self) {
             }
             break;
 
-        case 0xD:
+        case TRANSFORM_D_MUMBO:
             if (player_inWater(self)) {
                 return 0x12;
             } else {
@@ -66,31 +66,31 @@ s32 func_80800000_badata(PlayerState *self) {
             }
             break;
 
-        case 0xE:
+        case TRANSFORM_E_GOLDENGOLIATH:
             return 0x13;
 
-        case 0xF:
+        case TRANSFORM_F_PLUNGER:
             return 0x14;
         
-        case 0x10:
+        case TRANSFORM_10_VAN:
             return 0x15;
 
-        case 0xC:
+        case TRANSFORM_C_SUB:
             return 0x16;
 
-        case 0x11:
+        case TRANSFORM_11_CLOCKWORK:
             return 0x17;
 
-        case 0x12:
+        case TRANSFORM_12_SMALLTREX:
             return 0x18;
 
-        case 0x13:
+        case TRANSFORM_13_BIGTREX:
             return 0x19;
 
-        case 9:
+        case TRANSFORM_9_FIRSTPERSON:
             return 0x1D;
             
-        case 1:
+        case TRANSFORM_1_BK:
         default:
             if (func_8009CBDC(self, sp1C) == 2) {
                 return 0x23;
@@ -129,22 +129,22 @@ s32 func_80800388_badata(PlayerState *self) {
 
     sp1C = func_8009EA4C();
     switch (func_800A3274(self)) {
-        case 2:
+        case TRANSFORM_2_SNOWBALL:
             return 2;
         
-        case 6:
+        case TRANSFORM_6_BEE:
             if (sp1C == 4) {
                 return 0x1E;
             }         
             return 0xB;
         
-        case 7:
+        case TRANSFORM_7_WASHINGMACHINE:
             return 0;
         
-        case 8:
+        case TRANSFORM_8_STONY:
             return 0xE;
 
-        case 0xA:
+        case TRANSFORM_A_BANJO:
             if (player_inWater(self)) {
                 if (func_800F8B88() == 3) {
                     return 0x21;
@@ -168,7 +168,7 @@ s32 func_80800388_badata(PlayerState *self) {
             }
             return 0xF;
 
-        case 0xB:
+        case TRANSFORM_B_KAZOOIE:
             if (sp1C == 4) {
                 return 0x3;
             }
@@ -191,38 +191,38 @@ s32 func_80800388_badata(PlayerState *self) {
 
             return 0x10;
 
-        case 0xD:
+        case TRANSFORM_D_MUMBO:
             if (player_inWater(self)) {
                 return 0x12;
             }
             return 0x11;
         
-        case 0xE:
+        case TRANSFORM_E_GOLDENGOLIATH:
             return 0x13;
 
-        case 0xF:
+        case TRANSFORM_F_PLUNGER:
             return 0x14;
 
-        case 0x10:
+        case TRANSFORM_10_VAN:
             return 0x15;
 
-        case 0xC:
+        case TRANSFORM_C_SUB:
             return 0x16;
 
-        case 0x11:
+        case TRANSFORM_11_CLOCKWORK:
             return 0x17;
 
-        case 0x12:
+        case TRANSFORM_12_SMALLTREX:
             return 0x18;
         
-        case 0x13:
+        case TRANSFORM_13_BIGTREX:
             return 0x19;
 
 
-        case 9:
+        case TRANSFORM_9_FIRSTPERSON:
             return 0x1D;
 
-        case 1:
+        case TRANSFORM_1_BK:
         default:
             if (player_inWater(self)) {
                 sp18 = func_8009C150(self);

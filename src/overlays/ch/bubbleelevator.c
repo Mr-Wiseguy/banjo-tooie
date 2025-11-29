@@ -103,7 +103,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         if (func_8010C500(arg0) != 0)
         {
             //Check if we're banjo and kazooie
-            if (func_800F64A4(func_800F54E4(), 1) != 0)
+            if (func_800F64A4(func_800F54E4(), ALLOW_BK) != 0)
             {
                 func_808004DC_chbubbleelevator(arg0, 5);
             }

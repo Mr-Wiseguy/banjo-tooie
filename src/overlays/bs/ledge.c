@@ -361,7 +361,7 @@ s32 func_80800CF4_bsledge(PlayerState *self, u8 *arg1, u32 arg2) {
 }
 
 s32 func_80800D24_bsledge(PlayerState *self) {
-    if (func_800A3274(self) == 0xA) {
+    if (func_800A3274(self) == TRANSFORM_A_BANJO) {
         return func_80800CF4_bsledge(self, D_80801390_bsledge, 5);
     }
 

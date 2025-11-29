@@ -20,7 +20,7 @@ s32 bababykaz_entrypoint_0(void) {
 }
 
 void bababykaz_entrypoint_1(PlayerState *self) {
-    if ((func_800A3274(self) == 0x11) && !func_800EA068(0x20)) {
+    if ((func_800A3274(self) == TRANSFORM_11_CLOCKWORK) && !func_800EA068(0x20)) {
         func_8009EA94(self->babykaz->unk4);
     }
 }

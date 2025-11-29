@@ -265,7 +265,7 @@ void func_80800638_chpickups(Actor* arg0)
                 func_808005B8_chpickups(arg0, 0);
                 return;
             }
-            if (func_80090178(0x201) != 0)
+            if (func_80090178(ALLOW_BK | ALLOW_BANJO) != 0)
             {
                 func_808005B8_chpickups(arg0, 1);
                 return;

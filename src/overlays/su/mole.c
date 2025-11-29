@@ -43,7 +43,8 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
 
 s32 sumole_entrypoint_1(Actor* arg0, s32 arg1, u32 arg2, s32 arg3)
 {
-    if (func_80090178(0x1701) == 0)
+    //Control who can talk to jamjars at all
+    if (func_80090178(ALLOW_BK | ALLOW_BANJO | ALLOW_KAZOOIE | ALLOW_MUMBO | ALLOW_FIRSTPERSON) == 0)
     {
         return 0;
     }
@@ -326,7 +327,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
                     return;
                 }
                 sumole_entrypoint_2(arg0, 0xE);
-                if (func_80090178(0x601) != 0)
+                if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
                 {
                     if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (func_800C6E38(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
                     {
@@ -457,7 +458,7 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
     }
 }
 
-s32 sumole_entrypoint_5(Actor* arg0, s32 arg1, s32 arg2, s32 arg3)
+s32 sumole_entrypoint_5(Actor* arg0, s32 arg1, AllowedTransformation arg2, s32 arg3)
 {
     if (arg2 != -1)
     {
@@ -582,9 +583,9 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
     var_a1 = func_800DC128(0xD7B, 0xD7D);
     switch (arg1)
     {
-        case 0x200: //Banjo Moves
+        case ALLOW_BANJO: //Banjo Moves
             sp1E = var_a1;
-            if (func_8010D278() == 0xB)
+            if (func_8010D278() == TRANSFORM_B_KAZOOIE)
             {
                 //Randomize kazooie Refusal message to use for Banjo Move
                 var_a1 = func_800DC128(0xD71, 0xD73);
@@ -592,16 +593,16 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             else
             {
                 sp1E = var_a1;
-                if (func_8010D278() == 1)
+                if (func_8010D278() == TRANSFORM_1_BK)
                 {
                     //Randomize message saying to get rid of kazooie
                     var_a1 = func_800DC128(0xD6F, 0xD71);
                 }
             }
             break;
-        case 0x400: //Kazooie Moves
+        case ALLOW_KAZOOIE: //Kazooie Moves
             sp1E = var_a1;
-            if (func_8010D278() == 0xA)
+            if (func_8010D278() == TRANSFORM_A_BANJO)
             {
                 //Randomize Banjo Refusal message to use for Kazooie Move
                 var_a1 = func_800DC128(0xD73, 0xD75);
@@ -609,16 +610,16 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             else
             {
                 sp1E = var_a1;
-                if (func_8010D278() == 1)
+                if (func_8010D278() == TRANSFORM_1_BK)
                 {
                     //Randomize message saying to get rid of Banjo
                     var_a1 = func_800DC128(0xD75, 0xD77);
                 }
             }
             break;
-        case 0x1: //BK Moves
+        case ALLOW_BK: //BK Moves
             sp1E = var_a1;
-            if (func_8010D278() == 0xB)
+            if (func_8010D278() == TRANSFORM_B_KAZOOIE)
             {
                 //Randomize Kazooie Refusal message to use for BK Move
                 var_a1 = func_800DC128(0xD79, 0xD7B);
@@ -626,7 +627,7 @@ s32 sumole_entrypoint_15(Actor* arg0, s32 arg1, s32 arg2)
             else
             {
                 sp1E = var_a1;
-                if (func_8010D278() == 0xA)
+                if (func_8010D278() == TRANSFORM_A_BANJO)
                 {
                     //Randomize Banjo Refusal message to use for BK Move
                     var_a1 = func_800DC128(0xD77, 0xD79);
@@ -669,7 +670,7 @@ void sumole_entrypoint_16(Actor* arg0, s32 arg1)
         sumole_entrypoint_2(arg0, 0xA);
         return;
     case 2:
-        if (func_80090178(0x601) != 0)
+        if (func_80090178(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
         {
             sumole_entrypoint_2(arg0, 0x11);
             return;

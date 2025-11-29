@@ -14,14 +14,14 @@ void func_8008FBE0(u32 a0);
 s32 func_8008FC00();
 s32 func_8008FC28();
 void func_8008FC50();
-s32 func_8008FD48();
+TransformationId func_8008FD48();
 Unk80132ED0* func_8008FDEC();
 void func_8008FE94(s32, f32*);
 f32 func_80090010(void);
 void func_800900D0(s32);
 s32 func_80090128();
 //Does the current character match given transformation
-s32 func_80090178(s32);
+s32 func_80090178(AllowedTransformation);
 s32 func_80090248(void);
 s32 func_80090270(void);
 void func_800903D0(f32[3]);

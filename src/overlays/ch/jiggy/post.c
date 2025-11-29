@@ -43,7 +43,7 @@ void func_808001C4_chjiggypost(Actor* arg0, s32 arg1, s32 arg2)
         {
             if (func_800D035C(1) >= _sujiggy_entrypoint_2(arg0->unk74_7 - 0x33))
             {
-                if (func_8008FD48() == 1)
+                if (func_8008FD48() == TRANSFORM_1_BK)
                 {
                     var_a1 = 0x1515;
                 }

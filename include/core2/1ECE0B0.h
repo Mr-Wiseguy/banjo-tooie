@@ -3,6 +3,7 @@
 
 #include "../../src/overlays/ba/playerstate.h"
 #include "overlays/ba/yaw.h"
+#include "transformations.h"
 #include "core2/1E7BFA0.h"
 #include "core2/1E7AB30.h"
 
@@ -35,8 +36,29 @@ void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6774(u32);
+
+typedef enum
+{
+	ALLOW_BIGTREX = 1 << (TRANSFORM_13_BIGTREX + 0x1F),
+	ALLOW_SMALLTREX = 1 << (TRANSFORM_12_SMALLTREX + 0x1F),
+	ALLOW_CLOCKWORK = 1 << (TRANSFORM_11_CLOCKWORK + 0x1F),
+	ALLOW_VAN = 1 << (TRANSFORM_10_VAN + 0x1F),
+	ALLOW_PLUNGER = 1 << (TRANSFORM_F_PLUNGER + 0x1F),
+	ALLOW_GOLDENGOLIATH = 1 << (TRANSFORM_E_GOLDENGOLIATH + 0x1F),
+	ALLOW_MUMBO = 1 << (TRANSFORM_D_MUMBO + 0x1F),
+	ALLOW_SUB = 1 << (TRANSFORM_C_SUB + 0x1F),
+	ALLOW_KAZOOIE = 1 << (TRANSFORM_B_KAZOOIE + 0x1F),
+	ALLOW_BANJO = 1 << (TRANSFORM_A_BANJO + 0x1F),
+	ALLOW_FIRSTPERSON = 1 << (TRANSFORM_9_FIRSTPERSON + 0x1F),
+	ALLOW_STONY = 1 << (TRANSFORM_8_STONY + 0x1F),
+	ALLOW_WASHINGMACHINE = 1 << (TRANSFORM_7_WASHINGMACHINE + 0x1F),
+	ALLOW_BEE = 1 << (TRANSFORM_6_BEE + 0x1F),
+	ALLOW_SNOWBALL = 1 << (TRANSFORM_2_SNOWBALL + 0x1F),
+	ALLOW_BK = 1 << (TRANSFORM_1_BK + 0x1F)
+}AllowedTransformation;
+
 //Does the character match the given transformation type
-s32 func_800F64A4(s32 characterIndex, s32 transformationType);
+s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
 void func_800F7700(u32, s32, f32*);
 //The moving object is moved towards/away from the target
 void func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
