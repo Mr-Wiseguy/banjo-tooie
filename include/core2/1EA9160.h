@@ -3,7 +3,11 @@
 
 #include "common.h"
 #include "ch/baddiesetup.h"
+#include "ch/bounce.h"
+
 #include "core2/1EC8070.h"
+#include "core2/1EDA900.h"
+#include "core2/1EE1510.h"
 
 s32 func_800CF87C();
 s32 func_800CFA90();
@@ -21,6 +25,7 @@ void func_800D0778(s32, s32, s32*);
 //Check if collectable is valid type
 s32 func_800D0820(s32 itemType);
 void func_800CF870(s32);
+s32 func_800D0CC8(s32);
 s32 func_800CFFBC(u32, s32);
 //Get Total Number of Given Object
 s32 func_800D0894(s32 itemType);

@@ -82,17 +82,18 @@ void func_800CFA70()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D0DAC.s")
 
-void func_800D0F9C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5)
+void func_800D0F9C(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, s32 arg5)
 {
     f32 temp;
     f32 sp18[3];
-    sp18[0] = (f32)arg1;
-    sp18[1] = (f32)arg2;
-    sp18[2] = (f32)arg3;
-    func_800D0DAC(arg0, sp18, arg4, arg5);
+    sp18[0] = (f32)x;
+    sp18[1] = (f32)y;
+    sp18[2] = (f32)z;
+    //Spawn Style 0 Random Low Velocity, 1 Small Bounce, 2 Spin CCW, 3 Spin CW, 4 CCW, 5 Set High Velocity, 6 Random High Velocity
+    func_800D0DAC(arg0, sp18, spawnStyle, arg5);
 }
 
-void func_800D1000(u32 arg0, u32 arg1, f32* arg2, u32 arg3, Unk80132ED0* arg4)
+void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk80132ED0* arg4)
 {
     s32 sp44[3];
     s32 temp;
@@ -101,16 +102,16 @@ void func_800D1000(u32 arg0, u32 arg1, f32* arg2, u32 arg3, Unk80132ED0* arg4)
     {
         func_800D0B08(arg0, arg1);
         func_800D053C(arg0, arg1);
-        if (arg2 != NULL)
+        if (spawnCoords != NULL)
         {
-            func_800EE904(sp44, arg2);
+            func_800EE904(sp44, spawnCoords);
         }
         else
         {
             func_800D07CC(arg0, arg1, sp34);
             func_800EE904(sp44, sp34);
         }
-        _chbaddiesetup_entrypoint_6(&func_800D0F9C, (arg0 << 0x10) | (arg1 & 0xFFFF), sp44[0], sp44[1], sp44[2], arg3, arg4);
+        _chbaddiesetup_entrypoint_6(&func_800D0F9C, (arg0 << 0x10) | (arg1 & 0xFFFF), sp44[0], sp44[1], sp44[2], spawnStyle, arg4);
     }
 }
 
