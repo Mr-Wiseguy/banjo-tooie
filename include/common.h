@@ -37,7 +37,7 @@ typedef struct {
 typedef struct Actor {
     /* 0x00 */ Unk80132ED0* unk0;
     /* 0x04 */ f32 position[3];
-    /* 0x10 */ u32* pointerToSyscallEntry;
+    /* 0x10 */ void* (*pointerToSyscallEntry)();
     /* 0x14 */ u32 unk14;
     /* 0x18 */ u32 actorData[8]; //Cast this array to struct in actor
     /* 0x38 */ f32 scale;
@@ -74,10 +74,11 @@ typedef struct Actor {
     /* 0x70 */ u32 pad70_16: 16;
     /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10
     /* 0x70 */ u32 pad70_0: 10;
-    /* 0x74 */ u32 pad74_31 : 1;
+    /* 0x74 */ u32 unk74_31 : 1;
     /* 0x74 */ u32 unk74_30 : 1; // unk74 & 0x40000000
     /* 0x74 */ u32 unk74_29 : 1; // unk74 & 0x20000000
-    /* 0x74 */ u32 pad74_18 : 11;
+    /* 0x74 */ u32 unk74_28 : 1;
+    /* 0x74 */ u32 pad74_18 : 10;
     /* 0x74 */ u32 unk74_17 : 1;
     /* 0x74 */ u32 pad74_16 : 1;
     /* 0x74 */ u32 unk74_7 : 9; // unk76 >> 7

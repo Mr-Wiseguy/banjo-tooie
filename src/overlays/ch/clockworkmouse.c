@@ -689,9 +689,9 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
         break;
     case 2:
         if (actor->unk64_19) {
-            prop = _gccubesearch_entrypoint_0(0x201, actor);
+            prop = _gccubesearch_entrypoint_0(PROP_201_CHEATOPAGE_SPAWN, actor);
         } else {
-            prop = _gccubesearch_entrypoint_0(0x1F6, actor);
+            prop = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, actor);
         }
         func_800EE88C(&sp24->unk114, prop->position);
         if ((actor->unk64_19) && (func_80800090_chclockworkmouse() == 2)) {
