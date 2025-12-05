@@ -599,24 +599,24 @@ s32 func_800D0CC8(s32 arg0)
 }
 
 
-s32 func_800D0CE0(s32 arg0, u32 arg1, u32 arg2, s32* arg3)
+Actor* func_800D0CE0(PropId arg0, u32 arg1, u32 spawnStyle, s32* arg3)
 {
     *arg3 = 0;
-    switch (arg2)
+    switch (spawnStyle)
     {
-    case 0:
+    case 0: //Random Low Velocity
         return _chbounce_entrypoint_7(0x1C, arg1, arg0);
-    case 1:
+    case 1: //Small Bounce
         return _chbounce_entrypoint_7(0x1D, arg1, arg0);
-    case 4:
+    case 4: //CCW
         return _chbounce_entrypoint_7(0x1E, arg1, arg0);
     case 3:
         *arg3 = 1;
-    case 2:
+    case 2: //Spin CCW
         return func_80108474(arg0, arg1, 0);
-    case 5:
+    case 5: //High Velocity
         return _chbounce_entrypoint_7(0x1F, arg1, arg0);
-    case 6:
+    case 6: //Random High Velocity
         return _chbounce_entrypoint_7(0x20, arg1, arg0);
     default:
         return 0;
@@ -624,55 +624,55 @@ s32 func_800D0CE0(s32 arg0, u32 arg1, u32 arg2, s32* arg3)
 }
 
 
-Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 arg2, u16* arg3)
+Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
 {
-    s32 temp;
-    s32 temp2;
+    s32 itemType;
+    s32 itemFlag;
     Actor* sp2C;
     s32 sp28;
 
-    temp2 = (arg0 >> 0x10) & 0xFFFF;
-    temp = arg0 & 0xFFFF;
-    switch (temp)
+    itemFlag = (arg0 >> 0x10) & 0xFFFF;
+    itemType = arg0 & 0xFFFF;
+    switch (itemType)
     {
     case 1:
-        sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             func_8010108C(sp2C, 0x14, 1);
         }
-        func_800D05E4(temp2, temp, sp2C->unk0);
+        func_800D05E4(itemFlag, itemType, sp2C->unk0);
         break;
     case 0:
-        sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             func_8010108C(sp2C, 0x14, 1);
         }
         break;
     case 4:
-        sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             func_8010108C(sp2C, 0x14, 1);
         }
         break;
     case 2:
-        sp2C = func_800D0CE0(PROP_220_HONEYCOMB_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_220_HONEYCOMB_REAL, arg1, spawnStyle, &sp28);
         break;
     case 3:
-        sp2C = func_800D0CE0(PROP_21B_GLOWBO_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_21B_GLOWBO_REAL, arg1, spawnStyle, &sp28);
         break;
     case 7:
-        sp2C = func_800D0CE0(PROP_4E5_DOUBLOON_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_4E5_DOUBLOON_REAL, arg1, spawnStyle, &sp28);
         break;
     case 8:
-        sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, arg2, &sp28);
+        sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
         break;
     default:
         break;
     }
-    func_800CFBC8(sp2C, temp2, temp, 0);
+    func_800CFBC8(sp2C, itemFlag, itemType, 0);
     if ((arg3 != NULL) && (arg3[12] & 1))
     {
         func_80101074(sp2C->unk0);
@@ -688,7 +688,6 @@ void func_800D0F9C(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, s32 arg5)
     sp18[0] = (f32)x;
     sp18[1] = (f32)y;
     sp18[2] = (f32)z;
-    //Spawn Style 0 Random Low Velocity, 1 Small Bounce, 2 Spin CCW, 3 Spin CW, 4 CCW, 5 Set High Velocity, 6 Random High Velocity
     func_800D0DAC(arg0, sp18, spawnStyle, arg5);
 }
 
