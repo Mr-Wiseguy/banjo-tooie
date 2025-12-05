@@ -31,4 +31,8 @@ struct Overlay {
     u8 data[1]; // Variable length
 };
 
+void func_800819B4(void*);
+s32 func_80081D34(u32*);
+s32 func_80081D80(s32);
+
 #endif

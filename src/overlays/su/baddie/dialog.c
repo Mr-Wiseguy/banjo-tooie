@@ -504,7 +504,7 @@ s32 func_808010C8_subaddiedialog(Actor* a0, s32 arg1, s32 arg2)
 {
     if (arg1 < 0)
     {
-        arg1 = func_8010108C(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF), arg1);
+        arg1 = func_8010108C(a0, 0xB8, (arg2 << 0x10) | (-arg1 & 0xFFFF));
     }
     return arg1;
 }

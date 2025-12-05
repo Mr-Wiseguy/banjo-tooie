@@ -96,7 +96,7 @@ void gccollectDll_entrypoint_4(void)
         for (iterator = temp_v0; iterator < temp_v0 + 0xA; iterator++)
         {
             func_800D0778(iterator, 1, D_80800C0C_gccollectDll);
-            func_800D05E4(iterator, 1, 0);
+            func_800D05E4(iterator, 1, NULL);
             func_800D0594(iterator, 1, 0);
         }
         //If we are not in a cutscene
@@ -140,7 +140,7 @@ void func_808005BC_gccollectDll(u32 arg0, Prop* arg1)
     sp18[2] = (s32)arg1->position[2];
     sp24 = func_80108C90(0x21F, sp18, 0U, NULL);
     func_800D053C(arg0, 1);
-    func_800D05E4((s32)arg0, 1, (s32)sp24->unk0);
+    func_800D05E4((s32)arg0, 1, sp24->unk0);
     func_800CFBC8(sp24, arg0, 1, 0);
     if ((_glreflight_entrypoint_0() & 0xFF) != 0xFE) 
     {
@@ -229,25 +229,25 @@ void gccollectDll_entrypoint_8(s16* arg0)
                 var_s2 = NULL;
                 switch (temp_v0_2)
                 {
-                case 0x1F5:
+                case PROP_1F5_JINJO_SPAWN:
                     var_s0 = 0;
                     break;
-                case 0x1F6:                     /* switch 3 */
+                case PROP_1F6_JIGGY_SPAWN:                     /* switch 3 */
                     var_s0 = 1;
                     break;
-                case 0x1F7:                     /* switch 3 */
+                case PROP_1F7_HONEYCOMB_SPAWN:                     /* switch 3 */
                     var_s0 = 2;
                     break;
-                case 0x1F8:                     /* switch 3 */
+                case PROP_1F8_GLOWBO_SPAWN:                     /* switch 3 */
                     var_s0 = 3;
                     break;
-                case 0x201:                     /* switch 3 */
+                case PROP_201_CHEATOPAGE_SPAWN:                     /* switch 3 */
                     var_s0 = 4;
                     break;
-                case 0x29D:                     /* switch 3 */
+                case PROP_29D_DOUBLOON_SPAWN:                     /* switch 3 */
                     var_s0 = 7;
                     break;
-                case 0x4E6:                     /* switch 3 */
+                case PROP_4E6_TICKET_SPAWN:                     /* switch 3 */
                     var_s0 = 8;
                     break;
                 default:

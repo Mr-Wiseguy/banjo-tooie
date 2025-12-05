@@ -16,5 +16,5 @@ s32 func_800DA9E4(GameFlag, s32);
 void func_800DA0B4();
 void func_800DA0D8();
 void func_800DA188();
-
+s32 func_800DAC78(u8*, s32);
 #endif

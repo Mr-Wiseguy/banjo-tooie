@@ -2,6 +2,7 @@
 #define __GC_COLLECT_DLL_H__
 
 #include "common.h"
+#include "props.h"
 #include "gc/gamefix.h"
 #include "gl/reflight.h"
 

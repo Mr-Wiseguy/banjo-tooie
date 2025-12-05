@@ -593,6 +593,8 @@ segments:
       - [0x1EFE3C0, rodata]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]
+      - [0x1EFF2C0, .rodata, 1EA9160]
+      - [0x1EFF3D0, rodata]
       - [0x1EFF620, .rodata, 1EB45C0]
       - [0x1EFF640, rodata]
       - [0x1F00020, .bss, ../../src/core2/core2bss1]

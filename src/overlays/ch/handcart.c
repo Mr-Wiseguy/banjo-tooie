@@ -1060,11 +1060,11 @@ void func_80802120_chhandcart(Actor* arg0)
         case 2:
             if (arg0->unk64_19)
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x201, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_201_CHEATOPAGE_SPAWN, arg0);
             }
             else
             {
-                var_v0_2 = _gccubesearch_entrypoint_0(0x1F6, arg0);
+                var_v0_2 = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, arg0);
             }
             func_800EE88C(sp34->rewardSpawn, var_v0_2->position);
             func_80802068_chhandcart(arg0, arg0->unk64_19);
