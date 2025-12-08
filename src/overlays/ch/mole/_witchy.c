@@ -1,9 +1,48 @@
 #include "ch/mole.h"
 
-extern MoveData D_808000C0_chmole_witchy[];
-extern D_808000D0 D_808000F0_chmole_witchy;
 
-void func_80800000_chmole_witchy(Actor* a0, u32 a1, u32 a2)
+void func_80800000_chmole_witchy(Actor*, s32, s32);
+void func_80800024_chmole_witchy(Actor*);
+void func_80800090_chmole_witchy(Actor*);
+
+MoveData D_808000C0_chmole_witchy[] = 
+{
+	{ALLOW_BK,0xD63,0xD64,0xD65,0x1B,0xFF,0xB4,0x05,0x0},
+	{ALLOW_BK,0xD66,0xD67,0xD68,0x1C,0xFF,0xA0,0x06,0x0},
+	{ALLOW_BANJO,0xD69,0xD6A,0xD6B,0x29,0xFF,0xAA,0x7,0x0}
+};
+ActorData D_808000F0_chmole_witchy =
+{
+	/*0x0*/ 0x02EA,
+	/*0x2*/ 0x0182,
+	/*0x4*/ 0x0000,
+	/*0x6*/ 0x0001,
+	/*0x8*/ 0x00000000,
+	/*0xC*/ func_80800090_chmole_witchy,
+	/*0x10*/ 0x00000000,
+	/*0x14*/ func_8010A730,
+	/*0x18*/ 0x01F4,
+	/*0x1A*/ 0x0000,
+	/*0x1C*/ 0x00000000,
+	/*0x20*/ 0x0000,
+	/*0x22*/ 0x0000,
+	/*0x24*/ 0x0008,
+	/*0x26*/ 0x0004,
+	/*0x28*/ 0x00000000,
+	/*0x2C*/ 0x00000000,
+	/*0x30*/ 0x0000,
+	/*0x32*/ 0x0000,
+	/*0x34*/ func_80800024_chmole_witchy,
+	/*0x38*/ func_80107C2C,
+	/*0x3C*/ 0x8000,
+	/*0x3E*/ 0x2202,
+	/*0x40*/ func_80800000_chmole_witchy,
+	/*0x44*/ 0x0000,
+	/*0x46*/ 0x0000,
+	/*0x48*/ 0x00000000
+};
+
+void func_80800000_chmole_witchy(Actor* a0, s32 a1, s32 a2)
 {
 	_sumole_entrypoint_3(a0, a1, a2, D_808000C0_chmole_witchy);
 }
@@ -20,7 +59,7 @@ void func_80800090_chmole_witchy(Actor* a0)
 	_sumole_entrypoint_4(a0, D_808000C0_chmole_witchy);
 }
 
-void* chmole_witchy_entrypoint_0()
+ActorData* chmole_witchy_entrypoint_0()
 {
 	return &D_808000F0_chmole_witchy;
 }

@@ -2,7 +2,7 @@
 
 extern s32 D_80800150_chlavaentrydoor;
 extern s32 D_80800190_chlavaentrydoor;
-extern u32 D_808001A4_chlavaentrydoor;
+extern ActorData D_808001A4_chlavaentrydoor;
 
 s32 func_80800000_chlavaentrydoor(Actor* arg0, s32 arg1, s32 arg2)
 {
@@ -41,6 +41,6 @@ void func_808000CC_chlavaentrydoor(Actor* arg0)
     }
 }
 
-void* chlavaentrydoor_entrypoint_0(void) {
+ActorData* chlavaentrydoor_entrypoint_0(void) {
     return &D_808001A4_chlavaentrydoor;
 }

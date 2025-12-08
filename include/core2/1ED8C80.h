@@ -12,11 +12,6 @@ void* func_80100094(Actor*, u32);
 s32 func_801000D8(Actor*, s32, s32);
 void func_80100120(Actor*);
 
-typedef s32(*callback)(Actor*, s32, s32);
-typedef struct {
-    u8 pad0[0x40];
-    callback unk40;
-} UnkFunc80100368;
-UnkFunc80100368* func_80100368(Actor*);
+ActorData* func_80100368(Actor*);
 
 #endif

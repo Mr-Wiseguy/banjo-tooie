@@ -6,7 +6,7 @@ extern f32 func_80013970(f32);
 extern f32 func_800138D0(f32);
 extern BubbleWarpData D_80800C20_chbubbleelevator[2];
 extern u32 D_80800C50_chbubbleelevator[2];
-extern u32 D_80800C58_chbubbleelevator;
+extern ActorData D_80800C58_chbubbleelevator;
 
 //Setup
 void func_80800000_chbubbleelevator(Actor* arg0)
@@ -338,7 +338,7 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
     }
 }
 
-u32* chbubbleelevator_entrypoint_0(void)
+ActorData* chbubbleelevator_entrypoint_0(void)
 {
     return &D_80800C58_chbubbleelevator;
 }

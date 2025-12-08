@@ -1178,7 +1178,7 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     }
 }
 
-void* chhandcart_entrypoint_0(void) 
+ActorData* chhandcart_entrypoint_0(void) 
 {
     return &D_80804DC4_chhandcart;
 }
@@ -2125,7 +2125,7 @@ void chhandcart_entrypoint_1(Actor* arg0)
     func_80101F24(func_80106790((Unk80132ED0*)arg0));
 }
 
-void* chhandcart_entrypoint_2(void) 
+ActorData* chhandcart_entrypoint_2(void) 
 {
     return &D_80804E6C_chhandcart;
 }

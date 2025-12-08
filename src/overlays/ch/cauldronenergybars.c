@@ -3,7 +3,7 @@
 #define CAULDRONENERGYBARS_DATA(arg0) ((CauldronEnergyBarsData*)(arg0->actorData))
 
 extern s32 D_808002C0_chcauldronenergybars;
-extern s32 D_808002D4_chcauldronenergybars;
+extern ActorData D_808002D4_chcauldronenergybars;
 
 void func_80800000_chcauldronenergybars(Actor* arg0)
 {
@@ -97,7 +97,7 @@ s32 func_808001C4_chcauldronenergybars(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-s32* chcauldronenergybars_entrypoint_0(void)
+ActorData* chcauldronenergybars_entrypoint_0(void)
 {
     return &D_808002D4_chcauldronenergybars;
 }

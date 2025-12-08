@@ -4,7 +4,7 @@
 
 extern u8 D_8012762C;
 
-extern u32 D_808012FC_chwarppad;
+extern ActorData D_808012FC_chwarppad;
 extern f32 D_8080134C_chwarppad[3];
 extern u8 D_80801080_chwarppad[0x20];
 extern D_808010A0 D_808010A0_chwarppad[4];
@@ -12,7 +12,7 @@ extern D_808010B0 D_808010B0_chwarppad[31];
 extern u32 D_80801344_chwarppad;
 extern u32 _gcnewoption_entrypoint_35;
 
-u32* chwarppad_entrypoint_0(void) {
+ActorData* chwarppad_entrypoint_0(void) {
     return &D_808012FC_chwarppad;
 }
 

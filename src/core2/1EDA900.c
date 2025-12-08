@@ -34,7 +34,7 @@ s32 func_8010108C(Actor* arg0, s32 arg1, s32 arg2)
         {
             sp24 = 0;
         }
-        sp28 = (func_80100368(arg0))->unk40(arg0, arg1, arg2);
+        sp28 = (func_80100368(arg0))->unk40_func(arg0, arg1, arg2);
         if ((sp20 != 0) && (sp24 == 0) && (sp28 <= 0))
         {
             func_800819B4(arg0->pointerToSyscallEntry);

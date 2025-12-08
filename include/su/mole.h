@@ -37,6 +37,7 @@
 #include "core2/1EDCA30.h"
 #include "core2/1EDFED0.h"
 #include "core2/1EE1510.h"
+#include "core2/1EE4020.h"
 #include "core2/1EE5DF0.h"
 
 typedef struct {
@@ -56,12 +57,12 @@ typedef struct {
 	s8 AbilityToLearn;
 	u8 unk11;
 	u16 price;
-	u8 unkE;
-	u8 TitleToShow;
+	u8 titleToShow;
+	u8 unkF;
 } MoveData;
 void _sumole_entrypoint_0(Actor*, u32);
 void sumole_entrypoint_2(Actor*, s32);
-void _sumole_entrypoint_3(Actor*, u32, u32, MoveData*);
+void _sumole_entrypoint_3(Actor*, s32, s32, MoveData*);
 void _sumole_entrypoint_4(Actor*, MoveData*);
 s32 sumole_entrypoint_5(Actor*, s32, AllowedTransformation, s32);
 void sumole_entrypoint_7(Actor*);

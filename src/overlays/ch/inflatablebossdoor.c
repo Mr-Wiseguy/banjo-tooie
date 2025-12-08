@@ -1,8 +1,8 @@
 #include "ch/inflatablebossdoor.h"
 
-extern s32 D_80800140_chinflatablebossdoor;
+extern ActorData D_80800140_chinflatablebossdoor;
 
-s32* chinflatablebossdoor_entrypoint_0(void)
+ActorData* chinflatablebossdoor_entrypoint_0(void)
 {
     return &D_80800140_chinflatablebossdoor;
 }

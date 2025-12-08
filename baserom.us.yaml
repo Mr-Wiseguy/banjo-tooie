@@ -8085,15 +8085,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02038980
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02038980, c, _mine]
-      - [0x02038A40, .rodata, _mine]
-      - [0x02038A40, data, _mine]
-      - [0x02038AB0, bss, _mine]
+      - [auto, c, _mine]
   - name: chmole_training_header
     dir: overlays/chmole_training
     type: bin
@@ -8465,15 +8459,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02055370
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02055370, c, _witchy]
-      - [0x02055430, .rodata, _witchy]
-      - [0x02055430, data, _witchy]
-      - [0x020554B0, bss, _witchy]
+      - [auto, c, _witchy]
   - name: chsounder_header
     dir: overlays/chsounder
     type: bin
@@ -8674,15 +8662,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02063630
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02063630, c, honeycarrier]
-      - [0x02063A00, .rodata, honeycarrier]
-      - [0x02063A10, data, honeycarrier]
-      - [0x02063A70, bss, honeycarrier]
+      - [auto, c, honeycarrier]
   - name: chjujubagfx_header
     dir: overlays/chjujubagfx
     type: bin
@@ -8940,15 +8922,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02076120
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02076120, c, _lagoon]
-      - [0x020761E0, .rodata, _lagoon]
-      - [0x020761E0, data, _lagoon]
-      - [0x02076260, bss, _lagoon]
+      - [auto, c, _lagoon]
   - name: chmole_overworld_header
     dir: overlays/chmole_overworld
     type: bin
@@ -9168,15 +9144,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02082090
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02082090, c, _hailfire]
-      - [0x02082150, .rodata, _hailfire]
-      - [0x02082150, data, _hailfire]
-      - [0x020821C0, bss, _hailfire]
+      - [auto, c, _hailfire]
   - name: chmole_factory_header
     dir: overlays/chmole_factory
     type: bin
@@ -9206,15 +9176,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020823C0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020823C0, c, _prehist]
-      - [0x02082480, .rodata, _prehist]
-      - [0x02082480, data, _prehist]
-      - [0x02082500, bss, _prehist]
+      - [auto, c, _prehist]
   - name: chcollballcontrol_header
     dir: overlays/chcollballcontrol
     type: bin
@@ -9263,15 +9227,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02087CF0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02087CF0, c, _cuckoo]
-      - [0x02087DB0, .rodata, _cuckoo]
-      - [0x02087DB0, data, _cuckoo]
-      - [0x02087E10, bss, _cuckoo]
+      - [auto, c, _cuckoo]
   - name: chdragonbrothers_header
     dir: overlays/chdragonbrothers
     type: bin

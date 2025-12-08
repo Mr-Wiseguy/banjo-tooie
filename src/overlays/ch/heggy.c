@@ -4,10 +4,10 @@ extern s32 D_80801E08_chheggy;
 extern s32 D_80801E38_chheggy;
 extern s32 D_80801E60_chheggy;
 extern u32 D_80801E8C_chheggy;
-extern s32 D_80801E9C_chheggy;
+extern ActorData D_80801E9C_chheggy;
 extern s32 D_80801EE4_chheggy[14];
 extern s32 D_80801F1C_chheggy[15];
-extern s32 D_80801F58_chheggy;
+extern ActorData D_80801F58_chheggy;
 
 extern void* func_8010D5DC;
 
@@ -690,7 +690,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     }
 }
 
-s32* chheggy_entrypoint_0(void) 
+ActorData* chheggy_entrypoint_0(void)
 {
     return &D_80801E9C_chheggy;
 }
@@ -742,7 +742,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     return 0;
 }
 
-s32* chheggy_entrypoint_1(void) 
+ActorData* chheggy_entrypoint_1(void) 
 {
     return &D_80801F58_chheggy;
 }

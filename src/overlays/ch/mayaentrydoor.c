@@ -1,6 +1,6 @@
 #include "ch/mayaentrydoor.h"
 
-extern u32 D_808000E0_chmayaentrydoor;
+extern ActorData D_808000E0_chmayaentrydoor;
 
 void func_80800000_chmayaentrydoor(Unk80800000MayaEntryDoor* arg0)
 {
@@ -24,6 +24,6 @@ void func_80800000_chmayaentrydoor(Unk80800000MayaEntryDoor* arg0)
     _chdoormake_entrypoint_5(arg0, 0);
 }
 
-void* chmayaentrydoor_entrypoint_0(void) {
+ActorData* chmayaentrydoor_entrypoint_0(void) {
     return &D_808000E0_chmayaentrydoor;
 }

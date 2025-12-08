@@ -67,7 +67,7 @@ u32* func_80100074(Actor* a0, u32 a1, u32 a2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_801002C0.s")
 
-UnkFunc80100368* func_80100368(Actor* arg0)
+ActorData* func_80100368(Actor* arg0)
 {
     return (*arg0->pointerToSyscallEntry)();
 }

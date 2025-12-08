@@ -21,9 +21,9 @@ extern s32 D_80136ED8;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_8010573C.s")
 
-void func_80105834()
+void func_80105834(Actor* a0)
 {
-    func_801054D4();
+    func_801054D4(a0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105854.s")
