@@ -1,6 +1,1946 @@
 #include "ge/markersDll.h"
 
-extern s32* D_80800090_gemarkersDll[490];
+typedef ActorData*(*GetActorData)();
+
+ActorData* _chjamjarsdummy_entrypoint_0();
+ActorData* _chjadesnake_entrypoint_0();
+ActorData* _chgoldsnakehead_entrypoint_0();
+ActorData* _chgoldsnakehead_entrypoint_1();
+ActorData* _chbilldrillboulder_entrypoint_0();
+ActorData* _chcoderoomdoor_entrypoint_0();
+ActorData* _chwallsnakebaddy_entrypoint_0();
+ActorData* _chwarriorbaddy_entrypoint_0();
+ActorData* _chstonedartgunhead_entrypoint_0();
+ActorData* _chfriendlystonehead_entrypoint_0();
+ActorData* _chamazongoldhordeofficial_entrypoint_0();
+ActorData* _chamazonstadiumguard_entrypoint_0();
+ActorData* _chprisonbits_entrypoint_4();
+ActorData* _chboilerboss_entrypoint_0();
+ActorData* _chtntbox_entrypoint_0();
+ActorData* _chnewshovel_entrypoint_0();
+ActorData* _chwaterfallgrill_entrypoint_1();
+ActorData* _chwaterfallgrillswitch_entrypoint_0();
+ActorData* _chprisonbits_entrypoint_0();
+ActorData* _chprisonbits_entrypoint_1();
+ActorData* _chprisonbits_entrypoint_2();
+ActorData* _chprisonbits_entrypoint_3();
+ActorData* _chstonedartgunhead_entrypoint_1();
+ActorData* _chweldarbossfireball_entrypoint_0();
+ActorData* _chgate1doors_entrypoint_0();
+ActorData* _chgate1doors_entrypoint_1();
+ActorData* _chtemplebrokendoorpiece_entrypoint_0();
+ActorData* _chcrackarchwall_entrypoint_0();
+ActorData* _chlightdemon_entrypoint_0();
+ActorData* _chstonepillar_entrypoint_0();
+ActorData* _chstonepillar_entrypoint_1();
+ActorData* _chdinoswitches_entrypoint_0();
+ActorData* _chdiggerground_entrypoint_0();
+ActorData* _chdiggergroundgen_entrypoint_0();
+ActorData* _chdiggerfly_entrypoint_0();
+ActorData* _chdiggerfly_entrypoint_1();
+ActorData* _chcheato_entrypoint_0();
+ActorData* _chcheatopage_entrypoint_0();
+ActorData* _chgobiwitchy_entrypoint_0();
+ActorData* _chbabydino_entrypoint_0();
+ActorData* _chcactusofstrength_entrypoint_0();
+ActorData* _chcactusofstrength_entrypoint_2();
+ActorData* _chcactusofstrength_entrypoint_1();
+ActorData* _chinflatableboss_entrypoint_0();
+ActorData* _chballoonbomb_entrypoint_0();
+ActorData* _chboxingglove_entrypoint_0();
+ActorData* _chmrsboggy_entrypoint_0();
+ActorData* _chboggyboy_entrypoint_0();
+ActorData* _chboggygirl_entrypoint_0();
+ActorData* _chboggyfatboy_entrypoint_1();
+ActorData* _chmineprospector_entrypoint_0();
+ActorData* _chonearmbandit_entrypoint_0();
+ActorData* _chtntblockage_entrypoint_0();
+ActorData* _chweldarhead_entrypoint_0();
+ActorData* _chkingjinjo_entrypoint_1();
+ActorData* _chcamerawibble_entrypoint_0();
+ActorData* _chtntdetonator_entrypoint_0();
+ActorData* _chtnthut_entrypoint_0();
+ActorData* _chtntminecelldoor_entrypoint_0();
+ActorData* _chcaveofhorrorsdoors_entrypoint_0();
+ActorData* _chbanjoctrl_entrypoint_0();
+ActorData* _chscorepoints_entrypoint_0();
+ActorData* _chmadamegrunty_entrypoint_0();
+ActorData* _chhillbilly_entrypoint_0();
+ActorData* _chmineprospector_entrypoint_1();
+ActorData* _chmineprospector_entrypoint_2();
+ActorData* _chevilspirit_entrypoint_0();
+ActorData* _chstoneballcontrol_entrypoint_2();
+ActorData* _chpodiumbankaz_entrypoint_1();
+ActorData* _chpodiumbankaz_entrypoint_0();
+ActorData* _chswappy_entrypoint_1();
+ActorData* _cheggnormal_entrypoint_0();
+ActorData* _cheggfire_entrypoint_0();
+ActorData* _cheggice_entrypoint_0();
+ActorData* _chegggrenade_entrypoint_1();
+ActorData* _cheggclockwork_entrypoint_0();
+ActorData* _chegggolden_entrypoint_0();
+ActorData* _cheggproximity_entrypoint_0();
+ActorData* _chlaundry_entrypoint_0();
+ActorData* _chgoldstatue_entrypoint_0();
+ActorData* _chwandglow_entrypoint_3();
+ActorData* _chfaircoinbox_entrypoint_2();
+ActorData* _chfaircoin_entrypoint_1();
+ActorData* _chtorpedo_entrypoint_1();
+ActorData* _chping_entrypoint_1();
+ActorData* _chfootwear_entrypoint_3();
+ActorData* _chclimbbase_entrypoint_1();
+ActorData* _chstinger_entrypoint_1();
+ActorData* _chfactoryworkerdirty_entrypoint_0();
+ActorData* _chclockworkmouse_entrypoint_0();
+ActorData* _chstadiumdoors_entrypoint_0();
+ActorData* _chstoneballcoach_entrypoint_0();
+ActorData* _chcredits_entrypoint_2();
+ActorData* _chsounder_entrypoint_0();
+ActorData* _chcanarymarycage_entrypoint_0();
+ActorData* _chfog_entrypoint_0();
+ActorData* _chcrusher_entrypoint_0();
+ActorData* _chcrusher_entrypoint_2();
+ActorData* _chcrusher_entrypoint_1();
+ActorData* _chcrusher_entrypoint_3();
+ActorData* _chcrusherboulder_entrypoint_0();
+ActorData* _chjigsawbitcont_entrypoint_1();
+ActorData* _chjigsawbitcont_entrypoint_0();
+ActorData* _chmole_witchy_entrypoint_0();
+ActorData* _chmole_hailfire_entrypoint_0();
+ActorData* _chmole_factory_entrypoint_0();
+ActorData* _chmole_prehist_entrypoint_0();
+ActorData* _chcheatomenu_entrypoint_0();
+ActorData* _chmoley_entrypoint_2();
+ActorData* _chnewmumbo_entrypoint_1();
+ActorData* _chhoney_entrypoint_1();
+ActorData* _chhoney_entrypoint_2();
+ActorData* _chsignpost_entrypoint_0();
+ActorData* _chbadbeehive_entrypoint_0();
+ActorData* _chmayafarmer_entrypoint_0();
+ActorData* _chbadjinjo_entrypoint_0();
+ActorData* _chsilo_entrypoint_0();
+ActorData* _chcollballcontrol_entrypoint_0();
+ActorData* _chcollballcontrol_entrypoint_5();
+ActorData* _chintrocam_entrypoint_0();
+ActorData* _chcollballcontrol_entrypoint_2();
+ActorData* _chcollballcontrol_entrypoint_4();
+ActorData* _chcollballcontrol_entrypoint_3();
+ActorData* _chcolldoors_entrypoint_0();
+ActorData* _chmusicmenu_entrypoint_0();
+ActorData* _chmole_maya_entrypoint_0();
+ActorData* _chmole_mine_entrypoint_0();
+ActorData* _chmole_training_entrypoint_1();
+ActorData* _chfiregen_entrypoint_0();
+ActorData* _chfiregen_entrypoint_6();
+ActorData* _chfiregen_entrypoint_1();
+ActorData* _chfiregen_entrypoint_7();
+ActorData* _chfiregen_entrypoint_2();
+ActorData* _chfiregen_entrypoint_8();
+ActorData* _chfiregen_entrypoint_3();
+ActorData* _chfiregen_entrypoint_9();
+ActorData* _chfiregen_entrypoint_4();
+ActorData* _chfiregen_entrypoint_10();
+ActorData* _chfiregen_entrypoint_5();
+ActorData* _chfiregen_entrypoint_11();
+ActorData* _chstoneballcontrol_entrypoint_5();
+ActorData* _chstoneballcontrol_entrypoint_0();
+ActorData* _chstoneballcontrol_entrypoint_3();
+ActorData* _chwaterfallfx_entrypoint_0();
+ActorData* _chidgoldhorde_entrypoint_0();
+ActorData* _chfishshootgame_entrypoint_0();
+ActorData* _chfishshootgame_entrypoint_1();
+ActorData* _chlagoonufoext_entrypoint_0();
+ActorData* _chlagoonufoint_entrypoint_1();
+ActorData* _chlagoonufoint_entrypoint_4();
+ActorData* _chlagoonufoint_entrypoint_0();
+ActorData* _chlagoonufoint_entrypoint_2();
+ActorData* _chlagoonufoint_entrypoint_3();
+ActorData* _chnests_entrypoint_0();
+ActorData* _chnests_entrypoint_1();
+ActorData* _chnests_entrypoint_2();
+ActorData* _chnests_entrypoint_3();
+ActorData* _chnests_entrypoint_4();
+ActorData* _chnests_entrypoint_5();
+ActorData* _chnests_entrypoint_7();
+ActorData* _chnests_entrypoint_8();
+ActorData* _chfishshootgame_entrypoint_2();
+ActorData* _chbanjocurrent_entrypoint_0();
+ActorData* _chbanjocurrent_entrypoint_1();
+ActorData* _chnests_entrypoint_9();
+ActorData* _chnests_entrypoint_10();
+ActorData* _chpickups_entrypoint_0();
+ActorData* _chnastycavemen_entrypoint_0();
+ActorData* _chnastycavemen_entrypoint_1();
+ActorData* _chcamwaypoint_entrypoint_0();
+ActorData* _chjiggygamenew_entrypoint_4();
+ActorData* _chjiggygamenew_entrypoint_0();
+ActorData* _chlightdemon_entrypoint_1();
+ActorData* _chmasterjiggy_entrypoint_0();
+ActorData* _chjiggygamenew_entrypoint_3();
+ActorData* _chwaspnestgame_entrypoint_0();
+ActorData* _chwaspnestgame_entrypoint_1();
+ActorData* _chwarppad_entrypoint_0();
+ActorData* _chjiggytemple_entrypoint_0();
+ActorData* _chjiggytemple_entrypoint_1();
+ActorData* _chscreenadjust_entrypoint_0();
+ActorData* _chnests_entrypoint_11();
+ActorData* _chquicksandbaddy_entrypoint_1();
+ActorData* _chcrate_entrypoint_0();
+ActorData* _chjinjo_entrypoint_5();
+ActorData* _chclimbbase_entrypoint_0();
+ActorData* _chsabreman_entrypoint_3();
+ActorData* _chexploder_entrypoint_0();
+ActorData* _chtntbox_entrypoint_1();
+ActorData* _chmumbopadstatue_entrypoint_0();
+ActorData* _chdiggerboss_entrypoint_1();
+ActorData* _chweather_entrypoint_0();
+ActorData* _chweather_entrypoint_1();
+ActorData* _chweather_entrypoint_2();
+ActorData* _chweather_entrypoint_3();
+ActorData* _chweather_entrypoint_4();
+ActorData* _chweather_entrypoint_5();
+ActorData* _chweather_entrypoint_6();
+ActorData* _chweather_entrypoint_7();
+ActorData* _chshockjump_entrypoint_0();
+ActorData* _chbeehive_entrypoint_0();
+ActorData* _chzubba_entrypoint_0();
+ActorData* func_800A7168();
+ActorData* _chquizremotectrl_entrypoint_0();
+ActorData* _chfootwear_entrypoint_0();
+ActorData* _chglowbo_entrypoint_0();
+ActorData* _chjigsaw_entrypoint_0();
+ActorData* _chhoneycarrier_entrypoint_0();
+ActorData* _chboilerboss_entrypoint_1();
+ActorData* _chboilerboss_entrypoint_2();
+ActorData* _chboilerboss_entrypoint_3();
+ActorData* _chhoney_entrypoint_0();
+ActorData* _chjigsawdance_entrypoint_2();
+ActorData* _chfootwear_entrypoint_1();
+ActorData* _chshockjump_entrypoint_1();
+ActorData* _chfactoryworkerwear_entrypoint_0();
+ActorData* _chbadshad_entrypoint_0();
+ActorData* _chlavaslabswitch_entrypoint_0();
+ActorData* _chmolehill_entrypoint_6();
+ActorData* _chmineproplight_entrypoint_0();
+ActorData* _chlavaslab_entrypoint_0();
+ActorData* _chusefeather_entrypoint_2();
+ActorData* _chusefeather_entrypoint_3();
+ActorData* _chlavacolumnswitch_entrypoint_0();
+ActorData* _chlavacolumns_entrypoint_0();
+ActorData* _chmumboskullfakearchpanellava_entrypoint_0();
+ActorData* _chlavatraindoor_entrypoint_0();
+ActorData* _chlavatraindoorswitch_entrypoint_0();
+ActorData* _chlavaarchgrillswitch_entrypoint_0();
+ActorData* _chlavaarchgrill_entrypoint_0();
+ActorData* _chfirefx_entrypoint_1();
+ActorData* _chfactoryroofbits_entrypoint_0();
+ActorData* _chfactorybattery_entrypoint_1();
+ActorData* _chwumbawigwam_entrypoint_0();
+ActorData* _chswampplatform_entrypoint_0();
+ActorData* _chsmalltrexdoor_entrypoint_0();
+ActorData* _chdinofamilymother_entrypoint_0();
+ActorData* _chdinofamilysick_entrypoint_1();
+ActorData* _chdinofamilysmall_entrypoint_0();
+ActorData* _chdinofamilymissing_entrypoint_0();
+ActorData* _chcaptainblubber_entrypoint_0();
+ActorData* _chtransparentfish_entrypoint_0();
+ActorData* _chsunlightspell_entrypoint_0();
+ActorData* _chdummyjigsaw_entrypoint_0();
+ActorData* _chpufferfish_entrypoint_0();
+ActorData* _chlinkpipefan_entrypoint_1();
+ActorData* _chstoneballcontrol_entrypoint_4();
+ActorData* _chglowbo_entrypoint_1();
+ActorData* _chglowbo_entrypoint_3();
+ActorData* _chhumba_entrypoint_0();
+ActorData* _chflysaucer_entrypoint_1();
+ActorData* _chflysaucercrate_entrypoint_0();
+ActorData* _chflysaucer_entrypoint_2();
+ActorData* _chchuffy_entrypoint_0();
+ActorData* _chchuffycont_entrypoint_2();
+ActorData* _chfiregen_entrypoint_12();
+ActorData* _chfiregen_entrypoint_13();
+ActorData* _chfiregen_entrypoint_14();
+ActorData* _chfiregen_entrypoint_15();
+ActorData* _chfiregen_entrypoint_16();
+ActorData* _chfiregen_entrypoint_17();
+ActorData* _chstatictorch_entrypoint_0();
+ActorData* _chfloorbubbles_entrypoint_0();
+ActorData* _chmumbopad_entrypoint_1();
+ActorData* _cheggsplode_entrypoint_0();
+ActorData* _chjadestatue_entrypoint_0();
+ActorData* _chtemplebossdoor_entrypoint_0();
+ActorData* _chtemplelobbydoor_entrypoint_0();
+ActorData* _chtempleinternaldoor_entrypoint_0();
+ActorData* _chnests_entrypoint_6();
+ActorData* _chminelobbydoor_entrypoint_0();
+ActorData* _chtransparencypot_entrypoint_0();
+ActorData* _chtntmineshoot_entrypoint_1();
+ActorData* _chtntmineshoot_entrypoint_2();
+ActorData* _chtntmineshoot_entrypoint_0();
+ActorData* _chclinker_entrypoint_1();
+ActorData* _chclinker_entrypoint_2();
+ActorData* _chclinker_entrypoint_0();
+ActorData* _chfactorylobbydoor_entrypoint_0();
+ActorData* _chtntmineshoot_entrypoint_3();
+ActorData* _chfpsgame_entrypoint_0();
+ActorData* _ch1pfreeze_entrypoint_0();
+ActorData* _chmayafarmer_entrypoint_1();
+ActorData* _chjujubagfx_entrypoint_0();
+ActorData* _chpiranha_entrypoint_0();
+ActorData* _chpiranha_entrypoint_1();
+ActorData* _chpiranha_entrypoint_2();
+ActorData* _chnewfreezy_entrypoint_1();
+ActorData* _chlakemonster_entrypoint_0();
+ActorData* _chlakemonster_entrypoint_4();
+ActorData* _chminelightswitch_entrypoint_0();
+ActorData* _chminelight_entrypoint_0();
+ActorData* _chskeletonexplode_entrypoint_9();
+ActorData* _chdodgemcontrol_entrypoint_2();
+ActorData* _chdodgemcontrol_entrypoint_0();
+ActorData* _chdodgemdoors_entrypoint_0();
+ActorData* _chmole_maya_entrypoint_1();
+ActorData* _chflysaucerdoor_entrypoint_0();
+ActorData* _chflysaucerdoor_entrypoint_1();
+ActorData* _chchuffyglow_entrypoint_1();
+ActorData* _chtoothyfish_entrypoint_0();
+ActorData* _chtoothyfish_entrypoint_1();
+ActorData* _chmole_overworld_entrypoint_0();
+ActorData* _chmole_lagoon_entrypoint_0();
+ActorData* _chchuffy_entrypoint_2();
+ActorData* _chintrochar_entrypoint_0();
+ActorData* _chblackeye_entrypoint_0();
+ActorData* _cheel_entrypoint_0();
+ActorData* _chlagoonfish_entrypoint_0();
+ActorData* _chboilerid_entrypoint_0();
+ActorData* _chbilldrillboulder_entrypoint_1();
+ActorData* _chklungoleave_entrypoint_0();
+ActorData* _chhotfloorsmoke_entrypoint_0();
+ActorData* _chfairgroundworker_entrypoint_0();
+ActorData* _chfairgroundworker_entrypoint_1();
+ActorData* _chfairgroundworker_entrypoint_2();
+ActorData* _chfairgroundworker_entrypoint_3();
+ActorData* _chburgerstand_entrypoint_0();
+ActorData* _chburgerstand_entrypoint_1();
+ActorData* _chfriesstand_entrypoint_0();
+ActorData* _chfriesstand_entrypoint_1();
+ActorData* _chburgerstand_entrypoint_2();
+ActorData* _chburgerstand_entrypoint_3();
+ActorData* _chfriesstand_entrypoint_2();
+ActorData* _chfriesstand_entrypoint_3();
+ActorData* _chconga_entrypoint_0();
+ActorData* _chstarspinnerplanet_entrypoint_0();
+ActorData* _chstarspinnerplanet_entrypoint_1();
+ActorData* _chstarspinnerstar_entrypoint_0();
+ActorData* _chstarspinnerctrl_entrypoint_0();
+ActorData* _chstarspinnerctrl_entrypoint_1();
+ActorData* _chhellterskelter_entrypoint_0();
+ActorData* _chhellterskelter_entrypoint_2();
+ActorData* _chhellterskelter_entrypoint_1();
+ActorData* _chlightfader_entrypoint_0();
+ActorData* _chcablespark_entrypoint_0();
+ActorData* _chcablecar_entrypoint_0();
+ActorData* _chcablecar_entrypoint_1();
+ActorData* _chhellterskeltermouth_entrypoint_0();
+ActorData* _chweldarbossdoors_entrypoint_0();
+ActorData* _charea51gate_entrypoint_0();
+ActorData* _chdiggerboss_entrypoint_0();
+ActorData* _chghostdoor_entrypoint_0();
+ActorData* _chweldarbossfusebox_entrypoint_0();
+ActorData* _chsabreman_entrypoint_1();
+ActorData* _chsabreman_entrypoint_2();
+ActorData* _chghostdoor_entrypoint_1();
+ActorData* _chfloater_entrypoint_0();
+ActorData* _chpumproomgrill_entrypoint_0();
+ActorData* _chpumproomswitch_entrypoint_0();
+ActorData* _chbouncycastle_entrypoint_0();
+ActorData* _chspotlight_entrypoint_0();
+ActorData* _chboggykidshome_entrypoint_2();
+ActorData* _chballoonburst_entrypoint_0();
+ActorData* _chballoonburst_entrypoint_2();
+ActorData* _chbouncycastle_entrypoint_1();
+ActorData* _chpawnbroker_entrypoint_0();
+ActorData* _chpawnbroker_entrypoint_1();
+ActorData* _chpawnbroker_entrypoint_2();
+ActorData* _chhoopswoop_entrypoint_0();
+ActorData* _chhoopswoop_entrypoint_2();
+ActorData* _chtiptup_entrypoint_0();
+ActorData* _chtiptup_entrypoint_1();
+ActorData* _chtiptup_entrypoint_2();
+ActorData* _chonearmbandit_entrypoint_1();
+ActorData* _chseaweedbaddy_entrypoint_0();
+ActorData* _chseaweedbaddy_entrypoint_1();
+ActorData* _choctopus_entrypoint_0();
+ActorData* _chanemone_entrypoint_0();
+ActorData* _chjollyroger_entrypoint_0();
+ActorData* _chjollyroger_entrypoint_1();
+ActorData* _chdinofoot_entrypoint_0();
+ActorData* _chfreezy_entrypoint_0();
+ActorData* _chdinoswitches_entrypoint_3();
+ActorData* _chbigterrysbits_entrypoint_1();
+ActorData* _chlagoonbits_entrypoint_0();
+ActorData* _chlagoonbits_entrypoint_1();
+ActorData* _chlagoonbits_entrypoint_2();
+ActorData* _chlagoonbits_entrypoint_3();
+ActorData* _chjollyroger_entrypoint_2();
+ActorData* _chlagoonbilldrillcover_entrypoint_0();
+ActorData* _chlagoonbits_entrypoint_4();
+ActorData* _chlagoonbits_entrypoint_5();
+ActorData* _chboxingglove_entrypoint_1();
+ActorData* _chdinoboss_entrypoint_0();
+ActorData* _chlakemonster_entrypoint_5();
+ActorData* _chdrips_entrypoint_0();
+ActorData* _chintroticker_entrypoint_0();
+ActorData* _chmole_cuckoo_entrypoint_0();
+ActorData* _chdragonbrothers_entrypoint_0();
+ActorData* _chdragonbrothers_entrypoint_1();
+ActorData* _chdragonbrothers_entrypoint_2();
+ActorData* _chdragonbrothers_entrypoint_3();
+ActorData* _chdragonbrothers_entrypoint_4();
+ActorData* _chevilmumbo_entrypoint_0();
+ActorData* _chevilmumbo_entrypoint_1();
+ActorData* _chevilmumbo_entrypoint_2();
+ActorData* _chdodgemcontrol_entrypoint_1();
+ActorData* _chevilmumbo_entrypoint_3();
+ActorData* _chhumba_entrypoint_1();
+ActorData* _chtimetable_entrypoint_0();
+ActorData* _chclockworkmouse_entrypoint_1();
+ActorData* _chcrusher_entrypoint_4();
+ActorData* _chhandcart_entrypoint_0();
+ActorData* _chgruntylairexttowerwindow_entrypoint_0();
+ActorData* _chhagstraindoor_entrypoint_0();
+ActorData* _chhagstraindoorswitch_entrypoint_0();
+ActorData* _chlavaentrancebridge_entrypoint_0();
+ActorData* _chlavaentrancebridgeswitch_entrypoint_0();
+ActorData* _chmayaentrydoor_entrypoint_0();
+ActorData* _chlagoonentrygate_entrypoint_0();
+ActorData* _chmineentrygrille_entrypoint_0();
+ActorData* _chlavaentrydoor_entrypoint_0();
+ActorData* _chcauldronentrydoor_entrypoint_1();
+ActorData* _chterryteeth_entrypoint_0();
+ActorData* _chphlegm_entrypoint_0();
+ActorData* _chphlegm_entrypoint_1();
+ActorData* _chlilterry_entrypoint_0();
+ActorData* _chdinocoaster_entrypoint_0();
+ActorData* _chpowerhutwitchy_entrypoint_0();
+ActorData* _chpowerhutwitchy_entrypoint_1();
+ActorData* _chpowerhutwitchy_entrypoint_2();
+ActorData* _chpowerhutwitchy_entrypoint_3();
+ActorData* _chphlegm_entrypoint_2();
+ActorData* _chflamer_entrypoint_0();
+ActorData* _chpoolkids_entrypoint_0();
+ActorData* _chpoolkids_entrypoint_1();
+ActorData* _chnicecavemenguard_entrypoint_0();
+ActorData* _chnicecavemen_entrypoint_0();
+ActorData* _chfactorylight_entrypoint_0();
+ActorData* _chnicecavemen_entrypoint_3();
+ActorData* _chbonfirecavern_entrypoint_0();
+ActorData* _chterryegg_entrypoint_1();
+ActorData* _charmouredcaveman_entrypoint_0();
+ActorData* _chfirefx_entrypoint_0();
+ActorData* _chweldarbossfusebox_entrypoint_1();
+ActorData* _chicywind_entrypoint_0();
+ActorData* _chintrotext_entrypoint_0();
+ActorData* _chfactoryprop_entrypoint_0();
+ActorData* _chfactoryprop_entrypoint_1();
+ActorData* _chtrashcompactor_entrypoint_0();
+ActorData* _chtrashcompactor_entrypoint_1();
+ActorData* _chtrashcompactor_entrypoint_2();
+ActorData* _chtrashcompactor_entrypoint_3();
+ActorData* _chfactoryliftdoor_entrypoint_0();
+ActorData* _chfactoryliftdoor_entrypoint_1();
+ActorData* _chfactorycrusher_entrypoint_0();
+ActorData* _chfactorycrusher_entrypoint_1();
+ActorData* _chcrate_entrypoint_1();
+ActorData* _chfactoryrobot_entrypoint_0();
+ActorData* _chfactoryrobot_entrypoint_1();
+ActorData* _chfactoryrobot_entrypoint_2();
+ActorData* _chmermaidstatue_entrypoint_0();
+ActorData* _chmermaidstatue_entrypoint_1();
+ActorData* _chcrate_entrypoint_2();
+ActorData* _chfactorygoblin_entrypoint_0();
+ActorData* _chfactorytoxicpools_entrypoint_0();
+ActorData* _chfactorytoxicpools_entrypoint_1();
+ActorData* _chbigtopticket_entrypoint_0();
+ActorData* _chbouncycastle_entrypoint_2();
+ActorData* _chbouncycastle_entrypoint_3();
+ActorData* _chlagoonpirate_entrypoint_0();
+ActorData* _chpickups_entrypoint_1();
+ActorData* _chpickups_entrypoint_2();
+ActorData* _chvandoor_entrypoint_0();
+ActorData* _chpoolkids_entrypoint_2();
+ActorData* _chcoderoombits_entrypoint_0();
+ActorData* _chbilldrillboulder_entrypoint_2();
+ActorData* _chdingpot_entrypoint_0();
+ActorData* _chpumproomswitch_entrypoint_1();
+ActorData* _chelectricfence_entrypoint_0();
+ActorData* _chmadamegrunty_entrypoint_1();
+ActorData* _chfactorysmoke_entrypoint_0();
+ActorData* _chterryegg_entrypoint_2();
+ActorData* _chterryegg_entrypoint_3();
+ActorData* _chdinoboss_entrypoint_1();
+ActorData* _chappearfx_entrypoint_0();
+ActorData* _chfootwear_entrypoint_2();
+ActorData* _chbilldrillplate_entrypoint_0();
+ActorData* _chbilldrillplate_entrypoint_1();
+ActorData* _chbilldrillplate_entrypoint_2();
+ActorData* _chrainripples_entrypoint_0();
+ActorData* _chdumbwaiterlift_entrypoint_0();
+ActorData* _chmrsicecube_entrypoint_0();
+ActorData* _chmrsicecube_entrypoint_1();
+ActorData* _chgobihailfire_entrypoint_0();
+ActorData* _chboggykidshome_entrypoint_1();
+ActorData* _chbigfoot_entrypoint_0();
+ActorData* _chbiggafoot_entrypoint_0();
+ActorData* _chmricecube_entrypoint_0();
+ActorData* _chfactorylinkgrill_entrypoint_0();
+ActorData* _chlavahand_entrypoint_0();
+ActorData* _chtoxicroombits_entrypoint_0();
+ActorData* _chtoxicroombits_entrypoint_1();
+ActorData* _chtoxicroomprops_entrypoint_0();
+ActorData* _chfactorysparkroom_entrypoint_1();
+ActorData* _chfactoryempspell_entrypoint_1();
+ActorData* _chgoldfish_entrypoint_0();
+ActorData* _chfactorydrums_entrypoint_2();
+ActorData* _chfactorylinkgrill_entrypoint_1();
+ActorData* _chfactoryroofbits_entrypoint_1();
+ActorData* _chfactoryroofbits_entrypoint_2();
+ActorData* _chfactoryroofbits_entrypoint_3();
+ActorData* _chfactorymagnet_entrypoint_1();
+ActorData* _chfactorymagnet_entrypoint_2();
+ActorData* _chfactorybtwmdoor_entrypoint_0();
+ActorData* _chfactorymaindoor_entrypoint_0();
+ActorData* _chfactorymaindoor_entrypoint_1();
+ActorData* _chfactorylinkgrill_entrypoint_2();
+ActorData* _chfactorybattery_entrypoint_2();
+ActorData* _chbosskogsdoor_entrypoint_1();
+ActorData* _chbosskogsdoor_entrypoint_0();
+ActorData* _chlensflare_entrypoint_1();
+ActorData* _chfactorytoxiccloud_entrypoint_0();
+ActorData* _chlavahand_entrypoint_1();
+ActorData* _chlavagargoyle_entrypoint_0();
+ActorData* _chlavagargoyle_entrypoint_2();
+ActorData* _chfactorytrashbelt_entrypoint_0();
+ActorData* _chpotogoldgame_entrypoint_4();
+ActorData* _chfactorystationdoors_entrypoint_0();
+ActorData* _chpotogoldbits_entrypoint_0();
+ActorData* _chpotogoldbits_entrypoint_2();
+ActorData* _chpotogoldbits_entrypoint_3();
+ActorData* _chfantasydrillfield_entrypoint_0();
+ActorData* _chfantasytrashcanbits_entrypoint_1();
+ActorData* _chfantasytrashcanbits_entrypoint_0();
+ActorData* _chbeanstalkseed_entrypoint_0();
+ActorData* _chrainbow_entrypoint_1();
+ActorData* _chwaspstatue_entrypoint_1();
+ActorData* _chwaspstatue_entrypoint_2();
+ActorData* _chbubbleelevator_entrypoint_0();
+ActorData* _chfactorysparkroom_entrypoint_0();
+ActorData* _chfantasylakebits_entrypoint_2();
+ActorData* _chfantasylakebits_entrypoint_1();
+ActorData* _chtoxicroomprops_entrypoint_2();
+ActorData* _chfantasysafe_entrypoint_0();
+ActorData* _chfantasysafeswitch_entrypoint_0();
+ActorData* _chicestationbits_entrypoint_0();
+ActorData* _chicestationbits_entrypoint_1();
+ActorData* _chiciclebits_entrypoint_0();
+ActorData* _chboggykidshome_entrypoint_0();
+ActorData* _chklungo_entrypoint_0();
+ActorData* _chklungodoors_entrypoint_0();
+ActorData* _chklungodoors_entrypoint_1();
+ActorData* _chklungoforcefield_entrypoint_0();
+ActorData* _chklungophial_entrypoint_0();
+ActorData* _chklungophial_entrypoint_1();
+ActorData* _chvolcanobits_entrypoint_0();
+ActorData* _chvolcanobits_entrypoint_1();
+ActorData* _chcrystalbaddie_entrypoint_0();
+ActorData* _chhotwaterpoolbits_entrypoint_0();
+ActorData* _chhotwaterpoolbits_entrypoint_1();
+ActorData* _chvolcanobits_entrypoint_2();
+ActorData* _chvolcanobits_entrypoint_3();
+ActorData* _chnicecavemen_entrypoint_1();
+ActorData* _chnicecavemen_entrypoint_2();
+ActorData* _chdippy_entrypoint_0();
+ActorData* _chfactoryflypad_entrypoint_0();
+ActorData* _chfactoryflypad_entrypoint_1();
+ActorData* _chmrsboggyhome_entrypoint_0();
+ActorData* _chweldarbossdoors_entrypoint_1();
+ActorData* _chfactorytoxicpools_entrypoint_2();
+ActorData* _chdinoswitches_entrypoint_1();
+ActorData* _chdinoswitches_entrypoint_2();
+ActorData* _chloggo_entrypoint_0();
+ActorData* _chloggo_entrypoint_1();
+ActorData* _chkingjinjo_entrypoint_0();
+ActorData* _chhotwaterpoolbits_entrypoint_2();
+ActorData* _chhotwaterpoolbits_entrypoint_3();
+ActorData* _chbottlesfamily_entrypoint_0();
+ActorData* _chbottlesfamily_entrypoint_1();
+ActorData* _chbottlesfamily_entrypoint_2();
+ActorData* _chnutsnbolts_entrypoint_0();
+ActorData* _chnutsnbolts_entrypoint_1();
+ActorData* _chnutsnbolts_entrypoint_2();
+ActorData* _chdippy_entrypoint_1();
+ActorData* _chfactorytwinklies_entrypoint_0();
+ActorData* _chfactorytwinklies_entrypoint_3();
+ActorData* _chfactorytwinklies_entrypoint_4();
+ActorData* _chfactorytwinklies_entrypoint_5();
+ActorData* _chfactorytwinklies_entrypoint_2();
+ActorData* _chstatueboss_entrypoint_0();
+ActorData* _chstatuebossbits_entrypoint_0();
+ActorData* _chstatuebossbits_entrypoint_1();
+ActorData* _chhoopswoop_entrypoint_1();
+ActorData* _chproplighter_entrypoint_0();
+ActorData* _chballoonburst_entrypoint_1();
+ActorData* _chfactorytwinklies_entrypoint_1();
+ActorData* _chbiggafoot_entrypoint_1();
+ActorData* _chstatuebossbits_entrypoint_3();
+ActorData* _chstatuebossbits_entrypoint_2();
+ActorData* _chmonsterinterior_entrypoint_0();
+ActorData* _chmonsterinterior_entrypoint_2();
+ActorData* _chmonsterinterior_entrypoint_3();
+ActorData* _chmonsterinterior_entrypoint_4();
+ActorData* _chmonsterinterior_entrypoint_1();
+ActorData* _chalienkids_entrypoint_0();
+ActorData* _chalienkids_entrypoint_1();
+ActorData* _chalienkids_entrypoint_2();
+ActorData* _chalienkids_entrypoint_3();
+ActorData* _chaliendad_entrypoint_0();
+ActorData* _chaliendad_entrypoint_2();
+ActorData* _chlifeforcespell_entrypoint_0();
+ActorData* _changlerboss_entrypoint_0();
+ActorData* _changlerboss_entrypoint_1();
+ActorData* _changlerbossflare_entrypoint_0();
+ActorData* _changlerbossbubble_entrypoint_0();
+ActorData* _chbigterrysbits_entrypoint_0();
+ActorData* _chfireimp_entrypoint_0();
+ActorData* _chmumboskulls_entrypoint_0();
+ActorData* _ch2dbaddy_entrypoint_0();
+ActorData* _chweldarboss_entrypoint_0();
+ActorData* _chalienbeam_entrypoint_0();
+ActorData* _chaliendad_entrypoint_1();
+ActorData* _chweldarboss_entrypoint_1();
+ActorData* _chbigterrysbits_entrypoint_2();
+ActorData* _chweldarbossfusebox_entrypoint_2();
+ActorData* _chflowerbaddie_entrypoint_0();
+ActorData* _changlerbossdoor_entrypoint_0();
+ActorData* _chboilerbossdoor_entrypoint_0();
+ActorData* _chinflatablebossdoor_entrypoint_0();
+ActorData* _chhotwatersteam_entrypoint_0();
+ActorData* _chcastleshockpadswitch_entrypoint_0();
+ActorData* _chfootwear_entrypoint_4();
+ActorData* _chtalontorpedoboulder_entrypoint_0();
+ActorData* _chexplodingchainlinks_entrypoint_0();
+ActorData* _chfactoryroofbits_entrypoint_4();
+ActorData* _chtrashcangame_entrypoint_0();
+ActorData* _chtrashcangame_entrypoint_2();
+ActorData* _chfantasyathlete_entrypoint_0();
+ActorData* _chtoxicroomprops_entrypoint_1();
+ActorData* _chfantasycannon_entrypoint_0();
+ActorData* _chfantasycannon_entrypoint_1();
+ActorData* _chfantasyonion_entrypoint_0();
+ActorData* _chbeanstalkseed_entrypoint_1();
+ActorData* _chpickups_entrypoint_3();
+ActorData* _chfantasyeyeball_entrypoint_0();
+ActorData* _chfantasyeyeball_entrypoint_1();
+ActorData* _choildrill_entrypoint_1();
+ActorData* _choildrill_entrypoint_2();
+ActorData* _chfloaty_entrypoint_1();
+ActorData* _chLagoonInnBlockedWall_entrypoint_0();
+ActorData* _chwitchyentrygates_entrypoint_0();
+ActorData* _chfactoryentrydoors_entrypoint_0();
+ActorData* _chcauldronenergybars_entrypoint_0();
+ActorData* _chjinjovillagecamera1_entrypoint_0();
+ActorData* _chjinjo_entrypoint_6();
+ActorData* _chLagoonInnBlockedWall_entrypoint_1();
+ActorData* _chlavaarchgrill3switches_entrypoint_0();
+ActorData* _chlavaarchgrill3switches_entrypoint_1();
+ActorData* _chlavaarchgrill3switches_entrypoint_2();
+ActorData* _chmumboskullfakearchpanellava_entrypoint_1();
+ActorData* _chlagoonlockerdoorhits_entrypoint_0();
+ActorData* _chTalTorpWall_entrypoint_0();
+ActorData* _chufoextdoor_entrypoint_0();
+ActorData* _chdinotraindoor_entrypoint_0();
+ActorData* _chdinotraindoorswitch_entrypoint_0();
+ActorData* _chminegrill2switches_entrypoint_0();
+ActorData* _chminegrill2switches_entrypoint_1();
+ActorData* _chcauldronentrydoor_entrypoint_2();
+ActorData* _chdrawbridgeswitches_entrypoint_0();
+ActorData* _chdrawbridgeswitches_entrypoint_1();
+ActorData* _chdinoroargrill_entrypoint_0();
+ActorData* _chlavaexplodbuild_entrypoint_0();
+ActorData* _chboggy_entrypoint_0();
+ActorData* _chnests_entrypoint_12();
+ActorData* _chgameselect_entrypoint_0();
+ActorData* _chgameselect_entrypoint_2();
+ActorData* _chgameselect_entrypoint_3();
+ActorData* _chgameselect_entrypoint_4();
+ActorData* _chgameselect_entrypoint_1();
+ActorData* _chgameselect_entrypoint_5();
+ActorData* _chminisubgame_entrypoint_0();
+ActorData* _chminisubgame_entrypoint_1();
+ActorData* _chjiggypost_entrypoint_0();
+ActorData* _chhoneyb_entrypoint_0();
+ActorData* _chmasterjiggy_entrypoint_1();
+ActorData* _chjiggytemple_entrypoint_2();
+ActorData* _chjiggybeam_entrypoint_0();
+ActorData* _chattract_entrypoint_0();
+ActorData* _chgameselect_entrypoint_6();
+ActorData* _chpickups_entrypoint_10();
+ActorData* _chhoneyb_entrypoint_1();
+ActorData* _chgameselect_entrypoint_7();
+ActorData* _chboggyfish_entrypoint_0();
+ActorData* _chbottlesdead_entrypoint_0();
+ActorData* _chjrinnlight_entrypoint_0();
+ActorData* _chfoodwarn_entrypoint_0();
+ActorData* _chperspexbox_entrypoint_0();
+ActorData* _chperspexboxswitch_entrypoint_0();
+ActorData* _chminegrilldoor_entrypoint_0();
+ActorData* _chwitchytents_entrypoint_0();
+ActorData* _chwitchytents_entrypoint_1();
+ActorData* _chfantasybounce_entrypoint_0();
+ActorData* _chfantasybounce_entrypoint_1();
+ActorData* _chgoldsnakehead_entrypoint_2();
+ActorData* _chquizexitdoor_entrypoint_0();
+ActorData* _chsparkle_entrypoint_0();
+ActorData* _chpickups_entrypoint_7();
+ActorData* _chmumbohealspell_entrypoint_0();
+ActorData* _chfactoryroofbits_entrypoint_5();
+ActorData* _chfactorymaindoor_entrypoint_2();
+ActorData* _chfactoryentrydoors_entrypoint_1();
+ActorData* _chpickups_entrypoint_4();
+ActorData* _chpickups_entrypoint_5();
+ActorData* _chpickups_entrypoint_6();
+ActorData* _chdoubloon_entrypoint_2();
+ActorData* _chwitchyshockpadswitch_entrypoint_0();
+ActorData* _chsquits_entrypoint_0();
+ActorData* _chbottlesplantgrill_entrypoint_0();
+ActorData* _chkingjinjobits_entrypoint_0();
+ActorData* _chklungospiral_entrypoint_0();
+ActorData* _chfactoryposter_entrypoint_0();
+ActorData* _chjigsawcollect_entrypoint_0();
+ActorData* _chdiggerbossdoor_entrypoint_0();
+ActorData* _chgruntyfireball_entrypoint_0();
+ActorData* _chdiggerbossshell_entrypoint_0();
+ActorData* _chdiggerbossshell_entrypoint_1();
+ActorData* _chdiggerbossbattery_entrypoint_0();
+ActorData* _chgruntyfireballbig_entrypoint_0();
+ActorData* _chdiggerbossinterior_entrypoint_0();
+ActorData* _chbottlesparty_entrypoint_0();
+ActorData* _chbottlesparty_entrypoint_1();
+ActorData* _chspiralgrill_entrypoint_0();
+ActorData* _chfireicestorm_entrypoint_0();
+ActorData* _chfireicestorm_entrypoint_1();
+ActorData* _chfactoryprop_entrypoint_2();
+ActorData* _chdiggerbossdeflect_entrypoint_0();
+ActorData* _chgobihailfire_entrypoint_1();
+ActorData* _chchompaslunch_entrypoint_0();
+ActorData* _chlavafall_entrypoint_0();
+ActorData* _chlighthalo_entrypoint_0();
+ActorData* _chcrashmat_entrypoint_0();
+ActorData* _chjellycastle_entrypoint_0();
+ActorData* _chfantasysafe_entrypoint_1();
+ActorData* _chtrashcangame_entrypoint_3();
+ActorData* _chfactorymagnet_entrypoint_3();
+ActorData* _chicekeydoor_entrypoint_0();
+ActorData* _chicekey_entrypoint_0();
+ActorData* _chheggy_entrypoint_0();
+ActorData* _chpickups_entrypoint_8();
+ActorData* _chpickups_entrypoint_9();
+ActorData* _chsecreteggs_entrypoint_0();
+ActorData* _chplatuegrill_entrypoint_0();
+ActorData* _chplatuegrill_entrypoint_1();
+ActorData* _chbkcart_entrypoint_0();
+ActorData* _chworlddoors_entrypoint_0();
+ActorData* _chtrashcangame_entrypoint_1();
+ActorData* _chhandcart_entrypoint_2();
+ActorData* _chglowbo_entrypoint_2();
+ActorData* _chjigsaw_entrypoint_1();
+ActorData* _chquiz_entrypoint_4();
+ActorData* _chquiz_entrypoint_1();
+ActorData* _chheggy_entrypoint_1();
+ActorData* _chquiz_entrypoint_2();
+ActorData* _chquiz_entrypoint_0();
+ActorData* _chdinofamilysick_entrypoint_2();
+ActorData* _chquiz_entrypoint_3();
+ActorData* _chfactorymagnet_entrypoint_4();
+ActorData* _chboggy_entrypoint_1();
+ActorData* _chmusicmenu_entrypoint_1();
+ActorData* _chbobpanel_entrypoint_0();
+ActorData* _chtrashcangame_entrypoint_4();
+ActorData* _chmusicmenu_entrypoint_2();
+ActorData* _chdeflect_entrypoint_0();
+ActorData* _chjadestatue_entrypoint_1();
+ActorData* _chdrawbridgeswitches_entrypoint_2();
+
+GetActorData D_80800090_gemarkersDll[0x490] =
+{
+	/*0xb6*/ 0x00000000,
+	/*0xb7*/ _chjamjarsdummy_entrypoint_0,
+	/*0xb8*/ 0x00000000,
+	/*0xb9*/ 0x00000000,
+	/*0xba*/ 0x00000000,
+	/*0xbb*/ 0x00000000,
+	/*0xbc*/ 0x00000000,
+	/*0xbd*/ 0x00000000,
+	/*0xbe*/ 0x00000000,
+	/*0xbf*/ 0x00000000,
+	/*0xc0*/ 0x00000000,
+	/*0xc1*/ 0x00000000,
+	/*0xc2*/ 0x00000000,
+	/*0xc3*/ 0x00000000,
+	/*0xc4*/ 0x00000000,
+	/*0xc5*/ 0x00000000,
+	/*0xc6*/ 0x00000000,
+	/*0xc7*/ 0x00000000,
+	/*0xc8*/ 0x00000000,
+	/*0xc9*/ 0x00000000,
+	/*0xca*/ 0x00000000,
+	/*0xcb*/ 0x00000000,
+	/*0xcc*/ 0x00000000,
+	/*0xcd*/ 0x00000000,
+	/*0xce*/ 0x00000000,
+	/*0xcf*/ 0x00000000,
+	/*0xd0*/ 0x00000000,
+	/*0xd1*/ 0x00000000,
+	/*0xd2*/ 0x00000000,
+	/*0xd3*/ 0x00000000,
+	/*0xd4*/ 0x00000000,
+	/*0xd5*/ 0x00000000,
+	/*0xd6*/ 0x00000000,
+	/*0xd7*/ 0x00000000,
+	/*0xd8*/ 0x00000000,
+	/*0xd9*/ 0x00000000,
+	/*0xda*/ 0x00000000,
+	/*0xdb*/ 0x00000000,
+	/*0xdc*/ 0x00000000,
+	/*0xdd*/ 0x00000000,
+	/*0xde*/ 0x00000000,
+	/*0xdf*/ 0x00000000,
+	/*0xe0*/ 0x00000000,
+	/*0xe1*/ 0x00000000,
+	/*0xe2*/ 0x00000000,
+	/*0xe3*/ 0x00000000,
+	/*0xe4*/ 0x00000000,
+	/*0xe5*/ 0x00000000,
+	/*0xe6*/ 0x00000000,
+	/*0xe7*/ 0x00000000,
+	/*0xe8*/ 0x00000000,
+	/*0xe9*/ 0x00000000,
+	/*0xea*/ 0x00000000,
+	/*0xeb*/ 0x00000000,
+	/*0xec*/ 0x00000000,
+	/*0xed*/ 0x00000000,
+	/*0xee*/ 0x00000000,
+	/*0xef*/ 0x00000000,
+	/*0xf0*/ 0x00000000,
+	/*0xf1*/ 0x00000000,
+	/*0xf2*/ 0x00000000,
+	/*0xf3*/ 0x00000000,
+	/*0xf4*/ 0x00000000,
+	/*0xf5*/ 0x00000000,
+	/*0xf6*/ 0x00000000,
+	/*0xf7*/ 0x00000000,
+	/*0xf8*/ 0x00000000,
+	/*0xf9*/ 0x00000000,
+	/*0xfa*/ 0x00000000,
+	/*0xfb*/ 0x00000000,
+	/*0xfc*/ 0x00000000,
+	/*0xfd*/ 0x00000000,
+	/*0xfe*/ 0x00000000,
+	/*0xff*/ 0x00000000,
+	/*0x100*/ 0x00000000,
+	/*0x101*/ 0x00000000,
+	/*0x102*/ 0x00000000,
+	/*0x103*/ 0x00000000,
+	/*0x104*/ 0x00000000,
+	/*0x105*/ 0x00000000,
+	/*0x106*/ 0x00000000,
+	/*0x107*/ 0x00000000,
+	/*0x108*/ 0x00000000,
+	/*0x109*/ 0x00000000,
+	/*0x10a*/ 0x00000000,
+	/*0x10b*/ 0x00000000,
+	/*0x10c*/ _chjadesnake_entrypoint_0,
+	/*0x10d*/ _chgoldsnakehead_entrypoint_0,
+	/*0x10e*/ _chgoldsnakehead_entrypoint_1,
+	/*0x10f*/ _chbilldrillboulder_entrypoint_0,
+	/*0x110*/ _chcoderoomdoor_entrypoint_0,
+	/*0x111*/ _chwallsnakebaddy_entrypoint_0,
+	/*0x112*/ _chwarriorbaddy_entrypoint_0,
+	/*0x113*/ _chstonedartgunhead_entrypoint_0,
+	/*0x114*/ _chfriendlystonehead_entrypoint_0,
+	/*0x115*/ _chamazongoldhordeofficial_entrypoint_0,
+	/*0x116*/ _chamazonstadiumguard_entrypoint_0,
+	/*0x117*/ _chprisonbits_entrypoint_4,
+	/*0x118*/ _chboilerboss_entrypoint_0,
+	/*0x119*/ _chtntbox_entrypoint_0,
+	/*0x11a*/ _chnewshovel_entrypoint_0,
+	/*0x11b*/ _chwaterfallgrill_entrypoint_1,
+	/*0x11c*/ _chwaterfallgrillswitch_entrypoint_0,
+	/*0x11d*/ 0x00000000,
+	/*0x11e*/ _chprisonbits_entrypoint_0,
+	/*0x11f*/ _chprisonbits_entrypoint_1,
+	/*0x120*/ _chprisonbits_entrypoint_2,
+	/*0x121*/ _chprisonbits_entrypoint_3,
+	/*0x122*/ 0x00000000,
+	/*0x123*/ _chstonedartgunhead_entrypoint_1,
+	/*0x124*/ _chweldarbossfireball_entrypoint_0,
+	/*0x125*/ 0x00000000,
+	/*0x126*/ 0x00000000,
+	/*0x127*/ 0x00000000,
+	/*0x128*/ _chgate1doors_entrypoint_0,
+	/*0x129*/ _chgate1doors_entrypoint_1,
+	/*0x12a*/ _chtemplebrokendoorpiece_entrypoint_0,
+	/*0x12b*/ _chcrackarchwall_entrypoint_0,
+	/*0x12c*/ 0x00000000,
+	/*0x12d*/ _chlightdemon_entrypoint_0,
+	/*0x12e*/ _chstonepillar_entrypoint_0,
+	/*0x12f*/ _chstonepillar_entrypoint_1,
+	/*0x130*/ _chdinoswitches_entrypoint_0,
+	/*0x131*/ _chdiggerground_entrypoint_0,
+	/*0x132*/ _chdiggergroundgen_entrypoint_0,
+	/*0x133*/ _chdiggerfly_entrypoint_0,
+	/*0x134*/ _chdiggerfly_entrypoint_1,
+	/*0x135*/ _chcheato_entrypoint_0,
+	/*0x136*/ _chcheatopage_entrypoint_0,
+	/*0x137*/ _chgobiwitchy_entrypoint_0,
+	/*0x138*/ _chbabydino_entrypoint_0,
+	/*0x139*/ _chcactusofstrength_entrypoint_0,
+	/*0x13a*/ _chcactusofstrength_entrypoint_2,
+	/*0x13b*/ _chcactusofstrength_entrypoint_1,
+	/*0x13c*/ _chinflatableboss_entrypoint_0,
+	/*0x13d*/ _chballoonbomb_entrypoint_0,
+	/*0x13e*/ _chboxingglove_entrypoint_0,
+	/*0x13f*/ _chmrsboggy_entrypoint_0,
+	/*0x140*/ _chboggyboy_entrypoint_0,
+	/*0x141*/ _chboggygirl_entrypoint_0,
+	/*0x142*/ _chboggyfatboy_entrypoint_1,
+	/*0x143*/ _chmineprospector_entrypoint_0,
+	/*0x144*/ _chonearmbandit_entrypoint_0,
+	/*0x145*/ _chtntblockage_entrypoint_0,
+	/*0x146*/ _chweldarhead_entrypoint_0,
+	/*0x147*/ _chkingjinjo_entrypoint_1,
+	/*0x148*/ _chcamerawibble_entrypoint_0,
+	/*0x149*/ _chtntdetonator_entrypoint_0,
+	/*0x14a*/ _chtnthut_entrypoint_0,
+	/*0x14b*/ _chtntminecelldoor_entrypoint_0,
+	/*0x14c*/ _chcaveofhorrorsdoors_entrypoint_0,
+	/*0x14d*/ _chbanjoctrl_entrypoint_0,
+	/*0x14e*/ _chscorepoints_entrypoint_0,
+	/*0x14f*/ _chmadamegrunty_entrypoint_0,
+	/*0x150*/ _chhillbilly_entrypoint_0,
+	/*0x151*/ _chmineprospector_entrypoint_1,
+	/*0x152*/ _chmineprospector_entrypoint_2,
+	/*0x153*/ _chevilspirit_entrypoint_0,
+	/*0x154*/ 0x00000000,
+	/*0x155*/ _chstoneballcontrol_entrypoint_2,
+	/*0x156*/ _chpodiumbankaz_entrypoint_1,
+	/*0x157*/ _chpodiumbankaz_entrypoint_0,
+	/*0x158*/ _chswappy_entrypoint_1,
+	/*0x159*/ 0x00000000,
+	/*0x15a*/ _cheggnormal_entrypoint_0,
+	/*0x15b*/ _cheggfire_entrypoint_0,
+	/*0x15c*/ _cheggice_entrypoint_0,
+	/*0x15d*/ _chegggrenade_entrypoint_1,
+	/*0x15e*/ _cheggclockwork_entrypoint_0,
+	/*0x15f*/ _chegggolden_entrypoint_0,
+	/*0x160*/ _cheggproximity_entrypoint_0,
+	/*0x161*/ 0x00000000,
+	/*0x162*/ _chlaundry_entrypoint_0,
+	/*0x163*/ _chgoldstatue_entrypoint_0,
+	/*0x164*/ _chwandglow_entrypoint_3,
+	/*0x165*/ _chfaircoinbox_entrypoint_2,
+	/*0x166*/ _chfaircoin_entrypoint_1,
+	/*0x167*/ 0x00000000,
+	/*0x168*/ _chtorpedo_entrypoint_1,
+	/*0x169*/ _chping_entrypoint_1,
+	/*0x16a*/ _chfootwear_entrypoint_3,
+	/*0x16b*/ 0x00000000,
+	/*0x16c*/ 0x00000000,
+	/*0x16d*/ 0x00000000,
+	/*0x16e*/ _chclimbbase_entrypoint_1,
+	/*0x16f*/ _chstinger_entrypoint_1,
+	/*0x170*/ _chfactoryworkerdirty_entrypoint_0,
+	/*0x171*/ _chclockworkmouse_entrypoint_0,
+	/*0x172*/ _chstadiumdoors_entrypoint_0,
+	/*0x173*/ _chstoneballcoach_entrypoint_0,
+	/*0x174*/ _chcredits_entrypoint_2,
+	/*0x175*/ _chsounder_entrypoint_0,
+	/*0x176*/ _chcanarymarycage_entrypoint_0,
+	/*0x177*/ 0x00000000,
+	/*0x178*/ _chfog_entrypoint_0,
+	/*0x179*/ 0x00000000,
+	/*0x17a*/ _chcrusher_entrypoint_0,
+	/*0x17b*/ _chcrusher_entrypoint_2,
+	/*0x17c*/ _chcrusher_entrypoint_1,
+	/*0x17d*/ _chcrusher_entrypoint_3,
+	/*0x17e*/ _chcrusherboulder_entrypoint_0,
+	/*0x17f*/ _chjigsawbitcont_entrypoint_1,
+	/*0x180*/ _chjigsawbitcont_entrypoint_0,
+	/*0x181*/ 0x00000000,
+	/*0x182*/ _chmole_witchy_entrypoint_0,
+	/*0x183*/ 0x00000000,
+	/*0x184*/ _chmole_hailfire_entrypoint_0,
+	/*0x185*/ _chmole_factory_entrypoint_0,
+	/*0x186*/ _chmole_prehist_entrypoint_0,
+	/*0x187*/ 0x00000000,
+	/*0x188*/ 0x00000000,
+	/*0x189*/ 0x00000000,
+	/*0x18a*/ _chcheatomenu_entrypoint_0,
+	/*0x18b*/ 0x00000000,
+	/*0x18c*/ 0x00000000,
+	/*0x18d*/ 0x00000000,
+	/*0x18e*/ 0x00000000,
+	/*0x18f*/ _chmoley_entrypoint_2,
+	/*0x190*/ _chnewmumbo_entrypoint_1,
+	/*0x191*/ 0x00000000,
+	/*0x192*/ 0x00000000,
+	/*0x193*/ 0x00000000,
+	/*0x194*/ 0x00000000,
+	/*0x195*/ 0x00000000,
+	/*0x196*/ _chhoney_entrypoint_1,
+	/*0x197*/ _chhoney_entrypoint_2,
+	/*0x198*/ _chsignpost_entrypoint_0,
+	/*0x199*/ 0x00000000,
+	/*0x19a*/ _chbadbeehive_entrypoint_0,
+	/*0x19b*/ _chmayafarmer_entrypoint_0,
+	/*0x19c*/ _chbadjinjo_entrypoint_0,
+	/*0x19d*/ _chsilo_entrypoint_0,
+	/*0x19e*/ _chcollballcontrol_entrypoint_0,
+	/*0x19f*/ _chcollballcontrol_entrypoint_5,
+	/*0x1a0*/ _chintrocam_entrypoint_0,
+	/*0x1a1*/ _chcollballcontrol_entrypoint_2,
+	/*0x1a2*/ _chcollballcontrol_entrypoint_4,
+	/*0x1a3*/ _chcollballcontrol_entrypoint_3,
+	/*0x1a4*/ _chcolldoors_entrypoint_0,
+	/*0x1a5*/ _chmusicmenu_entrypoint_0,
+	/*0x1a6*/ 0x00000000,
+	/*0x1a7*/ _chmole_maya_entrypoint_0,
+	/*0x1a8*/ _chmole_mine_entrypoint_0,
+	/*0x1a9*/ _chmole_training_entrypoint_1,
+	/*0x1aa*/ _chfiregen_entrypoint_0,
+	/*0x1ab*/ _chfiregen_entrypoint_6,
+	/*0x1ac*/ _chfiregen_entrypoint_1,
+	/*0x1ad*/ _chfiregen_entrypoint_7,
+	/*0x1ae*/ _chfiregen_entrypoint_2,
+	/*0x1af*/ _chfiregen_entrypoint_8,
+	/*0x1b0*/ _chfiregen_entrypoint_3,
+	/*0x1b1*/ _chfiregen_entrypoint_9,
+	/*0x1b2*/ _chfiregen_entrypoint_4,
+	/*0x1b3*/ _chfiregen_entrypoint_10,
+	/*0x1b4*/ _chfiregen_entrypoint_5,
+	/*0x1b5*/ _chfiregen_entrypoint_11,
+	/*0x1b6*/ _chstoneballcontrol_entrypoint_5,
+	/*0x1b7*/ _chstoneballcontrol_entrypoint_0,
+	/*0x1b8*/ _chstoneballcontrol_entrypoint_3,
+	/*0x1b9*/ 0x00000000,
+	/*0x1ba*/ 0x00000000,
+	/*0x1bb*/ _chwaterfallfx_entrypoint_0,
+	/*0x1bc*/ 0x00000000,
+	/*0x1bd*/ _chidgoldhorde_entrypoint_0,
+	/*0x1be*/ _chfishshootgame_entrypoint_0,
+	/*0x1bf*/ _chfishshootgame_entrypoint_1,
+	/*0x1c0*/ 0x00000000,
+	/*0x1c1*/ 0x00000000,
+	/*0x1c2*/ _chlagoonufoext_entrypoint_0,
+	/*0x1c3*/ _chlagoonufoint_entrypoint_1,
+	/*0x1c4*/ _chlagoonufoint_entrypoint_4,
+	/*0x1c5*/ _chlagoonufoint_entrypoint_0,
+	/*0x1c6*/ _chlagoonufoint_entrypoint_2,
+	/*0x1c7*/ _chlagoonufoint_entrypoint_3,
+	/*0x1c8*/ _chnests_entrypoint_0,
+	/*0x1c9*/ _chnests_entrypoint_1,
+	/*0x1ca*/ _chnests_entrypoint_2,
+	/*0x1cb*/ _chnests_entrypoint_3,
+	/*0x1cc*/ _chnests_entrypoint_4,
+	/*0x1cd*/ _chnests_entrypoint_5,
+	/*0x1ce*/ _chnests_entrypoint_7,
+	/*0x1cf*/ _chnests_entrypoint_8,
+	/*0x1d0*/ _chfishshootgame_entrypoint_2,
+	/*0x1d1*/ _chbanjocurrent_entrypoint_0,
+	/*0x1d2*/ 0x00000000,
+	/*0x1d3*/ 0x00000000,
+	/*0x1d4*/ 0x00000000,
+	/*0x1d5*/ 0x00000000,
+	/*0x1d6*/ _chbanjocurrent_entrypoint_1,
+	/*0x1d7*/ _chnests_entrypoint_9,
+	/*0x1d8*/ _chnests_entrypoint_10,
+	/*0x1d9*/ _chpickups_entrypoint_0,
+	/*0x1da*/ _chnastycavemen_entrypoint_0,
+	/*0x1db*/ _chnastycavemen_entrypoint_1,
+	/*0x1dc*/ 0x00000000,
+	/*0x1dd*/ _chcamwaypoint_entrypoint_0,
+	/*0x1de*/ _chjiggygamenew_entrypoint_4,
+	/*0x1df*/ _chjiggygamenew_entrypoint_0,
+	/*0x1e0*/ _chlightdemon_entrypoint_1,
+	/*0x1e1*/ _chmasterjiggy_entrypoint_0,
+	/*0x1e2*/ _chjiggygamenew_entrypoint_3,
+	/*0x1e3*/ _chwaspnestgame_entrypoint_0,
+	/*0x1e4*/ _chwaspnestgame_entrypoint_1,
+	/*0x1e5*/ _chwarppad_entrypoint_0,
+	/*0x1e6*/ _chjiggytemple_entrypoint_0,
+	/*0x1e7*/ _chjiggytemple_entrypoint_1,
+	/*0x1e8*/ _chscreenadjust_entrypoint_0,
+	/*0x1e9*/ _chnests_entrypoint_11,
+	/*0x1ea*/ 0x00000000,
+	/*0x1eb*/ 0x00000000,
+	/*0x1ec*/ 0x00000000,
+	/*0x1ed*/ 0x00000000,
+	/*0x1ee*/ 0x00000000,
+	/*0x1ef*/ _chquicksandbaddy_entrypoint_1,
+	/*0x1f0*/ _chcrate_entrypoint_0,
+	/*0x1f1*/ 0x00000000,
+	/*0x1f2*/ 0x00000000,
+	/*0x1f3*/ 0x00000000,
+	/*0x1f4*/ _chjinjo_entrypoint_5,
+	/*0x1f5*/ 0x00000000,
+	/*0x1f6*/ 0x00000000,
+	/*0x1f7*/ 0x00000000,
+	/*0x1f8*/ 0x00000000,
+	/*0x1f9*/ _chclimbbase_entrypoint_0,
+	/*0x1fa*/ 0x00000000,
+	/*0x1fb*/ 0x00000000,
+	/*0x1fc*/ 0x00000000,
+	/*0x1fd*/ 0x00000000,
+	/*0x1fe*/ _chsabreman_entrypoint_3,
+	/*0x1ff*/ _chexploder_entrypoint_0,
+	/*0x200*/ _chtntbox_entrypoint_1,
+	/*0x201*/ 0x00000000,
+	/*0x202*/ _chmumbopadstatue_entrypoint_0,
+	/*0x203*/ _chdiggerboss_entrypoint_1,
+	/*0x204*/ _chweather_entrypoint_0,
+	/*0x205*/ _chweather_entrypoint_1,
+	/*0x206*/ _chweather_entrypoint_2,
+	/*0x207*/ _chweather_entrypoint_3,
+	/*0x208*/ _chweather_entrypoint_4,
+	/*0x209*/ _chweather_entrypoint_5,
+	/*0x20a*/ _chweather_entrypoint_6,
+	/*0x20b*/ _chweather_entrypoint_7,
+	/*0x20c*/ 0x00000000,
+	/*0x20d*/ 0x00000000,
+	/*0x20e*/ 0x00000000,
+	/*0x20f*/ 0x00000000,
+	/*0x210*/ _chshockjump_entrypoint_0,
+	/*0x211*/ _chbeehive_entrypoint_0,
+	/*0x212*/ 0x00000000,
+	/*0x213*/ _chzubba_entrypoint_0,
+	/*0x214*/ 0x00000000,
+	/*0x215*/ func_800A7168,
+	/*0x216*/ 0x00000000,
+	/*0x217*/ _chquizremotectrl_entrypoint_0,
+	/*0x218*/ 0x00000000,
+	/*0x219*/ 0x00000000,
+	/*0x21a*/ _chfootwear_entrypoint_0,
+	/*0x21b*/ _chglowbo_entrypoint_0,
+	/*0x21c*/ 0x00000000,
+	/*0x21d*/ 0x00000000,
+	/*0x21e*/ 0x00000000,
+	/*0x21f*/ _chjigsaw_entrypoint_0,
+	/*0x220*/ _chhoneycarrier_entrypoint_0,
+	/*0x221*/ 0x00000000,
+	/*0x222*/ 0x00000000,
+	/*0x223*/ _chboilerboss_entrypoint_1,
+	/*0x224*/ _chboilerboss_entrypoint_2,
+	/*0x225*/ _chboilerboss_entrypoint_3,
+	/*0x226*/ 0x00000000,
+	/*0x227*/ 0x00000000,
+	/*0x228*/ 0x00000000,
+	/*0x229*/ _chhoney_entrypoint_0,
+	/*0x22a*/ 0x00000000,
+	/*0x22b*/ 0x00000000,
+	/*0x22c*/ _chjigsawdance_entrypoint_2,
+	/*0x22d*/ 0x00000000,
+	/*0x22e*/ _chfootwear_entrypoint_1,
+	/*0x22f*/ 0x00000000,
+	/*0x230*/ 0x00000000,
+	/*0x231*/ 0x00000000,
+	/*0x232*/ 0x00000000,
+	/*0x233*/ 0x00000000,
+	/*0x234*/ _chshockjump_entrypoint_1,
+	/*0x235*/ 0x00000000,
+	/*0x236*/ 0x00000000,
+	/*0x237*/ 0x00000000,
+	/*0x238*/ 0x00000000,
+	/*0x239*/ _chfactoryworkerwear_entrypoint_0,
+	/*0x23a*/ 0x00000000,
+	/*0x23b*/ 0x00000000,
+	/*0x23c*/ 0x00000000,
+	/*0x23d*/ 0x00000000,
+	/*0x23e*/ 0x00000000,
+	/*0x23f*/ 0x00000000,
+	/*0x240*/ 0x00000000,
+	/*0x241*/ 0x00000000,
+	/*0x242*/ 0x00000000,
+	/*0x243*/ _chbadshad_entrypoint_0,
+	/*0x244*/ 0x00000000,
+	/*0x245*/ 0x00000000,
+	/*0x246*/ _chlavaslabswitch_entrypoint_0,
+	/*0x247*/ _chmolehill_entrypoint_6,
+	/*0x248*/ 0x00000000,
+	/*0x249*/ 0x00000000,
+	/*0x24a*/ 0x00000000,
+	/*0x24b*/ 0x00000000,
+	/*0x24c*/ _chmineproplight_entrypoint_0,
+	/*0x24d*/ 0x00000000,
+	/*0x24e*/ 0x00000000,
+	/*0x24f*/ 0x00000000,
+	/*0x250*/ _chlavaslab_entrypoint_0,
+	/*0x251*/ 0x00000000,
+	/*0x252*/ 0x00000000,
+	/*0x253*/ 0x00000000,
+	/*0x254*/ 0x00000000,
+	/*0x255*/ 0x00000000,
+	/*0x256*/ 0x00000000,
+	/*0x257*/ 0x00000000,
+	/*0x258*/ 0x00000000,
+	/*0x259*/ 0x00000000,
+	/*0x25a*/ 0x00000000,
+	/*0x25b*/ 0x00000000,
+	/*0x25c*/ 0x00000000,
+	/*0x25d*/ 0x00000000,
+	/*0x25e*/ 0x00000000,
+	/*0x25f*/ 0x00000000,
+	/*0x260*/ 0x00000000,
+	/*0x261*/ 0x00000000,
+	/*0x262*/ 0x00000000,
+	/*0x263*/ 0x00000000,
+	/*0x264*/ 0x00000000,
+	/*0x265*/ 0x00000000,
+	/*0x266*/ 0x00000000,
+	/*0x267*/ 0x00000000,
+	/*0x268*/ 0x00000000,
+	/*0x269*/ 0x00000000,
+	/*0x26a*/ _chusefeather_entrypoint_2,
+	/*0x26b*/ _chusefeather_entrypoint_3,
+	/*0x26c*/ 0x00000000,
+	/*0x26d*/ 0x00000000,
+	/*0x26e*/ 0x00000000,
+	/*0x26f*/ 0x00000000,
+	/*0x270*/ 0x00000000,
+	/*0x271*/ 0x00000000,
+	/*0x272*/ 0x00000000,
+	/*0x273*/ 0x00000000,
+	/*0x274*/ 0x00000000,
+	/*0x275*/ 0x00000000,
+	/*0x276*/ 0x00000000,
+	/*0x277*/ 0x00000000,
+	/*0x278*/ 0x00000000,
+	/*0x279*/ 0x00000000,
+	/*0x27a*/ 0x00000000,
+	/*0x27b*/ 0x00000000,
+	/*0x27c*/ 0x00000000,
+	/*0x27d*/ 0x00000000,
+	/*0x27e*/ _chlavacolumnswitch_entrypoint_0,
+	/*0x27f*/ _chlavacolumns_entrypoint_0,
+	/*0x280*/ _chmumboskullfakearchpanellava_entrypoint_0,
+	/*0x281*/ _chlavatraindoor_entrypoint_0,
+	/*0x282*/ 0x00000000,
+	/*0x283*/ 0x00000000,
+	/*0x284*/ 0x00000000,
+	/*0x285*/ _chlavatraindoorswitch_entrypoint_0,
+	/*0x286*/ 0x00000000,
+	/*0x287*/ _chlavaarchgrillswitch_entrypoint_0,
+	/*0x288*/ _chlavaarchgrill_entrypoint_0,
+	/*0x289*/ _chfirefx_entrypoint_1,
+	/*0x28a*/ 0x00000000,
+	/*0x28b*/ _chfactoryroofbits_entrypoint_0,
+	/*0x28c*/ _chfactorybattery_entrypoint_1,
+	/*0x28d*/ _chwumbawigwam_entrypoint_0,
+	/*0x28e*/ _chswampplatform_entrypoint_0,
+	/*0x28f*/ _chsmalltrexdoor_entrypoint_0,
+	/*0x290*/ _chdinofamilymother_entrypoint_0,
+	/*0x291*/ _chdinofamilysick_entrypoint_1,
+	/*0x292*/ _chdinofamilysmall_entrypoint_0,
+	/*0x293*/ _chdinofamilymissing_entrypoint_0,
+	/*0x294*/ _chcaptainblubber_entrypoint_0,
+	/*0x295*/ _chtransparentfish_entrypoint_0,
+	/*0x296*/ 0x00000000,
+	/*0x297*/ _chsunlightspell_entrypoint_0,
+	/*0x298*/ _chdummyjigsaw_entrypoint_0,
+	/*0x299*/ 0x00000000,
+	/*0x29a*/ _chpufferfish_entrypoint_0,
+	/*0x29b*/ 0x00000000,
+	/*0x29c*/ _chlinkpipefan_entrypoint_1,
+	/*0x29d*/ 0x00000000,
+	/*0x29e*/ _chstoneballcontrol_entrypoint_4,
+	/*0x29f*/ _chglowbo_entrypoint_1,
+	/*0x2a0*/ _chglowbo_entrypoint_3,
+	/*0x2a1*/ _chhumba_entrypoint_0,
+	/*0x2a2*/ _chflysaucer_entrypoint_1,
+	/*0x2a3*/ _chflysaucercrate_entrypoint_0,
+	/*0x2a4*/ _chflysaucer_entrypoint_2,
+	/*0x2a5*/ _chchuffy_entrypoint_0,
+	/*0x2a6*/ _chchuffycont_entrypoint_2,
+	/*0x2a7*/ _chfiregen_entrypoint_12,
+	/*0x2a8*/ _chfiregen_entrypoint_13,
+	/*0x2a9*/ _chfiregen_entrypoint_14,
+	/*0x2aa*/ _chfiregen_entrypoint_15,
+	/*0x2ab*/ _chfiregen_entrypoint_16,
+	/*0x2ac*/ _chfiregen_entrypoint_17,
+	/*0x2ad*/ 0x00000000,
+	/*0x2ae*/ _chstatictorch_entrypoint_0,
+	/*0x2af*/ _chfloorbubbles_entrypoint_0,
+	/*0x2b0*/ _chmumbopad_entrypoint_1,
+	/*0x2b1*/ 0x00000000,
+	/*0x2b2*/ _cheggsplode_entrypoint_0,
+	/*0x2b3*/ _chjadestatue_entrypoint_0,
+	/*0x2b4*/ _chtemplebossdoor_entrypoint_0,
+	/*0x2b5*/ _chtemplelobbydoor_entrypoint_0,
+	/*0x2b6*/ _chtempleinternaldoor_entrypoint_0,
+	/*0x2b7*/ 0x00000000,
+	/*0x2b8*/ _chnests_entrypoint_6,
+	/*0x2b9*/ _chminelobbydoor_entrypoint_0,
+	/*0x2ba*/ 0x00000000,
+	/*0x2bb*/ _chtransparencypot_entrypoint_0,
+	/*0x2bc*/ _chtntmineshoot_entrypoint_1,
+	/*0x2bd*/ _chtntmineshoot_entrypoint_2,
+	/*0x2be*/ _chtntmineshoot_entrypoint_0,
+	/*0x2bf*/ _chclinker_entrypoint_1,
+	/*0x2c0*/ _chclinker_entrypoint_2,
+	/*0x2c1*/ _chclinker_entrypoint_0,
+	/*0x2c2*/ _chfactorylobbydoor_entrypoint_0,
+	/*0x2c3*/ _chtntmineshoot_entrypoint_3,
+	/*0x2c4*/ _chfpsgame_entrypoint_0,
+	/*0x2c5*/ _ch1pfreeze_entrypoint_0,
+	/*0x2c6*/ 0x00000000,
+	/*0x2c7*/ 0x00000000,
+	/*0x2c8*/ 0x00000000,
+	/*0x2c9*/ 0x00000000,
+	/*0x2ca*/ 0x00000000,
+	/*0x2cb*/ 0x00000000,
+	/*0x2cc*/ 0x00000000,
+	/*0x2cd*/ 0x00000000,
+	/*0x2ce*/ 0x00000000,
+	/*0x2cf*/ 0x00000000,
+	/*0x2d0*/ 0x00000000,
+	/*0x2d1*/ 0x00000000,
+	/*0x2d2*/ 0x00000000,
+	/*0x2d3*/ 0x00000000,
+	/*0x2d4*/ 0x00000000,
+	/*0x2d5*/ 0x00000000,
+	/*0x2d6*/ 0x00000000,
+	/*0x2d7*/ 0x00000000,
+	/*0x2d8*/ 0x00000000,
+	/*0x2d9*/ 0x00000000,
+	/*0x2da*/ 0x00000000,
+	/*0x2db*/ 0x00000000,
+	/*0x2dc*/ 0x00000000,
+	/*0x2dd*/ 0x00000000,
+	/*0x2de*/ 0x00000000,
+	/*0x2df*/ 0x00000000,
+	/*0x2e0*/ 0x00000000,
+	/*0x2e1*/ 0x00000000,
+	/*0x2e2*/ 0x00000000,
+	/*0x2e3*/ 0x00000000,
+	/*0x2e4*/ 0x00000000,
+	/*0x2e5*/ 0x00000000,
+	/*0x2e6*/ 0x00000000,
+	/*0x2e7*/ 0x00000000,
+	/*0x2e8*/ 0x00000000,
+	/*0x2e9*/ 0x00000000,
+	/*0x2ea*/ 0x00000000,
+	/*0x2eb*/ 0x00000000,
+	/*0x2ec*/ 0x00000000,
+	/*0x2ed*/ 0x00000000,
+	/*0x2ee*/ 0x00000000,
+	/*0x2ef*/ 0x00000000,
+	/*0x2f0*/ 0x00000000,
+	/*0x2f1*/ 0x00000000,
+	/*0x2f2*/ 0x00000000,
+	/*0x2f3*/ 0x00000000,
+	/*0x2f4*/ 0x00000000,
+	/*0x2f5*/ 0x00000000,
+	/*0x2f6*/ 0x00000000,
+	/*0x2f7*/ 0x00000000,
+	/*0x2f8*/ _chmayafarmer_entrypoint_1,
+	/*0x2f9*/ _chjujubagfx_entrypoint_0,
+	/*0x2fa*/ 0x00000000,
+	/*0x2fb*/ 0x00000000,
+	/*0x2fc*/ _chpiranha_entrypoint_0,
+	/*0x2fd*/ _chpiranha_entrypoint_1,
+	/*0x2fe*/ _chpiranha_entrypoint_2,
+	/*0x2ff*/ _chnewfreezy_entrypoint_1,
+	/*0x300*/ _chlakemonster_entrypoint_0,
+	/*0x301*/ _chlakemonster_entrypoint_4,
+	/*0x302*/ _chminelightswitch_entrypoint_0,
+	/*0x303*/ _chminelight_entrypoint_0,
+	/*0x304*/ _chskeletonexplode_entrypoint_9,
+	/*0x305*/ _chdodgemcontrol_entrypoint_2,
+	/*0x306*/ _chdodgemcontrol_entrypoint_0,
+	/*0x307*/ _chdodgemdoors_entrypoint_0,
+	/*0x308*/ 0x00000000,
+	/*0x309*/ 0x00000000,
+	/*0x30a*/ 0x00000000,
+	/*0x30b*/ _chmole_maya_entrypoint_1,
+	/*0x30c*/ _chflysaucerdoor_entrypoint_0,
+	/*0x30d*/ _chflysaucerdoor_entrypoint_1,
+	/*0x30e*/ _chchuffyglow_entrypoint_1,
+	/*0x30f*/ _chtoothyfish_entrypoint_0,
+	/*0x310*/ _chtoothyfish_entrypoint_1,
+	/*0x311*/ _chmole_overworld_entrypoint_0,
+	/*0x312*/ 0x00000000,
+	/*0x313*/ 0x00000000,
+	/*0x314*/ 0x00000000,
+	/*0x315*/ _chmole_lagoon_entrypoint_0,
+	/*0x316*/ _chchuffy_entrypoint_2,
+	/*0x317*/ _chintrochar_entrypoint_0,
+	/*0x318*/ 0x00000000,
+	/*0x319*/ 0x00000000,
+	/*0x31a*/ 0x00000000,
+	/*0x31b*/ 0x00000000,
+	/*0x31c*/ 0x00000000,
+	/*0x31d*/ _chblackeye_entrypoint_0,
+	/*0x31e*/ _cheel_entrypoint_0,
+	/*0x31f*/ _chlagoonfish_entrypoint_0,
+	/*0x320*/ 0x00000000,
+	/*0x321*/ _chboilerid_entrypoint_0,
+	/*0x322*/ _chbilldrillboulder_entrypoint_1,
+	/*0x323*/ _chklungoleave_entrypoint_0,
+	/*0x324*/ 0x00000000,
+	/*0x325*/ 0x00000000,
+	/*0x326*/ _chhotfloorsmoke_entrypoint_0,
+	/*0x327*/ _chfairgroundworker_entrypoint_0,
+	/*0x328*/ _chfairgroundworker_entrypoint_1,
+	/*0x329*/ _chfairgroundworker_entrypoint_2,
+	/*0x32a*/ _chfairgroundworker_entrypoint_3,
+	/*0x32b*/ _chburgerstand_entrypoint_0,
+	/*0x32c*/ _chburgerstand_entrypoint_1,
+	/*0x32d*/ _chfriesstand_entrypoint_0,
+	/*0x32e*/ _chfriesstand_entrypoint_1,
+	/*0x32f*/ _chburgerstand_entrypoint_2,
+	/*0x330*/ _chburgerstand_entrypoint_3,
+	/*0x331*/ _chfriesstand_entrypoint_2,
+	/*0x332*/ _chfriesstand_entrypoint_3,
+	/*0x333*/ _chconga_entrypoint_0,
+	/*0x334*/ _chstarspinnerplanet_entrypoint_0,
+	/*0x335*/ _chstarspinnerplanet_entrypoint_1,
+	/*0x336*/ _chstarspinnerstar_entrypoint_0,
+	/*0x337*/ _chstarspinnerctrl_entrypoint_0,
+	/*0x338*/ _chstarspinnerctrl_entrypoint_1,
+	/*0x339*/ _chhellterskelter_entrypoint_0,
+	/*0x33a*/ _chhellterskelter_entrypoint_2,
+	/*0x33b*/ _chhellterskelter_entrypoint_1,
+	/*0x33c*/ _chlightfader_entrypoint_0,
+	/*0x33d*/ _chcablespark_entrypoint_0,
+	/*0x33e*/ _chcablecar_entrypoint_0,
+	/*0x33f*/ _chcablecar_entrypoint_1,
+	/*0x340*/ _chhellterskeltermouth_entrypoint_0,
+	/*0x341*/ _chweldarbossdoors_entrypoint_0,
+	/*0x342*/ _charea51gate_entrypoint_0,
+	/*0x343*/ _chdiggerboss_entrypoint_0,
+	/*0x344*/ _chghostdoor_entrypoint_0,
+	/*0x345*/ _chweldarbossfusebox_entrypoint_0,
+	/*0x346*/ _chsabreman_entrypoint_1,
+	/*0x347*/ _chsabreman_entrypoint_2,
+	/*0x348*/ _chghostdoor_entrypoint_1,
+	/*0x349*/ _chfloater_entrypoint_0,
+	/*0x34a*/ _chpumproomgrill_entrypoint_0,
+	/*0x34b*/ _chpumproomswitch_entrypoint_0,
+	/*0x34c*/ _chbouncycastle_entrypoint_0,
+	/*0x34d*/ _chspotlight_entrypoint_0,
+	/*0x34e*/ _chboggykidshome_entrypoint_2,
+	/*0x34f*/ _chballoonburst_entrypoint_0,
+	/*0x350*/ _chballoonburst_entrypoint_2,
+	/*0x351*/ _chbouncycastle_entrypoint_1,
+	/*0x352*/ _chpawnbroker_entrypoint_0,
+	/*0x353*/ _chpawnbroker_entrypoint_1,
+	/*0x354*/ _chpawnbroker_entrypoint_2,
+	/*0x355*/ _chhoopswoop_entrypoint_0,
+	/*0x356*/ _chhoopswoop_entrypoint_2,
+	/*0x357*/ 0x00000000,
+	/*0x358*/ _chtiptup_entrypoint_0,
+	/*0x359*/ _chtiptup_entrypoint_1,
+	/*0x35a*/ _chtiptup_entrypoint_2,
+	/*0x35b*/ _chonearmbandit_entrypoint_1,
+	/*0x35c*/ _chseaweedbaddy_entrypoint_0,
+	/*0x35d*/ _chseaweedbaddy_entrypoint_1,
+	/*0x35e*/ _choctopus_entrypoint_0,
+	/*0x35f*/ _chanemone_entrypoint_0,
+	/*0x360*/ _chjollyroger_entrypoint_0,
+	/*0x361*/ _chjollyroger_entrypoint_1,
+	/*0x362*/ _chdinofoot_entrypoint_0,
+	/*0x363*/ _chfreezy_entrypoint_0,
+	/*0x364*/ _chdinoswitches_entrypoint_3,
+	/*0x365*/ _chbigterrysbits_entrypoint_1,
+	/*0x366*/ _chlagoonbits_entrypoint_0,
+	/*0x367*/ _chlagoonbits_entrypoint_1,
+	/*0x368*/ _chlagoonbits_entrypoint_2,
+	/*0x369*/ _chlagoonbits_entrypoint_3,
+	/*0x36a*/ _chjollyroger_entrypoint_2,
+	/*0x36b*/ _chlagoonbilldrillcover_entrypoint_0,
+	/*0x36c*/ _chlagoonbits_entrypoint_4,
+	/*0x36d*/ _chlagoonbits_entrypoint_5,
+	/*0x36e*/ _chboxingglove_entrypoint_1,
+	/*0x36f*/ _chdinoboss_entrypoint_0,
+	/*0x370*/ _chlakemonster_entrypoint_5,
+	/*0x371*/ _chdrips_entrypoint_0,
+	/*0x372*/ 0x00000000,
+	/*0x373*/ 0x00000000,
+	/*0x374*/ _chintroticker_entrypoint_0,
+	/*0x375*/ 0x00000000,
+	/*0x376*/ _chmole_cuckoo_entrypoint_0,
+	/*0x377*/ _chdragonbrothers_entrypoint_0,
+	/*0x378*/ _chdragonbrothers_entrypoint_1,
+	/*0x379*/ _chdragonbrothers_entrypoint_2,
+	/*0x37a*/ _chdragonbrothers_entrypoint_3,
+	/*0x37b*/ _chdragonbrothers_entrypoint_4,
+	/*0x37c*/ _chevilmumbo_entrypoint_0,
+	/*0x37d*/ _chevilmumbo_entrypoint_1,
+	/*0x37e*/ _chevilmumbo_entrypoint_2,
+	/*0x37f*/ _chdodgemcontrol_entrypoint_1,
+	/*0x380*/ _chevilmumbo_entrypoint_3,
+	/*0x381*/ _chhumba_entrypoint_1,
+	/*0x382*/ _chtimetable_entrypoint_0,
+	/*0x383*/ _chclockworkmouse_entrypoint_1,
+	/*0x384*/ 0x00000000,
+	/*0x385*/0x00000000,
+	/*0x386*/ _chcrusher_entrypoint_4,
+	/*0x387*/ 0x00000000,
+	/*0x388*/ 0x00000000,
+	/*0x389*/ 0x00000000,
+	/*0x38a*/ _chhandcart_entrypoint_0,
+	/*0x38b*/ _chgruntylairexttowerwindow_entrypoint_0,
+	/*0x38c*/ _chhagstraindoor_entrypoint_0,
+	/*0x38d*/ _chhagstraindoorswitch_entrypoint_0,
+	/*0x38e*/ _chlavaentrancebridge_entrypoint_0,
+	/*0x38f*/ _chlavaentrancebridgeswitch_entrypoint_0,
+	/*0x390*/ 0x00000000,
+	/*0x391*/ _chmayaentrydoor_entrypoint_0,
+	/*0x392*/ _chlagoonentrygate_entrypoint_0,
+	/*0x393*/ _chmineentrygrille_entrypoint_0,
+	/*0x394*/ _chlavaentrydoor_entrypoint_0,
+	/*0x395*/ _chcauldronentrydoor_entrypoint_1,
+	/*0x396*/ _chterryteeth_entrypoint_0,
+	/*0x397*/ 0x00000000,
+	/*0x398*/ _chphlegm_entrypoint_0,
+	/*0x399*/ _chphlegm_entrypoint_1,
+	/*0x39a*/ _chlilterry_entrypoint_0,
+	/*0x39b*/ _chdinocoaster_entrypoint_0,
+	/*0x39c*/ _chpowerhutwitchy_entrypoint_0,
+	/*0x39d*/ _chpowerhutwitchy_entrypoint_1,
+	/*0x39e*/ _chpowerhutwitchy_entrypoint_2,
+	/*0x39f*/ _chpowerhutwitchy_entrypoint_3,
+	/*0x3a0*/ _chphlegm_entrypoint_2,
+	/*0x3a1*/ 0x00000000,
+	/*0x3a2*/ _chflamer_entrypoint_0,
+	/*0x3a3*/ _chpoolkids_entrypoint_0,
+	/*0x3a4*/ _chpoolkids_entrypoint_1,
+	/*0x3a5*/ _chnicecavemenguard_entrypoint_0,
+	/*0x3a6*/ _chnicecavemen_entrypoint_0,
+	/*0x3a7*/ _chfactorylight_entrypoint_0,
+	/*0x3a8*/ _chnicecavemen_entrypoint_3,
+	/*0x3a9*/ _chbonfirecavern_entrypoint_0,
+	/*0x3aa*/ _chterryegg_entrypoint_1,
+	/*0x3ab*/ _charmouredcaveman_entrypoint_0,
+	/*0x3ac*/ _chfirefx_entrypoint_0,
+	/*0x3ad*/ 0x00000000,
+	/*0x3ae*/ _chweldarbossfusebox_entrypoint_1,
+	/*0x3af*/ _chicywind_entrypoint_0,
+	/*0x3b0*/ _chintrotext_entrypoint_0,
+	/*0x3b1*/ 0x00000000,
+	/*0x3b2*/ _chfactoryprop_entrypoint_0,
+	/*0x3b3*/ _chfactoryprop_entrypoint_1,
+	/*0x3b4*/ _chtrashcompactor_entrypoint_0,
+	/*0x3b5*/ _chtrashcompactor_entrypoint_1,
+	/*0x3b6*/ _chtrashcompactor_entrypoint_2,
+	/*0x3b7*/ _chtrashcompactor_entrypoint_3,
+	/*0x3b8*/ _chfactoryliftdoor_entrypoint_0,
+	/*0x3b9*/ _chfactoryliftdoor_entrypoint_1,
+	/*0x3ba*/ _chfactorycrusher_entrypoint_0,
+	/*0x3bb*/ _chfactorycrusher_entrypoint_1,
+	/*0x3bc*/ _chcrate_entrypoint_1,
+	/*0x3bd*/ _chfactoryrobot_entrypoint_0,
+	/*0x3be*/ _chfactoryrobot_entrypoint_1,
+	/*0x3bf*/ _chfactoryrobot_entrypoint_2,
+	/*0x3c0*/ _chmermaidstatue_entrypoint_0,
+	/*0x3c1*/ _chmermaidstatue_entrypoint_1,
+	/*0x3c2*/ _chcrate_entrypoint_2,
+	/*0x3c3*/ _chfactorygoblin_entrypoint_0,
+	/*0x3c4*/ _chfactorytoxicpools_entrypoint_0,
+	/*0x3c5*/ _chfactorytoxicpools_entrypoint_1,
+	/*0x3c6*/ _chbigtopticket_entrypoint_0,
+	/*0x3c7*/ _chbouncycastle_entrypoint_2,
+	/*0x3c8*/ _chbouncycastle_entrypoint_3,
+	/*0x3c9*/ _chlagoonpirate_entrypoint_0,
+	/*0x3ca*/ _chpickups_entrypoint_1,
+	/*0x3cb*/ _chpickups_entrypoint_2,
+	/*0x3cc*/ _chvandoor_entrypoint_0,
+	/*0x3cd*/ _chpoolkids_entrypoint_2,
+	/*0x3ce*/ _chcoderoombits_entrypoint_0,
+	/*0x3cf*/ _chbilldrillboulder_entrypoint_2,
+	/*0x3d0*/ 0x00000000,
+	/*0x3d1*/ _chdingpot_entrypoint_0,
+	/*0x3d2*/ _chpumproomswitch_entrypoint_1,
+	/*0x3d3*/ _chelectricfence_entrypoint_0,
+	/*0x3d4*/ _chmadamegrunty_entrypoint_1,
+	/*0x3d5*/ _chfactorysmoke_entrypoint_0,
+	/*0x3d6*/ _chterryegg_entrypoint_2,
+	/*0x3d7*/ _chterryegg_entrypoint_3,
+	/*0x3d8*/ _chdinoboss_entrypoint_1,
+	/*0x3d9*/ _chappearfx_entrypoint_0,
+	/*0x3da*/ 0x00000000,
+	/*0x3db*/ _chfootwear_entrypoint_2,
+	/*0x3dc*/ _chbilldrillplate_entrypoint_0,
+	/*0x3dd*/ _chbilldrillplate_entrypoint_1,
+	/*0x3de*/ _chbilldrillplate_entrypoint_2,
+	/*0x3df*/ _chrainripples_entrypoint_0,
+	/*0x3e0*/ _chdumbwaiterlift_entrypoint_0,
+	/*0x3e1*/ _chmrsicecube_entrypoint_0,
+	/*0x3e2*/ _chmrsicecube_entrypoint_1,
+	/*0x3e3*/ _chgobihailfire_entrypoint_0,
+	/*0x3e4*/ _chboggykidshome_entrypoint_1,
+	/*0x3e5*/ _chbigfoot_entrypoint_0,
+	/*0x3e6*/ _chbiggafoot_entrypoint_0,
+	/*0x3e7*/ _chmricecube_entrypoint_0,
+	/*0x3e8*/ _chfactorylinkgrill_entrypoint_0,
+	/*0x3e9*/ _chlavahand_entrypoint_0,
+	/*0x3ea*/ _chtoxicroombits_entrypoint_0,
+	/*0x3eb*/ _chtoxicroombits_entrypoint_1,
+	/*0x3ec*/ _chtoxicroomprops_entrypoint_0,
+	/*0x3ed*/ _chfactorysparkroom_entrypoint_1,
+	/*0x3ee*/ _chfactoryempspell_entrypoint_1,
+	/*0x3ef*/ _chgoldfish_entrypoint_0,
+	/*0x3f0*/ _chfactorydrums_entrypoint_2,
+	/*0x3f1*/ _chfactorylinkgrill_entrypoint_1,
+	/*0x3f2*/ _chfactoryroofbits_entrypoint_1,
+	/*0x3f3*/ _chfactoryroofbits_entrypoint_2,
+	/*0x3f4*/ _chfactoryroofbits_entrypoint_3,
+	/*0x3f5*/ _chfactorymagnet_entrypoint_1,
+	/*0x3f6*/ _chfactorymagnet_entrypoint_2,
+	/*0x3f7*/ _chfactorybtwmdoor_entrypoint_0,
+	/*0x3f8*/ _chfactorymaindoor_entrypoint_0,
+	/*0x3f9*/ _chfactorymaindoor_entrypoint_1,
+	/*0x3fa*/ _chfactorylinkgrill_entrypoint_2,
+	/*0x3fb*/ _chfactorybattery_entrypoint_2,
+	/*0x3fc*/ _chbosskogsdoor_entrypoint_1,
+	/*0x3fd*/ _chbosskogsdoor_entrypoint_0,
+	/*0x3fe*/ _chlensflare_entrypoint_1,
+	/*0x3ff*/ _chfactorytoxiccloud_entrypoint_0,
+	/*0x400*/ _chlavahand_entrypoint_1,
+	/*0x401*/ _chlavagargoyle_entrypoint_0,
+	/*0x402*/ _chlavagargoyle_entrypoint_2,
+	/*0x403*/ _chfactorytrashbelt_entrypoint_0,
+	/*0x404*/ 0x00000000,
+	/*0x405*/ _chpotogoldgame_entrypoint_4,
+	/*0x406*/ _chfactorystationdoors_entrypoint_0,
+	/*0x407*/ _chpotogoldbits_entrypoint_0,
+	/*0x408*/ _chpotogoldbits_entrypoint_2,
+	/*0x409*/ _chpotogoldbits_entrypoint_3,
+	/*0x40a*/ _chfantasydrillfield_entrypoint_0,
+	/*0x40b*/ _chfantasytrashcanbits_entrypoint_1,
+	/*0x40c*/ _chfantasytrashcanbits_entrypoint_0,
+	/*0x40d*/ _chbeanstalkseed_entrypoint_0,
+	/*0x40e*/ _chrainbow_entrypoint_1,
+	/*0x40f*/ _chwaspstatue_entrypoint_1,
+	/*0x410*/ 0x00000000,
+	/*0x411*/ _chwaspstatue_entrypoint_2,
+	/*0x412*/ _chbubbleelevator_entrypoint_0,
+	/*0x413*/ _chfactorysparkroom_entrypoint_0,
+	/*0x414*/ _chfantasylakebits_entrypoint_2,
+	/*0x415*/ _chfantasylakebits_entrypoint_1,
+	/*0x416*/ _chtoxicroomprops_entrypoint_2,
+	/*0x417*/ _chfantasysafe_entrypoint_0,
+	/*0x418*/ _chfantasysafeswitch_entrypoint_0,
+	/*0x419*/ 0x00000000,
+	/*0x41a*/ _chicestationbits_entrypoint_0,
+	/*0x41b*/ _chicestationbits_entrypoint_1,
+	/*0x41c*/ _chiciclebits_entrypoint_0,
+	/*0x41d*/ _chboggykidshome_entrypoint_0,
+	/*0x41e*/ _chklungo_entrypoint_0,
+	/*0x41f*/ _chklungodoors_entrypoint_0,
+	/*0x420*/ _chklungodoors_entrypoint_1,
+	/*0x421*/ _chklungoforcefield_entrypoint_0,
+	/*0x422*/ _chklungophial_entrypoint_0,
+	/*0x423*/ _chklungophial_entrypoint_1,
+	/*0x424*/ _chvolcanobits_entrypoint_0,
+	/*0x425*/ _chvolcanobits_entrypoint_1,
+	/*0x426*/ _chcrystalbaddie_entrypoint_0,
+	/*0x427*/ _chhotwaterpoolbits_entrypoint_0,
+	/*0x428*/ _chhotwaterpoolbits_entrypoint_1,
+	/*0x429*/ _chvolcanobits_entrypoint_2,
+	/*0x42a*/ _chvolcanobits_entrypoint_3,
+	/*0x42b*/ _chnicecavemen_entrypoint_1,
+	/*0x42c*/ _chnicecavemen_entrypoint_2,
+	/*0x42d*/ _chdippy_entrypoint_0,
+	/*0x42e*/ _chfactoryflypad_entrypoint_0,
+	/*0x42f*/ _chfactoryflypad_entrypoint_1,
+	/*0x430*/ _chmrsboggyhome_entrypoint_0,
+	/*0x431*/ _chweldarbossdoors_entrypoint_1,
+	/*0x432*/ _chfactorytoxicpools_entrypoint_2,
+	/*0x433*/ _chdinoswitches_entrypoint_1,
+	/*0x434*/ _chdinoswitches_entrypoint_2,
+	/*0x435*/ _chloggo_entrypoint_0,
+	/*0x436*/ _chloggo_entrypoint_1,
+	/*0x437*/ 0x00000000,
+	/*0x438*/ _chkingjinjo_entrypoint_0,
+	/*0x439*/ _chhotwaterpoolbits_entrypoint_2,
+	/*0x43a*/ _chhotwaterpoolbits_entrypoint_3,
+	/*0x43b*/ _chbottlesfamily_entrypoint_0,
+	/*0x43c*/ _chbottlesfamily_entrypoint_1,
+	/*0x43d*/ _chbottlesfamily_entrypoint_2,
+	/*0x43e*/ _chnutsnbolts_entrypoint_0,
+	/*0x43f*/ _chnutsnbolts_entrypoint_1,
+	/*0x440*/ _chnutsnbolts_entrypoint_2,
+	/*0x441*/ _chdippy_entrypoint_1,
+	/*0x442*/ _chfactorytwinklies_entrypoint_0,
+	/*0x443*/ _chfactorytwinklies_entrypoint_3,
+	/*0x444*/ _chfactorytwinklies_entrypoint_4,
+	/*0x445*/ _chfactorytwinklies_entrypoint_5,
+	/*0x446*/ _chfactorytwinklies_entrypoint_2,
+	/*0x447*/ _chstatueboss_entrypoint_0,
+	/*0x448*/ _chstatuebossbits_entrypoint_0,
+	/*0x449*/ _chstatuebossbits_entrypoint_1,
+	/*0x44a*/ _chhoopswoop_entrypoint_1,
+	/*0x44b*/ _chproplighter_entrypoint_0,
+	/*0x44c*/ _chballoonburst_entrypoint_1,
+	/*0x44d*/ _chfactorytwinklies_entrypoint_1,
+	/*0x44e*/ _chbiggafoot_entrypoint_1,
+	/*0x44f*/ _chstatuebossbits_entrypoint_3,
+	/*0x450*/ _chstatuebossbits_entrypoint_2,
+	/*0x451*/ _chmonsterinterior_entrypoint_0,
+	/*0x452*/ _chmonsterinterior_entrypoint_2,
+	/*0x453*/ _chmonsterinterior_entrypoint_3,
+	/*0x454*/ _chmonsterinterior_entrypoint_4,
+	/*0x455*/ _chmonsterinterior_entrypoint_1,
+	/*0x456*/ _chalienkids_entrypoint_0,
+	/*0x457*/ _chalienkids_entrypoint_1,
+	/*0x458*/ _chalienkids_entrypoint_2,
+	/*0x459*/ _chalienkids_entrypoint_3,
+	/*0x45a*/ _chaliendad_entrypoint_0,
+	/*0x45b*/ _chaliendad_entrypoint_2,
+	/*0x45c*/ _chlifeforcespell_entrypoint_0,
+	/*0x45d*/ _changlerboss_entrypoint_0,
+	/*0x45e*/ _changlerboss_entrypoint_1,
+	/*0x45f*/ _changlerbossflare_entrypoint_0,
+	/*0x460*/ _changlerbossbubble_entrypoint_0,
+	/*0x461*/ _chbigterrysbits_entrypoint_0,
+	/*0x462*/ _chfireimp_entrypoint_0,
+	/*0x463*/ _chmumboskulls_entrypoint_0,
+	/*0x464*/ _ch2dbaddy_entrypoint_0,
+	/*0x465*/ _chweldarboss_entrypoint_0,
+	/*0x466*/ _chalienbeam_entrypoint_0,
+	/*0x467*/ _chaliendad_entrypoint_1,
+	/*0x468*/ _chweldarboss_entrypoint_1,
+	/*0x469*/ _chbigterrysbits_entrypoint_2,
+	/*0x46a*/ _chweldarbossfusebox_entrypoint_2,
+	/*0x46b*/ _chflowerbaddie_entrypoint_0,
+	/*0x46c*/ _changlerbossdoor_entrypoint_0,
+	/*0x46d*/ _chboilerbossdoor_entrypoint_0,
+	/*0x46e*/ _chinflatablebossdoor_entrypoint_0,
+	/*0x46f*/ _chhotwatersteam_entrypoint_0,
+	/*0x470*/ _chcastleshockpadswitch_entrypoint_0,
+	/*0x471*/ _chfootwear_entrypoint_4,
+	/*0x472*/ _chtalontorpedoboulder_entrypoint_0,
+	/*0x473*/ _chexplodingchainlinks_entrypoint_0,
+	/*0x474*/ _chfactoryroofbits_entrypoint_4,
+	/*0x475*/ _chtrashcangame_entrypoint_0,
+	/*0x476*/ _chtrashcangame_entrypoint_2,
+	/*0x477*/ _chfantasyathlete_entrypoint_0,
+	/*0x478*/ 0x00000000,
+	/*0x479*/ 0x00000000,
+	/*0x47a*/ 0x00000000,
+	/*0x47b*/ 0x00000000,
+	/*0x47c*/ _chtoxicroomprops_entrypoint_1,
+	/*0x47d*/ _chfantasycannon_entrypoint_0,
+	/*0x47e*/ _chfantasycannon_entrypoint_1,
+	/*0x47f*/ _chfantasyonion_entrypoint_0,
+	/*0x480*/ _chbeanstalkseed_entrypoint_1,
+	/*0x481*/ _chpickups_entrypoint_3,
+	/*0x482*/ _chfantasyeyeball_entrypoint_0,
+	/*0x483*/ _chfantasyeyeball_entrypoint_1,
+	/*0x484*/ _choildrill_entrypoint_1,
+	/*0x485*/ _choildrill_entrypoint_2,
+	/*0x486*/ _chfloaty_entrypoint_1,
+	/*0x487*/ 0x00000000,
+	/*0x488*/ _chLagoonInnBlockedWall_entrypoint_0,
+	/*0x489*/ _chwitchyentrygates_entrypoint_0,
+	/*0x48a*/ 0x00000000,
+	/*0x48b*/ _chfactoryentrydoors_entrypoint_0,
+	/*0x48c*/ 0x00000000,
+	/*0x48d*/ _chcauldronenergybars_entrypoint_0,
+	/*0x48e*/ _chjinjovillagecamera1_entrypoint_0,
+	/*0x48f*/ _chjinjo_entrypoint_6,
+	/*0x490*/ 0x00000000,
+	/*0x491*/ _chLagoonInnBlockedWall_entrypoint_1,
+	/*0x492*/ _chlavaarchgrill3switches_entrypoint_0,
+	/*0x493*/ _chlavaarchgrill3switches_entrypoint_1,
+	/*0x494*/ _chlavaarchgrill3switches_entrypoint_2,
+	/*0x495*/ _chmumboskullfakearchpanellava_entrypoint_1,
+	/*0x496*/ _chlagoonlockerdoorhits_entrypoint_0,
+	/*0x497*/ 0x00000000,
+	/*0x498*/ 0x00000000,
+	/*0x499*/ _chTalTorpWall_entrypoint_0,
+	/*0x49a*/ _chufoextdoor_entrypoint_0,
+	/*0x49b*/ _chdinotraindoor_entrypoint_0,
+	/*0x49c*/ _chdinotraindoorswitch_entrypoint_0,
+	/*0x49d*/ _chminegrill2switches_entrypoint_0,
+	/*0x49e*/ _chminegrill2switches_entrypoint_1,
+	/*0x49f*/ _chcauldronentrydoor_entrypoint_2,
+	/*0x4a0*/ _chdrawbridgeswitches_entrypoint_0,
+	/*0x4a1*/ _chdrawbridgeswitches_entrypoint_1,
+	/*0x4a2*/ _chdinoroargrill_entrypoint_0,
+	/*0x4a3*/ 0x00000000,
+	/*0x4a4*/ _chlavaexplodbuild_entrypoint_0,
+	/*0x4a5*/ _chboggy_entrypoint_0,
+	/*0x4a6*/ _chnests_entrypoint_12,
+	/*0x4a7*/ _chgameselect_entrypoint_0,
+	/*0x4a8*/ _chgameselect_entrypoint_2,
+	/*0x4a9*/ _chgameselect_entrypoint_3,
+	/*0x4aa*/ _chgameselect_entrypoint_4,
+	/*0x4ab*/ _chgameselect_entrypoint_1,
+	/*0x4ac*/ _chgameselect_entrypoint_5,
+	/*0x4ad*/ _chminisubgame_entrypoint_0,
+	/*0x4ae*/ _chminisubgame_entrypoint_1,
+	/*0x4af*/ _chjiggypost_entrypoint_0,
+	/*0x4b0*/ _chhoneyb_entrypoint_0,
+	/*0x4b1*/ _chmasterjiggy_entrypoint_1,
+	/*0x4b2*/ _chjiggytemple_entrypoint_2,
+	/*0x4b3*/ _chjiggybeam_entrypoint_0,
+	/*0x4b4*/ 0x00000000,
+	/*0x4b5*/ _chattract_entrypoint_0,
+	/*0x4b6*/ _chgameselect_entrypoint_6,
+	/*0x4b7*/ _chpickups_entrypoint_10,
+	/*0x4b8*/ _chhoneyb_entrypoint_1,
+	/*0x4b9*/ _chgameselect_entrypoint_7,
+	/*0x4ba*/ _chboggyfish_entrypoint_0,
+	/*0x4bb*/ 0x00000000,
+	/*0x4bc*/ _chbottlesdead_entrypoint_0,
+	/*0x4bd*/ _chjrinnlight_entrypoint_0,
+	/*0x4be*/ 0x00000000,
+	/*0x4bf*/ _chfoodwarn_entrypoint_0,
+	/*0x4c0*/ _chperspexbox_entrypoint_0,
+	/*0x4c1*/ _chperspexboxswitch_entrypoint_0,
+	/*0x4c2*/ _chminegrilldoor_entrypoint_0,
+	/*0x4c3*/ 0x00000000,
+	/*0x4c4*/ _chwitchytents_entrypoint_0,
+	/*0x4c5*/ _chwitchytents_entrypoint_1,
+	/*0x4c6*/ _chfantasybounce_entrypoint_0,
+	/*0x4c7*/ _chfantasybounce_entrypoint_1,
+	/*0x4c8*/ 0x00000000,
+	/*0x4c9*/ _chgoldsnakehead_entrypoint_2,
+	/*0x4ca*/ 0x00000000,
+	/*0x4cb*/ 0x00000000,
+	/*0x4cc*/ 0x00000000,
+	/*0x4cd*/ _chquizexitdoor_entrypoint_0,
+	/*0x4ce*/ 0x00000000,
+	/*0x4cf*/ 0x00000000,
+	/*0x4d0*/ 0x00000000,
+	/*0x4d1*/ 0x00000000,
+	/*0x4d2*/ 0x00000000,
+	/*0x4d3*/ 0x00000000,
+	/*0x4d4*/ 0x00000000,
+	/*0x4d5*/ 0x00000000,
+	/*0x4d6*/ _chsparkle_entrypoint_0,
+	/*0x4d7*/ _chpickups_entrypoint_7,
+	/*0x4d8*/ _chmumbohealspell_entrypoint_0,
+	/*0x4d9*/ _chfactoryroofbits_entrypoint_5,
+	/*0x4da*/ _chfactorymaindoor_entrypoint_2,
+	/*0x4db*/ _chfactoryentrydoors_entrypoint_1,
+	/*0x4dc*/ 0x00000000,
+	/*0x4dd*/ 0x00000000,
+	/*0x4de*/ 0x00000000,
+	/*0x4df*/ 0x00000000,
+	/*0x4e0*/ 0x00000000,
+	/*0x4e1*/ 0x00000000,
+	/*0x4e2*/ _chpickups_entrypoint_4,
+	/*0x4e3*/ _chpickups_entrypoint_5,
+	/*0x4e4*/ _chpickups_entrypoint_6,
+	/*0x4e5*/ _chdoubloon_entrypoint_2,
+	/*0x4e6*/ 0x00000000,
+	/*0x4e7*/ _chwitchyshockpadswitch_entrypoint_0,
+	/*0x4e8*/ 0x00000000,
+	/*0x4e9*/ _chsquits_entrypoint_0,
+	/*0x4ea*/ _chbottlesplantgrill_entrypoint_0,
+	/*0x4eb*/ _chkingjinjobits_entrypoint_0,
+	/*0x4ec*/ _chklungospiral_entrypoint_0,
+	/*0x4ed*/ _chfactoryposter_entrypoint_0,
+	/*0x4ee*/ 0x00000000,
+	/*0x4ef*/ _chjigsawcollect_entrypoint_0,
+	/*0x4f0*/ 0x00000000,
+	/*0x4f1*/ _chdiggerbossdoor_entrypoint_0,
+	/*0x4f2*/ _chgruntyfireball_entrypoint_0,
+	/*0x4f3*/ _chdiggerbossshell_entrypoint_0,
+	/*0x4f4*/ _chdiggerbossshell_entrypoint_1,
+	/*0x4f5*/ _chdiggerbossbattery_entrypoint_0,
+	/*0x4f6*/ _chgruntyfireballbig_entrypoint_0,
+	/*0x4f7*/ _chdiggerbossinterior_entrypoint_0,
+	/*0x4f8*/ _chbottlesparty_entrypoint_0,
+	/*0x4f9*/ _chbottlesparty_entrypoint_1,
+	/*0x4fa*/ _chspiralgrill_entrypoint_0,
+	/*0x4fb*/ 0x00000000,
+	/*0x4fc*/ _chfireicestorm_entrypoint_0,
+	/*0x4fd*/ _chfireicestorm_entrypoint_1,
+	/*0x4fe*/ _chfactoryprop_entrypoint_2,
+	/*0x4ff*/ _chdiggerbossdeflect_entrypoint_0,
+	/*0x500*/ _chgobihailfire_entrypoint_1,
+	/*0x501*/ _chchompaslunch_entrypoint_0,
+	/*0x502*/ _chlavafall_entrypoint_0,
+	/*0x503*/ 0x00000000,
+	/*0x504*/ 0x00000000,
+	/*0x505*/ 0x00000000,
+	/*0x506*/ 0x00000000,
+	/*0x507*/ 0x00000000,
+	/*0x508*/ 0x00000000,
+	/*0x509*/ 0x00000000,
+	/*0x50a*/ _chlighthalo_entrypoint_0,
+	/*0x50b*/ _chcrashmat_entrypoint_0,
+	/*0x50c*/ _chjellycastle_entrypoint_0,
+	/*0x50d*/ _chfantasysafe_entrypoint_1,
+	/*0x50e*/ _chtrashcangame_entrypoint_3,
+	/*0x50f*/ _chfactorymagnet_entrypoint_3,
+	/*0x510*/ 0x00000000,
+	/*0x511*/ 0x00000000,
+	/*0x512*/ _chicekeydoor_entrypoint_0,
+	/*0x513*/ _chicekey_entrypoint_0,
+	/*0x514*/ _chheggy_entrypoint_0,
+	/*0x515*/ _chpickups_entrypoint_8,
+	/*0x516*/ _chpickups_entrypoint_9,
+	/*0x517*/ _chsecreteggs_entrypoint_0,
+	/*0x518*/ _chplatuegrill_entrypoint_0,
+	/*0x519*/ _chplatuegrill_entrypoint_1,
+	/*0x51a*/ _chbkcart_entrypoint_0,
+	/*0x51b*/ _chworlddoors_entrypoint_0,
+	/*0x51c*/ _chtrashcangame_entrypoint_1,
+	/*0x51d*/ 0x00000000,
+	/*0x51e*/ _chhandcart_entrypoint_2,
+	/*0x51f*/ 0x00000000,
+	/*0x520*/ 0x00000000,
+	/*0x521*/ 0x00000000,
+	/*0x522*/ 0x00000000,
+	/*0x523*/ _chglowbo_entrypoint_2,
+	/*0x524*/ _chjigsaw_entrypoint_1,
+	/*0x525*/ 0x00000000,
+	/*0x526*/ 0x00000000,
+	/*0x527*/ 0x00000000,
+	/*0x528*/ _chquiz_entrypoint_4,
+	/*0x529*/ _chquiz_entrypoint_1,
+	/*0x52a*/ _chheggy_entrypoint_1,
+	/*0x52b*/ _chquiz_entrypoint_2,
+	/*0x52c*/ _chquiz_entrypoint_0,
+	/*0x52d*/ _chdinofamilysick_entrypoint_2,
+	/*0x52e*/ _chquiz_entrypoint_3,
+	/*0x52f*/ _chfactorymagnet_entrypoint_4,
+	/*0x530*/ _chboggy_entrypoint_1,
+	/*0x531*/ _chmusicmenu_entrypoint_1,
+	/*0x532*/ _chbobpanel_entrypoint_0,
+	/*0x533*/ _chtrashcangame_entrypoint_4,
+	/*0x534*/ _chmusicmenu_entrypoint_2,
+	/*0x535*/ _chdeflect_entrypoint_0,
+	/*0x536*/ 0x00000000,
+	/*0x537*/ 0x00000000,
+	/*0x538*/ 0x00000000,
+	/*0x539*/ 0x00000000,
+	/*0x53a*/ 0x00000000,
+	/*0x53b*/ 0x00000000,
+	/*0x53c*/ _chjadestatue_entrypoint_1,
+	/*0x53d*/ _chdrawbridgeswitches_entrypoint_2,
+	/*0x53e*/ 0x00000000,
+	/*0x53f*/ 0x00000000,
+	/*0x540*/ 0x00000000,
+	/*0x541*/ 0x00000000,
+	/*0x542*/ 0x00000000,
+	/*0x543*/ 0x00000000,
+	/*0x544*/ 0x00000000,
+	/*0x545*/ 0x00000000
+};
 
 s32 gemarkersDll_entrypoint_0(s32 arg0)
 {

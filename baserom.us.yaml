@@ -12926,15 +12926,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0210C040
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0210C040, c, collectDll]
-      - [0x0210CBC0, .rodata, collectDll]
-      - [0x0210CC20, data, collectDll]
-      - [0x0210CC80, bss, collectDll]
+      - [auto, c, collectDll]
   - name: gcskyDll_header
     dir: overlays/gcskyDll
     type: bin
@@ -15320,15 +15314,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0214CDC0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0214CDC0, c, markersDll]
-      - [0x0214CE50, .rodata, markersDll]
-      - [0x0214CE50, data, markersDll]
-      - [0x0214E090, bss, markersDll]
+      - [auto, c, markersDll]
   - name: suexpressjoint_header
     dir: overlays/suexpressjoint
     type: bin

@@ -27,6 +27,7 @@ extern u32 D_8011AF28[];
 //List of the start of different flag regions for different collectible types
 extern s32 D_8011AF04[];
 
+//Start of the current level's jiggy flags
 extern s32 D_8011AE60;
 
 typedef struct {
@@ -55,7 +56,7 @@ typedef struct
 {
     f32 coords[3];
     Unk80132ED0* unkC;
-    s16 unk10;
+    s16 spawnMap;
     s16 unk12;
 } UnkD_8012B180;
 extern UnkD_8012B180 D_8012B180[];
@@ -121,13 +122,13 @@ s32 func_800CFA70(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CFBC8.s")
 
-s32 func_800CFC5C(s32 arg0)
+//Return the relative jiggy index within the level
+s32 func_800CFC5C(s32 jiggyIndex)
 {
-
-    arg0 = arg0 - D_8011AE60;
-    if ((arg0 >= 0) && (arg0 < 0xA))
+    jiggyIndex = jiggyIndex - D_8011AE60;
+    if ((jiggyIndex >= 0) && (jiggyIndex < 0xA))
     {
-        return arg0;
+        return jiggyIndex;
     }
     return -1;
 }
@@ -353,7 +354,7 @@ void func_800D0594(s32 arg0, s32 arg1, s16 arg2)
         temp_v0 = func_800CFC5C(arg0);
         if (temp_v0 != -1)
         {
-            D_8012B180[temp_v0].unk10 = arg2;
+            D_8012B180[temp_v0].spawnMap = arg2;
         }
     }
 }
@@ -397,7 +398,7 @@ s16 func_800D0684(s32 arg0, s32 arg1)
         temp_v0 = func_800CFC5C(arg0);
         if (temp_v0 != -1)
         {
-            return D_8012B180[temp_v0].unk10;
+            return D_8012B180[temp_v0].spawnMap;
         }
     }
     return 0;
