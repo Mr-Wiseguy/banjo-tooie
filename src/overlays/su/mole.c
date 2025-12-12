@@ -215,9 +215,9 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
             }
             break;
         case 4:
-            if (arg3[(s32)arg0->unk54].unkE > 0)
+            if (arg3[(s32)arg0->unk54].titleToShow > 0)
             {
-                _chintrotext_entrypoint_1(0x18BB, arg3[(s32)arg0->unk54].unkE - 1, 0, 1);
+                _chintrotext_entrypoint_1(0x18BB, arg3[(s32)arg0->unk54].titleToShow - 1, 0, 1);
             }
             break;
         case 5:
@@ -231,9 +231,9 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         }
         break;
     case 0xAC:
-        if (arg3[(s32)arg0->unk54].TitleToShow != 0)
+        if (arg3[(s32)arg0->unk54].unkF != 0)
         {
-            return _ncpoddialog_entrypoint_8(func_80101080(), arg3[(s32)arg0->unk54].TitleToShow);
+            return _ncpoddialog_entrypoint_8(func_80101080(), arg3[(s32)arg0->unk54].unkF);
         }
         return 3;
     case 0xB:

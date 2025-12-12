@@ -2,7 +2,7 @@
 
 typedef struct
 {
-    u8 unk0[0x42C];
+    u32 unk0[0x10B];
     u8 unk42C;
 } UNKD_80127194;
 

@@ -8,8 +8,8 @@ extern s32 D_80803CE8_chclockworkmouse[4];
 extern Unk80803E08 *D_80803E08_chclockworkmouse[4];
 extern s32 D_80803E18_chclockworkmouse[4];
 extern s32 D_80803E28_chclockworkmouse[4];
-extern ActorData *D_80803E48_chclockworkmouse;
-extern ActorData *D_80803EF0_chclockworkmouse;
+extern ActorData D_80803E48_chclockworkmouse;
+extern ActorData D_80803EF0_chclockworkmouse;
 
 extern f32 D_80803E3C_chclockworkmouse[3]; // all 0s
 
@@ -689,9 +689,9 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
         break;
     case 2:
         if (actor->unk64_19) {
-            prop = _gccubesearch_entrypoint_0(0x201, actor);
+            prop = _gccubesearch_entrypoint_0(PROP_201_CHEATOPAGE_SPAWN, actor);
         } else {
-            prop = _gccubesearch_entrypoint_0(0x1F6, actor);
+            prop = _gccubesearch_entrypoint_0(PROP_1F6_JIGGY_SPAWN, actor);
         }
         func_800EE88C(&sp24->unk114, prop->position);
         if ((actor->unk64_19) && (func_80800090_chclockworkmouse() == 2)) {
@@ -794,7 +794,7 @@ void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
     }
 }
 
-ActorData **chclockworkmouse_entrypoint_0(void) {
+ActorData *chclockworkmouse_entrypoint_0(void) {
     return &D_80803E48_chclockworkmouse;
 }
 
@@ -1442,6 +1442,6 @@ void func_8080364C_chclockworkmouse(void) {
     func_801018A4();
 }
 
-ActorData **chclockworkmouse_entrypoint_1(void) {
+ActorData *chclockworkmouse_entrypoint_1(void) {
     return &D_80803EF0_chclockworkmouse;
 }

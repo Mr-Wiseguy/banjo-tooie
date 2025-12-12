@@ -459,16 +459,16 @@ u32* chglowbo_entrypoint_3(void)
     return &D_808015D0_chglowbo;
 }
 
-void chglowbo_entrypoint_4(void)
+s32 chglowbo_entrypoint_4(void)
 {
-    func_80108474(0x2A0, &D_80801618_chglowbo, func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0, &D_80801618_chglowbo, func_800DC178(0.0f, 359.0f));
 }
 
-void chglowbo_entrypoint_5(void) 
+s32 chglowbo_entrypoint_5(void) 
 {
     f32 sp1C[3];
     func_8008FE94(1, sp1C);
-    func_80108474(0x2A0U, sp1C, (s32)func_800DC178(0.0f, 359.0f));
+    return func_80108474(0x2A0U, sp1C, (s32)func_800DC178(0.0f, 359.0f));
 }
 
 void chglowbo_entrypoint_6(void) 

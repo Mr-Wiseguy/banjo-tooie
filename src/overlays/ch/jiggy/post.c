@@ -1,9 +1,9 @@
 #include "ch/jiggypost.h"
 
 extern void* D_80800380_chjiggypost;
-extern void* D_808003C8_chjiggypost;
+extern ActorData* D_808003C8_chjiggypost;
 
-void* chjiggypost_entrypoint_0(void) 
+ActorData* chjiggypost_entrypoint_0(void)
 {
     return &D_80800380_chjiggypost;
 }

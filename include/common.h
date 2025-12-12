@@ -37,7 +37,7 @@ typedef struct {
 typedef struct Actor {
     /* 0x00 */ Unk80132ED0* unk0;
     /* 0x04 */ f32 position[3];
-    /* 0x10 */ u32* pointerToSyscallEntry;
+    /* 0x10 */ void* (*pointerToSyscallEntry)();
     /* 0x14 */ u32 unk14;
     /* 0x18 */ u32 actorData[8]; //Cast this array to struct in actor
     /* 0x38 */ f32 scale;
@@ -74,10 +74,11 @@ typedef struct Actor {
     /* 0x70 */ u32 pad70_16: 16;
     /* 0x70 */ u32 unk70_10: 6; // unk72 >> 10
     /* 0x70 */ u32 pad70_0: 10;
-    /* 0x74 */ u32 pad74_31 : 1;
+    /* 0x74 */ u32 unk74_31 : 1;
     /* 0x74 */ u32 unk74_30 : 1; // unk74 & 0x40000000
     /* 0x74 */ u32 unk74_29 : 1; // unk74 & 0x20000000
-    /* 0x74 */ u32 pad74_18 : 11;
+    /* 0x74 */ u32 unk74_28 : 1;
+    /* 0x74 */ u32 pad74_18 : 10;
     /* 0x74 */ u32 unk74_17 : 1;
     /* 0x74 */ u32 pad74_16 : 1;
     /* 0x74 */ u32 unk74_7 : 9; // unk76 >> 7
@@ -117,28 +118,28 @@ typedef struct ActorData {
     s16 unk4;
     s16 unk6;
     void *unk8;
-    void (*unkC_func)(Actor* actor);
+    void (*unkC_func)(Actor* actor); //Update?
     void (*unk10_func)(Actor* actor);
-    void (*unk14_func)(s32 arg0, s32 arg1);
-    s32 unk18;
-    s32 unk1C;
+    void (*unk14_func)(Actor* arg0, void* arg1);//Draw Function
+    u16 unk18;
+    u16 unk1A;
+    f32 unk1C;
     s16 unk20;
     s16 unk22;
     s16 unk24;
     s16 unk26;
     void (*unk28_func)(Actor* actor);
-    s32 unk2C;
+    void* (*unk2C_func)();
     s16 unk30;
     s16 unk32;
     void (*unk34_func)(Actor* actor);
     void (*unk38_func)(void* arg0, s32 arg1, void* arg2, s32 arg3, void* arg4); // argument types unknown currently
     s16 unk3C;
     s16 unk3E;
-    void (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
+    void* (*unk40_func)(Actor* actor, s32 arg1, s32 arg2);
     s16 unk44;
     s16 unk46;
     void (*unk48_func)(Actor* actor, s32 arg1, s32 arg2);
-    s32 unk4C;
 } ActorData;
 
 typedef struct {

@@ -1,6 +1,6 @@
 #include "ch/witchyentrygates.h"
 
-extern u32 D_808001F0_chwitchyentrygates;
+extern ActorData D_808001F0_chwitchyentrygates;
 
 void func_80800000_chwitchyentrygates(Actor* arg0)
 {
@@ -35,6 +35,6 @@ void func_80800000_chwitchyentrygates(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/witchy/entrygates/func_80800168_chwitchyentrygates.s")
 
-void* chwitchyentrygates_entrypoint_0(void) {
+ActorData* chwitchyentrygates_entrypoint_0(void) {
     return &D_808001F0_chwitchyentrygates;
 }

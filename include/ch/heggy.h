@@ -48,11 +48,11 @@
 #include "ch/skeletonexplode.h"
 
 
-s32* chheggy_entrypoint_0(void);
-s32* _chheggy_entrypoint_0(void);
+ActorData* chheggy_entrypoint_0(void);
+ActorData* _chheggy_entrypoint_0(void);
 
-s32* chheggy_entrypoint_1(void);
-s32* _chheggy_entrypoint_1(void);
+ActorData* chheggy_entrypoint_1(void);
+ActorData* _chheggy_entrypoint_1(void);
 
 
 #endif

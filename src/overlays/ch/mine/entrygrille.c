@@ -2,7 +2,7 @@
 
 extern s32 D_80800140_chmineentrygrille[];
 extern u32 D_80800180_chmineentrygrille;
-extern u32 D_80800194_chmineentrygrille;
+extern ActorData D_80800194_chmineentrygrille;
 
 s32 func_80800000_chmineentrygrille(Actor* arg0, s32 arg1, u32 arg2) 
 {
@@ -43,6 +43,6 @@ void func_808000C4_chmineentrygrille(s32 arg0)
     }
 }
 
-void* chmineentrygrille_entrypoint_0(void) {
+ActorData* chmineentrygrille_entrypoint_0(void) {
     return &D_80800194_chmineentrygrille;
 }

@@ -12,4 +12,6 @@ void* func_80100094(Actor*, u32);
 s32 func_801000D8(Actor*, s32, s32);
 void func_80100120(Actor*);
 
+ActorData* func_80100368(Actor*);
+
 #endif
