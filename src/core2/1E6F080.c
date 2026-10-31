@@ -5,7 +5,7 @@ extern Unk80126E30 D_80126E30[];
 
 s32 func_80095790() 
 {
-    return 0xAC;
+    return sizeof(ba_unknown_94_s);
 }
 
 void func_80095798(PlayerState* arg0) {
@@ -324,7 +324,7 @@ s32 func_8009659C(PlayerState* arg0, s32 arg1) {
     return func_800C6744(arg0->unk94->unk0) & arg1;
 }
 
-u8 func_800965C8(PlayerState* arg0) {
+s32 func_800965C8(PlayerState* arg0) {
     return arg0->unk94->unkA4;
 }
 
@@ -344,7 +344,7 @@ s32 func_80096628(PlayerState* arg0) {
     return func_800C6744(arg0->unk94->unk0);
 }
 
-s16 func_8009664C(PlayerState* arg0) {
+s32 func_8009664C(PlayerState* arg0) {
     return func_800C674C(arg0->unk94->unk0);
 }
 

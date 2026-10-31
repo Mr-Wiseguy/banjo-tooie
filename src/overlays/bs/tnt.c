@@ -324,7 +324,7 @@ void func_80800B60_bstnt(PlayerState* self, s32 arg1) {
 		baanim_playForDuration_onceSmooth(self, 0xE3, 3.4f);
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_6_AIRBORN);
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
-		func_8008F880(self->unk164.word, sp2C);
+		func_8008F880(self->unk164.object, sp2C);
 		player_getCoords(self, sp38);
 		func_800F1E6C(sp2C, sp38, &sp44);
 		yaw_setIdeal(self, sp44);

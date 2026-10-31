@@ -340,10 +340,10 @@ void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
     }
 }
 
-void func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
+s32 func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    ml_vec3f_is_not_zero(arg1);
+    return ml_vec3f_is_not_zero(arg1);
 }
 
 void func_80092D18(PlayerState* arg0, f32* arg1)
@@ -362,27 +362,27 @@ void func_80092D44(PlayerState* arg0, f32* arg1)
     ml_vec3f_apply_scale(arg1, 0.5f);
 }
 
-void func_80092D9C(s32 arg0,s32 arg1)
+void func_80092D9C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x3,arg1);
 }
 
-void func_80092DC0(s32 arg0,s32 arg1)
+void func_80092DC0(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x4,arg1);
 }
 
-void func_80092DE4(s32 arg0,s32 arg1)
+void func_80092DE4(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x8,arg1);
 }
 
-void func_80092E08(s32 arg0,s32 arg1)
+void func_80092E08(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x9,arg1);
 }
 
-void func_80092E2C(s32 arg0,s32 arg1)
+void func_80092E2C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0xA,arg1);
 }
@@ -392,7 +392,7 @@ s32 func_80092E50(PlayerState* arg0)
     return arg0->unk50->unk15;
 }
 
-void func_80092E5C(s32 arg0,s32 arg1)
+void func_80092E5C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x5,arg1);
 }

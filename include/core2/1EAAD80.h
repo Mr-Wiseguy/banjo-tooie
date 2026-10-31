@@ -20,6 +20,7 @@ void func_800D1864(u32, u32, u32);
 //Get Inventory Value
 s32 inventory_getValue(s32 a0);
 u32 func_800D1A6C(u32);
+s32 func_800D1B34(s32);
 s32 inventory_hasZeroItems(s32);
 s32 func_800D1C5C(u32);
 

@@ -57,10 +57,13 @@ s32 func_80092B80(PlayerState*);
 f32 func_80092B8C(PlayerState*, f32*);
 f32 func_80092BE8(PlayerState *);
 f32 func_80092BF4(PlayerState *);
+
 void func_80092C00(PlayerState*, f32[3]);
 void func_80092C24(PlayerState*, f32[3]);
 void func_80092C48(PlayerState*, f32[3]);
 void func_80092C90(PlayerState*, f32*, s32);
+s32 func_80092CDC(PlayerState*, f32*, s32);
+void func_80092D18(PlayerState*, f32*);
 void func_80092D44(PlayerState*, f32[3]);
 s32 func_80092EA4(PlayerState*);
 s32 func_80092EB0(PlayerState*);

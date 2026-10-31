@@ -27,7 +27,8 @@ extern s32 D_80127674;
 extern void* D_801276BC;
 typedef struct
 {
-    s32 unk0, unk4;
+    s32 unk0;
+    f32* unk4;
     f32 unk8;
 } unk_D_80127688;
 extern unk_D_80127688 D_80127688[];
@@ -360,7 +361,7 @@ void func_800A86D8(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A88C4.s")
 
-s32 func_800A8948(s32 arg0)
+f32* func_800A8948(s32 arg0)
 {
     s32 temp_v0;
 
@@ -373,7 +374,7 @@ s32 func_800A8948(s32 arg0)
     return temp_v0;
 }
 
-s32 func_800A8984(s32 arg0) 
+f32* func_800A8984(s32 arg0)
 {
     return D_80127688[arg0].unk4;
 }

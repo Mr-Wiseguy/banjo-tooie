@@ -29,7 +29,7 @@ void func_800CA628(f32*, s32*, s32*);
 // func_800CA688
 // func_800CA6C0
 // func_800CA6D4
-f32 func_800CA6E8(s32);
+f32 func_800CA6E8(f32*);
 // func_800CA6F0
 // func_800CA6FC
 // func_800CA704

@@ -73,7 +73,7 @@ Unk80132ED0* func_800965D4(PlayerState*);
 void func_800965E0(PlayerState*, void*);
 void func_80096604(PlayerState*, f32[3][3]);
 s32 func_80096628(PlayerState *);
-s16 func_8009664C(PlayerState*);
+s32 func_8009664C(PlayerState*);
 s32 func_80096670(PlayerState*);
 s32 func_80096694(PlayerState*);
 s32 func_800966BC(PlayerState*);

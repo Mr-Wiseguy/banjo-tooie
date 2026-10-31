@@ -9,10 +9,6 @@ f32 func_8009E138(PlayerState* self, s32 arg1) {
     return self->unk114->unk0[arg1].unk0;
 }
 
-//Remove
-void func_80092CDC(PlayerState*, f32*, s32);
-void func_80092D18(PlayerState*, f32*);
-
 void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 {
 	f32 sp7C[3];
@@ -127,9 +123,6 @@ s32 func_8009E5C0(void)
     return sizeof(BanjoState);
 }
 
-//remove
-void (*func_8009CAAC(PlayerState *, BanjoStateId))(PlayerState *);
-void (*func_8009CAF8(PlayerState *, BanjoStateId))(PlayerState *);
 
 void bs_setState(PlayerState *self, BanjoStateId nextState) {
     if (nextState != BS_STATE_0_INVALID) {
@@ -192,9 +185,6 @@ void func_8009E7AC(PlayerState* self) {
     self->state->next = BS_STATE_0_INVALID;
 }
 
-//Remove
-void (*func_8009CB44(PlayerState*, BanjoStateId))(PlayerState*);
-
 s32 func_8009E7C8(PlayerState* arg0, s32 arg1) {
 	arg0->state->unkC = (s16)arg1;
 	arg0->state->unkE = 1;
@@ -208,9 +198,6 @@ s32 func_8009E7C8(PlayerState* arg0, s32 arg1) {
 void func_8009E830(PlayerState* self, s32 arg1) {
     self->state->unkE = arg1;
 }
-
-//remove
-void (*func_8009CB90(PlayerState*, BanjoStateId))(PlayerState*);
 
 void func_8009E83C(PlayerState* arg0)
 {
