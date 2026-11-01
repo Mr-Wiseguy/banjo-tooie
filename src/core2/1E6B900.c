@@ -267,7 +267,7 @@ PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
     {
         return func_80093F7C(arg0);
     }
-    temp_v0 = func_800D674C(arg0->unk50->unkC);
+    temp_v0 = asset_load(arg0->unk50->unkC);
     if (arg1 == 0)
     {
         func_800D62E4(arg0->unk50->unkC, arg1, arg0);
@@ -428,8 +428,8 @@ void func_80093070(PlayerState* arg0, s32 arg1, s32 arg2, u8* arg3)
     u8 temp_v1;
     s32 temp_v0;
 
-    sp34 = func_800D674C(arg2);
-    sp30 = func_800D674C(arg1);
+    sp34 = asset_load(arg2);
+    sp30 = asset_load(arg1);
     temp_v0 = func_800A25D0(arg0);
     temp_v1 = *arg3;
     if (temp_v1 != 0)
@@ -642,7 +642,7 @@ void func_8009370C(PlayerState* arg0)
 
 void func_80093738(PlayerState* arg0)
 {
-    func_800D674C(arg0->unk50->unk9C);
+    asset_load(arg0->unk50->unk9C);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009375C.s")

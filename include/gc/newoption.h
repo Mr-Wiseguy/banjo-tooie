@@ -60,7 +60,7 @@ typedef struct {
 } OptionState;
 
 void _gcnewoption_entrypoint_0(OptionState*);
-void _gcnewoption_entrypoint_1(OptionState*, u32);
+void _gcnewoption_entrypoint_1(OptionState*, GraphicsBuffers*);
 
 //Get Memory Size of option menu
 int gcnewoption_entrypoint_2(void);

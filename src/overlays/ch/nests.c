@@ -753,7 +753,7 @@ s32 func_80800898_chnests(Actor* arg0, s32 arg1, f32 arg2)
     f32 sp34[3];
     ImageStruct* sp30;
 
-    sp30 = func_800D674C(0x85C);
+    sp30 = asset_load(0x85C);
     func_80101970(arg0);
     func_80106A98(arg0, sp30);
     func_800DF830(1);

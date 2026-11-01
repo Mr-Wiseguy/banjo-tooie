@@ -1,11 +1,5 @@
 #include "core2/1EC0300.h"
 
-extern char* D_80125DC0;
-extern char D_80125DC4;
-extern char D_80125DC8;
-extern char D_80125DCC;
-extern char D_80125DD0;
-extern char D_80125DD4;
 //strcat
 void string_concat(char* dst, char* src) {
     while (*(dst) != '\0') {
@@ -34,7 +28,7 @@ void func_800E6A90(char* arg0, char* arg1)
 	while (*arg1 != '\0')
 	{
 		func_800E6AFC(arg0, *(arg1++));
-		string_concat(arg0, &D_80125DC0);
+		string_concat(arg0, " ");
 	}
 }
 
@@ -64,15 +58,15 @@ void func_800E6BAC(char* arg0, f32 arg1)
 			string_concat(arg0, sp38);
 			return;
 		case -1:
-			string_concat(arg0, &D_80125DC4);
+			string_concat(arg0, "-");
 			arg1 = -arg1;
 		case 1:
 			string_IToA(arg0, (s32)arg1);
-			string_concat(arg0, &D_80125DC8);
+			string_concat(arg0, ".");
 			temp_f4_2 = ((arg1 - (s32)arg1) * 100.0f);
 			if (temp_f4_2 < 0xA)
 			{
-				string_concat(arg0, &D_80125DCC);
+				string_concat(arg0, "0");
 			}
 			string_IToA(arg0, temp_f4_2);
 			return;
@@ -89,13 +83,13 @@ void func_800E6CA8(char* arg0, f32 arg1, s32 arg2)
 		string_concat(arg0, sp44);
 		return;
 	case -1:
-		string_concat(arg0, &D_80125DD0);
+		string_concat(arg0, "-");
 		arg1 = -arg1;
 	case 1:
 		string_IToA(arg0, arg1);
 		if (arg2 != 0)
 		{
-			string_concat(arg0, &D_80125DD4);
+			string_concat(arg0, ".");
 			while (arg2--)
 			{
 				arg1 -= (s32)arg1;

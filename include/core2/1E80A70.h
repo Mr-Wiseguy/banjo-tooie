@@ -17,9 +17,7 @@
 #include "core2/1ED4E30.h"
 #include "core2/1ED8C80.h"
 
-
-
-s32* func_800A7180(void);
+GraphicsBuffers* func_800A7180(void);
 void func_800A759C(s32, u8);
 void func_800A76F4(s16);
 void func_800A7840(s32);

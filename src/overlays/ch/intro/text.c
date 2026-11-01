@@ -153,7 +153,7 @@ void func_80800154_chintrotext(Actor* arg0)
     }
 }
 
-void func_808003EC_chintrotext(Actor* arg0, u32* arg1)
+void func_808003EC_chintrotext(Actor* arg0, GraphicsBuffers* arg1)
 {
     f32 fontScale;
     introTextMemory* textMemory;

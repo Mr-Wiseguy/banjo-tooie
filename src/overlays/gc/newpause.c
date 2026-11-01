@@ -224,7 +224,7 @@ u32 gcnewpause_entrypoint_2(PauseState* pauseMenu) {
 }
 #endif
 //Draw UI
-void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu) 
+void gcnewpause_entrypoint_3(GraphicsBuffers* arg0, PauseState* pauseMenu)
 {
 	u8 temp_v0;
 
@@ -238,8 +238,8 @@ void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu)
 		func_80801DA0_gcnewpause(pauseMenu, arg0);
 		break;
 	}
-	func_80801410_gcnewpause(pauseMenu, (s32)arg0);
-	func_808012CC_gcnewpause(pauseMenu, (u32*)arg0);
+	func_80801410_gcnewpause(pauseMenu, arg0);
+	func_808012CC_gcnewpause(pauseMenu, arg0);
 }
 
 //Change Page
@@ -720,7 +720,7 @@ u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2) {
 	return var_v1;
 }
 //Draw Page Titles
-void func_808012CC_gcnewpause(PauseState* pauseMenu, u32* a1)
+void func_808012CC_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* a1)
 {
 	if (pauseMenu->DrawPageHeader != 0)
 	{
@@ -760,7 +760,7 @@ void func_8080136C_gcnewpause(PauseState* pauseMenu)
 	pauseMenu->MoveBButtonTrigger = 0;
 }
 
-void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
+void func_80801410_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* arg1)
 {
 	Coords2D sp30;
 	ImageStruct* imageData;
@@ -771,7 +771,7 @@ void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
 	{
 		sp30.x = 0x260;
 		sp30.y = (-pauseMenu->B_Button_Pos * 4) + 0x340;
-		imageData = func_800D674C(0xB59);
+		imageData = asset_load(0xB59);
 
 		sp28 = func_800E8C58(pauseMenu->ShowBButton);
 		func_800E30E0(arg1, imageData, sp28, &sp30);
@@ -779,7 +779,7 @@ void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1)
 
 	if (pauseMenu->JoystickIndicator != 0)
 	{
-		imageData = func_800D674C(0xB57);
+		imageData = asset_load(0xB57);
 		sp28 = func_800E8C58(pauseMenu->JoystickIndicator);
 
 		sp30.x = 0x78;
@@ -1103,7 +1103,7 @@ void func_80801DA0_gcnewpause(PauseState* pauseMenu,u32 a1)
 	coord[1] = 171.0f;
 
 	func_800DF410(pauseMenu->GameOverTransparency);
-	func_800DF944(a1, coord, 0.0f, 0.25f, 0, 1, func_800D674C(0x640));
+	func_800DF944(a1, coord, 0.0f, 0.25f, 0, 1, asset_load(0x640));
 }
 
 //Handle Switching between are you sure and the button prompts

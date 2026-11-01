@@ -6,7 +6,7 @@
 #include "core2/1E88E90.h"
 #include "core2/1EAF950.h"
 
-void func_800B7F14(s32);
+void func_800B7F14(GraphicsBuffers*);
 void func_800B811C(s32);
 void func_800B8C50(void);
 void func_800B8C8C(s32 Transparency);
@@ -14,7 +14,7 @@ void func_800B8C98(s32 Font);
 void func_800B8CA4(s32 shakiness);
 void func_800B8CE0(s32 color);
 void func_800B8CF0(f32 size);
-void func_800B8DEC(s32, s32, s32, u8);
+void func_800B8DEC(GraphicsBuffers*, s32, s32, u8);
 
 extern struct {
 	u8 data[0x14];  // D_801282C0

@@ -442,6 +442,7 @@ transformation_isNotSnowball = 0x800D4F9C;
 transformation_setCurrentHealth = 0x800D4FB8;
 transformation_setAllMaxHealth = 0x800D517C;
 transformation_getIcon = 0x800D5210;
+asset_load = 0x800D674C;
 time_getDelta = 0x800D8FF8;
 timer_reachedZero = 0x800D9078;
 timer_reachedValueDec = 0x800D90F8;

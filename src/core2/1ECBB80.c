@@ -1,7 +1,5 @@
 #include "core2/1ECBB80.h"
 
-extern f32 D_80125EE0;
-
 f32 func_800F2290(f32* arg0, f32* arg1)
 {
     return (arg0[0] * arg1[1]) - (arg0[1] * arg1[0]);
@@ -34,7 +32,7 @@ f32 func_800F2320(f32* arg0)
     {
         var_f12 = temp_f0;
     }
-    return (sp1C + temp_f0) - (var_f12 * D_80125EE0);
+    return (sp1C + temp_f0) - (var_f12 * 0.414213568f);
 }
 
 void func_800F2388(f32* arg0, f32* arg1, f32* arg2)

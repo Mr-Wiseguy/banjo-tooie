@@ -1,6 +1,5 @@
 #include "core2/1EC9740.h"
 
-extern f32 D_80125EB0;
 extern f32 D_80125EB4;
 
 void func_800EFE50(f32* arg0, f32* arg1, f32* arg2, f32 arg3)
@@ -78,7 +77,7 @@ void func_800F018C(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
 
     ml_getdiff_vec3f(sp34, arg2, arg1);
     temp_f0 = ml_vec3f_magnitude_sq(sp34);
-    if (temp_f0 < D_80125EB0) 
+    if (temp_f0 < 0.009999999776f)
     {
         ml_vec3f_copy(arg0, arg1);
         return;
@@ -101,7 +100,7 @@ void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
 
     ml_getdiff_vec3f(diff, arg2, arg1);
     length = ml_vec3f_magnitude_sq(diff);
-    if (length < D_80125EB4)
+    if (length < 0.009999999776f)
     {
         //Copy arg1 into dst
         ml_vec3f_copy(dst, arg1);

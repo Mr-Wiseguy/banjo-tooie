@@ -800,7 +800,7 @@ void func_808035A8_chevilmumbo(Actor* arg0, s32 arg1)
     arg0->rotation[0] = -arg0->rotation[0];
     func_80101970(arg0);
     func_800DF830(2);
-    func_800DE448(arg0->position, arg0->rotation, arg0->scale, NULL, func_800D674C(0x69E));
+    func_800DE448(arg0->position, arg0->rotation, arg0->scale, NULL, asset_load(0x69E));
     func_801018A4(arg0, arg1);
     arg0->rotation[0] = -arg0->rotation[0];
 }

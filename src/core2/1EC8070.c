@@ -3,8 +3,6 @@
 // TODO rename operations based on whether they output to a new vector or output to an input vector.
 // add vs sum/subtract vs difference? What to do for scalar multiplication? apply_scale vs scale?
 
-extern f32 D_80125EA0;
-
 // ml_vec3f_sum
 void ml_vec3f_sum(f32 dst[3], f32 a[3], f32 b[3]) {
     dst[0] = a[0] + b[0];
@@ -532,7 +530,7 @@ f32 func_800EFBFC(f32* arg0, f32* arg1) {
     {
         var_f12 = temp_f0;
     }
-    return (sp1C + temp_f0) - (var_f12 * D_80125EA0);
+    return (sp1C + temp_f0) - (var_f12 * 0.414213568f);
 }
 
 f32 func_800EFC7C(f32* arg0, f32* arg1)

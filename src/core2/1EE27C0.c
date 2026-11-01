@@ -156,32 +156,32 @@ u32 actor_getCollision(Actor* arg0)
 
 void func_8010A624(Actor* arg0)
 {
-    arg0->unk0->unk0->unk8_7 = 0;
+    arg0->unk0->unk0->unkA_3 = 0;
 }
 
 void func_8010A63C(Actor* arg0)
 {
-    arg0->unk0->unk0->unk8_7 = 1;
+    arg0->unk0->unk0->unkA_3 = 1;
 }
 
 u32 func_8010A654(Actor* arg0, s32 arg1)
 {
     s32 returnVal;
-    returnVal = arg0->unk0->unk0->unk8_7;
+    returnVal = arg0->unk0->unk0->unkA_3;
     if (arg1 != 0)
     {
-        arg0->unk0->unk0->unk8_7 = 1;
+        arg0->unk0->unk0->unkA_3 = 1;
     }
     else
     {
-        arg0->unk0->unk0->unk8_7 = 0;
+        arg0->unk0->unk0->unkA_3 = 0;
     }
     return returnVal;
 }
 
 u32 func_8010A698(Actor* arg0)
 {
-    return arg0->unk0->unk0->unk8_7;
+    return arg0->unk0->unk0->unkA_3;
 }
 
 s32 func_8010A6B0(Actor* arg0, s32 arg1)

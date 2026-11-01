@@ -20,12 +20,14 @@ typedef union {
 // size: unknown
 typedef struct {
     /* 0x00 */ u32 unk0;
-    /* 0x04 */ u32 unk4;
-    /* 0x08 */ u32 unk8_16 : 22;
-    /* 0x08 */ u32 unk8_14 : 2;
-    /* 0x08 */ u32 unk8_4 : 4;
-    /* 0x08 */ u32 unk8_7 : 1;
-    /* 0x08 */ u32 unk8_0 : 3;
+    /* 0x04 */ s16 unk4;
+    /* 0x06 */ s16 unk6;
+    /* 0x08 */ s16 unk8;
+    /* 0x0A */ u16 unkA_16 : 6;
+    /* 0x0A */ u16 unkA_14 : 2;
+    /* 0x0A */ u16 unkA_4 : 4;
+    /* 0x0A */ u16 unkA_3 : 1;
+    /* 0x0A */ u16 unkA_0 : 3;
     /* 0x0C */ u32 unkC;
 } Unk80132ED0_2;
 
@@ -44,11 +46,11 @@ typedef struct {
     /* 0x10 */ s16 unk10;
     /* 0x12 */ u16 unk12_1:15;
     /* 0x12 */ u16 unk12_0 : 1;
-    /* 0x14 */ u16 unk14;
+    /* 0x14 */ u16 unk14; //Model
     /* 0x16 */ u16 unk16;
 	/* 0x18 */ u32 unk18_17 : 15;
 	/* 0x18 */ u32 unk18_16 : 1;
-	/* 0x18 */ u32 unk18_5 : 11;
+	/* 0x18 */ u32 unk18_5 : 11; //Actor Index
 	/* 0x18 */ u32 unk18_1 : 4;
 	/* 0x18 */ u32 unk18_0 : 1;
     /* 0x1C */ s16 unk1C;
@@ -261,7 +263,10 @@ typedef struct ActorData {
     s16 unk46;
 } ActorData;
 
-
+typedef struct {
+    Gfx* gfx;
+    Mtx* mtx;
+} GraphicsBuffers;
 
 
 #endif // __COMMON_H__

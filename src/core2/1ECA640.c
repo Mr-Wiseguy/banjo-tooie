@@ -1,8 +1,6 @@
 #include "core2/1ECA640.h"
 
 extern f32 func_80013970(f32);
-extern f32 D_80125EC0;
-extern f32 D_80125EC4;
 
 //ml_clamp_f
 f32 ml_clamp_f(f32 val, f32 min, f32 max)
@@ -213,7 +211,7 @@ s32 ml_min_i(s32 arg0, s32 arg1)
 }
 
 f32 func_800F1434(f32 arg0) {
-    return (func_8001395C((arg0 * D_80125EC0) + D_80125EC4) + 1.0f) * 0.5f;
+    return (func_8001395C((arg0 * 3.141592741f) + -1.570796371f) + 1.0f) * 0.5f;
 }
 
 void func_800F1480(f32 arg0) {

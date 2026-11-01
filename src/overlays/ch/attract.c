@@ -29,6 +29,6 @@ void chattract_entrypoint_2(s32 arg0)
     {
         temp_v0->unk74_7 = arg0 + 1;
         temp_v0->unk0->unk12_1 = 1;
-        temp_v0 = func_800EC828();
+        func_800EC828();
     }
 }

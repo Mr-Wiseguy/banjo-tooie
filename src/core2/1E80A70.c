@@ -22,7 +22,7 @@ extern s32 D_8011A3F4;
 extern f32 D_801255F8;
 extern D_80127630_unk D_80127630;
 
-extern s32 D_80127658;
+extern GraphicsBuffers D_80127658;
 extern s32 D_80127674;
 extern void* D_801276BC;
 typedef struct
@@ -33,7 +33,7 @@ typedef struct
 } unk_D_80127688;
 extern unk_D_80127688 D_80127688[];
 
-s32* func_800A7180(void)
+GraphicsBuffers* func_800A7180()
 {
     return &D_80127658;
 }

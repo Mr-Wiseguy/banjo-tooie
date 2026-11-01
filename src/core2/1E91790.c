@@ -6,7 +6,7 @@ void func_800B7EA0(s32 arg0, s32 arg1)
 	s32 sp38;
 	s32 sp34;
 
-	func_800AF614(arg0, func_800D674C(arg1), 0, 0x100, 1, 2, 2, &sp38, &sp34);
+	func_800AF614(arg0, asset_load(arg1), 0, 0x100, 1, 2, 2, &sp38, &sp34);
 	D_801282C0.data[0xA] = sp38;
 	D_801282C0.data[0xB] = sp34;
 }
