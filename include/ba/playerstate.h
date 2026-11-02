@@ -65,7 +65,7 @@ typedef struct ba_unknown_50_s {
     u16 unk2;
     UNKfunc_800DBEB0_ARG0* unk4;
     s32 unk8;
-    s16 unkC;
+    s16 unkC; //Current Character Model
     s16 unkE;
     u8 unk10;
     u8 unk11;

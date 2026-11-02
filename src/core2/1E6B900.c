@@ -259,9 +259,9 @@ void func_80092AB0(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092AD8.s")
 
-PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
+void* func_80092B04(PlayerState* arg0, s32 arg1)
 {
-    ImageStruct* temp_v0;
+    void* temp_v0;
 
     if (arg0->unk50->unkC == 0x607)
     {
@@ -272,7 +272,7 @@ PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
     {
         func_800D62E4(arg0->unk50->unkC, arg1, arg0);
     }
-    return (PlayerState*)temp_v0;
+    return temp_v0;
 }
 
 s32 func_80092B80(PlayerState* arg0)

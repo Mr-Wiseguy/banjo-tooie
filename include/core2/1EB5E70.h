@@ -2,8 +2,16 @@
 #define __CORE2_1EB5E70_H__
 
 #include "common.h"
+#include "core1/mlmtx.h"
+#include "core2/1E6B900.h"
 #include "core2/1E80A70.h"
 #include "core2/1EAF950.h"
+#include "core2/1EB52C0.h"
+#include "core2/1EB57A0.h"
+#include "core2/1EB5E70.h"
+#include "core2/1EBCFC0.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECB9F0.h"
 
 void* func_800DE448(f32* position, f32* arg1, f32 scale, f32* arg3, s32 arg4);
 void* func_800DE498(GraphicsBuffers*, f32*, f32*, f32, f32*, s32);

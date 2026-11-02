@@ -23,32 +23,10 @@
 #include "freelist.h"
 #include "memory.h"
 #include "vector.h"
+#include "AssetStructs.h"
 
 
-typedef struct {
-	u8 pad[0x8];
-	s16 unk8;
-	s16 unkA;
-} ImageStruct;
 
-
-typedef struct {
-    /* 0x00 */ u32 magic; // 0x0000000B
-    /* 0x04 */ u32 unk4; // geometry layout offset
-    /* 0x08 */ s16 unk8; // texture setup offset
-    /* 0x0A */ s16 unkA; // geo type
-    /* 0x0C */ s32 unkC; // displaylist setup offset
-    /* 0x10 */ s32 unk10; // vertex store setup offset
-    /* 0x14 */ s32 unk14;
-    /* 0x18 */ s32 unk18;
-    /* 0x1C */ s32 unk1C;
-    /* 0x20 */ s32 unk20;
-    /* 0x24 */ s32 unk24;
-    /* 0x28 */ s32 unk28;
-    /* 0x2C */ s32 unk2C;
-    /* 0x2C */ u8 pad30[0x38 - 0x30];
-    /* 0x38 */ s32 unk38;
-} ModelBin; /* Size: 0x50 */
 
 typedef struct {
     u32 unk0_5 : 27; // <<  5
