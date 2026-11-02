@@ -44,7 +44,7 @@ void func_808000C0_chsecreteggs(Actor* arg0)
             func_800FFA88(arg0->unk0);
             return;
         }
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
     }
 }
 

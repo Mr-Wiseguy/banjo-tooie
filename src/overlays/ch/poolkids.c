@@ -64,7 +64,7 @@ void func_80800058_chpoolkids(Actor* arg0)
         if (func_801022E4(arg0) == 0x2B9)
         {
             temp_f0 = func_80101F24(arg0);
-            (f32)arg0->actorData[5] = func_80013970(func_800F10B4(temp_f0, 0.75f, 0.99f, 0.0f, 180.0f));
+            (f32)arg0->actorData[5] = func_80013970(ml_map_f(temp_f0, 0.75f, 0.99f, 0.0f, 180.0f));
             if ((temp_f0 > 0.33f) && (temp_f0 < 0.52f))
             {
                 arg0->unk74_0 = 2;
@@ -93,7 +93,7 @@ void func_80800058_chpoolkids(Actor* arg0)
         return;
     case 3:
         func_80800AA0_chpoolkids(arg0);
-        if (func_800D9078(&arg0->unk58) != 0)
+        if (timer_reachedZero(&arg0->unk58) != 0)
         {
             _glcutDll_entrypoint_17();
             return;
@@ -241,7 +241,7 @@ void func_80800884_chpoolkids(Actor* arg0)
 
 void func_808008DC_chpoolkids(Actor* arg0)
 {
-    func_800D9078(&arg0->unk58);
+    timer_reachedZero(&arg0->unk58);
     if (arg0->unk58 <= 0.0f)
     {
         _fxripple_entrypoint_0(3, arg0->position);

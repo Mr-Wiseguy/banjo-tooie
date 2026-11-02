@@ -50,7 +50,7 @@ void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_perce
 
         val_deg = dyaw_deg * step_percent;
         if (val_deg != 0) {
-            val_deg = (val_deg < 0) ? func_800F0D50(val_deg, -limit_degPerSec, -3.0f) : func_800F0D50(val_deg, 3.0f, limit_degPerSec);
+            val_deg = (val_deg < 0) ? ml_clamp_f(val_deg, -limit_degPerSec, -3.0f) : ml_clamp_f(val_deg, 3.0f, limit_degPerSec);
         }
         pYaw->unk8 = val_deg;
         pYaw->value += func_800F212C(val_deg*dt_s, dyaw_deg);

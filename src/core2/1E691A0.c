@@ -40,9 +40,9 @@ void func_8008F9F8(f32* arg0,f32 arg1)
     func_800F4AC0(character_getActiveIndex(),arg0,arg1);
 }
 
-void func_8008FA2C(s32 arg0,s32 arg1)
+s32 func_8008FA2C(s32 arg0,s32 arg1)
 {
-    func_800F4B8C(character_getActiveIndex(),arg0,arg1);
+    return func_800F4B8C(character_getActiveIndex(),arg0,arg1);
 }
 
 s32 func_8008FA60(s32 arg0,s32 arg1)
@@ -61,9 +61,9 @@ void func_8008FA94(s32 arg0,s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FB58.s")
 
-void func_8008FB94(s32 arg0)
+void activePlayer_affectCurrentHealth(s32 arg0)
 {
-    func_800F4924(character_getActiveIndex(),arg0);
+    character_affectCurrentHealth(character_getActiveIndex(),arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E691A0/func_8008FBC0.s")
@@ -73,19 +73,19 @@ void func_8008FBE0(u32 arg0)
     func_800A1624(arg0);
 }
 
-s32 func_8008FC00()
+s32 activePlayer_getCurrentHealth()
 {
-    return func_800F5578(character_getActiveIndex());
+    return character_getCurrentHealth(character_getActiveIndex());
 }
 
-s32 func_8008FC28()
+s32 activePlayer_getMaxHealth()
 {
-    return func_800F55A4(character_getActiveIndex());
+    return character_getMaxHealth(character_getActiveIndex());
 }
 
-void func_8008FC50()
+void activePlayer_incrementCurrentHealth()
 {
-    func_8008FB94(0x1);
+    activePlayer_affectCurrentHealth(0x1);
 }
 
 void func_8008FC70(s32 arg0)
@@ -114,15 +114,15 @@ void func_8008FD20()
 }
 
 //Get Transformation state of active character
-TransformationId func_8008FD48()
+TransformationId activePlayer_getTransformation()
 {
     return character_getTransform(character_getActiveIndex());
 }
 
 //Return the bit mask for the Allow transformation value for the active character
-s32 func_8008FD70()
+s32 activePlayer_getTransformationBit()
 {
-    return func_800F543C(character_getActiveIndex());
+    return character_getTransformBit(character_getActiveIndex());
 }
 
 void func_8008FD98(s32 arg0)
@@ -150,9 +150,9 @@ void func_8008FE3C(s32 arg0)
     func_800F57F0(character_getActiveIndex(),arg0);
 }
 
-void func_8008FE68(f32* arg0)
+void activePlayer_getCoords(f32* arg0)
 {
-    func_800F5A00(character_getActiveIndex(),arg0);
+    character_getCoords(character_getActiveIndex(),arg0);
 }
 
 void func_8008FE94(s32 arg0,f32* arg1)
@@ -237,9 +237,9 @@ void func_80090150()
     func_800F6478(character_getActiveIndex());
 }
 
-s32 func_80090178(s32 arg0)
+s32 activePlayer_includedInTransformMask(s32 arg0)
 {
-    return func_800F64A4(character_getActiveIndex(),arg0);
+    return character_includedInTransformMask(character_getActiveIndex(),arg0);
 }
 
 void func_800901A4()
@@ -247,9 +247,9 @@ void func_800901A4()
     func_800F6634(character_getActiveIndex());
 }
 
-void func_800901CC(s32 arg0,s32 arg1)
+s32 func_800901CC(f32* arg0,f32 arg1)
 {
-    func_800F66BC(character_getActiveIndex(),arg0,arg1);
+    return func_800F66BC(character_getActiveIndex(),arg0,arg1);
 }
 
 s32 func_80090200()
@@ -264,7 +264,7 @@ void func_80090220()
 
 s32 func_80090248()
 {
-    func_800F6C5C(character_getActiveIndex());
+    character_isStable(character_getActiveIndex());
 }
 
 s32 func_80090270()
@@ -342,7 +342,7 @@ void func_800905C4(s32 arg0,s32 arg1)
     func_800F7DE8(character_getActiveIndex(),arg0,arg1);
 }
 
-void func_800905F8(s32 arg0)
+void func_800905F8(TransformationId arg0)
 {
     func_800F7E64(character_getActiveIndex(),arg0);
 }

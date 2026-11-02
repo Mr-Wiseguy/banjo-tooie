@@ -1942,7 +1942,7 @@ GetActorData D_80800090_gemarkersDll[0x490] =
 	/*0x545*/ 0x00000000
 };
 
-s32 gemarkersDll_entrypoint_0(s32 arg0)
+s32 gemarkersDll_entrypoint_0(PropId arg0)
 {
     if ((arg0 < 0xB6) || (arg0 >= 0x546))
     {

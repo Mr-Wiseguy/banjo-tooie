@@ -45,7 +45,7 @@ s32 func_80800000_chlagoonufoext(Actor* arg0, s32 arg1, s32 arg2)
         func_808002A4_chlagoonufoext(arg0);
         return 1;
     case EVENT_95_ACTOR_SPAWNED:
-        if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (func_80090178(ALLOW_BK) != 0) && (func_800EA090() == 9))
+        if ((flag_getValue(FLAG3_9F0_UNK) != 0) && (activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (func_800EA090() == 9))
         {
             temp_v0 = character_getActiveIndex();
             func_800F608C(temp_v0, 1);
@@ -108,7 +108,7 @@ void func_808002A4_chlagoonufoext(Actor* arg0)
 {
     func_80101FDC(arg0, 3U);
     func_80101D4C(arg0);
-    func_800D1000(JRL_UFO, 1U, NULL, 3U, NULL);
+    collectable_spawnItem(JRL_UFO, 1U, NULL, 3U, NULL);
     _susubgame_entrypoint_6(arg0, func_80100094(arg0, 0U), 0x32, 0x30, 0);
     _subaddiedialog_entrypoint_11(arg0->unk0, 0x1047U, 0x40U, arg0->position, 0U);
 }

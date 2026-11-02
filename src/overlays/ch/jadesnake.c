@@ -25,7 +25,7 @@ void func_80800000_chjadesnake(Actor* arg0)
 
 void func_80800048_chjadesnake(Actor* arg0)
 {
-    func_800D1000(MT_SSSLUMBER, 1U, &arg0->actorData[4], 3U, arg0->unk0);
+    collectable_spawnItem(MT_SSSLUMBER, 1U, &arg0->actorData[4], 3U, arg0->unk0);
     _subaddieaudioquick_entrypoint_2(arg0, &arg0->actorData[4], &D_80800938_chjadesnake);
 }
 
@@ -40,7 +40,7 @@ int func_8080009C_chjadesnake(s32 arg0)
 
     currentPlayerIndex = character_getActiveIndex();
     playerHorizontalUnk = func_800F651C(currentPlayerIndex);
-    isGrounded = func_800F6C5C(currentPlayerIndex);
+    isGrounded = character_isStable(currentPlayerIndex);
     justLanded = func_800F72DC(currentPlayerIndex);
     currentHitbox = func_800F56AC(currentPlayerIndex) == 0x10;
     unk = func_800F6478(currentPlayerIndex);
@@ -63,15 +63,15 @@ void func_80800150_chjadesnake(Actor* arg0)
     f32 sp38[3];
     Actor* temp_v0_2;
 
-    sp50 = func_800D0B68(0xAU, 1U);
-    sp4C = func_800D0A9C(0xAU, 1U);
+    sp50 = collectable_isCollected(0xAU, 1U);
+    sp4C = collectable_isSpawned(0xAU, 1U);
     func_8010D254(sp54);
     switch (arg0->unk70_10)
     {
     case 1:
         if ((arg0->unk7C_12) && (sp50 == 0) && (sp4C == 0))
         {
-            func_800D1000(0xAU, 1U, &arg0->actorData[0], 3U, arg0->unk0);
+            collectable_spawnItem(0xAU, 1U, &arg0->actorData[0], 3U, arg0->unk0);
         }
         temp_v0 = func_80101E4C(arg0, &D_808009C0_chjadesnake);
         if (temp_v0 != 0)

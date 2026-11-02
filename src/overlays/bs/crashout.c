@@ -68,14 +68,14 @@ void bscrashout_entrypoint_2(PlayerState* self) {
     BanjoStateId nextState;
 
     nextState = BS_STATE_0_INVALID;
-    func_800F1574(&self->unk16C, time_getDelta() * 300.0f);
+    ml_timer_update(&self->unk16C, time_getDelta() * 300.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
 
     switch (self->unk15C.word)
     {
         case 1:
             func_80800000_bscrashout(self);
-            if ((baanim_isAt(self, 0.2f) != 0) && (func_800A1718(self) == 0))
+            if ((baanim_isAt(self, 0.2f) != 0) && (player_getCurrentHealth(self) == 0))
             {
                 func_808000B0_bscrashout(self, 3);
             }

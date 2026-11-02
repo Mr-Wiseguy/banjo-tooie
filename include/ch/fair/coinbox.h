@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-s32 _chfaircoinbox_entrypoint_0(s32, f32*);
-void _chfaircoinbox_entrypoint_1(s32);
+s32 _chfaircoinbox_entrypoint_0(Unk80132ED0*, f32*);
+void _chfaircoinbox_entrypoint_1(Unk80132ED0*);
 
 #endif

@@ -77,10 +77,10 @@ void func_808001C0_bawobble(PlayerState *self, f32 arg1) {
     s32 i;
 
     func_800E0AF0(sp48, 1.0f);
-    func_800D91B8(&self->wobble->unk8);
+    timer_countUp(&self->wobble->unk8);
     for (i = 0; i < 3; i++) {
         sp4C[i] = func_800F101C(self->wobble->unk8 + (0.2f*(f32)i)*0.25f, 0.2f);
-        sp4C[i] = func_800F1214(sp4C[i], self->wobble->unk0, self->wobble->unk4);
+        sp4C[i] = ml_mapNormal_f(sp4C[i], self->wobble->unk0, self->wobble->unk4);
     }
     func_800E0B8C(sp48, 3, arg1, sp4C[0], sp4C[1], sp4C[2]);
 }
@@ -94,15 +94,15 @@ void bawobble_entrypoint_8(PlayerState *self) {
 
     switch (self->wobble->unk1C) {
         case 2:
-            func_800D9078(&self->wobble->unk18);
-            sp2C = func_800F10B4(self->wobble->unk18, 0.0f, self->wobble->unk10, 1.0f, 0);
+            timer_reachedZero(&self->wobble->unk18);
+            sp2C = ml_map_f(self->wobble->unk18, 0.0f, self->wobble->unk10, 1.0f, 0);
             if ((sp2C == 1.0f) &&  (self->wobble->unk1D)) {
                 func_80800008_bawobble(self, 3);
             }
             break;
         case 3:
-            func_800D9078(&self->wobble->unk18);
-            sp2C = func_800F10B4(self->wobble->unk18, 0.0f, self->wobble->unk14, 0, 1.0f);
+            timer_reachedZero(&self->wobble->unk18);
+            sp2C = ml_map_f(self->wobble->unk18, 0.0f, self->wobble->unk14, 0, 1.0f);
             if ((sp2C == 0.0f)) {
                 func_8080004C_bawobble(self, 1);
             }

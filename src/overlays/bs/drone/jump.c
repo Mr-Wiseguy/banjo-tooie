@@ -6,7 +6,7 @@ void bsdronejump_entrypoint_0(PlayerState* self, f32* arg1, f32 arg2) {
 	s32 pad;
 	f32 sp20;
 
-	func_8008C990(self, func_800F10B4(arg2, 0.0f, 1.0f, self->unk190.word, self->unk194.word));
+	func_8008C990(self, ml_map_f(arg2, 0.0f, 1.0f, self->unk190.word, self->unk194.word));
 	sp20 = _bamovegoto_entrypoint_3(self);
 	arg1[1] += func_80013970(arg2 * 180.0f) * sp20 * 0.5f;
 }
@@ -29,7 +29,7 @@ void bsdronejump_entrypoint_2(PlayerState* self) {
 	sp44 = ml_vec3f_distance(sp34, self->unk54->unk34);
 	yaw_setIdeal(self, func_800F1DF4(sp34, self->unk54->unk34));
 	_bamovegoto_entrypoint_0(self);
-	_bamovegoto_entrypoint_7(self, func_800F10B4(sp44, 100.0f, 5000.0f, 0.4f, 4.5f));
+	_bamovegoto_entrypoint_7(self, ml_map_f(sp44, 100.0f, 5000.0f, 0.4f, 4.5f));
 	_bamovegoto_entrypoint_12(self, self->unk54->unk34);
 	_bamovegoto_entrypoint_11(self, NULL, &_bsdronejump_entrypoint_0);
 	_bamovegoto_entrypoint_13(self);

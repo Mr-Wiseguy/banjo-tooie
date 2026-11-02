@@ -46,9 +46,9 @@ void bsbanpackwhack_entrypoint_2(PlayerState *self)
 
 
     if (player_isStable(self)) {
-        func_800F1574(&self->unk16C, func_800F0E00(self->unk16C * 0.08f, 3.0f));
+        ml_timer_update(&self->unk16C, ml_max_f(self->unk16C * 0.08f, 3.0f));
     } else {
-        func_800F1574(&self->unk16C, func_800F0E00(self->unk16C * 0.04f, 3.0f));
+        ml_timer_update(&self->unk16C, ml_max_f(self->unk16C * 0.04f, 3.0f));
     }
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
 

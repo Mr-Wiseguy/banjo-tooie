@@ -1,19 +1,23 @@
 #include "ba/airbar.h"
 
 void baairbar_entrypoint_0(PlayerState *self, s32 arg1) {
-    if (flag_getValue(FLAG_0E9_MAGIC_SUNLIGHT_OXYGENATED_WATER) && _gclevel_entrypoint_4(0x10)) {
+    if (flag_getValue(FLAG_0E9_MAGIC_SUNLIGHT_OXYGENATED_WATER) && _gclevel_entrypoint_4(0x10)) 
+    {
         return;
     }
     
-    if (!func_8008DAA8(self)) {
+    if (!func_8008DAA8(self)) 
+    {
         return;
     }
 
-    if (func_800F8B88() == 3) {
+    if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) 
+    {
         return;
     }
 
-    switch (arg1) {
+    switch (arg1) 
+    {
         case 1:
             func_800CF494();
             break;

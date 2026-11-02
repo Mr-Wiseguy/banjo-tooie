@@ -1,6 +1,5 @@
 #include "core2/1EC9740.h"
 
-extern f32 D_80125EB0;
 extern f32 D_80125EB4;
 
 void func_800EFE50(f32* arg0, f32* arg1, f32* arg2, f32 arg3)
@@ -29,7 +28,7 @@ int position_isWithinRangeOf(f32* arg0, f32 arg1, f32* arg2)
     //Get Diff
     ml_getdiff_vec3f(diff, arg2, arg0);
     //Compare squared length
-    return func_800EEFD4(diff) <= (arg1 * arg1);
+    return ml_vec3f_magnitude_sq(diff) <= (arg1 * arg1);
 }
 
 int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
@@ -39,7 +38,7 @@ int func_800F0008(f32* arg0, f32 arg1, f32* arg2, f32 arg3)
 
     ml_getdiff_vec3f(diff, arg0, arg2);
     temp_f2 = arg1 + arg3;
-    return func_800EEFD4(diff) <= (temp_f2 * temp_f2);
+    return ml_vec3f_magnitude_sq(diff) <= (temp_f2 * temp_f2);
 }
 
 int func_800F0064(f32* arg0, f32 arg1, f32* arg2)
@@ -77,8 +76,8 @@ void func_800F018C(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     f32 temp_f2;
 
     ml_getdiff_vec3f(sp34, arg2, arg1);
-    temp_f0 = func_800EEFD4(sp34);
-    if (temp_f0 < D_80125EB0) 
+    temp_f0 = ml_vec3f_magnitude_sq(sp34);
+    if (temp_f0 < 0.009999999776f)
     {
         ml_vec3f_copy(arg0, arg1);
         return;
@@ -100,8 +99,8 @@ void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
     f32 dotProduct;
 
     ml_getdiff_vec3f(diff, arg2, arg1);
-    length = func_800EEFD4(diff);
-    if (length < D_80125EB4)
+    length = ml_vec3f_magnitude_sq(diff);
+    if (length < 0.009999999776f)
     {
         //Copy arg1 into dst
         ml_vec3f_copy(dst, arg1);
@@ -330,7 +329,7 @@ s32 func_800F0BD0(f32* arg0, f32* arg1, f32 arg2, f32 arg3)
     {
         return 0;
     }
-    temp_f0 /= func_800EEF94(arg0);
+    temp_f0 /= ml_vec3f_magnitude(arg0);
     if (temp_f0 < arg3)
     {
         return 0;

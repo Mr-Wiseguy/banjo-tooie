@@ -66,7 +66,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
         _bskazmove_entrypoint_0(self);
     }
     func_8009BB24(self, &sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (player_canFullJump(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {

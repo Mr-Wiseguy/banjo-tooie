@@ -5,6 +5,7 @@
 
 s32 func_8010C500(Actor*);
 s32 func_8010C710(Actor*);
+void func_8010C908(Actor*, f32*);
 void func_8010C93C(Actor*, f32*, f32);
 s32 func_8010C9B0(f32[3], u32);
 s32 func_8010C9FC(void*, s32, s32, s32);
@@ -21,7 +22,7 @@ s32 func_8010D23C();
 s32 func_8010D248();
 void func_8010D254(f32*);
 s32 func_8010D278();
-void func_8010D5DC(s32, s32);
+s32 func_8010D5DC(s32, s32);
 void func_8010D600(f32*);
 
 #endif

@@ -123,7 +123,7 @@ void func_8080015C_chgameselect(Actor* arg0)
         }
         return;
     case 9:
-        if (func_800D9078(&arg0->unk58) != 0)
+        if (timer_reachedZero(&arg0->unk58) != 0)
         {
             if (D_8011A3F0 != 0)
             {

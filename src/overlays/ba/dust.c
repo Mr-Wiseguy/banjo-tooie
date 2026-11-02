@@ -36,7 +36,7 @@ void func_80800010_badust(PlayerState* arg0)
 void badust_entrypoint_1(PlayerState* arg0)
 {
     f32 sp24;
-    if ((func_80096544(arg0) == 0) || (sp24 = func_800964DC(arg0), !(player_getCoordVertical(arg0) < sp24)))
+    if ((func_80096544(arg0) == 0) || (sp24 = player_getWaterHeight(arg0), !(player_getCoordVertical(arg0) < sp24)))
     {
         if (arg0->dust->unk4 != 0)
         {
@@ -46,7 +46,7 @@ void badust_entrypoint_1(PlayerState* arg0)
         {
             arg0->dust->unk4 = 1;
         }
-        if (func_8009BB5C(arg0) > 100.0f)
+        if (baphysics_get_horizontal_velocity(arg0) > 100.0f)
         {
             if (arg0->dust->unk4 != 0)
             {

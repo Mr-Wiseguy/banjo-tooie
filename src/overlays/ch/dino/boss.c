@@ -72,7 +72,7 @@ void func_808018D0_chdinoboss(Actor* arg0) {
 
 void func_80801CDC_chdinoboss(Actor* arg0) 
 {
-    func_800D2498(0xC8U, arg0->unk5E, 0U);
+    func_800D2498(0xC8U, arg0->unk5C[2], 0U);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/boss/func_80801D08_chdinoboss.s")

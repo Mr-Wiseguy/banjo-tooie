@@ -24,7 +24,7 @@ void func_80098898(PlayerState* self)
     s32 index;
     UNKD_80117EC0* temp;
 
-    sp2C = func_800EA05C();
+    sp2C = map_getCurrent();
     func_800BED18(sp30, sp3C);
     ml_vec3i_to_vec3f(self->unkBC->unkC, sp30);
     ml_vec3i_to_vec3f(self->unkBC->unk0, sp3C);
@@ -82,7 +82,7 @@ void func_800989E4(PlayerState* self) {
             sp24 = 1;
             break;
         case TRANSFORM_B_KAZOOIE:
-            if (func_800F8B88() == 3)
+            if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO)
             {
                 sp20 = 1;
             }
@@ -223,7 +223,7 @@ void func_80098E64(PlayerState* self)
 
     if ((player_getTransformation(self) == TRANSFORM_E_GOLDENGOLIATH) && (baflag_isTrue(self, 0x40) != 0))
     {
-        func_800A3410(self, 0xD);
+        player_setTransformation(self, TRANSFORM_D_MUMBO);
         func_800F8EBC(self->unk184);
     }
     sp30 = func_8009CBDC(self, bs_getCurrentState(self));

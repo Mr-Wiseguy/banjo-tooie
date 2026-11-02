@@ -11,13 +11,13 @@ s32 baswim_entrypoint_0()
 
 s32 baswim_entrypoint_1(PlayerState* self)
 {
-    return (func_800964DC(self) - player_getCoordVertical(self)) < 100.0f;
+    return (player_getWaterHeight(self) - player_getCoordVertical(self)) < 100.0f;
 }
 
 int baswim_entrypoint_2(PlayerState* self)
 {
     s32 temp = func_80096544(self);
-    return temp && (player_getCoordVertical(self) > (func_800964DC(self) - 130.0f));
+    return temp && (player_getCoordVertical(self) > (player_getWaterHeight(self) - 130.0f));
 }
 
 int baswim_entrypoint_3(PlayerState* self)
@@ -124,8 +124,8 @@ void baswim_entrypoint_11(PlayerState* self)
     var_f0 = 45.0f;
     var_f0_2 = 4.3f;
     yaw_setVelocityBounded(self, 250.0f, 20.0f);
-    baroll_setIdeal(self, func_800F10B4(sp28, -1.0f, 1.0f, -var_f0, var_f0));
-    sp34 = func_800F10B4(sp28, -1.0f, 1.0f, var_f0_2, -var_f0_2);
+    baroll_setIdeal(self, ml_map_f(sp28, -1.0f, 1.0f, -var_f0, var_f0));
+    sp34 = ml_map_f(sp28, -1.0f, 1.0f, var_f0_2, -var_f0_2);
     sp34 *= _bafpctrl_entrypoint_3(self);
     yaw_setIdeal(self, sp34 + yaw_getIdeal(self));
 }
@@ -134,7 +134,7 @@ f32 func_808003B8_baswim(PlayerState* self)
 {
     f32 sp24[3];
     func_8009BB24(self, sp24);
-    return func_800F10B4(func_800EEF94(sp24), 50.0f, 200.0f, 0.0f, 1.0f);
+    return ml_map_f(ml_vec3f_magnitude(sp24), 50.0f, 200.0f, 0.0f, 1.0f);
 }
 void baswim_entrypoint_12(PlayerState* self)
 {
@@ -143,18 +143,18 @@ void baswim_entrypoint_12(PlayerState* self)
     f32 temp_f0_2;
 
     temp_f0 = func_808003B8_baswim(self);
-    sp2C = func_800F1214(temp_f0, 140.0f, 90.0f);
+    sp2C = ml_mapNormal_f(temp_f0, 140.0f, 90.0f);
     temp_f0 = _bafpctrl_entrypoint_3(self);
-    temp_f0 = func_800F10B4(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
+    temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
     sp2C *= temp_f0;
     func_8009BFE4(self, sp2C, 1.6f);
     temp_f0_2 = bastick_getY(self);
     if (temp_f0_2 < 0.0f)
     {
-        func_8009BF5C(self, func_800F10B4(temp_f0_2, -1.0f, 0.0f, 275.0f, 360.0f));
+        func_8009BF5C(self, ml_map_f(temp_f0_2, -1.0f, 0.0f, 275.0f, 360.0f));
         return;
     }
-    func_8009BF5C(self, func_800F10B4(temp_f0_2, 0.0f, 1.0f, 0.0f, 85.0f));
+    func_8009BF5C(self, ml_map_f(temp_f0_2, 0.0f, 1.0f, 0.0f, 85.0f));
 }
 
 void baswim_entrypoint_13(PlayerState* self)
@@ -164,7 +164,7 @@ void baswim_entrypoint_13(PlayerState* self)
     f32 sp34[3];
     sp44 = func_8009BFCC(self);
     func_800EF4E4(sp34, sp44, yaw_get(self), 0.0f, 0.0f, self->swim->unk0);
-    self->swim->unk0 = func_800F0E00(self->swim->unk0 - (time_getDelta() * self->swim->unk4), 0.0f);
+    self->swim->unk0 = ml_max_f(self->swim->unk0 - (time_getDelta() * self->swim->unk4), 0.0f);
     func_8009B94C(self, sp34);
     func_8009BA9C(self, sp34);
 }

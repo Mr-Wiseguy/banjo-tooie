@@ -57,7 +57,7 @@ void func_80800000_cheggfire(Actor* arg0)
 
     sp24 = (EggNormalData*)func_80100094(arg0, 0U);
     sp24->unk28 = (f32)(sp24->unk28 - time_getDelta());
-    temp_f0 = func_800F10B4(sp24->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
+    temp_f0 = ml_map_f(sp24->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
 
     while (sp24->unk28 <= 0)
     {
@@ -98,7 +98,7 @@ void func_808000B8_cheggfire(Actor* arg0)
     case 2:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            arg0->scale = func_800F10B4(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
+            arg0->scale = ml_map_f(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
             if (_sueggmove_entrypoint_3(arg0) != 0)
             {
                 _suegg_entrypoint_23(arg0);

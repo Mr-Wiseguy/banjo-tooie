@@ -69,7 +69,7 @@ void func_80800148_chshockjump(Actor* arg0, void* arg1)
 	{
 		var_a0 = ABILITY_09_BK_FLYING;
 	}
-	if ((ability_getValue(var_a0) != 0) && (func_800F64A4(character_getActiveIndex(), ALLOW_BK | ALLOW_KAZOOIE) != 0))
+	if ((ability_getValue(var_a0) != 0) && (character_includedInTransformMask(character_getActiveIndex(), ALLOW_BK | ALLOW_KAZOOIE) != 0))
 	{
 		var_a1 = (s32)func_800F15F8((f32)sp18, 255.0f, 5.0f);
 	}

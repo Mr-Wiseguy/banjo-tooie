@@ -69,7 +69,7 @@ void baboost_entrypoint_5(PlayerState *self) {
 
     if (self->boost->unk0){
         for (index = 0; index < 5; index++) {
-            func_800D9078(&self->boost->unk8[index]);
+            timer_reachedZero(&self->boost->unk8[index]);
         }
         if (self->boost->unk4 != 0.0f) {
             prev_unk4 = self->boost->unk4;

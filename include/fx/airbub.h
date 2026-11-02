@@ -7,6 +7,6 @@
 #include "core2/1E93440.h"
 
 void _fxairbub_entrypoint_0(s32,s32);
-s32 _fxairbub_entrypoint_1(s32, f32, f32, f32);
+s32 _fxairbub_entrypoint_1(f32[3], f32, f32, f32);
 
 #endif

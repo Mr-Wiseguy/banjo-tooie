@@ -28,7 +28,7 @@ void func_80800058_bsbeemain(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 375.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 375.0f));
 }
 
 void func_808000C0_bsbeemain(PlayerState* self) {
@@ -438,7 +438,7 @@ void func_80800E0C_bsbeemain(PlayerState* self) {
             break;
         case 3:
             if (self->unk16C > 0.0f) {
-                self->unk16C = func_800F0E00(0.0f, self->unk16C - 10.0f);
+                self->unk16C = ml_max_f(0.0f, self->unk16C - 10.0f);
             }
             break;
     }

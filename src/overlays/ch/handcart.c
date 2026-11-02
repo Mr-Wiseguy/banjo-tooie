@@ -443,14 +443,14 @@ void func_80800CD0_chhandcart(Actor* arg0)
     }
     if (HANDCART_DATA(arg0)->unkC > 10.0f)
     {
-        temp_f0_2 = func_800F10B4(1.0f - (HANDCART_DATA(arg0)->unkC / 90.0f), 0.0f, 1.f, 0.5f, 3.0f);
+        temp_f0_2 = ml_map_f(1.0f - (HANDCART_DATA(arg0)->unkC / 90.0f), 0.0f, 1.f, 0.5f, 3.0f);
         func_80101CDC(arg0, temp_f0_2);
         if (arg0->unk5F == 0)
         {
             arg0->unk5F = func_800C4350(arg0->unk5F, arg0->position, &D_80804DA4_chhandcart);
             return;
         }
-        func_800C31DC(arg0->unk5F, func_800F10B4(temp_f0_2, 0.5f, 3.0f, 1.2f, 0.8f));
+        func_800C31DC(arg0->unk5F, ml_map_f(temp_f0_2, 0.5f, 3.0f, 1.2f, 0.8f));
         func_800C4350(arg0->unk5F, arg0->position, 0);
         return;
     }
@@ -588,7 +588,7 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
         //If we're holding the button
         if (temp_v0 != 0)
         {
-            arg1 += func_800F10B4(temp_f12, -1.0f, -0.01f, 0.0f, 3.0f);
+            arg1 += ml_map_f(temp_f12, -1.0f, -0.01f, 0.0f, 3.0f);
             *arg0 = 0.01f;
             return arg1;
         }
@@ -604,7 +604,7 @@ f32 func_8080115C_chhandcart(f32* arg0, f32 arg1)
         //If we're not holding the button
         if (temp_v0 == 0)
         {
-            arg1 += func_800F10B4(temp_f12, 1.0f, 0.01f, 0.0f, 3.0f);
+            arg1 += ml_map_f(temp_f12, 1.0f, 0.01f, 0.0f, 3.0f);
             *arg0 = -0.01f;
             return arg1;
         }
@@ -853,7 +853,7 @@ void func_80801BA4_chhandcart(Actor* arg0)
     temp_s1 = (HandcartMemory*)func_80100094(arg0, 0U);
     func_80105A9C(arg0, HANDCART_DATA(arg0)->unkC * 10.0f);
     func_80105834(arg0);
-    temp_s1->unk920 = func_800F10B4(HANDCART_DATA(arg0)->unkC, 0.0f, 100.0f, 0.0f, func_800F1DCC(arg0->rotation[1], temp_s1->unk8) * 3.0f);
+    temp_s1->unk920 = ml_map_f(HANDCART_DATA(arg0)->unkC, 0.0f, 100.0f, 0.0f, func_800F1DCC(arg0->rotation[1], temp_s1->unk8) * 3.0f);
     temp_s1->unk8 = (f32)arg0->rotation[1];
     if (temp_s1->unk8F7 == 0)
     {
@@ -895,7 +895,7 @@ void func_80801D50_chhandcart(Actor* arg0)
     case 2:
         func_80800830_chhandcart(arg0);
         //Check if the player is Banjo and Kazooie
-        if ((func_80090178(ALLOW_BK) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
+        if ((activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (func_8010C9B0(arg0->position, 0x64) != 0))
         {
             //Set Flag True Canary Mary Race Intro
             flag_setValueTrue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO);
@@ -1013,19 +1013,19 @@ void func_80802120_chhandcart(Actor* arg0)
     sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
     arg0->scale = 0.425f;
     //Based on if we've spawned the first Item set which location canary mary should think we're at
-    arg0->unk64_19 = func_800D0A9C(0xC, 1);
+    arg0->unk64_19 = collectable_isSpawned(0xC, 1);
     sp34->unk8F4 = 0;
     sp34->unk4 = 0.0f;
     if (_glcutDll_entrypoint_20() != 0)
     {
-        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
+        if (map_getCurrent() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_80108B04(arg0, 0);
         }
     }
     else
     {
-        if ((flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) == 0) || (func_800D0A9C(4, 4) != 0))
+        if ((flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) == 0) || (collectable_isSpawned(4, 4) != 0))
         {
             func_80103140(arg0, 0x68BU, arg0->unk0->unk16);
             return;
@@ -1162,7 +1162,7 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     func_801018A4(arg0, arg1);
     if (arg0->unk7C_12)
     {
-        imageStruct = func_800D674C(0x9E2);
+        imageStruct = asset_load(0x9E2);
         func_800E2588(2);
         func_800E2594(arg1, imageStruct);
         ml_vec3f_assign_value(sp50, 0.06f, 0.03f, 0.06f);
@@ -1246,11 +1246,11 @@ void func_808028F0_chhandcart(Actor* arg0)
     f32 sp2C[3];
     CanaryMaryMemory* maryMemory;
     maryMemory = (CanaryMaryMemory*)func_80100094(arg0, 0U);
-    arg0->unk64_19 = func_800D0A9C(0xC, 1);
+    arg0->unk64_19 = collectable_isSpawned(0xC, 1);
     if (_glcutDll_entrypoint_20() != 0)
     {
         //Are we in GGM
-        if (func_800EA05C() == MAP_C7_GGM_GLITTER_GULCH_MINE)
+        if (map_getCurrent() == MAP_C7_GGM_GLITTER_GULCH_MINE)
         {
             func_8080282C_chhandcart(arg0, 0, 1);
             func_808031D0_chhandcart(arg0, 0x11);
@@ -1264,7 +1264,7 @@ void func_808028F0_chhandcart(Actor* arg0)
     else if (flag_getValue(FLAG_066_PROGRESS_GGM_CANARY_MARY_FREED_1) != 0) //Canary Mary has been freed from Cage
     {
         //Are we in Canary Cave
-        if (func_800EA05C() == MAP_DB_GGM_CANARY_CAVE)
+        if (map_getCurrent() == MAP_DB_GGM_CANARY_CAVE)
         {
             actor_mark_delete(arg0);
             return;
@@ -1307,7 +1307,7 @@ void func_808028F0_chhandcart(Actor* arg0)
             func_808031D0_chhandcart(arg0, 0x14);
         }
     }
-    else if (func_800EA05C() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
+    else if (map_getCurrent() != MAP_DB_GGM_CANARY_CAVE) //If we aren't in Canary Cave
     {
         actor_mark_delete(arg0);
         return;
@@ -1397,7 +1397,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
         case 25:
-            temp_v0 = func_8008FD70();
+            temp_v0 = activePlayer_getTransformationBit();
             if (temp_v0 != 1)
             {
                 if (temp_v0 == 0x4000)
@@ -1497,7 +1497,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             break;
 
         case 16:
-            if (func_800D0A9C(0xC, 1) != 0) //If we've spawned the first object
+            if (collectable_isSpawned(0xC, 1) != 0) //If we've spawned the first object
             {
                 sp24 = 0xF88;
             }
@@ -1520,7 +1520,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
             switch (temp_v0_2)
             {
             case 1:
-                if (func_800D0A9C(0xC, 1) != 0)
+                if (collectable_isSpawned(0xC, 1) != 0)
                 {
                     sp20 = 0xF87;
                 }
@@ -1531,7 +1531,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
                 break;
 
             case 2:
-                if (func_800D0A9C(0xC, 1) != 0)
+                if (collectable_isSpawned(0xC, 1) != 0)
                 {
                     sp20 = 0xF89;
                 }
@@ -1743,7 +1743,7 @@ void func_80803794_chhandcart(Actor* arg0)
         }
         else if (flag_getValue(FLAG0_001_STATE_CANARY_MARY_CAGE_BROKEN) == 0) //If we haven't spoken to canary mary in the cage
         {
-            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (func_80090178(ALLOW_BK | ALLOW_DETONATOR) != 0))
+            if ((_subaddiedialog_entrypoint_3(arg0->position, (s32)arg0->rotation[1], 0x1F4, 0x46, 6) != 0) && (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_DETONATOR) != 0))
             {
                 if (func_800DA9E4(FLAG_42A_FTT_CANARY_MARY_CANARY_CAVE, 1) == 0) //If we havent spoken to canary mary set flag to true
                 {
@@ -1801,7 +1801,7 @@ void func_80803794_chhandcart(Actor* arg0)
         func_80803514_chhandcart(arg0);
         if (!arg0->unk74_30)
         {
-            if (func_80090178(ALLOW_BK) != 0)
+            if (activePlayer_includedInTransformMask(ALLOW_BK) != 0)
             {
                 if (flag_getValue(FLAG_508_FTT_GGM_CANARY_MARY_RACE_INTRO) != 0)
                 {
@@ -2007,12 +2007,12 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         case 0xF84:
             //Won Race 1
             //Spawn jiggy of flag C
-            func_800D1000(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
+            collectable_spawnItem(0xC, 0x1, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
         case 0xF89:
             //Won Race 2
             //Spawn Cheato page of flag 4
-            func_800D1000(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
+            collectable_spawnItem(0x4, 0x4, temp_t0->rewardSpawn, 1, arg0->unk0);
             break;
         }
         break;

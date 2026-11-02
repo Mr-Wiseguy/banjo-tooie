@@ -55,11 +55,6 @@
 
 #include "core2/1E75710.h"
 
-typedef struct {
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-} unkStruct800F5A58;
 typedef enum
 {
 	ALLOW_TREXLARGE = 1 << (TRANSFORM_13_TREXLARGE + 0x1F),
@@ -114,8 +109,16 @@ typedef struct {
     s8 unk2;
 } unkStructD_80135520;
 
+typedef enum
+{
+    SPLIT_STATE_INVALID = 0,
+    SPLIT_STATE_NOTSPLIT = 1,
+    SPLIT_STATE_SPLIT = 2,
+    SPLIT_STATE_TALON_TORPEDO = 3
+}SPLITUP_STATUS;
+
 typedef struct {
-    u8 unk0;
+    u8 splitStatus;
     u8 unk1;
     u8 pad2[2];
     u8 unk4;
@@ -144,26 +147,35 @@ void func_800F497C(s32);
 void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
 void func_800F4A58(s32,s32,f32);
 void func_800F4AC0(s32, s32, f32);
+void func_800F4AF4(s32, s32);
+void func_800F4B20(s32);
 s32 func_800F4B4C(s32);
 s32 func_800F4B8C(u32, u32, s32);
 s32 func_800F4BB8(u32, u32, s32);
 s32 func_800F4BE4(s32);
 void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
+void character_affectCurrentHealth(s32, s32);
 void func_800F4F34(s32, f32*, f32, f32);
 PlayerState* character_getPlayerState(s32 arg0);
 PlayerState* character_getPlayerStateBounded(s32 arg0);
 TransformationId character_getTransform(s32);
+s32 character_getTransformBit(s32);
 //Get the character control index
 u32 character_getActiveIndex(void);
-s32 func_800F5578(s32);
-s32 func_800F55A4(s32);
+s32 character_getCurrentHealth(s32);
+s32 character_getMaxHealth(s32);
+Unk80132ED0* func_800F55D0(s32);
+f32 character_getGroundHeight(s32);
 s32 func_800F56AC(s32);
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F57F0(s32, f32*);
-void func_800F5A00(s32, f32[3]);
+s32 character_getMaxCharacters();
+void character_getCoords(s32, f32[3]);
 void func_800F5A2C(s32, s32, f32[3]);
+void character_getCoords3s(s32, s32[3]);
 f32 func_800F5AE0(s32);
+s32 func_800F5B0C(s32);
 void func_800F5D44(s32, f32*);
 void func_800F5D70(s32, f32*);
 void func_800F5D9C(s32, f32*);
@@ -172,13 +184,14 @@ f32 func_800F5F24(u32);
 s32 func_800F5FA8(s32);
 s32 func_800F5FE0(s32);
 void func_800F608C(s32, s32);
-s32 func_800F6224(s32);
+s32 character_createNew(s32);
 void func_800F6388(s32, s32);
 void func_800F63E0(s32, u32);
 s32 func_800F6438(u32);
 s32 func_800F6478(s32);
-s32 func_800F64A4(s32 characterIndex, AllowedTransformation transformationType);
+s32 character_includedInTransformMask(s32 characterIndex, AllowedTransformation transformationType);
 s32 func_800F651C(u32);
+s32 func_800F66BC(s32, f32*, f32);
 s32 func_800F65D0(s32);
 s32 func_800F66F0(u32);
 int func_800F6720();
@@ -187,9 +200,10 @@ int func_800F6774(u32);
 s32 func_800F68B8(s32);
 s32 func_800F690C();
 s32 func_800F693C(s32);
-s32 func_800F6BE4(s32);
+s32 character_existsAtIndex(s32);
 s32 func_800F6C1C(s32 arg0);
-s32 func_800F6C5C(s32);
+s32 character_isStable(s32);
+s32 func_800F6C88(s32);
 s32 func_800F6CC8(u32);
 s32 func_800F6D24(s32);
 s32 func_800F6DE0(f32*);
@@ -201,12 +215,13 @@ int func_800F72DC(u32);
 void func_800F759C(s32);
 void func_800F7664(u32, s32, s32);
 s32 func_800F7700(u32, s32, f32*);
-s32 func_800F7750(s32, s32, f32, f32, s32);
-s32 func_800F7874(s32, Unk80132ED0*, s32);
+s32 func_800F7750(s32, f32[3], f32, f32, s32);
+void func_800F77E8(u32, f32[3]);
+s32 func_800F7874(s32, Unk80132ED0*, f32[3]);
 //The moving object is moved towards/away from the target
-s32 func_800F78EC(s32 moving, s32 target, f32 verticalSpeed, f32 horizontalSpeed);
+s32 func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F798C(s32 arg0, s32 arg1, s32 arg2);
-s32 func_800F7B1C(s32, s32, f32, f32);
+s32 func_800F7B1C(s32, f32*, f32, f32);
 s32 func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);
 void func_800F7C0C(s32, s32, f32);
@@ -214,7 +229,7 @@ s32 func_800F7C58(s32 arg0, s32 arg1, s32 arg2);
 void func_800F7C9C(u32, s32, s32, s32);
 void func_800F7CF4(s32, s32, f32*);
 s32 func_800F7E3C(s32, s32);
-void func_800F7E64(s32, s32);
+void func_800F7E64(s32, TransformationId);
 void func_800F7F50(u32, f32*, f32*, f32, s32, s32);
 void func_800F7F98(u32, s32);
 int func_800F8004(s32);
@@ -230,31 +245,38 @@ void func_800F82D4(s32, s32);
 void func_800F8300(s32, s32, f32*);
 void func_800F832C(s32, f32*);
 void func_800F8418(s32, f32*);
+void func_800F86C4(s32, s32);
 void func_800F8804(s32, f32*);
 void func_800F8850();
 unkStruct800F88A0* func_800F88A0(s32);
 s32 func_800F8914(unkStruct800F88A0*, s32);
 s32 func_800F8B64(void);
-u8 func_800F8B88();
+SPLITUP_STATUS bs_getSplitStatus();
 void func_800F8B94(void);
+MapId func_800F8A5C(s32);
 void func_800F8D80(s32, unkStruct800F88A0*);
 void func_800F8DD8();
 void func_800F8E08();
 void func_800F8EBC(s32);
+void func_800F8EE4(s32);
+void func_800F9098(s32, f32*);
+void func_800F90EC(f32);
 void func_800F90F8(s32);
 void func_800F9104(s32);
 void func_800F9110(s32);
 void func_800F911C(s32);
 void func_800F9178();
+s32 func_800F9184(void);
 // Might take in a PlayerState *
 void func_800F9198(void);
 s32 func_800F9214(s32);
-s32 func_800F929C(void);
+TransformationId func_800F929C(void);
 void func_800F93C4(s32*, s32*);
 int func_800F9488(s32);
 s32 func_800F99E8(void);
 s32 func_800F9A24();
 void func_800F9A44(void);
+void func_800F9A6C();
 void func_800F9BC4(void);
 void func_800F9C6C(void);
 

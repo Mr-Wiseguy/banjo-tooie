@@ -139,7 +139,7 @@ void babounce_entrypoint_6(PlayerState *self, AssetId asset_id, f32 arg2, f32 ar
     babounce_entrypoint_5(self, asset_id, arg2);
 }
 
-void babounce_entrypoint_7(PlayerState *self, s32 arg1) {
+void babounce_entrypoint_7(PlayerState *self, Unk80132ED0* arg1) {
     self->bounce->unk10 =  arg1;
 }
 

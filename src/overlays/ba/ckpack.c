@@ -1,4 +1,4 @@
-#include "ba/ckpack.h"
+#include "ba/backpack.h"
 
 s32 func_8008CA74(PlayerState *self);
 
@@ -24,7 +24,7 @@ void func_8080003C_babackpack(PlayerState *self) {
 
 s32 babackpack_entrypoint_1(PlayerState *self) {
     if(self->backpack->unk0 != 0) {
-        return func_800D674C(self->backpack->unk0);
+        return asset_load(self->backpack->unk0);
     } else {
         return 0;
     }

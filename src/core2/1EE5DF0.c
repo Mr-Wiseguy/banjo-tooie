@@ -91,9 +91,9 @@ s32 func_8010D284()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE5DF0/func_8010D490.s")
 
-void func_8010D5DC(s32 arg0,s32 arg1)
+s32 func_8010D5DC(s32 arg0,s32 arg1)
 {
-    func_8010114C(arg0,0x32,arg1);
+    return func_8010114C(arg0,0x32,arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE5DF0/func_8010D600.s")

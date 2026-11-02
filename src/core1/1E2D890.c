@@ -22,10 +22,28 @@ typedef struct {
     f32 unk8;
     f32 unkC;
 } unkD_80079AF8;
-
+typedef struct {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    s32 unk2C;
+    s32 unk30;
+    s32 unk34;
+} unkD_80079AC0;
 extern unkD_800799C0 D_800799C0[4];
 extern unkD_800799E0 D_800799E0[4];
 extern unkD_80079AF8 D_80079AF8[4];
+extern unkD_80079AC0 D_80079AC0;
 
 // si_mesg
 extern OSMesg D_80079B38;
@@ -112,6 +130,7 @@ void func_800166DC(UNUSED void* arg0) {
     s32 eeprom_type = osEepromProbe(&D_80079B60);
     func_80016864();
     func_80014DC4();
+    //EEPROM Check that causes the no controller error
     if (eeprom_type < EEPROM_TYPE_16K) {
         D_80079B90[0].errno = 8;
     }
@@ -128,7 +147,7 @@ void func_80016734(void) {
     osStartThread(&D_80079BA8);
 }
 
-u8 func_800167F4(void) {
+u8 controller_getError(void) {
     return D_80079B90[0].errno;
 }
 

@@ -449,7 +449,7 @@ f32 func_80800F10_chclockworkmouse(f32* arg0, f32 arg1) {
     temp_v0 = func_80016B30(0, 0);
     if (*arg0 < 0.0f) {
         if (temp_v0 != 0) {
-            arg1 += func_800F10B4(*arg0, -1.0f, -0.01f, 0.0f, 3.0f);
+            arg1 += ml_map_f(*arg0, -1.0f, -0.01f, 0.0f, 3.0f);
             *arg0 = 0.01f;
             return arg1;
         }
@@ -457,7 +457,7 @@ f32 func_80800F10_chclockworkmouse(f32* arg0, f32 arg1) {
         arg1 *= 0.98f;
     } else {
         if (temp_v0 == 0) {
-            arg1 += func_800F10B4(*arg0, 1.0f, 0.01f, 0.0f, 3.0f);
+            arg1 += ml_map_f(*arg0, 1.0f, 0.01f, 0.0f, 3.0f);
             *arg0 = -0.01f;
             return arg1;
         }
@@ -476,12 +476,12 @@ void func_80801044_chclockworkmouse(Actor* actor) {
     f32 temp_f12;
 
     if (CLOCKWORK_DATA(actor)->unkC > 10.0f) {
-        temp_f12 = func_800F10B4(1.0f - (CLOCKWORK_DATA(actor)->unkC / 200.0f), 0.0f, 1, 0.5f, 3.0f);
+        temp_f12 = ml_map_f(1.0f - (CLOCKWORK_DATA(actor)->unkC / 200.0f), 0.0f, 1, 0.5f, 3.0f);
         if (actor->unk5F == 0) {
             actor->unk5F = func_800C4350(actor->unk5F, actor->position, (s32 *)D_80803E28_chclockworkmouse);
             return;
         }
-        func_800C31DC(actor->unk5F, func_800F10B4(temp_f12, 0.5f, 3.0f, 1.2f, 0.8f));
+        func_800C31DC(actor->unk5F, ml_map_f(temp_f12, 0.5f, 3.0f, 1.2f, 0.8f));
         func_800C4350(actor->unk5F, actor->position, NULL);
     }
 }
@@ -495,7 +495,7 @@ void func_8080111C_chclockworkmouse(Actor* actor) {
     func_80105A9C(actor, CLOCKWORK_DATA(actor)->unkC * 10.0f);
     func_80105834(actor);
     temp_s1->unkD8 = (((func_800F1DCC(actor->rotation[1], temp_s1->unkD4) * 10.0f) - temp_s1->unkD8) * 0.02f);
-    actor->rotation[2] = func_800F10B4(CLOCKWORK_DATA(actor)->unkC, 0.0f, 500.0f, 0.0f, temp_s1->unkD8);
+    actor->rotation[2] = ml_map_f(CLOCKWORK_DATA(actor)->unkC, 0.0f, 500.0f, 0.0f, temp_s1->unkD8);
     temp_s1->unkD4 = actor->rotation[1];
     if (temp_s1->unkFD == 0) {
         sp28 = 1.0f;
@@ -582,7 +582,7 @@ void func_80801588_chclockworkmouse(Actor* actor) {
     case 2:
     case 17:
         func_80800774_chclockworkmouse(actor);
-        if ((func_80090178(ALLOW_BK) != 0) && (func_8010C9B0(actor->position, 0x96) != 0)) {
+        if ((activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (func_8010C9B0(actor->position, 0x96) != 0)) {
             func_80800E8C_chclockworkmouse(actor, 3);
         }
         break;
@@ -665,10 +665,10 @@ void func_808018BC_chclockworkmouse(Actor* actor) {
     Prop *prop;
 
     sp24 = ((Unk80100094 *)func_80100094(actor, 0));
-    actor->unk64_19 = func_800D0A9C(0x4A, 1);
+    actor->unk64_19 = collectable_isSpawned(0x4A, 1);
     sp24->unkFA = 0;
     sp24->unk4 = 0.0f;
-    if ((func_800D0A9C(4, 4) == 0) || (func_800D0A9C(0x16, 4) != 0)) {
+    if ((collectable_isSpawned(4, 4) == 0) || (collectable_isSpawned(0x16, 4) != 0)) {
         func_80103140(actor, 0x8A1, ((u16**)actor)[0][0xB]);
         return;
     }
@@ -780,7 +780,7 @@ void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
 
     func_801018A4();
     if (actor->unk7C_12) {
-        imageStruct = func_800D674C(0x9E2);
+        imageStruct = asset_load(0x9E2);
         temp_s4 = ((Unk80100094 *)func_80100094(actor, 0));
         func_800E2588(2);
         func_800E2594(arg1, imageStruct);
@@ -836,7 +836,7 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
     Unk80100094* sp28;
 
     sp28 = ((Unk80100094 *)func_80100094(actor, 0));
-    actor->unk64_19 = func_800D0A9C(0x4A, 1);
+    actor->unk64_19 = collectable_isSpawned(0x4A, 1);
     switch (func_8080011C_chclockworkmouse(actor)) {
     case 0:
         break;
@@ -857,7 +857,7 @@ void func_80801FC8_chclockworkmouse(Actor* actor) {
         func_8080019C_chclockworkmouse(actor);
         break;
     }
-    if ((func_800D0A9C(4, 4) != 0) && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)) {
+    if ((collectable_isSpawned(4, 4) != 0) && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)) {
         sp28->unkC.shorts[0] = _glsplinefind_entrypoint_0(0x388, actor->position);
         func_801058C4(actor, (s16)sp28->unkC.shorts[0], CLOCKWORK_DATA(actor)->unkC, 0);
         if (_glcutDll_entrypoint_19(0x55) != 0) {
@@ -976,7 +976,7 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
         actor->unk58 = 0.5f;
         break;
     case 16:
-        if (func_800D0A9C(0x4A, 1) != 0) {
+        if (collectable_isSpawned(0x4A, 1) != 0) {
             sp24 = 0x142D;
         } else {
             sp24 = 0x1429;
@@ -994,14 +994,14 @@ void func_808022E4_chclockworkmouse(Actor* actor, s32 arg1) {
         temp_v0 = func_80800090_chclockworkmouse();
         switch (temp_v0) {                          /* switch 2; irregular */
         case 1:                                     /* switch 2 */
-            if (func_800D0A9C(0x4A, 1) != 0) {
+            if (collectable_isSpawned(0x4A, 1) != 0) {
                 sp20 = 0x142C;
             } else {
                 sp20 = 0x1428;
             }
             break;
         case 2:                                     /* switch 2 */
-            if (func_800D0A9C(0x4A, 1) != 0) {
+            if (collectable_isSpawned(0x4A, 1) != 0) {
                 sp20 = 0x142E;
             } else {
                 sp20 = 0x142A;
@@ -1220,7 +1220,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
         if (flag_getValue(FLAG_42B_UNK) != 0) 
         {
             func_808026E0_chclockworkmouse(arg0, 2);
-        } else if (!(arg0->unk74_30) && (func_80090178(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_3(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+        } else if (!(arg0->unk74_30) && (activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_3(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
             flag_setValueTrue(FLAG_42B_UNK);
             func_8080079C_chclockworkmouse(sp34, arg0, 2, 0);
             func_80801B44_chclockworkmouse(arg0, 0x1426, 0xB);
@@ -1229,7 +1229,7 @@ void func_80802CC8_chclockworkmouse(Actor* arg0) {
     case 2:
         func_80802BCC_chclockworkmouse(arg0);
         func_80802A48_chclockworkmouse(arg0);
-        if (!arg0->unk74_30 && (func_80090178(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
+        if (!arg0->unk74_30 && (activePlayer_includedInTransformMask(ALLOW_BK) != 0) && (_subaddiedialog_entrypoint_6(arg0->position, arg0->rotation[1], 0xC8, 0x46, 6) != 0)) {
             func_80801B44_chclockworkmouse(arg0, arg0->unk64_19 ? 0x1436 : 0x1427 , 0xB);
         }
         break;
@@ -1358,10 +1358,10 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         temp_t0 = (Unk80100094 *)func_80100094(func_80106790(actor->unk3C), 0);
         switch (*new_var) {
         case 0x142A:
-            func_800D1000(0x4A, 1, &temp_t0->unk114, 1, actor->unk0);
+            collectable_spawnItem(0x4A, 1, &temp_t0->unk114, 1, actor->unk0);
             break;
         case 0x142E:
-            func_800D1000(0x16, 4, &temp_t0->unk114, 1, actor->unk0);
+            collectable_spawnItem(0x16, 4, &temp_t0->unk114, 1, actor->unk0);
             break;
         }
         break;

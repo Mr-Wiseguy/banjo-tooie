@@ -32,7 +32,7 @@
 
 void gczoombox_entrypoint_1(char* arg0)
 {
-    func_800E7188(arg0);
+    string_length(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808006B4_gczoombox.s")

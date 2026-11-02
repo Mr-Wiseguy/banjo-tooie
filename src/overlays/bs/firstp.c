@@ -214,7 +214,7 @@ void func_8080056C_bsfirstp(PlayerState* arg0)
 	ml_vec3f_apply_scale(sp40, 1.0f / sp3C);
 	temp_s0->unk38[0] += (sp40[0] - temp_s0->unk38[0]) * 0.2f;
 	temp_s0->unk38[2] += (sp40[2] - temp_s0->unk38[2]) * 0.2f;
-	temp = func_800EEFFC(temp_s0->unk38);
+	temp = ml_vec2f_magnitude(temp_s0->unk38);
 	sp38 = func_80806170_bsfirstp(arg0, temp);
 	sp34 = func_800F1CF0(temp_s0->unk38, temp_s0->unk2C);
 	sp30 = sqrtf(1.0f - SQ(sp34));

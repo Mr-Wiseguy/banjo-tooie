@@ -3,6 +3,28 @@
 
 #include <ultra64.h>
 #include "ba/playerstate.h"
+#include "ba/anim.h"
+#include "ba/key.h"
+#include "memory.h"
+#include "nc/ba/1p.h"
+#include "vector.h"
+#include "core1/1E2B200.h"
+#include "core1/heap.h"
+#include "core2/1E6B900.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7E9A0.h"
+#include "core2/1EA3AA0.h"
+#include "core2/1EAAD80.h"
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1ECB9F0.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1EDFED0.h"
+#include "core2/1EE92B0.h"
+#include "core2/1EEBA50.h"
+#include "freelist.h"
+
 // func_801101C0
 // func_80110280
 // func_80110424

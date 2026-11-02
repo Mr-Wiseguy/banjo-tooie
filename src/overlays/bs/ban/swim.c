@@ -18,7 +18,7 @@ void func_80800030_bsbanswim(PlayerState* self)
         baroll_setAngularVelocity(self, 130.0f, 0.9f);
         baphysics_set_gravity(self, 0.0f);
         baphysics_set_terminal_velocity(self, -399.99f);
-        if (func_800F8B88() != 3)
+        if (bs_getSplitStatus() != SPLIT_STATE_TALON_TORPEDO)
         {
             func_800A0CF4(self, 1);
         }

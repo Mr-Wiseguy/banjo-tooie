@@ -6,7 +6,7 @@
 
 void func_800BFC34()
 {
-    func_800D674C();
+    asset_load();
 }
 
 void func_800BFC54()
@@ -21,7 +21,7 @@ void func_800BFC74()
 
 void func_800BFC94()
 {
-    func_800D674C();
+    asset_load();
 }
 
 void func_800BFCB4(void) {

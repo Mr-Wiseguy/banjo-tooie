@@ -4,7 +4,7 @@ extern Vector* D_80136EE0;
 
 void actorList_new(void)
 {
-	D_80136EE0 = vector_new(0x9CU, 0x1EU);
+	D_80136EE0 = vector_new(sizeof(Actor), 0x1EU);
 }
 
 void actorList_free(void)
@@ -27,7 +27,7 @@ void* actorList_pushback(s32* indexCreated)
 	* indexCreated = 0;
 	newElementAddress = vector_push_back(&D_80136EE0);
 	*indexCreated = vector_index_of(D_80136EE0, newElementAddress);
-	bzero(newElementAddress, 0x9C);
+	bzero(newElementAddress, sizeof(Actor));
 	return newElementAddress;
 }
 

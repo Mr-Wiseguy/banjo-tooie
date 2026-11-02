@@ -2,8 +2,6 @@
 #include "core2/1EC6180.h"
 
 extern s16 D_80123580[];
-extern f32 D_80125E70;
-extern f32 D_80125E6C;
 
 void func_800EC890(s32 arg0) 
 {
@@ -17,7 +15,7 @@ void func_800EC898(unkStruct800EC898* arg0, s32 arg1, s32 arg2, s32 arg3) {
     s16 temp_v0_2;
     int new_var;
 
-    temp_v0 = func_800EA05C();
+    temp_v0 = map_getCurrent();
     var_t0 = (unkStruct800EC898_var_t0*) D_80123580;
     var_t7 = (unkStruct800EC898_var_t0*) D_80123580;
     while (var_t0->unk0 != 0) {
@@ -180,7 +178,7 @@ void func_800EDE54(unkStruct800EDE54_arg0* arg0, unkStruct800EDE54_arg1* arg1, u
     if (arg3 > 0.0f) {
         arg0->unk9C = arg3;
     } else {
-        arg0->unk9C = D_80125E6C;
+        arg0->unk9C = 0.001000000047f;
     }
     arg0->unk98 = 0/*.0f*/;
 }
@@ -205,7 +203,7 @@ void func_800EDF2C(unkStruct800EDF2C *arg0, s32 arg1, s32 arg2, f32 arg3)
     }
     else
     {
-        arg0->unk9C = (f32) D_80125E70;
+        arg0->unk9C = 0.001000000047f;
     }
     arg0->unk98 = 0.0f;
 }

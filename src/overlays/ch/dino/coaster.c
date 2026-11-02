@@ -20,7 +20,7 @@ s32 func_808001C8_chdinocoaster(Actor* arg0, s32 arg1, s32 arg2)
 	{
 		case EVENT_2E_ACTOR_DIALOG_ENDED:
 			func_80101FDC(arg0, 0x14U);
-			func_8010A590((s32)arg0);
+			actor_enableCollision((s32)arg0);
 			if (split[0] == 0x17B8)
 			{
 				func_8009032C(0x20);

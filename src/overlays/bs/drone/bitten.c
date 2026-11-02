@@ -9,7 +9,7 @@ void func_80800000_bsdronebitten(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 500.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 500.0f));
 }
 
 
@@ -46,7 +46,7 @@ void bsdronebitten_entrypoint_3(PlayerState* self) {
     s32 var_t7;
     nextState = BS_STATE_0_INVALID;
     func_80800000_bsdronebitten(self);
-    if (func_800F64A4(self->unk184, 0x201) && func_8008DA24(self))
+    if (character_includedInTransformMask(self->unk184, 0x201) && player_canGripGrab(self))
     {
         nextState = BS_STATE_A8_GRIP_GRAB_START;
     }
@@ -112,7 +112,7 @@ void bsdronebitten_entrypoint_7(PlayerState* self) {
     }
     else
     {
-        sp38 = func_800F10B4(sp3C, 100.0f, 5000.0f, 0.4f, 4.5f);
+        sp38 = ml_map_f(sp3C, 100.0f, 5000.0f, 0.4f, 4.5f);
         _bamovegoto_entrypoint_7(self, sp38);
     }
     _bamovegoto_entrypoint_12(self, self->unk54->unk34);
@@ -166,7 +166,7 @@ void bsdronebitten_entrypoint_9(PlayerState* self) {
             func_8009DB04(self, 0x417, 0.8f, 0x4650);
             _bashake_entrypoint_0(self, 3, 1);
             _badust_entrypoint_8(self);
-            if (func_800A1718(self) == 0)
+            if (player_getCurrentHealth(self) == 0)
             {
                 nextState = _badata_entrypoint_20(self);
                 break;

@@ -29,9 +29,9 @@ void func_800EEC70(f32*, f32, f32, f32);
 int ml_vec3f_is_equal(f32*, f32*);
 int ml_vec3f_is_zero(f32*);
 int ml_vec3f_is_not_zero(f32[3]);
-f32 func_800EEF94(f32*);
-f32 func_800EEFD4(f32[3]);
-f32 func_800EEFFC(f32*);
+f32 ml_vec3f_magnitude(f32*);
+f32 ml_vec3f_magnitude_sq(f32[3]);
+f32 ml_vec2f_magnitude(f32*);
 void ml_vec3f_add(f32[3], f32[3]); //ml_vec3f_add
 void func_800EF174(f32*, f32*, f32);
 void func_800EF1B8(f32*, f32, f32);

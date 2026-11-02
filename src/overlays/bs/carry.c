@@ -54,10 +54,10 @@ void func_80800128_bscarry(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     case BS_STICK_ZONE_ID_1:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 30.0f, 60.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 30.0f, 60.0f));
         return;
     case BS_STICK_ZONE_ID_2:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 60.0f, 300.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 60.0f, 300.0f));
         return;
     }
 }

@@ -59,12 +59,12 @@ void func_808000F0_bssub(PlayerState* self) {
     f32 temp_f0;
     f32 temp_f20;
 
-    temp_f20 = func_800F10B4(func_8009BB94(self), 0.0f, 225.0f, 0.0f, 1.0f);
+    temp_f20 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 0.0f, 1.0f);
     if (player_inWater(self) != 0)
     {
-        var_f22 = func_800F1214(temp_f20, 50.0f, 150.0f);
-        sp48 = func_800F1214(temp_f20, 0.5f, 2.0f);
-        baroll_setAngularVelocity(self, func_800F1214(temp_f20, 40.0f, 150.0f), func_800F1214(temp_f20, 0.6f, 3.0f));
+        var_f22 = ml_mapNormal_f(temp_f20, 50.0f, 150.0f);
+        sp48 = ml_mapNormal_f(temp_f20, 0.5f, 2.0f);
+        baroll_setAngularVelocity(self, ml_mapNormal_f(temp_f20, 40.0f, 150.0f), ml_mapNormal_f(temp_f20, 0.6f, 3.0f));
         yaw_setVelocityBounded(self, 250.0f, 20.0f);
     }
     else
@@ -75,7 +75,7 @@ void func_808000F0_bssub(PlayerState* self) {
         yaw_setVelocityBounded(self, 300.0f, 3.0f);
     }
     temp_f0 = _bafpctrl_entrypoint_3(self);
-    var_f22 *= func_800F10B4(temp_f0, 0.1f, 1.0f, SQ(temp_f0), 1.0f);
+    var_f22 *= ml_map_f(temp_f0, 0.1f, 1.0f, SQ(temp_f0), 1.0f);
     func_8009BFE4(self, var_f22, sp48);
 }
 
@@ -91,17 +91,17 @@ void func_80800634_bssub(PlayerState* self) {
 
     sp2C = bastick_getX(self);
     sp30 = time_getDelta();
-    temp_f0 = func_800F10B4(func_8009BB94(self), 0.0f, 225.0f, 11.25f, 45.0f);
-    baroll_setIdeal(self, func_800F10B4(sp2C, -1.0f, 1.0f, -temp_f0, temp_f0));
+    temp_f0 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 11.25f, 45.0f);
+    baroll_setIdeal(self, ml_map_f(sp2C, -1.0f, 1.0f, -temp_f0, temp_f0));
     if (player_inWater(self) != 0)
     {
-        var_f2 = func_800F10B4(func_8009BB94(self), 0.0f, 225.0f, 42.666668f, 128.0f);
+        var_f2 = ml_map_f(baphysics_get_velocity(self), 0.0f, 225.0f, 42.666668f, 128.0f);
     }
     else
     {
         var_f2 = 300.0f;
     }
-    sp3C = func_800F10B4(sp2C, -1.0f, 1.0f, var_f2, -var_f2) * sp30;
+    sp3C = ml_map_f(sp2C, -1.0f, 1.0f, var_f2, -var_f2) * sp30;
     sp3C *= _bafpctrl_entrypoint_3(self);
     yaw_setIdeal(self, yaw_getIdeal(self) + sp3C);
 }
@@ -122,10 +122,10 @@ void func_80800768_bssub(PlayerState* self) {
     }
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, func_800F10B4(temp_f0, -1.0f, 0.0f, sp28, 360.0f));
+        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, sp28, 360.0f));
         return;
     }
-    func_8009BF5C(self, func_800F10B4(temp_f0, 0.0f, 1.0f, 0.0f, sp24));
+    func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, sp24));
 }
 
 void func_80800834_bssub(PlayerState* self) {
@@ -133,7 +133,7 @@ void func_80800834_bssub(PlayerState* self) {
         _basub_entrypoint_1(self);
     }
     if (bakey_pressed(self, BUTTON_Z) != 0) {
-        _basub_entrypoint_8(self, func_8009BB94(self));
+        _basub_entrypoint_8(self, baphysics_get_velocity(self));
     }
     if (bakey_pressed(self, BUTTON_B) != 0) {
         if (func_800EA068(0x40) != 0) {
@@ -313,7 +313,7 @@ void func_8080102C_bssub(PlayerState* self) {
     sp2C = baanim_getAnimCtrlPtr(self);
     sp28 = anctrl_getIndex(sp2C);
     func_8008CA4C(self, BAANIM_UPDATE_2_SCALE_HORZ);
-    if (func_8009BB94(self) < 300.0f)
+    if (baphysics_get_velocity(self) < 300.0f)
     {
         if (sp28 != 0x12E)
         {

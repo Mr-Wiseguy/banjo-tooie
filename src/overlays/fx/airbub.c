@@ -7,7 +7,7 @@ void fxairbub_entrypoint_0(s32 arg0,s32 arg1)
     _fxripple_entrypoint_0(0, arg1);
 }
 
-s32 fxairbub_entrypoint_1(s32 arg0, f32 arg1, f32 arg2, f32 arg3)
+s32 fxairbub_entrypoint_1(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
 {
     s32 temp_v0;
 

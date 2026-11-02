@@ -55,7 +55,7 @@ f32 player_getSpeedModifier(PlayerState* self)
     {
         return 1.0f;
     }
-    if (func_8008E40C(self) != 0)
+    if (player_wearingClawClambers(self) != 0)
     {
         return D_80125560;
     }
@@ -131,7 +131,7 @@ f32 func_800A328C(PlayerState* self)
 
 f32 func_800A3298(PlayerState* self)
 {
-    return self->unkA0->unk48 - func_800964DC(self);
+    return self->unkA0->unk48 - player_getWaterHeight(self);
 }
 
 void func_800A32C4(PlayerState* self, f32* arg1) { ml_vec3f_copy(arg1, self->unkA0->unk0); }
@@ -146,9 +146,9 @@ Unk80132ED0* func_800A32F8(PlayerState* self)
     return self->unkA0->unk44;
 }
 
-s32 func_800A3304(PlayerState* self)
+s32 bs_isBKTogether(PlayerState* self)
 {
-    return func_800F8B88() == 1;
+    return bs_getSplitStatus() == SPLIT_STATE_NOTSPLIT;
 }
 
 void func_800A3328(PlayerState* self, f32* arg1)
@@ -195,7 +195,7 @@ u8 func_800A3404(PlayerState* self)
     return self->unkA0->unk3F;
 }
 
-void func_800A3410(PlayerState* self, s32 arg1)
+void player_setTransformation(PlayerState* self, TransformationId nextTransform)
 {
     ba_unkA0_s* var_v0;
 
@@ -206,7 +206,7 @@ void func_800A3410(PlayerState* self, s32 arg1)
         func_800A0D68(self, 0);
         var_v0 = self->unkA0;
     }
-    var_v0->transformation = arg1;
+    var_v0->transformation = nextTransform;
     if (self->unkA0->transformation == TRANSFORM_A_BANJO)
     {
         func_800947EC(self, 1, 1);
@@ -305,7 +305,7 @@ void func_800A3644(PlayerState* self)
     }
     else
     {
-        sp3C = func_800F10B4(sp38, 20.0f, 60.0f, 0.6f, D_80125564);
+        sp3C = ml_map_f(sp38, 20.0f, 60.0f, 0.6f, D_80125564);
         if ((func_80096518(self) == 0) && !(sp30 & 0x50))
         {
             sp2C = func_80096434(self);
@@ -316,7 +316,7 @@ void func_800A3644(PlayerState* self)
         }
         if ((sp30 & 0x50) && (player_inWater(self) == 0))
         {
-            self->unkA0->unk38 = func_800F13F0(self->unkA0->unk38 + (sp34 * sp3C), 1.0f);
+            self->unkA0->unk38 = ml_min_f(self->unkA0->unk38 + (sp34 * sp3C), 1.0f);
         }
         else
         {
@@ -359,7 +359,7 @@ void func_800A3820(PlayerState* self)
     self->unkA0->unk48 = temp_f0;
     self->unkA0->unk4C = temp_f0;
     self->unkA0->transformation = 0;
-    func_800A3410(self, func_8009E958());
+    player_setTransformation(self, func_8009E958());
     self->unkA0->unk54 = 1;
     self->unkA0->unk55 = 1;
     self->unkA0->unk3E = 1;
@@ -431,7 +431,7 @@ void func_800A3A80(PlayerState* self)
     temp_v0 = self->unkA0;
     if (temp_v0->unk40 != 0.0f)
     {
-        func_800D9078((f32*)&temp_v0->unk40);
+        timer_reachedZero(&temp_v0->unk40);
     }
     if (player_isStable(self) != 0)
     {

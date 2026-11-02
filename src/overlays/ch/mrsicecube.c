@@ -43,7 +43,7 @@ void func_80800018_chmrsicecube(Actor* arg0)
     arg0->actorData[4] = (arg0->unk74_7) - 0x32;
     if (arg0->actorData[4] == 0)
     {
-        func_8010A5B0(arg0, flag_getValue(FLAG_1C5_UNK));
+        actor_setCollision(arg0, flag_getValue(FLAG_1C5_UNK));
         if (_glcutDll_entrypoint_20() != 0)
         {
             func_80102424(arg0, 7);
@@ -127,7 +127,7 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
             temp_v0 = ((s16*)&arg2)[0];
             if (_subaddiedialog_entrypoint_9(arg0, temp_v0, &D_808008F0_chmrsicecube, 4) == 1)
             {
-                func_8010A590(arg0);
+                actor_enableCollision(arg0);
             }
             func_80102424(arg0, 5);
             break;
@@ -231,7 +231,7 @@ Unk80132ED0* func_80800508_chmrsicecube(Actor* arg0)
     if ((var_v0 != NULL) && (ml_vec3f_distance_sq(&sp2C, arg0->position) < 40000.0f))
     {
         sp28->unk8 = var_v0->unk74_20;
-        func_8010A570(var_v0);
+        actor_disableCollision(var_v0);
         func_8010A624(var_v0);
         func_80102190(var_v0, 1);
         func_80103110(var_v0, 0U);
@@ -277,7 +277,7 @@ void func_808006C4_chmrsicecube(Actor* arg0)
     if (temp_s0 != 0)
     {
         _subaddielink_entrypoint_0(sp2C);
-        func_8010A590(temp_s0);
+        actor_enableCollision(temp_s0);
         func_8010A654(temp_s0, func_80102F74(temp_s0, 0x800));
         func_80102190(temp_s0, 0);
         func_80103110(temp_s0, func_80102F74(temp_s0, 0x80000800) == 0);

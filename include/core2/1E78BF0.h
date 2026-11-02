@@ -80,7 +80,7 @@ BanjoStateId func_800A02DC(PlayerState *, BanjoStateId arg1);
 void func_800A042C(PlayerState *);
 void func_800A046C(PlayerState *);
 BanjoStateId func_800A04F4(PlayerState*, BanjoStateId);
-BanjoStateId func_800A055C(PlayerState*, BanjoStateId);
+BanjoStateId bs_getTypeOfGroundedAttack(PlayerState*, BanjoStateId);
 void func_800A05DC(PlayerState*);
 
 #endif // __CORE2_1E78BF0_H__

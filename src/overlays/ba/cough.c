@@ -44,7 +44,7 @@ void bacough_entrypoint_5(PlayerState *self) {
 
     if ((self->cough->unk0 == 2)
         && func_800F424C(self)
-        && func_800D9078(&self->cough->unk4)
+        && timer_reachedZero(&self->cough->unk4)
     ){
         sp20 = rand_f();
         sp1C = rand_fBounded(0.97f, 1.03f);

@@ -150,6 +150,7 @@ void func_800C3BDC(u8 id);
 void func_800C3CE8(u8 id);
 int func_800C3D78(u8);
 s32 func_800C3E00(s32);
+void func_800C3EB8(s32);
 void func_800C3F48(u32);
 void func_800C3FC0(s32, f32, s32);
 void func_800C3FF0(s32, f32, s32);

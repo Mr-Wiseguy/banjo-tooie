@@ -52,7 +52,7 @@ void func_80800128_bsbansnooze(PlayerState* self, f32 arg1) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 50.0f, 100.0f) * arg1);
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 50.0f, 100.0f) * arg1);
 }
 
 void func_8080019C_bsbansnooze(PlayerState* self) {
@@ -250,9 +250,9 @@ void func_80800794_bsbansnooze(PlayerState* self) {
     baphysics_set_target_horizontal_velocity(self, 0.0f);
     func_8009514C(self);
     _batimer_set(self, 0, 1.0f);
-    temp_s0_2 = func_800A1718(self);
-    if (func_800A1760(self) == temp_s0_2) {
-        func_800A17A8(self, 0);
+    temp_s0_2 = player_getCurrentHealth(self);
+    if (player_getMaxHealth(self) == temp_s0_2) {
+        player_affectCurrentHealth(self, 0);
     }
     if (bs_getPreviousState(self) == BS_STATE_170_SNOOZE_IDLE_2) {
         self->unk15C.bytes[0] = 0;
@@ -272,11 +272,11 @@ void func_808008A4_bsbansnooze(PlayerState* self)
     if (_batimer_decrement(self, 0) != 0)
     {
         _batimer_set(self, 0, 1.0f);
-        sp28 = func_800A1718(self);
-        if (sp28 < func_800A1760(self))
+        sp28 = player_getCurrentHealth(self);
+        if (sp28 < player_getMaxHealth(self))
         {
             func_800FC660(8);
-            func_800A17A8(self, 1);
+            player_affectCurrentHealth(self, 1);
         }
     }
     temp_v0 = self->unk15C.bytes[0];

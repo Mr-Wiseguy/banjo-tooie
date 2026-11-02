@@ -62,7 +62,7 @@ s32 func_80800130_chgruntyfireball(Actor* actor, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0xA:
-        func_8010A590(actor);
+        actor_enableCollision(actor);
         func_80101FDC(actor, 2U);
         func_8010D09C((arg2 >> 0x10) & 0xFFFF, sp34, 0);
         temp_a0 = &actor->actorData[4];
@@ -93,7 +93,7 @@ void func_80800260_chgruntyfireball(Actor* actor)
     s32 temp_s5;
     s32 var_s1;
 
-    func_8010A570(actor);
+    actor_disableCollision(actor);
     _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80800514_chgruntyfireball);
     ml_vec3f_copy(sp7C, actor->position);
     sp7C[1] += -10.0f;

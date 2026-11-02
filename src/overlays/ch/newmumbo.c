@@ -70,7 +70,7 @@ GameFlag func_8080011C_chnewmumbo(void) {
 	if (flag_getValue(0x9C5) == 0) {
 		return 0;
 	}
-	switch (func_800EA05C())
+	switch (map_getCurrent())
 	{
 		case MAP_B7_MT_MUMBO:
 			return FLAG_37F_PAID_GLOWBO_MUMBO_MT;
@@ -127,7 +127,7 @@ void func_80800264_chnewmumbo(Actor* arg0, s32 arg1) {
 			func_80800210_chnewmumbo((s32*)arg0);
 			return;
 		case 5:
-			func_8080073C_chnewmumbo(arg0, func_80090178(1));
+			func_8080073C_chnewmumbo(arg0, activePlayer_includedInTransformMask(1));
 			func_80800000_chnewmumbo(arg0, 2, 1);
 			return;
 		case 6:
@@ -272,7 +272,7 @@ void func_8080073C_chnewmumbo(Actor* arg0, s32 arg1)
 	{
 		if (arg1 != 0)
 		{
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x8DU);
+			func_800F7B9C(_character_findCharOfTransform(TRANSFORM_1_BK), 0x8DU);
 		}
 		func_800F8300(character_getActiveIndex(), 2, arg0->position);
 		arg0->unk64_19 = 1;
@@ -359,7 +359,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	if (func_8010D278() == 0xD)
 	{
 		func_8010D254(sp4C);
-		temp_v0 = _plsu_entrypoint_1(1);
+		temp_v0 = _character_findCharOfTransform(TRANSFORM_1_BK);
 		if (func_800F6D24(temp_v0) != 0)
 		{
 			func_800F8804(temp_v0, sp4C);
@@ -374,7 +374,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 	switch (arg0->unk70_10)
 	{
 	case 19:
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0)) {
@@ -401,7 +401,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		{
 			_subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_8080199C_chnewmumbo);
 		}
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 		case 0x200:
@@ -464,7 +464,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		}
 		if (func_80101E14(arg0, 0.999f) != 0)
 		{
-			switch (func_8008FD70())
+			switch (activePlayer_getTransformationBit())
 			{
 			case 0x1:
 				func_80800264_chnewmumbo(arg0, 7);
@@ -589,7 +589,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		if ((func_800EFED0(D_80801AFC_chnewmumbo, D_80801B08_chnewmumbo, sp60) != 0) && (func_80090248() != 0))
 		{
 			func_8010D254(sp38);
-			func_800F7B9C(_plsu_entrypoint_1(1), 0x3DU);
+			func_800F7B9C(_character_findCharOfTransform(TRANSFORM_1_BK), 0x3DU);
 			sp5C->unk0 = 0U;
 			func_80800264_chnewmumbo(arg0, 0x10);
 			ml_vec3f_copy(arg0->position, sp38);
@@ -625,7 +625,7 @@ void func_8080092C_chnewmumbo(Actor* arg0)
 		func_80800264_chnewmumbo(arg0, 0xB);
 		return;
 	case 11:
-		switch (func_8008FD70())
+		switch (activePlayer_getTransformationBit())
 		{
 		case 0x1:
 			if (!(arg0->unk74_30) && (_subaddiedialog_entrypoint_6(arg0->position, (s32)arg0->rotation[1], 0x2EEU, 0x5AU, 6) != 0))

@@ -63,7 +63,7 @@ void func_80800000_chegggolden(Actor* arg0)
     {
         func_800EFA20(&sp64, &arg0->actorData[4], 0.5f);
         temp_s1->unk28 = (f32)(temp_s1->unk28 - time_getDelta());
-        temp_f20 = func_800F10B4(temp_s1->unk30, 0, 1.8f, 0.0333f, 0.1f);
+        temp_f20 = ml_map_f(temp_s1->unk30, 0, 1.8f, 0.0333f, 0.1f);
 
         while (temp_s1->unk28 <= 0.0f)
         {
@@ -103,7 +103,7 @@ void func_80800110_chegggolden(Actor* arg0)
     case 2:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            arg0->scale = func_800F10B4(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
+            arg0->scale = ml_map_f(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
             if (_sueggmove_entrypoint_3(arg0) != 0)
             {
                 func_800C4140(0x7FEBBC18, arg0->position, 0x04B000FA);

@@ -28,5 +28,5 @@ void func_800F3780(f32 arg0, Vec2f* arg1, s16 arg2) {
             }
         } while (next < hi);
     }
-    func_800F10B4(arg0, (lo + arg1)->x, (hi + arg1)->x, (lo + arg1)->y, (hi + arg1)->y);
+    ml_map_f(arg0, (lo + arg1)->x, (hi + arg1)->x, (lo + arg1)->y, (hi + arg1)->y);
 }

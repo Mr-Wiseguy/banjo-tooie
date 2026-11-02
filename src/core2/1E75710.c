@@ -19,7 +19,7 @@ void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
 	temp_f2 = sp2C * arg2;
 	if (temp_f2 != 0.0f)
 	{
-		temp_f2 = temp_f2 < 0.0f ? func_800F0D50(temp_f2, -arg1, -3.0f) : func_800F0D50(temp_f2, 3.0f, arg1);
+		temp_f2 = temp_f2 < 0.0f ? ml_clamp_f(temp_f2, -arg1, -3.0f) : ml_clamp_f(temp_f2, 3.0f, arg1);
 	}
 	temp2->unk0 += func_800F212C(temp_f2 * gameSpeed, sp2C);
 	temp2->unk0 = func_800136E4(temp2->unk0);

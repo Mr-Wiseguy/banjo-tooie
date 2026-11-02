@@ -203,8 +203,8 @@ void func_80800780_bskazglide(PlayerState *self) {
     _batimer_decrement(self, 0);
     temp_f0 = _batimer_get(self, 0);
     sp2C = temp_f0;
-    baphysics_set_terminal_velocity(self, func_800F10B4(temp_f0, 0, 1.2, -1000, -10.0f));
-    anctrl_setDuration(sp34, func_800F10B4(sp2C, 0, 1.2, 0.7, 0.2f));
+    baphysics_set_terminal_velocity(self, ml_map_f(temp_f0, 0, 1.2, -1000, -10.0f));
+    anctrl_setDuration(sp34, ml_map_f(sp2C, 0, 1.2, 0.7, 0.2f));
     if (anctrl_isAt(sp34, 0.65) != 0) {
         func_8009DF94(self, 0x3FF, rand_fBounded(0.92f, 1.08f), 9000);
     }

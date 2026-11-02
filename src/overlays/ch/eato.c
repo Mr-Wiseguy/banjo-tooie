@@ -368,7 +368,7 @@ void func_80800B00_chcheato(Actor* arg0)
     sp2C = func_80800C0C_chcheato();
     _gcnewoption_entrypoint_4(arg0, 0U, &_gcnewoption_entrypoint_16, (u32)&_gcnewoption_entrypoint_35, 0x1849);
     temp_s0 = func_80100094(arg0, 0U);
-    _gcnewoption_entrypoint_8(temp_s0, func_800F1418(5, sp2C));
+    _gcnewoption_entrypoint_8(temp_s0, ml_min_i(5, sp2C));
     _gcnewoption_entrypoint_9(temp_s0, (u32)sp2C);
     _gcnewoption_entrypoint_10(temp_s0, 1U);
     func_8080098C_chcheato((s32)arg0, temp_s0);

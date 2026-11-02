@@ -123,21 +123,21 @@ f32 func_8010A40C(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE27C0/func_8010A430.s")
 
-s32 func_8010A570(Actor* arg0)
+s32 actor_disableCollision(Actor* arg0)
 {
-    return func_8010A5B0(arg0,0);
+    return actor_setCollision(arg0,0);
 }
 
-s32 func_8010A590(Actor* arg0)
+s32 actor_enableCollision(Actor* arg0)
 {
-    return func_8010A5B0(arg0,1);
+    return actor_setCollision(arg0,1);
 }
 
-s32 func_8010A5B0(Actor* arg0, s32 arg1)
+s32 actor_setCollision(Actor* arg0, s32 arg1)
 {
     s32 currentState;
 
-    currentState = func_8010A610(arg0);
+    currentState = actor_getCollision(arg0);
     if (arg1 != 0)
     {
         arg0->unk0->unk28_9 = 1;
@@ -149,39 +149,39 @@ s32 func_8010A5B0(Actor* arg0, s32 arg1)
     return currentState;
 }
 
-u32 func_8010A610(Actor* arg0)
+u32 actor_getCollision(Actor* arg0)
 {
     return arg0->unk0->unk28_9;
 }
 
 void func_8010A624(Actor* arg0)
 {
-    arg0->unk0->unk0->unk8_7 = 0;
+    arg0->unk0->unk0->unkA_3 = 0;
 }
 
 void func_8010A63C(Actor* arg0)
 {
-    arg0->unk0->unk0->unk8_7 = 1;
+    arg0->unk0->unk0->unkA_3 = 1;
 }
 
 u32 func_8010A654(Actor* arg0, s32 arg1)
 {
     s32 returnVal;
-    returnVal = arg0->unk0->unk0->unk8_7;
+    returnVal = arg0->unk0->unk0->unkA_3;
     if (arg1 != 0)
     {
-        arg0->unk0->unk0->unk8_7 = 1;
+        arg0->unk0->unk0->unkA_3 = 1;
     }
     else
     {
-        arg0->unk0->unk0->unk8_7 = 0;
+        arg0->unk0->unk0->unkA_3 = 0;
     }
     return returnVal;
 }
 
 u32 func_8010A698(Actor* arg0)
 {
-    return arg0->unk0->unk0->unk8_7;
+    return arg0->unk0->unk0->unkA_3;
 }
 
 s32 func_8010A6B0(Actor* arg0, s32 arg1)

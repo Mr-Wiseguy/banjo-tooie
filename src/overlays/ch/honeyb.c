@@ -61,7 +61,7 @@ void func_8080011C_chhoneyb(Actor* arg0)
     func_80102424(arg0, 3);
     *(f32*)&arg0->actorData[7] = 1.0f;
     arg0->unk58 = 0.25f;
-    temp_v0 = func_8008FC28();
+    temp_v0 = activePlayer_getMaxHealth();
     arg0->actorData[6] = temp_v0;
     arg0->actorData[3] = (s32)(arg0->actorData[4] + temp_v0);
     arg0->unk74_30 = 0;
@@ -163,10 +163,10 @@ void func_808002AC_chhoneyb(Actor* arg0)
                 if (*(f32*)&arg0->actorData[7] > 1.0f)
                 {
                     *(f32*)&arg0->actorData[7] = 1.0f;
-                    func_800C3FC0(0x66C, func_800F10B4(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
+                    func_800C3FC0(0x66C, ml_map_f(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
                 }
             }
-            if (func_800D9078(&arg0->unk58) != 0)
+            if (timer_reachedZero(&arg0->unk58) != 0)
             {
                 if ((s32)arg0->actorData[6] >= (s32)arg0->actorData[3])
                 {
@@ -187,7 +187,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
 void func_8080062C_chhoneyb(Actor* arg0)
 {
     _gcextra_entrypoint_2(arg0->actorData[4]);
-    func_800A1658(func_8008FD48());
+    func_800A1658(activePlayer_getTransformation());
     func_80800058_chhoneyb(arg0);
 
     event_sendToActorsOfType(0x4B8, 0x23, func_80800B78_chhoneyb());

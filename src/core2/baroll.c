@@ -29,7 +29,7 @@ void __baroll_update(PlayerState *self, f32 limit, f32 rate) {
         diff += (diff < 0.0f)? 360.0f: -360.0f;
     }
     val = diff * rate * dt;
-    val = (val < 0.0f) ? func_800F0D50(val, -max, -0.1f) : func_800F0D50(val, 0.1f, max);
+    val = (val < 0.0f) ? ml_clamp_f(val, -max, -0.1f) : ml_clamp_f(val, 0.1f, max);
     if ( mlAbsF(val) <= mlAbsF(diff)) {
         self->roll->value =  self->roll->value + val;
     } else {

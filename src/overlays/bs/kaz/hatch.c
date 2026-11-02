@@ -41,10 +41,10 @@ void func_80800108_bskazhatch(PlayerState* self)
             func_8009E830(self, 1);
             return;
         case 0x53:
-            if (self->unk160.word == 0)
+            if (self->unk160.object == 0)
             {
-                self->unk160.word = func_80099A4C(self);
-                if (func_8010114C(self->unk160.word, 0xA0, 0) <= 0)
+                self->unk160.object = func_80099A4C(self);
+                if (func_8010114C(self->unk160.object, 0xA0, 0) <= 0)
                 {
                     func_800FC660(0xE);
                 }
@@ -84,7 +84,7 @@ void func_80800220_bskazhatch(PlayerState *self) {
             }
 
             if (baanim_isAt(self, 0.46) != 0) {
-                if ((self->unk160.word != 0) && (func_8010114C(self->unk160.word, 0xA0, 1) <= 0)) {
+                if ((self->unk160.object != 0) && (func_8010114C(self->unk160.object, 0xA0, 1) <= 0)) {
                     func_80800000_bskazhatch(self, 2);
                 } else {
                     func_80800000_bskazhatch(self, 3);
@@ -98,7 +98,7 @@ void func_80800220_bskazhatch(PlayerState *self) {
             }
             if (baanim_isStopped(self) != 0) {
                 baphysics_set_type(self, BA_PHYSICS_2_NORMAL);
-                if (func_8010114C(self->unk160.word, 0x18, self->unk184) > 0) {
+                if (func_8010114C(self->unk160.object, 0x18, self->unk184) > 0) {
                     return;
                 }
                 next_state = func_808001E4_bskazhatch(self);

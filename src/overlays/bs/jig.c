@@ -24,7 +24,7 @@ void bsjig_entrypoint_1(PlayerState* self)
     yaw_setIdeal(self, func_8009F308(self));
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_2_NORMAL);
     baphysics_set_target_horizontal_velocity(self, 0.0f);
-    var_a1 = func_800D0018(1, (s32)D_8012762C) != 0;
+    var_a1 = collectable_getCollectedInLevel(1, (s32)D_8012762C) != 0;
     if (var_a1 == 0) {
         var_a1 = 0;
     }

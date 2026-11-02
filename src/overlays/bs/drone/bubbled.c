@@ -37,7 +37,7 @@ void bsdronebubbled_entrypoint_2(PlayerState* self) {
 		bs_setState(self, _badata_entrypoint_34(self));
 		return;
 	case 0x7B:
-		self->unk54->unk40 = func_800F13F0(1.0f, self->unk54->unk40 + 0.2f);
+		self->unk54->unk40 = ml_min_f(1.0f, self->unk54->unk40 + 0.2f);
 		return;
 	default:
 		func_80099B94(self);
@@ -49,8 +49,8 @@ void bsdronebubbled_entrypoint_3(PlayerState* self) {
 	f32 sp24;
 
 	sp24 = self->unk54->unk44;
-	func_800F1574(&self->unk54->unk40, time_getDelta() * 0.8333333f);
-	anctrl_setDuration(baanim_getAnimCtrlPtr(self), func_800F1214(self->unk54->unk40, sp24, sp24 * 0.33333334f));
+	ml_timer_update(&self->unk54->unk40, time_getDelta() * 0.8333333f);
+	anctrl_setDuration(baanim_getAnimCtrlPtr(self), ml_mapNormal_f(self->unk54->unk40, sp24, sp24 * 0.33333334f));
 }
 
 void bsdronebubbled_entrypoint_4(PlayerState* self) {}

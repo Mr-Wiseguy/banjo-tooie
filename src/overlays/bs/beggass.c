@@ -22,7 +22,7 @@ void bsbeggass_entrypoint_1(PlayerState* arg0) {
     plyr_mvmt = baanim_getAnimCtrlPtr(arg0);
     has_eggs = func_80094BC0(arg0) != 0;
     if (bainput_should_poop_egg(arg0) && func_80094B14(arg0)) {
-        arg0->unk15C.word = func_800F1418(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164.word));
+        arg0->unk15C.word = ml_min_i(arg0->unk15C.word + 1, func_800944E0(arg0, arg0->unk164.word));
     }
     if (has_eggs) {
         if (anctrl_isAt(plyr_mvmt, 0.3837f)) {

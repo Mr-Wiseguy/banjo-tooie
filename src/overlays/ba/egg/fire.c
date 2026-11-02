@@ -195,14 +195,14 @@ void baeggfire_entrypoint_6(PlayerState* arg0)
 		}
 		return;
 	case 2:
-		if (func_800D9078(arg0->unk6C) != 0)
+		if (timer_reachedZero(arg0->unk6C) != 0)
 		{
 			func_80800180_baeggfire(arg0, 3);
 			return;
 		}
 		break;
 	case 3:
-		if (func_800D9078(arg0->unk6C) != 0)
+		if (timer_reachedZero(arg0->unk6C) != 0)
 		{
 			func_80800180_baeggfire(arg0, 1);
 		}
@@ -213,7 +213,7 @@ void baeggfire_entrypoint_6(PlayerState* arg0)
 		}
 		break;
 	case 4:
-		if (func_800D9078(arg0->unk6C) != 0)
+		if (timer_reachedZero(arg0->unk6C) != 0)
 		{
 			func_80800180_baeggfire(arg0, 1);
 		}

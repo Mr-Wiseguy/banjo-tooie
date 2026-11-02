@@ -38,13 +38,20 @@ extern s32 D_8011AF04[];
 extern s32 D_8011AE60;
 
 typedef struct {
-    s16 unk0;
-    s16 unk2;
+    s16 itemFlag;
+    s16 itemType;
 } unkD_8011AE64;
 
 extern unkD_8011AE64 D_8011AE64[];
 
-extern unkD_8011AE64 D_8011AE74[];
+typedef struct {
+    s16 itemFlag; //ItemFlag
+    s16 itemType; //ItemType
+    s32 r;
+    s32 g;
+    s32 b;
+} glowingItems;
+extern glowingItems D_8011AE74[];
 
 
 typedef struct {
@@ -79,12 +86,12 @@ s32 func_800CF87C()
 }
 
 //Is this Mr Patch or SSLUMBER Jiggy
-s32 func_800CF888(s32 arg0, s32 arg1)
+s32 collectable_isMrPatchOrSSLUMBERJiggy(s32 arg0, CollectableId arg1)
 {
     s32 index;
     for (index = 0; index < 2; index++)
     {
-        if ((arg0 == D_8011AE64[index].unk0) && (arg1 == D_8011AE64[index].unk2))
+        if ((arg0 == D_8011AE64[index].itemFlag) && (arg1 == D_8011AE64[index].itemType))
         {
             return 1;
         }
@@ -93,12 +100,12 @@ s32 func_800CF888(s32 arg0, s32 arg1)
 }
 
 //Is this King Coal or Mingy Jongo Reward
-s32 func_800CF8D0(s32 arg0, s32 arg1)
+s32 collectable_isKingCoalOrMingyJongoReward(s32 arg0, CollectableId arg1)
 {
     s32 index;
     for (index = 2; index < 4; index++)
     {
-        if ((arg0 == D_8011AE64[index].unk0) && (arg1 == D_8011AE64[index].unk2))
+        if ((arg0 == D_8011AE64[index].itemFlag) && (arg1 == D_8011AE64[index].itemType))
         {
             return 1;
         }
@@ -107,13 +114,12 @@ s32 func_800CF8D0(s32 arg0, s32 arg1)
 }
 
 //Is this a glowing Jiggy retrieve the index if so
-s32 func_800CF918(s32 arg0, s32 arg1)
+s32 collectable_getSpecialColorIdx(s32 arg0, CollectableId arg1)
 {
-    s32 i = 1;
-
+    s32 i = 0;
     for (i = 0; i < 9; i++)
     {
-        if ((arg0 == D_8011AE74[i * 4].unk0) && (arg1 == D_8011AE74[i * 4].unk2))
+        if ((arg0 == D_8011AE74[i].itemFlag) && (arg1 == D_8011AE74[i].itemType))
         {
             return i;
         }
@@ -123,13 +129,13 @@ s32 func_800CF918(s32 arg0, s32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CF9E4.s")
 
-s32 func_800CFA70(s32 arg0,s32 arg1)
+s32 collectable_getSpecialColorIdx_DUPE(s32 arg0, CollectableId arg1)
 {
-    return func_800CF918(arg0,arg1);
+    return collectable_getSpecialColorIdx(arg0,arg1);
 }
 
 //Set jinjo pattern
-s32 func_800CFA90()
+s32 collectable_setJinjoPattern()
 {
 	s32 var_v0[0x9];
 	s32 var_a0;
@@ -158,8 +164,8 @@ s32 func_800CFA90()
 	{
 		var_s0 = flag_getMultipleValue(FLAG_37A_RANDOMISER_JINJO_1, 5);
 	}
-	func_800DC330();
-	func_800DC324((s32)var_s0);
+	rand_saveCurrentSeed();
+	rand_setSeed((s32)var_s0);
 	//Zero out 0x24 from sp
 	for (index = 0; index < 0x9; index++)
 	{
@@ -180,29 +186,29 @@ s32 func_800CFA90()
 		*var_v1 = var_a0 + 1;
 		D_8011AB40[index].color = var_v0_2;
 	}
-	func_800DC354(var_a0);
+	rand_restoreCurrentSeed(var_a0);
 	return 1;
 }
 
-void func_800CFBC8(Actor* arg0, u32 itemFlag, s32 itemType, s32 arg3)
+void func_800CFBC8(Actor* arg0, s32 itemFlag, CollectableId itemType, s32 arg3)
 {
-	event_sendToActor(arg0, 0x13, (s32)itemFlag);
-	if (func_800CF888((s32)itemFlag, itemType) != 0)
+	event_sendToActor(arg0, 0x13, itemFlag);
+	if (collectable_isMrPatchOrSSLUMBERJiggy(itemFlag, itemType) != 0)
 	{
 		_subaddieDll_entrypoint_4(arg0, 1);
 	}
-	if (func_800CF8D0((s32)itemFlag, itemType) != 0)
+	if (collectable_isKingCoalOrMingyJongoReward(itemFlag, itemType) != 0)
 	{
 		event_sendToActor(arg0, 0x12, 1);
 	}
-	if (func_800CF918((s32)itemFlag, itemType) != -1)
+	if (collectable_getSpecialColorIdx(itemFlag, itemType) != -1)
 	{
 		event_sendToActor(arg0, 0x55, 1);
 	}
 }
 
 //Return the relative jiggy index within the level
-s32 func_800CFC5C(s32 jiggyIndex)
+s32 collectable_getJiggyLevelIdx(s32 jiggyIndex)
 {
     jiggyIndex = jiggyIndex - D_8011AE60;
     if ((jiggyIndex >= 0) && (jiggyIndex < 0xA))
@@ -213,75 +219,75 @@ s32 func_800CFC5C(s32 jiggyIndex)
 }
 
 //Get the total number of an item type in a level
-s32 func_800CFC8C(s32 itemType, s32 Level)
+s32 collectable_getTotalInLevel(CollectableId itemType, s32 Level)
 {
     s32 var_a0;
     s32 var_s1;
-    s32 var_s2;
+    s32 foundInLevel;
 
-    var_s2 = 0;
+    foundInLevel = 0;
     switch (itemType)
     {
-    case 0:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+    case TYPE_0_JINJO:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011AB40[var_s1 - 1].unk0)
             {
-                var_s2 += 1;
+                foundInLevel += 1;
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 1:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+        return foundInLevel;
+    case TYPE_1_JIGGY:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011ABC8[var_s1 * 2 - 2])
             {
-                var_s2 += 1;
+                foundInLevel += 1;
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 2:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+        return foundInLevel;
+    case TYPE_2_EMPTY_HONEYCOMB:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011AC7C[var_s1 * 2 - 2])
             {
-                var_s2 += 1;
+                foundInLevel += 1;
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 3:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+        return foundInLevel;
+    case TYPE_3_GLOWBO:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011ACB0[var_s1 * 2 - 2])
             {
-                var_s2 += 1;
+                foundInLevel += 1;
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 4:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+        return foundInLevel;
+    case TYPE_4_CHEATO:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011ACD4[var_s1 * 2 - 2])
             {
-                var_s2 += 1;
+                foundInLevel += 1;
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 5:
-        return (func_800D0894(itemType) - func_800D0820(itemType)) + 1;
-    case 6:
-        var_s1 = func_800D0820(itemType);
-        while (func_800D0894(itemType) >= var_s1)
+        return foundInLevel;
+    case TYPE_5_JADE_TOTEM:
+        return (collectable_getTotalCount(itemType) - collectable_getStartIdx(itemType)) + 1;
+    case TYPE_6_NOTE:
+        var_s1 = collectable_getStartIdx(itemType);
+        while (collectable_getTotalCount(itemType) >= var_s1)
         {
             if (Level == D_8011AD08[var_s1 * 2 - 2])
             {
@@ -293,15 +299,15 @@ s32 func_800CFC8C(s32 itemType, s32 Level)
                 {
                     var_a0 = 0x1D9;
                 }
-                var_s2 += _chnests_entrypoint_13(var_a0);
+                foundInLevel += _chnests_entrypoint_13(var_a0);
             }
             var_s1 += 1;
         }
-        return var_s2;
-    case 7:
-        return (func_800D0894(itemType) - func_800D0820(itemType)) + 1;
-    case 8:
-        return (func_800D0894(itemType) - func_800D0820(itemType)) + 1;
+        return foundInLevel;
+    case TYPE_7_DOUBLOON:
+        return (collectable_getTotalCount(itemType) - collectable_getStartIdx(itemType)) + 1;
+    case TYPE_8_TICKET:
+        return (collectable_getTotalCount(itemType) - collectable_getStartIdx(itemType)) + 1;
     default:
         return -1;
     }
@@ -309,128 +315,128 @@ s32 func_800CFC8C(s32 itemType, s32 Level)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800CFFBC.s")
 
-s32 func_800D0018(s32 arg0, s32 arg1)
+s32 collectable_getCollectedInLevel(CollectableId arg0, s32 arg1)
 {
     s32 var_a0;
-    s32 var_s0;
-    s32 var_s2;
+    s32 idx;
+    s32 foundCollected;
     unkD_8011AE64* temp_v0;
 
-    var_s2 = 0;
+    foundCollected = 0;
     switch (arg0)
     {
-    case 0:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if ((func_800D0B68(var_s0, arg0) != 0) && (arg1 == D_8011AB3D[var_s0 * 3]))
+        case TYPE_0_JINJO:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
             {
-                var_s2++;
-            }
-            var_s0++;
-        }
-
-        return var_s2;
-    case 1:
-        var_s0 = func_800D0820(arg0);
-
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if ((func_800D0B68(var_s0, arg0) != 0) && (arg1 == (D_8011ABC6)[var_s0 * 2]))
-            {
-                var_s2++;
-            }
-            var_s0++;
-        }
-
-        return var_s2;
-    case 2:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if ((func_800D0B68(var_s0, arg0) != 0) && (arg1 == D_8011AC7A[var_s0 * 2]))
-            {
-                var_s2++;
-            }
-            var_s0++;
-        }
-
-        return var_s2;
-    case 3:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if ((func_800D0B68(var_s0, arg0) != 0) && (arg1 == D_8011ACAE[var_s0 * 2]))
-            {
-                var_s2++;
-            }
-            var_s0++;
-        }
-        return var_s2;
-    case 4:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if ((func_800D0B68(var_s0, arg0) != 0) && (arg1 == D_8011ACD2[var_s0 * 2]))
-            {
-                var_s2++;
-            }
-            var_s0++;
-        }
-        return var_s2;
-    case 6:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if (func_800D0B68(var_s0, arg0) != 0)
-            {
-                if (arg1 == D_8011AD08[(var_s0) * 2 - 2])
+                if ((collectable_isCollected(idx, arg0) != 0) && (arg1 == D_8011AB3D[idx * 3]))
                 {
-                    if (D_8011AD08[var_s0 * 2 - 1] != 0)
-                    {
-                        var_a0 = 0x1DA;
-                    }
-                    else {
-                        var_a0 = 0x1D9;
-                    }
-                    var_s2 += _chnests_entrypoint_13(var_a0);
+                    foundCollected++;
                 }
+                idx++;
             }
-            var_s0++;
-        }
-        return var_s2;
-    default:
-        var_s0 = func_800D0820(arg0);
-        while (func_800D0894(arg0) >= var_s0)
-        {
-            if (func_800D0B68(var_s0, arg0) != 0)
+
+            return foundCollected;
+        case TYPE_1_JIGGY:
+            idx = collectable_getStartIdx(arg0);
+
+            while (collectable_getTotalCount(arg0) >= idx)
             {
-                var_s2++;
+                if ((collectable_isCollected(idx, arg0) != 0) && (arg1 == (D_8011ABC6)[idx * 2]))
+                {
+                    foundCollected++;
+                }
+                idx++;
             }
-            var_s0++;
-        }
-        return var_s2;
+
+            return foundCollected;
+        case TYPE_2_EMPTY_HONEYCOMB:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
+            {
+                if ((collectable_isCollected(idx, arg0) != 0) && (arg1 == D_8011AC7A[idx * 2]))
+                {
+                    foundCollected++;
+                }
+                idx++;
+            }
+
+            return foundCollected;
+        case TYPE_3_GLOWBO:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
+            {
+                if ((collectable_isCollected(idx, arg0) != 0) && (arg1 == D_8011ACAE[idx * 2]))
+                {
+                    foundCollected++;
+                }
+                idx++;
+            }
+            return foundCollected;
+        case TYPE_4_CHEATO:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
+            {
+                if ((collectable_isCollected(idx, arg0) != 0) && (arg1 == D_8011ACD2[idx * 2]))
+                {
+                    foundCollected++;
+                }
+                idx++;
+            }
+            return foundCollected;
+        case TYPE_6_NOTE:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
+            {
+                if (collectable_isCollected(idx, arg0) != 0)
+                {
+                    if (arg1 == D_8011AD08[(idx) * 2 - 2])
+                    {
+                        if (D_8011AD08[idx * 2 - 1] != 0)
+                        {
+                            var_a0 = 0x1DA;
+                        }
+                        else {
+                            var_a0 = 0x1D9;
+                        }
+                        foundCollected += _chnests_entrypoint_13(var_a0);
+                    }
+                }
+                idx++;
+            }
+            return foundCollected;
+        default:
+            idx = collectable_getStartIdx(arg0);
+            while (collectable_getTotalCount(arg0) >= idx)
+            {
+                if (collectable_isCollected(idx, arg0) != 0)
+                {
+                    foundCollected++;
+                }
+                idx++;
+            }
+            return foundCollected;
     }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D035C.s")
 
-void func_800D046C(s32 arg0, s32 arg1, s32 arg2)
+void func_800D046C(s32 arg0, s32 arg1, CollectableId arg2)
 {
-    func_800DAC78(arg0, func_800D0A80(arg1, arg2));
+    func_800DAC78(arg0, collectable_getCollectedFlag(arg1, arg2));
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D04A0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D053C.s")
 
-void func_800D0594(s32 arg0, s32 arg1, s16 arg2)
+void func_800D0594(s32 arg0, CollectableId arg1, s16 arg2)
 {
     s32 temp_v0;
 
-    if (arg1 == 1)
+    if (arg1 == TYPE_1_JIGGY)
     {
-        temp_v0 = func_800CFC5C(arg0);
+        temp_v0 = collectable_getJiggyLevelIdx(arg0);
         if (temp_v0 != -1)
         {
             D_8012B180[temp_v0].spawnMap = arg2;
@@ -438,13 +444,13 @@ void func_800D0594(s32 arg0, s32 arg1, s16 arg2)
     }
 }
 
-void func_800D05E4(s32 arg0, s32 arg1, Unk80132ED0* arg2)
+void func_800D05E4(s32 arg0, CollectableId arg1, Unk80132ED0* arg2)
 {
     s32 temp_v0;
 
-    if (arg1 == 1)
+    if (arg1 == TYPE_1_JIGGY)
     {
-        temp_v0 = func_800CFC5C(arg0);
+        temp_v0 = collectable_getJiggyLevelIdx(arg0);
         if (temp_v0 != -1)
         {
             D_8012B180[temp_v0].unkC = arg2;
@@ -453,13 +459,13 @@ void func_800D05E4(s32 arg0, s32 arg1, Unk80132ED0* arg2)
 }
 
 
-s32 func_800D0634(u32 arg0, u32 arg1)
+s32 func_800D0634(s32 arg0, CollectableId arg1)
 {
     s32 temp_v0;
 
     if (arg1 == 1)
     {
-        temp_v0 = func_800CFC5C(arg0);
+        temp_v0 = collectable_getJiggyLevelIdx(arg0);
         if (temp_v0 != -1)
         {
             return  D_8012B180[temp_v0].unkC;
@@ -468,13 +474,13 @@ s32 func_800D0634(u32 arg0, u32 arg1)
     return 0;
 }
 
-s16 func_800D0684(s32 arg0, s32 arg1)
+s16 func_800D0684(s32 arg0, CollectableId arg1)
 {
     s32 temp_v0;
 
-    if (arg1 == 1)
+    if (arg1 == TYPE_1_JIGGY)
     {
-        temp_v0 = func_800CFC5C(arg0);
+        temp_v0 = collectable_getJiggyLevelIdx(arg0);
         if (temp_v0 != -1)
         {
             return D_8012B180[temp_v0].spawnMap;
@@ -484,23 +490,23 @@ s16 func_800D0684(s32 arg0, s32 arg1)
 }
 
 
-s32 func_800D06D4(s32 itemIndex, s32 itemType)
+s32 func_800D06D4(s32 itemIndex, CollectableId itemType)
 {
     switch (itemType)
     {
-    case 1:
+    case TYPE_1_JIGGY:
         return D_8011ABC6[itemIndex * 2];
-    case 0:
+    case TYPE_0_JINJO:
         return D_8011AB3D[itemIndex * 3];
-    case 4:
+    case TYPE_4_CHEATO:
         return D_8011ACD2[itemIndex * 2];
-    case 3:
+    case TYPE_3_GLOWBO:
         return D_8011ACAE[itemIndex * 2];
-    case 2:
+    case TYPE_2_EMPTY_HONEYCOMB:
         return D_8011AC7A[itemIndex * 2];
-    case 5:
+    case TYPE_5_JADE_TOTEM:
         return 0x10;
-    case 6:
+    case TYPE_6_NOTE:
         return -1;
     default:
         return -1;
@@ -509,13 +515,13 @@ s32 func_800D06D4(s32 itemIndex, s32 itemType)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D0778.s")
 
-void func_800D07CC(s32 arg0, s32 arg1, f32* arg2)
+void collectable_getJiggyCoords(s32 itemIndex, CollectableId arg1, f32* arg2)
 {
     s32 temp_v0;
 
-    if (arg1 == 1)
+    if (arg1 == TYPE_1_JIGGY)
     {
-        temp_v0 = func_800CFC5C(arg0);
+        temp_v0 = collectable_getJiggyLevelIdx(itemIndex);
         if (temp_v0 != -1)
         {
             ml_vec3f_copy(arg2, D_8012B180[temp_v0].coords);
@@ -523,149 +529,149 @@ void func_800D07CC(s32 arg0, s32 arg1, f32* arg2)
     }
 }
 
-s32 func_800D0820(s32 itemType)
+s32 collectable_getStartIdx(CollectableId itemType)
 {
     switch (itemType)
     {
-    case 0:
-        return 1;
-    case 1:
-        return 1;
-    case 2:
-        return 1;
-    case 3:
-        return 1;
-    case 4:
-        return 1;
-    case 5:
-        return 1;
-    case 6:
-        return 1;
-    case 7:
-        return 1;
-    case 8:
-        return 1;
-    default:
-        return -1;
+        case TYPE_0_JINJO:
+            return 1;
+        case TYPE_1_JIGGY:
+            return 1;
+        case TYPE_2_EMPTY_HONEYCOMB:
+            return 1;
+        case TYPE_3_GLOWBO:
+            return 1;
+        case TYPE_4_CHEATO:
+            return 1;
+        case TYPE_5_JADE_TOTEM:
+            return 1;
+        case TYPE_6_NOTE:
+            return 1;
+        case TYPE_7_DOUBLOON:
+            return 1;
+        case TYPE_8_TICKET:
+            return 1;
+        default:
+            return -1;
     }
 }
 
-s32 func_800D0894(s32 itemType)
+s32 collectable_getTotalCount(CollectableId itemType)
 {
     switch (itemType)
     {
-    case 0:
-        return 0x2D;
-    case 1:
-        return 0x5A;
-    case 2:
-        return 0x19;
-    case 3:
-        return 0x11;
-    case 4:
-        return 0x19;
-    case 5:
-        return 0x19;
-    case 6:
-        return 0x99;
-    case 7:
-        return 0x1E;
-    case 8:
-        return 4;
-    default:
-        return -1;
+        case TYPE_0_JINJO:
+            return 45;
+        case TYPE_1_JIGGY:
+            return 90;
+        case TYPE_2_EMPTY_HONEYCOMB:
+            return 25;
+        case TYPE_3_GLOWBO:
+            return 17;
+        case TYPE_4_CHEATO:
+            return 25;
+        case TYPE_5_JADE_TOTEM:
+            return 25;
+        case TYPE_6_NOTE:
+            return 153;
+        case TYPE_7_DOUBLOON:
+            return 30;
+        case TYPE_8_TICKET:
+            return 4;
+        default:
+            return -1;
     }
 }
 
-s32 func_800D0908(s32 arg0, s32 arg1)
+s32 collectable_getSpawnFlag(s32 arg0, CollectableId itemType)
 {
-    switch (arg1)
+    switch (itemType)
     {
-    case 0:
+    case TYPE_0_JINJO:
         if (D_8011AB3F[arg0 * 3] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AB3F[arg0 * 3]) - 1;
+            return (D_8011AF28[itemType] + D_8011AB3F[arg0 * 3]) - 1;
         }
     default:
         break;
-    case 1:
+    case TYPE_1_JIGGY:
         if (D_8011ABC7[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ABC7[arg0 * 2]) - 1;
+            return (D_8011AF28[itemType] + D_8011ABC7[arg0 * 2]) - 1;
         }
         break;
-    case 4:
+    case TYPE_4_CHEATO:
         if (D_8011ACD3[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ACD3[arg0 * 2]) - 1;
+            return (D_8011AF28[itemType] + D_8011ACD3[arg0 * 2]) - 1;
         }
         break;
-    case 2:
+    case TYPE_2_EMPTY_HONEYCOMB:
         if (D_8011AC7B[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AC7B[arg0 * 2]) - 1;
+            return (D_8011AF28[itemType] + D_8011AC7B[arg0 * 2]) - 1;
         }
         break;
-    case 3:
+    case TYPE_3_GLOWBO:
         if (D_8011ACAF[arg0 * 2] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011ACAF[arg0 * 2]) - 1;
+            return (D_8011AF28[itemType] + D_8011ACAF[arg0 * 2]) - 1;
         }
         break;
-    case 7:
+    case TYPE_7_DOUBLOON:
         if (D_8011AE3B[arg0] != 0)
         {
-            return (D_8011AF28[arg1] + D_8011AE3B[arg0]) - 1;
+            return (D_8011AF28[itemType] + D_8011AE3B[arg0]) - 1;
         }
         break;
-    case 8:
+    case TYPE_8_TICKET:
         if (D_8011AE5B[arg0] != 0)
         {
-            return D_8011AF28[arg1] + D_8011AE5B[arg0] - 1;
+            return D_8011AF28[itemType] + D_8011AE5B[arg0] - 1;
         }
         break;
     }
     return 0;
 }
-s32 func_800D0A80(s32 arg0, s32 arg1)
+s32 collectable_getCollectedFlag(s32 arg0, CollectableId itemType)
 {
-    return D_8011AF04[arg1] + arg0 - 1;
+    return D_8011AF04[itemType] + arg0 - 1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D0A9C.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/collectable_isSpawned.s")
 
-void func_800D0B08(s32 arg0, s32 arg1)
+void collectable_setSpawnedTrue(s32 arg0, CollectableId itemType)
 {
     enum flag_e temp_v0;
 
-    temp_v0 = func_800D0908(arg0, arg1);
+    temp_v0 = collectable_getSpawnFlag(arg0, itemType);
     if (temp_v0 != FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG)
     {
         flag_setValueTrue(temp_v0);
     }
 }
 
-void func_800D0B38(s32 arg0, s32 arg1)
+void collectable_setSpawnedFalse(s32 arg0, CollectableId itemType)
 {
     enum flag_e temp_v0;
 
-    temp_v0 = func_800D0908(arg0, arg1);
+    temp_v0 = collectable_getSpawnFlag(arg0, itemType);
     if (temp_v0 != FLAG0_000_STATE_CANARY_MARY_CAGE_TRIGGER_DIALOG)
     {
         flag_setValueFalse(temp_v0);
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D0B68.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/collectable_isCollected.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D0BD4.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/collectable_collectItem.s")
 
-void func_800D0C78(u32 arg0, u32 arg1, u32 arg2)
+void func_800D0C78(s32 arg0, CollectableId itemType, u32 arg2)
 {
-    if (arg1 == 1)
+    if (itemType == TYPE_1_JIGGY)
     {
-        func_800D0B08((s32)arg0, (s32)arg1);
-        func_800D0BD4((s32)arg0, arg1);
+        collectable_setSpawnedTrue(arg0, itemType);
+        collectable_collectItem(arg0, itemType);
         if (arg2 == 0)
         {
             func_800FC660(5);
@@ -679,34 +685,34 @@ s32 func_800D0CC8(s32 arg0)
 }
 
 
-Actor* func_800D0CE0(PropId arg0, u32 arg1, u32 spawnStyle, s32* arg3)
+Actor* collectable_itemSpawnMovement(PropId arg0, f32* coords, u32 spawnStyle, s32* arg3)
 {
     *arg3 = 0;
     switch (spawnStyle)
     {
     case 0: //Random Low Velocity
-        return _chbounce_entrypoint_7(0x1C, arg1, arg0);
+        return _chbounce_entrypoint_7(0x1C, coords, arg0);
     case 1: //Small Bounce
-        return _chbounce_entrypoint_7(0x1D, arg1, arg0);
+        return _chbounce_entrypoint_7(0x1D, coords, arg0);
     case 4: //CCW
-        return _chbounce_entrypoint_7(0x1E, arg1, arg0);
+        return _chbounce_entrypoint_7(0x1E, coords, arg0);
     case 3:
         *arg3 = 1;
     case 2: //Spin CCW
-        return func_80108474(arg0, arg1, 0);
+        return func_80108474(arg0, coords, 0);
     case 5: //High Velocity
-        return _chbounce_entrypoint_7(0x1F, arg1, arg0);
+        return _chbounce_entrypoint_7(0x1F, coords, arg0);
     case 6: //Random High Velocity
-        return _chbounce_entrypoint_7(0x20, arg1, arg0);
+        return _chbounce_entrypoint_7(0x20, coords, arg0);
     default:
         return 0;
     }
 }
 
 
-Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
+Unk80132ED0* collectable_itemSetup(s32 arg0, f32* coords, s32 spawnStyle, Unk80132ED0* arg3)
 {
-    s32 itemType;
+    CollectableId itemType;
     s32 itemFlag;
     Actor* sp2C;
     s32 sp28;
@@ -715,45 +721,45 @@ Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
     itemType = arg0 & 0xFFFF;
     switch (itemType)
     {
-    case 1:
-        sp2C = func_800D0CE0(PROP_21F_JIGGY_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_1_JIGGY:
+        sp2C = collectable_itemSpawnMovement(PROP_21F_JIGGY_REAL, coords, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
         func_800D05E4(itemFlag, itemType, sp2C->unk0);
         break;
-    case 0:
-        sp2C = func_800D0CE0(PROP_1F4_JINJO_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_0_JINJO:
+        sp2C = collectable_itemSpawnMovement(PROP_1F4_JINJO_REAL, coords, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
         break;
-    case 4:
-        sp2C = func_800D0CE0(PROP_136_CHEATOPAGE_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_4_CHEATO:
+        sp2C = collectable_itemSpawnMovement(PROP_136_CHEATOPAGE_REAL, coords, spawnStyle, &sp28);
         if (sp28 == 0)
         {
             event_sendToActor(sp2C, 0x14, 1);
         }
         break;
-    case 2:
-        sp2C = func_800D0CE0(PROP_220_HONEYCOMB_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_2_EMPTY_HONEYCOMB:
+        sp2C = collectable_itemSpawnMovement(PROP_220_HONEYCOMB_REAL, coords, spawnStyle, &sp28);
         break;
-    case 3:
-        sp2C = func_800D0CE0(PROP_21B_GLOWBO_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_3_GLOWBO:
+        sp2C = collectable_itemSpawnMovement(PROP_21B_GLOWBO_REAL, coords, spawnStyle, &sp28);
         break;
-    case 7:
-        sp2C = func_800D0CE0(PROP_4E5_DOUBLOON_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_7_DOUBLOON:
+        sp2C = collectable_itemSpawnMovement(PROP_4E5_DOUBLOON_REAL, coords, spawnStyle, &sp28);
         break;
-    case 8:
-        sp2C = func_800D0CE0(PROP_3C6_TICKET_REAL, arg1, spawnStyle, &sp28);
+    case TYPE_8_TICKET:
+        sp2C = collectable_itemSpawnMovement(PROP_3C6_TICKET_REAL, coords, spawnStyle, &sp28);
         break;
     default:
         break;
     }
     func_800CFBC8(sp2C, itemFlag, itemType, 0);
-    if ((arg3 != NULL) && (arg3[12] & 1))
+    if ((arg3 != NULL) && (arg3->unk18_16))
     {
         func_80101074(sp2C->unk0);
         func_8010114C(arg3, 0xD, arg0);
@@ -761,35 +767,35 @@ Unk80132ED0* func_800D0DAC(s32 arg0, f32* arg1, s32 spawnStyle, u16* arg3)
     return sp2C->unk0;
 }
 
-void func_800D0F9C(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, s32 arg5)
+void collectable_itemInit(s32 arg0, s32 x, s32 y, s32 z, s32 spawnStyle, Unk80132ED0* arg5)
 {
     f32 temp;
-    f32 sp18[3];
-    sp18[0] = (f32)x;
-    sp18[1] = (f32)y;
-    sp18[2] = (f32)z;
-    func_800D0DAC(arg0, sp18, spawnStyle, arg5);
+    f32 coords[3];
+    coords[0] = (f32)x;
+    coords[1] = (f32)y;
+    coords[2] = (f32)z;
+    collectable_itemSetup(arg0, coords, spawnStyle, arg5);
 }
 
-void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk80132ED0* arg4)
+void collectable_spawnItem(u32 itemIndex, CollectableId itemType, f32* spawnCoords, u32 spawnStyle, Unk80132ED0* arg4)
 {
     s32 sp44[3];
     s32 temp;
     f32 sp34[3];
-    if ((func_800D0A9C(arg0, arg1) == 0) && (func_800D0B68(arg0, arg1) == 0))
+    if ((collectable_isSpawned(itemIndex, itemType) == 0) && (collectable_isCollected(itemIndex, itemType) == 0))
     {
-        func_800D0B08(arg0, arg1);
-        func_800D053C(arg0, arg1);
+        collectable_setSpawnedTrue(itemIndex, itemType);
+        func_800D053C(itemIndex, itemType);
         if (spawnCoords != NULL)
         {
             ml_vec3f_to_vec3i(sp44, spawnCoords);
         }
         else
         {
-            func_800D07CC(arg0, arg1, sp34);
+            collectable_getJiggyCoords(itemIndex, itemType, sp34);
             ml_vec3f_to_vec3i(sp44, sp34);
         }
-        _chbaddiesetup_entrypoint_6(&func_800D0F9C, (arg0 << 0x10) | (arg1 & 0xFFFF), sp44[0], sp44[1], sp44[2], spawnStyle, arg4);
+        _chbaddiesetup_entrypoint_6(&collectable_itemInit, (itemIndex << 0x10) | (itemType & 0xFFFF), sp44[0], sp44[1], sp44[2], spawnStyle, arg4);
     }
 }
 
@@ -797,7 +803,7 @@ void func_800D1000(u32 arg0, u32 arg1, f32* spawnCoords, u32 spawnStyle, Unk8013
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D119C.s")
 
-void func_800D1218(s32 arg0, s32 arg1, f32* arg2)
+void func_800D1218(s32 arg0, CollectableId arg1, f32* arg2)
 {
     s32 temp_v0;
 
@@ -808,7 +814,7 @@ void func_800D1218(s32 arg0, s32 arg1, f32* arg2)
     }
 }
 
-void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
+void func_800D1254(s32 arg0, CollectableId arg1, f32* arg2)
 {
     s32 pad;
     Actor* temp_v0_2;
@@ -825,17 +831,17 @@ void func_800D1254(s32 arg0, s32 arg1, f32* arg2)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA9160/func_800D129C.s")
 
-u32 func_800D1338(u32 JinjoColor)
+s32 collectable_getNumJinjoCollectedColor(s32 JinjoColor)
 {
     s32 var_s0;
     u32 var_s2;
 
     var_s2 = 0;
-    var_s0 = func_800D0820(0);
+    var_s0 = collectable_getStartIdx(TYPE_0_JINJO);
 
-    while (func_800D0894(0) >= var_s0)
+    while (collectable_getTotalCount(TYPE_0_JINJO) >= var_s0)
     {
-        if ((JinjoColor == D_8011AB40[var_s0 - 1].color) && (func_800D0B68((u32)var_s0, 0U) != 0))
+        if ((JinjoColor == D_8011AB40[var_s0 - 1].color) && (collectable_isCollected((u32)var_s0, TYPE_0_JINJO) != 0))
         {
             var_s2 += 1;
         }

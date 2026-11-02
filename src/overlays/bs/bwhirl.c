@@ -54,7 +54,7 @@ void func_80800114_bsbwhirl(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 425.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80.0f, 425.0f));
 }
 
 void func_8080017C_bsbwhirl(PlayerState* self)
@@ -345,7 +345,7 @@ void bsbwhirl_entrypoint_13(PlayerState* self) {
     }
     func_80800430_bsbwhirl(self, &nextState);
     func_80800008_bsbwhirl(self);
-    if (func_8008DA24(self) != 0)
+    if (player_canGripGrab(self) != 0)
     {
         nextState = BS_STATE_A8_GRIP_GRAB_START;
     }

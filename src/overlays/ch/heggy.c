@@ -240,7 +240,7 @@ void func_808009DC_chheggy(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 7:
-        if (func_800D90A4(&arg0->unk58) != 0)
+        if (timer_reachedZero_dupe(&arg0->unk58) != 0)
         {
             func_80800ECC_chheggy(arg0, 8);
         }
@@ -281,7 +281,7 @@ void func_808009DC_chheggy(Actor* arg0)
         }
         break;
     case 10:
-        if (func_800D90A4(&arg0->unk58) != 0)
+        if (timer_reachedZero_dupe(&arg0->unk58) != 0)
         {
             func_80800ECC_chheggy(arg0, 0xB);
         }
@@ -302,7 +302,7 @@ void func_808009DC_chheggy(Actor* arg0)
         }
         else if (sp44 <= 0.16f)
         {
-            sp44 = func_800F10B4(func_80101F24(arg0), 0.035f, 0.16f, 0.0f, 1.0f);
+            sp44 = ml_map_f(func_80101F24(arg0), 0.035f, 0.16f, 0.0f, 1.0f);
         }
         else
         {
@@ -321,7 +321,7 @@ void func_808009DC_chheggy(Actor* arg0)
         sp40 = func_80100094(arg0, 0U);
         if (func_80101F24(arg0) <= 0.92f)
         {
-            sp3C = func_800F10B4(func_80101F24(arg0), 0.84f, 0.92f, 0.0f, 1.0f);
+            sp3C = ml_map_f(func_80101F24(arg0), 0.84f, 0.92f, 0.0f, 1.0f);
         }
         else
         {
@@ -332,7 +332,7 @@ void func_808009DC_chheggy(Actor* arg0)
         inventory_decrementValue(0x52);
         break;
     case 16:
-        if (func_800D90A4(&arg0->unk58) != 0)
+        if (timer_reachedZero_dupe(&arg0->unk58) != 0)
         {
             func_80800ECC_chheggy(arg0, 0x11);
         }
@@ -719,7 +719,7 @@ s32 func_80801A00_chheggy(Actor* arg0, s32 arg1, s32 arg2)
     case 0x3D:
         flag_setValueTrue(FLAG_581_PHYSICAL_IoH_HeggySplitUpCoverBroken);
         _chskeletonexplode_entrypoint_7(arg0, arg0->position);
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
         func_8010A624(arg0);
         return 1;
     case 0xF:

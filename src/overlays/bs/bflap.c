@@ -157,7 +157,7 @@ void bsbflap_update(PlayerState *self) {
         next_state = BS_STATE_F_BBUSTER;
     }
     
-    if (func_8008DA24(self)) {
+    if (player_canGripGrab(self)) {
         next_state = BS_STATE_A8_GRIP_GRAB_START;
     }
 

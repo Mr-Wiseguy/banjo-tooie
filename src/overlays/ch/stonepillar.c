@@ -63,7 +63,7 @@ void func_80800018_chstonepillar(Actor* arg0)
     sp2C = func_80100094(arg0, 0U);
     actorState = arg0->unk70_10;
     func_80800FE0_chstonepillar(arg0);
-    if ((sp2C->unk2C == 4) || (func_800D0B68(8U, 1U) != 0))
+    if ((sp2C->unk2C == 4) || (collectable_isCollected(8U, 1U) != 0))
     {
         if ((_glcutDll_entrypoint_19(0xBU) != 0) && (actorState == 3))
         {
@@ -130,7 +130,7 @@ void func_80800224_chstonepillar(Actor* arg0)
     sp24 = func_80100094(arg0, 0U);
     func_80800FE0_chstonepillar(arg0);
     func_80801374_chstonepillar(arg0, 2);
-    if (((arg0->unk70_10) == 2) && (func_80800C10_chstonepillar(arg0->position), (func_80801238_chstonepillar(arg0) == 0)) && (func_80101FDC(arg0, 1U), (func_800D0B68(8U, 1U) == 0)))
+    if (((arg0->unk70_10) == 2) && (func_80800C10_chstonepillar(arg0->position), (func_80801238_chstonepillar(arg0) == 0)) && (func_80101FDC(arg0, 1U), (collectable_isCollected(8U, 1U) == 0)))
     {
         if ((flag_getValue(FLAG3_9D8_UNK) == 0) && (sp24->unk2C == 0))
         {
@@ -270,7 +270,7 @@ void func_80800704_chstonepillar(Actor* arg0)
     temp_v0->unk2F = 0;
     func_808007C8_chstonepillar(arg0);
     func_80101FDC(arg0, 1U);
-    if (func_800D0B68(8U, 1U) != 0)
+    if (collectable_isCollected(8U, 1U) != 0)
     {
         temp_v0->unk2C = -1;
         return;
@@ -423,7 +423,7 @@ void func_80800C44_chstonepillar(Actor* arg0)
 
     temp_v0 = func_80100094(arg0, 0U);
     arg0->rotation[1] = func_800136E4((f32)(3 - temp_v0->unk2C) * 72.0f);
-    if (func_800D0B68(8U, 1U) != 0)
+    if (collectable_isCollected(8U, 1U) != 0)
     {
         temp_v0->unk2C = -1;
     }
@@ -437,7 +437,7 @@ void func_80800CC8_chstonepillar(Actor* arg0, s32 arg1)
     temp_v0 = func_80100094(arg0, 0U);
     if ((arg0->unk70_10) != 2)
     {
-        if ((temp_v0->unk2C == 0) && (flag_getValue(FLAG3_9D6_UNK) == 0) && (func_800D0B68(8U, 1U) == 0))
+        if ((temp_v0->unk2C == 0) && (flag_getValue(FLAG3_9D6_UNK) == 0) && (collectable_isCollected(8U, 1U) == 0))
         {
             func_800CE8D8(0, 45.0f, 0x2D);
             func_800CE88C(0, 1);
@@ -508,7 +508,7 @@ void func_80800EE0_chstonepillar(Actor* arg0)
     }
     ml_vec3f_copy((f32*)arg0->actorData, arg0->position);
     ml_vec3f_copy(temp_v0->unk18, arg0->position);
-    if (func_800D0B68(8U, 1U) != 0) 
+    if (collectable_isCollected(8U, 1U) != 0) 
     {
         temp_v0->unk2C = -1;
     }
@@ -516,7 +516,7 @@ void func_80800EE0_chstonepillar(Actor* arg0)
 
 void func_80800FE0_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D6_UNK) != 0) && (flag_getValue(FLAG3_9D7_UNK) == 0) && (func_8080112C_chstonepillar(arg0) != 0) && ((func_800CEAD0(0) != 0) || (func_800D0B68(8U, 1U) != 0)))
+    if ((flag_getValue(FLAG3_9D6_UNK) != 0) && (flag_getValue(FLAG3_9D7_UNK) == 0) && (func_8080112C_chstonepillar(arg0) != 0) && ((func_800CEAD0(0) != 0) || (collectable_isCollected(8U, 1U) != 0)))
     {
         if (func_800CEAA8(0) != 0)
         {
@@ -531,7 +531,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
                 flag_setValueFalse(FLAG3_9D7_UNK);
             }
         }
-        if (func_800D0B68(8U, 1U) == 0)
+        if (collectable_isCollected(8U, 1U) == 0)
         {
             func_808010CC_chstonepillar(arg0);
             func_800FC660(0x17U);
@@ -541,7 +541,7 @@ void func_80800FE0_chstonepillar(Actor* arg0)
 
 void func_808010CC_chstonepillar(Actor* arg0)
 {
-    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (func_800EA05C() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
+    if ((flag_getValue(FLAG3_9D9_UNK) == 0) && (map_getCurrent() != MAP_B9_MT_PRISON_COMPOUND) && (func_800F6CC8(character_getActiveIndex()) == 0))
     {
         _glcutDll_entrypoint_6(0xB9U, 0xBU);
     }
@@ -587,7 +587,7 @@ s32 func_80801238_chstonepillar(Actor* arg0)
     StonePillarStruct* sp28;
 
     sp28 = func_80100094(arg0, 0U);
-    if ((func_800D9078(&arg0->unk58) != 0) && (((u32)arg0->unk0->unk24_22) != 0x19F) && (func_800D0B68(8U, 1U) == 0) && (sp28->unk2C != 4) && (func_8080112C_chstonepillar(arg0) != 0))
+    if ((timer_reachedZero(&arg0->unk58) != 0) && (((u32)arg0->unk0->unk24_22) != 0x19F) && (collectable_isCollected(8U, 1U) == 0) && (sp28->unk2C != 4) && (func_8080112C_chstonepillar(arg0) != 0))
     {
         func_800FC660(0xEU);
     }

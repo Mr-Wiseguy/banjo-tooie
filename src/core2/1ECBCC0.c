@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "core1/mlmtx.h"
+#include "core2/1ECBCC0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F23D0.s")
 
@@ -62,17 +63,17 @@ void func_800F2D34(MtxF* mat, f32 out[4], f32 in[4]) {
     out[3] = in_copy[0] * mat->m[0][3] + in_copy[1] * mat->m[1][3] + in_copy[2] * mat->m[2][3] + in_copy[3] * mat->m[3][3];
 }
 
-void func_800F2E60(s32 arg0[3], s32 arg1[3]) {
-    arg0[0] = arg1[0];
-    arg0[1] = arg1[1];
-    arg0[2] = arg1[2];
+void ml_vec3i_copy_dupe(s32 dst[3], s32 src[3]) {
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
 }
 
-void func_800F2E7C(s32 arg0[4], s32 arg1[4]) {
-    arg0[0] = arg1[0];
-    arg0[1] = arg1[1];
-    arg0[2] = arg1[2];
-    arg0[3] = arg1[3];
+void ml_vec4i_copy(s32 dst[4], s32 src[4]) {
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
+    dst[3] = src[3];
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F2EA0.s")
@@ -109,6 +110,6 @@ void func_800F2E7C(s32 arg0[4], s32 arg1[4]) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECBCC0/func_800F36D4.s")
 
-int func_800F371C(u32 arg0[4], u32 arg1[4]) {
+int ml_vec4i_isEqual(s32 arg0[4], s32 arg1[4]) {
     return arg0[0] == arg1[0] && arg0[1] == arg1[1] && arg0[2] == arg1[2] && arg0[3] == arg1[3];
 }

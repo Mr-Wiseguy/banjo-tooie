@@ -29154,8 +29154,8 @@ rom:0x020F6A6C symbol:func_80800524_cothemedll reloc:MIPS_26
 rom:0x020F6A7C symbol:func_80800524_cothemedll reloc:MIPS_26
 rom:0x020F72B8 symbol:R_80800210_plsu reloc:MIPS_HI16
 rom:0x020F72C8 symbol:R_80800210_plsu reloc:MIPS_LO16
-rom:0x020F73D8 symbol:plsu_entrypoint_1 reloc:MIPS_26
-rom:0x020F73F4 symbol:plsu_entrypoint_1 reloc:MIPS_26
+rom:0x020F73D8 symbol:character_findCharOfTransform reloc:MIPS_26
+rom:0x020F73F4 symbol:character_findCharOfTransform reloc:MIPS_26
 rom:0x020F7860 symbol:D_80800510_plcamera reloc:MIPS_HI16
 rom:0x020F7864 symbol:D_80800510_plcamera reloc:MIPS_LO16
 rom:0x020F7894 symbol:R_80800500_plcamera reloc:MIPS_HI16

@@ -26,7 +26,7 @@ f32 func_80099A40(PlayerState *self) {
     return self->unkC0->unk4;
 }
 
-s32 func_80099A4C(PlayerState *self) {
+Unk80132ED0* func_80099A4C(PlayerState *self) {
     return self->unkC0->unk14;
 }
 
@@ -55,16 +55,27 @@ s32 func_80099A70(PlayerState *self) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AC6C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009ACF4.s")
+void func_8009ACF4(PlayerState* arg0, f32 arg1) {
+    arg0->unkC0->unk0 = arg1;
+}
+void func_8009AD04(PlayerState* arg0, f32 arg1) {
+    arg0->unkC0->unk4 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD04.s")
+void func_8009AD14(PlayerState* arg0, Unk80132ED0* arg1) {
+    arg0->unkC0->unk14 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD14.s")
+void func_8009AD20(PlayerState* arg0, s32 arg1) {
+    arg0->unkC0->unk18 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD20.s")
+void func_8009AD2C(PlayerState* arg0, s32 arg1) {
+    arg0->unkC0->unk1C = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD2C.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD38.s")
+void func_8009AD38(PlayerState* arg0, s32 arg1) {
+    arg0->unkC0->unk20 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E72EA0/func_8009AD44.s")

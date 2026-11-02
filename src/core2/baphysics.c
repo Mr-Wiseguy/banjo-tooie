@@ -63,7 +63,7 @@ void func_8009AE08(PlayerState* self) {
 			{
 				if (func_8008E1C4(self) != 0)
 				{
-					sp38 = func_800F10B4(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
+					sp38 = ml_map_f(sp38, 0.0f, 1.0f, sp3C * 0.5f, -1.0f);
 				}
 				else
 				{
@@ -427,7 +427,7 @@ void func_8009BB24(PlayerState* self, f32* arg1) { ml_vec3f_copy(arg1, self->unk
 f32 baphysics_get_vertical_velocity(PlayerState* self) {
     return self->unkC8->unk10[1];
 }
-f32 func_8009BB5C(PlayerState* self)
+f32 baphysics_get_horizontal_velocity(PlayerState* self)
 {
     f32 temp_f0;
     f32 temp_f2;
@@ -436,8 +436,8 @@ f32 func_8009BB5C(PlayerState* self)
     return sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2));
 }
 
-f32 func_8009BB94(PlayerState* self) {
-    return func_800EEF94(self->unkC8->unk10);
+f32 baphysics_get_velocity(PlayerState* self) {
+    return ml_vec3f_magnitude(self->unkC8->unk10);
 }
 
 f32 func_8009BBB8(PlayerState* self) {
@@ -445,7 +445,7 @@ f32 func_8009BBB8(PlayerState* self) {
     f32 temp_f0;
     f32 var_f12;
 
-    sp1C = func_8009BB5C(self);
+    sp1C = baphysics_get_horizontal_velocity(self);
     temp_f0 = baphysics_get_target_horizontal_velocity(self);
     if (sp1C < temp_f0) {
         var_f12 = sp1C / temp_f0;

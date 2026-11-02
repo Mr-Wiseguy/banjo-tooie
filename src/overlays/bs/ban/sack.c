@@ -97,7 +97,7 @@ void func_808001D4_bsbansack(PlayerState* arg0)
         baphysics_set_target_horizontal_velocity(arg0, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(arg0, func_800F1214(sp1C, 100.0f, 500.0f));
+    baphysics_set_target_horizontal_velocity(arg0, ml_mapNormal_f(sp1C, 100.0f, 500.0f));
 }
 
 void func_80800238_bsbansack(PlayerState* self)
@@ -333,7 +333,7 @@ void func_80800810_bsbansack(PlayerState* self)
     }
     if ((anctrl_getAnimTimer(temp_v0) > 0.95f) && (player_inWater(self) != 0))
     {
-        if ((func_800964DC(self) - func_80096364(self)) > 80.0f)
+        if ((player_getWaterHeight(self) - player_getGroundHeight(self)) > 80.0f)
         {
             nextState = BS_STATE_4C_LANDING_IN_WATER;
         }
@@ -390,7 +390,7 @@ void func_80800AF4_bsbansack(PlayerState* self, s32 arg1)
         {
             yaw_setIdeal(self, bastick_getAngleRelativeToBanjo(self));
         }
-        temp_f0 = func_8009BB5C(self);
+        temp_f0 = baphysics_get_horizontal_velocity(self);
         baphysics_set_target_horizontal_velocity(self, temp_f0);
         baphysics_set_target_yaw(self, yaw_getIdeal(self));
         baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), temp_f0);
@@ -588,7 +588,7 @@ s32 func_8080119C_bsbansack(PlayerState* self)
 	switch (self->unk15C.bytes[0])
 	{
 	case 1:
-		sp34 = func_800F10B4(_batimer_get(self, 0.0f), 0.0f, 1.2f, 700.0f, 1400.0f);
+		sp34 = ml_map_f(_batimer_get(self, 0.0f), 0.0f, 1.2f, 700.0f, 1400.0f);
 		sp2C += (sp34 * gameSpeed);
 		func_8009328C(self, sp2C);
 		if (func_8008DF8C(self, 1) != 0)
@@ -598,7 +598,7 @@ s32 func_8080119C_bsbansack(PlayerState* self)
 		}
 		return 0;
 	case 2:
-		temp_f12 = func_800F10B4(_batimer_get(self, 0), 0.0f, 0.5f, 1.0f, 0.0f) * 90.0f;
+		temp_f12 = ml_map_f(_batimer_get(self, 0), 0.0f, 0.5f, 1.0f, 0.0f) * 90.0f;
 		sp3C = self->unk174 - self->unk170;
 		sp2C = (func_80013970(temp_f12) * (sp3C)) + self->unk170;
 		func_8009328C(self, sp2C);
@@ -773,13 +773,13 @@ void func_80801680_bsbansack(PlayerState* self, s32 arg1)
         sp48 = baphysics_get_target_horizontal_velocity(self);
         if (inWater != 0)
         {
-            sp44 = func_800F10B4(sp48, 100.0f, 500.0f, 0.35f, 0.42000002f);
-            sp40 = func_800F10B4(sp48, 100.0f, 500.0f, 346.75f, 416.1f);
+            sp44 = ml_map_f(sp48, 100.0f, 500.0f, 0.35f, 0.42000002f);
+            sp40 = ml_map_f(sp48, 100.0f, 500.0f, 346.75f, 416.1f);
         }
         else
         {
-            sp44 = func_800F10B4(sp48, 100.0f, 500.0f, 0.35f, 0.7f);
-            sp40 = func_800F10B4(sp48, 100.0f, 500.0f, 346.75f, 693.5f);
+            sp44 = ml_map_f(sp48, 100.0f, 500.0f, 0.35f, 0.7f);
+            sp40 = ml_map_f(sp48, 100.0f, 500.0f, 346.75f, 693.5f);
         }
         baphysics_set_target_yaw(self, yaw_getIdeal(self));
         baphysics_set_horizontal_velocity(self, yaw_getIdeal(self), sp48);
@@ -808,7 +808,7 @@ void func_80801680_bsbansack(PlayerState* self, s32 arg1)
         return;
     case 4:
         sp34 = 1.0f;
-        self->unk16C = func_8009BB5C(self) * 0.25f;
+        self->unk16C = baphysics_get_horizontal_velocity(self) * 0.25f;
         func_8009D2D8(self, 3);
         baphysics_set_target_horizontal_velocity(self, self->unk16C);
         func_800A2FCC(self, 0);

@@ -80,7 +80,7 @@ void bskazdie_entrypoint_1(PlayerState *self) {
             }
             break;
         case 2:
-            self->unk16C = func_800F0E00(self->unk16C - 12.0f, 0);
+            self->unk16C = ml_max_f(self->unk16C - 12.0f, 0);
             if (self->unk16C > 140.0f) {
                 _badust_entrypoint_9(self);
             }

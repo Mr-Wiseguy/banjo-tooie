@@ -22,17 +22,18 @@ extern s32 D_8011A3F4;
 extern f32 D_801255F8;
 extern D_80127630_unk D_80127630;
 
-extern s32 D_80127658;
+extern GraphicsBuffers D_80127658;
 extern s32 D_80127674;
 extern void* D_801276BC;
 typedef struct
 {
-    s32 unk0, unk4;
+    s32 unk0;
+    f32* unk4;
     f32 unk8;
 } unk_D_80127688;
 extern unk_D_80127688 D_80127688[];
 
-s32* func_800A7180(void)
+GraphicsBuffers* func_800A7180()
 {
     return &D_80127658;
 }
@@ -306,7 +307,7 @@ int func_800A81C4(void) {
         return 0;
     }
     a = _gcsectionDll_entrypoint_4(D_80127630.mapValue);
-    b = _gcsectionDll_entrypoint_4(func_800EA05C());
+    b = _gcsectionDll_entrypoint_4(map_getCurrent());
     return b != a && D_80127630.unk6 == 0;
 }
 
@@ -360,7 +361,7 @@ void func_800A86D8(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A88C4.s")
 
-s32 func_800A8948(s32 arg0)
+f32* func_800A8948(s32 arg0)
 {
     s32 temp_v0;
 
@@ -373,7 +374,7 @@ s32 func_800A8948(s32 arg0)
     return temp_v0;
 }
 
-s32 func_800A8984(s32 arg0) 
+f32* func_800A8984(s32 arg0)
 {
     return D_80127688[arg0].unk4;
 }

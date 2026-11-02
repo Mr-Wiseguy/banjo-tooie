@@ -4,7 +4,16 @@
 #include "common.h"
 
 #include <ultra64.h>
-
+#include "ba/yaw.h"
+#include "core1/1E2B200.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76360.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECD170.h"
+#include "memory.h"
 #include "ba/playerstate.h"
 #include "bs/state.h"
 

@@ -15,5 +15,5 @@ s32 func_800BEF00(f32[3], f32[3], f32[3], s32);
 s32 func_800BF6B8();
 void func_800BF744(s32, s32);
 s32 func_800BF8E4();
-
+s32 func_800BFAA4();
 #endif

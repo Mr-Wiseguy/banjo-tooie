@@ -87,7 +87,7 @@ void func_808001F4_chwarppad(Actor* arg0, OptionState* arg1)
         if (func_80800064_chwarppad(arg0, var_s0) != 0)
         {
             _gcnewoption_entrypoint_12(arg1, var_s1, (var_s0 + 9));
-            if (func_80090178(D_808010B0_chwarppad[WARPPAD_DATA(arg0)->unk10 + var_s0].unk8) != 0)
+            if (activePlayer_includedInTransformMask(D_808010B0_chwarppad[WARPPAD_DATA(arg0)->unk10 + var_s0].unk8) != 0)
             {
                 _gcnewoption_entrypoint_23(arg1, var_s1);
                 _gcnewoption_entrypoint_13(arg1, var_s1, &D_80801344_chwarppad);
@@ -206,7 +206,7 @@ s16 func_808006C0_chwarppad(s32 arg0)
 
     temp_a2 = D_8012762C;
     //Get Transformation
-    temp_v0 = func_8008FD48();
+    temp_v0 = activePlayer_getTransformation();
     for (var_a1 = 0; D_808010A0_chwarppad[var_a1].unk2 != 0; var_a1++)
     {
         if ((temp_a2 == D_808010A0_chwarppad[var_a1].unk2) && (temp_v0 == D_808010A0_chwarppad[var_a1].unk3))
@@ -237,7 +237,7 @@ void func_80800748_chwarppad(Actor* arg0)
                 //Activate Warp Pad
                 func_80800418_chwarppad(arg0, 2U);
             }
-            else if ((numUnlockedWarppads > 0) && (func_800F64A4(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(WARPPAD_DATA(arg0)->unk10 * 0xC) + ((arg0->unk74_7) * 0xC)]) == 0) && (_subaddiedialog_entrypoint_4(arg0->position, 0x64, 4) != 0))
+            else if ((numUnlockedWarppads > 0) && (character_includedInTransformMask(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(WARPPAD_DATA(arg0)->unk10 * 0xC) + ((arg0->unk74_7) * 0xC)]) == 0) && (_subaddiedialog_entrypoint_4(arg0->position, 0x64, 4) != 0))
             {
                 //Open the Options Menu
                 func_80800418_chwarppad(arg0, 3U);
@@ -247,7 +247,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 if (numUnlockedWarppads > 0)
                 {
-                    if (func_800F64A4(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(WARPPAD_DATA(arg0)->unk10) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) 
+                    if (character_includedInTransformMask(controlledCharacter, *(s32*)&(D_80801080_chwarppad - 0x220)[(WARPPAD_DATA(arg0)->unk10) * 0xC + ((arg0->unk74_7)) * 0xC]) != 0) 
                     {
                         sp34 = func_808006C0_chwarppad((s32)arg0);
                     }
@@ -272,7 +272,7 @@ void func_80800748_chwarppad(Actor* arg0)
             {
                 arg0->unk74_30 = 1;
                 func_808003B8_chwarppad(arg0);
-                if (func_800F64A4(character_getActiveIndex(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
+                if (character_includedInTransformMask(character_getActiveIndex(), ALLOW_TREXLARGE | ALLOW_GOLDENGOLIATH) == 0)
                 {
                     func_80800F34_chwarppad(arg0, 4, 1);
                 }
@@ -324,7 +324,7 @@ u8 func_80800ADC_chwarppad(s32 arg0)
     u8 var_a0;
     u32 var_v1 = 0;
     //Get Transformation
-    temp_v0 = func_8008FD48();
+    temp_v0 = activePlayer_getTransformation();
     var_a0 = D_80801080_chwarppad[0];
     for (var_v1 = 0; D_80801080_chwarppad[var_v1] != 0; var_v1 += 2)
     {

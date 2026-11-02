@@ -29,65 +29,67 @@
 
 #include "ba/playerstate.h"
 #include "ba/drone.h"
+#include "gc/mapsects.h"
 
-int func_8008D0A0(PlayerState*);
-int func_8008D0E0(PlayerState *);
-int func_8008D14C(PlayerState*);
+int player_canBeakBarge(PlayerState*);
+int player_canBeakBomb(PlayerState *);
+int player_canBeakBust(PlayerState*);
 int func_8008D18C(PlayerState*);
-int func_8008D1B0(PlayerState*);
-int func_8008D1F0(PlayerState*);
-int func_8008D214(PlayerState*);
-s32 func_8008D280(PlayerState*);
-int func_8008D304(PlayerState*);
-int func_8008D370(s32);
-int func_8008D3B0(PlayerState *);
-s32 func_8008D544(PlayerState *);
-int func_8008D568(PlayerState*);
-int func_8008D5C4(PlayerState*);
+int player_canPeck(PlayerState*);
+int player_canClimb(PlayerState*);
+int player_canDive(PlayerState*);
+s32 player_canEggShoot(PlayerState*);
+int player_canFeatheryFlap(PlayerState*);
+int player_canFlapFlip(s32);
+int player_canFly(PlayerState *);
+int player_shouldRejoin(PlayerState* self);
+s32 player_canFullJump(PlayerState *);
+int player_canPackWhack(PlayerState*);
+int player_canRataTatRap(PlayerState*);
 s32 func_8008D630(PlayerState*);
-int func_8008D694(s32);
-int func_8008D6D4(PlayerState*);
-int func_8008D714(PlayerState*);
-int func_8008D750(PlayerState*);
-int func_8008D790(PlayerState *);
-s32 func_8008D850(PlayerState*);
-int func_8008D8E4(PlayerState*);
-int func_8008D924(PlayerState*);
-int func_8008D964(PlayerState*);
+int player_canRoll(s32);
+int player_canShockSpring(PlayerState*);
+int player_canSplitUp(PlayerState*);
+int player_canWadingBoots(PlayerState*);
+int player_canSwap(PlayerState *);
+s32 player_canTalonTorpedo(PlayerState*);
+int player_canTalonTrot(PlayerState*);
+int player_canTalonTrot_dupe(PlayerState*);
+int player_canWonderwing(PlayerState*);
 s32 func_8008D9A4(PlayerState*);
-int func_8008DA24(PlayerState*);
+int player_canGripGrab(PlayerState*);
 s32 func_8008DAA8(PlayerState*);
 s32 func_8008DAC8(s32);
 s32 func_8008DAE8(PlayerState*, f32*, f32); 
 int func_8008DC90(PlayerState*, f32*, f32);
 int func_8008DD04(PlayerState *);
-s32 func_8008DD70(s32);
+s32 func_8008DD70(PlayerState*);
 s32 func_8008DD90(PlayerState*);
 s32 func_8008DDEC(PlayerState*, f32*, f32);
 s32 func_8008DE24(PlayerState *);
 s32 func_8008DE44(s32);
 s32 func_8008DE74(PlayerState*);
-int func_8008DEA4(PlayerState* arg0, f32* arg1, f32 arg2);
-s32 func_8008DF18(PlayerState *);
-s32 func_8008DF8C(PlayerState *, s32);
-s32 player_isStable(PlayerState*);
+int func_8008DEA4(PlayerState*, f32*, f32);
+int func_8008DF18(PlayerState *);
+int func_8008DF8C(PlayerState *, s32);
+int player_isStable(PlayerState*);
 s32 func_8008E0C8(PlayerState*);
-s32 func_8008E0E8(PlayerState*);
+int func_8008E0E8(PlayerState*);
 s32 func_8008E124(PlayerState*);
-s32 func_8008E148(PlayerState*);
+int func_8008E148(PlayerState*);
 s32 func_8008E1A0(PlayerState*);
-s32 func_8008E1C4(PlayerState*);
+int func_8008E1C4(PlayerState*);
 //Are we Solo Banjo
-s32 func_8008E23C(PlayerState *);
+s32 player_isSplitUp(PlayerState *);
 s32 func_8008E260(PlayerState*);
 // func_8008E2AC
-s32 func_8008E300(PlayerState*); 
-s32 player_inWater(PlayerState*);
+int func_8008E300(PlayerState*); 
+int player_inWater(PlayerState*);
 s32 func_8008E37C(PlayerState*);
-s32 func_8008E39C(PlayerState*);
-s32 func_8008E3E8(PlayerState*);
-s32 func_8008E40C(PlayerState*);
-s32 func_8008E430(PlayerState*);
+int func_8008E39C(PlayerState*);
+s32 player_wearingTurboTrainers(PlayerState*);
+s32 player_wearingClawClambers(PlayerState*);
+s32 player_wearingSpringyStep(PlayerState*);
 s32 func_8008E454(PlayerState*);
 
 #endif // __CORE2_1E66990_H__

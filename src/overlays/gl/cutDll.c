@@ -145,7 +145,7 @@ void func_80800018_glcutDll(u32 arg0)
 void glcutDll_entrypoint_0(void)
 {
     func_80800018_glcutDll(1U);
-    glcutDll_entrypoint_10(func_800EA05C());
+    glcutDll_entrypoint_10(map_getCurrent());
     glcutDll_entrypoint_11(1U);
     func_80800000_glcutDll(0U);
     D_801275E8.unkA = 1;
@@ -269,7 +269,7 @@ void glcutDll_entrypoint_16(void)
 
 void glcutDll_entrypoint_17(void)
 {
-    if (func_800EA05C() == D_801275E8.unk2)
+    if (map_getCurrent() == D_801275E8.unk2)
     {
         func_80800018_glcutDll(4U);
         func_80800018_glcutDll(1U);
@@ -324,7 +324,7 @@ void glcutDll_entrypoint_22(u32 arg0)
 
 s32 glcutDll_entrypoint_23(void)
 {
-    if ((D_801275E8.unk0 != D_801275E8.unk2) && (func_800EA05C() == D_801275E8.unk0))
+    if ((D_801275E8.unk0 != D_801275E8.unk2) && (map_getCurrent() == D_801275E8.unk0))
     {
         return 1;
     }

@@ -2,7 +2,6 @@
 
 
 void* func_800DE448(f32*, f32*, f32, f32*, s32);
-void func_800DF47C(s32 (*arg0)(Actor*), Actor*);
 f32* func_801018D8(Actor*);
 f32* func_801027F4(Actor*);
 s32 func_801015D0(Actor*);

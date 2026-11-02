@@ -65,7 +65,7 @@ void func_80800100_bsbanshack(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 300.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 300.0f));
 }
 
 void func_80800164_bsbanshack(PlayerState* self)

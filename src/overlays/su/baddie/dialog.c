@@ -127,7 +127,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     u32 var_a2;
 
     sp34 = (s32)arg2->unk16;
-    if (((arg2->unk8 != (-1)) && (arg2->unkC != 0)) && (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0))
+    if (((arg2->unk8 != (-1)) && (arg2->unkC != 0)) && (character_includedInTransformMask(character_getActiveIndex(), arg2->unk8) == 0))
     {
         var_a2 = arg2->unkE;
         if ((var_a2 != 0) && (flag_getValue(arg2->unkE) == 0))
@@ -203,7 +203,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     if (func_80801394_subaddiedialog(arg0, sp34, arg2->unk0) != 0)
     {
         var_a2 = arg2->unk12;
-        if (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0)
+        if (character_includedInTransformMask(character_getActiveIndex(), arg2->unk8) == 0)
         {
             return 0U;
         }
@@ -246,7 +246,7 @@ u32 subaddiedialog_entrypoint_7(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
     }
     if (func_80801208_subaddiedialog(arg1, arg2->unk2, arg2->unk12, sp34) != 0)
     {
-        if (func_800F64A4(character_getActiveIndex(), arg2->unk8) == 0)
+        if (character_includedInTransformMask(character_getActiveIndex(), arg2->unk8) == 0)
         {
             return func_8080141C_subaddiedialog();
         }
@@ -300,15 +300,15 @@ s32 subaddiedialog_entrypoint_8(Actor* arg0, f32* arg1, subaddiedialog_UnkStruct
         do
         {
 
-            if (((sp48 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 1))
+            if (((sp48 == 0) && (character_includedInTransformMask(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 1))
             {
                 sp48 = arg3[var_s1].unk4;
             }
-            if (((sp44 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 2))
+            if (((sp44 == 0) && (character_includedInTransformMask(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 2))
             {
                 sp44 = arg3[var_s1].unk4;
             }
-            if (((sp40 == 0) && (func_800F64A4(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 3))
+            if (((sp40 == 0) && (character_includedInTransformMask(sp34, arg3[var_s1].TransformationType) != 0)) && (arg3[var_s1].unk6 == 3))
             {
                 sp40 = arg3[var_s1].unk4;
             }
@@ -476,7 +476,7 @@ u8 subaddiedialog_entrypoint_9(Actor* arg0, s32 arg1, subaddiedialog_UnkStruct1*
     {
         do
         {
-            if ((func_800F64A4(temp_s2, arg2[var_s1].TransformationType) != 0) && (func_808010C8_subaddiedialog(arg0, arg2[var_s1].unk4, arg2[var_s1].unk6) == arg1))
+            if ((character_includedInTransformMask(temp_s2, arg2[var_s1].TransformationType) != 0) && (func_808010C8_subaddiedialog(arg0, arg2[var_s1].unk4, arg2[var_s1].unk6) == arg1))
             {
                 return arg2[var_s1].unk6;
             }

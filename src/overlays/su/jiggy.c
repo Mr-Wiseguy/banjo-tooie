@@ -279,7 +279,7 @@ s32 sujiggy_entrypoint_19(void)
 
 int sujiggy_entrypoint_20(s32 arg0)
 {
-    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && flag_getValue(arg0 + 0x392) == 0;
+    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && flag_getValue(arg0 + FLAG_392_PROGRESS_OPENED_WORLD_MT) == 0;
 }
 
 s32 sujiggy_entrypoint_21(void)

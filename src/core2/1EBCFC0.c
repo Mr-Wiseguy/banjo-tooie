@@ -9,8 +9,8 @@ typedef struct {
     u8 unk0[68];
 } Unkfunc_800E44FC_2;
 
-extern void* D_8012D500;
-extern void* D_8012D504;
+extern f32* D_8012D500;
+extern f32* D_8012D504;
 extern s32 D_8012D508;
 extern MtxF D_8012D510;
 extern u16 D_8012D550;
@@ -172,11 +172,11 @@ void func_800E4290() {
     D_8012D500 = D_8012D504 = 0;
 }
 
-s32 func_800E42A8() {
+f32* func_800E42A8() {
     return D_8012D500;
 }
 
-void func_800E42B4(s32 arg0) {
+void func_800E42B4(f32* arg0) {
     D_8012D500 = arg0;
 }
 

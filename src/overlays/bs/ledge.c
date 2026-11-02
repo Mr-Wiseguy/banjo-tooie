@@ -13,7 +13,7 @@ extern s32 D_808013A8_bsledge[];
 /* .code */
 int func_80800000_bsledge(PlayerState* self)
 {
-    return !func_8008E23C(self) && bakey_pressed(self, BUTTON_B);
+    return !player_isSplitUp(self) && bakey_pressed(self, BUTTON_B);
 }
 
 void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
@@ -44,7 +44,7 @@ void func_80800040_bsledge(PlayerState *self, f32 arg1[3]) {
     }
     self->unk15C.word = sp30 < 0.0f ? 1 : -1;
     sp30 = -self->unk15C.word * 90.0f;
-    sp1C = func_800F1214(stick_distance, 40.0f, 200.0f);
+    sp1C = ml_mapNormal_f(stick_distance, 40.0f, 200.0f);
     arg1[1] = 0.0f;
     func_800EFCD8(arg1, sp34 + sp30, sp1C);
 }
@@ -117,7 +117,7 @@ int func_80800410_bsledge(PlayerState* arg0)
 }
 
 s32 func_80800450_bsledge(PlayerState* self) {
-    return func_8009BB5C(self) > 0.0f;
+    return baphysics_get_horizontal_velocity(self) > 0.0f;
 }
 
 void func_80800488_bsledge(PlayerState *self, f32 arg1[3]) {

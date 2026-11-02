@@ -7,6 +7,7 @@
 
 extern f32 _bakaztorpedo_entrypoint_1(PlayerState *self);
 extern void _bakaztorpedo_entrypoint_2(PlayerState *self);
+void _bakaztorpedo_entrypoint_3(PlayerState*);
 extern void _bakaztorpedo_entrypoint_4(PlayerState *self);
 extern void _bakaztorpedo_entrypoint_5(PlayerState *self, f32, f32);
 extern void _bakaztorpedo_entrypoint_6(PlayerState *self, s32);

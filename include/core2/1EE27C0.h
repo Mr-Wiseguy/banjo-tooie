@@ -28,13 +28,13 @@ void func_80109FE8(Actor*, s32);
 void func_8010A3E8(Actor*, f32);
 f32 func_8010A40C(Actor*);
 //Disable Actor Collision
-s32 func_8010A570(Actor*);
+s32 actor_disableCollision(Actor*);
 //Enable Actor Collision
-s32 func_8010A590(Actor*);
+s32 actor_enableCollision(Actor*);
 //Set Actor Collision
-s32 func_8010A5B0(Actor*, s32);
+s32 actor_setCollision(Actor*, s32);
 //Get Actor Collision State
-u32 func_8010A610(Actor*);
+u32 actor_getCollision(Actor*);
 void func_8010A624(Actor*);
 void func_8010A63C(Actor*);
 u32 func_8010A654(Actor*, s32);

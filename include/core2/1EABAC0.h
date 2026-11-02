@@ -8,6 +8,7 @@ void func_800D2438();
 void func_800D2498(u32 itemDisplayUI, u32 value,u32 a2);
 void func_800D24E8(s32,s32,s32);
 void func_800D2574(void);
+void func_800D2748(s32, u8);
 void func_800D2770(s16, s32);
 s32 func_800D27A4(s32);
 s32 func_800D27F4(s32);

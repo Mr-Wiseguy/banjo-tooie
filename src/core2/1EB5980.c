@@ -7,7 +7,7 @@ extern s32 D_8012C7F4;
 extern s32 D_8012C7F8;
 extern s32 D_8012C7FC;
 
-s32 func_800DC090(void)
+s32 rand_i(void)
 {
     return D_8012C7F0 = (D_8012C7F0 * 0x19660D) + 0x3C6EF35F;
 }
@@ -64,22 +64,22 @@ int rand2_percentChance(f32 arg0)
 
 }
 
-void func_800DC310(void)
+void rand_setInitSeed(void)
 {
     D_8012C7F0 = 0xEAA0C7;
 }
 
-void func_800DC324(s32 arg0)
+void rand_setSeed(s32 arg0)
 {
     D_8012C7F0 = arg0;
 }
 
-void func_800DC330(void) {
+void rand_saveCurrentSeed(void) {
     D_8012C7F8 = D_8012C7F0;
     D_8012C7FC = D_8012C7F4;
 }
 
-void func_800DC354(void) {
+void rand_restoreCurrentSeed(void) {
     D_8012C7F0 = D_8012C7F8;
     D_8012C7F4 = D_8012C7FC;
 }

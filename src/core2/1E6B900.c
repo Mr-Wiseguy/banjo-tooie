@@ -189,7 +189,7 @@ void func_800927C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4)
     f32 sp28[3];
     f32 temp;
 
-    if (func_800F6BE4(arg4) != 0)
+    if (character_existsAtIndex(arg4) != 0)
     {
         temp_s0 = character_getPlayerState(arg4);
         ml_vec3f_assign_value(sp28, arg1, arg2, arg3);
@@ -267,7 +267,7 @@ PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
     {
         return func_80093F7C(arg0);
     }
-    temp_v0 = func_800D674C(arg0->unk50->unkC);
+    temp_v0 = asset_load(arg0->unk50->unkC);
     if (arg1 == 0)
     {
         func_800D62E4(arg0->unk50->unkC, arg1, arg0);
@@ -340,10 +340,10 @@ void func_80092C90(PlayerState* arg0, f32* arg1, s32 arg2)
     }
 }
 
-void func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
+s32 func_80092CDC(PlayerState* arg0, f32* arg1, s32 arg2)
 {
     func_800DBEFC(arg0->unk50->unk4, arg2, arg1);
-    ml_vec3f_is_not_zero(arg1);
+    return ml_vec3f_is_not_zero(arg1);
 }
 
 void func_80092D18(PlayerState* arg0, f32* arg1)
@@ -362,27 +362,27 @@ void func_80092D44(PlayerState* arg0, f32* arg1)
     ml_vec3f_apply_scale(arg1, 0.5f);
 }
 
-void func_80092D9C(s32 arg0,s32 arg1)
+void func_80092D9C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x3,arg1);
 }
 
-void func_80092DC0(s32 arg0,s32 arg1)
+void func_80092DC0(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x4,arg1);
 }
 
-void func_80092DE4(s32 arg0,s32 arg1)
+void func_80092DE4(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x8,arg1);
 }
 
-void func_80092E08(s32 arg0,s32 arg1)
+void func_80092E08(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x9,arg1);
 }
 
-void func_80092E2C(s32 arg0,s32 arg1)
+void func_80092E2C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0xA,arg1);
 }
@@ -392,7 +392,7 @@ s32 func_80092E50(PlayerState* arg0)
     return arg0->unk50->unk15;
 }
 
-void func_80092E5C(s32 arg0,s32 arg1)
+void func_80092E5C(PlayerState* arg0,s32 arg1)
 {
     func_800921E0(arg0,0x5,arg1);
 }
@@ -428,8 +428,8 @@ void func_80093070(PlayerState* arg0, s32 arg1, s32 arg2, u8* arg3)
     u8 temp_v1;
     s32 temp_v0;
 
-    sp34 = func_800D674C(arg2);
-    sp30 = func_800D674C(arg1);
+    sp34 = asset_load(arg2);
+    sp30 = asset_load(arg1);
     temp_v0 = func_800A25D0(arg0);
     temp_v1 = *arg3;
     if (temp_v1 != 0)
@@ -642,7 +642,7 @@ void func_8009370C(PlayerState* arg0)
 
 void func_80093738(PlayerState* arg0)
 {
-    func_800D674C(arg0->unk50->unk9C);
+    asset_load(arg0->unk50->unk9C);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_8009375C.s")

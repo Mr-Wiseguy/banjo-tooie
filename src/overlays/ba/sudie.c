@@ -76,8 +76,8 @@ int basudie_entrypoint_7(PlayerState* self)
 	f32 sp24;
 	f32 sp20;
 
-	sp24 = func_800964DC(self);
-	sp20 = func_80096364(self);
+	sp24 = player_getWaterHeight(self);
+	sp20 = player_getGroundHeight(self);
 
 	return _batimer_get(self, 9) != 0.0f && func_80096544(self) && player_inWater(self) && player_getCoordVertical(self) < sp24 - 150.0f && sp24 - sp20 > 100.0f;
 }
