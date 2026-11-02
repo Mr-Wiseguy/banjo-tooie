@@ -251,7 +251,7 @@ void baduo_entrypoint_15(PlayerState* self, f32* arg1)
     _sudialog_entrypoint_0(0xE8, 0xC);
     func_80800C78_baduo(temp_v0_2, 0x11);
     func_80800CA8_baduo(self, temp_v0_2);
-    func_800F86C4(temp_v0_2->unk184, 0x11);
+    func_800F86C4(temp_v0_2->unk184, TRANSFORM_11_CLOCKWORK);
 }
 
 void baduo_entrypoint_16(PlayerState* self)

@@ -1800,7 +1800,7 @@ void func_800F84FC(void) {
     D_80135490.unk52 = newTransform;
 }
 
-void func_800F86C4(s32 arg0, s32 arg1) {
+void func_800F86C4(s32 arg0, TransformationId arg1) {
     D_80135490.unk50 = arg0;
     D_80135490.unk52 = arg1;
 }

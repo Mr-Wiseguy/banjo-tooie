@@ -11,6 +11,7 @@
 void _gcgoto_entrypoint_0(MapId*, s32*);
 void gcgoto_entrypoint_0(s32*, s32*);
 u32 _gcgoto_entrypoint_1(u32, u32);
+void _gcgoto_entrypoint_2(MapId, s32, s32);
 void _gcgoto_entrypoint_3(s32, MapId, s32);
 void _gcgoto_entrypoint_8(s32, s32);
 void gcgoto_entrypoint_14(s32);

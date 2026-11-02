@@ -68,5 +68,6 @@
 #include "core2/1EE5DF0.h"
 #include "core2/1EE7080.h"
 #include "core2/1EE92B0.h"
+#include "core2/1EEF790.h"
 
 #endif

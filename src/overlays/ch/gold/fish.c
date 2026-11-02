@@ -1,7 +1,7 @@
 #include "ch/gold/fish.h"
 
 void func_808005F0_chgoldfish(Actor*, s32);
-extern u32 D_80800D3C_chgoldfish;
+extern f32 D_80800D3C_chgoldfish[];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/fish/func_80800000_chgoldfish.s")
 
@@ -42,7 +42,7 @@ s32 func_808004AC_chgoldfish(Actor* arg0, s32 arg1, s32 arg2)
 			}
 			return 1;
 		case 0x52:
-			_gcdialogcamera_entrypoint_3(&D_80800D3C_chgoldfish, arg0->scale);
+			_gcdialogcamera_entrypoint_3(D_80800D3C_chgoldfish, arg0->scale);
 			return 1;
 		case EVENT_3E_ACTOR_TOUCHED:
 			if (((arg0->unk70_10 == 3) || (arg0->unk70_10 == 4)) && (character_includedInTransformMask(character_getActiveIndex(), 1) != 0))

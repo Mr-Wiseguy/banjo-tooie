@@ -20,8 +20,8 @@ extern void *D_80803E90_chclockworkmouse; // unknown data
 extern void *D_80803E9C_chclockworkmouse; // unknown data
 extern void *D_80803EB0_chclockworkmouse; // unknown data
 extern void *D_80803EBC_chclockworkmouse; // unknown data
-extern void *D_80803ED0_chclockworkmouse; // unknown data
-extern void *D_80803EE0_chclockworkmouse; // unknown data
+extern f32 D_80803ED0_chclockworkmouse[]; // unknown data
+extern f32 D_80803EE0_chclockworkmouse[]; // unknown data
 
 s32 func_80800000_chclockworkmouse(void) {
     return flag_getMultipleValue(FLAG3_A37_CANARY_MARY_RACE_STATE_1, 3);
@@ -1416,9 +1416,9 @@ s32 func_808032F8_chclockworkmouse(Actor* actor, s32 arg1, s32 arg2) {
         case 0x52:
         
         if (func_801022E4(actor) == 0x7D) {
-            _gcdialogcamera_entrypoint_3((u32 *)&D_80803ED0_chclockworkmouse, actor->scale);
+            _gcdialogcamera_entrypoint_3(D_80803ED0_chclockworkmouse, actor->scale);
         } else {
-            _gcdialogcamera_entrypoint_3((u32 *)&D_80803EE0_chclockworkmouse, actor->scale);
+            _gcdialogcamera_entrypoint_3(D_80803EE0_chclockworkmouse, actor->scale);
         }
         return 1;
     case 11:

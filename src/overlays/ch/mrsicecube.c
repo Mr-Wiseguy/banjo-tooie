@@ -4,7 +4,7 @@ extern s32 D_808008F0_chmrsicecube;
 extern u16 D_80800910_chmrsicecube[][2];
 extern ActorData D_8080099C_chmrsicecube;
 extern ActorData D_808009E4_chmrsicecube;
-extern u32 D_80800A2C_chmrsicecube;
+extern f32 D_80800A2C_chmrsicecube[];
 extern s32 D_80800A3C_chmrsicecube;
 extern s32 D_80800A44_chmrsicecube;
 extern s32 D_80800A54_chmrsicecube;
@@ -144,7 +144,7 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
             }
             break;
         case 0x52:
-            _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80800A2C_chmrsicecube, arg0->scale);
             break;
         case EVENT_95_ACTOR_SPAWNED:
             sp20 = func_80100094(arg0, 0U);

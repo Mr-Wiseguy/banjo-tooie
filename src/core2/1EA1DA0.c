@@ -703,15 +703,15 @@ void func_800C9AB0(s32 arg0) {
     }
 }
 
-void func_800C9B30(unkStruct800C9B30* arg0, s32 arg1, s32 arg2) {
-    unkStruct800C9B30* sp1C = arg0;
+void func_800C9B30(Unk80132ED0* arg0, s32 arg1, s32 arg2) {
+	Unk80132ED0* sp1C = arg0;
     s32* p2 = &arg2;
     s32* p1 = &arg1;
     s32* p0 = (s32*)&arg0;
 
     if (sp1C->unk12) {
     }
-    if ((func_801069A4() != 0) && (arg1 == ((u32)sp1C->unk12 >> 1))) {
+    if ((func_801069A4(arg0) != 0) && (arg1 == ((u32)sp1C->unk12 >> 1))) {
         func_8010114C(sp1C, 0x22, arg2);
     }
 }

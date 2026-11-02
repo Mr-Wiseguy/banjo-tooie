@@ -2,9 +2,9 @@
 
 #define MOLE_DATA(arg0) ((MoleActorData*)(arg0->actorData))
 
-extern u32 D_80802510_sumole;
-extern u32 D_80802520_sumole;
-extern s32 D_80802530_sumole[];
+extern f32 D_80802510_sumole[];
+extern f32 D_80802520_sumole[];
+extern f32 D_80802530_sumole[];
 extern s32 D_8080254C_sumole[];
 extern s32 D_8080255C_sumole[];
 extern s32 D_8080256C_sumole[27];
@@ -75,14 +75,14 @@ void func_808001E0_sumole(Actor* arg0, s32 arg1)
     switch (arg1)
     {
     case 1:
-        _gcdialogcamera_entrypoint_3(&D_80802510_sumole, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80802510_sumole, arg0->scale);
         break;
     case 2:
     case 3:
-        _gcdialogcamera_entrypoint_3(&D_80802520_sumole, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80802520_sumole, arg0->scale);
         break;
     case 0:
-        _gcdialogcamera_entrypoint_3((u32*)D_80802530_sumole, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80802530_sumole, arg0->scale);
         break;
     }
     _capod_entrypoint_10(0U, arg0->position);

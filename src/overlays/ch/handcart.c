@@ -19,8 +19,8 @@ extern u32 D_80804E0C_chhandcart;
 extern u32 D_80804E18_chhandcart;
 extern u32 D_80804E2C_chhandcart;
 extern u32 D_80804E38_chhandcart;
-extern u32 D_80804E4C_chhandcart;
-extern u32 D_80804E5C_chhandcart;
+extern f32 D_80804E4C_chhandcart[];
+extern f32 D_80804E5C_chhandcart[];
 extern f32 D_808046F4_chhandcart;
 extern u32 D_80804704_chhandcart;
 extern u32 D_80804714_chhandcart;
@@ -2090,11 +2090,11 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     case52://Such a weird thing to do
         if (func_801022E4(arg0) == 0x7D)
         {
-            _gcdialogcamera_entrypoint_3(&D_80804E4C_chhandcart, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80804E4C_chhandcart, arg0->scale);
         }
         else
         {
-            _gcdialogcamera_entrypoint_3(&D_80804E5C_chhandcart, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80804E5C_chhandcart, arg0->scale);
         }
         break;
     case 31:

@@ -3,7 +3,7 @@
 extern ActorData D_80801020_chhoneyb;
 extern ActorData D_80801068_chhoneyb;
 extern s32 D_808010B0_chhoneyb;
-extern s32 D_808010C0_chhoneyb;
+extern f32 D_808010C0_chhoneyb[];
 extern s32 D_808010D0_chhoneyb;
 
 void func_8080062C_chhoneyb(Actor*);
@@ -315,7 +315,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         arg0->unk74_29 = 1;
         break;
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_808010C0_chhoneyb, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_808010C0_chhoneyb, arg0->scale);
         break;
     case 0xB:
         return 3;

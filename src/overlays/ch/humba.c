@@ -3,7 +3,7 @@
 extern s32 D_80802590_chhumba;
 extern s32 D_80802648_chhumba[];
 extern s16 D_8080266E_chhumba[];
-extern u32 D_80802684_chhumba;
+extern f32 D_80802684_chhumba;
 extern f32 D_80802694_chhumba;
 extern f32 D_808026F0_chhumba[3];
 extern Vec3f D_808026FC_chhumba[];

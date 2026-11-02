@@ -4,7 +4,7 @@ extern s32 D_80800ED0_chpawnbroker;
 extern s32 D_80800F08_chpawnbroker;
 extern s32 D_80800F40_chpawnbroker;
 
-extern u32 D_80800F60_chpawnbroker;
+extern f32 D_80800F60_chpawnbroker[];
 
 extern ActorData D_80800FD0_chpawnbroker;
 
@@ -235,7 +235,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
             func_808006FC_chpawnbroker(actor, arg2);
             break;
         case 0x52:
-            _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, actor->scale);
+            _gcdialogcamera_entrypoint_3(D_80800F60_chpawnbroker, actor->scale);
             break;
         case 0x57:
             return func_80800A50_chpawnbroker(actor, arg2 & 0xFFFF, (arg2 & 0xFFFF0000) >> 0x10);
@@ -425,7 +425,7 @@ void func_80800AE4_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     case 1:
         _capod_entrypoint_8(1);
         arg0->actorData[4] = 2;
-        _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80800F60_chpawnbroker, arg0->scale);
         _gcdialogcamera_entrypoint_4(arg0->position);
         _gcdialogcamera_entrypoint_5(arg0->rotation);
         _gcdialogcamera_entrypoint_8();

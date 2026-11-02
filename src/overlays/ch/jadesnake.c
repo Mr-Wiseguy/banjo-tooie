@@ -11,7 +11,7 @@ extern u32 D_80800958_chjadesnake;
 extern s32 D_80800964_chjadesnake;
 extern f32 D_808009C0_chjadesnake;
 extern u32 D_808009DC_chjadesnake;
-extern u32 D_808009E4_chjadesnake;
+extern f32 D_808009E4_chjadesnake[];
 
 void func_80800000_chjadesnake(Actor* arg0)
 {
@@ -270,7 +270,7 @@ s32 func_808007DC_chjadesnake(Actor* arg0, s32 arg1, u32 arg2)
         func_80800728_chjadesnake(arg0, ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_808009E4_chjadesnake, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_808009E4_chjadesnake, arg0->scale);
         break;
     default:
         return 0;

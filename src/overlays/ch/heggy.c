@@ -3,7 +3,7 @@
 extern s32 D_80801E08_chheggy;
 extern s32 D_80801E38_chheggy;
 extern s32 D_80801E60_chheggy;
-extern u32 D_80801E8C_chheggy;
+extern f32 D_80801E8C_chheggy;
 extern ActorData D_80801E9C_chheggy;
 extern s32 D_80801EE4_chheggy[14];
 extern s32 D_80801F1C_chheggy[15];

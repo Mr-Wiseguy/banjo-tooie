@@ -22,6 +22,7 @@ s32 func_8010D23C();
 s32 func_8010D248();
 void func_8010D254(f32*);
 s32 func_8010D278();
+s32 func_8010D290(s32);
 s32 func_8010D5DC(s32, s32);
 void func_8010D600(f32*);
 
