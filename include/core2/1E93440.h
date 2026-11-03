@@ -87,6 +87,7 @@ void func_800BA8F8(unkStruct800BA198*, f32, f32);
 void func_800BA930(unkStruct800BA198*, s16, s16, s16, s16, s16, s16);
 void func_800BA994(unkStruct800BA198*, s16, s16, s16, s16, s16, s16);
 void func_800BAA60(unkStruct800BA198*, f32*, s16, s16);
+void func_800BAB80(s32, s32*); 
 s32 func_800BABB8(s32, f32[3], f32[3], f32, s32[]);
 s32 func_800BBCB8(f32[3], f32[3], f32, s32, s32*);
 

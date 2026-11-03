@@ -42,6 +42,7 @@
 #include "core2/1EB5980.h"
 #include "core2/1EB5E70.h"
 #include "core2/1EBA250.h"
+#include "core2/1EC1AD0.h"
 #include "core2/1EC2350.h"
 #include "core2/1EC3810.h"
 #include "core2/1EC4CC0.h"

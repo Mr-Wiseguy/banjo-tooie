@@ -171,6 +171,7 @@ f32 character_getGroundHeight(s32);
 s32 func_800F56AC(s32);
 Unk80132ED0* func_800F56D8(s32 arg0);
 void func_800F57F0(s32, f32*);
+s32 func_800F581C(s32);
 s32 character_getMaxCharacters();
 void character_getCoords(s32, f32[3]);
 void func_800F5A2C(s32, s32, f32[3]);
@@ -222,6 +223,7 @@ s32 func_800F7874(s32, Unk80132ED0*, f32[3]);
 //The moving object is moved towards/away from the target
 s32 func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F798C(s32 arg0, s32 arg1, s32 arg2);
+s32 func_800F7A2C(s32, s32, f32*);
 s32 func_800F7B1C(s32, f32*, f32, f32);
 s32 func_800F7B9C(s32, u32);
 void func_800F7BC8(s32, s32, Unk80132ED0*);

@@ -171,8 +171,8 @@ void func_800BAB60(s32 arg0) {
     func_800F2EA0(arg0 + 0x80);
 }
 
-void func_800BAB80(s32 arg0) {
-    func_800F2EBC(arg0 + 0x80);
+void func_800BAB80(s32 arg0, s32* arg1) {
+	func_800F2EBC(arg0 + 0x80, arg1);
 }
 
 void func_800BABA0(unkStruct800BA198* arg0, f32 arg1) {
