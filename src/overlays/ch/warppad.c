@@ -15,7 +15,7 @@ ActorData* chwarppad_entrypoint_0(void) {
     return &D_808012FC_chwarppad;
 }
 
-void func_8080000C_chwarppad(Actor* arg0, u32 arg1)
+void func_8080000C_chwarppad(Actor* arg0, GraphicsBuffers* arg1)
 {
     OptionState* temp_v0;
 

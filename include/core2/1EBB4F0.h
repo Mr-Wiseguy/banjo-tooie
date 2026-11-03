@@ -22,6 +22,6 @@ void func_800E2588(u32);
 void func_800E2594(u32, void*);
 f32 func_800E2DF0();
 void func_800E2E48(GraphicsBuffers*, ImageStruct*, s32, s32*);
-void func_800E30E0(GraphicsBuffers*, ImageStruct*, s32, s32*);
+void draw_2D_Image(GraphicsBuffers*, ImageStruct*, s32, s32*);
 
 #endif

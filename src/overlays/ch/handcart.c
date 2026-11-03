@@ -1162,7 +1162,7 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     func_801018A4(arg0, arg1);
     if (arg0->unk7C_12)
     {
-        imageStruct = asset_load(0x9E2);
+        imageStruct = asset_load(ASSET_9E2_GOLD_SPARKLE);
         func_800E2588(2);
         func_800E2594(arg1, imageStruct);
         ml_vec3f_assign_value(sp50, 0.06f, 0.03f, 0.06f);

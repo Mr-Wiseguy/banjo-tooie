@@ -469,6 +469,7 @@ rand_setInitSeed = 0x800DC310;
 rand_setSeed = 0x800DC324;
 rand_saveCurrentSeed = 0x800DC330;
 rand_restoreCurrentSeed = 0x800DC354;
+draw_2D_Image = 0x800E30E0;
 string_concat = 0x800E6A10;
 string_concatChar = 0x800E6A58;
 string_IToA = 0x800E6DB4;

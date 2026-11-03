@@ -223,6 +223,11 @@ typedef struct {
     /* 0x12 */ u16 unk12_1 : 1;
     /* 0x12 */ u16 unk12_0 : 1;
 } Prop;
+typedef struct {
+    Gfx* gfx;
+    Mtx* mtx;
+} GraphicsBuffers;
+
 typedef struct ActorData {
     s16 unk0;
     s16 unk2; //PropId
@@ -231,7 +236,7 @@ typedef struct ActorData {
     void *unk8;
     void (*update_func)(Actor* actor); //Update
     void (*unk10_func)(Actor* actor);
-    void (*unk14_func)(Actor* arg0, void* arg1);
+    void (*unk14_func)(Actor* arg0, GraphicsBuffers* arg1);
     u16 unk18;
     u16 unk1A;
     f32 unk1C;
@@ -263,10 +268,7 @@ typedef struct ActorData {
     s16 unk46;
 } ActorData;
 
-typedef struct {
-    Gfx* gfx;
-    Mtx* mtx;
-} GraphicsBuffers;
+
 
 
 #endif // __COMMON_H__

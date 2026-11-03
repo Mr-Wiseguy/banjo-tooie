@@ -73,5 +73,5 @@ void fxdialog_entrypoint_4(GraphicsBuffers* arg0, s32 arg1, s32 arg2, f32 arg3, 
     func_800E257C(arg5);
     sp28[0] = B_80800290_fxdialog.unk8 + (arg3 * 4.0f * var_f12);
     sp28[1] = B_80800290_fxdialog.unkC + (arg4 * 4.0f * sp20);
-    func_800E30E0(arg0, asset_load(arg1), arg2, sp28);
+    draw_2D_Image(arg0, asset_load(arg1), arg2, sp28);
 }

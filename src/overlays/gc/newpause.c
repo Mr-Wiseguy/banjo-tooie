@@ -771,25 +771,25 @@ void func_80801410_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* arg1)
 	{
 		sp30.x = 0x260;
 		sp30.y = (-pauseMenu->B_Button_Pos * 4) + 0x340;
-		imageData = asset_load(0xB59);
+		imageData = asset_load(ASSET_B59_SPRITE_B_BUTTON);
 
 		sp28 = func_800E8C58(pauseMenu->ShowBButton);
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 	}
 
 	if (pauseMenu->JoystickIndicator != 0)
 	{
-		imageData = asset_load(0xB57);
+		imageData = asset_load(ASSET_B57_SPRITE_ANALOG_STICK);
 		sp28 = func_800E8C58(pauseMenu->JoystickIndicator);
 
 		sp30.x = 0x78;
 		sp30.y = (-pauseMenu->LeftJoystickPos * 4) + 0x340;
 		func_800E2568(imageData->unk8 * -4, imageData->unkA * 4);
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 
 		sp30.x = 0x448;
 		sp30.y = (-pauseMenu->RightJoystickPos * 4) + 0x340;
-		func_800E30E0(arg1, imageData, sp28, &sp30);
+		draw_2D_Image(arg1, imageData, sp28, &sp30);
 	}
 }
 

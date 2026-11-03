@@ -780,7 +780,7 @@ void func_80801CFC_chclockworkmouse(Actor* actor, s32 arg1) {
 
     func_801018A4();
     if (actor->unk7C_12) {
-        imageStruct = asset_load(0x9E2);
+        imageStruct = asset_load(ASSET_9E2_GOLD_SPARKLE);
         temp_s4 = ((Unk80100094 *)func_80100094(actor, 0));
         func_800E2588(2);
         func_800E2594(arg1, imageStruct);

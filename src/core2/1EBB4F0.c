@@ -140,7 +140,7 @@ void func_800E2A14(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBB4F0/func_800E2E48.s")
 
-void func_800E30E0(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3)
+void draw_2D_Image(GraphicsBuffers* arg0, ImageStruct* arg1, s32 arg2, s32* arg3)
 {
     s32 pad;
     s32 coords[2];

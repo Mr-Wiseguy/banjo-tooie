@@ -299,161 +299,161 @@ void sumole_entrypoint_4(Actor* arg0, MoveData* arg1)
         }
         switch (arg0->unk70_10)
         {
-        case 1:
-            if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
-            {
-                if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
+            case 1:
+                if (sumole_entrypoint_1(arg0, -1, func_80800000_sumole(arg0, arg1), (s32)arg1[(s32)arg0->unk54].AbilityToLearn) != 0)
                 {
-                    if (flag_getValue(FLAG_40C_FTT_JAMJARS) == 0)
+                    if (sumole_entrypoint_5(arg0, arg1[(s32)arg0->unk54].charactersAllowed, -1, -1) != 0)
                     {
-                        sumole_entrypoint_2(arg0, 3);
-                        return;
-                    }
-                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (ability_getValue((s32)arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
-                    {
-                        var_v1 = func_80800000_sumole(arg0, arg1);
-                        if (var_v1 > func_800D035C(6))
+                        if (flag_getValue(FLAG_40C_FTT_JAMJARS) == 0)
                         {
-                            sumole_entrypoint_2(arg0, 0xE);
-                            arg0->unk6C_0 = 0xF;
+                            sumole_entrypoint_2(arg0, 3);
                             return;
                         }
-                        sumole_entrypoint_7(arg0);
-                        sumole_entrypoint_2(arg0, 3);
+                        if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (ability_getValue((s32)arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
+                        {
+                            var_v1 = func_80800000_sumole(arg0, arg1);
+                            if (var_v1 > func_800D035C(6))
+                            {
+                                sumole_entrypoint_2(arg0, 0xE);
+                                arg0->unk6C_0 = 0xF;
+                                return;
+                            }
+                            sumole_entrypoint_7(arg0);
+                            sumole_entrypoint_2(arg0, 3);
+                            return;
+                        }
+                        sumole_entrypoint_2(arg0, 0xE);
+                        arg0->unk6C_0 = 0xA;
                         return;
                     }
                     sumole_entrypoint_2(arg0, 0xE);
-                    arg0->unk6C_0 = 0xA;
-                    return;
-                }
-                sumole_entrypoint_2(arg0, 0xE);
-                if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
-                {
-                    if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (ability_getValue(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
+                    if (activePlayer_includedInTransformMask(ALLOW_BK | ALLOW_KAZOOIE | ALLOW_BANJO) != 0)
                     {
-                        arg0->unk6C_0 = 2;
+                        if ((arg1[(s32)arg0->unk54].AbilityToLearn != -1) && (ability_getValue(arg1[(s32)arg0->unk54].AbilityToLearn) == 0))
+                        {
+                            arg0->unk6C_0 = 2;
+                            return;
+                        }
+                        arg0->unk6C_0 = 0xA;
                         return;
                     }
-                    arg0->unk6C_0 = 0xA;
+                    arg0->unk6C_0 = 2;
                     return;
                 }
-                arg0->unk6C_0 = 2;
+                break;
+            case 2:
+                sumole_entrypoint_15(arg0, (s32)arg1[(s32)arg0->unk54].charactersAllowed, -1);
                 return;
-            }
-            break;
-        case 2:
-            sumole_entrypoint_15(arg0, (s32)arg1[(s32)arg0->unk54].charactersAllowed, -1);
-            return;
-        case 4:
-            sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].CannotAffordDialog, -1, 0);
-            return;
-        case 7:
-            sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].MoveTutorialDialog, -1, 1);
-            return;
-        case 8:
-            if (arg0->unk79_4 != 4)
-            {
-                sumole_entrypoint_19(arg0, 4);
-            }
-            sumole_entrypoint_18(arg0, 250.0f);
-            if (sumole_entrypoint_20(arg0, (s32)(s8)arg1[(s32)arg0->unk54].unk11, -1) != 0)
-            {
-                sumole_entrypoint_2(arg0, 0x11);
+            case 4:
+                sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].CannotAffordDialog, -1, 0);
                 return;
-            }
-            break;
-        case 10:
-            sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].AlreadyLearnedDialog, -1, 0);
-            return;
-        case 11:
-            if (sumole_entrypoint_14(arg0) != 0)
-            {
-                sumole_entrypoint_2(arg0, 1);
+            case 7:
+                sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].MoveTutorialDialog, -1, 1);
                 return;
-            }
-            break;
-        case 3:
-            if (sumole_entrypoint_8(arg0, -1) != 0)
-            {
-                if (func_800DA9E4(FLAG_40C_FTT_JAMJARS, 1) == 0)
+            case 8:
+                if (arg0->unk79_4 != 4)
                 {
-                    sumole_entrypoint_2(arg0, 0x10);
-                    return;
+                    sumole_entrypoint_19(arg0, 4);
                 }
-                if (func_800DA9E4(FLAG_424_FTT_JAMJARS_FIRST_LESSON_INTRO, 1) == 0)
+                sumole_entrypoint_18(arg0, 250.0f);
+                if (sumole_entrypoint_20(arg0, (s32)(s8)arg1[(s32)arg0->unk54].unk11, -1) != 0)
                 {
-                    sumole_entrypoint_2(arg0, 0x13);
+                    sumole_entrypoint_2(arg0, 0x11);
                     return;
                 }
-                sumole_entrypoint_2(arg0, 7);
+                break;
+            case 10:
+                sumole_entrypoint_17(arg0, (s16)arg1[(s32)arg0->unk54].AlreadyLearnedDialog, -1, 0);
                 return;
-            }
-            break;
-        case 16:
-            sumole_entrypoint_17(arg0, 0xDB6, -1, 0);
-            return;
-        case 19:
-            sumole_entrypoint_17(arg0, 0xDBE, -1, 0);
-            return;
-        case 5:
-            sumole_entrypoint_17(arg0, 0xD6C, -1, 0);
-            return;
-        case 6:
-            sumole_entrypoint_17(arg0, 0xD6D, -1, 0);
-            return;
-        case 14:
-            if (sumole_entrypoint_10(arg0, -1) != 0) {
-                sumole_entrypoint_2(arg0, arg0->unk6C_0);
-                return;
-            }
-            break;
-        case 15:
-            sumole_entrypoint_17(arg0, arg1[(s32)arg0->unk54].CannotAffordDialog, -1, 0);
-            return;
-        case 9:
-            sumole_entrypoint_17(arg0, 0xD6E, -1, 0);
-            return;
-        case 18:
-            sumole_entrypoint_11(arg0);
-            sumole_entrypoint_2(arg0, 0x15);
-            return;
-        case 21:
-            if (sumole_entrypoint_12(arg0) != 0) {
-                sumole_entrypoint_2(arg0, 1);
-                return;
-            }
-            break;
-        case 17:
-            func_8008FBE0(1U);
-            sumole_entrypoint_17(arg0, 0xDB7, -1, 0);
-            return;
-        case 20:
-            var_v1 = activePlayer_getCurrentHealth();
-            if (var_v1 >= activePlayer_getMaxHealth())
-            {
-                if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
+            case 11:
+                if (sumole_entrypoint_14(arg0) != 0)
                 {
-                    sumole_entrypoint_2(arg0, 9);
+                    sumole_entrypoint_2(arg0, 1);
                     return;
                 }
-                sumole_entrypoint_2(arg0, 0x12);
+                break;
+            case 3:
+                if (sumole_entrypoint_8(arg0, -1) != 0)
+                {
+                    if (func_800DA9E4(FLAG_40C_FTT_JAMJARS, 1) == 0)
+                    {
+                        sumole_entrypoint_2(arg0, 0x10);
+                        return;
+                    }
+                    if (func_800DA9E4(FLAG_424_FTT_JAMJARS_FIRST_LESSON_INTRO, 1) == 0)
+                    {
+                        sumole_entrypoint_2(arg0, 0x13);
+                        return;
+                    }
+                    sumole_entrypoint_2(arg0, 7);
+                    return;
+                }
+                break;
+            case 16:
+                sumole_entrypoint_17(arg0, 0xDB6, -1, 0);
                 return;
-            }
-            MOLE_DATA(arg0)->unk18 -= time_getDelta();
-            if (MOLE_DATA(arg0)->unk18 <= 0.0f)
-            {
-                temp_a1 = ml_map_f((f32)(activePlayer_getCurrentHealth() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
-                MOLE_DATA(arg0)->unk18 = 0.2f;
-                func_800C3FC0(0x66C, temp_a1, 0x3E80);
-                activePlayer_incrementCurrentHealth();
+            case 19:
+                sumole_entrypoint_17(arg0, 0xDBE, -1, 0);
                 return;
-            }
-            break;
-        case 12:
-            sumole_entrypoint_2(arg0, 0xD);
-            break;
-        case 22:
-            break;
+            case 5:
+                sumole_entrypoint_17(arg0, 0xD6C, -1, 0);
+                return;
+            case 6:
+                sumole_entrypoint_17(arg0, 0xD6D, -1, 0);
+                return;
+            case 14:
+                if (sumole_entrypoint_10(arg0, -1) != 0) {
+                    sumole_entrypoint_2(arg0, arg0->unk6C_0);
+                    return;
+                }
+                break;
+            case 15:
+                sumole_entrypoint_17(arg0, arg1[(s32)arg0->unk54].CannotAffordDialog, -1, 0);
+                return;
+            case 9:
+                sumole_entrypoint_17(arg0, 0xD6E, -1, 0);
+                return;
+            case 18:
+                sumole_entrypoint_11(arg0);
+                sumole_entrypoint_2(arg0, 0x15);
+                return;
+            case 21:
+                if (sumole_entrypoint_12(arg0) != 0) {
+                    sumole_entrypoint_2(arg0, 1);
+                    return;
+                }
+                break;
+            case 17:
+                func_8008FBE0(1U);
+                sumole_entrypoint_17(arg0, 0xDB7, -1, 0);
+                return;
+            case 20:
+                var_v1 = activePlayer_getCurrentHealth();
+                if (var_v1 >= activePlayer_getMaxHealth())
+                {
+                    if (_chmolehill_entrypoint_3(func_80106790(arg0->unk3C)) != 0)
+                    {
+                        sumole_entrypoint_2(arg0, 9);
+                        return;
+                    }
+                    sumole_entrypoint_2(arg0, 0x12);
+                    return;
+                }
+                MOLE_DATA(arg0)->unk18 -= time_getDelta();
+                if (MOLE_DATA(arg0)->unk18 <= 0.0f)
+                {
+                    temp_a1 = ml_map_f((f32)(activePlayer_getCurrentHealth() + 1), 1.0f, 10.0f, 0.8f, 1.5f);
+                    MOLE_DATA(arg0)->unk18 = 0.2f;
+                    func_800C3FC0(0x66C, temp_a1, 0x3E80);
+                    activePlayer_incrementCurrentHealth();
+                    return;
+                }
+                break;
+            case 12:
+                sumole_entrypoint_2(arg0, 0xD);
+                break;
+            case 22:
+                break;
         }
     }
 }
