@@ -156,7 +156,7 @@ s32 func_800F4BE4(s32);
 void func_800F4CC0(s32);
 void func_800F4CEC(s32, u32);
 void character_affectCurrentHealth(s32, s32);
-void func_800F4E5C(u32, f32*, f32*, s32*, s32*);
+void func_800F4E5C(s32, f32*, f32*, s32*, s32*);
 void func_800F4F34(s32, f32*, f32, f32);
 PlayerState* character_getPlayerState(s32 arg0);
 PlayerState* character_getPlayerStateBounded(s32 arg0);

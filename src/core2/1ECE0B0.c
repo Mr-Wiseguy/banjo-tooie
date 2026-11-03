@@ -204,7 +204,7 @@ void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
     func_8009F678(sp24, sp34, sp28, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
-void func_800F4E5C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+void func_800F4E5C(s32 arg0, f32* arg1, f32* arg2, s32* arg3, s32* arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];

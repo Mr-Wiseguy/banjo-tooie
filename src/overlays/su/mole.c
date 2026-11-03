@@ -166,7 +166,7 @@ s32 sumole_entrypoint_3(Actor* arg0, s32 arg1, Arg2 arg2, MoveData* arg3)
         case 6:
             temp_v0 = func_80108528(0xB7, MOLE_DATA(arg0)->unk0, (s32)arg0->rotation[1], &arg0);
             temp_v0->unk6C_0 = arg2.i - 4;
-            func_8080037C_sumole(arg0, D_80802530_sumole[arg2.i], 0x6000, 0);
+            func_8080037C_sumole(arg0, ((s32*)D_80802530_sumole)[arg2.i], 0x6000, 0);
             break;
         case 0:
         case 1:

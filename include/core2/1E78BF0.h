@@ -54,7 +54,7 @@ s32 func_8009F300(void);
 f32 func_8009F308(PlayerState *);
 // func_8009F354
 f32 func_8009F3BC(PlayerState *, f32, f32, f32, f32);
-s32 func_8009F440(PlayerState*, s32, s32, s32, s32, f32);
+s32 func_8009F440(PlayerState*, f32*, f32*, s32*, s32*, f32);
 s32 func_8009F678(PlayerState*, s32, s32, f32);
 s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 // func_8009FA20
