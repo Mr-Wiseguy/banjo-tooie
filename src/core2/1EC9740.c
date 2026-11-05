@@ -6,6 +6,7 @@ void func_800EFE50(f32* arg0, f32* arg1, f32* arg2, f32 arg3)
 {
     s32 i;
 
+	//Loop through all axis
     for (i = 0; i < 3; i++)
     {
         arg0[i] = arg1[i] + ((arg2[i] - arg1[i]) * arg3);
@@ -87,7 +88,7 @@ void func_800F018C(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     sp34[1] *= temp_f2;
     sp34[2] *= temp_f2;
     ml_getdiff_vec3f(sp28, arg3, arg1);
-    func_800EFA20(arg0, sp34, ml_vec3f_dot_product(sp28, sp34));
+    ml_getScaledVec3f(arg0, sp34, ml_vec3f_dot_product(sp28, sp34));
     ml_vec3f_add(arg0, arg1);
 }
 
@@ -126,7 +127,7 @@ void func_800F0274(f32* dst, f32* arg1, f32* arg2, f32* arg3)
             return;
         }
         //Store Diff*DotProduct in dst
-        func_800EFA20(dst, diff, dotProduct);
+        ml_getScaledVec3f(dst, diff, dotProduct);
         //Add arg1 to dst
         ml_vec3f_add(dst, arg1);
     }
@@ -137,7 +138,7 @@ void func_800F03AC(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     f32 sp1C[3];
 
     ml_getdiff_vec3f(sp1C, arg3, arg1);
-    func_800EFA20(sp1C, arg2, ml_vec3f_dot_product(arg2, sp1C));
+    ml_getScaledVec3f(sp1C, arg2, ml_vec3f_dot_product(arg2, sp1C));
     ml_getdiff_vec3f(arg0, arg3, sp1C);
 }
 
@@ -194,8 +195,8 @@ void func_800F059C(f32* arg0, f32* arg1, f32* arg2)
 {
     f32 sp1C[3];
 
-    func_800EFA20(arg0, arg1, -1.0f);
-    func_800EFA20(sp1C, arg2, 2.0f * ml_vec3f_dot_product(arg0, arg2));
+    ml_getScaledVec3f(arg0, arg1, -1.0f);
+    ml_getScaledVec3f(sp1C, arg2, 2.0f * ml_vec3f_dot_product(arg0, arg2));
     ml_getdiff_vec3f(arg0, sp1C, arg0);
 }
 
@@ -262,7 +263,7 @@ s32 func_800F0734(f32* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg4, f32* arg5
         }
         else if (-sp48 / sp44 < 1.0f)
         {
-            func_800EFA20(sp50, sp5C, -sp48 / sp44);
+            ml_getScaledVec3f(sp50, sp5C, -sp48 / sp44);
             ml_vec3f_add(sp50, sp74);
         }
         else
@@ -352,6 +353,6 @@ s32 func_800F0CB4(f32* arg0, f32* arg1, f32* arg2, f32* arg3)
     {
         return 0;
     }
-    func_800EF174(arg0, arg1, (ml_vec3f_dot_product(arg3, arg2) - ml_vec3f_dot_product(arg0, arg3)) / temp_f0);
+    ml_vec3f_translate_scale(arg0, arg1, (ml_vec3f_dot_product(arg3, arg2) - ml_vec3f_dot_product(arg0, arg3)) / temp_f0);
     return 1;
 }

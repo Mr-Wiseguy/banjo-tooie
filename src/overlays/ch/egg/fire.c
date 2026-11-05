@@ -55,7 +55,7 @@ void func_80800000_cheggfire(Actor* arg0)
     EggNormalData* sp24;
     f32 temp_f0;
 
-    sp24 = (EggNormalData*)func_80100094(arg0, 0U);
+    sp24 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     sp24->unk28 = (f32)(sp24->unk28 - time_getDelta());
     temp_f0 = ml_map_f(sp24->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
 
@@ -74,7 +74,7 @@ void func_808000B8_cheggfire(Actor* arg0)
 {
     EggNormalData* sp2C;
 
-    sp2C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp2C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
     case 1:

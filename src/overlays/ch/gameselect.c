@@ -268,7 +268,7 @@ void func_80800E24_chgameselect(Actor* arg0)
     f32 sp28;
 
 
-    sp34 = (GameSelectStruct*)func_80100094(arg0, 0U);
+    sp34 = (GameSelectStruct*)actor_getAdditionalMem(arg0, 0U);
     sp30 = time_getDelta();
     if (func_80800D3C_chgameselect(arg0->unk3C) != 0)
     {

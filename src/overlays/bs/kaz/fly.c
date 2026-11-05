@@ -169,7 +169,7 @@ void func_80800540_bskazfly(PlayerState *self) {
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            sp30 = func_800136E4(func_8009BFD8(self) - 30.0f);
+            sp30 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if (sp30 > 80 && sp30 < 300) {
                 sp30 = 300.0f;
             }

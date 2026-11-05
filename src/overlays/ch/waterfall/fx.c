@@ -86,7 +86,7 @@ void func_808001F8_chwaterfallfx(Actor* arg0)
         {
             func_800EFE50(sp80, &arg0->actorData[4], arg0->actorData, rand_fBounded(0.0f, 1.0f));
             ml_vec3f_copy(sp8C, sp80);
-            func_800EF1B8(sp8C, arg0->rotation[1], -100.0f);
+            ml_translateAngleDist(sp8C, arg0->rotation[1], -100.0f);
             sp8C[1] += 100.0f;
             func_800BABB8(temp_fp, sp80, sp8C, arg0->scale * 1.15f, &D_80800478_chwaterfallfx);
             arg0->unk54s++;

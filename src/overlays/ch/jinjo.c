@@ -122,7 +122,7 @@ void func_808002E0_chjinjo(Actor* arg0)
         return;
     }
 
-    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0U);
+    _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1U), arg0->unk0, 0U);
     if (arg0->unk74_29)
     {
         func_800E3980(sp74);
@@ -204,7 +204,7 @@ void func_808002E0_chjinjo(Actor* arg0)
         break;
     case 7:
     case 8:
-        _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0.0f, 0.0f);
+        _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 0.0f, 0.0f);
         sp58 = arg0->unk70_10 == 7;
         if (((sp58 == 0) || (func_80101F24(arg0) > 0.1f)) && ((func_8008FFBC(sp68), ml_vec3f_apply_scale(sp68, sp64 * 6.0f), ml_vec3f_add(sp68, sp74), ml_vec3f_subtract(sp68, arg0->position), ml_vec3f_apply_scale(sp68, sp64 * 3.0f), ml_vec3f_add(arg0->position, sp68), (sp58 != 0)) || (func_80101F24(arg0) < 0.8f))) 
         {
@@ -213,7 +213,7 @@ void func_808002E0_chjinjo(Actor* arg0)
                 if (rand_f() < 0.3f) 
                 {
                     _subaddieskeleton_entrypoint_0(arg0, 3, &sp48);
-                    func_800EF214(&sp48, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 15.0f);
+                    ml_translateAngleDist_3D(&sp48, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 15.0f);
                     _fxtwinkle_entrypoint_0(&sp48);
                 }
             }

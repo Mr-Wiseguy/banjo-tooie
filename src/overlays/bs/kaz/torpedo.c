@@ -107,9 +107,9 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
     func_808000CC_bskaztorpedo(self);
     _bakaztorpedo_entrypoint_7(self, ml_map_f(baphysics_get_velocity(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
     sp2C[2] = func_8009BFD8(self);
-    sp34 = func_80013728(sp2C[2] - func_8009BFCC(self));
+    sp34 = ml_absNormalizeAngle_f(sp2C[2] - func_8009BFCC(self));
     sp38[0] = yaw_getIdeal(self);
-    _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, func_80013728(sp38[0] - yaw_get(self)) * 0.75f);
+    _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, ml_absNormalizeAngle_f(sp38[0] - yaw_get(self)) * 0.75f);
     if (sp44 != 0) {
         func_80091290(self, ml_map_f(self->unk16C, 0.0f, 225.0f, rand_fBounded(5.0f, 10.0f), 60.0f), 0, 0xD);
     }

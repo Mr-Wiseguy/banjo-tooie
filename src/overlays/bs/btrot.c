@@ -828,7 +828,7 @@ void bsbtrot_entrypoint_32(PlayerState* self) {
     player_getCoords(self, sp40);
     func_800A32C4(self, sp34);
     func_800F1E6C(sp34, sp40, &sp4C);
-    yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp4C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, _bareact_entrypoint_4(self));
     baphysics_set_target_yaw(self, sp4C);

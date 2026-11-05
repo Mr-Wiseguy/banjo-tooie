@@ -77,8 +77,8 @@ void func_8009AE08(PlayerState* self) {
 			}
 		}
 	}
-	func_800EFA20(sp7C, sp58, func_80094E98(self));
-	func_800EFA20(sp70, sp64, func_80094E98(self));
+	ml_getScaledVec3f(sp7C, sp58, func_80094E98(self));
+	ml_getScaledVec3f(sp70, sp64, func_80094E98(self));
 	ml_vec3f_subtract(sp7C, sp70);
 	ml_vec3f_apply_scale(sp7C, time_getDelta() * 30.0f);
 	ml_vec3f_add(self->unkC8->unk10, sp7C);
@@ -87,7 +87,7 @@ void func_8009AE08(PlayerState* self) {
 	{
 		self->unkC8->unk10[1] = self->unkC8->unk34[1];
 	}
-	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, time_getDelta());
+	ml_getScaledVec3f(self->unkC8->unk28, self->unkC8->unk10, time_getDelta());
 	ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 	func_800F2168(self->unkC8->unk10, 0.0001f);
 }
@@ -107,7 +107,7 @@ void func_8009B08C(PlayerState* self) {
 	{
 		ml_vec3f_add(self->unkC8->unk10, sp2C);
 	}
-	func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, sp28);
+	ml_getScaledVec3f(self->unkC8->unk28, self->unkC8->unk10, sp28);
 	ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 }
 
@@ -123,7 +123,7 @@ void func_8009B170(PlayerState* self)
     {
         self->unkC8->unk10[1] = temp_f2;
     }
-    func_800EFA20(self->unkC8->unk28, self->unkC8->unk10, temp_f0);
+    ml_getScaledVec3f(self->unkC8->unk28, self->unkC8->unk10, temp_f0);
     ml_vec3f_add(self->unkC8->unk4, self->unkC8->unk28);
 }
 
@@ -157,7 +157,7 @@ void func_8009B27C(PlayerState* self)
 	self->unkC8->unk4[2] = sp30[2];
 	if (func_8009861C(self) == 2)
 	{
-		func_800EEB9C(sp3C, func_800136E4(func_80098610(self) + 180.0f), -func_80098628(self));
+		func_800EEB9C(sp3C, ml_normalizeAngle_f(func_80098610(self) + 180.0f), -func_80098628(self));
 	}
 	else
 	{
@@ -238,7 +238,7 @@ void func_8009B590(PlayerState* self)
 			func_8009AE08(self);
 			break;
 		case 5:
-			baphysics_set_target_yaw(self, func_800136E4(yaw_getIdeal(self) + 180.0f));
+			baphysics_set_target_yaw(self, ml_normalizeAngle_f(yaw_getIdeal(self) + 180.0f));
 			func_8009AE08(self);
 			break;
 		case 3:
@@ -369,7 +369,7 @@ void baphysics_set_target_horizontal_velocity(PlayerState* self, f32 vel) {
 }
 
 void baphysics_set_target_yaw(PlayerState* self, f32 target_yaw) {
-    self->unkC8->unk40[0] = func_800136E4(target_yaw);
+    self->unkC8->unk40[0] = ml_normalizeAngle_f(target_yaw);
 }
 
 void func_8009B9F0(PlayerState* self, f32 arg1)

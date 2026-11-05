@@ -35,7 +35,7 @@ void func_800F1A88(f32* arg0, f32* arg1)
 
 f32 func_800F1DCC(f32 arg0, f32 arg1)
 {
-    return func_80013728(arg0 - arg1);
+    return ml_absNormalizeAngle_f(arg0 - arg1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ECB0F0/func_800F1DF4.s")

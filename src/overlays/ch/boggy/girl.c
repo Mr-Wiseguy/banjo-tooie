@@ -28,7 +28,7 @@ void func_8080091C_chboggygirl(Actor* arg0)
 
 void func_80800B28_chboggygirl(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

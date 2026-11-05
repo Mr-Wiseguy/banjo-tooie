@@ -396,7 +396,7 @@ void func_80800C28_bsbeemain(PlayerState* self)
     player_getCoords(self, sp3C);
     func_800A32C4(self, sp30);
     func_800F1E6C(sp30, sp3C, &sp48);
-    yaw_setIdeal(self, func_800136E4(sp48 + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp48 + 180.0f));
     yaw_applyIdeal(self);
     self->unk16C = 250.0f;
     baphysics_set_target_horizontal_velocity(self, 250.0f);

@@ -34,7 +34,7 @@ void bskazdie_entrypoint_0(PlayerState *self) {
     func_800A32C4(self, &unk1);
     func_800F1E6C(&unk1, &unk0, &targetYaw);
     self->unk16C = 250;
-    yaw_setIdeal(self, func_800136E4(targetYaw + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(targetYaw + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     baphysics_set_target_yaw(self, targetYaw);

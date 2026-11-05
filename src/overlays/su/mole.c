@@ -27,7 +27,7 @@ void sumole_entrypoint_0(Actor* arg0, s32 arg1)
     if (temp_v0 == NULL)
     {
         ml_vec3f_copy(MOLE_DATA(arg0)->unk0, arg0->position);
-        func_800EF1B8(MOLE_DATA(arg0)->unk0, arg0->rotation[1] - 90.0f, 200.0f);
+        ml_translateAngleDist(MOLE_DATA(arg0)->unk0, arg0->rotation[1] - 90.0f, 200.0f);
     }
     else
     {
@@ -71,7 +71,7 @@ void func_808001E0_sumole(Actor* arg0, s32 arg1)
 
 
     ml_vec3f_copy(sp2C, arg0->position);
-    func_800EF1B8(sp2C, arg0->rotation[1] + 15.0f, 150.0f);
+    ml_translateAngleDist(sp2C, arg0->rotation[1] + 15.0f, 150.0f);
     switch (arg1)
     {
     case 1:

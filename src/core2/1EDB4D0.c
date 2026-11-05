@@ -67,7 +67,7 @@ Unk80132ED0* func_80102394(Actor* arg0)
         event_sendToActor(arg0, 0x99, 0);
         return func_80101080();
     }
-    return func_80100368(arg0)->unk8;
+    return actor_getActorData(arg0)->unk8;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDB4D0/func_801023E4.s")

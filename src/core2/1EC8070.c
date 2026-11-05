@@ -121,22 +121,22 @@ void func_800EEB9C(f32* arg0, f32 arg1, f32 arg2)
 {
     f32 temp_f6;
 
-    temp_f6 = func_800137F4(arg1) * arg2;
+    temp_f6 = ml_sin2f(arg1) * arg2;
     arg0[0] = temp_f6;
     arg0[1] = 0.0f;
-    arg0[2] = func_80013788() * arg2;
+    arg0[2] = ml_cos2f() * arg2;
 }
 
 void func_800EEBF0(f32* arg0, f32* arg1, f32 arg2)
 {
     ml_vec3f_clear(arg0);
-    func_800EF214(arg0, arg1[0], arg1[1], arg2);
+    ml_translateAngleDist_3D(arg0, arg1[0], arg1[1], arg2);
 }
 
 void func_800EEC30(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
 {
     ml_vec3f_clear(arg0);
-    func_800EF214(arg0, arg1, arg2, arg3);
+    ml_translateAngleDist_3D(arg0, arg1, arg2, arg3);
 }
 
 void func_800EEC70(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
@@ -145,8 +145,8 @@ void func_800EEC70(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
 
     sp1C = func_800138D0(arg1) * arg3;
     arg0[1] = 0.0f;
-    arg0[0] = (f32)(func_800137F4(arg2) * sp1C);
-    arg0[2] = (f32)(func_80013788() * sp1C);
+    arg0[0] = (f32)(ml_sin2f(arg2) * sp1C);
+    arg0[2] = (f32)(ml_cos2f() * sp1C);
 }
 // ml_vec3f_is_equal
 int ml_vec3f_is_equal(f32* a, f32* b)
@@ -219,40 +219,43 @@ void ml_vec3s_add(s16* target, s16* modifier)
 	target[2] += modifier[2];
 }
 
-void func_800EF0B4(s16* target, f32* modifier)
+void ml_vec3s_add_3f(s16* target, f32* modifier)
 {
 	target[0] += modifier[0];
 	target[1] += modifier[1];
 	target[2] += modifier[2];
 }
 
-void func_800EF11C(f32* target, s16* modifier)
+void ml_vec3f_add_3s(f32* target, s16* modifier)
 {
 	target[0] += modifier[0];
 	target[1] += modifier[1];
 	target[2] += modifier[2];
 }
 
-void func_800EF174(f32* arg0, f32* arg1, f32 arg2)
+//ml_vec3f_translate_scale
+void ml_vec3f_translate_scale(f32* arg0, f32* arg1, f32 arg2)
 {
     arg0[0] += arg1[0] * arg2;
     arg0[1] += arg1[1] * arg2;
     arg0[2] += arg1[2] * arg2;
 }
 
-void func_800EF1B8(f32* arg0, f32 arg1, f32 arg2)
+//ml_translateAngleDist
+void ml_translateAngleDist(f32* arg0, f32 angle, f32 dist)
 {
-    arg0[0] += arg2 * func_800137F4(arg1);
-    arg0[2] += arg2 * func_80013788();
+    arg0[0] += dist * ml_sin2f(angle);
+    arg0[2] += dist * ml_cos2f();
 }
 
-void func_800EF214(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
+//ml_translateAngleDist_3D
+void ml_translateAngleDist_3D(f32* arg0, f32 pitchAngle, f32 yawAngle, f32 dist)
 {
     f32 temp_f6;
-    temp_f6 = func_800137AC(arg1) * arg3;
-    arg0[1] += arg3 * func_800137C4();
-    arg0[0] += temp_f6 * func_800137F4(arg2);
-    arg0[2] += temp_f6 * func_80013788();
+    temp_f6 = ml_cosf(pitchAngle) * dist;
+    arg0[1] += dist * ml_sinf(); //y
+    arg0[0] += temp_f6 * ml_sin2f(yawAngle); //x
+    arg0[2] += temp_f6 * ml_cos2f(); //z
 }
 
 void func_800EF2A0(f32* arg0)
@@ -300,17 +303,17 @@ void func_800EF410(f32* arg0, f32* arg1)
     temp_f14 = SQ(arg1[0]) + SQ(arg1[1]) + SQ(arg1[2]);
     if (temp_f14 != 0.0f)
     {
-        func_800EFA20(arg0, arg1, 1.0f / sqrtf(temp_f14));
+        ml_getScaledVec3f(arg0, arg1, 1.0f / sqrtf(temp_f14));
         return;
     }
     ml_vec3f_copy(arg0, arg1);
 }
 
-void func_800EF49C(f32* arg0)
+void ml_vec3f_normalizeAngles_f(f32* arg0)
 {
-    arg0[0] = func_800136E4(arg0[0]);
-    arg0[1] = func_800136E4(arg0[1]);
-    arg0[2] = func_800136E4(arg0[2]);
+    arg0[0] = ml_normalizeAngle_f(arg0[0]);
+    arg0[1] = ml_normalizeAngle_f(arg0[1]);
+    arg0[2] = ml_normalizeAngle_f(arg0[2]);
 }
 
 
@@ -320,12 +323,12 @@ void func_800EF4E4(f32* arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5)
     f32 sinf;
     f32 sp24;
 
-    sinf = func_800137F4(arg1);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1);
+    cosf = ml_cos2f();
     sp24 = arg4 * sinf + arg5 * cosf;
     arg0[1] = (arg4 * cosf) - (arg5 * sinf);
-    sinf = func_800137F4(arg2);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg2);
+    cosf = ml_cos2f();
     arg0[0] = (sp24 * sinf) + (arg3 * cosf);
     arg0[2] = (sp24 * cosf) - (arg3 * sinf);
 }
@@ -338,16 +341,16 @@ void func_800EF5A0(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
     f32 sinf;
     f32 temp_f2;
 
-    sinf = func_800137F4(arg1[0]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[0]);
+    cosf = ml_cos2f();
     temp_f14 = (arg3 * sinf) + (arg4 * cosf);
     arg0[1] = (arg3 * cosf) - (arg4 * sinf);
-    sinf = func_800137F4(arg1[1]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[1]);
+    cosf = ml_cos2f();
     arg0[0] = (temp_f14 * sinf) + (arg2 * cosf);
     arg0[2] = (temp_f14 * cosf) - (arg2 * sinf);
-    sinf = func_800137F4(arg1[2]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[2]);
+    cosf = ml_cos2f();
     temp_f2 = arg0[0];
     temp_f14 = (arg0[0] * cosf) - (arg0[1] * sinf);
     arg0[1] = (arg0[0] * sinf) + (arg0[1] * cosf);
@@ -362,17 +365,17 @@ void func_800EF6A8(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
     f32 temp_f2;
     f32 temp_f2_2;
 
-    sinf = func_800137F4(arg1[2]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[2]);
+    cosf = ml_cos2f();
     arg0[1] = (f32)((arg2 * sinf) + (arg3 * cosf));
     arg0[0] = (f32)((arg2 * cosf) - (arg3 * sinf));
-    sinf = func_800137F4(arg1[0]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[0]);
+    cosf = ml_cos2f();
     temp_f2 = arg0[1];
     sp2C = (temp_f2 * sinf) + (arg4 * cosf);
     arg0[1] = (f32)((temp_f2 * cosf) - (arg4 * sinf));
-    sinf = func_800137F4(arg1[1]);
-    cosf = func_80013788();
+    sinf = ml_sin2f(arg1[1]);
+    cosf = ml_cos2f();
     temp_f2_2 = arg0[0];
     arg0[2] = (f32)((sp2C * cosf) - (temp_f2_2 * sinf));
     arg0[0] = (f32)((temp_f2_2 * cosf) + (sp2C * sinf));
@@ -380,97 +383,99 @@ void func_800EF6A8(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
 
 void func_800EF7B0(f32* arg0, f32* arg1, f32 arg2, f32 arg3, f32 arg4)
 {
-    f32 cosf;
     f32 sinf;
+    f32 cosf;
     f32 temp_fv1;
 
 
-    sinf = func_800137AC(arg1[1]);
-    cosf = func_800137C4();
+	cosf = ml_cosf(arg1[1]);
+	sinf = ml_sinf();
     arg0[1] = arg3;
-    arg0[2] = arg4 * sinf - arg2 * cosf;
-    arg0[0] = arg4 * cosf + arg2 * sinf;
-    sinf = func_800137AC(arg1[0]);
-    cosf = func_800137C4();
-    temp_fv1 = arg0[1] * sinf - arg0[2] * cosf;
-    arg0[2] = arg0[1] * cosf + arg0[2] * sinf;
+    arg0[2] = arg4 * cosf - arg2 * sinf;
+    arg0[0] = arg4 * sinf + arg2 * cosf;
+	cosf = ml_cosf(arg1[0]);
+	sinf = ml_sinf();
+    temp_fv1 = arg0[1] * cosf - arg0[2] * sinf;
+    arg0[2] = arg0[1] * sinf + arg0[2] * cosf;
     arg0[1] = temp_fv1;
-    sinf = func_800137AC(arg1[2]);
-    cosf = func_800137C4();
-    temp_fv1 = ((arg0[0] * sinf) - (arg0[1] * cosf));
-    arg0[1] = ((arg0[0] * cosf) + (arg0[1] * sinf));
+	cosf = ml_cosf(arg1[2]);
+	sinf = ml_sinf();
+    temp_fv1 = ((arg0[0] * cosf) - (arg0[1] * sinf));
+    arg0[1] = ((arg0[0] * sinf) + (arg0[1] * cosf));
     arg0[0] = temp_fv1;
 }
 
 void func_800EF8BC(f32* arg0, f32* arg1, f32 arg2)
 {
-    f32 sp1C;
-    f32 temp_f0;
+    f32 cosf;
+    f32 sinf;
     f32 temp_fa1;
 
-    sp1C = func_800137AC(arg2);
-    temp_f0 = func_800137C4();
+    cosf = ml_cosf(arg2);
+	sinf = ml_sinf();
     arg0[0] = arg1[0];
 
-    temp_fa1 = arg1[1] * sp1C - arg1[2] * temp_f0;
-    arg0[2] = arg1[1] * temp_f0 + arg1[2] * sp1C;
+    temp_fa1 = arg1[1] * cosf - arg1[2] * sinf;
+    arg0[2] = arg1[1] * sinf + arg1[2] * cosf;
     arg0[1] = temp_fa1;
 }
 
 void func_800EF934(f32* arg0, f32* arg1, f32 arg2)
 {
-    f32 sp1C;
-    f32 temp_f0;
+    f32 cosf;
+    f32 sinf;
     f32 val;
-    sp1C = func_800137AC(arg2);
-    temp_f0 = func_800137C4();
-    val = (arg1[2] * temp_f0) + (arg1[0] * sp1C);
+	cosf = ml_cosf(arg2);
+	sinf = ml_sinf();
+    val = (arg1[2] * sinf) + (arg1[0] * cosf);
     arg0[1] = arg1[1];
-    arg0[2] = (arg1[2] * sp1C) - (arg1[0] * temp_f0);
+    arg0[2] = (arg1[2] * cosf) - (arg1[0] * sinf);
     arg0[0] = val;
 }
 
 void func_800EF9A8(f32* arg0, f32* arg1, f32 arg2)
 {
-    f32 sp1C;
-    f32 temp_f0;
+    f32 cosf;
+    f32 sinf;
     f32 temp_fa1;
 
-    sp1C = func_800137AC(arg2);
-    temp_f0 = func_800137C4();
-    temp_fa1 = arg1[0] * sp1C - arg1[1] * temp_f0;
-    arg0[1] = arg1[0] * temp_f0 + arg1[1] * sp1C;
+	cosf = ml_cosf(arg2);
+	sinf = ml_sinf();
+    temp_fa1 = arg1[0] * cosf - arg1[1] * sinf;
+    arg0[1] = arg1[0] * sinf + arg1[1] * cosf;
     arg0[2] = arg1[2];
     arg0[0] = temp_fa1;
 }
 
-void func_800EFA20(f32* arg0, f32* arg1, f32 arg2)
+
+//ml_getScaledVec3f
+void ml_getScaledVec3f(f32* dst, f32* src, f32 arg2)
 {
-    arg0[0] = arg1[0] * arg2;
-    arg0[1] = arg1[1] * arg2;
-    arg0[2] = arg1[2] * arg2;
+    dst[0] = src[0] * arg2;
+	dst[1] = src[1] * arg2;
+	dst[2] = src[2] * arg2;
 }
 
 //ml_vec3f_assign_value
-void ml_vec3f_assign_value(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
+void ml_vec3f_assign_value(f32* dst, f32 arg1, f32 arg2, f32 arg3)
 {
-    arg0[0] = arg1;
-    arg0[1] = arg2;
-    arg0[2] = arg3;
+	dst[0] = arg1;
+	dst[1] = arg2;
+	dst[2] = arg3;
 }
 //ml_vec3s_assign_value
-void ml_vec3s_assign_value(s16* arg0, s16 arg1, s16 arg2, s16 arg3)
+void ml_vec3s_assign_value(s16* dst, s16 arg1, s16 arg2, s16 arg3)
 {
-    arg0[0] = arg1;
-    arg0[1] = arg2;
-    arg0[2] = arg3;
+	dst[0] = arg1;
+	dst[1] = arg2;
+	dst[2] = arg3;
 }
 //ml_vec3i_assign_value
-void ml_vec3i_assign_value(s32* arg0, s32 arg1, s32 arg2, s32 arg3)
+void ml_vec3i_assign_value(s32* dst, s32 arg1, s32 arg2, s32 arg3)
 {
-    arg0[0] = arg1;
-    arg0[1] = arg2;
-    arg0[2] = arg3;
+	dst[0] = arg1;
+	dst[1] = arg2;
+	dst[2] = arg3;
 }
 
 void func_800EFA98(f32* arg0, f32* arg1, f32 arg2)
@@ -480,7 +485,7 @@ void func_800EFA98(f32* arg0, f32* arg1, f32 arg2)
     temp_f14 = arg1[0] * arg1[0] + arg1[1] * arg1[1] + arg1[2] * arg1[2];
     if (temp_f14 != 0.0f)
     {
-        func_800EFA20(arg0, arg1, arg2 / sqrtf(temp_f14));
+        ml_getScaledVec3f(arg0, arg1, arg2 / sqrtf(temp_f14));
         return;
     }
     ml_vec3f_copy(arg0, arg1);
@@ -494,7 +499,8 @@ void ml_getdiff_vec3f(f32* arg0, f32* arg1, f32* arg2)
     arg0[2] = arg1[2] - arg2[2];
 }
 
-void func_800EFB58(s32* arg0, s32* arg1, s32* arg2)
+//ml_getdiff_vec3i
+void ml_getdiff_vec3i(s32* arg0, s32* arg1, s32* arg2)
 {
     arg0[0] = (arg1[0] - arg2[0]);
     arg0[1] = (arg1[1] - arg2[1]);
@@ -549,8 +555,8 @@ f32 func_800EFC7C(f32* arg0, f32* arg1)
 
 void func_800EFCD8(f32* arg0, f32 arg1, f32 arg2)
 {
-    arg0[0] = func_800137F4(arg1) * arg2;
-    arg0[2] = func_80013788() * arg2;
+    arg0[0] = ml_sin2f(arg1) * arg2;
+    arg0[2] = ml_cos2f() * arg2;
 }
 
 // ml_vec3f_clear
@@ -575,8 +581,8 @@ void func_800EFD60(f32* arg0, f32* arg1, f32 arg2)
     f32 temp_f12;
     f32 temp_f2;
 
-    sp1C = mlAbsF(func_800137AC(arg2));
-    temp_f0 = mlAbsF(func_800137C4());
+    sp1C = mlAbsF(ml_cosf(arg2));
+    temp_f0 = mlAbsF(ml_sinf());
     temp_f2 = arg1[0];
     temp_f12 = arg1[2];
     arg0[0] = (f32)((temp_f2 * sp1C) + (temp_f12 * temp_f0));
@@ -588,7 +594,7 @@ void func_800EFDE8(f32* arg0, f32* arg1, f32* arg2)
 {
     f32 sp1C[3];
 
-    func_800EFA20(sp1C, arg1, -1.0f);
-    func_800EFA20(arg0, arg2, 2.0f * ml_vec3f_dot_product(sp1C, arg2));
+    ml_getScaledVec3f(sp1C, arg1, -1.0f);
+    ml_getScaledVec3f(arg0, arg2, 2.0f * ml_vec3f_dot_product(sp1C, arg2));
     ml_vec3f_subtract(arg0, sp1C);
 }

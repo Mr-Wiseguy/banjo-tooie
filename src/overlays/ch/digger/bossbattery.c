@@ -35,7 +35,7 @@ void func_80800090_chdiggerbossbattery(Actor* arg0)
         {
             var_f0 = -1.0f;
         }
-        func_800EF1B8(sp2C, var_f0 * 90.0f, 80.0f);
+        ml_translateAngleDist(sp2C, var_f0 * 90.0f, 80.0f);
         sp2C[1] += 300.0f;
         _chelectricfence_entrypoint_1(arg0, sp2C);
         arg0->unk58 = rand_fBounded(1.5f, 3.0f);
@@ -52,7 +52,7 @@ s32 func_80800170_chdiggerbossbattery(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x40:
         ml_vec3f_copy(sp2C, (f32*)arg0->actorData);
-        func_800EF1B8(sp2C, arg0->rotation[1], -400.0f);
+        ml_translateAngleDist(sp2C, arg0->rotation[1], -400.0f);
         sp2C[1] -= 80.0f;
         flag_setValueTrue(arg0->unk74_7 + 0xA1D);
         func_8010A624(arg0);

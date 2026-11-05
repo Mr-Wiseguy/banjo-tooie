@@ -46,7 +46,7 @@ void func_800920F0(PlayerState* arg0)
     switch (arg0->unk50->unk15)
     {
     case 2:
-        arg0->unk50->unk28 = func_800136E4(yaw_get(arg0) + 180.0f);
+        arg0->unk50->unk28 = ml_normalizeAngle_f(yaw_get(arg0) + 180.0f);
         return;
     default:
         arg0->unk50->unk28 = yaw_get(arg0);
@@ -469,7 +469,7 @@ void func_800931AC(PlayerState* arg0, s32 arg1)
 {
     if ((arg1 != arg0->unk50->unk15) && ((arg1 == 2) || (arg0->unk50->unk15 == 2)))
     {
-        yaw_setIdeal(arg0, func_800136E4(yaw_get(arg0) + 180.0f));
+        yaw_setIdeal(arg0, ml_normalizeAngle_f(yaw_get(arg0) + 180.0f));
         yaw_applyIdeal(arg0);
     }
     arg0->unk50->unk15 = (u8)arg1;
@@ -485,7 +485,7 @@ void func_80093230(PlayerState* arg0, f32 arg1)
 
 void func_8009328C(PlayerState* arg0, f32 arg1)
 {
-    arg0->unk50->unk28 = func_800136E4(arg1);
+    arg0->unk50->unk28 = ml_normalizeAngle_f(arg1);
 }
 
 void func_800932BC(PlayerState* arg0, f32 arg1)

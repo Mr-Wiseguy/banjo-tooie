@@ -229,7 +229,7 @@ void func_80800624_bsbfly(PlayerState* self)
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            temp_f0 = func_800136E4(func_8009BFD8(self) - 30.0f);
+            temp_f0 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if ((temp_f0 > 80.0f) && (temp_f0 < 300.0f)) 
             {
                 temp_f0 = 300.0f;

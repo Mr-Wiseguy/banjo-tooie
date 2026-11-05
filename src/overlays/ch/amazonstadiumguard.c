@@ -11,7 +11,7 @@ ActorData* chamazonstadiumguard_entrypoint_0()
 
 void func_808002F4_chamazonstadiumguard(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

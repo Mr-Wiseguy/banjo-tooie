@@ -37,7 +37,7 @@ void func_808005E0_chcablecar(Actor* arg0) {
     void* temp_a0;
     cablecarMemory* temp_v0;
 
-    temp_v0 = func_80100094(arg0, 0);
+    temp_v0 = actor_getAdditionalMem(arg0, 0);
     temp_a0 = &temp_v0->unk10;
     if (temp_v0->unkC < 0.5f) {
         if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (rand_percentChance(0.8f) != 0)) {

@@ -146,7 +146,7 @@ void func_80800544_bskazglide(PlayerState *self) {
     player_getCoords(self, sp3C);
     func_800A32C4(self, sp30);
     func_800F1E6C(sp30, sp3C, &sp2C);
-    yaw_setIdeal(self, func_800136E4(sp2C + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp2C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, 400);
     baphysics_set_target_yaw(self, sp2C);

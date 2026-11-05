@@ -28,7 +28,7 @@ void func_800FF3EC(Actor* actor)
 
 	if (!(actor->unk64_26))
 	{
-		temp_v0 = func_80100368(actor);
+		temp_v0 = actor_getActorData(actor);
 		if (temp_v0->unk28_func != NULL)
 		{
 			temp_v0->unk28_func(actor);
@@ -95,7 +95,7 @@ void func_800FF62C(void)
 			{
 				if (func_8010038C(actor, sp40) != 0)
 				{
-					func_80100368(actor)->unk10_func(actor);
+					actor_getActorData(actor)->unk10_func(actor);
 				}
 			}
 			else
@@ -103,7 +103,7 @@ void func_800FF62C(void)
 				func_80100120(actor);
 				if (func_8010038C(actor, sp40) != 0)
 				{
-					temp_v0 = func_80100368(actor);
+					temp_v0 = actor_getActorData(actor);
 					//If there is an update function for the actor call it
 					if (temp_v0->update_func != NULL)
 					{
@@ -151,9 +151,9 @@ void func_800FF62C(void)
 			}
 			else
 			{
-				temp_s1->unk28_23 = func_800136E4(actor->rotation[1]);
-				temp_s1->unk24_7 = func_800136E4(actor->rotation[0]);
-				temp_s1->unk28_14 = func_800136E4(actor->rotation[2]);
+				temp_s1->unk28_23 = ml_normalizeAngle_f(actor->rotation[1]);
+				temp_s1->unk24_7 = ml_normalizeAngle_f(actor->rotation[0]);
+				temp_s1->unk28_14 = ml_normalizeAngle_f(actor->rotation[2]);
 			}
 			func_80103040(actor);
 		}
@@ -233,17 +233,14 @@ u32* func_80100074(Actor* a0, u32 a1, u32 a2)
     return func_800FFECC(a0,a1,a2);
 }
 
-void* func_80100094(Actor* arg0, u32 arg1)
+void* actor_getAdditionalMem(Actor* actor, u32 arg1)
 {
-    s16 temp_a2;
-    void* var_v0;
 
-    var_v0 = NULL;
-    if (arg0->unk82[arg1] != 0)
+    if (actor->unk82[arg1] != 0)
     {
-        return func_8001B798(arg0->unk82[arg1]);
+        return func_8001B798(actor->unk82[arg1]);
     }
-    return var_v0;
+    return NULL;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_801000D8.s")
@@ -256,7 +253,7 @@ void* func_80100094(Actor* arg0, u32 arg1)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED8C80/func_801002C0.s")
 
-ActorData* func_80100368(Actor* arg0)
+ActorData* actor_getActorData(Actor* arg0)
 {
     return (*arg0->pointerToSyscallEntry)();
 }

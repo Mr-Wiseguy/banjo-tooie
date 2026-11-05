@@ -149,7 +149,7 @@ void badust_entrypoint_7(PlayerState* arg0)
     }
     if (arg0->dust->unk8 != 0)
     {
-        sp40 = func_800136E4(yaw_get(arg0) + rand_fBounded(70.0f, 90.0f));
+        sp40 = ml_normalizeAngle_f(yaw_get(arg0) + rand_fBounded(70.0f, 90.0f));
         func_800EFCD8(sp44, sp40, (rand_f() * 15.0f) + 20.0f);
         sp44[1] = 0.0f;
     }
@@ -216,7 +216,7 @@ void badust_entrypoint_10(PlayerState* arg0, f32 arg1)
     var_f20 = 0.0f;
     while (var_f20 < 359.0f)
     {
-        badust_entrypoint_6(arg0, arg1, func_800136E4(var_f20 + 30.0f), 430.0f, 40.0f);
+        badust_entrypoint_6(arg0, arg1, ml_normalizeAngle_f(var_f20 + 30.0f), 430.0f, 40.0f);
         var_f20 += 60.0f;
     }
 }

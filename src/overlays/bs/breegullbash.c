@@ -26,7 +26,7 @@ void func_808000A4_bsbreegullbash(PlayerState* self)
     var_f20 = 0.0f;
     while (var_f20 < 359.0f)
     {
-        func_80800000_bsbreegullbash(self, func_800136E4(var_f20 + 30.0f), 430.0f, 40.0f);
+        func_80800000_bsbreegullbash(self, ml_normalizeAngle_f(var_f20 + 30.0f), 430.0f, 40.0f);
         var_f20 += 60.0f;
     }
 }

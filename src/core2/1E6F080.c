@@ -491,9 +491,9 @@ s32 func_80096E30(ba_unknown_98_s* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg
     f32 sp28[3];
     f32 sp1C[3];
 
-    func_800EFA20(sp28, arg0->unk0, arg4);
+    ml_getScaledVec3f(sp28, arg0->unk0, arg4);
     ml_vec3f_sum(sp1C, arg2, sp28);
-    func_800EFA20(sp28, arg0->unk0, arg3);
+    ml_getScaledVec3f(sp28, arg0->unk0, arg3);
     func_800EF934(sp7C, sp28, -arg5);
     func_800EF934(sp34, sp28, arg5);
     ml_vec3f_assign_value(sp88, sp28[2], sp28[1], -sp28[0]);
@@ -562,11 +562,11 @@ s32 func_80097104(PlayerState* arg0, f32* arg1, f32 arg2) {
     f32 sp28;
     f32 sp1C[3];
 
-    func_800EFA20(sp6C, arg0->unk98->unk0, arg2);
+    ml_getScaledVec3f(sp6C, arg0->unk98->unk0, arg2);
     ml_getdiff_vec3f(sp60, arg1, sp6C);
     ml_vec3f_assign_value(sp48, 0.0f, 1.0f, 0.0f);
     ml_vec3f_cross_product(sp3C, arg0->unk98->unk0, sp48);
-    func_800EFA20(sp30, sp3C, -1.0f);
+    ml_getScaledVec3f(sp30, sp3C, -1.0f);
     func_8009BB24(arg0, sp1C);
     sp1C[1] = 0.0f;
     func_800EF2A0(sp1C);
@@ -631,7 +631,7 @@ s32 func_800972BC(PlayerState* arg0, f32* arg1) {
     if (func_80097104(arg0, sp44, sp60) == 0) {
         return 0;
     }
-    func_800EFA20(sp2C, arg0->unk98->unk0, sp60 + -18.0f);
+    ml_getScaledVec3f(sp2C, arg0->unk98->unk0, sp60 + -18.0f);
     ml_getdiff_vec3f(sp50, sp44, sp2C);
     sp50[1] = (sp44[1] - sp5C) + -43.0f;
     if (func_8009700C(arg0, sp38, sp50, sp60 * 0.75f + sp5C, -50.0f) != 0) {
@@ -668,7 +668,7 @@ s32 func_80097530(PlayerState* arg0) {
     f32 sp20[3];
 
     func_80095870(arg0, &sp50, &sp54);
-    func_800EFA20(sp2C, arg0->unk98->unk0, 25.0f);
+    ml_getScaledVec3f(sp2C, arg0->unk98->unk0, 25.0f);
     ml_vec3f_add(sp2C, arg0->unk98->unkC);
     ml_vec3f_assign_value(sp44, sp2C[0], sp2C[1] + 6.0f, sp2C[2]);
     ml_vec3f_assign_value(sp38, sp2C[0], sp2C[1] + sp50 + sp54 + 5.0f, sp2C[2]);

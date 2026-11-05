@@ -277,7 +277,7 @@ void func_80800998_bstnt(PlayerState* self) {
 		break;
 	case 2:
 		func_8080009C_bstnt(self);
-		temp_f0 = func_800136E4(self->unk170 + (self->unk16C * sp20));
+		temp_f0 = ml_normalizeAngle_f(self->unk170 + (self->unk16C * sp20));
 		self->unk170 = temp_f0;
 		func_8009328C(self, temp_f0);
 		if (baanim_getTimer(self) > 0.78f) {

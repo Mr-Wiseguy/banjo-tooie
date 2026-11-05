@@ -151,7 +151,7 @@ void cheggclockwork_entrypoint_3(s32* arg0, s32 arg1, u32 arg2, s32 arg3);
 
 void func_80800000_cheggclockwork(Actor* arg0)
 {
-    func_800F7BC8(((EggNormalData*)func_80100094(arg0, 0U))->unk3A, 0x4D, arg0->unk0);
+    func_800F7BC8(((EggNormalData*)actor_getAdditionalMem(arg0, 0U))->unk3A, 0x4D, arg0->unk0);
     func_808007B4_cheggclockwork(arg0);
     _suegg_entrypoint_2(arg0);
 }
@@ -162,7 +162,7 @@ void func_80800048_cheggclockwork(Actor* arg0)
     EggNormalData* temp_s1;
     f32 sp4C[3];
 
-    temp_s1 = (EggNormalData*)func_80100094(arg0, 0U);
+    temp_s1 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     temp_s1->unk28 -= time_getDelta();
     temp_f20 = ml_map_f(temp_s1->unk30, 0.0f, 2.0f, 0.0333f, 0.1f);
     while (temp_s1->unk28 <= 0)
@@ -178,7 +178,7 @@ void func_80800124_cheggclockwork(Actor* arg0)
     EggNormalData* sp2C;
     s32 var_s0;
 
-    sp2C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp2C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     var_s0 = 0;
     if (_suegg_entrypoint_9(arg0, 0) != 0)
     {
@@ -227,7 +227,7 @@ s32 func_80800270_cheggclockwork(Actor* arg0)
 {
     EggNormalData* sp1C;
 
-    sp1C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp1C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     if (func_800DB9B0() != 0) {
         return 0;
     }
@@ -244,7 +244,7 @@ void func_808002DC_cheggclockwork(Actor* arg0, s32 arg1)
 {
     EggNormalData* sp24;
 
-    sp24 = (EggNormalData*)func_80100094(arg0, 0U);
+    sp24 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg1)
     {
     case 1:
@@ -268,7 +268,7 @@ void func_808002DC_cheggclockwork(Actor* arg0, s32 arg1)
 s32 func_808003B4_cheggclockwork(Actor* arg0, s32 arg1, s32 arg2)
 {
     EggNormalData* temp_v0;
-    temp_v0 = (EggNormalData*)func_80100094(arg0, 0U);
+    temp_v0 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg1)
     {
     case 0x5:
@@ -314,7 +314,7 @@ Actor* cheggclockwork_entrypoint_1(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 a
 
     _sueggmove_entrypoint_10(arg0);
     temp_v0 = _suegg_entrypoint_11(0x15E, arg1, arg3);
-    sp20 = (EggNormalData*)func_80100094(temp_v0, 0U);
+    sp20 = (EggNormalData*)actor_getAdditionalMem(temp_v0, 0U);
     func_808007DC_cheggclockwork(temp_v0, arg0);
     sp20->unk39_3 = arg4;
     temp_v0->scale = 0.134f;
@@ -350,7 +350,7 @@ void cheggclockwork_entrypoint_3(s32* arg0, s32 arg1, u32 arg2, s32 arg3)
 void func_808006E8_cheggclockwork(Actor* arg0)
 {
     f32* temp_s0;
-    temp_s0 = func_8001B798(((EggNormalData*)func_80100094(arg0, 0U))->unk2C);
+    temp_s0 = func_8001B798(((EggNormalData*)actor_getAdditionalMem(arg0, 0U))->unk2C);
     if (func_800F6DE0(arg0->position) == 0)
     {
         if (func_800F6DE0(temp_s0) != 0)
@@ -374,7 +374,7 @@ void func_808006E8_cheggclockwork(Actor* arg0)
 
 void func_808007B4_cheggclockwork(Actor* arg0)
 {
-    func_8001B754(((EggNormalData*)func_80100094(arg0, 0U))->unk2C);
+    func_8001B754(((EggNormalData*)actor_getAdditionalMem(arg0, 0U))->unk2C);
 }
 
 void func_808007DC_cheggclockwork(Actor* arg0, f32* arg1)
@@ -382,7 +382,7 @@ void func_808007DC_cheggclockwork(Actor* arg0, f32* arg1)
     EggNormalData* sp1C;
     f32* temp_v0;
 
-    sp1C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp1C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     sp1C->unk2C = func_8001B668(0, 0x24);
     temp_v0 = func_8001B798(sp1C->unk2C);
     ml_vec3f_copy(temp_v0, arg1);
@@ -395,7 +395,7 @@ void func_80800850_cheggclockwork(Actor* arg0)
     f32 temp;
     f32* temp_v0;
 
-    temp_v0 = func_8001B798(((EggNormalData*)func_80100094(arg0, 0U))->unk2C);
+    temp_v0 = func_8001B798(((EggNormalData*)actor_getAdditionalMem(arg0, 0U))->unk2C);
     ml_vec3f_copy(temp_v0 + 6, temp_v0 + 3);
     ml_vec3f_copy(temp_v0 + 3, temp_v0);
     ml_vec3f_copy(temp_v0, arg0->position);
