@@ -178,6 +178,7 @@ void func_800F5A2C(s32, s32, f32[3]);
 void character_getCoords3s(s32, s32[3]);
 f32 func_800F5AE0(s32);
 s32 func_800F5B0C(s32);
+f32 func_800F5BF0(s32, f32*);
 void func_800F5D44(s32, f32*);
 void func_800F5D70(s32, f32*);
 void func_800F5D9C(s32, f32*);
@@ -223,6 +224,7 @@ s32 func_800F7874(s32, Unk80132ED0*, f32[3]);
 //The moving object is moved towards/away from the target
 s32 func_800F78EC(s32 moving, f32* target, f32 verticalSpeed, f32 horizontalSpeed);
 s32 func_800F798C(s32 arg0, s32 arg1, s32 arg2);
+s32 func_800F79DC(s32, s32, Unk80132ED0*);
 s32 func_800F7A2C(s32, s32, f32*);
 s32 func_800F7B1C(s32, f32*, f32, f32);
 s32 func_800F7B9C(s32, u32);

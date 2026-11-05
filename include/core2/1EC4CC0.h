@@ -32,5 +32,7 @@ void func_800EC360(Unk80132ED0*, s32);
 void func_800EC368(Unk80132ED0*, s32);
 CallbackTable* func_800EC3C4(Unk80132ED0*);
 f32 func_800EC75C(s32, f32*);
+void func_800EC7D4(Unk80132ED0*, GraphicsBuffers*);
+int func_800EC800(Unk80132ED0*);
 void func_800EC828();
 #endif

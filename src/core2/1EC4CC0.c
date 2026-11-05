@@ -203,7 +203,7 @@ ImageStruct* func_800EC3E8(Unk80132ED0* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC4CC0/func_800EC75C.s")
 
-void func_800EC7D4(Unk80132ED0* arg0, s32 arg1)
+void func_800EC7D4(Unk80132ED0* arg0, GraphicsBuffers* arg1)
 {
 	func_8010A79C(func_80106790(arg0), arg1);
 }

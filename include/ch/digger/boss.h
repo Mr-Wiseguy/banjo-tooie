@@ -18,6 +18,7 @@
 #include "pl/su.h"
 #include "su/baddieaudioloop.h"
 #include "su/baddieaudioquick.h"
+#include "su/baddiecustomhits.h"
 #include "su/baddiedialog.h"
 #include "su/baddiefade.h"
 #include "su/baddiefind.h"
@@ -70,5 +71,8 @@
 #include "core2/1EE7080.h"
 #include "core2/1EE92B0.h"
 #include "core2/1EEF790.h"
+
+
+extern void _chdiggerboss_entrypoint_3();
 
 #endif

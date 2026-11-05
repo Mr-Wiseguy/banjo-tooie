@@ -34,7 +34,7 @@ typedef struct {
 	u8 unk42;
 	u8 unk43;
 	u16 unk44;
-	u16 unk46;
+	s16 unk46;
 	u8 unk48;
 	u8 unk49;
 	u8 unk4A;
@@ -56,18 +56,9 @@ typedef struct {
 	u8 unk5D;
 	u8 unk5E;
 	u8 unk5F;
-	u8 unk60;
-	u8 unk61;
-	u8 unk62;
-	u8 unk63;
-	u8 unk64;
-	u8 unk65;
-	u8 unk66;
-	u8 unk67;
-	u8 unk68;
-	u8 unk69;
-	u8 unk6A;
-	u8 unk6B;
+	f32 unk60;
+	s32 unk64;
+	Unk80132ED0* unk68;
 	u8 unk6C;
 	u8 unk6D;
 	u8 unk6E;
@@ -84,15 +75,20 @@ typedef struct {
 	u8 unk79;
 	u8 unk7A;
 	u8 unk7B;
-	u8 unk7C;
-	u8 unk7D;
-	u8 unk7E;
-	u8 unk7F;
+	s16 unk7C;
+	s16 unk7E;
     s16 unk80;
     s16 unk82;
-    s8 pad84[0x1C];
+	f32 unk84;
+	s32 unk88;
+	s32 unk8C;
+	s32 unk90;
+	s32 unk94;
+	f32 unk98;
+	f32 unk9C;
     s16 unkA0;
-	s16 unkA2;
+	u8 unkA2;
+	u8 unkA3;
 	u8 unkA4;
 	u8 unkA5;
 	u8 unkA6;
@@ -105,7 +101,12 @@ typedef struct {
 	u8 unkCD;
 	u8 unkCE;
 	u8 unkCF;
-	u8 padD0[0xC];
+	f32 unkD0;
+	Unk80132ED0* unkD4;
+	u8 unkD8;
+	u8 unkD9;
+	u8 unkDA;
+	u8 unkDB;
 	s32 unkDC;
 	f32 unkE0;
 	Unk80132ED0* unkE4;
@@ -123,7 +124,8 @@ typedef struct {
 
 struct unk30Struct {
 	s32 unk0;
-	s32 unk4;
+	s16 unk4;
+	s16 unk6;
 	s32 unk8;
 	f32 unkC[3];
 	u8 unk18;
@@ -161,19 +163,24 @@ typedef struct {
 	u8 unk27;
 	f32 unk28;
 	f32 unk2C;
-	struct unk30Struct unk30[3];
-	s8 pad84[0x1C];
+	struct unk30Struct unk30[4];
 	u8 unkA0;
 	u8 unkA1;
 	u8 unkA2;
 	u8 unkA3;
-	u8 unkA4;
-	u8 unkA5;
+	s16 unkA4;
 	u8 unkA6;
 	u8 unkA7;
 	s32 unkA8;
-	s8 padAC[0xE4-0xAC];
-	s16 unkE4[2];
+	s32 unkAC;
+	Unk80132ED0* unkB0[4];
+	f32 unkC0[2];
+	s32 unkC8;
+	s32 unkCC;
+	s32 unkD0;
+	f32 unkD4[3];
+	f32 unkE0;
+	u8 unkE4[4];
 	s32 unkE8;
 }Hag1AdditionalMem0;//Size 0xEC
 
@@ -235,6 +242,7 @@ void func_80804AC8_chdiggerboss(Actor*, s32);
 void func_80804C28_chdiggerboss(Actor*);
 void func_80804D44_chdiggerboss(Actor*);
 void func_80804EFC_chdiggerboss(Actor*, GraphicsBuffers*);
+void func_80804FE4_chdiggerboss(Actor*, s32, GraphicsBuffers*);
 void func_808053BC_chdiggerboss(Actor*);
 void func_80805448_chdiggerboss(Actor*, s32, s32);
 void func_808056B8_chdiggerboss(Actor*);
@@ -243,21 +251,25 @@ void func_808059A4_chdiggerboss(Actor*);
 void func_808059CC_chdiggerboss(Actor*);
 void func_80805A00_chdiggerboss(Actor*, s32);
 s32 func_80805A64_chdiggerboss(Actor*);
+void func_80805B8C_chdiggerboss(Actor*, f32);
 void func_80805D64_chdiggerboss(Actor*, s32);
 s32 func_80805DF4_chdiggerboss(Actor*);
 void func_808062B8_chdiggerboss(Actor*);
-void func_80806300_chdiggerboss(Actor*);
+s32 func_80806300_chdiggerboss(Actor*);
+s32 func_808063C8_chdiggerboss(Actor*, s32, f32);
+void func_808064CC_chdiggerboss(Actor*, s32);
 void func_80806528_chdiggerboss(Actor*, s32, s32);
 void func_80806648_chdiggerboss(Actor*);
 void func_8080666C_chdiggerboss(Actor*);
 s32 func_808066A0_chdiggerboss(Actor*);
-void func_80806A78_chdiggerboss(Actor*, s32, s32*);
+void func_80806A78_chdiggerboss(Actor*, s32, u8*);
+void func_80806B38_chdiggerboss(Actor*);
 void func_80806CA4_chdiggerboss(Actor*, s32);
 void func_80806CF8_chdiggerboss(Actor*, s32);
 void func_80806DC4_chdiggerboss(Actor*, s32);
 void func_80806EE4_chdiggerboss(Actor*, s32);
 s32 func_808070B0_chdiggerboss(Actor*);
-void func_80807280_chdiggerboss(Actor*, s32, s32*);
+void func_80807280_chdiggerboss(Actor*, s32, s16*);
 void func_80807304_chdiggerboss(Actor*, s32);
 void func_80807640_chdiggerboss(Actor*);
 void func_80807664_chdiggerboss(Actor*);
@@ -274,18 +286,24 @@ void func_80807FD8_chdiggerboss(Actor*);
 void func_80808000_chdiggerboss(Actor*);
 void func_80808034_chdiggerboss(Actor*);
 void func_808080C0_chdiggerboss(Actor*, s32);
+void func_808081AC_chdiggerboss(Actor*);
 void func_80808258_chdiggerboss(Actor*);
 void func_8080843C_chdiggerboss(Actor*);
 void func_80808470_chdiggerboss(Actor*, s32);
 void func_80808560_chdiggerboss(Actor*);
 void func_808085E0_chdiggerboss(Actor*, s32);
+Actor* func_808086A8_chdiggerboss(Actor*);
 void func_808086E8_chdiggerboss(Actor*, s32);
+void func_808087F0_chdiggerboss(Actor*);
 void func_808088AC_chdiggerboss(Actor*);
 void func_808088CC_chdiggerboss(Actor*);
 void func_80808948_chdiggerboss(Actor*);
 void func_80808B40_chdiggerboss(Actor*, s32);
+void func_80808BE4_chdiggerboss(Actor*, Actor*, s32);
 void func_80808C64_chdiggerboss(Actor*);
 void func_80808CD0_chdiggerboss(Actor*);
+void func_80808D54_chdiggerboss(Actor*, s32, f32, s32*);
+void func_80808F44_chdiggerboss(Actor*);
 void func_80809078_chdiggerboss(Actor*, s32, s32);
 void func_80809150_chdiggerboss(Actor*);
 s32 func_808091E4_chdiggerboss(Actor*);
@@ -332,6 +350,18 @@ extern s32 D_80809FD0_chdiggerboss;
 extern s32 D_80809FE0_chdiggerboss;
 extern s32 D_8080A028_chdiggerboss;
 extern f32 D_8080A038_chdiggerboss;
+extern s16 D_8080A060_chdiggerboss[4];
+extern s32 D_8080A06C_chdiggerboss[][3];
+extern s32 D_8080A0EC_chdiggerboss;
+extern s16 D_8080A104_chdiggerboss;
+extern s16 D_8080A11C_chdiggerboss[];
+extern s32 D_8080A160_chdiggerboss;
+extern s32 D_8080A16C_chdiggerboss;
+extern f32 D_8080A1AC_chdiggerboss[];
+extern f32 D_8080A1BC_chdiggerboss[];
+extern f32 D_8080A1CC_chdiggerboss[];
+extern s32 D_8080A1DC_chdiggerboss;
+extern s32 D_8080A1E8_chdiggerboss;
 extern s16 D_8080A1F4_chdiggerboss[3];
 extern s16 D_8080A1FC_chdiggerboss[3];
 extern s16 D_8080A1FE_chdiggerboss[][4];
@@ -1918,7 +1948,19 @@ void func_80803558_chdiggerboss(s32 arg0, s32 arg1, s32 arg2) {
 	*temp_v0_2 &= ~(1 << (arg1 & 7));
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/chdiggerboss_entrypoint_2.s")
+void chdiggerboss_entrypoint_2(s32 arg0, Unk80132ED0* arg1)
+{
+	Actor* sp1C;
+	DiggerBossAdditionalMem0* sp18;
+	OptionState* optionState;
+
+	sp1C = func_80106790(arg1);
+	sp18 = func_80100094(sp1C, 0U);
+	optionState = &((DiggerBossAdditionalMem0*)func_80100094(sp1C, 0U))->unk10C;
+	if (sp18->unk40 == 2) {
+		_gcnewoption_entrypoint_37(optionState, 1U);
+	}
+}
 
 void func_80803610_chdiggerboss(s32 arg0)
 {
@@ -2315,7 +2357,22 @@ s32 func_808042D8_chdiggerboss(Actor* arg0) {
 	return ((Hag1AdditionalMem0*)func_80100094(arg0, 0U))->unk8;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808042FC_chdiggerboss.s")
+void func_808042FC_chdiggerboss(Actor* arg0, s32 arg1, s32 arg2)
+{
+	Hag1AdditionalMem0* temp_v0;
+	f32 sp30;
+	f32 sp2C;
+
+	temp_v0 = func_80100094(arg0, 0U);
+	if (temp_v0->unk8 != 0)
+	{
+		sp30 = func_800E8C58(temp_v0->unkA);
+		sp2C = 1.0f / _dbskeleton_entrypoint_1(func_800B27E0((void*)arg2));
+		func_800E0C20((Unkfunc_800E0960_1*)arg1, 3U, sp2C, 0.0f, sp30, 0.0f);
+		func_800E0C20((Unkfunc_800E0960_1*)arg1, 0xAU, sp2C, 0.0f, -sp30, 0.0f);
+		func_800E0C20((Unkfunc_800E0960_1*)arg1, 0x18U, sp2C, 0.0f, -sp30, 0.0f);
+	}
+}
 
 void func_808043D8_chdiggerboss(Actor* arg0, f32 arg1, s32* arg2) {
 	f32 sp24[3];
@@ -2532,12 +2589,51 @@ void func_80804C28_chdiggerboss(Actor* arg0)
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80804D44_chdiggerboss.s")
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80804EFC_chdiggerboss.s")
+void func_80804EFC_chdiggerboss(Actor* arg0, GraphicsBuffers* arg1)
+{
+	Hag1AdditionalMem0* temp_v0;
+	s32 var_s2;
+
+	temp_v0 = func_80100094(arg0, 0U);
+	for (var_s2 = 0; var_s2 < 4; var_s2++)
+	{
+		func_800DF744(D_8080A060_chdiggerboss[var_s2], temp_v0->unk30[var_s2].unk6);
+	}
+	func_800DF830(1);
+	func_800DE498(arg1, arg0->position, arg0->rotation, arg0->scale, NULL, asset_load(0x955));
+	for (var_s2 = 0; var_s2 < 4; var_s2++)
+	{
+		if (temp_v0->unk30[var_s2].unk4 != 0)
+		{
+			func_80804FE4_chdiggerboss(arg0, var_s2, arg1);
+		}
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80804FE4_chdiggerboss.s")
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808053BC_chdiggerboss.s")
+void func_808053BC_chdiggerboss(Actor* arg0)
+{
+	s32 index;
+	Hag1AdditionalMem0* temp_v0;
+
+	temp_v0 = func_80100094(arg0, 0U);
+	temp_v0->unk24 = _subaddieaudioloop_entrypoint_3(temp_v0->unk24);
+	for (index = 0; index < 4; index++)
+	{
+		if (temp_v0->unk30[index].unk0 != 0)
+		{
+			func_800C8B84(temp_v0->unk30[index].unk0);
+			temp_v0->unk30[index].unk0 = 0;
+		}
+		if (temp_v0->unk30[index].unk18 != 0)
+		{
+			func_800E87E0(temp_v0->unk30[index].unk18);
+			temp_v0->unk30[index].unk18 = 0U;
+		}
+	}
+}
 
 //Hag-1
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805448_chdiggerboss.s")
@@ -2550,15 +2646,89 @@ void func_808056B8_chdiggerboss(Actor* arg0) {
 	sp1C->unk2C = 1.0f;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808056F8_chdiggerboss.s")
+void func_808056F8_chdiggerboss(Actor* arg0)
+{
+	Hag1AdditionalMem0* sp24;
+	s32 sp20;
+	s32 charIndex;
+	s32 temp_v0_2;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805798_chdiggerboss.s")
+	sp24 = func_80100094(arg0, 0U);
+	sp20 = 0;
+	if (sp24->unk25 != 0)
+	{
+		charIndex = func_80802248_chdiggerboss(func_808026F8_chdiggerboss(arg0));
+		if ((func_800F6478(charIndex) != 0) && (func_800F8004(charIndex) == 0))
+		{
+			if (timer_reachedZero_dupe(&sp24->unk2C) != 0)
+			{
+				sp20 = 1;
+			}
+		}
+		else
+		{
+			sp24->unk2C = 1.0f;
+		}
+	}
+	actor_setCollision(arg0, sp20);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808057D0_chdiggerboss.s")
+s32 func_80805798_chdiggerboss(Actor* arg0, s32 arg1) {
+	return ((Hag1AdditionalMem0*)func_80100094(arg0, 0U))->unk30[arg1].unk4;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808058B0_chdiggerboss.s")
+void func_808057D0_chdiggerboss(Actor* arg0) {
+	Hag1AdditionalMem0* var_s2;
+	s32 var_s3;
+	s32 var_s0;
+	s32 temp_s1;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805960_chdiggerboss.s")
+	var_s2 = func_80100094(arg0, 0U);
+	for (var_s3 = 0; var_s3 < 4; var_s3++)
+	{
+		if (var_s2->unk30[var_s3].unk4 == 1)
+		{
+			var_s0 = 1;
+		}
+		else
+		{
+			var_s0 = 0;
+		}
+		temp_s1 = var_s2->unk30[var_s3].unk0;
+		if (temp_s1 == 0)
+		{
+			continue;
+		}
+		func_800C8FE0(temp_s1, var_s0);
+		if (var_s0 != 0)
+		{
+			func_800C8CB8(temp_s1, var_s2->unk30[var_s3].unkC);
+			func_800C8E84(temp_s1, D_8080A06C_chdiggerboss[func_8001210C(1)]);
+		}
+	}
+}
+
+void func_808058B0_chdiggerboss(Actor* arg0, Unk80132ED0* arg1)
+{
+	Hag1AdditionalMem0* sp24;
+	f32 sp18[3];
+
+	sp24 = func_80100094(arg0, 0U);
+	func_800F79DC(arg1->unk18_5, 6, arg0->unk0);
+	if (sp24->unk28 == 0.0f)
+	{
+		if (_subaddiecustomhits_entrypoint_4(arg0, sp18, 0) == 0) {
+			func_800F5BF0(arg1->unk18_5, sp18);
+		}
+		_chelectricfence_entrypoint_1(arg0, sp18);
+		sp24->unk28 = 0.6f;
+	}
+}
+
+void func_80805960_chdiggerboss(Actor* arg0, s32 arg1, s32 arg2)
+{
+	((Hag1AdditionalMem0*)func_80100094(arg0, 0U))->unk30[arg1].unk6 = (s16)arg2;
+}
 
 void func_808059A4_chdiggerboss(Actor* arg0) {
 	DiggerBossAdditionalMem0* temp_v0;
@@ -2589,7 +2759,45 @@ void func_80805A00_chdiggerboss(Actor* arg0, s32 arg1)
 }
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805A64_chdiggerboss.s")
+s32 func_80805A64_chdiggerboss(Actor* arg0) {
+	Actor* temp_s2;
+	s32 var_s0;
+	s32 sp2C;
+	DiggerBossAdditionalMem0* temp_s0;
+
+	temp_s0 = func_80100094(arg0, 0U);
+	temp_s2 = func_80802228_chdiggerboss(arg0);
+	sp2C = 0;
+	func_80802C40_chdiggerboss(arg0);
+	if (func_800F6D24(character_getActiveIndex()) != 0)
+	{
+		return 0;
+	}
+	switch (temp_s0->unk25)
+	{
+	case 1:
+		if (timer_reachedZero(&temp_s0->unk18) != 0)
+		{
+			temp_s0->unk25 = 2U;
+		}
+		break;
+	case 2:
+		sp2C = timer_reachedZero(&temp_s0->unk1C);
+		temp_s2->rotation[1] += temp_s0->unk20 * time_getDelta();
+		func_808064CC_chdiggerboss(arg0, !sp2C);
+		func_80805B8C_chdiggerboss(arg0, temp_s0->unk20);
+		if (sp2C != 0)
+		{
+			for (var_s0 = 0; var_s0 < 4; var_s0++)
+			{
+				func_80805448_chdiggerboss(temp_s2, var_s0, 0);
+			}
+			func_80802CB4_chdiggerboss(arg0);
+		}
+		break;
+	}
+	return sp2C;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805B8C_chdiggerboss.s")
 
@@ -2615,16 +2823,203 @@ void func_80805D64_chdiggerboss(Actor* arg0, s32 arg1) {
 }
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80805DF4_chdiggerboss.s")
+s32 func_80805DF4_chdiggerboss(Actor* arg0)
+{
+	DiggerBossAdditionalMem0* temp_s0;
+	f32 temp_f0;
+	s32 sp2C;
+	s32 sp78;
+	s32 sp74;
+	s32 sp70;
+	f32 sp6C;
+	s32 sp68;
+	f32 sp64;
+	f32 sp58[3];
+	f32 sp4C[3];
+	f32 sp40[3];
+	f32 sp3C;
+	Actor* temp_s1;
+	f32 sp34;
+	s32 pad;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808062B8_chdiggerboss.s")
+	temp_s0 = func_80100094(arg0, 0U);
+	temp_s1 = func_80802228_chdiggerboss(arg0);
+	sp78 = 0;
+	sp74 = 0;
+	func_80802C40_chdiggerboss(arg0);
+	if (func_800F6D24(character_getActiveIndex()) != 0)
+	{
+		return 0;
+	}
+	sp2C = timer_reachedZero_dupe(&temp_s0->unk14) != 0 && func_808042D8_chdiggerboss(temp_s1) == 2;
+	switch (temp_s0->unk28) {
+	case 1:
+		if (timer_reachedZero(&temp_s0->unk18) != 0) {
+			temp_s0->unk28 = 2;
+		}
+		break;
+	case 2:
+		sp70 = timer_reachedZero(&temp_s0->unk34);
+		if (sp2C != 0)
+		{
+			((f32*)temp_s1->actorData)[3] = func_800F15F8(((f32*)temp_s1->actorData)[3], temp_s0->unk38, time_getDelta() * 300.0f);
+			func_808063C8_chdiggerboss(arg0, 0, temp_s0->unk3C);
+			func_8010B990(temp_s1, 5);
+		}
+		if (sp70 != 0)
+		{
+			temp_s0->unk28 = 3;
+		}
+		break;
+	case 3:
+		((f32*)temp_s1->actorData)[3] = func_800F15F8(((f32*)temp_s1->actorData)[3], 0.0f, time_getDelta() * 300.0f);
+		func_808063C8_chdiggerboss(arg0, 0, temp_s0->unk3C);
+		func_8010B990(temp_s1, 5);
+		if (((f32*)temp_s1->actorData)[3] == 0.0f) {
+			temp_s0->unk28 = 4;
+			temp_s0->unk2C = 360.0f;
+		}
+		break;
+	case 4:
+		sp6C = time_getDelta() * temp_s0->unk20;
+		temp_s0->unk2C -= mlAbsF(sp6C);
+		temp_s1->rotation[1] += sp6C;
+		func_80805B8C_chdiggerboss(arg0, temp_s0->unk20);
+		if (temp_s0->unk2C < 0.0f)
+		{
+			temp_s0->unk28 = 5;
+			temp_s0->unk34 = temp_s0->unk30;
+		}
+		else
+		{
+			sp74 = 1;
+		}
+		break;
+	case 5:
+		sp68 = timer_reachedZero(&temp_s0->unk34);
+		if (sp2C != 0)
+		{
+			((f32*)temp_s1->actorData)[3] = func_800F15F8(((f32*)temp_s1->actorData)[3], temp_s0->unk38, time_getDelta() * 300.0f);
+			func_808063C8_chdiggerboss(arg0, 0, temp_s0->unk3C);
+			func_8010B990(temp_s1, 5);
+		}
+		if (sp68 != 0)
+		{
+			temp_s0->unk28 = 6;
+		}
+		break;
+	case 6:
+		((f32*)temp_s1->actorData)[3] = func_800F15F8(((f32*)temp_s1->actorData)[3], 0.0f, time_getDelta() * 300.0f);
+		func_808063C8_chdiggerboss(arg0, 0, temp_s0->unk3C);
+		func_8010B990(temp_s1, 5);
+		if (((f32*)temp_s1->actorData)[3] == 0.0f)
+		{
+			temp_s0->unk28 = 7;
+			temp_s0->unk2C = 360.0f;
+		}
+		break;
+	case 7:
+		sp64 = time_getDelta() * temp_s0->unk20;
+		temp_s0->unk2C -= mlAbsF(sp64);
+		temp_s1->rotation[1] += sp64;
+		func_80805B8C_chdiggerboss(arg0, temp_s0->unk20);
+		if (temp_s0->unk2C < 0.0f)
+		{
+			temp_s0->unk28 = 0;
+			func_80802CB4_chdiggerboss(arg0);
+			((f32*)temp_s1->actorData)[3] = 0;
+			func_80804A50_chdiggerboss(temp_s1, 1);
+			sp78 = 1;
+		}
+		else
+		{
+			sp74 = 1;
+		}
+		break;
+	}
+	func_808064CC_chdiggerboss(arg0, sp74);
+	ml_vec3f_clear(sp58);
+	sp58[1] = temp_s1->position[1];
+	func_800EEB9C(sp4C, temp_s1->rotation[1], 1.0f);
+	func_800EEB9C(sp40, func_800F1DF4(sp58, temp_s1->position), 1.0f);
+	temp_f0 = ml_vec3f_dot_product(sp4C, sp40);
+	if (temp_f0 > 0.0f)
+	{
+		sp3C = 1800.0f - (temp_f0 * 650.0f);
+	}
+	else
+	{
+		sp3C = 1800.0f - (temp_f0 * 250.0f);
+	}
+	if ((sp3C * sp3C) < func_800EFC7C(sp58, temp_s1->position))
+	{
+		sp34 = temp_s1->position[1];
+		func_800EEB9C(temp_s1->position, func_800F1DF4(sp58, temp_s1->position), sp3C);
+		temp_s1->position[1] = sp34;
+	}
+	return sp78;
+}
+
+void func_808062B8_chdiggerboss(Actor* arg0) {
+	DiggerBossAdditionalMem0* sp1C;
+	Actor* hag1;
+
+	sp1C = func_80100094(arg0, 0U);
+	hag1 = func_80802228_chdiggerboss(arg0);
+	sp1C->unk14 = 2.0f;
+	((f32*)hag1->actorData)[3] = 0;
+}
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806300_chdiggerboss.s")
+s32 func_80806300_chdiggerboss(Actor* arg0)
+{
+	DiggerBossAdditionalMem0* sp2C;
+	f32 sp28;
+	f32 sp24;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808063C8_chdiggerboss.s")
+	sp2C = func_80100094(arg0, 0U);
+	sp24 = time_getDelta();
+	if (sp2C->unk8 == 2)
+	{
+		return -1;
+	}
+	sp28 = func_800136E4(func_8010CD50(arg0, func_80802248_chdiggerboss(arg0)) - arg0->rotation[1]);
+	sp2C->unk10 = func_800F1FF0(sp2C->unk10, sp28, 0.1f, sp24 * 4.0f, sp24 * 100.0f);
+	return func_800F20BC(sp2C->unk10, sp28, 10.0f);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808064CC_chdiggerboss.s")
+s32 func_808063C8_chdiggerboss(Actor* arg0, s32 arg1, f32 arg2) {
+	f32 sp34;
+	f32 sp30;
+	f32 sp2C;
+	f32 sp28;
+	Actor* sp24;
+	s32 sp20;
+	sp28 = time_getDelta();
+	sp24 = func_80802228_chdiggerboss(arg0);
+	sp34 = func_8010CD50(arg0, func_80802248_chdiggerboss(arg0));
+	sp30 = sp24->rotation[1];
+	sp24->rotation[1] = func_800F1F38(sp30, sp34, sp28 * arg2);
+	sp2C = func_800F1DCC(sp24->rotation[1], sp30);
+	if (mlAbsF(func_800F1DCC(sp30, sp34)) > 20.0f)
+	{
+		func_80805B8C_chdiggerboss(arg0, sp2C);
+	}
+	sp20 = func_800F20BC(sp24->rotation[1], sp34, 10.0f);
+	if (arg1 != 0)
+	{
+		func_808064CC_chdiggerboss(arg0, sp20 == 0);
+	}
+	return sp20;
+}
+
+void func_808064CC_chdiggerboss(Actor* arg0, s32 arg1)
+{
+	DiggerBossAdditionalMem0* sp24;
+
+	sp24 = func_80100094(arg0, 0U);
+	sp24->unk24 = _subaddieaudioloop_entrypoint_7((s32)sp24->unk24, arg0->position, arg1, &D_8080A0EC_chdiggerboss, arg0->unk70_0);
+}
 
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806528_chdiggerboss.s")
@@ -2644,11 +3039,65 @@ void func_8080666C_chdiggerboss(Actor* arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808066A0_chdiggerboss.s")
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806A78_chdiggerboss.s")
+void func_80806A78_chdiggerboss(Actor* arg0, s32 arg1, u8* arg2) {
+	DiggerBossAdditionalMem0* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806B38_chdiggerboss.s")
+	temp_v0 = func_80100094(arg0, 0U);
+	rare_memcpy(&temp_v0->unk68, arg2, 0x10);
+	temp_v0->unk5E = 3;
+	temp_v0->unk60 = 1.75f;
+	temp_v0->unk5D = *arg2;
+	func_80803BE8_chdiggerboss(arg0, arg1, 8);
+	func_808027F4_chdiggerboss(arg0);
+	if (character_getTransform(character_getActiveIndex()) == TRANSFORM_11_CLOCKWORK)
+	{
+		temp_v0->unk5C = 1;
+		func_800F7B9C(character_getActiveIndex(), 0x8EU);
+		return;
+	}
+	func_80806B38_chdiggerboss(arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806C08_chdiggerboss.s")
+void func_80806B38_chdiggerboss(Actor* arg0) {
+	DiggerBossAdditionalMem0* sp3C;
+	f32 sp30[3];
+	f32 sp24[3];
+	s32 sp20;
+
+	sp3C = func_80100094(arg0, 0U);
+	if ((sp3C->unk5F != 0) || (sp3C->unk4 != 0))
+	{
+		sp3C->unk5C = 3;
+		sp3C->unk60 = 0.15f;
+		return;
+	}
+	sp20 = func_80802248_chdiggerboss(arg0);
+	sp3C->unk5C = 3;
+	sp3C->unk60 = 1.75f;
+	character_getCoords(sp20, sp30);
+	ml_vec3f_assign_value(sp24, 0.0f, func_800F1DF4(sp30, arg0->position), 0.0f);
+	func_800F8444(sp20, sp24);
+	func_800F7C58(sp20, 0x61, 1);
+}
+
+void func_80806C08_chdiggerboss(Actor* arg0) {
+	s32 pad;
+	s32 temp_a0;
+	DiggerBossAdditionalMem0* temp_s0;
+
+	temp_s0 = func_80100094(arg0, 0U);
+	temp_a0 = func_80802248_chdiggerboss(arg0);
+	if (temp_s0->unk4 != 0) {
+		temp_s0->unk5C = 0xB;
+		temp_s0->unk60 = 0.15f;
+		return;
+	}
+	func_800F7B9C(temp_a0, 0x63U);
+	func_800F7C58(temp_a0, 0x61, 2);
+	func_80802878_chdiggerboss(arg0, 5, 1);
+	temp_s0->unk5C = 0xB;
+	temp_s0->unk60 = 1.0f;
+}
 
 void func_80806CA4_chdiggerboss(Actor* arg0, s32 arg1)
 {
@@ -2667,9 +3116,34 @@ void func_80806CA4_chdiggerboss(Actor* arg0, s32 arg1)
 }
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806CF8_chdiggerboss.s")
+void func_80806CF8_chdiggerboss(Actor* arg0, s32 arg1) {
+	DiggerBossAdditionalMem0* sp1C;
+	Actor* sp18;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806D84_chdiggerboss.s")
+	sp1C = func_80100094(arg0, 0U);
+	if (arg1 == 0)
+	{
+		sp18 = func_801084B0(0x4F2, &arg0);
+		_subaddieskeleton_entrypoint_0(arg0, 0x1E, sp18->position);
+		sp1C->unk64 = sp18->unk0;
+		sp1C->unk5C = 5;
+		if (sp1C->unk5E > 0)
+		{
+			sp1C->unk5E--;
+		}
+		func_80800180_chdiggerboss(arg0, 7);
+	}
+}
+
+Actor* func_80806D84_chdiggerboss(Actor* arg0) {
+	DiggerBossAdditionalMem0* temp_v0;
+
+	temp_v0 = func_80100094(arg0, 0U);
+	if (temp_v0->unk64 != NULL) {
+		return func_80106790(temp_v0->unk64);
+	}
+	return NULL;
+}
 
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806DC4_chdiggerboss.s")
@@ -2678,7 +3152,17 @@ void func_80806EE4_chdiggerboss(Actor* arg0, s32 arg1) {
 	((DiggerBossAdditionalMem0*)func_80100094(arg0, 0U))->unk5F = (s8)arg1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806F10_chdiggerboss.s")
+u8 func_80806F10_chdiggerboss(Actor* arg0, u8 arg1)
+{
+
+	if (arg1 == 0)
+	{
+		arg1 = _subaddieaudioquick_entrypoint_1(arg0, arg0->position);
+	}
+	func_800C4B7C(D_8080A11C_chdiggerboss[rand_iBounded(0, 2)]);
+	func_800C4350(arg1, arg0->position, &D_8080A104_chdiggerboss);
+	return arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80806F8C_chdiggerboss.s")
 
@@ -2686,7 +3170,18 @@ void func_80806EE4_chdiggerboss(Actor* arg0, s32 arg1) {
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808070B0_chdiggerboss.s")
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80807280_chdiggerboss.s")
+void func_80807280_chdiggerboss(Actor* arg0, s32 arg1, s16* arg2) {
+	DiggerBossAdditionalMem0* sp1C;
+
+	sp1C = func_80100094(arg0, 0U);
+	rare_memcpy(&sp1C->unk88, arg2, 0x10);
+	func_808027F4_chdiggerboss(arg0);
+	func_80802C0C_chdiggerboss(arg0);
+	func_80803BE8_chdiggerboss(arg0, arg1, 1);
+	sp1C->unk7C = 1;
+	sp1C->unk84 = 1.5f;
+	sp1C->unk7E = arg2[0];
+}
 
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80807304_chdiggerboss.s")
@@ -2706,10 +3201,65 @@ void func_80807664_chdiggerboss(Actor* arg0) {
 }
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80807698_chdiggerboss.s")
+void func_80807698_chdiggerboss(Actor* arg0, s32 arg1)
+{
+	Actor* temp_s4;
+	s32 var_s0;
+	s32 var_v0;
+	s32 temp;
+	DiggerBossAdditionalMem0* temp_s3;
+
+	temp_s3 = func_80100094(arg0, 0U);
+	temp_s4 = func_80802228_chdiggerboss(arg0);
+	if (arg1 != 0)
+	{
+		temp = 1;
+	}
+	else
+	{
+		if (temp_s3->unkA3 != 0)
+		{
+			var_v0 = 1;
+		}
+		else
+		{
+			var_v0 = 0;
+		}
+		temp = var_v0;
+	}
+	for (var_s0 = 0; var_s0 < 4; var_s0++)
+	{
+		if (temp_s3->unkA2 & (1 << var_s0))
+		{
+			func_80805448_chdiggerboss(temp_s4, var_s0, temp);
+		}
+	}
+}
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80807754_chdiggerboss.s")
+void func_80807754_chdiggerboss(Actor* arg0, s32 arg1, f32 arg2) {
+	Actor* temp_s2;
+	s32 var_s0;
+	DiggerBossAdditionalMem0* temp_s1;
+
+	temp_s1 = func_80100094(arg0, 0U);
+	temp_s2 = func_80802228_chdiggerboss(arg0);
+	var_s0 = 0;
+	temp_s1->unk98 = arg2;
+	temp_s1->unk9C = 2.0f;
+	temp_s1->unkA3 = 1;
+	temp_s1->unkA2 = 0U;
+	for (var_s0 = 0; var_s0 < 4; var_s0++)
+	{
+		if (func_80805798_chdiggerboss(temp_s2, var_s0) != 0)
+		{
+			temp_s1->unkA2 |= (1 << var_s0);
+		}
+	}
+	func_808027F4_chdiggerboss(arg0);
+	func_80803BE8_chdiggerboss(arg0, arg1, 1);
+	func_808041E4_chdiggerboss(func_80802228_chdiggerboss(arg0), 3);
+}
 
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_8080783C_chdiggerboss.s")
@@ -2769,15 +3319,67 @@ void func_80808000_chdiggerboss(Actor* arg0) {
 }
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808034_chdiggerboss.s")
+void func_80808034_chdiggerboss(Actor* arg0) {
+	Hag1AdditionalMem0* sp24;
+	s32 sp20;
 
+	sp24 = func_80100094(arg0, 0U);
+	sp20 = 0;
+	if (sp24->unkA4 == 1) {
+		sp20 = 1;
+		if (func_8001210C(1) != 0) {
+			func_808081AC_chdiggerboss(arg0);
+		}
+	}
+	sp24->unkA6 = _subaddieaudioloop_entrypoint_7((s32)sp24->unkA6, arg0->position, sp20, &D_8080A160_chdiggerboss, arg0->unk70_0);
+}
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808080C0_chdiggerboss.s")
+void func_808080C0_chdiggerboss(Actor* arg0, s32 arg1)
+{
+	Hag1AdditionalMem0* sp1C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_8080815C_chdiggerboss.s")
+	sp1C = func_80100094(arg0, 0U);
+	sp1C->unkA4 = arg1;
+	switch (arg1)
+	{
+		case 0:
+			if (sp1C->unkA8 != NULL)
+			{
+				sp1C = sp1C;
+				func_8010114C(sp1C->unkA8, 0x4F, 0);
+				sp1C->unkA8 = NULL;
+				return;
+			}
+		case 1:
+			return;
+		case 2:
+			if (sp1C->unkA8 == NULL)
+			{
+				func_80108B04(arg0, 3U);
+			}
+			break;
+	}
+}
+void func_8080815C_chdiggerboss(Actor* arg0, s32 arg1) {
+	Hag1AdditionalMem0* sp1C;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808081AC_chdiggerboss.s")
+	sp1C = func_80100094(arg0, 0U);
+	if (arg1 == 3) {
+		sp1C->unkA8 = (s32)func_801084B0(0x178, &arg0)->unk0;
+	}
+}
 
+void func_808081AC_chdiggerboss(Actor* arg0) {
+	f32 sp34[3];
+	f32 sp28[3];
+
+	ml_vec3f_copy(sp28, arg0->position);
+	func_800EF1B8(sp28, arg0->rotation[1], -80.0f);
+	sp28[1] += 80.0f;
+	ml_vec3f_copy(sp34, sp28);
+	func_800EF1B8(sp34, arg0->rotation[1] + 90.0f, 200.0f);
+	func_800BBCB8(sp34, arg0->position, 1.0f, 1, &D_8080A16C_chdiggerboss);
+}
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808258_chdiggerboss.s")
 
@@ -2789,20 +3391,106 @@ void func_8080843C_chdiggerboss(Actor* arg0)
 }
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808470_chdiggerboss.s")
+void func_80808470_chdiggerboss(Actor* arg0, s32 arg1) {
+	DiggerBossAdditionalMem0* temp_s1;
+	s32 sp40;
+	f32 sp34[3];
+	f32 sp28[3];
+
+	temp_s1 = func_80100094(arg0, 0U);
+	sp40 = func_80802248_chdiggerboss(arg0);
+	temp_s1->unk3 = 1;
+	temp_s1->unkD8 = 0;
+	func_80803BE8_chdiggerboss(arg0, arg1, 8);
+	character_getCoords(sp40, sp34);
+	ml_vec3f_assign_value(sp28, 0.0f, func_800F1DF4(sp34, arg0->position), 0.0f);
+	func_800F8444(sp40, sp28);
+	if (func_808021E8_chdiggerboss(arg0, 0xB) == 0)
+	{
+		func_80802878_chdiggerboss(arg0, 3, 1);
+		func_80803660_chdiggerboss(arg0, 0x172D, 0x10E);
+		temp_s1->unkCC = 1;
+		return;
+	}
+	func_80109FE8(arg0, 1);
+	temp_s1->unkCC = 1;
+}
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808560_chdiggerboss.s")
+void func_80808560_chdiggerboss(Actor* arg0)
+{
+	DiggerBossAdditionalMem0* sp24;
+
+	sp24 = func_80100094(arg0, 0U);
+	func_80102FDC(func_808086A8_chdiggerboss(arg0), 0.8f);
+	func_80800180_chdiggerboss(arg0, 0xB);
+	func_808027F4_chdiggerboss(arg0);
+	func_80109FE8(arg0, 1);
+	sp24->unkCC = 4;
+	sp24->unkD0 = 0.5f;
+}
 
 //Grunty
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808085E0_chdiggerboss.s")
+void func_808085E0_chdiggerboss(Actor* arg0, s32 arg1)
+{
+	DiggerBossAdditionalMem0* temp_s0;
+	Actor* sp20;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808086A8_chdiggerboss.s")
+	temp_s0 = func_80100094(arg0, 0U);
+	if (arg1 == 5) 
+	{
+		sp20 = func_801084B0(0x4F6, &arg0);
+		temp_s0->unkD4 = sp20->unk0;
+		func_808087F0_chdiggerboss(arg0);
+		if (func_80802170_chdiggerboss(arg0, 0xB) == 0) 
+		{
+			func_80102FDC(sp20, 0.1f);
+			func_80800180_chdiggerboss(arg0, 0xA);
+			temp_s0->unkCC = 2;
+			return;
+		}
+		func_80102FDC(sp20, 0.8f);
+		func_80800180_chdiggerboss(arg0, 0xB);
+		temp_s0->unkCC = 4;
+		temp_s0->unkD0 = 0.5f;
+	}
+}
+
+Actor* func_808086A8_chdiggerboss(Actor* arg0) {
+	DiggerBossAdditionalMem0* temp_v0;
+
+	temp_v0 = func_80100094(arg0, 0U);
+	if (temp_v0->unkD4 != NULL) {
+		return func_80106790(temp_v0->unkD4);
+	}
+	return NULL;
+}
 
 //Grunty
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808086E8_chdiggerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808087F0_chdiggerboss.s")
+void func_808087F0_chdiggerboss(Actor* arg0) 
+{
+	DiggerBossAdditionalMem0* sp44;
+	Actor* sp40;
+	f32 sp34[3];
+	f32 sp28[3];
+	f32 sp24;
+
+	sp44 = func_80100094(arg0, 0U);
+	sp40 = func_808086A8_chdiggerboss(arg0);
+	if (sp40 != NULL) 
+	{
+		if (_subaddieskeleton_entrypoint_0(arg0, 0x10, &sp34) != 0)
+		{
+			sp24 = arg0->rotation[1] + sp44->unk10;
+			_subaddieskeleton_entrypoint_0(arg0, 0x1E, &sp28);
+			func_800EFE50(sp40->position, sp34, sp28, 0.5f);
+			func_800EF1B8(sp40->position, sp24, 80.0f);
+			sp40->position[1] += 80.0f;
+		}
+	}
+}
 
 void func_808088AC_chdiggerboss(Actor* arg0)
 {
@@ -2810,26 +3498,122 @@ void func_808088AC_chdiggerboss(Actor* arg0)
 }
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808088CC_chdiggerboss.s")
+void func_808088CC_chdiggerboss(Actor* arg0)
+{
+	s32 var_s0;
+	Hag1AdditionalMem0* hag1Mem;
+
+	var_s0 = 0;
+	hag1Mem = func_80100094(arg0, 0U);
+	for (var_s0 = 0; var_s0 < 4; var_s0++)
+	{
+		if (hag1Mem->unkB0[var_s0] != NULL)
+		{
+			func_80808BE4_chdiggerboss(arg0, func_80106790(hag1Mem->unkB0[var_s0]), var_s0);
+		}
+	}
+}
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808948_chdiggerboss.s")
+void func_80808948_chdiggerboss(Actor* arg0) {
+	Unk80132ED0* temp_a0;
+	s32 var_s0;
+	Hag1AdditionalMem0* hag1Mem;
+
+	hag1Mem = func_80100094(arg0, 0U);
+	for (var_s0 = 0; var_s0 < 4; var_s0++)
+	{
+		if (hag1Mem->unkB0[var_s0] != NULL)
+		{
+			if (func_801069A4(hag1Mem->unkB0[var_s0]) != 0)
+			{
+				func_800FFA88(hag1Mem->unkB0[var_s0]);
+			}
+			hag1Mem->unkB0[var_s0] = NULL;
+		}
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_808089BC_chdiggerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808B40_chdiggerboss.s")
+void func_80808B40_chdiggerboss(Actor* arg0, s32 arg1)
+{
+	Unk80132ED0* temp_a0;
+	s32 var_s1;
+	Hag1AdditionalMem0* temp_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808BE4_chdiggerboss.s")
+	temp_v0 = func_80100094(arg0, 0U);
+	if (arg1 != temp_v0->unkAC)
+	{
+		temp_v0->unkAC = arg1;
+		if (temp_v0->unkAC != 0)
+		{
+			if (temp_v0->unkB0[0] == 0)
+			{
+				func_80108B04(arg0, 6U);
+			}
+		}
+		else
+		{
+			for (var_s1 = 0; var_s1 < 4; var_s1++)
+			{
+				temp_a0 = temp_v0->unkB0[var_s1];
+				if (temp_a0 != NULL)
+				{
+					func_800FFA88(temp_a0);
+					temp_v0->unkB0[var_s1] = NULL;
+				}
+			}
+		}
+	}
+}
+
+void func_80808BE4_chdiggerboss(Actor* arg0, Actor* arg1, s32 arg2)
+{
+	func_800EEC30(arg1->position, D_8080A1BC_chdiggerboss[arg2], arg0->rotation[1] + D_8080A1AC_chdiggerboss[arg2], D_8080A1CC_chdiggerboss[arg2]);
+	ml_vec3f_add(arg1->position, arg0->position);
+	func_80103014(arg1);
+}
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808C64_chdiggerboss.s")
+void func_80808C64_chdiggerboss(Actor* arg0)
+{
+	Hag1AdditionalMem0* sp1C;
+	s32 var_v1;
+
+	sp1C = func_80100094(arg0, 0U);
+	for (var_v1 = 0; var_v1 < 2; var_v1++)
+	{
+		sp1C->unkC0[var_v1] = 0.0f;
+	}
+	ml_vec3f_copy(sp1C->unkD4, arg0->position);
+	sp1C->unkE0 = (f32)arg0->rotation[1];
+}
 
 //Hag-1
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808CD0_chdiggerboss.s")
+void func_80808CD0_chdiggerboss(Actor* arg0) {
+	Hag1AdditionalMem0* sp24;
+
+	sp24 = func_80100094(arg0, 0U);
+	func_80808D54_chdiggerboss(arg0, 0, -1.0f, &D_8080A1E8_chdiggerboss);
+	func_80808D54_chdiggerboss(arg0, 1, 1.0f, &D_8080A1DC_chdiggerboss);
+	func_80808F44_chdiggerboss(arg0);
+	ml_vec3f_copy(sp24->unkD4, arg0->position);
+	sp24->unkE0 = (f32)arg0->rotation[1];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808D54_chdiggerboss.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/func_80808F44_chdiggerboss.s")
+void func_80808F44_chdiggerboss(Actor* arg0) {
+	s32 temp_v0;
+
+	temp_v0 = func_801065A4();
+	if (temp_v0 != 0)
+	{
+		_glid_entrypoint_0(temp_v0, 1, _chdiggerboss_entrypoint_3, arg0->unk0);
+		_glid_entrypoint_0(temp_v0, 2, _chdiggerboss_entrypoint_3, arg0->unk0);
+	}
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/boss/chdiggerboss_entrypoint_3.s")
 
