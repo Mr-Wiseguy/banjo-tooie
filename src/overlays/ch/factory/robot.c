@@ -660,7 +660,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 sp50 = _subaddiejoy_entrypoint_9(arg0, &arg0->unk54, 1);
                 if (temp_s1->unk1C == 0.0f)
                 {
-                    func_800EEB9C((f32*)&arg0->actorData[4], arg0->unk54, ((f32*)arg0->actorData)[3] * sp50);
+                    ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], arg0->unk54, ((f32*)arg0->actorData)[3] * sp50);
                     ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
                 }
                 else {
@@ -676,7 +676,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 }
                 temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 150.0f);
                 arg0->unk54 = temp_f0_2;
-                func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
                 ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
             }
 
@@ -705,7 +705,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
 
                     temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 120.0f);
                     arg0->unk54 = temp_f0_3;
-                    func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                    ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
                     ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
                     if (func_8010B990(arg0, 0x504427) & 0x26)
                     {

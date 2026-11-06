@@ -13986,15 +13986,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02127C80
-    bss_size: 0x00000210
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02127C80, c, kern]
-      - [0x021280A0, .rodata, kern]
-      - [0x021280A0, data, kern]
-      - [0x02128100, bss, kern]
+      - [auto, c, kern]
   - name: fxdialog_header
     dir: overlays/fxdialog
     type: bin

@@ -330,7 +330,7 @@ BanjoStateId func_80800D24_bskazfly(PlayerState *self, BanjoStateId nextState) {
     }
 
     ml_vec3f_copy(sp2C, self->kazfly->unk10);
-    func_800EF2A0(sp2C);
+    ml_vec3f_normalizeMagnitude(sp2C);
     sp44 = mlAbsF(ml_vec3f_dot_product(sp38, sp2C));
     if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (sp28 & 0x80)) {
         func_80800974_bskazfly(self);

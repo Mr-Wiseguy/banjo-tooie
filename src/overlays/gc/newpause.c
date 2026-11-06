@@ -725,7 +725,7 @@ void func_808012CC_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* a1)
 	if (pauseMenu->DrawPageHeader != 0)
 	{
 		_fxkern_entrypoint_2();
-		func_800B8CE0(0xC28);
+		graphics_setTextPattern(0xC28);
 		_fxkern_entrypoint_1(a1,pauseMenu->pageTitleOffset+0x20, _gldbstring_entrypoint_1((u32 *)pauseMenu->textPointer, pauseMenu->SubPage));
 	}
 	return;

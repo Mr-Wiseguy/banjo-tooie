@@ -100,7 +100,7 @@ void func_80800260_chgruntyfireball(Actor* actor)
     temp_s5 = func_800B53A4(0xA);
     for (var_s1 = 0; var_s1 < 0xA; var_s1++)
     {
-        func_800EEB9C(sp70, (f32)var_s1 * 36.0f, rand_fBounded(60.0f, 80.0f));
+        ml_vec3f_getVecFromYaw(sp70, (f32)var_s1 * 36.0f, rand_fBounded(60.0f, 80.0f));
         ml_vec3f_add(sp70, actor->position);
         func_800BABB8(temp_s5, sp70, sp7C, 1.0f, &D_80800524_chgruntyfireball);
     }

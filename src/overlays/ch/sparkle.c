@@ -19,7 +19,7 @@ void func_80800000_chsparkle(Actor* arg0)
     ml_vec3f_copy(sp48, arg0->position);
     sp48[1] -= 200.0f;
     func_800F18FC(arg0->position, sp54, sp34);
-    func_800EEB9C(sp3C, sp34[1] + rand_fBounded(-90.0f, 90.0f), 40.0f);
+    ml_vec3f_getVecFromYaw(sp3C, sp34[1] + rand_fBounded(-90.0f, 90.0f), 40.0f);
     ml_vec3f_add(sp3C, arg0->position);
     sp3C[1] += rand_fBounded(0.0f, 120.0f);
     func_800BABB8(temp_v0, sp3C, &sp48, 1.0f, &D_8080012C_chsparkle);

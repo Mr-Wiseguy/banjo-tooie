@@ -163,12 +163,12 @@ void func_808003EC_chintrotext(Actor* arg0, GraphicsBuffers* arg1)
     if (((s32)(arg0->unk70_10) >= 3) && (func_800A819C() != 0))
     {
         _fxkern_entrypoint_2();
-        func_800B8C8C(_subaddiefade_entrypoint_0(arg0));
+        graphics_setTextAlpha(_subaddiefade_entrypoint_0(arg0));
 
         for (var_s1 = 0; var_s1 < textMemory->numberOfLines; var_s1++)
         {
             //Set Font color to be drawn
-            func_800B8CE0(textMemory->textFont[var_s1]);
+            graphics_setTextPattern(textMemory->textFont[var_s1]);
             //If the text color is a specifically pink
             if (textMemory->textFont[var_s1] == 0xC25)
             {

@@ -410,7 +410,7 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
     ml_getdiff_vec3f(sp38, arg1, arg0);
     ml_vec3f_assign_value(sp50, 0.0f, 1.0f, 0.0f);
     ml_vec3f_assign_value(sp44, sp38[0], 0.0f, sp38[2]);
-    func_800EF2A0(sp44);
+    ml_vec3f_normalizeMagnitude(sp44);
     ml_vec3f_cross_product(sp60, sp44, sp50);
     sp94 = ml_vec3f_dot_product(arg3, sp60);
     if (sp94 > 0.0f || sp94 == 0.0f) {
@@ -428,7 +428,7 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
         sp7C[i] = arg2[i] + (arg3[i] * temp_f2);
     }
     ml_vec3f_assign_value(sp6C, sp38[0], 0.0f, sp38[2]);
-    func_800EF2A0(sp6C);
+    ml_vec3f_normalizeMagnitude(sp6C);
     ml_vec3f_assign_value(sp2C, sp7C[0] - arg0[0], 0.0f, sp7C[2] - arg0[2]);
     temp_f2 = ml_vec3f_dot_product(sp2C, sp6C);
     if (temp_f2 < 0.0f) {
@@ -516,7 +516,7 @@ s32 func_80096E30(ba_unknown_98_s* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg
     func_800EFE50(arg1, spA0, sp58, 0.5f);
     ml_vec3f_sum(arg0->unk0, spAC, sp64);
     ml_vec3f_apply_scale(arg0->unk0, -0.5f);
-    func_800EF2A0(arg0->unk0);
+    ml_vec3f_normalizeMagnitude(arg0->unk0);
     if (ml_vec3f_is_equal(spAC, sp64) != 0) {
         var_v1 = 2;
     } else {
@@ -569,7 +569,7 @@ s32 func_80097104(PlayerState* arg0, f32* arg1, f32 arg2) {
     ml_getScaledVec3f(sp30, sp3C, -1.0f);
     func_8009BB24(arg0, sp1C);
     sp1C[1] = 0.0f;
-    func_800EF2A0(sp1C);
+    ml_vec3f_normalizeMagnitude(sp1C);
     sp28 = ml_vec3f_dot_product(sp3C, sp1C);
     ml_vec3f_assign_value(sp54, sp60[0], sp60[1] - 50.0f, sp60[2]);
     if (0.0f < sp28) {
@@ -712,7 +712,7 @@ s32 func_800976DC(PlayerState* arg0) {
     func_800F0410(sp4C, sp28[0], sp64);
     ml_getdiff_vec3f(arg0->unk98->unk0, sp4C, sp64);
     arg0->unk98->unk0[1] = 0.0f;
-    func_800EF2A0(arg0->unk98->unk0);
+    ml_vec3f_normalizeMagnitude(arg0->unk98->unk0);
     temp_v0 = arg0->unk98;
     if ((temp_v0->unk0[0] == 0.0f) && (temp_v0->unk0[2] == 0.0f)) {
         return 0;

@@ -1814,7 +1814,7 @@ void func_80802F00_chdiggerboss(Actor* arg0, s32 arg1)
 	sp44 = character_getActiveIndex();
 	character_getCoords(sp44, sp38);
 	if (func_800EFB8C(sp38, arg0->position) < 550.0f) {
-		func_800EEB9C(sp2C, func_800F1DF4(arg0->position, sp38), 550.0f);
+		ml_vec3f_getVecFromYaw(sp2C, func_800F1DF4(arg0->position, sp38), 550.0f);
 		ml_vec3f_add(sp2C, arg0->position);
 		sp2C[1] = sp38[1];
 		func_800F8418((s32)sp44, &sp2C);
@@ -2445,13 +2445,13 @@ void func_80804680_chdiggerboss(Actor* arg0)
 	if (_subaddieskeleton_entrypoint_2(arg0->unk0, 7, sp44) != 0)
 	{
 		ml_translateAngleDist(sp44, arg0->rotation[1], 150.0f);
-		func_800EEB9C(sp38, arg0->rotation[1] - 180.0f, 1000.0f);
+		ml_vec3f_getVecFromYaw(sp38, arg0->rotation[1] - 180.0f, 1000.0f);
 		sp5C = func_8010D490(sp44, sp38, 650.0f, 325.0f, -1);
 		if (sp5C != -1)
 		{
 			character_getCoords(sp5C, sp50);
 			sp34 = ml_map_f(func_800EFB8C(sp44, sp50), 0.0f, 650.0f, 1400.0f, 100.0f);
-			func_800EEB9C(sp24, func_800F1DF4(sp44, sp50), sp34);
+			ml_vec3f_getVecFromYaw(sp24, func_800F1DF4(sp44, sp50), sp34);
 			func_800F48BC(sp5C, sp24);
 		}
 	}
@@ -2940,8 +2940,8 @@ s32 func_80805DF4_chdiggerboss(Actor* arg0)
 	func_808064CC_chdiggerboss(arg0, sp74);
 	ml_vec3f_clear(sp58);
 	sp58[1] = temp_s1->position[1];
-	func_800EEB9C(sp4C, temp_s1->rotation[1], 1.0f);
-	func_800EEB9C(sp40, func_800F1DF4(sp58, temp_s1->position), 1.0f);
+	ml_vec3f_getVecFromYaw(sp4C, temp_s1->rotation[1], 1.0f);
+	ml_vec3f_getVecFromYaw(sp40, func_800F1DF4(sp58, temp_s1->position), 1.0f);
 	temp_f0 = ml_vec3f_dot_product(sp4C, sp40);
 	if (temp_f0 > 0.0f)
 	{
@@ -2954,7 +2954,7 @@ s32 func_80805DF4_chdiggerboss(Actor* arg0)
 	if ((sp3C * sp3C) < func_800EFC7C(sp58, temp_s1->position))
 	{
 		sp34 = temp_s1->position[1];
-		func_800EEB9C(temp_s1->position, func_800F1DF4(sp58, temp_s1->position), sp3C);
+		ml_vec3f_getVecFromYaw(temp_s1->position, func_800F1DF4(sp58, temp_s1->position), sp3C);
 		temp_s1->position[1] = sp34;
 	}
 	return sp78;

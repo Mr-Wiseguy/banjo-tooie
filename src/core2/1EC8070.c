@@ -117,26 +117,27 @@ f32 ml_vec3f_distance_sq(f32 a[3], f32 b[3]) {
     return SQ(delta[0]) + SQ(delta[1]) + SQ(delta[2]);
 }
 
-void func_800EEB9C(f32* arg0, f32 arg1, f32 arg2)
+//ml_vec3f_getVecFromYaw
+void ml_vec3f_getVecFromYaw(f32* dst, f32 yaw, f32 dist)
 {
     f32 temp_f6;
 
-    temp_f6 = ml_sin2f(arg1) * arg2;
-    arg0[0] = temp_f6;
-    arg0[1] = 0.0f;
-    arg0[2] = ml_cos2f() * arg2;
+    temp_f6 = ml_sin2f(yaw) * dist;
+    dst[0] = temp_f6;
+    dst[1] = 0.0f;
+    dst[2] = ml_cos2f() * dist;
 }
 
-void func_800EEBF0(f32* arg0, f32* arg1, f32 arg2)
+void func_800EEBF0(f32* dst, f32* arg1, f32 dist)
 {
-    ml_vec3f_clear(arg0);
-    ml_translateAngleDist_3D(arg0, arg1[0], arg1[1], arg2);
+    ml_vec3f_clear(dst);
+    ml_translateAngleDist_3D(dst, arg1[0], arg1[1], dist);
 }
 
-void func_800EEC30(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
+void func_800EEC30(f32* dst, f32 pitch, f32 yaw, f32 dist)
 {
-    ml_vec3f_clear(arg0);
-    ml_translateAngleDist_3D(arg0, arg1, arg2, arg3);
+    ml_vec3f_clear(dst);
+    ml_translateAngleDist_3D(dst, pitch, yaw, dist);
 }
 
 void func_800EEC70(f32* arg0, f32 arg1, f32 arg2, f32 arg3)
@@ -258,17 +259,17 @@ void ml_translateAngleDist_3D(f32* arg0, f32 pitchAngle, f32 yawAngle, f32 dist)
     arg0[2] += temp_f6 * ml_cos2f(); //z
 }
 
-void func_800EF2A0(f32* arg0)
+void ml_vec3f_normalizeMagnitude(f32* vec)
 {
     f32 temp_f14;
     f32 temp_f2_2;
-    temp_f14 = arg0[0] * arg0[0] + arg0[1] * arg0[1] + arg0[2] * arg0[2];
+    temp_f14 = SQ(vec[0]) + SQ(vec[1]) + SQ(vec[2]);
     if (temp_f14 != 0.0f)
     {
         temp_f2_2 = 1.0f / sqrtf(temp_f14);
-        arg0[0] *= temp_f2_2;
-        arg0[1] *= temp_f2_2;
-        arg0[2] *= temp_f2_2;
+        vec[0] *= temp_f2_2;
+        vec[1] *= temp_f2_2;
+        vec[2] *= temp_f2_2;
     }
 }
 
@@ -296,17 +297,17 @@ void ml_vec3f_subtract(f32 dst[3], f32 src[3]) {
     dst[2] -= src[2];
 }
 
-void func_800EF410(f32* arg0, f32* arg1)
+void ml_vec3f_getNormalized(f32* dst, f32* src)
 {
     f32 temp_f14;
 
-    temp_f14 = SQ(arg1[0]) + SQ(arg1[1]) + SQ(arg1[2]);
+    temp_f14 = SQ(src[0]) + SQ(src[1]) + SQ(src[2]);
     if (temp_f14 != 0.0f)
     {
-        ml_getScaledVec3f(arg0, arg1, 1.0f / sqrtf(temp_f14));
+        ml_getScaledVec3f(dst, src, 1.0f / sqrtf(temp_f14));
         return;
     }
-    ml_vec3f_copy(arg0, arg1);
+    ml_vec3f_copy(dst, src);
 }
 
 void ml_vec3f_normalizeAngles_f(f32* arg0)

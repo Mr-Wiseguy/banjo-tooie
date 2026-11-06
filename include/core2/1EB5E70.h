@@ -30,6 +30,6 @@ void func_800DF72C(s32);
 void func_800DF738(void*);
 void func_800DF744(s32, s32);
 void func_800DF830(s32);
-void func_800DF944(u32 a0, f32* coords, f32 a2, f32 a3, u8 a4, u8 a5, void *a6);
+void func_800DF944(GraphicsBuffers* a0, f32* coords, f32 a2, f32 a3, u8 a4, u8 a5, void *a6);
 
 #endif // __CORE2_1EB5E60_H__

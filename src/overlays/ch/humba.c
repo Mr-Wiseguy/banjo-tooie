@@ -437,7 +437,7 @@ void func_80800D74_chhumba(Actor* arg0)
     {
         temp_v0 = rand_iBounded(1, 3);
         sp38 = func_800B53A4(temp_v0);
-        func_800EEB9C(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
+        ml_vec3f_getVecFromYaw(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
         sp2C[1] = -50.0f;
         func_800BABB8(sp38, sp2C, NULL, 1.0f, &D_808026A0_chhumba);
         func_800BA22C(sp38, temp_v0);

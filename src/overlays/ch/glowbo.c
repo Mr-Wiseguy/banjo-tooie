@@ -569,7 +569,7 @@ void func_80800E28_chglowbo(Actor* arg0)
     }
     arg0->rotation[1] = (func_80090010() + rand_fBounded(-110.0f, 110.0f));
     func_8010D254(sp3C);
-    func_800EEB9C(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
+    ml_vec3f_getVecFromYaw(GLOWBO_DATA(arg0)->unk0, arg0->rotation[1], 400.0f);
     ml_vec3f_add(GLOWBO_DATA(arg0)->unk0, arg0->position);
     GLOWBO_DATA(arg0)->unk0[1] = (f32)(sp3C[1] + 20.0f);
     GLOWBO_DATA(arg0)->unk1C = -80.0f;

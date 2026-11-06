@@ -349,7 +349,7 @@ void func_80800C14_chclockworkmouse(Actor *actor) {
     f32 sp1C[3];
 
     func_800904C8(0x28);
-    func_800EEB9C(sp1C, actor->rotation[1], 120.0f);
+    ml_vec3f_getVecFromYaw(sp1C, actor->rotation[1], 120.0f);
     ml_vec3f_add(sp1C, actor->position);
     func_800903D0(sp1C);
 }

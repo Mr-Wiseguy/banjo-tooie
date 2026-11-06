@@ -85,6 +85,6 @@ void func_808001AC_chicywind(Actor* arg0)
     }
     character_getCoords(characterIndex, sp40);
     sp38 = ml_map_f(ml_vec3f_distance(sp40, arg0->position), 1000.0f, 1800.0f, 1200.0f, 300.0f) * (1.0f / sp34);
-    func_800EEB9C(sp4C, func_800F1DF4(arg0->position, sp40), sp38);
+    ml_vec3f_getVecFromYaw(sp4C, func_800F1DF4(arg0->position, sp40), sp38);
     func_800F48BC(characterIndex, &sp4C);
 }

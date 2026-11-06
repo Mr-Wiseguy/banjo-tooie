@@ -320,7 +320,7 @@ void func_800C8F08(s32* arg0, f32* arg1) {
     }
     if (arg1 != NULL) {
         ml_vec3f_copy(D_8012AB28, arg1);
-        func_800EF2A0(D_8012AB28);
+        ml_vec3f_normalizeMagnitude(D_8012AB28);
     }
 }
 

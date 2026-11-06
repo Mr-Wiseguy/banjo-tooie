@@ -398,7 +398,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 break;
         } 
         ml_vec3f_copy(sp2C, self->kazfly->unk10);
-        func_800EF2A0(sp2C);
+        ml_vec3f_normalizeMagnitude(sp2C);
         sp44 = mlAbsF(ml_vec3f_dot_product(&sp38, sp2C));
         if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (var_v0 & 0x80)) 
         {

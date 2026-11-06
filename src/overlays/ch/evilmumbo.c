@@ -610,7 +610,7 @@ void func_808011F4_chevilmumbo(Actor* actor)
 
     sp34 = func_800B53A4(4);
     tempf = actor->unk58 * 720.0f;
-    func_800EEB9C(sp28, tempf, 30);
+    ml_vec3f_getVecFromYaw(sp28, tempf, 30);
     ml_vec3f_add(sp28, actor->position);
     func_800BABB8(sp34, sp28, NULL, 1.0f, &D_8080434C_chevilmumbo);
     func_800BA22C(sp34, 4);

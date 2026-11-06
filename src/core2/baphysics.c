@@ -45,7 +45,7 @@ void func_8009AE08(PlayerState* self) {
 	f32 sp38;
 	f32 var_f12;
 
-	func_800EEB9C(self->unkC8->unk1C, self->unkC8->unk40[0], self->unkC8->unk4C[1] * self->unkC8->unk34[2]);
+	ml_vec3f_getVecFromYaw(self->unkC8->unk1C, self->unkC8->unk40[0], self->unkC8->unk4C[1] * self->unkC8->unk34[2]);
 	sp64[0] = self->unkC8->unk10[0];
 	sp64[1] = 0.0f;
 	sp64[2] = self->unkC8->unk10[2];
@@ -54,7 +54,7 @@ void func_8009AE08(PlayerState* self) {
 	if (func_80096518(self) != 0)
 	{
 		func_800963C0(self, sp4C);
-		func_800EF410(sp40, sp58);
+		ml_vec3f_getNormalized(sp40, sp58);
 		sp3C = ml_vec3f_dot_product(sp40, sp4C);
 		sp38 = func_800A3378(self);
 		if (sp3C != 0.0f)
@@ -157,11 +157,11 @@ void func_8009B27C(PlayerState* self)
 	self->unkC8->unk4[2] = sp30[2];
 	if (func_8009861C(self) == 2)
 	{
-		func_800EEB9C(sp3C, ml_normalizeAngle_f(func_80098610(self) + 180.0f), -func_80098628(self));
+		ml_vec3f_getVecFromYaw(sp3C, ml_normalizeAngle_f(func_80098610(self) + 180.0f), -func_80098628(self));
 	}
 	else
 	{
-		func_800EEB9C(sp3C, yaw_get(self), -func_80098628(self));
+		ml_vec3f_getVecFromYaw(sp3C, yaw_get(self), -func_80098628(self));
 	}
 
 	self->unkC8->unk4[0] += sp3C[0];
@@ -375,7 +375,7 @@ void baphysics_set_target_yaw(PlayerState* self, f32 target_yaw) {
 void func_8009B9F0(PlayerState* self, f32 arg1)
 {
     baphysics_set_target_horizontal_velocity(self, arg1);
-    func_800EEB9C(self->unkC8->unk1C, self->unkC8->unk40[0], self->unkC8->unk34[2]);
+    ml_vec3f_getVecFromYaw(self->unkC8->unk1C, self->unkC8->unk40[0], self->unkC8->unk34[2]);
     self->unkC8->unk1C[1] = 0.0f;
     self->unkC8->unk10[0] = self->unkC8->unk1C[0];
     self->unkC8->unk10[2] = self->unkC8->unk1C[2];
@@ -386,7 +386,7 @@ void baphysics_set_vertical_velocity(PlayerState* self, f32 arg1) {
 }
 
 void baphysics_set_horizontal_velocity(PlayerState* self, f32 yaw, f32 vel) {
-    func_800EEB9C(self->unkC8->unk10, yaw, vel);
+    ml_vec3f_getVecFromYaw(self->unkC8->unk10, yaw, vel);
 }
 
 void func_8009BA9C(PlayerState* self, f32* arg1)

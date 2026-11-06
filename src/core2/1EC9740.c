@@ -187,7 +187,7 @@ void func_800F0524(f32* arg0, f32* arg1, f32* arg2)
     ml_getdiff_vec3f(sp3C, &arg1[3], arg1);
     ml_getdiff_vec3f(sp30, &arg1[6], arg1);
     ml_vec3f_cross_product(sp24, sp3C, sp30);
-    func_800EF2A0(sp24);
+    ml_vec3f_normalizeMagnitude(sp24);
     func_800F03AC(arg0, arg1, sp24, arg2);
 }
 
@@ -340,7 +340,7 @@ s32 func_800F0BD0(f32* arg0, f32* arg1, f32 arg2, f32 arg3)
 
 f32 func_800F0C68(s32 arg0, f32* arg1, f32 arg2, f32 arg3)
 {
-    func_800EF2A0(arg1);
+    ml_vec3f_normalizeMagnitude(arg1);
     return arg2 / sqrtf((arg2 * arg2) + (arg3 * arg3));
 }
 
