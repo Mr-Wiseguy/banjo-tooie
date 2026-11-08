@@ -1,9 +1,9 @@
 #include "common.h"
 
-#include "overlays/ba/bee.h"
-#include "overlays/ba/yaw.h"
+#include "ba/bee.h"
+#include "ba/yaw.h"
 
-#include "overlays/ch/stinger.h"
+#include "ch/stinger.h"
 
 #include "core2/1E75710.h"
 #include "core2/1E75920.h"
@@ -23,8 +23,8 @@ s32 babee_entrypoint_0(void) {
 void func_80800008_babee(f32 arg0[3], f32 arg1[3], f32 arg2) {
     f32 sp24[3];
     func_800EFA98(sp24, arg1, arg2);
-    func_800EF04C(sp24, arg0);
-    func_800BBCB8(sp24, 0, 1.0f, 1, &D_80800390_babee);
+    ml_vec3f_add(sp24, arg0);
+    func_800BBCB8(sp24, NULL, 1.0f, 1, &D_80800390_babee);
 }
 
 void babee_entrypoint_1(s32 arg0) {
@@ -37,7 +37,7 @@ void babee_entrypoint_1(s32 arg0) {
     BaBee *bee;
     f32 sp30;
     
-    self = func_800F53D0(arg0);
+    self = character_getPlayerState(arg0);
     bee = self->bee;
     sp3C = func_80092CDC(self, sp50, 4);
     sp40 = func_80092EB0(self);
@@ -48,9 +48,9 @@ void babee_entrypoint_1(s32 arg0) {
         func_80800008_babee(sp50, sp44, 0.0f);
     } else {
         _baeggfire_entrypoint_3(self, sp5C, sp44);
-        func_800EF368(sp44, 100.0f);
-        func_800EE780(sp50, sp5C, sp44);
-        func_800EF368(sp44, bee->unk0[bee->index].unk0);
+        ml_vec3f_set_length(sp44, 100.0f);
+        ml_vec3f_sum(sp50, sp5C, sp44);
+        ml_vec3f_set_length(sp44, bee->unk0[bee->index].unk0);
         _baeggcursor_entrypoint_8(self);
         func_80800008_babee(sp50, sp44, 80.0f);
     }
@@ -63,7 +63,7 @@ void babee_entrypoint_2(PlayerState *self) {
 
     if (!(0.0f < bee->cooldown)) {
         bee->cooldown += bee->unk0[bee->index].cooldown_time;
-        func_8009C128(self, sp20);
+        player_getCoords(self, sp20);
         func_8010D930(0xB, -1, sp20, &D_808003BC_babee);
         _chbaddiesetup_entrypoint_1(_babee_entrypoint_1, self->unk184);
     }
@@ -99,6 +99,6 @@ void babee_entrypoint_7(PlayerState *self, f32 arg1, f32 cooldown, f32 arg3) {
 void babee_entrypoint_8(PlayerState *self) {
     BaBee *bee = self->bee;
     if (0.0f < bee->cooldown) {
-        bee->cooldown -= func_800D8FF8();
+        bee->cooldown -= time_getDelta();
     }
 }

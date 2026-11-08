@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/onearmbandit/chonearmbandit_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/onearmbandit/chonearmbandit_entrypoint_1.s")
-
+extern ActorData D_808012BC_chonearmbandit;
+ActorData* chonearmbandit_entrypoint_0()
+{
+    return &D_808012BC_chonearmbandit;
+}
+extern ActorData D_80801304_chonearmbandit;
+ActorData* chonearmbandit_entrypoint_1()
+{
+    return &D_80801304_chonearmbandit;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/onearmbandit/func_80800018_chonearmbandit.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/onearmbandit/func_80800040_chonearmbandit.s")

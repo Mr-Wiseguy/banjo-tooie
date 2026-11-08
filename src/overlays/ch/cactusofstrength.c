@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/chcactusofstrength_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/chcactusofstrength_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/chcactusofstrength_entrypoint_2.s")
-
+extern ActorData D_80800D00_chcactusofstrength;
+ActorData* chcactusofstrength_entrypoint_0()
+{
+    return &D_80800D00_chcactusofstrength;
+}
+extern ActorData D_80800D48_chcactusofstrength;
+ActorData* chcactusofstrength_entrypoint_1()
+{
+    return &D_80800D48_chcactusofstrength;
+}
+extern ActorData D_80800D90_chcactusofstrength;
+ActorData* chcactusofstrength_entrypoint_2()
+{
+    return &D_80800D90_chcactusofstrength;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cactusofstrength/func_80800024_chcactusofstrength.s")
 
 void func_80800108_chcactusofstrength(s32 arg0) 

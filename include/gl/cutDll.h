@@ -16,6 +16,7 @@
 
 
 void _glcutDll_entrypoint_0(void);
+s32 _glcutDll_entrypoint_1(void);
 void _glcutDll_entrypoint_6(u32, u32);
 void _glcutDll_entrypoint_7(u32 arg0);
 void _glcutDll_entrypoint_10(u32 arg0);
@@ -25,6 +26,7 @@ void _glcutDll_entrypoint_17();
 s32 _glcutDll_entrypoint_19(u32);
 s32 _glcutDll_entrypoint_20();
 void glcutDll_entrypoint_22(u32 arg0);
+s32 _glcutDll_entrypoint_23();
 void _glcutDll_entrypoint_24(u32, u32, u32);
 void func_80800018_glcutDll(u32);
 

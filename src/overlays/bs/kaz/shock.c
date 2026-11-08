@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/shock.h"
+#include "bs/kaz/shock.h"
 
 extern s32 D_80800770_bskazshock[];
 extern s32 D_808007A4_bskazshock[];
@@ -10,7 +10,7 @@ void bskazshock_entrypoint_0(PlayerState *self) {
     f32 sp24[3];
 
     func_80092C24(self, sp24);
-    func_800BBCB8(sp24, 0, 1, 1, D_80800770_bskazshock);
+    func_800BBCB8(sp24, NULL, 1, 1, D_80800770_bskazshock);
 }
 
 void bskazshock_entrypoint_1(PlayerState *self) {
@@ -96,7 +96,7 @@ void bskazshock_entrypoint_2(PlayerState *self) {
         }
     }
     if ((anctrl_isAt(animCtrl, 0.5) != 0) && (self->unk15C.word != 0)) {
-        next_state = BS_STATE_C1;
+        next_state = BS_STATE_C1_KAZ_SHOCK_SPRING_LAUNCH;
     }
     if (anctrl_isAt(animCtrl, 0.5551) != 0) {
         baphysics_set_vertical_velocity(self, 180);

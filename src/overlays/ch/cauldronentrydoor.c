@@ -20,6 +20,13 @@ void chcauldronentrydoor_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/func_80800398_chcauldronentrydoor.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/chcauldronentrydoor_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cauldronentrydoor/chcauldronentrydoor_entrypoint_2.s")
+extern ActorData D_80800550_chcauldronentrydoor;
+ActorData* chcauldronentrydoor_entrypoint_1()
+{
+    return &D_80800550_chcauldronentrydoor;
+}
+extern ActorData D_80800598_chcauldronentrydoor;
+ActorData* chcauldronentrydoor_entrypoint_2()
+{
+    return &D_80800598_chcauldronentrydoor;
+}

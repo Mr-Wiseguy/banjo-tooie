@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/1pfreeze/ch1pfreeze_entrypoint_0.s")
-
+extern ActorData D_80800420_ch1pfreeze;
+ActorData* ch1pfreeze_entrypoint_0()
+{
+    return &D_80800420_ch1pfreeze;
+}
 void func_8080000C_ch1pfreeze(s32 arg0) 
 {
 }

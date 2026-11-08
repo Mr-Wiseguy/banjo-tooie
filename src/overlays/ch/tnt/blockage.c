@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/blockage/chtntblockage_entrypoint_0.s")
-
+extern ActorData D_80800240_chtntblockage;
+ActorData* chtntblockage_entrypoint_0()
+{
+    return &D_80800240_chtntblockage;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/blockage/func_8080000C_chtntblockage.s")
 
 void func_80800088_chtntblockage()

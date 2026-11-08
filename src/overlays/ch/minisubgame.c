@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/minisubgame/chminisubgame_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/minisubgame/chminisubgame_entrypoint_1.s")
-
+extern ActorData D_80801424_chminisubgame;
+ActorData* chminisubgame_entrypoint_0()
+{
+    return &D_80801424_chminisubgame;
+}
+extern ActorData D_8080146C_chminisubgame;
+ActorData* chminisubgame_entrypoint_1()
+{
+    return &D_8080146C_chminisubgame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/minisubgame/func_80800018_chminisubgame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/minisubgame/func_808000C8_chminisubgame.s")

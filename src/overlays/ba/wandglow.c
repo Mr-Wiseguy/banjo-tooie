@@ -1,11 +1,11 @@
-#include "overlays/ba/wandglow.h"
+#include "ba/wandglow.h"
 
 s32 bawandglow_entrypoint_0(void) {
     return sizeof(BaWandGlow);
 }
 
 void bawandglow_entrypoint_1(s32 arg0, s32 arg1) {
-    PlayerState *self = func_800F53E4(arg1);
+    PlayerState *self = character_getPlayerStateBounded(arg1);
     if (self != NULL) {
         self->wandglow->unkC = NULL;
     }
@@ -13,7 +13,7 @@ void bawandglow_entrypoint_1(s32 arg0, s32 arg1) {
 
 
 void bawandglow_entrypoint_2(s32 arg0) {
-    PlayerState *self = func_800F53D0(arg0);
+    PlayerState *self = character_getPlayerState(arg0);
     if (self->wandglow->unk10) {
         self->wandglow->unkC = _chwandglow_entrypoint_0(arg0, _bawandglow_entrypoint_1);
     }
@@ -46,7 +46,7 @@ void bawandglow_entrypoint_5(PlayerState *self) {
 void bawandglow_entrypoint_6(PlayerState *self) {
     self->wandglow->unk10 = 0;
     self->wandglow->unkC = NULL;
-    func_800EFD24(self->wandglow->unk0);
+    ml_vec3f_clear(self->wandglow->unk0);
 }
 
 void bawandglow_entrypoint_7(PlayerState *self) {

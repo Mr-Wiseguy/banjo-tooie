@@ -18,4 +18,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quicksandbaddy/func_80801154_chquicksandbaddy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quicksandbaddy/chquicksandbaddy_entrypoint_1.s")
+extern ActorData D_808013D8_chquicksandbaddy;
+ActorData* chquicksandbaddy_entrypoint_1()
+{
+    return &D_808013D8_chquicksandbaddy;
+}

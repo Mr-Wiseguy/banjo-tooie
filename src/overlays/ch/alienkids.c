@@ -1,13 +1,24 @@
 #include "ch/alienkids.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/chalienkids_entrypoint_0.s")
+extern ActorData D_808020DC_chalienkids;
+extern ActorData D_80802124_chalienkids;
+extern ActorData D_8080216C_chalienkids;
+extern ActorData D_808021B4_chalienkids;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/chalienkids_entrypoint_1.s")
+ActorData* chalienkids_entrypoint_0(void) {
+    return &D_808020DC_chalienkids;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/chalienkids_entrypoint_2.s")
+ActorData* chalienkids_entrypoint_1(void) {
+    return &D_80802124_chalienkids;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/chalienkids_entrypoint_3.s")
-
+ActorData* chalienkids_entrypoint_2(void) {
+    return &D_8080216C_chalienkids;
+}
+ActorData* chalienkids_entrypoint_3(void) {
+    return &D_808021B4_chalienkids;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80800030_chalienkids.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/alienkids/func_80800058_chalienkids.s")
@@ -55,7 +66,7 @@ void func_80801138_chalienkids(Actor* arg0)
 
 void func_80801994_chalienkids(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

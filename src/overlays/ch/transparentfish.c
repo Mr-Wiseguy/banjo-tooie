@@ -16,11 +16,14 @@
 
 void func_80800B30_chtransparentfish(s32 arg0)
 {
-    func_800DA524(FLAG3_9F4_UNK);
+    flag_setValueFalse(FLAG3_9F4_UNK);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/chtransparentfish_entrypoint_0.s")
-
+extern ActorData D_80801098_chtransparentfish;
+ActorData* chtransparentfish_entrypoint_0()
+{
+    return &D_80801098_chtransparentfish;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/func_80800B60_chtransparentfish.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/transparentfish/func_80800E10_chtransparentfish.s")

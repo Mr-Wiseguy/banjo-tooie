@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/detonator/chtntdetonator_entrypoint_0.s")
-
+extern ActorData D_808006A8_chtntdetonator;
+ActorData* chtntdetonator_entrypoint_0()
+{
+    return &D_808006A8_chtntdetonator;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/detonator/func_8080000C_chtntdetonator.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/detonator/func_80800054_chtntdetonator.s")

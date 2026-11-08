@@ -11,7 +11,7 @@ void func_80090B98(PlayerState *self) {
     self->unk2C->unk0 = self->unk2C->unk4 = -1;
     self->unk2C->unk18 = 0;
     self->unk2C->unk8 = -1;
-    func_8009C128(self, self->unk2C->unkC);
+    player_getCoords(self, self->unk2C->unkC);
     self->unk2C->unk19 = self->unk2C->unk1A = 0;
 }
 
@@ -45,7 +45,7 @@ s32 func_80090C34(PlayerState *self) {
         || (a1) 
         || (func_800F3ED0(self) == 0x5) || (bs_getCurrentState(self) == 0xB)
     ){
-        func_8009C128(self, self->unk2C->unkC);
+        player_getCoords(self, self->unk2C->unkC);
     }
 
     if (func_800F3ED0(self) == 0xA) {

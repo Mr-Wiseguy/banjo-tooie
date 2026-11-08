@@ -1,12 +1,12 @@
 #include "common.h"
 
-#include "overlays/ba/bounce.h"
+#include "ba/bounce.h"
 
-#include "overlays/ba/physics.h"
-#include "overlays/ba/react.h"
-#include "overlays/ba/stick.h"
-#include "overlays/ba/timer.h"
-#include "core2/1E2B200.h"
+#include "ba/physics.h"
+#include "ba/react.h"
+#include "ba/stick.h"
+#include "ba/timer.h"
+#include "core1/1E2B200.h"
 #include "core2/1E67DA0.h"
 #include "core2/1E6E870.h"
 #include "core2/1E72EA0.h"
@@ -85,15 +85,15 @@ void babounce_entrypoint_4(PlayerState *self, s32 arg1) {
     self->bounce->unk0 = 1.2f;
     self->bounce->unk4 = 1.4f;
     func_800A32C4(self, sp50);
-    func_8009C128(self, sp44);
+    player_getCoords(self, sp44);
     func_800F1E6C(sp50, sp44, sp3C);
     if ((sp34 == 0xE) || (sp34 == 0x10)) {
         func_80800008_babounce(self, 3);
         func_8009FFD8(self, 1, 1, 2, 1);
-        yaw_setIdeal(self, func_800136E4(sp3C[0]));
+        yaw_setIdeal(self, ml_normalizeAngle_f(sp3C[0]));
         self->bounce->unk1C = func_80099A40(self);
         sp38 = func_8009F3BC(self, sp44[1], sp50[1], (sp3C[1] = func_80099A34(self)), self->bounce->unk1C);
-        func_800EFB24(sp5C, sp50, sp44);
+        ml_getdiff_vec3f(sp5C, sp50, sp44);
         sp5C[0] = sp5C[0] / sp38;
         sp5C[2] = sp5C[2] / sp38;
         sp5C[1] = sp3C[1];
@@ -102,7 +102,7 @@ void babounce_entrypoint_4(PlayerState *self, s32 arg1) {
         _batimer_set(self, 6, sp38);
     } else {
         func_80800008_babounce(self, 2);
-        yaw_setIdeal(self, func_800136E4(sp3C[0] + 180.0f));
+        yaw_setIdeal(self, ml_normalizeAngle_f(sp3C[0] + 180.0f));
         baphysics_set_target_horizontal_velocity(self, _bareact_entrypoint_4(self));
         baphysics_set_target_yaw(self, sp3C[0]);
         baphysics_set_horizontal_velocity(self, sp3C[0], baphysics_get_target_horizontal_velocity(self));
@@ -139,7 +139,7 @@ void babounce_entrypoint_6(PlayerState *self, AssetId asset_id, f32 arg2, f32 ar
     babounce_entrypoint_5(self, asset_id, arg2);
 }
 
-void babounce_entrypoint_7(PlayerState *self, s32 arg1) {
+void babounce_entrypoint_7(PlayerState *self, Unk80132ED0* arg1) {
     self->bounce->unk10 =  arg1;
 }
 

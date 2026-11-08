@@ -4,8 +4,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/func_808001D4_chtoxicroombits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/chtoxicroombits_entrypoint_0.s")
-
+extern ActorData D_80800FB0_chtoxicroombits;
+ActorData* chtoxicroombits_entrypoint_0()
+{
+    return &D_80800FB0_chtoxicroombits;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/func_80800410_chtoxicroombits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/func_80800458_chtoxicroombits.s")
@@ -26,4 +29,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/func_80800CB0_chtoxicroombits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toxicroombits/chtoxicroombits_entrypoint_1.s")
+extern ActorData D_80801034_chtoxicroombits;
+ActorData* chtoxicroombits_entrypoint_1()
+{
+    return &D_80801034_chtoxicroombits;
+}

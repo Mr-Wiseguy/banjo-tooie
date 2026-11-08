@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boxingglove/chboxingglove_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boxingglove/chboxingglove_entrypoint_1.s")
-
+extern ActorData D_80800708_chboxingglove;
+ActorData* chboxingglove_entrypoint_0()
+{
+    return &D_80800708_chboxingglove;
+}
+extern ActorData D_80800750_chboxingglove;
+ActorData* chboxingglove_entrypoint_1()
+{
+    return &D_80800750_chboxingglove;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boxingglove/func_80800018_chboxingglove.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boxingglove/func_80800168_chboxingglove.s")

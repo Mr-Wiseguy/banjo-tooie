@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxicpools/chfactorytoxicpools_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxicpools/chfactorytoxicpools_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxicpools/chfactorytoxicpools_entrypoint_2.s")
-
+extern ActorData D_80800940_chfactorytoxicpools;
+ActorData* chfactorytoxicpools_entrypoint_0()
+{
+    return &D_80800940_chfactorytoxicpools;
+}
+extern ActorData D_80800988_chfactorytoxicpools;
+ActorData* chfactorytoxicpools_entrypoint_1()
+{
+    return &D_80800988_chfactorytoxicpools;
+}
+extern ActorData D_808009D0_chfactorytoxicpools;
+ActorData* chfactorytoxicpools_entrypoint_2()
+{
+    return &D_808009D0_chfactorytoxicpools;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxicpools/func_80800024_chfactorytoxicpools.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxicpools/func_808000D0_chfactorytoxicpools.s")

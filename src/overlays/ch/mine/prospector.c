@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/prospector/chmineprospector_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/prospector/chmineprospector_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/prospector/chmineprospector_entrypoint_2.s")
-
+extern ActorData D_8080102C_chmineprospector;
+ActorData* chmineprospector_entrypoint_0()
+{
+    return &D_8080102C_chmineprospector;
+}
+extern ActorData D_80801074_chmineprospector;
+ActorData* chmineprospector_entrypoint_1()
+{
+    return &D_80801074_chmineprospector;
+}
+extern ActorData D_808010BC_chmineprospector;
+ActorData* chmineprospector_entrypoint_2()
+{
+    return &D_808010BC_chmineprospector;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/prospector/func_80800024_chmineprospector.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mine/prospector/func_8080029C_chmineprospector.s")

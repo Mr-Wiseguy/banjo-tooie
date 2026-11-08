@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/fusebox/chweldarbossfusebox_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/fusebox/chweldarbossfusebox_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/fusebox/chweldarbossfusebox_entrypoint_2.s")
-
+extern ActorData D_80800670_chweldarbossfusebox;
+ActorData* chweldarbossfusebox_entrypoint_0()
+{
+    return &D_80800670_chweldarbossfusebox;
+}
+extern ActorData D_808006B8_chweldarbossfusebox;
+ActorData* chweldarbossfusebox_entrypoint_1()
+{
+    return &D_808006B8_chweldarbossfusebox;
+}
+extern ActorData D_80800700_chweldarbossfusebox;
+ActorData* chweldarbossfusebox_entrypoint_2()
+{
+    return &D_80800700_chweldarbossfusebox;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/fusebox/func_80800024_chweldarbossfusebox.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/fusebox/func_80800098_chweldarbossfusebox.s")

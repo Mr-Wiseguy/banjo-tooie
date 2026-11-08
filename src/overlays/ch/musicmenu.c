@@ -30,10 +30,20 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/func_80801040_chmusicmenu.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/chmusicmenu_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/chmusicmenu_entrypoint_1.s")
-
+extern ActorData D_8080157C_chmusicmenu;
+ActorData* chmusicmenu_entrypoint_0()
+{
+    return &D_8080157C_chmusicmenu;
+}
+extern ActorData D_808015C4_chmusicmenu;
+ActorData* chmusicmenu_entrypoint_1()
+{
+    return &D_808015C4_chmusicmenu;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/func_808010C4_chmusicmenu.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/musicmenu/chmusicmenu_entrypoint_2.s")
+extern ActorData D_8080160C_chmusicmenu;
+ActorData* chmusicmenu_entrypoint_2()
+{
+    return &D_8080160C_chmusicmenu;
+}

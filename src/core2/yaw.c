@@ -1,8 +1,8 @@
 
 #include "common.h"
 
-#include "overlays/ba/yaw.h"
-#include "core2/1E2B200.h"
+#include "ba/yaw.h"
+#include "core1/1E2B200.h"
 #include "core2/1EB2840.h"
 #include "core2/1ECB9F0.h"
 #include "ml.h"
@@ -15,7 +15,7 @@ void __yaw_update_limitless(PlayerState *self, f32 velocity_degPerSec) {
     f32 dYaw_deg;
     f32 sp20;
 
-    velocity_degPerSec *= func_800D8FF8();
+    velocity_degPerSec *= time_getDelta();
     dYaw_deg = self->yaw->ideal - self->yaw->value;
     if (mlAbsF(dYaw_deg) > 180.0f) {
         dYaw_deg += (dYaw_deg < 0.0f) ? 360.0f : -360.0f;
@@ -44,17 +44,17 @@ void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_perce
         f32 dyaw_deg;
         f32 dt_s;
 
-        dt_s = func_800D8FF8();
+        dt_s = time_getDelta();
         pYaw = self->yaw;
-        dyaw_deg = func_80013728(pYaw->ideal - pYaw->value);
+        dyaw_deg = ml_absNormalizeAngle_f(pYaw->ideal - pYaw->value);
 
         val_deg = dyaw_deg * step_percent;
         if (val_deg != 0) {
-            val_deg = (val_deg < 0) ? func_800F0D50(val_deg, -limit_degPerSec, -3.0f) : func_800F0D50(val_deg, 3.0f, limit_degPerSec);
+            val_deg = (val_deg < 0) ? ml_clamp_f(val_deg, -limit_degPerSec, -3.0f) : ml_clamp_f(val_deg, 3.0f, limit_degPerSec);
         }
         pYaw->unk8 = val_deg;
         pYaw->value += func_800F212C(val_deg*dt_s, dyaw_deg);
-        pYaw->value = func_800136E4(pYaw->value);
+        pYaw->value = ml_normalizeAngle_f(pYaw->value);
     }
 
 void yaw_init(PlayerState *self) {
@@ -87,11 +87,11 @@ void yaw_setUpdateType(PlayerState *self, YawType type) {
 }
 
 void yaw_setIdeal(PlayerState *self, f32 arg1) {
-    self->yaw->ideal = func_800136E4(arg1);
+    self->yaw->ideal = ml_normalizeAngle_f(arg1);
 }
 
 void yaw_set(PlayerState *self, f32 arg1) {
-    self->yaw->value = func_800136E4(arg1);
+    self->yaw->value = ml_normalizeAngle_f(arg1);
 }
 
 void yaw_applyIdeal(PlayerState *self) {

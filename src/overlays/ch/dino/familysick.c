@@ -14,8 +14,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/func_808003B0_chdinofamilysick.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/chdinofamilysick_entrypoint_1.s")
-
+extern ActorData D_80800EA8_chdinofamilysick;
+ActorData* chdinofamilysick_entrypoint_1()
+{
+    return &D_80800EA8_chdinofamilysick;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/func_808005F8_chdinofamilysick.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/func_80800768_chdinofamilysick.s")
@@ -24,4 +27,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/func_80800AB0_chdinofamilysick.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysick/chdinofamilysick_entrypoint_2.s")
+extern ActorData D_80800F78_chdinofamilysick;
+ActorData* chdinofamilysick_entrypoint_2()
+{
+    return &D_80800F78_chdinofamilysick;
+}

@@ -40,22 +40,35 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_80801E84_chfactorymagnet.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/chfactorymagnet_entrypoint_1.s")
-
+extern ActorData D_80802A04_chfactorymagnet;
+ActorData* chfactorymagnet_entrypoint_1()
+{
+    return &D_80802A04_chfactorymagnet;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_80801EBC_chfactorymagnet.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/chfactorymagnet_entrypoint_2.s")
-
+extern ActorData D_80802A4C_chfactorymagnet;
+ActorData* chfactorymagnet_entrypoint_2()
+{
+    return &D_80802A4C_chfactorymagnet;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_80801FB8_chfactorymagnet.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_808022D8_chfactorymagnet.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/chfactorymagnet_entrypoint_3.s")
-
+extern ActorData D_80802AB4_chfactorymagnet;
+ActorData* chfactorymagnet_entrypoint_3()
+{
+    return &D_80802AB4_chfactorymagnet;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_80802390_chfactorymagnet.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_808025B4_chfactorymagnet.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/func_8080281C_chfactorymagnet.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/magnet/chfactorymagnet_entrypoint_4.s")
+extern ActorData D_80802B68_chfactorymagnet;
+ActorData* chfactorymagnet_entrypoint_4()
+{
+    return &D_80802B68_chfactorymagnet;
+}

@@ -1,27 +1,4 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/dust.h"
-#include "overlays/ba/motor.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "bs.h"
-#include "buttons.h"
-#include "overlays/bs/state.h"
-#include "overlays/ba/flag.h"
-
-#include "core2/1E66990.h"
-#include "core2/1E68670.h"
-#include "core2/1E72EA0.h"
-#include "core2/1E75620.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "core2/1EB2840.h"
-#include "core2/1ECB9F0.h"
+#include "bs/bbuster.h"
 
 void bsbbuster_setSubstate(PlayerState *self, int substate) {
     AnimCtrl *anctrl =  baanim_getAnimCtrlPtr(self);
@@ -123,14 +100,14 @@ void bsbbuster_update(PlayerState *self) {
                 bsbbuster_setSubstate(self, 2);
             }
 
-            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && func_800C6E38(0x19)) {
+            if (baanim_isAt(self, 0.3637f) && bakey_held(self, BUTTON_Z) && ability_getValue(0x19)) {
                 next_state = BS_STATE_B6_BILL_DRILL;
             }
             break;
         
         case 2:
             _bswalk_entrypoint_1(self);
-            self->unk16C -= func_800D8FF8();
+            self->unk16C -= time_getDelta();
             if (self->unk16C <= 0.0f) {
                 bsbbuster_setSubstate(self, 3);
             }
@@ -166,7 +143,7 @@ void bsbbuster_update(PlayerState *self) {
             if (player_isStable(self) || self->unk15C.bytes[1] || !(self->unk160.bytes[0] < 4)){
                 bsbbuster_setSubstate(self, 4);
                 if (func_800954E8(self, &sp34)) {
-                    next_state = BS_STATE_72;
+                    next_state = BS_STATE_72_HARD_LANDING;
                 }
             }
             break;
@@ -177,7 +154,7 @@ void bsbbuster_update(PlayerState *self) {
             if (func_8009BD44(self) == 1) {
                 func_8009BDAC(self, 0.9f);
             }
-            self->unk16C -= func_800D8FF8();
+            self->unk16C -= time_getDelta();
             if (self->unk16C <= 0.0f) {
                 bsbbuster_setSubstate(self, 5);
             }

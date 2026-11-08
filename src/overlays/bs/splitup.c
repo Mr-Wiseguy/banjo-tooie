@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/splitup.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_0.s")
 
@@ -22,9 +22,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_9.s")
 
-void bssplitup_entrypoint_10(s32 arg0) 
-{
-}
+void bssplitup_entrypoint_10(s32 arg0) {}
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_11.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/splitup/bssplitup_entrypoint_12.s")

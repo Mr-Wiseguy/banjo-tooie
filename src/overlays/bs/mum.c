@@ -1,13 +1,13 @@
-#include "overlays/bs/mum.h"
+#include "bs/mum.h"
 
 void bsmum_entrypoint_13(PlayerState *self);
 
 void func_80800000_bsmum(PlayerState *self) {
-    func_8009DE38(self, 0x511, func_800DC178(0.8f, 1.1f));
+    func_8009DE38(self, 0x511, rand_fBounded(0.8f, 1.1f));
 }
 
 void func_80800040_bsmum(PlayerState *self) {
-    if (func_800DC0C0() < 0.5f) {
+    if (rand_f() < 0.5f) {
         func_8009DE38(self, 0x50F, 1.0f);
         return;
     }
@@ -80,7 +80,7 @@ void func_808002B8_bsmum(PlayerState *self, s32 arg1) {
     self->unk15C.word = arg1;
     switch (self->unk15C.word) {                                 
         case 0:
-            _basudie_entrypoint_6(self, arg1);
+            _basudie_entrypoint_6(self);
             return;
         case 1:
             self->unk16C = 250.0f;
@@ -135,7 +135,7 @@ void func_80800484_bsmum(PlayerState *self) {
             break;
         case 3:
             if (self->unk16C > 0.0f) {
-                self->unk16C = func_800F0E00(0.0f, self->unk16C - 10.0f);
+                self->unk16C = ml_max_f(0.0f, self->unk16C - 10.0f);
             }
             break;
     }
@@ -175,7 +175,7 @@ void func_80800604_bsmum(PlayerState *self) {
 }
 
 void func_8080065C_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 sp28[3];
 
     next_state = BS_STATE_0_INVALID;
@@ -226,7 +226,7 @@ void func_808007A0_bsmum(PlayerState *self, s32);
 void func_80800980_bsmum(PlayerState *self) {
     bsmum_entrypoint_1(self);
     func_808007A0_bsmum(self, 0);
-    if (bs_getNextState(self) == 0xEF) {
+    if (bs_getNextState(self) == BS_STATE_EF) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     }
 }
@@ -238,7 +238,7 @@ void func_808009C8_bsmum(PlayerState *self) {
 }
 
 void func_808009F8_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
     f32 sp24[3];
 
@@ -250,7 +250,7 @@ void func_808009F8_bsmum(PlayerState *self) {
         bsmum_entrypoint_13(self);
     }
     func_8009BB24(self, sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (player_canFullJump(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {
@@ -303,7 +303,7 @@ void func_80800BEC_bsmum(PlayerState *self) {
 }
 
 void func_80800C2C_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.5f) != 0) {
@@ -334,7 +334,7 @@ void bsmum_entrypoint_9(PlayerState *self) {
 }
 
 void bsmum_entrypoint_10(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_babounce_entrypoint_9(self) != 0) {
@@ -361,7 +361,7 @@ void func_80800DE8_bsmum(PlayerState *self) {
 }
 
 void func_80800E10_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (_bsrest_entrypoint_20(self) != 0) {
@@ -387,7 +387,7 @@ void bsmum_entrypoint_13(PlayerState *self) {
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
         }
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(bastick_distance(self), 30.0f, 150.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(bastick_distance(self), 30.0f, 150.0f));
         return;
     }
     switch (stick_zone) {
@@ -396,11 +396,11 @@ void bsmum_entrypoint_13(PlayerState *self) {
             return;
         case BS_STICK_ZONE_ID_1:
             min_velocity = _bsmummove_entrypoint_2(self);
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_1(self)));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(zone_position, min_velocity, _bsmummove_entrypoint_1(self)));
             return;
         case BS_STICK_ZONE_ID_2:
             min_velocity = _bsmummove_entrypoint_1(self);
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_0(self)));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(zone_position, min_velocity, _bsmummove_entrypoint_0(self)));
             return;
     }
 }
@@ -421,7 +421,7 @@ void func_80800FE0_bsmum(PlayerState *self) {
 }
 
 void func_80801058_bsmum(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     bsmum_entrypoint_13(self);

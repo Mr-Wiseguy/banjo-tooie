@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/taxi.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80800000_bstaxi.s")
 
@@ -30,9 +30,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_6.s")
 
-void bstaxi_entrypoint_7()
+void bstaxi_entrypoint_7(PlayerState* self)
 {
-    bstaxi_entrypoint_0();
+    bstaxi_entrypoint_0(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_8.s")
@@ -43,10 +43,10 @@ void bstaxi_entrypoint_7()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80800A18_bstaxi.s")
 
-void bstaxi_entrypoint_11(s32 arg0)
+void bstaxi_entrypoint_11(PlayerState* self)
 {
-    func_80800A18_bstaxi(arg0,0);
-    bstaxi_entrypoint_0(arg0);
+    func_80800A18_bstaxi(self,0);
+    bstaxi_entrypoint_0(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_12.s")
@@ -63,9 +63,9 @@ void bstaxi_entrypoint_11(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_18.s")
 
-void bstaxi_entrypoint_19()
+void bstaxi_entrypoint_19(PlayerState* self)
 {
-    bstaxi_entrypoint_0();
+    bstaxi_entrypoint_0(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_20.s")
@@ -74,9 +74,9 @@ void bstaxi_entrypoint_19()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_22.s")
 
-void bstaxi_entrypoint_23()
+void bstaxi_entrypoint_23(PlayerState* self)
 {
-    bstaxi_entrypoint_0();
+    bstaxi_entrypoint_0(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_24.s")
@@ -87,10 +87,10 @@ void bstaxi_entrypoint_23()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/func_80801600_bstaxi.s")
 
-void bstaxi_entrypoint_27(s32 arg0)
+void bstaxi_entrypoint_27(PlayerState* self)
 {
-    func_80801600_bstaxi(arg0,0);
-    bstaxi_entrypoint_0(arg0);
+    func_80801600_bstaxi(self,0);
+    bstaxi_entrypoint_0(self);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_28.s")
@@ -101,11 +101,12 @@ void bstaxi_entrypoint_27(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_31.s")
 
-void bstaxi_entrypoint_32(s32 arg0)
+void bstaxi_entrypoint_32(PlayerState* self)
 {
-    func_80090A2C();
-    bstaxi_entrypoint_0(arg0);
+    func_80090A2C(self);
+    bstaxi_entrypoint_0(self);
 }
+
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_33.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/taxi/bstaxi_entrypoint_34.s")

@@ -1,4 +1,4 @@
-#include "overlays/bs/ow.h"
+#include "bs/ow.h"
 
 void bsow_entrypoint_0(PlayerState *self) {
     _babounce_entrypoint_4(self, 1);
@@ -6,7 +6,7 @@ void bsow_entrypoint_0(PlayerState *self) {
 }
 
 void bsow_entrypoint_1(PlayerState *self) {
-    enum bs_state_e next_State;
+    BanjoStateId next_State;
 
     next_State = BS_STATE_0_INVALID;
     if (baanim_isAt(self, 0.3f) != 0) {

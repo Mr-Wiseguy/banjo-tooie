@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/falldie.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/falldie/func_80800000_bsdronefalldie.s")
 

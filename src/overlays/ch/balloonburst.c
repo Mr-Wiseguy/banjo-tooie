@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/chballoonburst_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/chballoonburst_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/chballoonburst_entrypoint_2.s")
-
+extern ActorData D_80801C40_chballoonburst;
+ActorData* chballoonburst_entrypoint_0()
+{
+    return &D_80801C40_chballoonburst;
+}
+extern ActorData D_80801C88_chballoonburst;
+ActorData* chballoonburst_entrypoint_1()
+{
+    return &D_80801C88_chballoonburst;
+}
+extern ActorData D_80801CD0_chballoonburst;
+ActorData* chballoonburst_entrypoint_2()
+{
+    return &D_80801CD0_chballoonburst;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/func_80800024_chballoonburst.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/balloonburst/func_80800098_chballoonburst.s")

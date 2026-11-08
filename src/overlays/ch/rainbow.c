@@ -22,4 +22,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/rainbow/func_80800EB4_chrainbow.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/rainbow/chrainbow_entrypoint_1.s")
+extern ActorData D_80801010_chrainbow;
+ActorData* chrainbow_entrypoint_1()
+{
+    return &D_80801010_chrainbow;
+}

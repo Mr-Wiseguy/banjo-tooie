@@ -36,8 +36,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_808019EC_chtrashcangame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/chtrashcangame_entrypoint_0.s")
-
+extern ActorData D_808031B4_chtrashcangame;
+ActorData* chtrashcangame_entrypoint_0()
+{
+    return &D_808031B4_chtrashcangame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_80801CF0_chtrashcangame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_80801D54_chtrashcangame.s")
@@ -46,20 +49,33 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_808020D8_chtrashcangame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/chtrashcangame_entrypoint_1.s")
-
+extern ActorData D_808031FC_chtrashcangame;
+ActorData* chtrashcangame_entrypoint_1()
+{
+    return &D_808031FC_chtrashcangame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_808021BC_chtrashcangame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_8080223C_chtrashcangame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_8080292C_chtrashcangame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/chtrashcangame_entrypoint_2.s")
-
+extern ActorData D_808033A0_chtrashcangame;
+ActorData* chtrashcangame_entrypoint_2()
+{
+    return &D_808033A0_chtrashcangame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_80802C40_chtrashcangame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/chtrashcangame_entrypoint_3.s")
-
+extern ActorData D_808033E8_chtrashcangame;
+ActorData* chtrashcangame_entrypoint_3()
+{
+    return &D_808033E8_chtrashcangame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/func_80802CC0_chtrashcangame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/trashcangame/chtrashcangame_entrypoint_4.s")
+extern ActorData D_80803430_chtrashcangame;
+ActorData* chtrashcangame_entrypoint_4()
+{
+    return &D_80803430_chtrashcangame;
+}

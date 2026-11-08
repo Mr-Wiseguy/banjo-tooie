@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossdoor/chdiggerbossdoor_entrypoint_0.s")
-
+extern ActorData D_80800430_chdiggerbossdoor;
+ActorData* chdiggerbossdoor_entrypoint_0()
+{
+    return &D_80800430_chdiggerbossdoor;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossdoor/func_8080000C_chdiggerbossdoor.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossdoor/func_808000B0_chdiggerbossdoor.s")

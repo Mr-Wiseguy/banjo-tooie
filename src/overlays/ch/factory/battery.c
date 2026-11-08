@@ -42,12 +42,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/func_808014C0_chfactorybattery.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/chfactorybattery_entrypoint_1.s")
-
+extern ActorData D_80801BA8_chfactorybattery;
+ActorData* chfactorybattery_entrypoint_1()
+{
+    return &D_80801BA8_chfactorybattery;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/func_8080150C_chfactorybattery.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/func_80801728_chfactorybattery.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/func_80801804_chfactorybattery.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/battery/chfactorybattery_entrypoint_2.s")
+extern ActorData D_80801BF0_chfactorybattery;
+ActorData* chfactorybattery_entrypoint_2()
+{
+    return &D_80801BF0_chfactorybattery;
+}

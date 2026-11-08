@@ -2,15 +2,14 @@ name: Build
 
 # Build on every branch push, tag push, and pull request change:
 on:
-  pull_request_target:
-    branches: [master]
   push:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   build_repo:
     name: Build repo (${{ matrix.version }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
@@ -19,11 +18,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Install package requirements
         run: sudo apt-get install -y make git build-essential binutils-mips-linux-gnu gcc-mips-linux-gnu python3 python3-pip libfmt-dev libtoml11-dev
@@ -35,7 +32,7 @@ jobs:
         run: pip3 install -r tools/splat/requirements.txt
 
       - name: Get extra dependencies
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ secrets.SECRETREPO }}
           token: ${{ secrets.SECRETTOKEN }}
@@ -52,9 +49,9 @@ jobs:
       - name: Print progress
         run: python3 tools/progress.py --version ${{ matrix.version }}
 
-      - name: Upload frogress
-        if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
-        run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
+      #- name: Upload frogress
+      #  if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request_target' }}
+      #  run: python3 tools/upload_frogress.py ${{ matrix.version }} --apikey ${{ secrets.PROGRESS_API_KEY }}
 
       - name: Upload map
         uses: actions/upload-artifact@v4

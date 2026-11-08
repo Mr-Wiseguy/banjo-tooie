@@ -34,4 +34,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/silo/func_808011C8_chsilo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/silo/chsilo_entrypoint_0.s")
+extern ActorData D_80801384_chsilo;
+ActorData* chsilo_entrypoint_0()
+{
+    return &D_80801384_chsilo;
+}

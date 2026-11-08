@@ -1,11 +1,20 @@
-#include "common.h"
+#include "core2/1EDDC40.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDC40/func_80104350.s")
+extern FreeList* D_80136E80;
+
+void func_80104350(void) {
+	D_80136E80 = freelist_new(0x2C, 8);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDC40/func_80104378.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDC40/func_801043A0.s")
-
+void func_801043A0()
+{
+    if(D_80136E80)
+    {
+       D_80136E80 = freelist_defrag(D_80136E80);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDC40/func_801043D8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDDC40/func_80104410.s")

@@ -47,7 +47,7 @@ typedef struct {
 } PauseState;
 
 typedef struct {
-	s16 ItemID;
+	s16 PropID;
 	u8 uiPosition;
 	u8 AbilityID;
 } InventoryDisplay;
@@ -106,8 +106,8 @@ void gcnewpause_entrypoint_1(PauseState* a0);
 void _gcnewpause_entrypoint_1(PauseState* a0);
 u32 gcnewpause_entrypoint_2(PauseState* a0);
 u32 _gcnewpause_entrypoint_2(PauseState* a0);
-void gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu);
-void _gcnewpause_entrypoint_3(u32 arg0, PauseState* pauseMenu);
+void gcnewpause_entrypoint_3(GraphicsBuffers* arg0, PauseState* pauseMenu);
+void _gcnewpause_entrypoint_3(GraphicsBuffers* arg0, PauseState* pauseMenu);
 void gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3);
 void _gcnewpause_entrypoint_4(u32 arg0, OptionState* arg1, u32 arg2, u32 arg3);
 
@@ -124,10 +124,10 @@ s32 func_8080105C_gcnewpause(s32 a0, s32 a1, u32 a2, u32 a3);
 u32 func_808011BC_gcnewpause(void);
 u8 func_80801248_gcnewpause(s16* a0, u8* a1, u32 a2);
 
-void func_808012CC_gcnewpause(PauseState* a0, u32* a1);
+void func_808012CC_gcnewpause(PauseState* a0, GraphicsBuffers* a1);
 u8 func_80801330_gcnewpause(PauseState* a0, u32 a1, u32 a2);
 void func_8080136C_gcnewpause(PauseState* pauseMenu);
-void func_80801410_gcnewpause(PauseState* pauseMenu, s32 arg1);
+void func_80801410_gcnewpause(PauseState* pauseMenu, GraphicsBuffers* arg1);
 void func_8080152C_gcnewpause(PauseState* pauseMenu);
 void func_80801580_gcnewpause(PauseState* pauseMenu);
 void func_808015F8_gcnewpause(PauseState* pauseMenu, u32 a1);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/sub.h"
 
 s32 basub_entrypoint_0() 
 {
@@ -21,7 +21,7 @@ s32 basub_entrypoint_0()
 
 void basub_entrypoint_1(s32 arg0)
 {
-    func_80800458_basub(arg0,0x5);
+    func_80800458_basub(arg0, 0x5);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/sub/basub_entrypoint_2.s")

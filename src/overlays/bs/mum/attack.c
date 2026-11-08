@@ -1,4 +1,4 @@
-#include "overlays/bs/mum/attack.h"
+#include "bs/mum/attack.h"
 
 void func_80800000_bsmumattack(PlayerState *self) {
     if (self->unk160.bytes[0] != 0) {
@@ -113,7 +113,7 @@ void func_80800344_bsmumattack(PlayerState *self) {
 
 void func_808003DC_bsmumattack(PlayerState *self) {
     AnimCtrl *anim_ctrl;
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     f32 timer_value;
 
     anim_ctrl = baanim_getAnimCtrlPtr(self);
@@ -142,9 +142,9 @@ void func_808003DC_bsmumattack(PlayerState *self) {
         case 2:
             _batimer_decrement(self, 0);
             timer_value = _batimer_get(self, 0);
-            _bamum_entrypoint_5(self, func_800F10B4(timer_value, 0.0f, 0.7f, 0.0f, 1.0f));
-            func_808000AC_bsmumattack(self, func_800F10B4(timer_value, 0.0f, 0.7f, 0.5f, 1.0f));
-            self->unk16C = func_800F10B4(timer_value, 0.0f, 0.7f, 0.0f, 1.0f);
+            _bamum_entrypoint_5(self, ml_map_f(timer_value, 0.0f, 0.7f, 0.0f, 1.0f));
+            func_808000AC_bsmumattack(self, ml_map_f(timer_value, 0.0f, 0.7f, 0.5f, 1.0f));
+            self->unk16C = ml_map_f(timer_value, 0.0f, 0.7f, 0.0f, 1.0f);
             if (_batimer_isAt_falling(self, 0, 0.4f) != 0) {
                 _bawandglow_entrypoint_7(self);
             }
@@ -152,7 +152,7 @@ void func_808003DC_bsmumattack(PlayerState *self) {
                 baflag_clear(self, BA_FLAG_2C);
             }
             if (_batimer_isZero(self, 0) != 0) {
-                if (func_800DC0C0() < 0.5f) {
+                if (rand_f() < 0.5f) {
                     func_8009DE38(self, 0x512, 1.0f);
                 } else {
                     func_8009DE38(self, 0x513, 1.0f);

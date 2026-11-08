@@ -1,7 +1,5 @@
 #include "core2/1EC1380.h"
 
-s16 func_800A8184(void);
-
 extern Gfx D_80123340[];
 extern s16 D_80127750;
 extern s16 D_80127752;

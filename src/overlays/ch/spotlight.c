@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/spotlight/chspotlight_entrypoint_0.s")
-
+extern ActorData D_808009B0_chspotlight;
+ActorData* chspotlight_entrypoint_0()
+{
+    return &D_808009B0_chspotlight;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/spotlight/func_8080000C_chspotlight.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/spotlight/func_80800210_chspotlight.s")

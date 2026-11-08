@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/chbabydino_entrypoint_0.s")
-
+extern ActorData D_80800770_chbabydino;
+ActorData* chbabydino_entrypoint_0()
+{
+    return &D_80800770_chbabydino;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_8080000C_chbabydino.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/babydino/func_8080011C_chbabydino.s")

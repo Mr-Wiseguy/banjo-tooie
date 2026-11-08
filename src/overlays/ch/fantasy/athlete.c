@@ -38,4 +38,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/athlete/func_80802DA8_chfantasyathlete.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/athlete/chfantasyathlete_entrypoint_0.s")
+extern ActorData D_808031B4_chfantasyathlete;
+ActorData* chfantasyathlete_entrypoint_0()
+{
+    return &D_808031B4_chfantasyathlete;
+}

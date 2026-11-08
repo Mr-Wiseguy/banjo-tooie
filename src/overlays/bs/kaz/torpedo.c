@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/torpedo.h"
+#include "bs/kaz/torpedo.h"
 
 extern s32 D_80801730_bskaztorpedo[];
 extern s32 D_80801740_bskaztorpedo[];
@@ -16,7 +16,7 @@ extern s32 D_80801894_bskaztorpedo[];
 extern s32 D_808018A4_bskaztorpedo[];
 
 f32 func_80800000_bskaztorpedo(PlayerState *self) {
-    return (func_8009BB94(self) * 100.0f) / 1500.0f;
+    return (baphysics_get_velocity(self) * 100.0f) / 1500.0f;
 }
 
 void func_80800034_bskaztorpedo(PlayerState *self) {
@@ -51,8 +51,8 @@ void func_8080016C_bskaztorpedo(PlayerState *self) {
     f32 sp28;
 
     sp30 = bastick_getX(self);
-    sp34 = func_800D8FF8();
-    baroll_setIdeal(self, func_800F10B4(sp30, -1.0f, 1.0f, -45.0f, 45.0f));
+    sp34 = time_getDelta();
+    baroll_setIdeal(self, ml_map_f(sp30, -1.0f, 1.0f, -45.0f, 45.0f));
     if (player_inWater(self) != 0) {
         sp38 = 260.0f;
     } else {
@@ -60,7 +60,7 @@ void func_8080016C_bskaztorpedo(PlayerState *self) {
     }
     // Following \ is required for comp to match
     sp28 = yaw_getIdeal(self); \
-    yaw_setIdeal(self, (func_800F10B4(sp30, -1.0f, 1.0f, sp38, -sp38) * sp34) + sp28);
+    yaw_setIdeal(self, (ml_map_f(sp30, -1.0f, 1.0f, sp38, -sp38) * sp34) + sp28);
 }
 
 void func_8080024C_bskaztorpedo(PlayerState *self) {
@@ -68,10 +68,10 @@ void func_8080024C_bskaztorpedo(PlayerState *self) {
 
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, func_800F10B4(temp_f0, -1.0f, 0.0f, 275.0f, 360.0f));
+        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, 275.0f, 360.0f));
         return;
     }
-    func_8009BF5C(self, func_800F10B4(temp_f0, 0.0f, 1.0f, 0.0f, 85.0f));
+    func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, 85.0f));
 }
 
 void func_808002E0_bskaztorpedo(PlayerState *self) {
@@ -105,13 +105,13 @@ void func_808002E0_bskaztorpedo(PlayerState *self) {
         self->unk16C = 22.5f;
     }
     func_808000CC_bskaztorpedo(self);
-    _bakaztorpedo_entrypoint_7(self, func_800F10B4(func_8009BB94(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
+    _bakaztorpedo_entrypoint_7(self, ml_map_f(baphysics_get_velocity(self), 0.0f, 1500.0f, 300.0f, 1200.0f));
     sp2C[2] = func_8009BFD8(self);
-    sp34 = func_80013728(sp2C[2] - func_8009BFCC(self));
+    sp34 = ml_absNormalizeAngle_f(sp2C[2] - func_8009BFCC(self));
     sp38[0] = yaw_getIdeal(self);
-    _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, func_80013728(sp38[0] - yaw_get(self)) * 0.75f);
+    _bakaztorpedo_entrypoint_5(self, sp34 * 0.75f, ml_absNormalizeAngle_f(sp38[0] - yaw_get(self)) * 0.75f);
     if (sp44 != 0) {
-        func_80091290(self, func_800F10B4(self->unk16C, 0.0f, 225.0f, func_800DC178(5.0f, 10.0f), 60.0f), 0, 0xD);
+        func_80091290(self, ml_map_f(self->unk16C, 0.0f, 225.0f, rand_fBounded(5.0f, 10.0f), 60.0f), 0, 0xD);
     }
 }
 
@@ -180,16 +180,16 @@ void func_8080078C_bskaztorpedo(PlayerState *self) {
     f32 temp_f0;
     s32 temp_v0;
 
-    sp44 = _plsu_entrypoint_1(0xA);
+    sp44 = _character_findCharOfTransform(TRANSFORM_A_BANJO);
     if ((player_isStable(self) != 0) && (player_inWater(self) == 0)) {
         self->unk15C.word = 1;
     }
     if (sp44 != -1) {
-        func_800F5A00(sp44, sp38);
-        func_8009C128(self, sp2C);
+        character_getCoords(sp44, sp38);
+        player_getCoords(self, sp2C);
         sp38[1] += 50.0f;
         sp2C[1] += 50.0f;
-        temp_f0 = func_800EEB40(sp38, sp2C);
+        temp_f0 = ml_vec3f_distance_sq(sp38, sp2C);
         temp_v0 = self->unk160.word;
         if (temp_v0 != 0) {
             if (temp_f0 < 14400.0f) {
@@ -331,7 +331,7 @@ s32 bskaztorpedo_entrypoint_3(s32 idx) {
 void func_80800E98_bskaztorpedo(PlayerState *self) {
     f32 sp1C[3];
 
-    func_800F5A00(_plsu_entrypoint_1(0xA), sp1C);
+    character_getCoords(_character_findCharOfTransform(TRANSFORM_A_BANJO), sp1C);
     sp1C[1] += 50.0f;
     _bamovegoto_entrypoint_12(self, sp1C);
 }
@@ -369,17 +369,17 @@ void func_80800FB4_bskaztorpedo(PlayerState *self) {
     if ((baanim_isAt(self, 0.0001f) != 0) || (baanim_isAt(self, 0.5f) != 0)) {
         func_8009DF18(self, 0x3FF, 1.0f, 0x3E80);
     }
-    self->unk174 += 1200.0f * func_800D8FF8();
+    self->unk174 += 1200.0f * time_getDelta();
     func_80091290(self, 40.0f, 0, 0xD);
     if (_bamovegoto_entrypoint_4(self) != 0) {
-        func_8009C128(self, sp3C);
-        func_800EFA4C(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
+        player_getCoords(self, sp3C);
+        ml_vec3f_assign_value(sp48, sp3C[0], sp3C[1] - 50.0f, sp3C[2]);
         func_800BABB8(func_8009FBB0(self, sp3C, 80.0f), sp3C, sp48, 1.0f, D_80801770_bskaztorpedo);
         func_800F82C0(self->unk184);
         func_800F911C(1);
-        sp34 = func_800F53D0(_plsu_entrypoint_1(0xA));
+        sp34 = character_getPlayerState(_character_findCharOfTransform(TRANSFORM_A_BANJO));
         _baduo_entrypoint_7(sp34, 1);
-        func_800A3410(sp34, 1);
+        player_setTransformation(sp34, TRANSFORM_1_BK);
         func_800A3904(sp34, 1);
         func_800D5234(0);
         func_800A16BC(0);
@@ -442,7 +442,7 @@ s32 bskaztorpedo_entrypoint_5(s32 idx) {
 }
 
 void func_80801380_bskaztorpedo(PlayerState *self) {
-    _baspin_entrypoint_1();
+    _baspin_entrypoint_1(self);
     _bakaztorpedo_entrypoint_6(self, 2);
     func_80800508_bskaztorpedo(self);
 }
@@ -498,7 +498,7 @@ void func_808014F8_bskaztorpedo(PlayerState *self) {
     _bareact_entrypoint_1(self, func_80099A58(self));
     baanim_playForDuration_once(self, 0x134, 1.1f);
     func_8009DA40(self);
-    func_8009C128(self, &sp40);
+    player_getCoords(self, &sp40);
     func_800A32C4(self, &sp34);
     func_800F1E6C(&sp34, &sp40, &sp4C);
     yaw_setIdeal(self, sp4C);

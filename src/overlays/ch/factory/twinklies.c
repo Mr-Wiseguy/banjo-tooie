@@ -1,17 +1,35 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_4.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/chfactorytwinklies_entrypoint_5.s")
-
+extern ActorData D_80802218_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_0()
+{
+    return &D_80802218_chfactorytwinklies;
+}
+extern ActorData D_80802260_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_1()
+{
+    return &D_80802260_chfactorytwinklies;
+}
+extern ActorData D_808022A8_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_2()
+{
+    return &D_808022A8_chfactorytwinklies;
+}
+extern ActorData D_808022F0_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_3()
+{
+    return &D_808022F0_chfactorytwinklies;
+}
+extern ActorData D_80802338_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_4()
+{
+    return &D_80802338_chfactorytwinklies;
+}
+extern ActorData D_80802380_chfactorytwinklies;
+ActorData* chfactorytwinklies_entrypoint_5()
+{
+    return &D_80802380_chfactorytwinklies;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/func_80800048_chfactorytwinklies.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/twinklies/func_808001A0_chfactorytwinklies.s")

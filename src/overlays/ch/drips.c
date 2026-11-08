@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/drips/chdrips_entrypoint_0.s")
-
+extern ActorData D_80800610_chdrips;
+ActorData* chdrips_entrypoint_0()
+{
+    return &D_80800610_chdrips;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/drips/chdrips_entrypoint_1.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/drips/chdrips_entrypoint_2.s")

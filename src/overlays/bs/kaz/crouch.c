@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/crouch.h"
+#include "bs/kaz/crouch.h"
 
 extern s32 D_808007C0_bskazcrouch[];
 
@@ -21,7 +21,7 @@ void func_80800068_bskazcrouch(PlayerState *self) {
 }
 
 void func_808000B4_bskazcrouch(AnimCtrl *anim_ctrl, f32 arg1) {
-    anctrl_setDuration(anim_ctrl, func_800F10B4(arg1, 0, 180, 0.5, 0.2));
+    anctrl_setDuration(anim_ctrl, ml_map_f(arg1, 0, 180, 0.5, 0.2));
 }
 
 void func_808000FC_bskazcrouch(PlayerState *self, s32 arg1) {
@@ -36,7 +36,7 @@ BanjoStateId bskazcrouch_entrypoint_0(PlayerState* self, BanjoStateId arg1) {
             arg1 = _bskaz_entrypoint_3(self);
         }
     } else {
-        if ((bakey_pressed(self, BUTTON_B) != 0) && (func_800C6E38(0x28) != 0)) {
+        if ((bakey_pressed(self, BUTTON_B) != 0) && (ability_getValue(ABILITY_28_HATCH_EGGS) != 0)) {
             arg1 = BS_STATE_C5;
         }
         if (bakey_pressed(self, BUTTON_A) != 0) {
@@ -98,7 +98,115 @@ void bskazcrouch_entrypoint_1(PlayerState *self) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/crouch/bskazcrouch_entrypoint_2.s")
+void bskazcrouch_entrypoint_2(PlayerState* self)
+{
+	BanjoStateId nextState;
+	f32 sp38;
+	AnimCtrl* sp34;
+	f32 temp_f0;
+	s32 pad;
+	f32 sp28;
+	nextState = BS_STATE_0_INVALID;
+	sp34 = baanim_getAnimCtrlPtr(self);
+	_batimer_decrement(self, 0);
+	_batimer_decrement(self, 1);
+	sp38 = ml_map_f(_batimer_get(self, 0), 0.0f, 0.3f, 0.0f, self->unk16C);
+	baphysics_set_target_horizontal_velocity(self, sp38);
+	if (sp38 > 220.0f)
+	{
+		_badust_entrypoint_9(self);
+	}
+	if (sp38 > 160.0f)
+	{
+		func_8009D658(self);
+	}
+	if (bastick_distance(self) == 0.0f)
+	{
+		yaw_setIdeal(self, yaw_get(self));
+	}
+	sp28 = yaw_getIdeal(self);
+	temp_f0 = mlAbsF(func_800F1DCC(sp28, yaw_get(self)));
+	switch (self->unk15C.word)
+	{
+	case 0:
+		if (sp38 == 0.0f)
+		{
+			_batimer_set(self, 2, 2.0f);
+			self->unk15C.word = 1;
+		}
+		break;
+	case 1:
+		if (temp_f0 != 0.0f)
+		{
+			func_80800000_bskazcrouch(self);
+		}
+		else
+		{
+			_batimer_decrement(self, 2);
+			if (_batimer_isZero(self, 2) != 0)
+			{
+				func_80800034_bskazcrouch(self);
+			}
+		}
+		break;
+	case 2:
+		if (temp_f0 != 0.0f)
+		{
+			func_80800000_bskazcrouch(self);
+		}
+		else if (anctrl_isStopped(sp34) != 0)
+		{
+			func_80800068_bskazcrouch(self);
+		}
+		break;
+	case 4:
+		func_808000B4_bskazcrouch(sp34, temp_f0);
+		func_808000FC_bskazcrouch(self, (s32)sp34);
+		if (temp_f0 == 0.0f)
+		{
+			if (anctrl_getAnimTimer(sp34) <= 0.5f)
+			{
+				anctrl_setSubrange(sp34, 0.0f, 0.5f);
+			}
+			else
+			{
+				anctrl_setSubrange(sp34, 0.0f, 1.0f);
+			}
+			anctrl_setPlaybackType(sp34, 1);
+			self->unk15C.word = 3;
+		}
+		break;
+	case 3:
+		func_808000B4_bskazcrouch(sp34, temp_f0);
+		func_808000FC_bskazcrouch(self, (s32)sp34);
+		if (temp_f0 != 0.0f)
+		{
+			anctrl_setSubrange(sp34, 0.0f, 1.0f);
+			anctrl_setPlaybackType(sp34, 2);
+			self->unk15C.word = 4;
+		}
+		else if (anctrl_isStopped(sp34) != 0)
+		{
+			yaw_setIdeal(self, yaw_get(self));
+			func_80800068_bskazcrouch(self);
+		}
+		break;
+	}
+	if (func_8008DF18(self) != 0)
+	{
+		nextState = _badrone_entrypoint_25(self);
+	}
+	nextState = bskazcrouch_entrypoint_0(self, nextState);
+	if ((nextState == BS_STATE_BB) && (_batimer_isNonzero(self, 1) != 0))
+	{
+		nextState = BS_STATE_0_INVALID;
+	}
+	if (player_inWater(self) != 0)
+	{
+		nextState = BS_STATE_15D;
+	}
+	bs_setState(self, nextState);
+}
 
 void bskazcrouch_entrypoint_3(PlayerState *self) {
     _bskaz_entrypoint_2(self);

@@ -2,10 +2,10 @@
 
 #include "types.h" //for SQ()
 
-#include "overlays/ba/stick.h"
+#include "ba/stick.h"
 
-#include "overlays/ba/key.h"
-#include "core2/1E2B200.h"
+#include "ba/key.h"
+#include "core1/1E2B200.h"
 #include "core2/1E75920.h"
 #include "core2/1E7D460.h"
 #include "core2/1EA3AA0.h"
@@ -43,7 +43,7 @@ f32 bastick_getAngle(PlayerState *self) {
 
 f32 bastick_getAngleRelativeToBanjo(PlayerState *self) {
     f32 player_position[3];
-    func_8009C128(self, player_position);
+    player_getCoords(self, player_position);
     return func_800CAF00(func_800A4C48(self), self->stick->angle);
 }
 

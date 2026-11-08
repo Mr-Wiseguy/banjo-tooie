@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/lobbydoor/chfactorylobbydoor_entrypoint_0.s")
-
+extern ActorData D_80800160_chfactorylobbydoor;
+ActorData* chfactorylobbydoor_entrypoint_0()
+{
+    return &D_80800160_chfactorylobbydoor;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/lobbydoor/func_8080000C_chfactorylobbydoor.s")
 
 void func_808000A8_chfactorylobbydoor(s32 arg0)

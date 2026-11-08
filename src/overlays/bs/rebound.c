@@ -1,4 +1,4 @@
-#include "overlays/bs/rebound.h"
+#include "bs/rebound.h"
 
 void func_80800000_bsrebound(PlayerState *self) {
     _babounce_entrypoint_4(self, 2);
@@ -6,7 +6,7 @@ void func_80800000_bsrebound(PlayerState *self) {
 }
 
 void func_80800038_bsrebound(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *animCtrl;
 
     next_state = BS_STATE_0_INVALID;

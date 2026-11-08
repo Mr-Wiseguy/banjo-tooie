@@ -1,9 +1,15 @@
 #include "ch/flysaucerdoor.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucerdoor/chflysaucerdoor_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucerdoor/chflysaucerdoor_entrypoint_1.s")
-
+extern ActorData D_80800160_chflysaucerdoor;
+ActorData* chflysaucerdoor_entrypoint_0()
+{
+    return &D_80800160_chflysaucerdoor;
+}
+extern ActorData D_808001A8_chflysaucerdoor;
+ActorData* chflysaucerdoor_entrypoint_1()
+{
+    return &D_808001A8_chflysaucerdoor;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucerdoor/func_80800018_chflysaucerdoor.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucerdoor/func_8080006C_chflysaucerdoor.s")

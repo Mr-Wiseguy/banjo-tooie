@@ -30,12 +30,12 @@
 
 void func_800FE850()
 {
-    func_800DA544(FLAG2_674_UNK);
+    flag_setValueTrue(FLAG2_674_UNK);
 }
 
 void func_800FE870()
 {
-    func_800DA544(FLAG2_675_UNK);
+    flag_setValueTrue(FLAG2_675_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED68A0/func_800FE890.s")

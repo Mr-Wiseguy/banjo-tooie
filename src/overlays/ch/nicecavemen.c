@@ -1,13 +1,25 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/chnicecavemen_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/chnicecavemen_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/chnicecavemen_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/chnicecavemen_entrypoint_3.s")
-
+extern ActorData D_80801A5C_chnicecavemen;
+ActorData* chnicecavemen_entrypoint_0()
+{
+    return &D_80801A5C_chnicecavemen;
+}
+extern ActorData D_80801AA4_chnicecavemen;
+ActorData* chnicecavemen_entrypoint_1()
+{
+    return &D_80801AA4_chnicecavemen;
+}
+extern ActorData D_80801AEC_chnicecavemen;
+ActorData* chnicecavemen_entrypoint_2()
+{
+    return &D_80801AEC_chnicecavemen;
+}
+extern ActorData D_80801B34_chnicecavemen;
+ActorData* chnicecavemen_entrypoint_3()
+{
+    return &D_80801B34_chnicecavemen;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_80800030_chnicecavemen.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemen/func_80800128_chnicecavemen.s")

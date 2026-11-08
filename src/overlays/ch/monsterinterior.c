@@ -1,15 +1,30 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/chmonsterinterior_entrypoint_4.s")
-
+extern ActorData D_80801E80_chmonsterinterior;
+ActorData* chmonsterinterior_entrypoint_0()
+{
+    return &D_80801E80_chmonsterinterior;
+}
+extern ActorData D_80801EC8_chmonsterinterior;
+ActorData* chmonsterinterior_entrypoint_1()
+{
+    return &D_80801EC8_chmonsterinterior;
+}
+extern ActorData D_80801F10_chmonsterinterior;
+ActorData* chmonsterinterior_entrypoint_2()
+{
+    return &D_80801F10_chmonsterinterior;
+}
+extern ActorData D_80801F58_chmonsterinterior;
+ActorData* chmonsterinterior_entrypoint_3()
+{
+    return &D_80801F58_chmonsterinterior;
+}
+extern ActorData D_80801FA0_chmonsterinterior;
+ActorData* chmonsterinterior_entrypoint_4()
+{
+    return &D_80801FA0_chmonsterinterior;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_8080003C_chmonsterinterior.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/monsterinterior/func_808000BC_chmonsterinterior.s")

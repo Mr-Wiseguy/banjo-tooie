@@ -1,13 +1,27 @@
-#include "common.h"
+#include "core2/1EDED00.h"
 extern s32 D_80136ED8;
+extern FreeList* D_80136EC0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105410.s")
+void func_80105410(void) {
+	D_80136EC0 = freelist_new(0x48, 8);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105438.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_8010545C.s")
+void func_8010545C()
+{
+    if(D_80136EC0)
+    {
+       D_80136EC0 = freelist_defrag(D_80136EC0);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105494.s")
+void* func_80105494(Actor* arg0) {
+    if (arg0->unk7C_0 == 0) {
+        return NULL;
+    }
+    return freelist_at(D_80136EC0, arg0->unk7C_0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_801054D4.s")
 
@@ -21,9 +35,9 @@ extern s32 D_80136ED8;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_8010573C.s")
 
-void func_80105834()
+void func_80105834(Actor* arg0)
 {
-    func_801054D4();
+    func_801054D4(arg0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDED00/func_80105854.s")

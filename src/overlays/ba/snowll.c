@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/snowll.h"
 
 s32 basnowball_entrypoint_0() 
 {
@@ -45,7 +45,7 @@ s32 basnowball_entrypoint_0()
 
 void basnowball_entrypoint_11(s32 arg0)
 {
-    func_800F796C(arg0,0x3);
+    func_800F796C(arg0, 0x3);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/snowll/basnowball_entrypoint_12.s")

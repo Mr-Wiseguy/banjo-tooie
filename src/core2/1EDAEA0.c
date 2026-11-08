@@ -2,7 +2,6 @@
 
 
 void* func_800DE448(f32*, f32*, f32, f32*, s32);
-void func_800DF47C(s32 (*arg0)(Actor*), Actor*);
 f32* func_801018D8(Actor*);
 f32* func_801027F4(Actor*);
 s32 func_801015D0(Actor*);
@@ -16,7 +15,13 @@ void func_801015C8(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDAEA0/func_801015D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDAEA0/func_801017D0.s")
+s32 func_801017D0(Actor* arg0)
+{
+    s32 temp_v0[2];
+
+    temp_v0[0] = func_801039E4(arg0->unk0);
+    return event_sendToActor(arg0, EVENT_1F_ACTOR_ONSCREEN, temp_v0[0]);
+}
 
 // the real actor_draw?
 void func_80101808(Actor* arg0, s32 (*arg1)(Actor*)) {

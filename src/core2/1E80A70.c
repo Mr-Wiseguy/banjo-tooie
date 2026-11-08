@@ -22,17 +22,18 @@ extern s32 D_8011A3F4;
 extern f32 D_801255F8;
 extern D_80127630_unk D_80127630;
 
-extern s32 D_80127658;
+extern GraphicsBuffers D_80127658;
 extern s32 D_80127674;
 extern void* D_801276BC;
 typedef struct
 {
-    s32 unk0, unk4;
+    s32 unk0;
+    f32* unk4;
     f32 unk8;
 } unk_D_80127688;
 extern unk_D_80127688 D_80127688[];
 
-s32* func_800A7180(void)
+GraphicsBuffers* graphics_getGraphicsBuffer()
 {
     return &D_80127658;
 }
@@ -47,7 +48,11 @@ s32* func_800A7180(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A73F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A7584.s")
+void func_800A7584(s32 arg0, s32 arg1)
+{
+    D_80127630.unk1A = arg0 + 1;
+    D_80127630.unk1B = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A759C.s")
 
@@ -97,7 +102,7 @@ s32 func_800A7D84(void)
     s32 sp1C;
     s32 temp_v0;
 
-    D_80127630.unk8 += func_800D8FF8();
+    D_80127630.unk8 += time_getDelta();
 
 
     if (func_800C9510() == 0)
@@ -140,29 +145,29 @@ s32 func_800A7D84(void)
     func_800FB968();
     switch (D_80127630.unk2)
     {
-    case 5:
-        func_800A9A14();
-        break;
-    case 3:
-        D_80127630.unkC += func_800D8FF8();
-        if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
-        {
-            func_800A759C(4, 0U);
-        }
-        else if (sp1C == 0)
-        {
-            func_800A759C(3, 1U);
-        }
-        break;
-    case 4:
-        if (func_800C0948() != 0)
-        {
-            func_800EA334(1);
-            func_800EA34C(1);
-            func_800A759C(3, 0U);
-            func_800FFC14();
-            func_800F8850();
-        }
+        case 5:
+            func_800A9A14();
+            break;
+        case 3:
+            D_80127630.unkC += time_getDelta();
+            if ((D_801255F8 < D_80127630.unkC) && (func_800C0A34() != 0))
+            {
+                func_800A759C(4, 0U);
+            }
+            else if (sp1C == 0)
+            {
+                func_800A759C(3, 1U);
+            }
+            break;
+        case 4:
+            if (func_800C0948() != 0)
+            {
+                func_800EA334(1);
+                func_800EA34C(1);
+                func_800A759C(3, 0U);
+                func_800FFC14();
+                func_800F8850();
+            }
     }
     if (func_800A819C() != 0)
     {
@@ -173,9 +178,9 @@ s32 func_800A7D84(void)
 
 }
 
-void func_800A7FB4()
+void func_800A7FB4(s32 arg0, s32 arg1)
 {
-    func_800A7584();
+    func_800A7584(arg0,arg1);
 }
 
 
@@ -202,7 +207,6 @@ void func_800CCFEC(void);
 void func_800A5D6C(void);
 void func_800B5E3C(void);
 void func_800DA1E0(void);
-void func_800D15CC(void);
 void func_8010E030(void);
 void func_800C075C(void);
 void func_800C08C0(void);
@@ -250,7 +254,7 @@ void func_800A7FD4(void) {
     func_800A5D6C();
     func_800B5E3C();
     func_800DA1E0();
-    func_800D15CC();
+    inventory_defrag();
     func_8010E030();
     func_800C075C();
     if (D_80127630.unk2 == 4) {
@@ -303,7 +307,7 @@ int func_800A81C4(void) {
         return 0;
     }
     a = _gcsectionDll_entrypoint_4(D_80127630.mapValue);
-    b = _gcsectionDll_entrypoint_4(func_800EA05C());
+    b = _gcsectionDll_entrypoint_4(map_getCurrent());
     return b != a && D_80127630.unk6 == 0;
 }
 
@@ -357,7 +361,7 @@ void func_800A86D8(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E80A70/func_800A88C4.s")
 
-s32 func_800A8948(s32 arg0)
+f32* func_800A8948(s32 arg0)
 {
     s32 temp_v0;
 
@@ -370,7 +374,7 @@ s32 func_800A8948(s32 arg0)
     return temp_v0;
 }
 
-s32 func_800A8984(s32 arg0) 
+f32* func_800A8984(s32 arg0)
 {
     return D_80127688[arg0].unk4;
 }

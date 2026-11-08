@@ -2,8 +2,79 @@
 #define __BS_FIRSTP_H__
 
 #include "common.h"
+#include "ba/anim.h"
+#include "ba/flag.h"
+#include "ba/fpctrl.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/preload.h"
+#include "ba/statemem.h"
+#include "ba/deathmatch.h"
+#include "ba/stick.h"
+#include "ba/sudie.h"
+#include "ba/timer.h"
+#include "ba/yaw.h"
+#include "bs/drone.h"
+#include "bs/firstp.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "ch/baddiesetup.h"
+#include "core1/1E2B200.h"
+#include "core2/1E66990.h"
+#include "core2/1E67DA0.h"
+#include "core2/1E6B900.h"
+#include "core2/1E6F080.h"
+#include "core2/1E72EA0.h"
+#include "core2/1E75620.h"
+#include "core2/1E75710.h"
+#include "core2/1E75920.h"
+#include "core2/1E76360.h"
+#include "core2/1E76500.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78170.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1E7AB30.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E7D460.h"
+#include "core2/1E80A70.h"
+#include "core2/1E97EF0.h"
+#include "core2/1EA0690.h"
+#include "core2/1EA3AA0.h"
+#include "core2/1EAD060.h"
+#include "core2/1EAF950.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB45C0.h"
+#include "core2/1EB5E70.h"
+#include "core2/1EBA250.h"
+#include "core2/1EC3810.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB0F0.h"
+#include "core2/1ECB9F0.h"
+#include "core2/1ECD170.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1ED4E30.h"
+#include "core2/1EDA900.h"
+#include "core2/1EE7080.h"
+#include "core2/1EE9AB0.h"
+#include "core2/anctrl.h"
+#include "gc/statusDll.h"
+#include "gl/cutDll.h"
+#include "memory.h"
+#include "nc/ba/1p.h"
+#include "player.h"
 
-void func_80807D48_bsfirstp(s32);
-void func_8080800C_bsfirstp(s32);
+
+void func_80807D48_bsfirstp(PlayerState*);
+void func_8080800C_bsfirstp(PlayerState*);
+
+void _bsfirstp_entrypoint_6();
+void _bsfirstp_entrypoint_14(PlayerState*);
+void _bsfirstp_entrypoint_27(PlayerState*);
+void _bsfirstp_entrypoint_28(PlayerState*, PlayerState*);
+void _bsfirstp_entrypoint_37(PlayerState*);
 
 #endif

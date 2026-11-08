@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/timer.h"
+#include "ba/timer.h"
 
 #include "core2/1EB2840.h"
 #include "core2/1ECA640.h"
@@ -20,14 +20,14 @@ int batimer_decrement(PlayerState *self, s32 id){
         return 0;
     }
 
-    self->timer->unk0[id] = func_800F0E00(0.0f, self->timer->unk0[id] - func_800D8FF8());
+    self->timer->unk0[id] = ml_max_f(0.0f, self->timer->unk0[id] - time_getDelta());
     return (self->timer->unk0[id] == 0.0f); 
     
 }
 
 void batimer_increment(PlayerState *self, s32 id) {
     self->timer->unk3C[id] = self->timer->unk0[id];
-    self->timer->unk0[id] += func_800D8FF8();
+    self->timer->unk0[id] += time_getDelta();
 }
 
 f32 batimer_get(PlayerState *self, s32 id) {

@@ -25,4 +25,9 @@ void func_800A5144()
     func_8010FD88(func_8008FFE8());
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7E9A0/func_800A516C.s")
+void func_800A516C(f32* arg0, f32* arg1, f32* arg2)
+{
+    func_800F18FC(arg1, arg2, arg0);
+    arg0[0] = ml_normalizeAngle_f(-arg0[0]);
+    arg0[2] = 0.0f;
+}

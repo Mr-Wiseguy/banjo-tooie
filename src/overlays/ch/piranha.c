@@ -38,8 +38,18 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/piranha/func_8080182C_chpiranha.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/piranha/chpiranha_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/piranha/chpiranha_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/piranha/chpiranha_entrypoint_2.s")
+extern ActorData D_80801B60_chpiranha;
+ActorData* chpiranha_entrypoint_0()
+{
+    return &D_80801B60_chpiranha;
+}
+extern ActorData D_80801BA8_chpiranha;
+ActorData* chpiranha_entrypoint_1()
+{
+    return &D_80801BA8_chpiranha;
+}
+extern ActorData D_80801BF0_chpiranha;
+ActorData* chpiranha_entrypoint_2()
+{
+    return &D_80801BF0_chpiranha;
+}

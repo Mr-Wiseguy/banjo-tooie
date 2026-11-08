@@ -13,6 +13,10 @@ s32 ovl_unload(struct Overlay* arg0, s32 arg1);
 void* heap_alloc_sided(s32 size, s32);
 void* heap_alloc(s32 size);
 
+extern Syscall overlay_syscalls[]; 
+
+extern s32 overlay_syscalls_end;
+
 s32 D_80117C60 = 0;
 s32 D_80117C64 = 0;
 
@@ -117,9 +121,10 @@ struct Overlay* ovl_load(s32 overlay_index, s32 arg1, s32 arg2) {
     return overlay;
 }
 
-struct Overlay* func_80081AA4(void*);
+struct Overlay* func_80081AA4(Syscall*);
 
-void func_800819B4(void* arg0) {
+void func_800819B4(Syscall* arg0)
+{
     struct Overlay* ovl;
 
     ovl = func_80081AA4(arg0);
@@ -166,7 +171,14 @@ s32 ovl_unload(struct Overlay* ovl, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081AA4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081BC0.s")
+s32 func_80081BC0(s32* arg0)
+{
+    if ((*arg0 & 0xFC00003F) == 0xC)
+    {
+        return 0;
+    }
+    return 1;
+}
 
 void defragment_overlays(void) {
     s32 i;
@@ -207,6 +219,39 @@ s32 func_80081D28()
     return D_80126CBC;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081D34.s")
+s32 func_80081D34(void* syscallAddress)
+{
+    s32 syscallIndex;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/overlays/func_80081D80.s")
+    syscallIndex = (s32)((s32)syscallAddress - (s32)&overlay_syscalls) >> 3;
+    if (syscallIndex < 0)
+    {
+        return 0;
+    }
+    if ((((s32)&overlay_syscalls_end - (s32)&overlay_syscalls)) >> 3 < syscallIndex)
+    {
+        return 0;
+    }
+    return syscallIndex;
+}
+
+s32 func_80081D80(s32 syscallIndex)
+{
+    struct Overlay* overlayAddress;
+    if ((overlay_syscalls[syscallIndex].unk0 & 0xFC00003F) == 0xC)
+    {
+        if (!(overlay_syscalls[syscallIndex].unk0_25))
+        {
+            return 0;
+        }
+        return 1;
+    }
+
+    overlayAddress = ((((s32)(overlay_syscalls[syscallIndex].unk0 << 6) >> 6) << 2) | 0x80000000) - 0x10;
+    if (overlayAddress->fields.unk32 >= 2)
+    {
+        return 2;
+    }
+
+    return 3;
+}

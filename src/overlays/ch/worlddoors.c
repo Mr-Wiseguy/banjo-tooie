@@ -14,4 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/worlddoors/func_80800798_chworlddoors.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/worlddoors/chworlddoors_entrypoint_0.s")
+extern ActorData D_80800A04_chworlddoors;
+ActorData* chworlddoors_entrypoint_0()
+{
+    return &D_80800A04_chworlddoors;
+}

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/scorepoints/chscorepoints_entrypoint_0.s")
-
+extern ActorData D_808003C0_chscorepoints;
+ActorData* chscorepoints_entrypoint_0()
+{
+    return &D_808003C0_chscorepoints;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/scorepoints/func_8080000C_chscorepoints.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/scorepoints/func_808000BC_chscorepoints.s")

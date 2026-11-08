@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/chklungo_entrypoint_0.s")
-
+extern ActorData D_80803B6C_chklungo;
+ActorData* chklungo_entrypoint_0()
+{
+    return &D_80803B6C_chklungo;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/func_8080000C_chklungo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/func_808002D0_chklungo.s")

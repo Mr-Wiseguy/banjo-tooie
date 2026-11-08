@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/freezy/chfreezy_entrypoint_0.s")
-
+extern ActorData D_80800700_chfreezy;
+ActorData* chfreezy_entrypoint_0()
+{
+    return &D_80800700_chfreezy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/freezy/func_8080000C_chfreezy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/freezy/func_8080003C_chfreezy.s")

@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/crusher/chfactorycrusher_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/crusher/chfactorycrusher_entrypoint_1.s")
-
+extern ActorData D_80800A50_chfactorycrusher;
+ActorData* chfactorycrusher_entrypoint_0()
+{
+    return &D_80800A50_chfactorycrusher;
+}
+extern ActorData D_80800A98_chfactorycrusher;
+ActorData* chfactorycrusher_entrypoint_1()
+{
+    return &D_80800A98_chfactorycrusher;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/crusher/func_80800018_chfactorycrusher.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/crusher/func_80800150_chfactorycrusher.s")

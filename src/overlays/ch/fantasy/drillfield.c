@@ -14,4 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/func_8080054C_chfantasydrillfield.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/drillfield/chfantasydrillfield_entrypoint_0.s")
+extern ActorData D_808009C4_chfantasydrillfield;
+ActorData* chfantasydrillfield_entrypoint_0()
+{
+    return &D_808009C4_chfantasydrillfield;
+}

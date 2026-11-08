@@ -4,4 +4,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jrinnlight/func_80800038_chjrinnlight.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jrinnlight/chjrinnlight_entrypoint_0.s")
+extern ActorData D_808000F0_chjrinnlight;
+ActorData* chjrinnlight_entrypoint_0()
+{
+    return &D_808000F0_chjrinnlight;
+}

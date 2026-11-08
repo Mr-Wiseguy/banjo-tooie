@@ -1,17 +1,35 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_4.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/bits/chlagoonbits_entrypoint_5.s")
-
+extern ActorData D_80800804_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_0()
+{
+    return &D_80800804_chlagoonbits;
+}
+extern ActorData D_8080084C_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_1()
+{
+    return &D_8080084C_chlagoonbits;
+}
+extern ActorData D_80800894_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_2()
+{
+    return &D_80800894_chlagoonbits;
+}
+extern ActorData D_808008DC_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_3()
+{
+    return &D_808008DC_chlagoonbits;
+}
+extern ActorData D_80800924_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_4()
+{
+    return &D_80800924_chlagoonbits;
+}
+extern ActorData D_8080096C_chlagoonbits;
+ActorData* chlagoonbits_entrypoint_5()
+{
+    return &D_8080096C_chlagoonbits;
+}
 void func_80800048_chlagoonbits(s32 arg0) 
 {
 }

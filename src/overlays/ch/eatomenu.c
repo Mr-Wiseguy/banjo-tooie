@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eatomenu/chcheatomenu_entrypoint_0.s")
-
+extern ActorData D_8080089C_chcheatomenu;
+ActorData* chcheatomenu_entrypoint_0()
+{
+    return &D_8080089C_chcheatomenu;
+}
 void func_8080000C_chcheatomenu(s32 arg0) 
 {
 }

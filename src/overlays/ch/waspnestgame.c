@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waspnestgame/chwaspnestgame_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waspnestgame/chwaspnestgame_entrypoint_1.s")
-
+extern ActorData D_80801F80_chwaspnestgame;
+ActorData* chwaspnestgame_entrypoint_0()
+{
+    return &D_80801F80_chwaspnestgame;
+}
+extern ActorData D_80801FC8_chwaspnestgame;
+ActorData* chwaspnestgame_entrypoint_1()
+{
+    return &D_80801FC8_chwaspnestgame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waspnestgame/func_80800018_chwaspnestgame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waspnestgame/func_808002EC_chwaspnestgame.s")

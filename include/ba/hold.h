@@ -2,11 +2,21 @@
 #define __BA_HOLD_H__
 
 #include "common.h"
-#include "../../src/overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
+#include "core1/1E2B200.h"
+#include "core2/1E691A0.h"
+#include "core2/1E6B900.h"
+#include "core2/1EDFED0.h"
 
-s32 bahold_entrypoint_0();
-void bahold_entrypoint_2(s32 arg0);
-void bahold_entrypoint_4(s32 arg0);
-Unk80132ED0* bahold_entrypoint_5(PlayerState* arg0);
+#include "ba/hold.h"
+
+s32 _bahold_entrypoint_0();
+void _bahold_entrypoint_1(PlayerState*);
+void _bahold_entrypoint_2(PlayerState*);
+void _bahold_entrypoint_3(PlayerState*);
+void _bahold_entrypoint_4(PlayerState*);
+s32 _bahold_entrypoint_5(PlayerState*);
+void _bahold_entrypoint_6(PlayerState*, s32);
+void _bahold_entrypoint_7(PlayerState*, f32, f32);
 
 #endif

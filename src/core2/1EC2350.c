@@ -1,5 +1,7 @@
 #include "core2/1EC2350.h"
 
+extern FreeList* D_8012D680;
+
 void func_800E8A60(void) {
 }
 
@@ -7,8 +9,13 @@ void func_800E8A60(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E8B04.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E8B3C.s")
-
+void func_800E8B3C()
+{
+    if(D_8012D680)
+    {
+       D_8012D680 = freelist_defrag(D_8012D680);
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E8B74.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EC2350/func_800E8C08.s")

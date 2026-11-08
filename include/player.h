@@ -2,9 +2,9 @@
 #define __PLAYER_H__
 
 #include <ultra64.h>
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
-extern s32 player_inWater(PlayerState *self);
-extern s32 player_isStable(PlayerState *self);
+extern int player_inWater(PlayerState *self);
+extern int player_isStable(PlayerState *self);
 
 #endif // __PLAYER_H__

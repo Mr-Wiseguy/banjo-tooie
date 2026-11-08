@@ -1,6 +1,6 @@
 #include "ch/witchyentrygates.h"
 
-extern u32 D_808001F0_chwitchyentrygates;
+extern ActorData D_808001F0_chwitchyentrygates;
 
 void func_80800000_chwitchyentrygates(Actor* arg0)
 {
@@ -8,9 +8,9 @@ void func_80800000_chwitchyentrygates(Actor* arg0)
     s32 var_a3;
     if (_sujiggy_entrypoint_20(2U) != 0)
     {
-        func_800DA544(FLAG_394_PROGRESS_OPENED_WORLD_WW);
+        flag_setValueTrue(FLAG_394_PROGRESS_OPENED_WORLD_WW);
     }
-    if ((func_800D3E40(0xB) != 0) && (_glcutDll_entrypoint_19(0x7CU) == 0))
+    if ((cheat_isActive(0xB) != 0) && (_glcutDll_entrypoint_19(0x7CU) == 0))
     {
         var_a3 = -1;
         func_80101FDC(arg0, 4);
@@ -35,6 +35,6 @@ void func_80800000_chwitchyentrygates(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/witchy/entrygates/func_80800168_chwitchyentrygates.s")
 
-void* chwitchyentrygates_entrypoint_0(void) {
+ActorData* chwitchyentrygates_entrypoint_0(void) {
     return &D_808001F0_chwitchyentrygates;
 }

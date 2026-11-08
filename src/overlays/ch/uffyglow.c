@@ -11,4 +11,8 @@ void func_80800484_chchuffyglow(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffyglow/chchuffyglow_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffyglow/chchuffyglow_entrypoint_1.s")
+extern ActorData D_808005B0_chchuffyglow;
+ActorData* chchuffyglow_entrypoint_1()
+{
+    return &D_808005B0_chchuffyglow;
+}

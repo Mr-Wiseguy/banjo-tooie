@@ -10,5 +10,6 @@ void func_800FE734(u32);
 void func_800FE844(u32);
 void func_800FEC60(u32);
 void func_800FECB8(u32);
+s16 func_800FED90(s16, void*); 
 void func_800FF01C(f32);
 #endif // __CORE2_1ED68A0_H__

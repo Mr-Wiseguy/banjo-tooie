@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/chjiggygamenew_entrypoint_0.s")
-
+extern ActorData D_80803D44_chjiggygamenew;
+ActorData* chjiggygamenew_entrypoint_0()
+{
+    return &D_80803D44_chjiggygamenew;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080000C_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80800030_chjiggygamenew.s")
@@ -62,8 +65,11 @@ void func_808024C8_chjiggygamenew(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/chjiggygamenew_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/chjiggygamenew_entrypoint_3.s")
-
+extern ActorData D_80803E50_chjiggygamenew;
+ActorData* chjiggygamenew_entrypoint_3()
+{
+    return &D_80803E50_chjiggygamenew;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802E80_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80802F3C_chjiggygamenew.s")
@@ -83,8 +89,11 @@ void func_80803564_chjiggygamenew(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803668_chjiggygamenew.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/chjiggygamenew_entrypoint_4.s")
-
+extern ActorData D_80803EBC_chjiggygamenew;
+ActorData* chjiggygamenew_entrypoint_4()
+{
+    return &D_80803EBC_chjiggygamenew;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_8080377C_chjiggygamenew.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jiggy/gamenew/func_80803928_chjiggygamenew.s")

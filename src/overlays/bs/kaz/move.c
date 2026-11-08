@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/move.h"
+#include "bs/kaz/move.h"
 
 void func_80800000_bskazmove(PlayerState *self, f32 *arg1, f32 *arg2) {
     switch ( _bashoes_entrypoint_1(self)) {
@@ -61,7 +61,7 @@ void bskazmove_entrypoint_0(PlayerState *self) {
             break;
     }
 
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(value, min, max));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(value, min, max));
 }
 
 BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) {
@@ -142,7 +142,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 
@@ -152,9 +152,9 @@ void bskazmove_entrypoint_3(PlayerState *self) {
         next_state = func_808001C4_bskazmove(self, next_state);
     }
 
-    if (bakey_pressed(self, 8) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
-        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
+        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (player_canSwap(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
         }
@@ -277,7 +277,7 @@ void bskazmove_entrypoint_7(PlayerState *self) {
 
 void bskazmove_entrypoint_8(PlayerState *self) {
     _bskaz_entrypoint_1(self);
-    if ((bs_getPreviousState(self) == 0xBC) && (func_8009BB5C(self) < 200.0f)) {
+    if ((bs_getPreviousState(self) == 0xBC) && (baphysics_get_horizontal_velocity(self) < 200.0f)) {
         _badust_entrypoint_3(self, 0.0f, 0.0f);
     }
     self->unk15C.word = 0;
@@ -314,7 +314,7 @@ void bskazmove_entrypoint_9(PlayerState *self) {
         next_state = BS_STATE_DF;
     }
 
-    if ((bakey_held(self, 1) != 0) && (func_8008E39C(self) == 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (func_8008E39C(self) == 0)) {
         next_state = BS_STATE_DD;
     }
 
@@ -326,7 +326,7 @@ void bskazmove_entrypoint_9(PlayerState *self) {
 
     if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
-        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
+        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (player_canSwap(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
         }

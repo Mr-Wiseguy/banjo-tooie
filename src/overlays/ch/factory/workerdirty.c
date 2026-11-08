@@ -1,7 +1,10 @@
 #include "ch/factory/workerdirty.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/chfactoryworkerdirty_entrypoint_0.s")
-
+extern ActorData D_80800EF8_chfactoryworkerdirty;
+ActorData* chfactoryworkerdirty_entrypoint_0()
+{
+    return &D_80800EF8_chfactoryworkerdirty;
+}
 void func_8080000C_chfactoryworkerdirty(Actor* arg0)
 {
     func_80108B04(arg0,1);
@@ -17,7 +20,7 @@ void func_8080000C_chfactoryworkerdirty(Actor* arg0)
 
 void func_80800340_chfactoryworkerdirty(Actor* arg0)
 {
-    func_80100094(arg0,0);
+    actor_getAdditionalMem(arg0,0);
     func_80800DB4_chfactoryworkerdirty(arg0);
 }
 
@@ -43,7 +46,7 @@ void func_80800340_chfactoryworkerdirty(Actor* arg0)
 
 s32 func_808009E4_chfactoryworkerdirty()
 {
-    return func_800DA298(FLAG_433_UNK);
+    return flag_getValue(FLAG_433_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerdirty/func_80800A04_chfactoryworkerdirty.s")

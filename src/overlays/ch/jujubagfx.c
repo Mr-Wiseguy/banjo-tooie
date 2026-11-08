@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jujubagfx/chjujubagfx_entrypoint_0.s")
-
+extern ActorData D_80800470_chjujubagfx;
+ActorData* chjujubagfx_entrypoint_0()
+{
+    return &D_80800470_chjujubagfx;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jujubagfx/func_8080000C_chjujubagfx.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jujubagfx/func_80800100_chjujubagfx.s")

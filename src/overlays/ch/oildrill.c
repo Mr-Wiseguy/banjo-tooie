@@ -22,10 +22,17 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/func_80800F08_choildrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/choildrill_entrypoint_1.s")
-
+extern ActorData D_808014A8_choildrill;
+ActorData* choildrill_entrypoint_1()
+{
+    return &D_808014A8_choildrill;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/func_808010C0_choildrill.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/func_80801110_choildrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/oildrill/choildrill_entrypoint_2.s")
+extern ActorData D_808014F0_choildrill;
+ActorData* choildrill_entrypoint_2()
+{
+    return &D_808014F0_choildrill;
+}

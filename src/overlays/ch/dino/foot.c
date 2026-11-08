@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/foot/chdinofoot_entrypoint_0.s")
-
+extern ActorData D_80800818_chdinofoot;
+ActorData* chdinofoot_entrypoint_0()
+{
+    return &D_80800818_chdinofoot;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/foot/func_8080000C_chdinofoot.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/foot/func_80800084_chdinofoot.s")

@@ -12,4 +12,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/canarymarycage/func_80800410_chcanarymarycage.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/canarymarycage/chcanarymarycage_entrypoint_0.s")
+extern ActorData D_80800674_chcanarymarycage;
+ActorData* chcanarymarycage_entrypoint_0()
+{
+    return &D_80800674_chcanarymarycage;
+}

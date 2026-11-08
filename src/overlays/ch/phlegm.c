@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/chphlegm_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/chphlegm_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/chphlegm_entrypoint_2.s")
-
+extern ActorData D_80800B58_chphlegm;
+ActorData* chphlegm_entrypoint_0()
+{
+    return &D_80800B58_chphlegm;
+}
+extern ActorData D_80800BA0_chphlegm;
+ActorData* chphlegm_entrypoint_1()
+{
+    return &D_80800BA0_chphlegm;
+}
+extern ActorData D_80800BE8_chphlegm;
+ActorData* chphlegm_entrypoint_2()
+{
+    return &D_80800BE8_chphlegm;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_80800024_chphlegm.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/phlegm/func_808000C4_chphlegm.s")

@@ -1,16 +1,22 @@
 #include "ch/fireicestorm.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/chfireicestorm_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/chfireicestorm_entrypoint_1.s")
-
+extern ActorData D_80800EA8_chfireicestorm;
+ActorData* chfireicestorm_entrypoint_0()
+{
+    return &D_80800EA8_chfireicestorm;
+}
+extern ActorData D_80800EF0_chfireicestorm;
+ActorData* chfireicestorm_entrypoint_1()
+{
+    return &D_80800EF0_chfireicestorm;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_80800018_chfireicestorm.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_808001CC_chfireicestorm.s")
 
 void func_80800360_chfireicestorm(s32 arg0)
 {
-    func_800DA524(FLAG3_9FB_UNK);
+    flag_setValueFalse(FLAG3_9FB_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fire/icestorm/func_80800384_chfireicestorm.s")

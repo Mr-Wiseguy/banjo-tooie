@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomswit/chpumproomswitch_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomswit/chpumproomswitch_entrypoint_1.s")
-
+extern ActorData D_80800380_chpumproomswitch;
+ActorData* chpumproomswitch_entrypoint_0()
+{
+    return &D_80800380_chpumproomswitch;
+}
+extern ActorData D_808003C8_chpumproomswitch;
+ActorData* chpumproomswitch_entrypoint_1()
+{
+    return &D_808003C8_chpumproomswitch;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomswit/func_80800018_chpumproomswitch.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomswit/func_808000BC_chpumproomswitch.s")

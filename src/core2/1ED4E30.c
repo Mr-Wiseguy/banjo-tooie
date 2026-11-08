@@ -1,16 +1,43 @@
 #include "core2/1ED4E30.h"
+#include "core2/1EB3750.h"
 
 extern s32 D_80135960;
+extern s16 D_80123DE0[];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB540.s")
+void func_800FB540(unkStruct800FB540* arg0) {
+    s16* var_v1;
+    s32 var_v0;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB5BC.s")
+    if (arg0->unk33 == 0) {
+        func_800FED70(arg0->unk28, arg0);
+        arg0->unk33 = 1U;
+        var_v1 = &D_80123DE0;
+        for (var_v0 = 0;var_v0 != 0x30;var_v0++)
+        {
+        if (arg0->unk28 == D_80123DE0[var_v0]) 
+        {
+            flag_setValueTrue(var_v0 + 0x53E);
+            return;
+        }
+        var_v1 ++;
+        }
+    }
+}
+
+void func_800FB5BC(unkStruct800FB540* arg0) {
+    if (arg0->unk33 != 0) {
+        func_800FED90(arg0->unk28, arg0);
+        arg0->unk33 = 0U;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB5F8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB650.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB6C0.s")
+void func_800FB6C0(s32 arg0, s32 arg1) {
+    func_800FB650(arg0, arg1, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1ED4E30/func_800FB6E0.s")
 

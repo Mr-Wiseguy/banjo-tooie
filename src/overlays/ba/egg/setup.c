@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/egg/setup.h"
 
 s32 baeggsetup_entrypoint_0() 
 {

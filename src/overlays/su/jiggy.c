@@ -43,7 +43,7 @@ s32 func_80800000_sujiggy(s32 arg0)
 
 s32 sujiggy_entrypoint_0()
 {
-    return func_800DA564(FLAG_35C_JIGGYWIGGY_CHALLENGE_COMPLETION_1, 4);
+    return flag_getMultipleValue(FLAG_35C_JIGGYWIGGY_CHALLENGE_COMPLETION_1, 4);
 }
 
 s32 sujiggy_entrypoint_1() 
@@ -88,24 +88,24 @@ void sujiggy_entrypoint_8(void)
     s32 sp1C;
 
     sp24 = sujiggy_entrypoint_0();
-    if (func_800DA298(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen) == 0)
+    if (flag_getValue(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen) == 0)
     {
-        func_800DA7A8(GFLAG_C0D_UNK, 0, 8);
-        func_800DA7A8(FLAG5_D57_UNK, 0, 4);
+        flag_setMultipleValue(GFLAG_C0D_UNK, 0, 8);
+        flag_setMultipleValue(FLAG5_D57_UNK, 0, 4);
     }
-    func_800DA524(FLAG5_D4D_UNK);
-    func_800DA544(FLAG5_D4E_UNK);
+    flag_setValueFalse(FLAG5_D4D_UNK);
+    flag_setValueTrue(FLAG5_D4E_UNK);
     if (sp24 >= 0xA)
     {
-        func_800DA3B8(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE, func_800DA298(FLAG_589_ATTEMPTED_JIGGYWIGGY_SPECIAL_PUZZLE));
+        flag_setValue(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE, flag_getValue(FLAG_589_ATTEMPTED_JIGGYWIGGY_SPECIAL_PUZZLE));
     }
     else
     {
-        func_800DA3B8(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE, func_800DA298(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen));
+        flag_setValue(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE, flag_getValue(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen));
     }
-    func_800DA3B8(FLAG5_D74_UNK, func_800DA298(FLAG_57B_UNK));
-    func_800DA7A8(FLAG5_D50_UNK, sp24, 4);
-    func_800DA524(FLAG5_D73_UNK);
+    flag_setValue(FLAG5_D74_UNK, flag_getValue(FLAG_57B_UNK));
+    flag_setMultipleValue(FLAG5_D50_UNK, sp24, 4);
+    flag_setValueFalse(FLAG5_D73_UNK);
     func_800FE844(2);
     func_800FE734(1);
     func_800FC6B0(0x2E);
@@ -117,21 +117,21 @@ void sujiggy_entrypoint_8(void)
 
 void sujiggy_entrypoint_9()
 {
-    func_800DA544(FLAG5_D4D_UNK);
+    flag_setValueTrue(FLAG5_D4D_UNK);
 }
 
 void sujiggy_entrypoint_10(void)
 {
     func_800FE844(2U);
     func_800FE734(1U);
-    func_800DA544(FLAG5_D4F_UNK);
-    if (func_800DA298(FLAG5_D4D_UNK) != 0)
+    flag_setValueTrue(FLAG5_D4F_UNK);
+    if (flag_getValue(FLAG5_D4D_UNK) != 0)
     {
-        func_800DA7A8(FLAG5_D57_UNK, 0, 4);
+        flag_setMultipleValue(FLAG5_D57_UNK, 0, 4);
     }
     else
     {
-        func_800DA7A8(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
+        flag_setMultipleValue(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
     }
     func_800A9C50();
 }
@@ -141,18 +141,18 @@ void sujiggy_entrypoint_11(s32 arg0)
     func_800FC6B0(0x2EU);
     func_800FE844(2U);
     func_800FE734(1U);
-    func_800DA7A8(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
+    flag_setMultipleValue(FLAG5_D57_UNK, sujiggy_entrypoint_19() + 1, 4);
     func_800A9BA0(1, sujiggy_entrypoint_4(arg0), sujiggy_entrypoint_5(arg0));
 }
 
 s32 sujiggy_entrypoint_12(void)
 {
-    return func_800DA564(FLAG5_D50_UNK, 4);
+    return flag_getMultipleValue(FLAG5_D50_UNK, 4);
 }
 
 s32 sujiggy_entrypoint_13()
 {
-    return func_800DA298(FLAG5_D4F_UNK);
+    return flag_getValue(FLAG5_D4F_UNK);
 }
 
 s32 sujiggy_entrypoint_14(void)
@@ -161,7 +161,7 @@ s32 sujiggy_entrypoint_14(void)
 
     if (sujiggy_entrypoint_21() != 0)
     {
-        if (func_800DA298(FLAG5_D4D_UNK) != 0)
+        if (flag_getValue(FLAG5_D4D_UNK) != 0)
         {
             sp1C = 2;
         }
@@ -170,7 +170,7 @@ s32 sujiggy_entrypoint_14(void)
             sp1C = 3;
         }
     }
-    else if (func_800DA298(FLAG5_D4D_UNK) != 0)
+    else if (flag_getValue(FLAG5_D4D_UNK) != 0)
     {
         sp1C = 1;
     }
@@ -178,33 +178,33 @@ s32 sujiggy_entrypoint_14(void)
     {
         sp1C = 0;
     }
-    func_800DA7A8(FLAG_35C_JIGGYWIGGY_CHALLENGE_COMPLETION_1, func_800DA564(FLAG5_D50_UNK, 4), 4);
+    flag_setMultipleValue(FLAG_35C_JIGGYWIGGY_CHALLENGE_COMPLETION_1, flag_getMultipleValue(FLAG5_D50_UNK, 4), 4);
     if (sujiggy_entrypoint_21() != 0)
     {
-        func_800DA3B8(FLAG_589_ATTEMPTED_JIGGYWIGGY_SPECIAL_PUZZLE, func_800DA298(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE));
+        flag_setValue(FLAG_589_ATTEMPTED_JIGGYWIGGY_SPECIAL_PUZZLE, flag_getValue(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE));
     }
     else
     {
-        func_800DA3B8(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen, func_800DA298(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE));
+        flag_setValue(FLAG_3E9_PHYSICAL_IoH_PineGroveDoorOpen, flag_getValue(FLAG5_D49_TEMPCOPY_ATTEMPTED_JIGGYWIGGY_PUZZLE));
     }
-    func_800DA3B8(FLAG_57B_UNK, func_800DA298(FLAG5_D74_UNK));
+    flag_setValue(FLAG_57B_UNK, flag_getValue(FLAG5_D74_UNK));
     if (sp1C == 1)
     {
         func_800DA944(FLAG_35C_JIGGYWIGGY_CHALLENGE_COMPLETION_1, 4);
     }
-    func_800DA524(FLAG5_D4F_UNK);
-    func_800DA524(FLAG5_D4E_UNK);
-    if (func_800DA298(FLAG5_D73_UNK) != 0)
+    flag_setValueFalse(FLAG5_D4F_UNK);
+    flag_setValueFalse(FLAG5_D4E_UNK);
+    if (flag_getValue(FLAG5_D73_UNK) != 0)
     {
         func_800D2054(1, 0x96, sujiggy_entrypoint_24());
-        func_800DA524(FLAG5_D73_UNK);
+        flag_setValueFalse(FLAG5_D73_UNK);
     }
     return sp1C;
 }
 
 void sujiggy_entrypoint_15(s32 arg0, s32 arg1)
 {
-    if (func_800DA298(FLAG_58A_UNK) != 0)
+    if (flag_getValue(FLAG_58A_UNK) != 0)
     {
         _glcutDll_entrypoint_6(func_80800000_sujiggy(D_808008E0_sujiggy[arg0].unkC), arg0 + 0x7A);
         return;
@@ -214,7 +214,7 @@ void sujiggy_entrypoint_15(s32 arg0, s32 arg1)
         _glcutDll_entrypoint_6(0x14FU, 0x67U);
         return;
     }
-    func_800DA544(FLAG_58A_UNK);
+    flag_setValueTrue(FLAG_58A_UNK);
     _glcutDll_entrypoint_24(func_80800000_sujiggy(D_808008E0_sujiggy[arg0].unkC), 0x151, arg0 + 0x7A);
 }
 
@@ -274,20 +274,20 @@ s32 sujiggy_entrypoint_18(void)
 
 s32 sujiggy_entrypoint_19(void)
 {
-    return func_800DA564(FLAG5_D57_UNK, 4);
+    return flag_getMultipleValue(FLAG5_D57_UNK, 4);
 }
 
 int sujiggy_entrypoint_20(s32 arg0)
 {
-    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && func_800DA298(arg0 + 0x392) == 0;
+    return (_glcutDll_entrypoint_19(arg0 + 0x7A) == 0) && (arg0 < sujiggy_entrypoint_0()) && flag_getValue(arg0 + FLAG_392_PROGRESS_OPENED_WORLD_MT) == 0;
 }
 
 s32 sujiggy_entrypoint_21(void)
 {
     s32 var_v0;
-    if (func_800DA298(FLAG5_D4E_UNK) != 0)
+    if (flag_getValue(FLAG5_D4E_UNK) != 0)
     {
-        var_v0 = func_800DA564(FLAG5_D50_UNK, 4);
+        var_v0 = flag_getMultipleValue(FLAG5_D50_UNK, 4);
     }
     else
     {
@@ -308,7 +308,7 @@ u16 sujiggy_entrypoint_23(s32 arg0)
 
 s32 sujiggy_entrypoint_24(void)
 {
-    return func_800DA564(GFLAG_C0D_UNK, 8);
+    return flag_getMultipleValue(GFLAG_C0D_UNK, 8);
 }
 
 s32 sujiggy_entrypoint_25(s32 arg0)
@@ -322,7 +322,7 @@ s32 sujiggy_entrypoint_25(s32 arg0)
     }
     if ((temp_v0 == 0) || (arg0 < temp_v0))
     {
-        func_800DA7A8(GFLAG_C0D_UNK, arg0, 8);
+        flag_setMultipleValue(GFLAG_C0D_UNK, arg0, 8);
         return 2;
     }
     if (temp_v0 == arg0)

@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/chtiptup_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/chtiptup_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/chtiptup_entrypoint_2.s")
-
+extern ActorData D_80801448_chtiptup;
+ActorData* chtiptup_entrypoint_0()
+{
+    return &D_80801448_chtiptup;
+}
+extern ActorData D_80801490_chtiptup;
+ActorData* chtiptup_entrypoint_1()
+{
+    return &D_80801490_chtiptup;
+}
+extern ActorData D_808014D8_chtiptup;
+ActorData* chtiptup_entrypoint_2()
+{
+    return &D_808014D8_chtiptup;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/func_80800024_chtiptup.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tiptup/func_80800200_chtiptup.s")

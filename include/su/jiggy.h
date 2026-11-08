@@ -38,11 +38,13 @@ s32 _sujiggy_entrypoint_0();
 s32 _sujiggy_entrypoint_2(s32);
 s32 sujiggy_entrypoint_4(s32);
 s32 sujiggy_entrypoint_5(s32);
+void _sujiggy_entrypoint_8();
 s32 sujiggy_entrypoint_19(void);
 
 //Check if world is unlocked
 s32 _sujiggy_entrypoint_20(u32);
 s32 sujiggy_entrypoint_21(void);
+s32 _sujiggy_entrypoint_21();
 s32 sujiggy_entrypoint_24(void);
 
 #endif

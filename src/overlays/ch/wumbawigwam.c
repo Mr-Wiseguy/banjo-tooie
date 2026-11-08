@@ -1,4 +1,6 @@
-#include "common.h"
+#include "ch/wumbawigwam.h"
+
+extern ActorData D_8080116C_chwumbawigwam;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wumbawigwam/func_80800000_chwumbawigwam.s")
 
@@ -10,4 +12,7 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wumbawigwam/func_80800FEC_chwumbawigwam.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wumbawigwam/chwumbawigwam_entrypoint_0.s")
+ActorData* chwumbawigwam_entrypoint_0()
+{
+    return &D_8080116C_chwumbawigwam;
+}

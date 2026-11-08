@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/buzz.h"
+#include "ba/buzz.h"
 
 #include "core2/1E9A960.h"
 #include "core2/1EB2840.h"
@@ -26,7 +26,7 @@ f32 func_80800008_babuzz(f32 arg0) {
 f32 func_80800074_babuzz(f32 value, f32 target, f32 rate) {
     f32 dt;
 
-    dt = func_800D8FF8();
+    dt = time_getDelta();
     if (value < target) {
         value += dt * rate;
         if (target < value) {
@@ -60,7 +60,7 @@ void babuzz_entrypoint_2(PlayerState *self) {
 }
 
 void babuzz_entrypoint_3(PlayerState *self) {
-    self->buzz->unk14 += func_800D8FF8();
+    self->buzz->unk14 += time_getDelta();
     self->buzz->unk4 = func_80800074_babuzz(self->buzz->unk4, self->buzz->unkC, 0.3f);
     self->buzz->unk8 = (s32)func_80800074_babuzz((f32)self->buzz->unk8, (f32)self->buzz->unk10, 100.0f);
     func_800C31DC(self->buzz->unk0, self->buzz->unk4 + func_80800008_babuzz(self->buzz->unk14));

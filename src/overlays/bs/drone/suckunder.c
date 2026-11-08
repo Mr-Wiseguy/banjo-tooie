@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/suckunder.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/suckunder/func_80800000_bsdronesuckunder.s")
 

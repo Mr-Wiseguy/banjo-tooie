@@ -13,10 +13,16 @@ typedef struct {
     u8 unk10;
 } cablecarMemory;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablecar/chcablecar_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablecar/chcablecar_entrypoint_1.s")
-
+extern ActorData D_80800EB0_chcablecar;
+ActorData* chcablecar_entrypoint_0()
+{
+    return &D_80800EB0_chcablecar;
+}
+extern ActorData D_80800EF8_chcablecar;
+ActorData* chcablecar_entrypoint_1()
+{
+    return &D_80800EF8_chcablecar;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablecar/func_80800018_chcablecar.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablecar/func_808002E0_chcablecar.s")
@@ -31,13 +37,13 @@ void func_808005E0_chcablecar(Actor* arg0) {
     void* temp_a0;
     cablecarMemory* temp_v0;
 
-    temp_v0 = func_80100094(arg0, 0);
+    temp_v0 = actor_getAdditionalMem(arg0, 0);
     temp_a0 = &temp_v0->unk10;
     if (temp_v0->unkC < 0.5f) {
-        if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (func_800DC298(0.8f) != 0)) {
+        if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (rand_percentChance(0.8f) != 0)) {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_80800F4C_chcablecar);
         }
-    } else if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (func_800DC298(0.8f) != 0)) {
+    } else if ((_mlwave_entrypoint_9(temp_a0, D_80800F40_chcablecar) != 0) && (rand_percentChance(0.8f) != 0)) {
         _subaddieaudioquick_entrypoint_2(arg0, arg0->position, D_80800F58_chcablecar);
     }
 }

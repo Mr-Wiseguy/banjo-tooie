@@ -16,7 +16,7 @@ void surestart_entrypoint_0(s32 arg0)
     s32 mapId;
     s32 entranceId;
     s32 i = 0;
-    currentMap = func_800EA05C();
+    currentMap = map_getCurrent();
     if (arg0 == 1)
     {
         func_8009EBD0();
@@ -30,7 +30,7 @@ void surestart_entrypoint_0(s32 arg0)
             entranceId = D_808000D0_surestart[i].entranceId;
             if ((transformationHome == MAP_13E_CCL_MUMBO) || (transformationHome == MAP_13F_CCL_MINGY_JONGO))
             {
-                if (func_800DA298(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
+                if (flag_getValue(FLAG_40A_RANDOMISER_CCL_SKULL_1) == 0)
                 {
                     entranceId = 9;
                 }

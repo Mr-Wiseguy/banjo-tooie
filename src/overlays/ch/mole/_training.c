@@ -1,6 +1,12 @@
-#include "common.h"
+#include "ch/mole_training.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_training/func_80800000_chmole_training.s")
+void func_80800000_chmole_training(Actor* arg0)
+{
+    if (actor_getAdditionalMem(arg0, 0U) != NULL)
+    {
+        _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_training/func_80800034_chmole_training.s")
 
@@ -28,4 +34,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_training/func_80800C70_chmole_training.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mole/_training/chmole_training_entrypoint_1.s")
+extern ActorData D_80800F30_chmole_training;
+ActorData* chmole_training_entrypoint_1()
+{
+    return &D_80800F30_chmole_training;
+}

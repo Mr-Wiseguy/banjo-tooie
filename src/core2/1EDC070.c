@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EDC070.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDC070/func_80102780.s")
 
@@ -32,7 +32,10 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDC070/func_80102CCC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDC070/func_80102CF4.s")
+void func_80102CF4(Actor* arg0, f32 arg1)
+{
+    func_800F20BC(arg0->rotation[1], arg0->unk54, arg1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDC070/func_80102D20.s")
 

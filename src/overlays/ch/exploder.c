@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/exploder/chexploder_entrypoint_0.s")
-
+extern ActorData D_80801AE0_chexploder;
+ActorData* chexploder_entrypoint_0()
+{
+    return &D_80801AE0_chexploder;
+}
 void func_8080000C_chexploder(s32 arg0) 
 {
 }

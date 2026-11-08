@@ -5,6 +5,6 @@
 #include "player.h"
 #include "core2/1EEBA50.h"
 
-extern void _ncbadie_entrypoint_3(s32, f32);
+extern void _ncbadie_entrypoint_3(PlayerState*, f32);
 
 #endif // __NC_BA_DIE_H__

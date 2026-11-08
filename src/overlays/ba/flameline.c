@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/flameline.h"
 
 s32 baflameline_entrypoint_0() 
 {

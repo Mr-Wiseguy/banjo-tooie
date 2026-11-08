@@ -48,4 +48,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/potogoldgame/func_8080227C_chpotogoldgame.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/potogoldgame/chpotogoldgame_entrypoint_4.s")
+extern ActorData D_80802578_chpotogoldgame;
+ActorData* chpotogoldgame_entrypoint_4()
+{
+    return &D_80802578_chpotogoldgame;
+}

@@ -1,9 +1,15 @@
 #include "ch/ghostdoor.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ghostdoor/chghostdoor_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ghostdoor/chghostdoor_entrypoint_1.s")
-
+extern ActorData D_80800220_chghostdoor;
+ActorData* chghostdoor_entrypoint_0()
+{
+    return &D_80800220_chghostdoor;
+}
+extern ActorData D_80800268_chghostdoor;
+ActorData* chghostdoor_entrypoint_1()
+{
+    return &D_80800268_chghostdoor;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ghostdoor/func_80800018_chghostdoor.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ghostdoor/func_808000F4_chghostdoor.s")

@@ -11,4 +11,8 @@ void func_80800238_chjamjarsdummy(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jamjarsdummy/func_808002AC_chjamjarsdummy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jamjarsdummy/chjamjarsdummy_entrypoint_0.s")
+extern ActorData D_80800338_chjamjarsdummy;
+ActorData* chjamjarsdummy_entrypoint_0()
+{
+    return &D_80800338_chjamjarsdummy;
+}

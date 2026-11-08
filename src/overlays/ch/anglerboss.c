@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/changlerboss_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/changlerboss_entrypoint_1.s")
-
+extern ActorData D_80802EB4_changlerboss;
+ActorData* changlerboss_entrypoint_0()
+{
+    return &D_80802EB4_changlerboss;
+}
+extern ActorData D_80802EFC_changlerboss;
+ActorData* changlerboss_entrypoint_1()
+{
+    return &D_80802EFC_changlerboss;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/func_80800018_changlerboss.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/func_808002E0_changlerboss.s")

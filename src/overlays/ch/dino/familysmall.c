@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysmall/func_80800C10_chdinofamilysmall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familysmall/chdinofamilysmall_entrypoint_0.s")
+extern ActorData D_80800F20_chdinofamilysmall;
+ActorData* chdinofamilysmall_entrypoint_0()
+{
+    return &D_80800F20_chdinofamilysmall;
+}

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pumproomgrill/chpumproomgrill_entrypoint_0.s")
-
+extern ActorData D_808000E0_chpumproomgrill;
+ActorData* chpumproomgrill_entrypoint_0()
+{
+    return &D_808000E0_chpumproomgrill;
+}
 void func_8080000C_chpumproomgrill(s32 arg0) 
 {
 }

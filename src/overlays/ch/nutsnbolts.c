@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/chnutsnbolts_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/chnutsnbolts_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/chnutsnbolts_entrypoint_2.s")
-
+extern ActorData D_80800E28_chnutsnbolts;
+ActorData* chnutsnbolts_entrypoint_0()
+{
+    return &D_80800E28_chnutsnbolts;
+}
+extern ActorData D_80800E70_chnutsnbolts;
+ActorData* chnutsnbolts_entrypoint_1()
+{
+    return &D_80800E70_chnutsnbolts;
+}
+extern ActorData D_80800EB8_chnutsnbolts;
+ActorData* chnutsnbolts_entrypoint_2()
+{
+    return &D_80800EB8_chnutsnbolts;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/func_80800024_chnutsnbolts.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nutsnbolts/func_80800080_chnutsnbolts.s")

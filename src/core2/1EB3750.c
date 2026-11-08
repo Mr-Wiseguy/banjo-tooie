@@ -68,7 +68,7 @@ void func_800D9FFC(void) {
     s32 sp28[1];
     sp28[0] = D_8011B994;
     for (i = 0; i < ARRLEN(sp28); i++) {
-        func_800DA524(sp28[i]);
+        flag_setValueFalse(sp28[i]);
     }
 }
 
@@ -145,7 +145,7 @@ void func_800DA268(void) {
 }
 
 //Get Flag Value
-s32 func_800DA298(GameFlag index) {
+s32 flag_getValue(GameFlag index) {
     if ((index >= 0) && (index < 0x20)) {
         return ((1 << index) & D_8011B990) ? 1 : 0;
     }
@@ -168,7 +168,7 @@ s32 func_800DA298(GameFlag index) {
 }
 
 //Set Flag Value
-void func_800DA3B8(GameFlag index, s32 set) {
+void flag_setValue(GameFlag index, s32 set) {
     //Flag Block 0
     if ((index >= 0) && (index < 0x20)) {
         if (set != 0) {
@@ -193,7 +193,7 @@ void func_800DA3B8(GameFlag index, s32 set) {
     //Global Flags
     else if ((index > 0xBB8) && (index < 0xC16)) {
         if (bitfield_get_bit(D_8012C780, index - 0xBB8) != set) {
-            func_800DA544(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
+            flag_setValueTrue(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
         }
         bitfield_set_bit(D_8012C780, index - 0xBB8, set);
     }
@@ -204,19 +204,19 @@ void func_800DA3B8(GameFlag index, s32 set) {
 }
 
 //Set Flag False
-void func_800DA524(GameFlag index) 
+void flag_setValueFalse(GameFlag index) 
 {
-    func_800DA3B8(index, 0);
+    flag_setValue(index, 0);
 }
 
 //Set Flag True
-void func_800DA544(GameFlag index) 
+void flag_setValueTrue(GameFlag index) 
 {
-    func_800DA3B8(index, 1);
+    flag_setValue(index, 1);
 }
 
 //Get Number of True flags in range
-s32 func_800DA564(GameFlag startIndex, s32 length) {
+s32 flag_getMultipleValue(GameFlag startIndex, s32 length) {
     if ((startIndex >= 0) && (startIndex < 0x20)) {
         s32 ret = 0;
         s32 i;
@@ -247,11 +247,11 @@ s32 func_800DA564(GameFlag startIndex, s32 length) {
 }
 
 //Set Flags Value
-void func_800DA7A8(GameFlag startIndex, s32 set, s32 length) {
+void flag_setMultipleValue(GameFlag startIndex, s32 set, s32 length) {
     if ((startIndex >= 0) && (startIndex < 0x20)) {
         s32 i = 0;
         for (i = 0; i < length; i++) {
-            func_800DA3B8(startIndex + i, (1 << i) & set);
+            flag_setValue(startIndex + i, (1 << i) & set);
         }
     } else if ((startIndex > 0x28) && (startIndex < 0x5A5)) {
         bitfield_set_n_bits(D_8012C770[0], startIndex - 0x28, set, length);
@@ -264,7 +264,7 @@ void func_800DA7A8(GameFlag startIndex, s32 set, s32 length) {
     }
     else if ((startIndex > 0xBB8) && (startIndex < 0xC16)) {
         if (bitfield_get_n_bits(D_8012C780, startIndex - 0xBB8, length) != set) {
-            func_800DA544(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
+            flag_setValueTrue(FLAG5_D54_IF_GLOBALFLAGS_CHANGED);
         }
         bitfield_set_n_bits(D_8012C780, startIndex - 0xBB8, set, length);
     }
@@ -274,8 +274,8 @@ void func_800DA7A8(GameFlag startIndex, s32 set, s32 length) {
 }
 
 s32 func_800DA944(GameFlag startIndex, s32 length) {
-    s32 ret = func_800DA564(startIndex, length) + 1;
-    func_800DA7A8(startIndex, ret, length);
+    s32 ret = flag_getMultipleValue(startIndex, length) + 1;
+    flag_setMultipleValue(startIndex, ret, length);
     return ret;
 }
 
@@ -284,7 +284,7 @@ s32 func_800DA980(GameFlag startIndex, s32 length) {
     s32 i;
 
     for (i = 0; i < length; i++) {
-        ret += func_800DA298(i + startIndex);
+        ret += flag_getValue(i + startIndex);
     }
 
     return ret;
@@ -292,8 +292,8 @@ s32 func_800DA980(GameFlag startIndex, s32 length) {
 
 //Return Previous Flag State and Set New Flag State
 s32 func_800DA9E4(GameFlag index, s32 set) {
-    s32 ret = func_800DA298(index);
-    func_800DA3B8(index, set);
+    s32 ret = flag_getValue(index);
+    flag_setValue(index, set);
     return ret;
 }
 

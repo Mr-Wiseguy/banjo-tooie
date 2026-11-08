@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/chkingjinjo_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/chkingjinjo_entrypoint_1.s")
-
+extern ActorData D_808011A8_chkingjinjo;
+ActorData* chkingjinjo_entrypoint_0()
+{
+    return &D_808011A8_chkingjinjo;
+}
+extern ActorData D_808011F0_chkingjinjo;
+ActorData* chkingjinjo_entrypoint_1()
+{
+    return &D_808011F0_chkingjinjo;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/func_80800018_chkingjinjo.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/kingjinjo/func_80800194_chkingjinjo.s")

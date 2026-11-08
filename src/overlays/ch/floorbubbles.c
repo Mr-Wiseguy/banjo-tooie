@@ -7,4 +7,8 @@
 void func_80800244_chfloorbubbles(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/floorbubbles/chfloorbubbles_entrypoint_0.s")
+extern ActorData D_808002CC_chfloorbubbles;
+ActorData* chfloorbubbles_entrypoint_0()
+{
+    return &D_808002CC_chfloorbubbles;
+}

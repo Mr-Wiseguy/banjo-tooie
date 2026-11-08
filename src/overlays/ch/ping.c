@@ -6,4 +6,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ping/chping_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/ping/chping_entrypoint_1.s")
+extern ActorData D_80800410_chping;
+ActorData* chping_entrypoint_1()
+{
+    return &D_80800410_chping;
+}

@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/prop/chfactoryprop_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/prop/chfactoryprop_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/prop/chfactoryprop_entrypoint_2.s")
-
+extern ActorData D_80800C20_chfactoryprop;
+ActorData* chfactoryprop_entrypoint_0()
+{
+    return &D_80800C20_chfactoryprop;
+}
+extern ActorData D_80800C68_chfactoryprop;
+ActorData* chfactoryprop_entrypoint_1()
+{
+    return &D_80800C68_chfactoryprop;
+}
+extern ActorData D_80800CB0_chfactoryprop;
+ActorData* chfactoryprop_entrypoint_2()
+{
+    return &D_80800CB0_chfactoryprop;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/prop/func_80800024_chfactoryprop.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/prop/func_80800070_chfactoryprop.s")

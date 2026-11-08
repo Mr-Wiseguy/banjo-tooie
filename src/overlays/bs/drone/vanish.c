@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/vanish.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/vanish/func_80800000_bsdronevanish.s")
 

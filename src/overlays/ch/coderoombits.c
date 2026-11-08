@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/coderoombits/chcoderoombits_entrypoint_0.s")
-
+extern ActorData D_80801170_chcoderoombits;
+ActorData* chcoderoombits_entrypoint_0()
+{
+    return &D_80801170_chcoderoombits;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/coderoombits/func_8080000C_chcoderoombits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/coderoombits/func_80800058_chcoderoombits.s")

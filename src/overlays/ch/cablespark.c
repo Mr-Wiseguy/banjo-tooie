@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablespark/chcablespark_entrypoint_0.s")
-
+extern ActorData D_80800B88_chcablespark;
+ActorData* chcablespark_entrypoint_0()
+{
+    return &D_80800B88_chcablespark;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablespark/func_8080000C_chcablespark.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/cablespark/func_8080024C_chcablespark.s")

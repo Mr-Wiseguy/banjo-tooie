@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anemone/chanemone_entrypoint_0.s")
-
+extern ActorData D_808008D8_chanemone;
+ActorData* chanemone_entrypoint_0()
+{
+    return &D_808008D8_chanemone;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anemone/func_8080000C_chanemone.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anemone/func_80800260_chanemone.s")

@@ -1,6 +1,11 @@
-#include "common.h"
+#include "core2/1EA6B20.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA6B20/func_800CD230.s")
+extern f32 D_8012B010;
+
+void func_800CD230(f32 arg0)
+{
+    D_8012B010 = arg0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA6B20/func_800CD23C.s")
 

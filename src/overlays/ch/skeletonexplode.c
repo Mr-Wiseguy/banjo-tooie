@@ -38,4 +38,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/skeletonexplode/func_8080100C_chskeletonexplode.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/skeletonexplode/chskeletonexplode_entrypoint_9.s")
+extern ActorData D_80801138_chskeletonexplode;
+ActorData* chskeletonexplode_entrypoint_9()
+{
+    return &D_80801138_chskeletonexplode;
+}

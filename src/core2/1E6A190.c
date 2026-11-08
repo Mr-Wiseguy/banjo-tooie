@@ -2,24 +2,15 @@
 
 #include "core2/1E6A190.h"
 
-typedef struct {
-    u8 pad0[0xC];
-} Unk_1E6A190_1;
-
-typedef struct {
-    f32 unk0;
-    Unk_1E6A190_1 unk4[4];
-} Unk_1E6A190_0;
-
-extern Unk_1E6A190_0 D_80117CC0;
-extern Unk_1E6A190_0 D_80117CFC;
-extern Unk_1E6A190_0 D_80117D80;
+extern f32 D_80117CC0;
+extern f32 D_80117CFC;
+extern f32 D_80117D80;
 
 s32 func_800908A0(void) {
     return sizeof(BaUnknown20);
 }
 
-Unk_1E6A190_0 *func_800908A8(s32 arg0) {
+f32 *func_800908A8(s32 arg0) {
     switch (arg0) {
     case 0:
         return &D_80117D80;
@@ -56,7 +47,7 @@ void func_80090938(PlayerState *self) {
 void func_8009097C(PlayerState *self, s32 arg1) {
     self->unk20->unk0 = arg1;
     self->unk20->unk8 = 0;
-    self->unk20->unk4 = func_800908A8(arg1)->unk0;
+    self->unk20->unk4 = func_800908A8(arg1)[0];
     func_800908F0(self, 2);
 }
 

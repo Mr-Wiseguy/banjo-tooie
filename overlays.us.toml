@@ -1762,7 +1762,7 @@ name = "baduo"
 entrypoints = [
   "baduo_entrypoint_0",
   "baduo_entrypoint_1",
-  "baduo_entrypoint_2",
+  "duo_getOtherCharacter",
   "baduo_entrypoint_3",
   "baduo_entrypoint_4",
   "baduo_entrypoint_5",
@@ -5835,8 +5835,8 @@ entrypoints = [
 name = "plsu"
 entrypoints = [
   "plsu_entrypoint_0",
-  "plsu_entrypoint_1",
-  "plsu_entrypoint_2",
+  "character_findCharOfTransform",
+  "character_soloCharactersExist",
   "plsu_entrypoint_3",
 ]
 

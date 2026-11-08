@@ -2,4 +2,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crackarwall/func_80800000_chcrackarchwall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crackarwall/chcrackarchwall_entrypoint_0.s")
+extern ActorData D_80800144_chcrackarchwall;
+ActorData* chcrackarchwall_entrypoint_0()
+{
+    return &D_80800144_chcrackarchwall;
+}

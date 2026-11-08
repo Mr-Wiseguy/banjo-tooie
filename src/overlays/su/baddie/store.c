@@ -1,4 +1,4 @@
-#include "common.h"
+#include "su/baddiestore.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/su/baddie/store/subaddiestore_entrypoint_0.s")
 

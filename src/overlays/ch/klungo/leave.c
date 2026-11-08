@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/leave/chklungoleave_entrypoint_0.s")
-
+extern ActorData D_80800130_chklungoleave;
+ActorData* chklungoleave_entrypoint_0()
+{
+    return &D_80800130_chklungoleave;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/leave/func_8080000C_chklungoleave.s")
 
 void func_80800038_chklungoleave(s32 arg0)

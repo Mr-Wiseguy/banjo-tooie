@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jollyroger/chjollyroger_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jollyroger/chjollyroger_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jollyroger/chjollyroger_entrypoint_2.s")
-
+extern ActorData D_80801358_chjollyroger;
+ActorData* chjollyroger_entrypoint_0()
+{
+    return &D_80801358_chjollyroger;
+}
+extern ActorData D_808013A0_chjollyroger;
+ActorData* chjollyroger_entrypoint_1()
+{
+    return &D_808013A0_chjollyroger;
+}
+extern ActorData D_808013E8_chjollyroger;
+ActorData* chjollyroger_entrypoint_2()
+{
+    return &D_808013E8_chjollyroger;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jollyroger/func_80800024_chjollyroger.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jollyroger/func_808002E8_chjollyroger.s")

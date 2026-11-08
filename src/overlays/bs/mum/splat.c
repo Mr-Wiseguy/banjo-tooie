@@ -1,4 +1,4 @@
-#include "overlays/bs/mum/splat.h"
+#include "bs/mum/splat.h"
 
 void func_80800000_bsmumsplat(PlayerState *self) {
     _bsmum_entrypoint_2(self);
@@ -13,7 +13,7 @@ void func_80800000_bsmumsplat(PlayerState *self) {
 }
 
 void func_808000A0_bsmumsplat(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     AnimCtrl *anim_ctrl;
 
     next_state = BS_STATE_0_INVALID;
@@ -33,7 +33,7 @@ void func_808000A0_bsmumsplat(PlayerState *self) {
     if ((player_isStable(self) == 0) && (player_inWater(self) != 0)) {
         next_state = BS_STATE_F0;
     }
-    if (func_800A1718(self) == 0) {
+    if (player_getCurrentHealth(self) == 0) {
         next_state = BS_STATE_EB;
     }
     bs_setState(self, next_state);

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/chbadbeehive_entrypoint_0.s")
-
+extern ActorData D_80800B1C_chbadbeehive;
+ActorData* chbadbeehive_entrypoint_0()
+{
+    return &D_80800B1C_chbadbeehive;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_8080000C_chbadbeehive.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/beehive/func_808000EC_chbadbeehive.s")

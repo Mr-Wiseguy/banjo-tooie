@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilspirit/chevilspirit_entrypoint_0.s")
-
+extern ActorData D_80802270_chevilspirit;
+ActorData* chevilspirit_entrypoint_0()
+{
+    return &D_80802270_chevilspirit;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilspirit/func_8080000C_chevilspirit.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/evilspirit/func_80800104_chevilspirit.s")

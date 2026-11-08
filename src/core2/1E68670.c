@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1E68670.h"
 
 s32 func_8008ED80(void)
 {
@@ -7,7 +7,13 @@ s32 func_8008ED80(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008ED88.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008EE04.s")
+s32 func_8008EE04(s32 arg0, s32 arg1) {
+	if (arg0 != 0)
+	{
+		return arg1;
+	}
+	return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008EE1C.s")
 
@@ -27,12 +33,22 @@ s32 func_8008ED80(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F748.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F788.s")
+void func_8008F788(s32 arg0, s32 arg1) {
+	inventory_incrementValue(func_800D1B34(arg1));
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F7B4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F828.s")
+void func_8008F828(s32 arg0, s32 arg1) {
+	inventory_getValue(func_800D1B34(arg1));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F854.s")
+void func_8008F854(s32 arg0, s32 arg1)
+{
+	inventory_showValue(func_800D1B34(arg1));
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E68670/func_8008F880.s")
+void func_8008F880(Unk80132ED0* arg0, f32* arg1)
+{
+	ml_vec3f_copy(arg1, func_80106790(arg0)->position);
+}

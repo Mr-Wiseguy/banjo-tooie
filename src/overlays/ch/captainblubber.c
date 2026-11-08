@@ -18,4 +18,8 @@ void func_808014C8_chcaptainblubber(Actor* arg0)
 {
     _suexpression_entrypoint_8(arg0, 1);
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/captainblubber/chcaptainblubber_entrypoint_0.s")
+extern ActorData D_8080176C_chcaptainblubber;
+ActorData* chcaptainblubber_entrypoint_0()
+{
+    return &D_8080176C_chcaptainblubber;
+}

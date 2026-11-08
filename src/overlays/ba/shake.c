@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/shake.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shake/bashake_entrypoint_0.s")
 

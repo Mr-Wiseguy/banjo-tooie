@@ -12,4 +12,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mumbo/healspell/func_80800800_chmumbohealspell.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mumbo/healspell/chmumbohealspell_entrypoint_0.s")
+extern ActorData D_80800900_chmumbohealspell;
+ActorData* chmumbohealspell_entrypoint_0()
+{
+    return &D_80800900_chmumbohealspell;
+}

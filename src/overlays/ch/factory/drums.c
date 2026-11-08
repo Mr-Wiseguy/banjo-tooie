@@ -18,4 +18,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/func_80800D90_chfactorydrums.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/drums/chfactorydrums_entrypoint_2.s")
+extern ActorData D_8080125C_chfactorydrums;
+ActorData* chfactorydrums_entrypoint_2()
+{
+    return &D_8080125C_chfactorydrums;
+}

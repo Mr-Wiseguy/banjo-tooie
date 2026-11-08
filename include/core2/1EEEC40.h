@@ -5,4 +5,6 @@
 #include "player.h"
 #include "core2/1EEBA50.h"
 
+void func_80115564(PlayerState*);
+
 #endif

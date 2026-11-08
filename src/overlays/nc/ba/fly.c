@@ -10,6 +10,7 @@ s32 ncbafly_entrypoint_0()
 void ncbafly_entrypoint_2(s32 arg0) 
 {
 }
+
 void func_808000A4_ncbafly(PlayerState* arg0, f32* arg1)
 {
     func_80112550(arg0,arg1);

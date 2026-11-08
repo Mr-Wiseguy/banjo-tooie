@@ -1,15 +1,30 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/chprisonbits_entrypoint_4.s")
-
+extern ActorData D_80800F78_chprisonbits;
+ActorData* chprisonbits_entrypoint_0()
+{
+    return &D_80800F78_chprisonbits;
+}
+extern ActorData D_80800FC0_chprisonbits;
+ActorData* chprisonbits_entrypoint_1()
+{
+    return &D_80800FC0_chprisonbits;
+}
+extern ActorData D_80801008_chprisonbits;
+ActorData* chprisonbits_entrypoint_2()
+{
+    return &D_80801008_chprisonbits;
+}
+extern ActorData D_80801050_chprisonbits;
+ActorData* chprisonbits_entrypoint_3()
+{
+    return &D_80801050_chprisonbits;
+}
+extern ActorData D_808010A8_chprisonbits;
+ActorData* chprisonbits_entrypoint_4()
+{
+    return &D_808010A8_chprisonbits;
+}
 void func_8080003C_chprisonbits()
 {
     _chswitch_entrypoint_7();
@@ -30,7 +45,7 @@ void func_808001E0_chprisonbits(s32 arg0)
 
 void func_80800280_chprisonbits()
 {
-    func_800DA298();
+    flag_getValue();
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/prisonbits/func_808002A0_chprisonbits.s")

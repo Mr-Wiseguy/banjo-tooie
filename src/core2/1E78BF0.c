@@ -1,6 +1,6 @@
 #include "core2/1E78BF0.h"
 
-s32 func_8009F300() 
+s32 func_8009F300(void) 
 {
     return 0x4;
 }
@@ -66,6 +66,28 @@ void func_8009FE58(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A04F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A055C.s")
+BanjoStateId bs_getTypeOfGroundedAttack(PlayerState* arg0, BanjoStateId arg1)
+{
+	if (player_isSplitUp(arg0))
+	{
+		if (player_canPackWhack(arg0) != 0)
+		{
+			return BS_STATE_E4_PACK_WHACK;
+		}
+
+		return arg1;
+	}
+	//We Can Peck
+	if (player_canPeck(arg0) != 0)
+	{
+		//Is Dragon Kazooie
+		if (bs_getDragonKazooieState())
+		{
+			return BS_STATE_18A_FLAMETHROWER;
+		}
+		return BS_STATE_6_PECK;
+	}
+	return arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E78BF0/func_800A05DC.s")

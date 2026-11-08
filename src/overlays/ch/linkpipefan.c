@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/linkpipefan/func_80800638_chlinkpipefan.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/linkpipefan/chlinkpipefan_entrypoint_1.s")
+extern ActorData D_808009C8_chlinkpipefan;
+ActorData* chlinkpipefan_entrypoint_1()
+{
+    return &D_808009C8_chlinkpipefan;
+}

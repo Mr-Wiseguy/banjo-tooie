@@ -62,8 +62,11 @@ void func_808003D8_chdragonbrothers(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_808034DC_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/chdragonbrothers_entrypoint_0.s")
-
+extern ActorData D_808056A8_chdragonbrothers;
+ActorData* chdragonbrothers_entrypoint_0()
+{
+    return &D_808056A8_chdragonbrothers;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80803574_chdragonbrothers.s")
 
 void func_808036E4_chdragonbrothers(s32 arg0) 
@@ -79,8 +82,11 @@ void func_808036E4_chdragonbrothers(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80803EFC_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/chdragonbrothers_entrypoint_1.s")
-
+extern ActorData D_8080574C_chdragonbrothers;
+ActorData* chdragonbrothers_entrypoint_1()
+{
+    return &D_8080574C_chdragonbrothers;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80803F4C_chdragonbrothers.s")
 
 void func_808040A0_chdragonbrothers(s32 arg0) 
@@ -92,8 +98,11 @@ void func_808040A0_chdragonbrothers(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804350_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/chdragonbrothers_entrypoint_2.s")
-
+extern ActorData D_808058A8_chdragonbrothers;
+ActorData* chdragonbrothers_entrypoint_2()
+{
+    return &D_808058A8_chdragonbrothers;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_8080449C_chdragonbrothers.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804610_chdragonbrothers.s")
@@ -113,8 +122,11 @@ void func_808048A4_chdragonbrothers(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804C90_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/chdragonbrothers_entrypoint_3.s")
-
+extern ActorData D_80805A08_chdragonbrothers;
+ActorData* chdragonbrothers_entrypoint_3()
+{
+    return &D_80805A08_chdragonbrothers;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804CD0_chdragonbrothers.s")
 
 void func_80804DB0_chdragonbrothers(s32 arg0) 
@@ -124,4 +136,8 @@ void func_80804DB0_chdragonbrothers(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/func_80804E1C_chdragonbrothers.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dragonbrothers/chdragonbrothers_entrypoint_4.s")
+extern ActorData D_80805A5C_chdragonbrothers;
+ActorData* chdragonbrothers_entrypoint_4()
+{
+    return &D_80805A5C_chdragonbrothers;
+}

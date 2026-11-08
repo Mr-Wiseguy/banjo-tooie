@@ -1,12 +1,22 @@
-#include "common.h"
+#include "core2/1EE4270.h"
+
+extern f32 D_80136F20[3];
+extern f32 D_80136F30[3];
+extern f32 D_80136F40[3];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010A980.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010AA54.s")
+void func_8010AA54(f32* arg0) {
+    ml_vec3f_copy(arg0, D_80136F30);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010AA78.s")
+void func_8010AA78(f32* arg0) {
+    ml_vec3f_copy(arg0, D_80136F20);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010AA9C.s")
+void func_8010AA9C(f32* arg0) {
+    ml_vec3f_copy(arg0, D_80136F40);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010AAC0.s")
 
@@ -48,9 +58,14 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B8A4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B910.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B94C.s")
+s32 func_8010B910(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+	ml_vec3f_add(arg0->position, &((f32*)arg0->actorData)[4]);
+	return 0;
+}
+s32 func_8010B94C(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
+    ml_vec3f_translate_scale(arg0->position, &((f32*)arg0->actorData)[4], time_getDelta());
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010B990.s")
 
@@ -72,7 +87,16 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010C2D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010C3A8.s")
+void func_8010C3A8(Actor* arg0, u32 arg1, f32 arg2)
+{
+    s32 pad;
+    f32 temp_f0;
+
+    temp_f0 = ((f32*)arg0->actorData)[3];
+    ((f32*)arg0->actorData)[3] *= arg2;
+    func_8010B990(arg0, arg1);
+    ((f32*)arg0->actorData)[3] = temp_f0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE4270/func_8010C3E8.s")
 

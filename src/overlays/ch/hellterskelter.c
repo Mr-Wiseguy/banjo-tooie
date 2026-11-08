@@ -1,11 +1,20 @@
 #include "ch/hellterskelter.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/chhellterskelter_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/chhellterskelter_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/chhellterskelter_entrypoint_2.s")
-
+extern ActorData D_808007C8_chhellterskelter;
+ActorData* chhellterskelter_entrypoint_0()
+{
+    return &D_808007C8_chhellterskelter;
+}
+extern ActorData D_80800810_chhellterskelter;
+ActorData* chhellterskelter_entrypoint_1()
+{
+    return &D_80800810_chhellterskelter;
+}
+extern ActorData D_80800858_chhellterskelter;
+ActorData* chhellterskelter_entrypoint_2()
+{
+    return &D_80800858_chhellterskelter;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_80800024_chhellterskelter.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hellterskelter/func_808000A8_chhellterskelter.s")

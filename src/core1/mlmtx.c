@@ -3,8 +3,8 @@
 MtxF D_8007B4F0[0x1F]; // mtx_buffer
 MtxF* s_mtx_stack;
 
-f32 func_800137F4(f32); // sinf
-f32 func_80013788(void); // cosf?
+f32 ml_sin2f(f32); // sinf
+f32 ml_cos2f(void); // cosf?
 
 /**
  * @brief copies the top of the matrix stack to the destination address
@@ -150,8 +150,8 @@ void mlMtxRotPitch(f32 angle) {
     s32 i;
 
     if (angle != 0.0f) {
-        sinval = func_800137F4(angle);
-        cosval = func_80013788();
+        sinval = ml_sin2f(angle);
+        cosval = ml_cos2f();
         row1 = &s_mtx_stack->m[1];
         row2 = &s_mtx_stack->m[2];
         for (i = 0; i < 3; i++) {
@@ -181,8 +181,8 @@ void mlMtxRotYaw(f32 angle) {
     s32 i;
 
     if (angle != 0.0f) {
-        sinval = func_800137F4(angle);
-        cosval = func_80013788();
+        sinval = ml_sin2f(angle);
+        cosval = ml_cos2f();
         row0 = &s_mtx_stack->m[0];
         row2 = &s_mtx_stack->m[2];
         for(i = 0; i < 3; i++){
@@ -213,8 +213,8 @@ void mlMtxRotRoll(f32 angle) {
     s32 i;
 
     if (angle != 0.0f) {
-        sinval = func_800137F4(angle);
-        cosval = func_80013788();
+        sinval = ml_sin2f(angle);
+        cosval = ml_cos2f();
         row0 = &s_mtx_stack->m[0];
         row1 = &s_mtx_stack->m[1];
         for(i = 0; i < 3; i++){

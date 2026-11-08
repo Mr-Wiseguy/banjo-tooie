@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/still.h"
+#include "bs/kaz/still.h"
 
 extern u8 D_808008A0_bskazstill[];
 extern s32 D_808008A4_bskazstill[];
@@ -15,7 +15,54 @@ u8 func_80800000_bskazstill(PlayerState *self) {
     return D_808008A0_bskazstill[self->unk160.word++];
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/kaz/still/func_80800030_bskazstill.s")
+void func_80800030_bskazstill(PlayerState* self, s32 arg1)
+{
+
+    if (self->unk15C.word == 0)
+    {
+        self->unk160.word = 0;
+        self->unk164.word = 0;
+        func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 1, BA_PHYSICS_2_NORMAL);
+        baphysics_set_target_horizontal_velocity(self, 0.0f);
+        func_800909CC(self);
+        bastick_func_8009F258(self);
+    }
+    self->unk15C.word = arg1;
+    switch (arg1)
+    {
+    case 0:
+        break;
+    case 1:
+        baanim_playForDuration_onceSmooth(self, ASSET_A4_ANIM_BSKAZSHOESSUCKSPLINE, 6.5f);
+        return;
+    case 2:
+        baanim_playForDuration_onceSmooth(self, 0xA5, 6.5f);
+        return;
+    case 3:
+        baanim_playForDuration_onceSmooth(self, 0xAC, 5.7f);
+        return;
+    case 4:
+        baanim_playForDuration_onceSmooth(self, 0xAD, 5.3f);
+        return;
+    case 5:
+        self->unk168.word = _bashoes_entrypoint_1(self);
+        switch (self->unk168.word)
+        {
+        case 3:
+            baanim_playForDuration_loopSmooth(self, ASSET_A4_ANIM_BSKAZSHOESSUCKSPLINE, 6.5f);
+            return;
+        case 4:
+            baanim_playForDuration_loopSmooth(self, 0x24E, 1.4f);
+            return;
+        case 5:
+            baanim_playForDuration_loopSmooth(self, 0x24B, 1.4f);
+        default:
+            return;
+        }
+        break;
+
+    }
+}
 
 BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState) {
     s32 sp24;
@@ -38,22 +85,22 @@ BanjoStateId func_808001A4_bskazstill(PlayerState *self, BanjoStateId nextState)
             break;
     }
     if (sp24 != 0) {
-        if (func_8008E3E8(self) != 0) {
+        if (player_wearingTurboTrainers(self) != 0) {
             _bashoes_entrypoint_20(self);
         }
-        if (bakey_pressed(self, 9) != 0) {
+        if (bakey_pressed(self, BUTTON_B) != 0) {
             _bashoes_entrypoint_6(self, 2);
         }
     } else {
-        if (bakey_held(self, 1) != 0) {
+        if (bakey_held(self, BUTTON_Z) != 0) {
             nextState = BS_STATE_DD;
         }
         if (bainput_func_80097FB8(self) != 0) {
             nextState = _bskaz_entrypoint_4(self);
         }
     }
-    if (bakey_pressed(self, 8) != 0) {
-        if (func_8008D790(self) != 0) {
+    if (bakey_pressed(self, BUTTON_A) != 0) {
+        if (player_canSwap(self) != 0) {
             _baduo_entrypoint_12(self);
         } else {
             nextState = _bskaz_entrypoint_3(self);

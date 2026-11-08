@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/chhoopswoop_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/chhoopswoop_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/chhoopswoop_entrypoint_2.s")
-
+extern ActorData D_80801EC0_chhoopswoop;
+ActorData* chhoopswoop_entrypoint_0()
+{
+    return &D_80801EC0_chhoopswoop;
+}
+extern ActorData D_80801F08_chhoopswoop;
+ActorData* chhoopswoop_entrypoint_1()
+{
+    return &D_80801F08_chhoopswoop;
+}
+extern ActorData D_80801F50_chhoopswoop;
+ActorData* chhoopswoop_entrypoint_2()
+{
+    return &D_80801F50_chhoopswoop;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80800024_chhoopswoop.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hoopswoop/func_80800094_chhoopswoop.s")

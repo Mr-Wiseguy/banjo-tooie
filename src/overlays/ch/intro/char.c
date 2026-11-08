@@ -32,8 +32,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/func_80803D0C_chintrochar.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/chintrochar_entrypoint_0.s")
-
+extern ActorData D_8080532C_chintrochar;
+ActorData* chintrochar_entrypoint_0()
+{
+    return &D_8080532C_chintrochar;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/func_80803E98_chintrochar.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/char/func_80803F24_chintrochar.s")

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffy/chchuffy_entrypoint_0.s")
-
+extern ActorData D_80802434_chchuffy;
+ActorData* chchuffy_entrypoint_0()
+{
+    return &D_80802434_chchuffy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffy/func_8080000C_chchuffy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffy/func_80800110_chchuffy.s")
@@ -72,4 +75,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffy/func_80802164_chchuffy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/uffy/chchuffy_entrypoint_2.s")
+extern ActorData D_808026F4_chchuffy;
+ActorData* chchuffy_entrypoint_2()
+{
+    return &D_808026F4_chchuffy;
+}

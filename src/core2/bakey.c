@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/key.h"
+#include "ba/key.h"
 
 #define AS_BOOL(x) ((x) != 0)
 
@@ -17,8 +17,8 @@ void bakey_func_8009191C(PlayerState *self, ButtonId id, s32 arg2) {
     func_800BCCFC(self->key->unk0, id, arg2);
 }
 
-void bakey_func_80091940(PlayerState *self, ButtonId id, s32 arg2) {
-    func_800BCD78(self->key->unk0, id, arg2);
+s32 bakey_func_80091940(PlayerState* self, ButtonId id, s32 arg2) {
+	return func_800BCD78(self->key->unk0, id, arg2);
 }
 
 s32 bakey_func_80091964(PlayerState *self){

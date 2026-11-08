@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/bubble/changlerbossbubble_entrypoint_0.s")
-
+extern ActorData D_808005D0_changlerbossbubble;
+ActorData* changlerbossbubble_entrypoint_0()
+{
+    return &D_808005D0_changlerbossbubble;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/bubble/func_8080000C_changlerbossbubble.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/anglerboss/bubble/func_80800054_changlerbossbubble.s")

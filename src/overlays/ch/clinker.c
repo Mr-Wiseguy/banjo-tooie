@@ -14,8 +14,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_808003A8_chclinker.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/chclinker_entrypoint_0.s")
-
+extern ActorData D_808014D4_chclinker;
+ActorData* chclinker_entrypoint_0()
+{
+    return &D_808014D4_chclinker;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_8080045C_chclinker.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_80800574_chclinker.s")
@@ -43,8 +46,11 @@ void func_808008C0_chclinker(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_80800E1C_chclinker.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/chclinker_entrypoint_1.s")
-
+extern ActorData D_80801550_chclinker;
+ActorData* chclinker_entrypoint_1()
+{
+    return &D_80801550_chclinker;
+}
 void func_80800FFC_chclinker(s32 arg0) 
 {
 }
@@ -57,4 +63,8 @@ void func_80801004_chclinker(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/func_808011A8_chclinker.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/clinker/chclinker_entrypoint_2.s")
+extern ActorData D_80801598_chclinker;
+ActorData* chclinker_entrypoint_2()
+{
+    return &D_80801598_chclinker;
+}

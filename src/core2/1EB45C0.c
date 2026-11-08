@@ -1,8 +1,5 @@
 #include "core2/1EB45C0.h"
 
-s16 func_800A8184(void);
-f32 func_800D9004(void);
-
 extern u8 D_8012762C;
 extern f32 D_8012C768[];
 
@@ -108,34 +105,29 @@ s32 func_800DB83C(u8* arg0, s32 arg1) {
     return -1;
 }
 
-// strcat
-void func_800E6A10(char*, const char*);
-// int to string
-void func_800E6DB4(char*, s32);
-
 // time_to_string
-void func_800DB8BC(char* arg0, s32 time) {
+void time_to_string(char* arg0, s32 time) {
     s32 hours = time / 3600;
     s32 minutes = (time / 60) % 60;
     s32 seconds = time % 60;
 
-    func_800E6DB4(arg0, hours);
-    func_800E6A10(arg0, ":");
+    string_IToA(arg0, hours);
+    string_concat(arg0, ":");
 
     if (minutes < 10) {
-        func_800E6A10(arg0, "0");
+        string_concat(arg0, "0");
     }
-    func_800E6DB4(arg0, minutes);
-    func_800E6A10(arg0, ":");
+    string_IToA(arg0, minutes);
+    string_concat(arg0, ":");
     
     if (seconds < 10) {
-        func_800E6A10(arg0, "0");
+        string_concat(arg0, "0");
     }
-    func_800E6DB4(arg0, seconds);
-    func_800E6A10(arg0, "");
+    string_IToA(arg0, seconds);
+    string_concat(arg0, "");
 }
 
 //Is in a cutscene
 int func_800DB9B0(void) {
-    return func_800DA298(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
+    return flag_getValue(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
 }

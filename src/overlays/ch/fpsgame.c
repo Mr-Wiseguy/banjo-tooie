@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fpsgame/chfpsgame_entrypoint_0.s")
-
+extern ActorData D_808021A0_chfpsgame;
+ActorData* chfpsgame_entrypoint_0()
+{
+    return &D_808021A0_chfpsgame;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fpsgame/func_8080000C_chfpsgame.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fpsgame/func_80800074_chfpsgame.s")

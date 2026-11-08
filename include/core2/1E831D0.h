@@ -9,5 +9,6 @@ void func_800A9B84(void);
 void func_800A9B8C(s32, s32);
 void func_800A9BA0(s32, s32, s32);
 void func_800A9C50();
+s32 func_800A9C98();
 
 #endif

@@ -1,14 +1,17 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/amazonstadiumguard/chamazonstadiumguard_entrypoint_0.s")
-
+extern ActorData D_80800700_chamazonstadiumguard;
+ActorData* chamazonstadiumguard_entrypoint_0()
+{
+    return &D_80800700_chamazonstadiumguard;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/amazonstadiumguard/func_8080000C_chamazonstadiumguard.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/amazonstadiumguard/func_80800028_chamazonstadiumguard.s")
 
 void func_808002F4_chamazonstadiumguard(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

@@ -1,13 +1,27 @@
 #include "types.h"
 #include "gfx.h"
+#include "core1/1E2C940.h"
 
 extern s32 D_80078F88;
 extern s32 D_8007913C;
 extern OSMesgQueue D_80079010;
 
+extern s32 D_8003F5D0;
+extern OSMesgQueue D_80078FD0;
+extern OSMesgQueue D_80079030;
+extern volatile s32 D_80079138;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E10.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014E6C.s")
+extern s32 D_80078F80;
+extern s32 D_80078F84;
+
+void func_80014E6C(void) {
+    D_80078F80 = func_80014E10(0, 0x21D80);
+    D_80078F84 = func_80014E10(1, 0x21D80);
+    D_80078F88 = func_80014E10(2, 0x10EC0);
+}
+
 
 // get_framebuffer_size_bytes
 u32 func_80014EC8() {
@@ -20,9 +34,20 @@ u32 func_80014EC8() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014F38.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014F4C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014F58.s")
+extern s16 D_80078F64;
+
+s16 func_80014F4C(void) {
+    return D_80078F64;
+}
+
+
+extern s16 D_80078F60;
+
+s16 func_80014F58(void) {
+    return D_80078F60;
+}
+
 
 typedef struct {
     OSMesgQueue* queue;
@@ -45,7 +70,10 @@ void func_80014F64(OSMesgQueue* queue, OSMesg mesg) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80014FE8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80015178.s")
+void func_80015178(s32 arg0) {
+    D_8007913C = arg0;
+}
+
 
 s32 func_80015184()
 {
@@ -79,7 +107,11 @@ s32 func_8001575C()
     return D_80078F88;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core1/1E2C940/func_80015768.s")
+extern s16 D_80078F62;
+
+void func_80015768(void) {
+    D_80078F62 = 1;
+}
 
 void wait_one_frame(void) {
     while (osViGetCurrentLine() < 5) {

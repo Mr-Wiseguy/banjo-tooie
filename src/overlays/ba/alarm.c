@@ -1,7 +1,7 @@
 #include "common.h"
 
-#include "overlays/ba/alarm.h"
-#include "overlays/ba/playerstate.h"
+#include "ba/alarm.h"
+#include "ba/playerstate.h"
 
 #include "core2/1E75920.h"
 #include "core2/1E9A960.h"
@@ -36,7 +36,7 @@ void baalarm_entrypoint_3(PlayerState *self, f32 arg1, f32 arg2) {
         return;
     }
 
-    func_8009C128(self, sp64);
+    player_getCoords(self, sp64);
     if (arg2 < 1.0f) {
         if (arg1 != arg2) {
             func_80800294_baalarm(self->alarm->id, 2);
@@ -58,7 +58,7 @@ void baalarm_entrypoint_3(PlayerState *self, f32 arg1, f32 arg2) {
                 break;
             }
             s0 ^= 1;
-            f20 -= func_800F10B4(f20, 0.0f, 5.0f, 0.1f, 0.25f);
+            f20 -= ml_map_f(f20, 0.0f, 5.0f, 0.1f, 0.25f);
         }
     }
 }

@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/archgrill/func_808002D0_chlavaarchgrill.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/archgrill/chlavaarchgrill_entrypoint_0.s")
+extern ActorData D_808006A4_chlavaarchgrill;
+ActorData* chlavaarchgrill_entrypoint_0()
+{
+    return &D_808006A4_chlavaarchgrill;
+}

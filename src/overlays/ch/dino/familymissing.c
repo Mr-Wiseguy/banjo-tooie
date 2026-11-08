@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familymissing/func_808004A4_chdinofamilymissing.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dino/familymissing/chdinofamilymissing_entrypoint_0.s")
+extern ActorData D_808006DC_chdinofamilymissing;
+ActorData* chdinofamilymissing_entrypoint_0()
+{
+    return &D_808006DC_chdinofamilymissing;
+}

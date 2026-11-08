@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/inflatableboss/chinflatableboss_entrypoint_0.s")
-
+extern ActorData D_80802E50_chinflatableboss;
+ActorData* chinflatableboss_entrypoint_0()
+{
+    return &D_80802E50_chinflatableboss;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/inflatableboss/func_8080000C_chinflatableboss.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/inflatableboss/func_80800408_chinflatableboss.s")

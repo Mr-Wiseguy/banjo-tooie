@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/chbadshad_entrypoint_0.s")
-
+extern ActorData D_80800A10_chbadshad;
+ActorData* chbadshad_entrypoint_0()
+{
+    return &D_80800A10_chbadshad;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/func_8080000C_chbadshad.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bad/shad/func_80800090_chbadshad.s")

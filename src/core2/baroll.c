@@ -1,10 +1,10 @@
-#include "overlays/ba/roll.h"
+#include "ba/roll.h"
 
 #include "common.h"
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 #include "core2/1EB2840.h"
 #include "core2/1ECA640.h"
 #include "core2/1ECB9F0.h"
@@ -22,14 +22,14 @@ void __baroll_update(PlayerState *self, f32 limit, f32 rate) {
     f32 dt;
     f32 max;
 
-    dt = func_800D8FF8();
+    dt = time_getDelta();
     max = limit*dt;
     diff = self->roll->ideal - self->roll->value;
     if(180.0f < mlAbsF(diff)){
         diff += (diff < 0.0f)? 360.0f: -360.0f;
     }
     val = diff * rate * dt;
-    val = (val < 0.0f) ? func_800F0D50(val, -max, -0.1f) : func_800F0D50(val, 0.1f, max);
+    val = (val < 0.0f) ? ml_clamp_f(val, -max, -0.1f) : ml_clamp_f(val, 0.1f, max);
     if ( mlAbsF(val) <= mlAbsF(diff)) {
         self->roll->value =  self->roll->value + val;
     } else {
@@ -55,11 +55,11 @@ void baroll_update(PlayerState *self) {
 }
 
 void baroll_setIdeal(PlayerState *self, f32 arg1) {
-    self->roll->ideal = func_800136E4(arg1);
+    self->roll->ideal = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_set(PlayerState *self, f32 arg1) {
-    self->roll->value = func_800136E4(arg1);
+    self->roll->value = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_applyIdeal(PlayerState *self) {

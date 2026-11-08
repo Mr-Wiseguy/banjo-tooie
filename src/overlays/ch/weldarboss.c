@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/chweldarboss_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/chweldarboss_entrypoint_1.s")
-
+extern ActorData D_808047C4_chweldarboss;
+ActorData* chweldarboss_entrypoint_0()
+{
+    return &D_808047C4_chweldarboss;
+}
+extern ActorData D_8080480C_chweldarboss;
+ActorData* chweldarboss_entrypoint_1()
+{
+    return &D_8080480C_chweldarboss;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/func_80800018_chweldarboss.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/weldarboss/func_808002BC_chweldarboss.s")

@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/starspinner/ctrl/chstarspinnerctrl_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/starspinner/ctrl/chstarspinnerctrl_entrypoint_1.s")
-
+extern ActorData D_8080092C_chstarspinnerctrl;
+ActorData* chstarspinnerctrl_entrypoint_0()
+{
+    return &D_8080092C_chstarspinnerctrl;
+}
+extern ActorData D_80800974_chstarspinnerctrl;
+ActorData* chstarspinnerctrl_entrypoint_1()
+{
+    return &D_80800974_chstarspinnerctrl;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/starspinner/ctrl/func_80800018_chstarspinnerctrl.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/starspinner/ctrl/func_8080003C_chstarspinnerctrl.s")

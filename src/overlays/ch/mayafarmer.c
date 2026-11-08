@@ -20,8 +20,11 @@ void func_80800520_chmayafarmer(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/func_8080085C_chmayafarmer.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/chmayafarmer_entrypoint_0.s")
-
+extern ActorData D_80801278_chmayafarmer;
+ActorData* chmayafarmer_entrypoint_0()
+{
+    return &D_80801278_chmayafarmer;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/func_808008F8_chmayafarmer.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/func_808009A0_chmayafarmer.s")
@@ -38,4 +41,8 @@ void func_80800520_chmayafarmer(Actor* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/func_808010DC_chmayafarmer.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mayafarmer/chmayafarmer_entrypoint_1.s")
+extern ActorData D_808012FC_chmayafarmer;
+ActorData* chmayafarmer_entrypoint_1()
+{
+    return &D_808012FC_chmayafarmer;
+}

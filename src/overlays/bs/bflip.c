@@ -1,29 +1,11 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/stick.h"
-#include "core2/1E72EA0.h"
-#include "overlays/bs/state.h"
-#include "core2/1E66990.h"
-#include "core2/1E76880.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "core2/1EC8070.h"
-#include "core2/1ECA640.h"
-#include "bs.h"
-
+#include "bs/bflip.h"
 
 void func_80800000_bsbflip(PlayerState *self) {
     f32 sp1C = bastick_getZonePosition(self);
     if (!bastick_getZone(self)) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 200.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80.0f, 200.0f));
     }
 }
 
@@ -98,7 +80,7 @@ void func_80800064_bsbflip(PlayerState *self, s32 substate) {
             anctrl_start(anctrl);
             baphysics_set_type(self, 3);
             baphysics_set_target_horizontal_velocity(self, 0.0f);
-            func_800EFD24(sp30);
+            ml_vec3f_clear(sp30);
             func_8009BA9C(self, sp30);
             func_8009FE58(self);
             func_800A0CF4(self, 0);
@@ -141,8 +123,8 @@ void bsbflip_update(PlayerState *self) {
             if (bainput_should_beak_bust(self)) {
                 next_state = BS_STATE_F_BBUSTER;
             }
-            if (func_8008DA24(self)) {
-                next_state = BS_STATE_A8;
+            if (player_canGripGrab(self)) {
+                next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             break;
 
@@ -162,15 +144,15 @@ void bsbflip_update(PlayerState *self) {
             if (bainput_should_beak_bust(self)) {
                 next_state = BS_STATE_F_BBUSTER;
             }
-            if (func_8008DA24(self)) {
-                next_state = BS_STATE_A8;
+            if (player_canGripGrab(self)) {
+                next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             
             break;
 
         case 4:
             if (anctrl_isStopped(anctrl)) {
-                next_state = BS_STATE_1_SLOW_WALK;
+                next_state = BS_STATE_2_SLOW_WALK;
             }
             next_state = func_800A01F8(self, next_state);
             break;

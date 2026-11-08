@@ -25,4 +25,8 @@ void func_8080016C_chfaircoinbox(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/func_808003C4_chfaircoinbox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fair/coinbox/chfaircoinbox_entrypoint_2.s")
+extern ActorData D_808004C8_chfaircoinbox;
+ActorData* chfaircoinbox_entrypoint_2()
+{
+    return &D_808004C8_chfaircoinbox;
+}

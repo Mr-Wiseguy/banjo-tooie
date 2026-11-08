@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/2dbaddy/ch2dbaddy_entrypoint_0.s")
-
+extern ActorData D_80800A9C_ch2dbaddy;
+ActorData* ch2dbaddy_entrypoint_0()
+{
+    return &D_80800A9C_ch2dbaddy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/2dbaddy/func_8080000C_ch2dbaddy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/2dbaddy/func_808000A0_ch2dbaddy.s")

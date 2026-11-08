@@ -18,6 +18,13 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/podiumbankaz/func_80800464_chpodiumbankaz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/podiumbankaz/chpodiumbankaz_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/podiumbankaz/chpodiumbankaz_entrypoint_1.s")
+extern ActorData D_80800500_chpodiumbankaz;
+ActorData* chpodiumbankaz_entrypoint_0()
+{
+    return &D_80800500_chpodiumbankaz;
+}
+extern ActorData D_80800548_chpodiumbankaz;
+ActorData* chpodiumbankaz_entrypoint_1()
+{
+    return &D_80800548_chpodiumbankaz;
+}

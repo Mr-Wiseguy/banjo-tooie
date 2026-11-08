@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/mumbo/skulls/chmumboskulls_entrypoint_0.s")
-
+extern ActorData D_808000C0_chmumboskulls;
+ActorData* chmumboskulls_entrypoint_0()
+{
+    return &D_808000C0_chmumboskulls;
+}
 void func_8080000C_chmumboskulls(s32 arg0)
 {
     func_8010A800(arg0,1);

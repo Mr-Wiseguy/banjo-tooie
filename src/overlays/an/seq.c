@@ -1,4 +1,4 @@
-#include "seq.h"
+#include "an/seq.h"
 
 void anseq_entrypoint_1(s16 * pSeqIndx, s32 arg1);
 
@@ -8,7 +8,7 @@ typedef struct{
     u8 unk5;
     u8 unk6;
     u8 pad7[1];
-    s32 arg0;
+	s32 arg0;
     s32 arg1;
     s32 arg2;
     s32 arg3;

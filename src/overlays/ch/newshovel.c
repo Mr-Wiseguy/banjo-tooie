@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newshovel/chnewshovel_entrypoint_0.s")
-
+extern ActorData D_80800FB4_chnewshovel;
+ActorData* chnewshovel_entrypoint_0()
+{
+    return &D_80800FB4_chnewshovel;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newshovel/func_8080000C_chnewshovel.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newshovel/func_8080004C_chnewshovel.s")

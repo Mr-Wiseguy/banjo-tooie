@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/chhotwatersteam_entrypoint_0.s")
-
+extern ActorData D_80800240_chhotwatersteam;
+ActorData* chhotwatersteam_entrypoint_0()
+{
+    return &D_80800240_chhotwatersteam;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/func_8080000C_chhotwatersteam.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/hot/watersteam/func_8080003C_chhotwatersteam.s")

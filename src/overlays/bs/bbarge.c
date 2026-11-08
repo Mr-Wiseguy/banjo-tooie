@@ -1,28 +1,6 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/timer.h"
-#include "overlays/bs/state.h"
-#include "core2/1E72EA0.h"
-#include "core2/1E68670.h"
-#include "core2/1E76880.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E77A20.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "buttons.h"
-#include "bs.h"
-
-void bsbbarge_end(PlayerState *self);
-void bsbbarge_init(PlayerState *self);
-void bsbbarge_update(PlayerState *self);
+#include "bs/bbarge.h"
 
 extern BsScript D_80800630_bsbbarge[4]; //= {bsbbarge_end, bsbbarge_init, bsbbarge_update, func_8009AB78};
-
 
 void bsbbarge_setSubstate(PlayerState *self, int substate) {
     switch (substate) {

@@ -11,4 +11,8 @@ s32 func_808008EC_chintrocam(s32 arg0, s32 arg1, s32 arg2)
 {
     return 0;
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/intro/cam/chintrocam_entrypoint_0.s")
+extern ActorData D_80800A20_chintrocam;
+ActorData* chintrocam_entrypoint_0()
+{
+    return &D_80800A20_chintrocam;
+}

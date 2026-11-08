@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/foodwarn/func_808001F4_chfoodwarn.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/foodwarn/chfoodwarn_entrypoint_0.s")
+extern ActorData D_808002A8_chfoodwarn;
+ActorData* chfoodwarn_entrypoint_0()
+{
+    return &D_808002A8_chfoodwarn;
+}

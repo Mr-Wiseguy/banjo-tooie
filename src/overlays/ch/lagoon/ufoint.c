@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/chlagoonufoint_entrypoint_0.s")
-
+extern ActorData D_80801948_chlagoonufoint;
+ActorData* chlagoonufoint_entrypoint_0()
+{
+    return &D_80801948_chlagoonufoint;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_8080000C_chlagoonufoint.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_808001A0_chlagoonufoint.s")
@@ -14,12 +17,21 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_808005D0_chlagoonufoint.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/chlagoonufoint_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/chlagoonufoint_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/chlagoonufoint_entrypoint_3.s")
-
+extern ActorData D_808019C0_chlagoonufoint;
+ActorData* chlagoonufoint_entrypoint_1()
+{
+    return &D_808019C0_chlagoonufoint;
+}
+extern ActorData D_80801A28_chlagoonufoint;
+ActorData* chlagoonufoint_entrypoint_2()
+{
+    return &D_80801A28_chlagoonufoint;
+}
+extern ActorData D_80801A90_chlagoonufoint;
+ActorData* chlagoonufoint_entrypoint_3()
+{
+    return &D_80801A90_chlagoonufoint;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_80800744_chlagoonufoint.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_8080078C_chlagoonufoint.s")
@@ -36,8 +48,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_80800E00_chlagoonufoint.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/chlagoonufoint_entrypoint_4.s")
-
+extern ActorData D_80801B68_chlagoonufoint;
+ActorData* chlagoonufoint_entrypoint_4()
+{
+    return &D_80801B68_chlagoonufoint;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_80800E80_chlagoonufoint.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/ufoint/func_80800F48_chlagoonufoint.s")

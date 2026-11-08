@@ -7,4 +7,8 @@ void func_80800124_chquizexitdoor(s32 arg0)
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quizexitdoor/func_8080012C_chquizexitdoor.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quizexitdoor/chquizexitdoor_entrypoint_0.s")
+extern ActorData D_80800190_chquizexitdoor;
+ActorData* chquizexitdoor_entrypoint_0()
+{
+    return &D_80800190_chquizexitdoor;
+}

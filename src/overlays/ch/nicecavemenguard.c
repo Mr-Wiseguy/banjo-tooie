@@ -1,7 +1,10 @@
 #include "ch/nicecavemenguard.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/chnicecavemenguard_entrypoint_0.s")
-
+extern ActorData D_80800920_chnicecavemenguard;
+ActorData* chnicecavemenguard_entrypoint_0()
+{
+    return &D_80800920_chnicecavemenguard;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_8080000C_chnicecavemenguard.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/nicecavemenguard/func_808000D4_chnicecavemenguard.s")
@@ -30,7 +33,7 @@ void func_80800600_chnicecavemenguard(s32 arg0)
 
 void func_8080080C_chnicecavemenguard(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossshell/chdiggerbossshell_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossshell/chdiggerbossshell_entrypoint_1.s")
-
+extern ActorData D_80800560_chdiggerbossshell;
+ActorData* chdiggerbossshell_entrypoint_0()
+{
+    return &D_80800560_chdiggerbossshell;
+}
+extern ActorData D_808005A8_chdiggerbossshell;
+ActorData* chdiggerbossshell_entrypoint_1()
+{
+    return &D_808005A8_chdiggerbossshell;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossshell/func_80800018_chdiggerbossshell.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/digger/bossshell/func_808000B4_chdiggerbossshell.s")

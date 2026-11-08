@@ -591,10 +591,67 @@ segments:
       - [0x1EFE380, rodata]
       - [0x1EFE3A0, .rodata, baanim]
       - [0x1EFE3C0, rodata]
+      - [0x1EFE6F0, .rodata, 1E6F080]
+      - [0x1EFE710, rodata]
+      - [0x1EFE720, .rodata, 1E72180]
+      - [0x1EFE760, rodata]
+      - [0x1EFEB90, .rodata, baphysics]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]
+      - [0x1EFEE60, .rodata, 1E7D460]
+      - [0x1EFEEB0, rodata]
+      - [0x1EFF0B0, .rodata, 1E9A960]
+      - [0x1EFF180, rodata]
+      - [0x1EFF220, .rodata, 1EA1DA0]
+      - [0x1EFF260, .rodata, 1EA3AA0]
+      - [0x1EFF280, .rodata, 1EA5180]
+      - [0x1EFF290, .rodata, 1EA6B20]
+      - [0x1EFF2A0, .rodata, 1EA78C0]
+      - [0x1EFF2C0, .rodata, 1EA9160]
+      - [0x1EFF3D0, .rodata, 1EAAD80]
+      - [0x1EFF3F0, .rodata, 1EAC810]
+      - [0x1EFF410, .rodata, 1EADCF0]
+      - [0x1EFF430, .rodata, 1EAE6C0]
+      - [0x1EFF520, .rodata, 1EAF950]
+      - [0x1EFF5E0, .rodata, 1EB2130]
+      - [0x1EFF600, .rodata, 1EB2840]
+      - [0x1EFF610, .rodata, 1EB2EF0]
       - [0x1EFF620, .rodata, 1EB45C0]
-      - [0x1EFF640, rodata]
+      - [0x1EFF640, .rodata, 1EB5E70]
+      - [0x1EFF660, .rodata, 1EB9940]
+      - [0x1EFF670, .rodata, 1EBAA10]
+      - [0x1EFF680, .rodata, 1EBB4F0]
+      - [0x1EFF690, .rodata, 1EBCFC0]
+      - [0x1EFF690, .rodata, 1EBE020]
+      - [0x1EFF6B0, .rodata, 1EC0300]
+      - [0x1EFF730, .rodata, 1EC1AD0]
+      - [0x1EFF740, .rodata, 1EC3810]
+      - [0x1EFF750, .rodata, 1EC6180]
+      - [0x1EFF790, .rodata, 1EC8070]
+      - [0x1EFF7A0, .rodata, 1EC9740]
+      - [0x1EFF7B0, .rodata, 1ECA640]
+      - [0x1EFF7C0, .rodata, 1ECB0F0]
+      - [0x1EFF7D0, .rodata, 1ECBB80]
+      - [0x1EFF7E0, .rodata, 1ECBCC0]
+      - [0x1EFF7F0, .rodata, 1ECD170]
+      - [0x1EFF960, .rodata, 1ECE0B0]
+      - [0x1EFFA30, .rodata, 1ED4440]
+      - [0x1EFFA40, .rodata, 1ED4E30]
+      - [0x1EFFA50, .rodata, 1ED68A0]
+      - [0x1EFFD20, .rodata, 1EDAEA0]
+      - [0x1EFFD30, .rodata, 1EDDC40]
+      - [0x1EFFD50, .rodata, 1EE06E0]
+      - [0x1EFFDA0, .rodata, 1EE27C0]
+      - [0x1EFFE00, .rodata, 1EE4270]
+      - [0x1EFFE20, .rodata, 1EE5DF0]
+      - [0x1EFFE30, .rodata, 1EE9AB0]
+      - [0x1EFFE50, .rodata, 1EEBA50]
+      - [0x1EFFE70, .rodata, 1EEBEA0]
+      - [0x1EFFE80, .rodata, 1EEC090]
+      - [0x1EFFEF0, .rodata, 1EEE770]
+      - [0x1EFFF00, .rodata, 1EEEF00]
+      - [0x1EFFF10, .rodata, 1EEF790]
+      - [0x1EFFF30, rodata]
       - [0x1F00020, .bss, ../../src/core2/core2bss1]
       - [0x1F00020, .bss, baanim]
       - [0x1F00020, .bss, 1EB3750]
@@ -1073,10 +1130,10 @@ segments:
     symbol_name_format: $VRAM_$SEG
     symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F12D00, c, wim]
-      - [0x01F14A70, .rodata, wim]
-      - [0x01F14B60, data, wim]
-      - [0x01F14CB0, bss, wim]
+      - [0x01F12D00, c, bswim]
+      - [0x01F14A70, .rodata, bswim]
+      - [0x01F14B60, data, bswim]
+      - [0x01F14CB0, bss, bswim]
   - name: bsbtrot_header
     dir: overlays/bsbtrot
     type: bin
@@ -3626,7 +3683,7 @@ segments:
     start: 0x01F703E0
     exclusive_ram_id: overlay
     subsegments: 
-      - [auto, c, airr]
+      - [auto, c, airbar]
   - name: cadbmgrDll_header
     dir: overlays/cadbmgrDll
     type: bin
@@ -4055,15 +4112,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01F7DC00
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01F7DC00, c, nests]
-      - [0x01F7ECE0, .rodata, nests]
-      - [0x01F7ECF0, data, nests]
-      - [0x01F7F190, bss, nests]
+      - [auto, c, nests]
   - name: chbanjocurrent_header
     dir: overlays/chbanjocurrent
     type: bin
@@ -5993,15 +6044,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x01FDB220
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x01FDB220, c, bigtopticket]
-      - [0x01FDB340, .rodata, bigtopticket]
-      - [0x01FDB340, data, bigtopticket]
-      - [0x01FDB390, bss, bigtopticket]
+      - [auto, c, bigtopticket]
   - name: chlagoonpirate_header
     dir: overlays/chlagoonpirate
     type: bin
@@ -8083,15 +8128,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02038980
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02038980, c, _mine]
-      - [0x02038A40, .rodata, _mine]
-      - [0x02038A40, data, _mine]
-      - [0x02038AB0, bss, _mine]
+      - [auto, c, _mine]
   - name: chmole_training_header
     dir: overlays/chmole_training
     type: bin
@@ -8216,15 +8255,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020427F0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020427F0, c, glowbo]
-      - [0x02043B50, .rodata, glowbo]
-      - [0x02043BA0, data, glowbo]
-      - [0x02043E20, bss, glowbo]
+      - [auto, c, glowbo]
   - name: chhandcart_header
     dir: overlays/chhandcart
     type: bin
@@ -8463,15 +8496,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02055370
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02055370, c, _witchy]
-      - [0x02055430, .rodata, _witchy]
-      - [0x02055430, data, _witchy]
-      - [0x020554B0, bss, _witchy]
+      - [auto, c, _witchy]
   - name: chsounder_header
     dir: overlays/chsounder
     type: bin
@@ -8672,15 +8699,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02063630
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02063630, c, honeycarrier]
-      - [0x02063A00, .rodata, honeycarrier]
-      - [0x02063A10, data, honeycarrier]
-      - [0x02063A70, bss, honeycarrier]
+      - [auto, c, honeycarrier]
   - name: chjujubagfx_header
     dir: overlays/chjujubagfx
     type: bin
@@ -8938,15 +8959,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02076120
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02076120, c, _lagoon]
-      - [0x020761E0, .rodata, _lagoon]
-      - [0x020761E0, data, _lagoon]
-      - [0x02076260, bss, _lagoon]
+      - [auto, c, _lagoon]
   - name: chmole_overworld_header
     dir: overlays/chmole_overworld
     type: bin
@@ -9166,15 +9181,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02082090
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02082090, c, _hailfire]
-      - [0x02082150, .rodata, _hailfire]
-      - [0x02082150, data, _hailfire]
-      - [0x020821C0, bss, _hailfire]
+      - [auto, c, _hailfire]
   - name: chmole_factory_header
     dir: overlays/chmole_factory
     type: bin
@@ -9204,15 +9213,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020823C0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020823C0, c, _prehist]
-      - [0x02082480, .rodata, _prehist]
-      - [0x02082480, data, _prehist]
-      - [0x02082500, bss, _prehist]
+      - [auto, c, _prehist]
   - name: chcollballcontrol_header
     dir: overlays/chcollballcontrol
     type: bin
@@ -9261,15 +9264,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02087CF0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02087CF0, c, _cuckoo]
-      - [0x02087DB0, .rodata, _cuckoo]
-      - [0x02087DB0, data, _cuckoo]
-      - [0x02087E10, bss, _cuckoo]
+      - [auto, c, _cuckoo]
   - name: chdragonbrothers_header
     dir: overlays/chdragonbrothers
     type: bin
@@ -10344,15 +10341,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0209EB40
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0209EB40, c, fish]
-      - [0x0209ED50, .rodata, fish]
-      - [0x0209ED50, data, fish]
-      - [0x0209EDB0, bss, fish]
+      - [auto, c, fish]
   - name: chjrinnlight_header
     dir: overlays/chjrinnlight
     type: bin
@@ -10477,15 +10468,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0209FAF0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0209FAF0, c, clockwork]
-      - [0x020A03A0, .rodata, clockwork]
-      - [0x020A03B0, data, clockwork]
-      - [0x020A0520, bss, clockwork]
+      - [auto, c, clockwork]
   - name: cheggfire_header
     dir: overlays/cheggfire
     type: bin
@@ -10496,15 +10481,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0590
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0590, c, fire]
-      - [0x020A0930, .rodata, fire]
-      - [0x020A0940, data, fire]
-      - [0x020A09A0, bss, fire]
+      - [auto, c, fire]
   - name: chegggolden_header
     dir: overlays/chegggolden
     type: bin
@@ -10515,15 +10494,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0A10
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0A10, c, golden]
-      - [0x020A0DF0, .rodata, golden]
-      - [0x020A0E00, data, golden]
-      - [0x020A0E50, bss, golden]
+      - [auto, c, golden]
   - name: chegggrenade_header
     dir: overlays/chegggrenade
     type: bin
@@ -10534,15 +10507,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A0EC0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A0EC0, c, grenade]
-      - [0x020A1300, .rodata, grenade]
-      - [0x020A1310, data, grenade]
-      - [0x020A1360, bss, grenade]
+      - [auto, c, grenade]
   - name: cheggice_header
     dir: overlays/cheggice
     type: bin
@@ -10553,15 +10520,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A13D0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A13D0, c, ice]
-      - [0x020A17A0, .rodata, ice]
-      - [0x020A17B0, data, ice]
-      - [0x020A1800, bss, ice]
+      - [auto, c, ice]
   - name: cheggnormal_header
     dir: overlays/cheggnormal
     type: bin
@@ -10572,15 +10533,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020A1870
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020A1870, c, normal]
-      - [0x020A1D30, .rodata, normal]
-      - [0x020A1D40, data, normal]
-      - [0x020A1D90, bss, normal]
+      - [auto, c, normal]
   - name: chfaircoin_header
     dir: overlays/chfaircoin
     type: bin
@@ -11199,15 +11154,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x020B7960
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x020B7960, c, doubloon]
-      - [0x020B7BE0, .rodata, doubloon]
-      - [0x020B7BF0, data, doubloon]
-      - [0x020B7C50, bss, doubloon]
+      - [auto, c, doubloon]
   - name: chdinofamilymissing_header
     dir: overlays/chdinofamilymissing
     type: bin
@@ -12966,15 +12915,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0210C040
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0210C040, c, collectDll]
-      - [0x0210CBC0, .rodata, collectDll]
-      - [0x0210CC20, data, collectDll]
-      - [0x0210CC80, bss, collectDll]
+      - [auto, c, collectDll]
   - name: gcskyDll_header
     dir: overlays/gcskyDll
     type: bin
@@ -13213,15 +13156,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02116C80
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02116C80, c, egg]
-      - [0x02116E80, .rodata, egg]
-      - [0x02116E80, data, egg]
-      - [0x02116EF0, bss, egg]
+      - [auto, c, egg]
   - name: gcextra_header
     dir: overlays/gcextra
     type: bin
@@ -14049,15 +13986,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x02127C80
-    bss_size: 0x00000210
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x02127C80, c, kern]
-      - [0x021280A0, .rodata, kern]
-      - [0x021280A0, data, kern]
-      - [0x02128100, bss, kern]
+      - [auto, c, kern]
   - name: fxdialog_header
     dir: overlays/fxdialog
     type: bin
@@ -15360,15 +15291,9 @@ segments:
     type: code
     vram: 0x80800000
     start: 0x0214CDC0
-    bss_size: 0x00000000
     exclusive_ram_id: overlay
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
     subsegments: 
-      - [0x0214CDC0, c, markersDll]
-      - [0x0214CE50, .rodata, markersDll]
-      - [0x0214CE50, data, markersDll]
-      - [0x0214E090, bss, markersDll]
+      - [auto, c, markersDll]
   - name: suexpressjoint_header
     dir: overlays/suexpressjoint
     type: bin

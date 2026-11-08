@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flamer/chflamer_entrypoint_0.s")
-
+extern ActorData D_80800B20_chflamer;
+ActorData* chflamer_entrypoint_0()
+{
+    return &D_80800B20_chflamer;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flamer/func_8080000C_chflamer.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flamer/func_80800050_chflamer.s")

@@ -17,4 +17,8 @@ void func_80800094_chgoldstatue(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/statue/func_80800528_chgoldstatue.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/gold/statue/chgoldstatue_entrypoint_0.s")
+extern ActorData D_80800990_chgoldstatue;
+ActorData* chgoldstatue_entrypoint_0()
+{
+    return &D_80800990_chgoldstatue;
+}

@@ -17,4 +17,8 @@ void chwandglow_entrypoint_1()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wandglow/chwandglow_entrypoint_2.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/wandglow/chwandglow_entrypoint_3.s")
+extern ActorData D_80800410_chwandglow;
+ActorData* chwandglow_entrypoint_3()
+{
+    return &D_80800410_chwandglow;
+}

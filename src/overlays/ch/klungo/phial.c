@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/phial/chklungophial_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/phial/chklungophial_entrypoint_1.s")
-
+extern ActorData D_80800C30_chklungophial;
+ActorData* chklungophial_entrypoint_0()
+{
+    return &D_80800C30_chklungophial;
+}
+extern ActorData D_80800C78_chklungophial;
+ActorData* chklungophial_entrypoint_1()
+{
+    return &D_80800C78_chklungophial;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/phial/func_80800018_chklungophial.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/klungo/phial/func_80800204_chklungophial.s")

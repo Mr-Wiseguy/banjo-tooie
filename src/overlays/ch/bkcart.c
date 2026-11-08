@@ -6,4 +6,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bkcart/func_808004DC_chbkcart.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bkcart/chbkcart_entrypoint_0.s")
+extern ActorData D_80800880_chbkcart;
+ActorData* chbkcart_entrypoint_0()
+{
+    return &D_80800880_chbkcart;
+}

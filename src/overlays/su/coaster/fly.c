@@ -49,7 +49,7 @@ void sucoasterfly_entrypoint_2(Actor* arg0)
 
 void func_80802128_sucoasterfly(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

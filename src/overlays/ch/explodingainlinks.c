@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/explodingainlinks/chexplodingchainlinks_entrypoint_0.s")
-
+extern ActorData D_80800170_chexplodingchainlinks;
+ActorData* chexplodingchainlinks_entrypoint_0()
+{
+    return &D_80800170_chexplodingchainlinks;
+}
 void func_8080000C_chexplodingchainlinks(s32 arg0) 
 {
 }

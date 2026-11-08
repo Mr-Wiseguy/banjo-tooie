@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/seaweedbaddy/chseaweedbaddy_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/seaweedbaddy/chseaweedbaddy_entrypoint_1.s")
-
+extern ActorData D_80800EB4_chseaweedbaddy;
+ActorData* chseaweedbaddy_entrypoint_0()
+{
+    return &D_80800EB4_chseaweedbaddy;
+}
+extern ActorData D_80800EFC_chseaweedbaddy;
+ActorData* chseaweedbaddy_entrypoint_1()
+{
+    return &D_80800EFC_chseaweedbaddy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/seaweedbaddy/func_80800018_chseaweedbaddy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/seaweedbaddy/func_8080043C_chseaweedbaddy.s")

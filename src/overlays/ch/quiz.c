@@ -112,8 +112,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80801CC4_chquiz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/chquiz_entrypoint_0.s")
-
+extern ActorData D_808072CC_chquiz;
+ActorData* chquiz_entrypoint_0()
+{
+    return &D_808072CC_chquiz;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80802004_chquiz.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80802108_chquiz.s")
@@ -134,8 +137,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80802A2C_chquiz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/chquiz_entrypoint_1.s")
-
+extern ActorData D_80807334_chquiz;
+ActorData* chquiz_entrypoint_1()
+{
+    return &D_80807334_chquiz;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803320_chquiz.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803368_chquiz.s")
@@ -146,14 +152,20 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803910_chquiz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/chquiz_entrypoint_2.s")
-
+extern ActorData D_80807480_chquiz;
+ActorData* chquiz_entrypoint_2()
+{
+    return &D_80807480_chquiz;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803954_chquiz.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_808039D4_chquiz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/chquiz_entrypoint_3.s")
-
+extern ActorData D_808074DC_chquiz;
+ActorData* chquiz_entrypoint_3()
+{
+    return &D_808074DC_chquiz;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803B54_chquiz.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_80803B88_chquiz.s")
@@ -178,4 +190,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/func_808064F4_chquiz.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/quiz/chquiz_entrypoint_4.s")
+extern ActorData D_80807684_chquiz;
+ActorData* chquiz_entrypoint_4()
+{
+    return &D_80807684_chquiz;
+}

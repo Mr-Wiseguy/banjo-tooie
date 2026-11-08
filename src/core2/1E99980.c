@@ -4,6 +4,7 @@
 
 extern s32 D_801288B0;
 extern s32 D_80128AF4;
+extern void* D_80128AF0;
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0090.s")
 
@@ -66,7 +67,11 @@ void func_800C0808()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C0890.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C08C0.s")
+void func_800C08C0(void) {
+    if (D_80128AF0 != 0) {
+        D_80128AF0 = defrag(D_80128AF0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E99980/func_800C08F8.s")
 

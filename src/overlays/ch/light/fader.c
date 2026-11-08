@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/light/fader/chlightfader_entrypoint_0.s")
-
+extern ActorData D_808003A0_chlightfader;
+ActorData* chlightfader_entrypoint_0()
+{
+    return &D_808003A0_chlightfader;
+}
 void func_8080000C_chlightfader(s32 arg0) 
 {
 }

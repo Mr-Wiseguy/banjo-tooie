@@ -31,4 +31,8 @@ void func_80800000_chfriendlystonehead(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friendlystonehead/func_80800830_chfriendlystonehead.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/friendlystonehead/chfriendlystonehead_entrypoint_0.s")
+extern ActorData D_808009B4_chfriendlystonehead;
+ActorData* chfriendlystonehead_entrypoint_0()
+{
+    return &D_808009B4_chfriendlystonehead;
+}

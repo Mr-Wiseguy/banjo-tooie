@@ -12,8 +12,15 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/func_80800554_chboggy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/chboggy_entrypoint_0.s")
-
+extern ActorData D_80800840_chboggy;
+ActorData* chboggy_entrypoint_0()
+{
+    return &D_80800840_chboggy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/func_80800634_chboggy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/chboggy_entrypoint_1.s")
+extern ActorData D_80800888_chboggy;
+ActorData* chboggy_entrypoint_1()
+{
+    return &D_80800888_chboggy;
+}

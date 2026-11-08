@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/lockerdoorhits/func_8080022C_chlagoonlockerdoorhits.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/lockerdoorhits/chlagoonlockerdoorhits_entrypoint_0.s")
+extern ActorData D_8080045C_chlagoonlockerdoorhits;
+ActorData* chlagoonlockerdoorhits_entrypoint_0()
+{
+    return &D_8080045C_chlagoonlockerdoorhits;
+}

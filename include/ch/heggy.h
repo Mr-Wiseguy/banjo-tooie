@@ -22,6 +22,7 @@
 #include "core2/1EB5980.h"
 
 #include "core2/1EE1510.h"
+#include "core2/1EE5DF0.h"
 #include "core2/1ECD170.h"
 #include "core2/1EDB4D0.h"
 #include "core2/1EDC070.h"
@@ -48,11 +49,11 @@
 #include "ch/skeletonexplode.h"
 
 
-s32* chheggy_entrypoint_0(void);
-s32* _chheggy_entrypoint_0(void);
+ActorData* chheggy_entrypoint_0(void);
+ActorData* _chheggy_entrypoint_0(void);
 
-s32* chheggy_entrypoint_1(void);
-s32* _chheggy_entrypoint_1(void);
+ActorData* chheggy_entrypoint_1(void);
+ActorData* _chheggy_entrypoint_1(void);
 
 
 #endif

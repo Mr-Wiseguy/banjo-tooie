@@ -30,4 +30,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusherboulder/func_80801184_chcrusherboulder.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/crusherboulder/chcrusherboulder_entrypoint_0.s")
+extern ActorData D_808014EC_chcrusherboulder;
+ActorData* chcrusherboulder_entrypoint_0()
+{
+    return &D_808014EC_chcrusherboulder;
+}

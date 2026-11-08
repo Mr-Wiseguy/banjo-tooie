@@ -1,6 +1,6 @@
-#include "overlays/bs/rest.h"
+#include "bs/rest.h"
 
-extern enum bs_state_e bsrest_entrypoint_13(PlayerState *self);
+extern BanjoStateId bsrest_entrypoint_13(PlayerState *self);
 extern void bsrest_entrypoint_17(PlayerState *self, s32);
 
 static void func_80800000_bsrest(PlayerState *self) {
@@ -54,7 +54,7 @@ void bsrest_entrypoint_0(PlayerState *self) {
     f32 sp24[3];
 
     if (func_8009CC68(self) != 0) {
-        func_8009C128(self, sp30);
+        player_getCoords(self, sp30);
         if (func_8009CC18(self, sp24) == 0) {
             func_801160DC(func_800A4CA8(self), 0);
             return;
@@ -145,7 +145,7 @@ void bsrest_entrypoint_1(PlayerState *self) {
 }
 
 void bsrest_entrypoint_2(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     if (player_inWater(self) != 0) {
@@ -176,7 +176,7 @@ void bsrest_entrypoint_5(PlayerState *self) {
 }
 
 void bsrest_entrypoint_6(PlayerState *self) {
-    enum bs_state_e sp1C;
+    BanjoStateId sp1C;
 
     sp1C = BS_STATE_0_INVALID;
     if (player_inWater(self) != 0) {
@@ -208,7 +208,7 @@ void bsrest_entrypoint_9(PlayerState *self) {
 }
 
 void bsrest_entrypoint_10(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     func_808000E4_bsrest(self);
@@ -232,7 +232,7 @@ s32 bsrest_entrypoint_12(s32 idx) {
     return D_80800930_bsrest[idx];
 }
 
-enum bs_state_e bsrest_entrypoint_13(PlayerState *self) {
+BanjoStateId bsrest_entrypoint_13(PlayerState *self) {
     if (_bafpctrl_entrypoint_4(self) == 3) {
         return _badrone_entrypoint_24(self);
     }

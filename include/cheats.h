@@ -1,0 +1,17 @@
+#ifndef __CHEATS_H__
+#define __CHEATS_H__
+
+typedef enum cheat_e {
+	CHEAT_1_FEATHERS = 0x1,
+	CHEAT_2_EGGS = 0x2,
+	CHEAT_3_FALLPROOF = 0x3,
+	CHEAT_4_HONEYBACK = 0x4,
+	CHEAT_5_JUKEBOX = 0x5,
+	CHEAT_6_GETJIGGY = 0x6,
+	CHEAT_7_SUPERBANJO = 0x7,
+	CHEAT_8_SUPERBADDY = 0x8,
+	CHEAT_9_HONEYKING = 0x9,
+	CHEAT_A_NESTKING = 0xA
+} CheatId;
+
+#endif

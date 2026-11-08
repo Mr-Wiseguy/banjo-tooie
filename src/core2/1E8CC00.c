@@ -26,7 +26,7 @@ void func_800B3370(void* arg0)
 
 void func_800B38A8()
 {
-    func_800EE830();
+    ml_vec3i_copy();
 }
 
 void func_800B38C8()

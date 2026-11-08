@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/chdodgemcontrol_entrypoint_0.s")
-
+extern ActorData D_80804DB4_chdodgemcontrol;
+ActorData* chdodgemcontrol_entrypoint_0()
+{
+    return &D_80804DB4_chdodgemcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_8080000C_chdodgemcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_80800044_chdodgemcontrol.s")
@@ -72,8 +75,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_80801F2C_chdodgemcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/chdodgemcontrol_entrypoint_1.s")
-
+extern ActorData D_80804EDC_chdodgemcontrol;
+ActorData* chdodgemcontrol_entrypoint_1()
+{
+    return &D_80804EDC_chdodgemcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_8080207C_chdodgemcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_80802104_chdodgemcontrol.s")
@@ -122,4 +128,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/func_8080476C_chdodgemcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemcontrol/chdodgemcontrol_entrypoint_2.s")
+extern ActorData D_80804FAC_chdodgemcontrol;
+ActorData* chdodgemcontrol_entrypoint_2()
+{
+    return &D_80804FAC_chdodgemcontrol;
+}

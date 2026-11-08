@@ -1,4 +1,4 @@
-#include "overlays/bs/kaz.h"
+#include "bs/kaz.h"
 
 void bskaz_entrypoint_0(PlayerState *self, s32 arg1, s32 arg2) {
     if (arg1 != arg2) {
@@ -24,24 +24,24 @@ void bskaz_entrypoint_2(PlayerState *self) {
 }
 
 BanjoStateId bskaz_entrypoint_3(PlayerState *self) {
-    if (func_8008E430() != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return BS_STATE_186;
     }
     
-    if (func_8008D3B0(self) != 0) {
+    if (player_canFly(self) != 0) {
         return BS_STATE_161;
     }
     
-    if ((bakey_held(self, BUTTON_Z) != 0) && (func_800C6E38(0x24) != 0)) {
+    if ((bakey_held(self, BUTTON_Z) != 0) && (ability_getValue(ABILITY_24_LEG_SPRING) != 0)) {
         return BS_STATE_C6;
     }
     
-    return BS_STATE_BD;
+    return BS_STATE_BD_KAZ_JUMP;
 }
 
 
 BanjoStateId bskaz_entrypoint_4(PlayerState *self) {
-    if (func_8009EA2C() != 0) {
+    if (bs_getDragonKazooieState() != 0) {
         return BS_STATE_18B;
     }
 

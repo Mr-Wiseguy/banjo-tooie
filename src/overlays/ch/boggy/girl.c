@@ -1,7 +1,10 @@
 #include "ch/boggy/girl.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/chboggygirl_entrypoint_0.s")
-
+extern ActorData D_80800CF0_chboggygirl;
+ActorData* chboggygirl_entrypoint_0()
+{
+    return &D_80800CF0_chboggygirl;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_8080000C_chboggygirl.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/girl/func_808000A8_chboggygirl.s")
@@ -25,7 +28,7 @@ void func_8080091C_chboggygirl(Actor* arg0)
 
 void func_80800B28_chboggygirl(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

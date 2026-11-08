@@ -18,8 +18,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/func_808009B8_chfantasycannon.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/chfantasycannon_entrypoint_0.s")
-
+extern ActorData D_80800D30_chfantasycannon;
+ActorData* chfantasycannon_entrypoint_0()
+{
+    return &D_80800D30_chfantasycannon;
+}
 void func_80800B84_chfantasycannon()
 {
     func_80101870();
@@ -29,4 +32,8 @@ void func_80800B84_chfantasycannon()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/func_80800BDC_chfantasycannon.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/cannon/chfantasycannon_entrypoint_1.s")
+extern ActorData D_80800D78_chfantasycannon;
+ActorData* chfantasycannon_entrypoint_1()
+{
+    return &D_80800D78_chfantasycannon;
+}

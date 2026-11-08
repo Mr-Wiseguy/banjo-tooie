@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/grill/chwaterfallgrill_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/waterfall/grill/chwaterfallgrill_entrypoint_1.s")
+extern ActorData D_80800330_chwaterfallgrill;
+ActorData* chwaterfallgrill_entrypoint_1()
+{
+    return &D_80800330_chwaterfallgrill;
+}

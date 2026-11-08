@@ -24,7 +24,7 @@
 #include "su/baddiefade.h"
 #include "su/baddiedialog.h"
 
-#include "overlays/pl/su.h"
+#include "pl/su.h"
 
 
 

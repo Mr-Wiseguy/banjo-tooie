@@ -1,8 +1,8 @@
 #include "ch/inflatablebossdoor.h"
 
-extern s32 D_80800140_chinflatablebossdoor;
+extern ActorData D_80800140_chinflatablebossdoor;
 
-s32* chinflatablebossdoor_entrypoint_0(void)
+ActorData* chinflatablebossdoor_entrypoint_0(void)
 {
     return &D_80800140_chinflatablebossdoor;
 }
@@ -13,8 +13,8 @@ void func_8080000C_chinflatablebossdoor(Actor* arg0)
     s32 sp30;
     s32 sp2C;
 
-    sp34 = func_800DA298(FLAG_17F_RETRY_BOSS_MR_PATCH);
-    sp30 = func_800F64A4(func_800F54E4(), ALLOW_BK);
+    sp34 = flag_getValue(FLAG_17F_RETRY_BOSS_MR_PATCH);
+    sp30 = character_includedInTransformMask(character_getActiveIndex(), ALLOW_BK);
     sp2C = func_800D395C();
     if (_glcutDll_entrypoint_20() != 0)
     {

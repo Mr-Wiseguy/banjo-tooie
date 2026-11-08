@@ -1,0 +1,46 @@
+#ifndef __BS_BWHIRL__
+#define __BS_BWHIRL__
+
+
+#include <ultra64.h>
+#include "common.h"
+#include "ba/anim.h"
+#include "ba/drone.h"
+#include "ba/input.h"
+#include "ba/key.h"
+#include "ba/physics.h"
+#include "ba/playerstate.h"
+#include "ba/stick.h"
+#include "ba/yaw.h"
+#include "bs/bwhirl.h"
+#include "bs/mum/move.h"
+#include "bs/mum/still.h"
+#include "bs/rest.h"
+#include "bs/state.h"
+#include "ch/light/fader.h"
+#include "ch/usefeather.h"
+#include "su/inv.h"
+#include "core1/1E2B200.h"
+#include "core2/1E66990.h"
+#include "core2/1E6B900.h"
+#include "core2/1E75920.h"
+#include "core2/1E76880.h"
+#include "core2/1E76CC0.h"
+#include "core2/1E77A20.h"
+#include "core2/1E78BF0.h"
+#include "core2/1E79FD0.h"
+#include "core2/1E7BFA0.h"
+#include "core2/1E8F430.h"
+#include "core2/1E93440.h"
+#include "core2/1E97EF0.h"
+#include "core2/1EA1DA0.h"
+#include "core2/1EB2840.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECE0B0.h"
+#include "core2/1ED4E30.h"
+#include "core2/anctrl.h"
+#include "player.h"
+
+
+#endif // __BS_BWHIRL__

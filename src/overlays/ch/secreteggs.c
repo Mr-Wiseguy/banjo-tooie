@@ -12,7 +12,7 @@ extern unkEggData D_80800494_chsecreteggs[0x3];
 extern s32 D_808004A8_chsecreteggs;
 extern f32 D_808004EC_chsecreteggs[5];
 extern f32 D_80800500_chsecreteggs[3];
-extern u32 D_8080050C_chsecreteggs;
+extern ActorData D_8080050C_chsecreteggs;
 
 void func_80800000_chsecreteggs(Actor* arg0)
 {
@@ -23,13 +23,13 @@ void func_80800000_chsecreteggs(Actor* arg0)
     switch (arg0->unk0->unk14)
     {
     case 0x974:
-        func_800BA3FC(temp_v0, 0x9DF);
+        func_800BA3FC(temp_v0, ASSET_9DF_PURPLE_SPARKLE);
         break;
     case 0x975:
-        func_800BA3FC(temp_v0, 0x9E0);
+        func_800BA3FC(temp_v0, ASSET_9E0_BLUE_SPARKLE);
         break;
     case 0x976:
-        func_800BA3FC(temp_v0, 0x9E2);
+        func_800BA3FC(temp_v0, ASSET_9E2_GOLD_SPARKLE);
         break;
     }
     func_800BA22C(temp_v0, 0x14);
@@ -39,12 +39,12 @@ void func_808000C0_chsecreteggs(Actor* arg0)
 {
     if (arg0->unk7A_5)
     {
-        if (func_800DA298(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
+        if (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) != 0)
         {
             func_800FFA88(arg0->unk0);
             return;
         }
-        func_8010A570(arg0);
+        actor_disableCollision(arg0);
     }
 }
 
@@ -85,17 +85,17 @@ void func_80800118_chsecreteggs(Actor* arg0)
             func_80800000_chsecreteggs(arg0);
             if (arg0->unk7A_5)
             {
-                func_800F7700(func_800F54E4(), 9, arg0->position);
+                func_800F7700(character_getActiveIndex(), 9, arg0->position);
                 return;
             }
         }
         else if (func_80101DDC(arg0) != 0)
         {
-            if ((arg0->unk7A_5) && (func_800DA298(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) == 0))
+            if ((arg0->unk7A_5) && (flag_getValue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW) == 0))
             {
-                func_800DA544(FLAG_3E7_SNS_EGG_HATCHED_YELLOW);
+                flag_setValueTrue(FLAG_3E7_SNS_EGG_HATCHED_YELLOW);
 
-                func_80101180(0x514, 0x18, arg0->unk7A_5 ? 1 : 0);
+                event_sendToActorsOfType(0x514, 0x18, arg0->unk7A_5 ? 1 : 0);
             }
             _subaddiefade_entrypoint_3(arg0);
         }
@@ -109,54 +109,54 @@ s32 func_80800328_chsecreteggs(Actor* arg0, s32 arg1, s32 arg2)
 
     switch (arg1)
     {
-    case 0x18:
-        if (arg0->unk70_10 != 2)
-        {
-            func_80102424(arg0, 2);
-        }
-        return 1;
-    case 0x1F:
-        func_801015D0(arg0);
-        switch (D_80800494_chsecreteggs[arg0->unk70_10].unk0)
-        {
-        case 0x1D4:
-            func_800DF744(1, 1);
-            break;
-        case 0x1D5:
-            func_800DF744(1, 2);
-            break;
-        }
-        return 1;
-    case 0x3E:
-        var_a1 = 0;
-        if (arg0->unk0->unk14 != 0x974)
-        {
-            if (arg0->unk0->unk14 == 0x975)
+        case 0x18:
+            if (arg0->unk70_10 != 2)
             {
-                func_800DA544(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
-                var_a1 = 0x1551;
+                func_80102424(arg0, 2);
             }
-        }
-        else
-        {
-            func_800DA544(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
-            var_a1 = 0x1552;
-        }
-        if (var_a1 != 0)
-        {
-            _subaddiedialog_entrypoint_11(arg0->unk0, var_a1, 4, arg0->position, 0x6F);
-        }
-        func_800D1844(0x52);
-        func_80800000_chsecreteggs(arg0);
-        func_800FC660(0xE);
-        func_800FFA88(arg0->unk0);
-        return 1;
-    default:
-        return 0;
+            return 1;
+        case EVENT_1F_ACTOR_ONSCREEN:
+            func_801015D0(arg0);
+            switch (D_80800494_chsecreteggs[arg0->unk70_10].unk0)
+            {
+            case 0x1D4:
+                func_800DF744(1, 1);
+                break;
+            case 0x1D5:
+                func_800DF744(1, 2);
+                break;
+            }
+            return 1;
+        case EVENT_3E_ACTOR_TOUCHED:
+            var_a1 = 0;
+            if (arg0->unk0->unk14 != 0x974)
+            {
+                if (arg0->unk0->unk14 == 0x975)
+                {
+                    flag_setValueTrue(FLAG_3E3_SNS_EGG_ACQUIRED_BLUE);
+                    var_a1 = 0x1551;
+                }
+            }
+            else
+            {
+                flag_setValueTrue(FLAG_3E5_SNS_EGG_ACQUIRED_PINK);
+                var_a1 = 0x1552;
+            }
+            if (var_a1 != 0)
+            {
+                _subaddiedialog_entrypoint_11(arg0->unk0, var_a1, 4, arg0->position, 0x6F);
+            }
+            inventory_incrementValue(0x52);
+            func_80800000_chsecreteggs(arg0);
+            func_800FC660(0xE);
+            func_800FFA88(arg0->unk0);
+            return 1;
+        default:
+            return 0;
     }
 }
 
-u32* chsecreteggs_entrypoint_0(void) 
+ActorData* chsecreteggs_entrypoint_0(void)
 {
     return &D_8080050C_chsecreteggs;
 }

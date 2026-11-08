@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/stationdoors/func_8080019C_chfactorystationdoors.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/stationdoors/chfactorystationdoors_entrypoint_0.s")
+extern ActorData D_80800268_chfactorystationdoors;
+ActorData* chfactorystationdoors_entrypoint_0()
+{
+    return &D_80800268_chfactorystationdoors;
+}

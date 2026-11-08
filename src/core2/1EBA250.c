@@ -157,7 +157,7 @@ void func_800E0CB4(Unkfunc_800E0960_1* arg0, u8 arg1, f32 arg2[4]) {
                 arg2[2] = sp78[2];
                 arg2[3] = sp78[3];
             } else if (temp_f20 > 0.0f) {
-                func_800EF334(sp5C, temp_f20);
+                ml_vec3f_apply_scale(sp5C, temp_f20);
                 func_800D952C(sp68, sp5C);
                 func_800D9470(arg2, arg2, sp68);
             }

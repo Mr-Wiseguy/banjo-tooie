@@ -3,25 +3,32 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
 s32 func_8009D454(PlayerState *, s32, s32 *);
+void func_8009D4D8(PlayerState*);
+void func_8009D5E0(PlayerState*);
 void func_8009D658(PlayerState *);
-void func_8009DA40(PlayerState *);
-void func_8009DB04(PlayerState *, s32, f32, s32);
-void func_8009DE38(PlayerState *, s32, f32);
+void func_8009D7A4(PlayerState*, f32, f32);
 void func_8009D820(PlayerState *, f32);
 void func_8009D874(PlayerState *);
+void func_8009D89C(PlayerState*, f32);
 void func_8009D9D4(PlayerState *);
+void func_8009DA40(PlayerState *);
+void func_8009DB04(PlayerState *, s32, f32, s32);
+void func_8009DBB0(PlayerState*, s32, f32, f32, s32);
 void func_8009DBF0(PlayerState *, s32, f32);
 void func_8009DDDC(PlayerState *);
+void func_8009DE38(PlayerState *, s32, f32);
 void func_8009DE74(PlayerState *, s32, f32, f32);
 void func_8009DEC0(PlayerState *, s32, f32, f32, s32, s32);
 void func_8009DF18(PlayerState *, s32, f32, s32);
 void func_8009DF58(PlayerState *, s32, f32);
-void func_8009DF94(PlayerState *, s32, f32, s32);
+void func_8009DF94(PlayerState *, s16, f32, s32);
 void func_8009DFD4(PlayerState *, s32, f32, f32, s32, s32);
 void func_8009E058(PlayerState *);
+void func_8009E084(PlayerState*);
+void func_8009E0AC(PlayerState*, s32);
 void func_8009E0DC(PlayerState *);
 void func_8009E100(PlayerState *);
 

@@ -4,7 +4,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800038_gcnewoption.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800070_gcnewoption.s")
+s32 func_80800070_gcnewoption(OptionState* arg0, s32 arg1) {
+	return arg0->unk8 + arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_0.s")
 
@@ -25,13 +27,21 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_7.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_8.s")
+void gcnewoption_entrypoint_8(OptionState* arg0, s32 arg1) {
+	arg0->unk2 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_9.s")
+void gcnewoption_entrypoint_9(OptionState* arg0, s32 arg1) {
+	arg0->unk4 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_10.s")
+void gcnewoption_entrypoint_10(OptionState* arg0, s32 arg1) {
+	arg0->unk1C_0 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_11.s")
+void gcnewoption_entrypoint_11(OptionState* arg0) {
+	arg0->unk0 = 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80800D28_gcnewoption.s")
 
@@ -47,7 +57,13 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_13.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_14.s")
+void gcnewoption_entrypoint_14(OptionState* arg0, s16 arg1, s16 arg2, s16 arg3, f32 arg4) {
+	arg0->unk26 = arg1;
+	arg0->unk28 = arg2;
+	arg0->unk2A = arg3;
+	arg0->unk2C = arg4;
+	arg0->unk30 = arg4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_808012C8_gcnewoption.s")
 
@@ -79,7 +95,9 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_28.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_29.s")
+void gcnewoption_entrypoint_29(OptionState* arg0, s32 arg1) {
+	arg0->unk1D_3 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_30.s")
 
@@ -115,9 +133,19 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_35.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_36.s")
+void gcnewoption_entrypoint_36(OptionState* arg0) {
+	arg0->unk1C_4 = 1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/func_80802B24_gcnewoption.s")
+void func_80802B24_gcnewoption(OptionState* arg0, s32 arg1)
+{
+	if (arg1 != 0)
+	{
+		arg0->unk1C_3 = 1;
+		return;
+	}
+	arg0->unk1C_3 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_37.s")
 
@@ -125,22 +153,40 @@ int gcnewoption_entrypoint_2(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_39.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_40.s")
+void gcnewoption_entrypoint_40(OptionState* arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 arg5) {
+	arg0->unk254 = arg1;
+	arg0->unk256 = arg2;
+	arg0->unk14 = arg3;
+	arg0->unk258 = arg4;
+	arg0->unk25C = arg5;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_41.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_42.s")
+void gcnewoption_entrypoint_42(OptionState* arg0, f32 arg1) {
+	arg0->unk18 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_43.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_44.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_45.s")
+s32 gcnewoption_entrypoint_45(OptionState* arg0) {
+	return arg0->unk6;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_46.s")
+void gcnewoption_entrypoint_46(OptionState* arg0, s32 arg1) {
+	arg0->unk250 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_47.s")
+s32 gcnewoption_entrypoint_47(OptionState* arg0) {
+	return arg0->unk24 == 3;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_48.s")
+int gcnewoption_entrypoint_48(OptionState* arg0) {
+	return arg0->unk0 >= 3 && arg0->unk0 < 0xB;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/newoption/gcnewoption_entrypoint_49.s")
+void gcnewoption_entrypoint_49(OptionState* arg0, s32 arg1) {
+	arg0->unk1D_1 = arg1;
+}

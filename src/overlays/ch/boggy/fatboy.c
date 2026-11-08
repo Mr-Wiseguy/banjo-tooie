@@ -1,9 +1,11 @@
 #include "ch/boggy/fatboy.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/chboggyfatboy_entrypoint_1.s")
-
+extern ActorData D_808011DC_chboggyfatboy;
+ActorData* chboggyfatboy_entrypoint_1()
+{
+    return &D_808011DC_chboggyfatboy;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800018_chboggyfatboy.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boggy/fatboy/func_80800078_chboggyfatboy.s")
@@ -41,7 +43,7 @@ void func_80800978_chboggyfatboy(Actor* arg0)
 
 void func_80800FAC_chboggyfatboy(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

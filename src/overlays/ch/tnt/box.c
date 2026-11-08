@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/box/chtntbox_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/box/chtntbox_entrypoint_1.s")
-
+extern ActorData D_80800988_chtntbox;
+ActorData* chtntbox_entrypoint_0()
+{
+    return &D_80800988_chtntbox;
+}
+extern ActorData D_808009D0_chtntbox;
+ActorData* chtntbox_entrypoint_1()
+{
+    return &D_808009D0_chtntbox;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/box/func_80800018_chtntbox.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/box/func_80800044_chtntbox.s")

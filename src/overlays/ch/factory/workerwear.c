@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/chfactoryworkerwear_entrypoint_0.s")
-
+extern ActorData D_80800438_chfactoryworkerwear;
+ActorData* chfactoryworkerwear_entrypoint_0()
+{
+    return &D_80800438_chfactoryworkerwear;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_8080000C_chfactoryworkerwear.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/workerwear/func_80800100_chfactoryworkerwear.s")

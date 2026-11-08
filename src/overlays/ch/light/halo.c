@@ -11,4 +11,8 @@
 void func_80800630_chlighthalo(s32 arg0) 
 {
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/light/halo/chlighthalo_entrypoint_0.s")
+extern ActorData D_808006A8_chlighthalo;
+ActorData* chlighthalo_entrypoint_0()
+{
+    return &D_808006A8_chlighthalo;
+}

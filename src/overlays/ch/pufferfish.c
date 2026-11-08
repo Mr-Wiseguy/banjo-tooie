@@ -20,4 +20,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pufferfish/func_80800F30_chpufferfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/pufferfish/chpufferfish_entrypoint_0.s")
+extern ActorData D_808012A8_chpufferfish;
+ActorData* chpufferfish_entrypoint_0()
+{
+    return &D_808012A8_chpufferfish;
+}

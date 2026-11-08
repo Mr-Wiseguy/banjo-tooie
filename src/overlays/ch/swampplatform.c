@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swampplatform/func_80800804_chswampplatform.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swampplatform/chswampplatform_entrypoint_0.s")
+extern ActorData D_808009F8_chswampplatform;
+ActorData* chswampplatform_entrypoint_0()
+{
+    return &D_808009F8_chswampplatform;
+}

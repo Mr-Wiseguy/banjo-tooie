@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjoctrl/chbanjoctrl_entrypoint_0.s")
-
+extern ActorData D_80801270_chbanjoctrl;
+ActorData* chbanjoctrl_entrypoint_0()
+{
+    return &D_80801270_chbanjoctrl;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjoctrl/func_8080000C_chbanjoctrl.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/banjoctrl/func_80800098_chbanjoctrl.s")

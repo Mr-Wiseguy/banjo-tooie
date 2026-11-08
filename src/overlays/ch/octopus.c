@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/choctopus_entrypoint_0.s")
-
+extern ActorData D_808008F4_choctopus;
+ActorData* choctopus_entrypoint_0()
+{
+    return &D_808008F4_choctopus;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/func_8080000C_choctopus.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/octopus/func_80800054_choctopus.s")

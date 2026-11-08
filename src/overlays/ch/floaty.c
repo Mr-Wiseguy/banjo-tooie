@@ -22,4 +22,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/floaty/func_80800CA0_chfloaty.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/floaty/chfloaty_entrypoint_1.s")
+extern ActorData D_80800EF0_chfloaty;
+ActorData* chfloaty_entrypoint_1()
+{
+    return &D_80800EF0_chfloaty;
+}

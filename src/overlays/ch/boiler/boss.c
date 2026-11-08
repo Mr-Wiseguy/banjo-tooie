@@ -1,13 +1,25 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/chboilerboss_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/chboilerboss_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/chboilerboss_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/chboilerboss_entrypoint_3.s")
-
+extern ActorData D_80802C0C_chboilerboss;
+ActorData* chboilerboss_entrypoint_0()
+{
+    return &D_80802C0C_chboilerboss;
+}
+extern ActorData D_80802C54_chboilerboss;
+ActorData* chboilerboss_entrypoint_1()
+{
+    return &D_80802C54_chboilerboss;
+}
+extern ActorData D_80802C9C_chboilerboss;
+ActorData* chboilerboss_entrypoint_2()
+{
+    return &D_80802C9C_chboilerboss;
+}
+extern ActorData D_80802CE4_chboilerboss;
+ActorData* chboilerboss_entrypoint_3()
+{
+    return &D_80802CE4_chboilerboss;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/boss/func_80800030_chboilerboss.s")
 
 void func_80800304_chboilerboss(Actor* arg0) 

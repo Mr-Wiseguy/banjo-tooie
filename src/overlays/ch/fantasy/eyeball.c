@@ -30,12 +30,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/func_808017B4_chfantasyeyeball.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/chfantasyeyeball_entrypoint_0.s")
-
+extern ActorData D_80801F28_chfantasyeyeball;
+ActorData* chfantasyeyeball_entrypoint_0()
+{
+    return &D_80801F28_chfantasyeyeball;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/func_8080182C_chfantasyeyeball.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/func_80801A50_chfantasyeyeball.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/func_80801BC4_chfantasyeyeball.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/eyeball/chfantasyeyeball_entrypoint_1.s")
+extern ActorData D_80802008_chfantasyeyeball;
+ActorData* chfantasyeyeball_entrypoint_1()
+{
+    return &D_80802008_chfantasyeyeball;
+}

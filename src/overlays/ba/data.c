@@ -1,8 +1,8 @@
-#include "overlays/ba/data.h"
+#include "ba/data.h"
 
 s32 func_80800000_badata(PlayerState *self) {
     s32 sp1C  = bs_getCurrentState(self);
-    switch(func_800A3274(self)) {
+    switch(player_getTransformation(self)) {
         case TRANSFORM_2_SNOWBALL:
             return 2;
 
@@ -28,7 +28,7 @@ s32 func_80800000_badata(PlayerState *self) {
             } else if (func_8009CA70(self, sp1C, 0x400)) {
                 return 0x1C;
             } else if (player_inWater(self)) {
-                if (func_800F8B88() == 3) {
+                if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
                     return 0x21;
                 } else {
                     switch (func_800F40EC(self)) {
@@ -49,7 +49,7 @@ s32 func_80800000_badata(PlayerState *self) {
                 return 0x3;
             } else if (bastatetimer_get(self, BA_STATE_TIMER_ID_2_LONGLEG) != 0.0f) {
                 return 0x1;
-            } else if (func_800F8B88() == 3) {
+            } else if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
                 return 0x1A;
             } else if (player_inWater(self)) {
                 return 0x1B;
@@ -128,7 +128,7 @@ s32 func_80800388_badata(PlayerState *self) {
     f32 sp18;
 
     sp1C = func_8009EA4C();
-    switch (func_800A3274(self)) {
+    switch (player_getTransformation(self)) {
         case TRANSFORM_2_SNOWBALL:
             return 2;
         
@@ -146,12 +146,12 @@ s32 func_80800388_badata(PlayerState *self) {
 
         case TRANSFORM_A_BANJO:
             if (player_inWater(self)) {
-                if (func_800F8B88() == 3) {
+                if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
                     return 0x21;
                 }
 
-                sp18 = func_8009C150(self);
-                if(func_800964DC(self) - 80.0f < sp18) {
+                sp18 = player_getCoordVertical(self);
+                if(player_getWaterHeight(self) - 80.0f < sp18) {
                     return 0x4;
                 }
                 
@@ -181,7 +181,7 @@ s32 func_80800388_badata(PlayerState *self) {
                 return 0x1;
             }
 
-            if (func_800F8B88() == 3) {
+            if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO) {
                 return 0x1A;
             }
 
@@ -225,8 +225,8 @@ s32 func_80800388_badata(PlayerState *self) {
         case TRANSFORM_1_BK:
         default:
             if (player_inWater(self)) {
-                sp18 = func_8009C150(self);
-                if (func_800964DC(self) - 95.0f < sp18) {
+                sp18 = player_getCoordVertical(self);
+                if (player_getWaterHeight(self) - 95.0f < sp18) {
                     return 4;
                 }
                 return 5;
@@ -375,7 +375,7 @@ void badata_entrypoint_19(PlayerState *self, s32 index, s32 *arg2, f32 *arg3, s3
 }
 
 s32 badata_entrypoint_20(PlayerState *self) {
-    if (0.5f < func_800DC0C0()) {
+    if (0.5f < rand_f()) {
         return D_80801568_badata[func_80800000_badata(self)].unk2;
     } else {
         return D_80801568_badata[func_80800000_badata(self)].unk4;

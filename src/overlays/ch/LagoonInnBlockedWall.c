@@ -9,10 +9,17 @@ void func_808000C0_chLagoonInnBlockedWall()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_808000E0_chLagoonInnBlockedWall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/chLagoonInnBlockedWall_entrypoint_0.s")
-
+extern ActorData D_80800480_chLagoonInnBlockedWall;
+ActorData* chLagoonInnBlockedWall_entrypoint_0()
+{
+    return &D_80800480_chLagoonInnBlockedWall;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_8080025C_chLagoonInnBlockedWall.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/func_80800398_chLagoonInnBlockedWall.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/LagoonInnBlockedWall/chLagoonInnBlockedWall_entrypoint_1.s")
+extern ActorData D_80800570_chLagoonInnBlockedWall;
+ActorData* chLagoonInnBlockedWall_entrypoint_1()
+{
+    return &D_80800570_chLagoonInnBlockedWall;
+}

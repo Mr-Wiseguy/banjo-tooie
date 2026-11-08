@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lensflare/func_80800634_chlensflare.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lensflare/chlensflare_entrypoint_1.s")
+extern ActorData D_80800928_chlensflare;
+ActorData* chlensflare_entrypoint_1()
+{
+    return &D_80800928_chlensflare;
+}

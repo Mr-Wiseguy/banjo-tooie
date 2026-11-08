@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/statetimer.h"
+#include "ba/statetimer.h"
 
 #include "core2/1EB2840.h"
 
@@ -62,7 +62,7 @@ void bastatetimerlist_update(PlayerState *self){
     f32 delta;
 
     sp1C = !func_800F424C(self);
-    delta = func_800D8FF8();
+    delta = time_getDelta();
     for(i = 0; i < BA_STATE_TIMER_COUNT; i++){
         self->state_timer->timer[i].prev = self->state_timer->timer[i].now;
         if(0.0f != self->state_timer->timer[i].now

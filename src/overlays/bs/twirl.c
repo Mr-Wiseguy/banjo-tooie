@@ -1,19 +1,4 @@
-#include "common.h"
-
-#include "overlays/ba/anim.h"
-#include "core2/anctrl.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/physics.h"
-#include "bs.h"
-#include "buttons.h"
-#include "overlays/bs/state.h"
-
-#include "core2/1E72EA0.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "core2/1EB5980.h"
+#include "bs/twirl.h"
 
 void func_80800000_bstwirl(PlayerState *);
 void bstwirl_init(PlayerState *);
@@ -39,7 +24,7 @@ void bstwirl_init(PlayerState *self){
     baphysics_set_target_horizontal_velocity(self, 600.0f);
     func_800A0CF4(self, 1);
     baflag_set(self, 0x29);
-    if (func_800DC0C0() < 0.5f) {
+    if (rand_f() < 0.5f) {
         func_8009DE38(self, 0x57C, 1.0f);
     } else {
         func_8009DE38(self, 0x57E, 1.0f);

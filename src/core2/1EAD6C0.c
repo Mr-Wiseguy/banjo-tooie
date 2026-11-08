@@ -1,10 +1,10 @@
-#include "common.h"
+#include "core2/1EAD6C0.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAD6C0/func_800D3DD0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAD6C0/func_800D3E14.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAD6C0/func_800D3E40.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAD6C0/cheat_isActive.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EAD6C0/func_800D3E6C.s")
 

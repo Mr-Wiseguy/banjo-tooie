@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/armouredcaveman/charmouredcaveman_entrypoint_0.s")
-
+extern ActorData D_80800B20_charmouredcaveman;
+ActorData* charmouredcaveman_entrypoint_0()
+{
+    return &D_80800B20_charmouredcaveman;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/armouredcaveman/func_8080000C_charmouredcaveman.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/armouredcaveman/func_808000EC_charmouredcaveman.s")

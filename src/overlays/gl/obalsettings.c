@@ -23,7 +23,7 @@ void func_80800084_glglobalsettings()
 
 s32 glglobalsettings_entrypoint_3()
 {
-    return func_800DA298(GFLAG_BB9_WIDESCREEN_ENABLED);
+    return flag_getValue(GFLAG_BB9_WIDESCREEN_ENABLED);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gl/obalsettings/glglobalsettings_entrypoint_4.s")

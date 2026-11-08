@@ -1,4 +1,4 @@
-#include "overlays/bs/mum/move.h"
+#include "bs/mum/move.h"
 
 f32 bsmummove_entrypoint_0(PlayerState *self) {
     return 600.0f;
@@ -27,7 +27,7 @@ void func_80800068_bsmummove(PlayerState *self) {
     anim_start = 0.0f;
     if (bs_getPreviousState(self) == 0xE6) {
         anim_start = baanim_getTimer(self);
-        if (func_8009BB5C(self) < 200.0f) {
+        if (baphysics_get_horizontal_velocity(self) < 200.0f) {
             _badust_entrypoint_3(self, 0.0f, 0.0f);
         }
     }
@@ -47,7 +47,7 @@ void func_80800068_bsmummove(PlayerState *self) {
 }
 
 void func_808001D8_bsmummove(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
     func_8009D2F0(self, 0, 0.5f);
@@ -116,7 +116,7 @@ void func_80800338_bsmummove(PlayerState *self) {
 }
 
 void func_80800444_bsmummove(PlayerState *self) {
-    enum bs_state_e next_state;
+    BanjoStateId next_state;
     s32 temp_v0;
 
     next_state = BS_STATE_0_INVALID;

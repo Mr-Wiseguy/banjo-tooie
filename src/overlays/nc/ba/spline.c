@@ -1,4 +1,5 @@
 #include "common.h"
+#include "nc/ba/spline.h"
 
 s32 ncbaspline_entrypoint_0() 
 {

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/xform.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/xform/func_80800000_bsdronexform.s")
 

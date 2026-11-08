@@ -6,4 +6,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemdoors/func_8080026C_chdodgemdoors.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/dodgemdoors/chdodgemdoors_entrypoint_0.s")
+extern ActorData D_80800374_chdodgemdoors;
+ActorData* chdodgemdoors_entrypoint_0()
+{
+    return &D_80800374_chdodgemdoors;
+}

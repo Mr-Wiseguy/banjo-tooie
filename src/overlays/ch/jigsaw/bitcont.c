@@ -10,8 +10,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/func_8080040C_chjigsawbitcont.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/chjigsawbitcont_entrypoint_0.s")
-
+extern ActorData D_808009B8_chjigsawbitcont;
+ActorData* chjigsawbitcont_entrypoint_0()
+{
+    return &D_808009B8_chjigsawbitcont;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/func_80800570_chjigsawbitcont.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/func_80800634_chjigsawbitcont.s")
@@ -22,4 +25,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/func_80800890_chjigsawbitcont.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/bitcont/chjigsawbitcont_entrypoint_1.s")
+extern ActorData D_80800A28_chjigsawbitcont;
+ActorData* chjigsawbitcont_entrypoint_1()
+{
+    return &D_80800A28_chjigsawbitcont;
+}

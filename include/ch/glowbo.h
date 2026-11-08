@@ -14,7 +14,7 @@
 #include "su/baddiedialog.h"
 #include "su/dialog.h"
 
-#include "core2/1E2B200.h"
+#include "core1/1E2B200.h"
 
 #include "core2/1E691A0.h"
 #include "core2/1E93440.h"
@@ -73,5 +73,8 @@ typedef struct {
 
 void func_80800000_chglowbo(Actor* arg0);
 void func_80801258_chglowbo(Actor*);
+Actor* _chglowbo_entrypoint_4();
+Actor* _chglowbo_entrypoint_5();
+void _chglowbo_entrypoint_6();
 
 #endif

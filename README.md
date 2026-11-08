@@ -1,16 +1,12 @@
 # Banjo Tooie Decomp
 
-![code Progress]
-![boot Progress]
-![core1 Progress]
-![core2 Progress]
-![overlays Progress]
-
-[code Progress]: https://img.shields.io/endpoint?label=All&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Ftooie%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Dall
-[boot Progress]: https://img.shields.io/endpoint?label=Boot&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Ftooie%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Dboot
-[core1 Progress]: https://img.shields.io/endpoint?label=Core1&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Ftooie%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Dcore1
-[core2 Progress]: https://img.shields.io/endpoint?label=Core2&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Ftooie%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Dcore2
-[overlays Progress]: https://img.shields.io/endpoint?label=Overlays&url=https%3A%2F%2Fprogress.deco.mp%2Fdata%2Ftooie%2Fus%2Fcode%2F%3Fmode%3Dshield%26measure%3Doverlays
+| Category  | DecompedSize /    Total | OfFolder%  | OfTotal%|
+| ------------- | ------------- | ------------- | ------------- |
+| all  | 740244 /  2904832  | 25.4832% | 25.4832% / 100.0000% |
+| boot  | 15936 /    15936  | 100.0000% | 0.5486% /   0.5486% |
+| core1  | 65192 /   153680  | 42.4206% |2.2443% /   5.2905%|
+| core2  | 184936 /   616096  | 30.0174% | 6.3667% /  21.2094% |
+| overlays  | 474180 /  2119120  | 22.3763% | 16.3238% /  72.9516% |
 
 ## Setup
 

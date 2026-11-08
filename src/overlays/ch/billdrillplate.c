@@ -1,11 +1,20 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/chbilldrillplate_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/chbilldrillplate_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/chbilldrillplate_entrypoint_2.s")
-
+extern ActorData D_808010DC_chbilldrillplate;
+ActorData* chbilldrillplate_entrypoint_0()
+{
+    return &D_808010DC_chbilldrillplate;
+}
+extern ActorData D_80801124_chbilldrillplate;
+ActorData* chbilldrillplate_entrypoint_1()
+{
+    return &D_80801124_chbilldrillplate;
+}
+extern ActorData D_8080116C_chbilldrillplate;
+ActorData* chbilldrillplate_entrypoint_2()
+{
+    return &D_8080116C_chbilldrillplate;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/func_80800024_chbilldrillplate.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/billdrillplate/func_808000B0_chbilldrillplate.s")

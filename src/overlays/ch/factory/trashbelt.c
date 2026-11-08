@@ -6,4 +6,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/trashbelt/func_8080041C_chfactorytrashbelt.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/trashbelt/chfactorytrashbelt_entrypoint_0.s")
+extern ActorData D_808005EC_chfactorytrashbelt;
+ActorData* chfactorytrashbelt_entrypoint_0()
+{
+    return &D_808005EC_chfactorytrashbelt;
+}

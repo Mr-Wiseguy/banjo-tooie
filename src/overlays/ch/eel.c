@@ -22,4 +22,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eel/func_80801330_cheel.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/eel/cheel_entrypoint_0.s")
+extern ActorData D_80801644_cheel;
+ActorData* cheel_entrypoint_0()
+{
+    return &D_80801644_cheel;
+}

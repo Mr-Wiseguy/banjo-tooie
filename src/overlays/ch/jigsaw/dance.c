@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/dance/chjigsawdance_entrypoint_1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jigsaw/dance/chjigsawdance_entrypoint_2.s")
+extern ActorData D_80800488_chjigsawdance;
+ActorData* chjigsawdance_entrypoint_2()
+{
+    return &D_80800488_chjigsawdance;
+}

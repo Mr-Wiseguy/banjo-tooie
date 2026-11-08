@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/chboilerid_entrypoint_0.s")
-
+extern ActorData D_80800D5C_chboilerid;
+ActorData* chboilerid_entrypoint_0()
+{
+    return &D_80800D5C_chboilerid;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/func_8080000C_chboilerid.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/boiler/id/func_80800128_chboilerid.s")

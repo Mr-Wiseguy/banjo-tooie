@@ -5,10 +5,13 @@
 
 #include <ultra64.h>
 
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
+void func_8009CF98(PlayerState*);
 void func_8009CFD8(PlayerState *, f32);
+void func_8009D088(PlayerState*);
 void func_8009D2D8(PlayerState *, s32);
+s32 func_8009D2E4(PlayerState*);
 void func_8009D2F0(PlayerState *, s32, f32);
 void func_8009D3A8(PlayerState *, s32);
 

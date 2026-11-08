@@ -1,7 +1,4 @@
-#include <ultra64.h>
-#include <PR/gbi.h>
-#include "core1/mlmtx.h"
-#include "gfx.h"
+#include "core2/1EBCFC0.h"
 
 typedef struct {
     Gfx* unk0;
@@ -12,30 +9,53 @@ typedef struct {
     u8 unk0[68];
 } Unkfunc_800E44FC_2;
 
-extern s32 D_8012D500;
-extern s32 D_8012D504;
+extern f32* D_8012D500;
+extern f32* D_8012D504;
 extern s32 D_8012D508;
 extern MtxF D_8012D510;
 extern u16 D_8012D550;
 extern Mtx* D_8012D554;
 extern Mtx* D_8012D558;
 
-s32 func_80018BC4();
-s32 func_800A89F8();
-s32 func_800C4C34(s32, s32, s32, s32*);
-void func_800CA314(s32, s32);
-s32 func_800CA334();
-void func_800CA364(s32);
-void func_800CA3F4(s32, s32, f32);
-f32 func_800CA6E8(s32);
-MtxF* func_800CA7AC(s32);
-void func_800CA7E4(s32, f32[3]);
-u16 func_800CB124(s32, MtxF*);
-void func_800E443C(MtxF*, f32[3], f32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E36D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E37E8.s")
+s32 func_800E36D0(s32 min[3], s32 max[3], f32 position[3], f32 direction[3]) {
+    f32 corner[3];
+    f32 dot_product;
+    f32 result;
+    s32 ix;
+    s32 iy;
+    s32 iz;
+
+    result = 0.0f;
+
+    for (ix = 0; ix < 2; ix++) {
+        for (iy = 0; iy < 2; iy++) {
+            for (iz = 0; iz < 2; iz++) {
+                corner[0] = (ix ? min[0] : max[0]) - position[0];
+                corner[1] = (iy ? min[1] : max[1]) - position[1];
+                corner[2] = (iz ? min[2] : max[2]) - position[2];
+
+                dot_product = (direction[0] * corner[0]) + (direction[1] * corner[1]) + (direction[2] * corner[2]);
+
+                if (result < dot_product) {
+                    result = dot_product;
+                }
+            }
+        }
+    }
+
+    return (s32)result;
+}
+
+void func_800E37E8(s32 min[3], s32 max[3], s32 ratio) {
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        min[i] = (min[i] >= 0) ? min[i] / ratio : min[i] / ratio - 1;
+        max[i] = (max[i] >= 0) ? max[i] / ratio : max[i] / ratio - 1;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3900.s")
 
@@ -49,15 +69,30 @@ void func_800E443C(MtxF*, f32[3], f32);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E39D8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A08.s")
+void func_800E3A08(s32 arg0)
+{
+    func_800CA810(D_8012D500, arg0);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A30.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A58.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3A80.s")
+f32 func_800E3A80(void) {
+    return func_800CAA1C(D_8012D500);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3AA4.s")
+s32 func_800E3AA4(f32 x) {
+    f32 val = (s32)(func_800E3A80() - x);
+
+    while (val < 0)
+        val += 360;
+
+    while (val >= 360)
+        val -= 360;
+
+    return val;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EBCFC0/func_800E3B50.s")
 
@@ -125,7 +160,7 @@ void func_800E4208() {
     D_8012D504 = 0;
 }
 
-void func_800E4244(s32 arg0, f32 arg1) {
+void func_800E4244(f32* arg0, f32 arg1) {
     func_800CA3F4(D_8012D500, arg0, arg1);
 }
 
@@ -137,11 +172,11 @@ void func_800E4290() {
     D_8012D500 = D_8012D504 = 0;
 }
 
-s32 func_800E42A8() {
+f32* func_800E42A8() {
     return D_8012D500;
 }
 
-void func_800E42B4(s32 arg0) {
+void func_800E42B4(f32* arg0) {
     D_8012D500 = arg0;
 }
 

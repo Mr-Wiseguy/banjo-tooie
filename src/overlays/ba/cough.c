@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/cough.h"
+#include "ba/cough.h"
 
 #include "core2/1E76CC0.h"
 #include "core2/1E7BFA0.h"
@@ -44,11 +44,11 @@ void bacough_entrypoint_5(PlayerState *self) {
 
     if ((self->cough->unk0 == 2)
         && func_800F424C(self)
-        && func_800D9078(&self->cough->unk4)
+        && timer_reachedZero(&self->cough->unk4)
     ){
-        sp20 = func_800DC0C0();
-        sp1C = func_800DC178(0.97f, 1.03f);
-        switch (func_800A3274(self)) {
+        sp20 = rand_f();
+        sp1C = rand_fBounded(0.97f, 1.03f);
+        switch (player_getTransformation(self)) {
             case TRANSFORM_1_BK:
             case TRANSFORM_A_BANJO:
                 if(sp20 < 0.3333f) {
@@ -60,7 +60,7 @@ void bacough_entrypoint_5(PlayerState *self) {
                 }
                 break;
 
-            case 0xB:
+            case TRANSFORM_B_KAZOOIE:
                 if (sp20 < 0.5f) {
                     sp24 = 0x45B;
                 } else {
@@ -84,12 +84,12 @@ void bacough_entrypoint_5(PlayerState *self) {
             func_8009DB04(self, sp24, sp1C, 24000);
         }
         
-        if (func_800DC298(0.1f)) {
-            self->cough->unk4 = func_800DC178(0.3f, 0.8f);
-        } else if (func_800DC298(0.4f)) {
-            self->cough->unk4 = func_800DC178(1.5f, 2.5f);
+        if (rand_percentChance(0.1f)) {
+            self->cough->unk4 = rand_fBounded(0.3f, 0.8f);
+        } else if (rand_percentChance(0.4f)) {
+            self->cough->unk4 = rand_fBounded(1.5f, 2.5f);
         } else {
-            self->cough->unk4 = func_800DC178(3.5f, 4.5f);
+            self->cough->unk4 = rand_fBounded(3.5f, 4.5f);
         }
     }
 }

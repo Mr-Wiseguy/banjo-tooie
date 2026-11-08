@@ -1,11 +1,20 @@
-#include "common.h"
+#include "ch/aliendad.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/chaliendad_entrypoint_0.s")
+extern ActorData D_80802674_chaliendad;
+extern ActorData D_808026BC_chaliendad;
+extern ActorData D_80802704_chaliendad;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/chaliendad_entrypoint_1.s")
+ActorData* chaliendad_entrypoint_0(void) {
+    return &D_80802674_chaliendad;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/chaliendad_entrypoint_2.s")
+ActorData*chaliendad_entrypoint_1(void) {
+    return &D_808026BC_chaliendad;
+}
 
+ActorData* chaliendad_entrypoint_2(void) {
+    return &D_80802704_chaliendad;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_80800024_chaliendad.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/aliendad/func_808000AC_chaliendad.s")
@@ -50,7 +59,7 @@
 
 void func_80801E80_chaliendad(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

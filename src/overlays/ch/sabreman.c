@@ -1,13 +1,21 @@
 #include "common.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/chsabreman_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/chsabreman_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/chsabreman_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/chsabreman_entrypoint_3.s")
-
+extern ActorData D_80801D30_chsabreman;
+ActorData* chsabreman_entrypoint_1()
+{
+    return &D_80801D30_chsabreman;
+}
+extern ActorData D_80801D78_chsabreman;
+ActorData* chsabreman_entrypoint_2()
+{
+    return &D_80801D78_chsabreman;
+}
+extern ActorData D_80801DC0_chsabreman;
+ActorData* chsabreman_entrypoint_3()
+{
+    return &D_80801DC0_chsabreman;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/func_80800030_chsabreman.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/sabreman/func_80800218_chsabreman.s")

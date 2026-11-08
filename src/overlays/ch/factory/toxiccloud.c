@@ -24,4 +24,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/func_808012C4_chfactorytoxiccloud.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/toxiccloud/chfactorytoxiccloud_entrypoint_0.s")
+extern ActorData D_80801568_chfactorytoxiccloud;
+ActorData* chfactorytoxiccloud_entrypoint_0()
+{
+    return &D_80801568_chfactorytoxiccloud;
+}

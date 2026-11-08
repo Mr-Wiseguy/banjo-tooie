@@ -22,10 +22,17 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/sparkroom/func_80800DC8_chfactorysparkroom.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/sparkroom/chfactorysparkroom_entrypoint_0.s")
-
+extern ActorData D_80801108_chfactorysparkroom;
+ActorData* chfactorysparkroom_entrypoint_0()
+{
+    return &D_80801108_chfactorysparkroom;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/sparkroom/func_80800E94_chfactorysparkroom.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/sparkroom/func_80800EC8_chfactorysparkroom.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/sparkroom/chfactorysparkroom_entrypoint_1.s")
+extern ActorData D_8080115C_chfactorysparkroom;
+ActorData* chfactorysparkroom_entrypoint_1()
+{
+    return &D_8080115C_chfactorysparkroom;
+}

@@ -2,9 +2,10 @@
 #define __GL_DBSTRING_H__
 
 #include "common.h"
+#include "gl/dialog.h"
 
 u32 *_gldbstring_entrypoint_0(u32* TextAddress, u32 a1);
-u32 *_gldbstring_entrypoint_1(u32* TextAddress, u8 index);
-void _gldbstring_entrypoint_2(u16 a0); // this may return something
+char *_gldbstring_entrypoint_1(u32* TextAddress, s16 index);
+void _gldbstring_entrypoint_2(s32 a0); // this may return something
 
 #endif

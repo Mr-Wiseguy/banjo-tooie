@@ -1,24 +1,4 @@
-#include "common.h"
-
-#include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/assets.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/timer.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/stick.h"
-#include "core2/1E72EA0.h"
-#include "overlays/bs/state.h"
-#include "core2/1E66990.h"
-#include "core2/1E6B900.h"
-#include "core2/1E76CC0.h"
-#include "core2/1E78BF0.h"
-#include "core2/1E79FD0.h"
-#include "core2/1EA0690.h"
-#include "core2/1EB2840.h"
-#include "core2/1EB5980.h"
-#include "bs.h"
+#include "bs/bflap.h"
 
 void bsbflap_init(PlayerState *self) {
     baanim_playForDuration_once(self, ASSET_18_ANIM_BSBFLAP_ENTER, 0.3f);
@@ -71,7 +51,7 @@ void func_808001D8_bsbflap(PlayerState *self) {
 
 void func_80800210_bsbflap(PlayerState *self) {
     self->unk16C = self->unk170;
-    self->unk170 += func_800D8FF8();
+    self->unk170 += time_getDelta();
 }
 
 int func_80800248_bsbflap(PlayerState *self, f32 value) {
@@ -89,7 +69,7 @@ void func_80800294_bsbflap(PlayerState *self) {
         func_8009DF18(self, 0x4431, 1.0f, 22000);
     }
     if ((anctrl_getIndex(anctrl) == 0x17) && anctrl_isAt(anctrl, 0.02f)) {
-        func_8009DF94(self, 0x3FF, func_800DC178(0.92f, 1.02f), 16000);
+        func_8009DF94(self, 0x3FF, rand_fBounded(0.92f, 1.02f), 16000);
     }
 }
 
@@ -177,13 +157,13 @@ void bsbflap_update(PlayerState *self) {
         next_state = BS_STATE_F_BBUSTER;
     }
     
-    if (func_8008DA24(self)) {
-        next_state = BS_STATE_A8;
+    if (player_canGripGrab(self)) {
+        next_state = BS_STATE_A8_GRIP_GRAB_START;
     }
 
     if (player_isStable(self)) {
         func_8009FE58(self);
-        next_state = BS_STATE_1_SLOW_WALK;
+        next_state = BS_STATE_2_SLOW_WALK;
     }
 
     if (player_inWater(self)) {

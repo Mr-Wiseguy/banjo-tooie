@@ -1,9 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/madamegrunty/chmadamegrunty_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/madamegrunty/chmadamegrunty_entrypoint_1.s")
-
+extern ActorData D_80800B50_chmadamegrunty;
+ActorData* chmadamegrunty_entrypoint_0()
+{
+    return &D_80800B50_chmadamegrunty;
+}
+extern ActorData D_80800B98_chmadamegrunty;
+ActorData* chmadamegrunty_entrypoint_1()
+{
+    return &D_80800B98_chmadamegrunty;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/madamegrunty/func_80800018_chmadamegrunty.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/madamegrunty/func_8080005C_chmadamegrunty.s")

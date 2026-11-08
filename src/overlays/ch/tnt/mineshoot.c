@@ -34,8 +34,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80800C90_chtntmineshoot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/chtntmineshoot_entrypoint_0.s")
-
+extern ActorData D_80802690_chtntmineshoot;
+ActorData* chtntmineshoot_entrypoint_0()
+{
+    return &D_80802690_chtntmineshoot;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80800E10_chtntmineshoot.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80800E64_chtntmineshoot.s")
@@ -60,8 +63,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80801A54_chtntmineshoot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/chtntmineshoot_entrypoint_1.s")
-
+extern ActorData D_808026D8_chtntmineshoot;
+ActorData* chtntmineshoot_entrypoint_1()
+{
+    return &D_808026D8_chtntmineshoot;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80801BA0_chtntmineshoot.s")
 
 void func_80801C10_chtntmineshoot(s32 arg0) 
@@ -76,8 +82,11 @@ void func_80801C18_chtntmineshoot(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80801DEC_chtntmineshoot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/chtntmineshoot_entrypoint_2.s")
-
+extern ActorData D_80802774_chtntmineshoot;
+ActorData* chtntmineshoot_entrypoint_2()
+{
+    return &D_80802774_chtntmineshoot;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80801F90_chtntmineshoot.s")
 
 void func_80802140_chtntmineshoot(s32 arg0) 
@@ -93,4 +102,8 @@ void func_80802140_chtntmineshoot(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/func_80802320_chtntmineshoot.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/mineshoot/chtntmineshoot_entrypoint_3.s")
+extern ActorData D_808028E4_chtntmineshoot;
+ActorData* chtntmineshoot_entrypoint_3()
+{
+    return &D_808028E4_chtntmineshoot;
+}

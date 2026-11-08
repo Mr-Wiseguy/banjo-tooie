@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ba/setup.h"
 
 s32 basetup_entrypoint_0() 
 {
@@ -29,9 +29,6 @@ s32 basetup_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/setup/basetup_entrypoint_2.s")
 
-void basetup_entrypoint_3(s32 arg0) 
-{
-}
-void basetup_entrypoint_4(s32 arg0) 
-{
-}
+void basetup_entrypoint_3(s32 arg0) {}
+
+void basetup_entrypoint_4(s32 arg0) {}

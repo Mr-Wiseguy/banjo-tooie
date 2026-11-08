@@ -14,12 +14,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/func_80800D8C_chlavahand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/chlavahand_entrypoint_0.s")
-
+extern ActorData D_808013D0_chlavahand;
+ActorData* chlavahand_entrypoint_0()
+{
+    return &D_808013D0_chlavahand;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/func_80800E0C_chlavahand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/func_80800FB4_chlavahand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/func_808011BC_chlavahand.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/hand/chlavahand_entrypoint_1.s")
+extern ActorData D_80801418_chlavahand;
+ActorData* chlavahand_entrypoint_1()
+{
+    return &D_80801418_chlavahand;
+}

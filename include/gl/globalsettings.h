@@ -4,6 +4,6 @@
 #include "common.h"
 #include "core2/1EB3750.h"
 
-
+void _glglobalsettings_entrypoint_2();
 
 #endif

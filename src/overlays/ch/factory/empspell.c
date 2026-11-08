@@ -34,4 +34,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/func_80801FE0_chfactoryempspell.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/empspell/chfactoryempspell_entrypoint_1.s")
+extern ActorData D_80802414_chfactoryempspell;
+ActorData* chfactoryempspell_entrypoint_1()
+{
+    return &D_80802414_chfactoryempspell;
+}

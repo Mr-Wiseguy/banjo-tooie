@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fog/func_808009F0_chfog.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fog/chfog_entrypoint_0.s")
+extern ActorData D_80800A90_chfog;
+ActorData* chfog_entrypoint_0()
+{
+    return &D_80800A90_chfog;
+}

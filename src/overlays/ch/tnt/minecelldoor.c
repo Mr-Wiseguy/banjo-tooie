@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/tnt/minecelldoor/chtntminecelldoor_entrypoint_0.s")
-
+extern ActorData D_80800140_chtntminecelldoor;
+ActorData* chtntminecelldoor_entrypoint_0()
+{
+    return &D_80800140_chtntminecelldoor;
+}
 void func_8080000C_chtntminecelldoor(s32 arg0)
 {
     _subaddiefade_entrypoint_14();

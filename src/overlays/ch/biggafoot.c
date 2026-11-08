@@ -1,16 +1,22 @@
 #include "ch/biggafoot.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/chbiggafoot_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/chbiggafoot_entrypoint_1.s")
-
+extern ActorData D_80801094_chbiggafoot;
+ActorData* chbiggafoot_entrypoint_0()
+{
+    return &D_80801094_chbiggafoot;
+}
+extern ActorData D_808010DC_chbiggafoot;
+ActorData* chbiggafoot_entrypoint_1()
+{
+    return &D_808010DC_chbiggafoot;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/func_80800018_chbiggafoot.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/func_80800100_chbiggafoot.s")
 
 void func_808004B0_chbiggafoot(s32 arg0)
 {
-    func_800DA524(FLAG2_6CD_UNK);
+    flag_setValueFalse(FLAG2_6CD_UNK);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/biggafoot/func_808004D4_chbiggafoot.s")

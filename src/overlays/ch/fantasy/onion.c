@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/func_808006E0_chfantasyonion.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/fantasy/onion/chfantasyonion_entrypoint_0.s")
+extern ActorData D_80800754_chfantasyonion;
+ActorData* chfantasyonion_entrypoint_0()
+{
+    return &D_80800754_chfantasyonion;
+}

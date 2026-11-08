@@ -22,8 +22,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800B68_chtoothyfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/chtoothyfish_entrypoint_0.s")
-
+extern ActorData D_80801870_chtoothyfish;
+ActorData* chtoothyfish_entrypoint_0()
+{
+    return &D_80801870_chtoothyfish;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80800E04_chtoothyfish.s")
 
 void func_80800EDC_chtoothyfish(s32 arg0) 
@@ -37,4 +40,8 @@ void func_80800EDC_chtoothyfish(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/func_80801588_chtoothyfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/toothyfish/chtoothyfish_entrypoint_1.s")
+extern ActorData D_80801914_chtoothyfish;
+ActorData* chtoothyfish_entrypoint_1()
+{
+    return &D_80801914_chtoothyfish;
+}

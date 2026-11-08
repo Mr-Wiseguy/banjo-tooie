@@ -2,10 +2,15 @@
 #define __CORE2_1ECD070_H__
 
 #include "common.h"
+#include "core2/1ECA640.h"
 
 #include <ultra64.h>
-#include "overlays/ba/playerstate.h"
+#include "ba/playerstate.h"
 
-void func_800F3BD0(PlayerState *, s32, f32[3]);
+typedef struct {
+    f32 x;
+    f32 y;
+} Vec2f;
+
 
 #endif // __CORE2_1ECD070_H__

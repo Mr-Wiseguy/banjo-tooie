@@ -92,8 +92,11 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_808035C4_chflysaucer.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/chflysaucer_entrypoint_1.s")
-
+extern ActorData D_80804668_chflysaucer;
+ActorData* chflysaucer_entrypoint_1()
+{
+    return &D_80804668_chflysaucer;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803844_chflysaucer.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_808038C4_chflysaucer.s")
@@ -115,4 +118,8 @@ void func_80803BE8_chflysaucer(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/func_80803D30_chflysaucer.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/flysaucer/chflysaucer_entrypoint_2.s")
+extern ActorData D_8080470C_chflysaucer;
+ActorData* chflysaucer_entrypoint_2()
+{
+    return &D_8080470C_chflysaucer;
+}

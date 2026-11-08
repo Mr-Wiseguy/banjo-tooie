@@ -8,4 +8,8 @@ void func_8080005C_chlavaentrancebridgeswitch(s32 arg0)
     _chswitch_entrypoint_9(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/entrancebridgeswitch/chlavaentrancebridgeswitch_entrypoint_0.s")
+extern ActorData D_808000A0_chlavaentrancebridgeswitch;
+ActorData* chlavaentrancebridgeswitch_entrypoint_0()
+{
+    return &D_808000A0_chlavaentrancebridgeswitch;
+}

@@ -12,7 +12,7 @@ void func_80800000_chnewfreezy()
 void func_808000AC_chnewfreezy(s32 arg0)
 {
     _sufreezy_entrypoint_2();
-    func_8010A570(arg0);
+    actor_disableCollision(arg0);
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newfreezy/func_808000D4_chnewfreezy.s")
 
@@ -40,4 +40,8 @@ void func_808000AC_chnewfreezy(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newfreezy/func_808017FC_chnewfreezy.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/newfreezy/chnewfreezy_entrypoint_1.s")
+extern ActorData D_80801978_chnewfreezy;
+ActorData* chnewfreezy_entrypoint_1()
+{
+    return &D_80801978_chnewfreezy;
+}

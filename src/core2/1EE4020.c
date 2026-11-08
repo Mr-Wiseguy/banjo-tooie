@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1EE4020.h"
 
 void func_8010A730(s32 arg0, s32 arg1) {
 }

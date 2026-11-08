@@ -8,4 +8,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/columns/func_80800200_chlavacolumns.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lava/columns/chlavacolumns_entrypoint_0.s")
+extern ActorData D_80800260_chlavacolumns;
+ActorData* chlavacolumns_entrypoint_0()
+{
+    return &D_80800260_chlavacolumns;
+}

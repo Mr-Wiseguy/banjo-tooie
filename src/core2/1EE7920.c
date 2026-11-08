@@ -1,3 +1,11 @@
-#include "common.h"
+#include "core2/1EE7920.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EE7920/func_8010E030.s")
+extern void* D_80127614;
+
+void func_8010E030(void)
+{
+    if (D_80127614 != NULL)
+    {
+        D_80127614 = defrag(D_80127614);
+    }
+}

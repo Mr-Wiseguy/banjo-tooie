@@ -16,4 +16,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/torpedo/func_80800720_chtorpedo.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/torpedo/chtorpedo_entrypoint_1.s")
+extern ActorData D_8080095C_chtorpedo;
+ActorData* chtorpedo_entrypoint_1()
+{
+    return &D_8080095C_chtorpedo;
+}

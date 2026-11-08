@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/light/chfactorylight_entrypoint_0.s")
-
+extern ActorData D_80800B90_chfactorylight;
+ActorData* chfactorylight_entrypoint_0()
+{
+    return &D_80800B90_chfactorylight;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/light/func_8080000C_chfactorylight.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/factory/light/func_80800038_chfactorylight.s")

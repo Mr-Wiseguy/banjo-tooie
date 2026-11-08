@@ -5,5 +5,6 @@
 #include "player.h"
 #include "core2/1EEBA50.h"
 
+void _ncbaspiral_entrypoint_5(PlayerState*, s32);
 
 #endif

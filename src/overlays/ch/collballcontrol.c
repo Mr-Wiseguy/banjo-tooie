@@ -59,8 +59,11 @@ void func_808000F4_chcollballcontrol()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80801650_chcollballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_0.s")
-
+extern ActorData D_80804DA8_chcollballcontrol;
+ActorData* chcollballcontrol_entrypoint_0()
+{
+    return &D_80804DA8_chcollballcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80801764_chcollballcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80801920_chcollballcontrol.s")
@@ -108,12 +111,21 @@ void func_80803208_chcollballcontrol(s32 arg0)
     func_80801764_chcollballcontrol(arg0,0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_4.s")
-
+extern ActorData D_80804F58_chcollballcontrol;
+ActorData* chcollballcontrol_entrypoint_2()
+{
+    return &D_80804F58_chcollballcontrol;
+}
+extern ActorData D_80804FA0_chcollballcontrol;
+ActorData* chcollballcontrol_entrypoint_3()
+{
+    return &D_80804FA0_chcollballcontrol;
+}
+extern ActorData D_80804FE8_chcollballcontrol;
+ActorData* chcollballcontrol_entrypoint_4()
+{
+    return &D_80804FE8_chcollballcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_8080324C_chcollballcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_808032CC_chcollballcontrol.s")
@@ -144,4 +156,8 @@ void func_80803208_chcollballcontrol(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/func_80804AA8_chcollballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/collballcontrol/chcollballcontrol_entrypoint_5.s")
+extern ActorData D_808050CC_chcollballcontrol;
+ActorData* chcollballcontrol_entrypoint_5()
+{
+    return &D_808050CC_chcollballcontrol;
+}

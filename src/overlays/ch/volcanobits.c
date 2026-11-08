@@ -1,13 +1,25 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/chvolcanobits_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/chvolcanobits_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/chvolcanobits_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/chvolcanobits_entrypoint_3.s")
-
+extern ActorData D_80801154_chvolcanobits;
+ActorData* chvolcanobits_entrypoint_0()
+{
+    return &D_80801154_chvolcanobits;
+}
+extern ActorData D_8080119C_chvolcanobits;
+ActorData* chvolcanobits_entrypoint_1()
+{
+    return &D_8080119C_chvolcanobits;
+}
+extern ActorData D_808011E4_chvolcanobits;
+ActorData* chvolcanobits_entrypoint_2()
+{
+    return &D_808011E4_chvolcanobits;
+}
+extern ActorData D_8080122C_chvolcanobits;
+ActorData* chvolcanobits_entrypoint_3()
+{
+    return &D_8080122C_chvolcanobits;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_80800030_chvolcanobits.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/volcanobits/func_80800170_chvolcanobits.s")

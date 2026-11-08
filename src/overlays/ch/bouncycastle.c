@@ -1,13 +1,25 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_3.s")
-
+extern ActorData D_80800930_chbouncycastle;
+ActorData* chbouncycastle_entrypoint_0()
+{
+    return &D_80800930_chbouncycastle;
+}
+extern ActorData D_80800978_chbouncycastle;
+ActorData* chbouncycastle_entrypoint_1()
+{
+    return &D_80800978_chbouncycastle;
+}
+extern ActorData D_808009C0_chbouncycastle;
+ActorData* chbouncycastle_entrypoint_2()
+{
+    return &D_808009C0_chbouncycastle;
+}
+extern ActorData D_80800A08_chbouncycastle;
+ActorData* chbouncycastle_entrypoint_3()
+{
+    return &D_80800A08_chbouncycastle;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/chbouncycastle_entrypoint_4.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/bouncycastle/func_80800148_chbouncycastle.s")

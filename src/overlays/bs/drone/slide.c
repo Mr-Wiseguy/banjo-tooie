@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/slide.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/slide/func_80800000_bsdroneslide.s")
 

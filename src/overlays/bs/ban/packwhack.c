@@ -1,34 +1,15 @@
-#include "common.h"
-
-#include "overlays/ba/anim.h"
-#include "overlays/ba/flag.h"
-#include "overlays/ba/key.h"
-#include "overlays/ba/physics.h"
-#include "overlays/ba/playerstate.h"
-#include "overlays/ba/yaw.h"
-#include "bs.h"
-#include "overlays/bs/state.h"
-
-#include "core2/1E76CC0.h"
-#include "core2/1E77A20.h"
-#include "core2/1E8F430.h"
-#include "core2/1E93440.h"
-#include "core2/1ECA640.h"
+#include "bs/ban/packwhack.h"
 
 extern s32 D_808004D0_bsbanpackwhack;
 extern BsScript D_8080050C_bsbanpackwhack[4];
 
-extern void _babackpack_entrypoint_5(PlayerState *);
-extern void func_800F1574(f32 *, f32);
-
-
-s32 func_80800000_bsbanpackwhack(s32 arg0, f32 arg1) {
+s32 func_80800000_bsbanpackwhack(f32* arg0, f32 arg1) {
     s32 sp24 = func_800B5BE4(0xA);
     func_800BA77C(sp24, 0, (s16)arg1, 0);
     return func_800BABB8(sp24, arg0, 0, 1.0f, &D_808004D0_bsbanpackwhack);
 }
 
-void func_80800074_bsbanpackwhack(PlayerState * self, s32 arg1) {
+void func_80800074_bsbanpackwhack(PlayerState * self, f32* arg1) {
     s32 tmp_v0 = func_80800000_bsbanpackwhack(arg1, yaw_get(self));
     func_800BA22C(tmp_v0, 1);
 }
@@ -56,16 +37,18 @@ void bsbanpackwhack_entrypoint_1(PlayerState *self) {
     self->unk170 = 0.0f;
 }
 
-void bsbanpackwhack_entrypoint_2(PlayerState *self) {
+void bsbanpackwhack_entrypoint_2(PlayerState *self) 
+{
     BanjoStateId next_state = BS_STATE_0_INVALID;
-    AnimCtrl *anctrl = baanim_getAnimCtrlPtr(self);
+    AnimCtrl* anctrl = baanim_getAnimCtrlPtr(self);
     f32 tmp_f0;
     f32 sp28[3];
 
+
     if (player_isStable(self)) {
-        func_800F1574(&self->unk16C, func_800F0E00(self->unk16C * 0.08f, 3.0f));
+        ml_timer_update(&self->unk16C, ml_max_f(self->unk16C * 0.08f, 3.0f));
     } else {
-        func_800F1574(&self->unk16C, func_800F0E00(self->unk16C * 0.04f, 3.0f));
+        ml_timer_update(&self->unk16C, ml_max_f(self->unk16C * 0.04f, 3.0f));
     }
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
 
@@ -81,15 +64,18 @@ void bsbanpackwhack_entrypoint_2(PlayerState *self) {
         func_8009DF94(self, 0x3FF, 0.8f, 22000);
     }
 
-    if (_babackpack_get_state(self) == 2) {
+    if (_babackpack_get_state(self) == 2) 
+    {
         tmp_f0 = anctrl_getAnimTimer(anctrl);
-        if ((0.23f < tmp_f0) && (tmp_f0 < 0.695f)){
+        if ((0.23f < tmp_f0) && (tmp_f0 < 0.695f))
+        {
             _babackpack_entrypoint_6(self, sp28, 0);
             func_80800074_bsbanpackwhack(self, sp28);
         }
     }
 
-    if (self->unk170 != 0.0f) {
+    if (self->unk170 != 0.0f) 
+    {
         self->unk170 = 0.0f;
         func_8009E55C(self, 2, 50.0f);
         func_8009E4E0(self, 2, _babackpack_entrypoint_5);

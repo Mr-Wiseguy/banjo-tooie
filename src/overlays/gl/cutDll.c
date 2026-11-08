@@ -47,7 +47,7 @@ void func_80800018_glcutDll(u32 arg0)
         func_800FE734(0);
         break;
     case 2:
-        if ((D_801275E8.unk0 != D_801275E8.unk2) || (func_800DA298(FLAG3_A52_UNK) != 0))
+        if ((D_801275E8.unk0 != D_801275E8.unk2) || (flag_getValue(FLAG3_A52_UNK) != 0))
         {
             if (D_801275E8.unkA != 0)
             {
@@ -60,7 +60,7 @@ void func_80800018_glcutDll(u32 arg0)
             }
             func_800A7990(D_801275E8.unk0, 0, D_801275E8.unk10);
         }
-        func_800DA544(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
+        flag_setValueTrue(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
         if ((D_801275E8.unkB == 0) && (D_801275E8.unkF == 0))
         {
             func_800C78CC(1);
@@ -69,7 +69,7 @@ void func_80800018_glcutDll(u32 arg0)
         D_801275E8.unkC = 1;
         break;
     case 3:
-        if ((D_801275E8.unk8 == 2) && ((D_801275E8.unk0 != D_801275E8.unk2) || (func_800DA298(FLAG3_A52_UNK) != 0)) && (D_801275E8.unk7 != 0))
+        if ((D_801275E8.unk8 == 2) && ((D_801275E8.unk0 != D_801275E8.unk2) || (flag_getValue(FLAG3_A52_UNK) != 0)) && (D_801275E8.unk7 != 0))
         {
             func_80800000_glcutDll(1U);
             func_8080000C_glcutDll(0U);
@@ -82,7 +82,7 @@ void func_80800018_glcutDll(u32 arg0)
         {
             func_800D92F4();
         }
-        func_800DA524(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
+        flag_setValueFalse(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
         if ((D_801275E8.unkB == 0) && (D_801275E8.unkF != 0))
         {
             func_800C78CC(0);
@@ -94,7 +94,7 @@ void func_80800018_glcutDll(u32 arg0)
         }
         func_8080000C_glcutDll(0U);
         D_801275E8.unk4 = 0;
-        func_800DA524(FLAG3_A52_UNK);
+        flag_setValueFalse(FLAG3_A52_UNK);
         break;
     case 5:
         if (D_801275E8.unkA != 0)
@@ -107,7 +107,7 @@ void func_80800018_glcutDll(u32 arg0)
             func_800A8230();
         }
         func_800A7990(D_801275E8.unk2, 0, D_801275E8.unk10);
-        func_800DA524(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
+        flag_setValueFalse(FLAG2_641_CUTSCENE_STORAGE_ACTIVE);
         if ((D_801275E8.unkB == 0) && (D_801275E8.unkF != 0))
         {
             func_800C78CC(0);
@@ -119,7 +119,7 @@ void func_80800018_glcutDll(u32 arg0)
         }
         D_801275E8.unk4 = 0;
         D_801275E8.unkD = 1;
-        func_800DA524(FLAG3_A52_UNK);
+        flag_setValueFalse(FLAG3_A52_UNK);
         break;
     case 6:
         if (D_801275E8.unk9 != 0)
@@ -145,7 +145,7 @@ void func_80800018_glcutDll(u32 arg0)
 void glcutDll_entrypoint_0(void)
 {
     func_80800018_glcutDll(1U);
-    glcutDll_entrypoint_10(func_800EA05C());
+    glcutDll_entrypoint_10(map_getCurrent());
     glcutDll_entrypoint_11(1U);
     func_80800000_glcutDll(0U);
     D_801275E8.unkA = 1;
@@ -269,7 +269,7 @@ void glcutDll_entrypoint_16(void)
 
 void glcutDll_entrypoint_17(void)
 {
-    if (func_800EA05C() == D_801275E8.unk2)
+    if (map_getCurrent() == D_801275E8.unk2)
     {
         func_80800018_glcutDll(4U);
         func_80800018_glcutDll(1U);
@@ -314,7 +314,7 @@ s32 glcutDll_entrypoint_20(void)
 
 void glcutDll_entrypoint_21(void)
 {
-    func_800DA544(FLAG3_A52_UNK);
+    flag_setValueTrue(FLAG3_A52_UNK);
 }
 
 void glcutDll_entrypoint_22(u32 arg0)
@@ -324,7 +324,7 @@ void glcutDll_entrypoint_22(u32 arg0)
 
 s32 glcutDll_entrypoint_23(void)
 {
-    if ((D_801275E8.unk0 != D_801275E8.unk2) && (func_800EA05C() == D_801275E8.unk0))
+    if ((D_801275E8.unk0 != D_801275E8.unk2) && (map_getCurrent() == D_801275E8.unk0))
     {
         return 1;
     }

@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcoa/func_8080035C_chstoneballcoach.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcoa/chstoneballcoach_entrypoint_0.s")
+extern ActorData D_808003D4_chstoneballcoach;
+ActorData* chstoneballcoach_entrypoint_0()
+{
+    return &D_808003D4_chstoneballcoach;
+}

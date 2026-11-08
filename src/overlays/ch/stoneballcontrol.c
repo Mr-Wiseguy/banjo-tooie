@@ -65,8 +65,11 @@ void func_808000F4_chstoneballcontrol()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80801884_chstoneballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/chstoneballcontrol_entrypoint_0.s")
-
+extern ActorData D_808050D4_chstoneballcontrol;
+ActorData* chstoneballcontrol_entrypoint_0()
+{
+    return &D_808050D4_chstoneballcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80801944_chstoneballcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80801B00_chstoneballcontrol.s")
@@ -114,12 +117,21 @@ void func_8080367C_chstoneballcontrol(s32 arg0)
     func_80801944_chstoneballcontrol(arg0,0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/chstoneballcontrol_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/chstoneballcontrol_entrypoint_3.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/chstoneballcontrol_entrypoint_4.s")
-
+extern ActorData D_808052CC_chstoneballcontrol;
+ActorData* chstoneballcontrol_entrypoint_2()
+{
+    return &D_808052CC_chstoneballcontrol;
+}
+extern ActorData D_80805314_chstoneballcontrol;
+ActorData* chstoneballcontrol_entrypoint_3()
+{
+    return &D_80805314_chstoneballcontrol;
+}
+extern ActorData D_8080535C_chstoneballcontrol;
+ActorData* chstoneballcontrol_entrypoint_4()
+{
+    return &D_8080535C_chstoneballcontrol;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_808036C0_chstoneballcontrol.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80803724_chstoneballcontrol.s")
@@ -146,4 +158,8 @@ void func_8080367C_chstoneballcontrol(s32 arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/func_80804DA0_chstoneballcontrol.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/stoneballcontrol/chstoneballcontrol_entrypoint_5.s")
+extern ActorData D_80805434_chstoneballcontrol;
+ActorData* chstoneballcontrol_entrypoint_5()
+{
+    return &D_80805434_chstoneballcontrol;
+}

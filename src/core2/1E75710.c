@@ -2,25 +2,68 @@
 
 s32 func_8009BE20() 
 {
-    return 0x10;
+    return sizeof(ba_unknown_DC_s);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BE28.s")
+void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
+{
+	ba_unknown_DC_s* temp2;
+	f32 temp_f2;
+	f32 sp2C;
+	f32 gameSpeed;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BF04.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BF34.s")
+	gameSpeed = time_getDelta();
+	temp2 = self->unkDC;
+	sp2C = ml_absNormalizeAngle_f(temp2->unk4 - temp2->unk0);
+	temp_f2 = sp2C * arg2;
+	if (temp_f2 != 0.0f)
+	{
+		temp_f2 = temp_f2 < 0.0f ? ml_clamp_f(temp_f2, -arg1, -3.0f) : ml_clamp_f(temp_f2, 3.0f, arg1);
+	}
+	temp2->unk0 += func_800F212C(temp_f2 * gameSpeed, sp2C);
+	temp2->unk0 = ml_normalizeAngle_f(temp2->unk0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BF5C.s")
+void func_8009BF04(PlayerState* self)
+{
+    self->unkDC->unk0 = 0.0f;
+    self->unkDC->unk4 = 0.0f;
+    func_8009C000(self);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BF8C.s")
+void func_8009BF34(PlayerState* self)
+{
+    func_8009BE28(self, self->unkDC->unk8, self->unkDC->unkC);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BFBC.s")
+void func_8009BF5C(PlayerState* self, f32 arg1) {
+    self->unkDC->unk4 = ml_normalizeAngle_f(arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BFCC.s")
+void func_8009BF8C(PlayerState* self, f32 arg1) {
+    self->unkDC->unk0 = ml_normalizeAngle_f(arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BFD8.s")
+void func_8009BFBC(PlayerState* self) {
+    self->unkDC->unk0 = self->unkDC->unk4;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009BFE4.s")
+f32 func_8009BFCC(PlayerState* self) {
+    return self->unkDC->unk0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E75710/func_8009C000.s")
+f32 func_8009BFD8(PlayerState* self)
+{
+    return self->unkDC->unk4;
+}
+
+void func_8009BFE4(PlayerState* self, f32 arg1, f32 arg2)
+{
+    self->unkDC->unk8 = arg1;
+    self->unkDC->unkC = arg2;
+}
+
+void func_8009C000(PlayerState* self) {
+    func_8009BFE4(self, 500.0f, 0.8f);
+}

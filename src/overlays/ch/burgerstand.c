@@ -1,13 +1,25 @@
 #include "ch/burgerstand.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_0.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_1.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_2.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/chburgerstand_entrypoint_3.s")
-
+extern ActorData D_80800C28_chburgerstand;
+ActorData* chburgerstand_entrypoint_0()
+{
+    return &D_80800C28_chburgerstand;
+}
+extern ActorData D_80800C70_chburgerstand;
+ActorData* chburgerstand_entrypoint_1()
+{
+    return &D_80800C70_chburgerstand;
+}
+extern ActorData D_80800CB8_chburgerstand;
+ActorData* chburgerstand_entrypoint_2()
+{
+    return &D_80800CB8_chburgerstand;
+}
+extern ActorData D_80800D00_chburgerstand;
+ActorData* chburgerstand_entrypoint_3()
+{
+    return &D_80800D00_chburgerstand;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_80800030_chburgerstand.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/burgerstand/func_808000C4_chburgerstand.s")
@@ -27,7 +39,7 @@ void func_80800284_chburgerstand(Actor* arg0)
 
 void func_80800720_chburgerstand(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

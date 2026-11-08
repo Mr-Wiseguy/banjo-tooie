@@ -20,4 +20,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/timetable/func_808005B8_chtimetable.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/timetable/chtimetable_entrypoint_0.s")
+extern ActorData D_808007CC_chtimetable;
+ActorData* chtimetable_entrypoint_0()
+{
+    return &D_808007CC_chtimetable;
+}

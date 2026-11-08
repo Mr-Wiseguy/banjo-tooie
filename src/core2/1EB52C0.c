@@ -92,7 +92,7 @@ void func_800DBC68(void) {
     unkfunc_800DB9FC* temp_v0;
 
     if (D_8012C7E0 != NULL) {
-        temp_f20 = func_800D8FF8();
+        temp_f20 = time_getDelta();
         for (var_s1 = 1; var_s1 < freelist_capacity(D_8012C7E0); var_s1++) {
             if (freelist_is_element_alive(D_8012C7E0, var_s1) != 0) {
                 temp_v0 = freelist_at(D_8012C7E0, var_s1);

@@ -1,7 +1,10 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/idgoldhorde/chidgoldhorde_entrypoint_0.s")
-
+extern ActorData D_808001F0_chidgoldhorde;
+ActorData* chidgoldhorde_entrypoint_0()
+{
+    return &D_808001F0_chidgoldhorde;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/idgoldhorde/func_8080000C_chidgoldhorde.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/idgoldhorde/chidgoldhorde_entrypoint_1.s")

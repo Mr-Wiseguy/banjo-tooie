@@ -14,4 +14,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swappy/chswappy_entrypoint_0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/swappy/chswappy_entrypoint_1.s")
+extern ActorData D_808006D4_chswappy;
+ActorData* chswappy_entrypoint_1()
+{
+    return &D_808006D4_chswappy;
+}

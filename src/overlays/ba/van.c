@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/ba/van.h"
+#include "ba/van.h"
 
 #include "core2/1E6A730.h"
 #include "core2/1E6B900.h"
@@ -20,7 +20,7 @@ s32 bavan_entrypoint_0(void) {
 void bavan_entrypoint_1(PlayerState *self) {
     f32 sp1C[3];
     func_8009DE38(self, 0x505, 1.0f);
-    func_8009C128(self, sp1C);
+    player_getCoords(self, sp1C);
     func_801013A8(sp1C, 0x19, self->unk184);
 }
 
@@ -62,7 +62,7 @@ void bavan_entrypoint_8(PlayerState *self) {
     f32 sp38[3];
     f32 dt;
     
-    dt = func_800D8FF8();
+    dt = time_getDelta();
     self->van->unk8 += self->van->unkC* dt;
     self->van->unk0 = func_800F15F8(self->van->unk0, self->van->unk4, dt*200.0f);
     tmp_s1 = func_80092AD8(self);
@@ -71,7 +71,7 @@ void bavan_entrypoint_8(PlayerState *self) {
     func_800E0AFC(tmp_s1, 0x2B, 1.0f, self->van->unk8, self->van->unk0, 0.0f);
     func_800E0AFC(tmp_s1, 0x2C, 1.0f, self->van->unk8, 0.0f, 0.0f);
     func_800E0AFC(tmp_s1, 0x2D, 1.0f, self->van->unk8, 0.0f, 0.0f);
-    func_8009C128(self, sp38);
+    player_getCoords(self, sp38);
     func_800C368C(self->van->unk10, 0);
     func_800C334C(self->van->unk10, 0x40);
     func_800C31DC(self->van->unk10, self->van->unk14);

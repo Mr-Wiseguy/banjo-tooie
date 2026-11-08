@@ -1,4 +1,4 @@
-#include "common.h"
+#include "bs/drone/look.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/bs/drone/look/bsdronelook_entrypoint_0.s")
 

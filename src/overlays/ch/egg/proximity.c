@@ -1,7 +1,10 @@
-#include "common.h"
+#include "ch/egg/proximity.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_entrypoint_0.s")
-
+extern ActorData D_80800CE0_cheggproximity;
+ActorData* cheggproximity_entrypoint_0()
+{
+    return &D_80800CE0_cheggproximity;
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/cheggproximity_entrypoint_1.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/egg/proximity/func_808000A8_cheggproximity.s")

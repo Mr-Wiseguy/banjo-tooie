@@ -1,4 +1,4 @@
-#include "common.h"
+#include "nc/ba/1p.h"
 
 s32 ncba1p_entrypoint_0() 
 {

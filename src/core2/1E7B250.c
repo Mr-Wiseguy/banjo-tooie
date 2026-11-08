@@ -13,7 +13,7 @@ s32 func_800A1960()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7B250/func_800A2018.s")
 
-void func_800A2058(s32 arg0) 
+void func_800A2058(PlayerState* self)
 {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E7B250/func_800A2060.s")

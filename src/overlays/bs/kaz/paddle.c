@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/paddle.h"
+#include "bs/kaz/paddle.h"
 
 extern s32 D_80800A50_bskazpaddle[];
 extern s32 D_80800A60_bskazpaddle[];
@@ -40,7 +40,7 @@ void func_80800100_bskazpaddle(PlayerState *self) {
         baphysics_set_target_horizontal_velocity(self, 0);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30, 350));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30, 350));
 }
 
 void func_80800164_bskazpaddle(PlayerState *self) {
@@ -65,7 +65,7 @@ void func_80800190_bskazpaddle(PlayerState *self) {
     anctrl_setDuration(animCtrl, 1.2);
     anctrl_setStart(animCtrl, 0.6412);
     anctrl_start(animCtrl);
-    self->unk16C = func_800F10B4(sp28, 40, 1000, -300, -1200.0f);
+    self->unk16C = ml_map_f(sp28, 40, 1000, -300, -1200.0f);
     baphysics_set_vertical_velocity(self, self->unk16C);
     func_8009FFD8(self, 1, 3, 3, 6);
 }
@@ -76,13 +76,13 @@ void func_808002A0_bskazpaddle(PlayerState *self) {
     s32 sp3C;
 
     next_state = BS_STATE_0_INVALID;
-    func_8009C128(self, sp40);
+    player_getCoords(self, sp40);
     sp40[1] = sp40[1] + 60.0f;
     sp3C = func_8009FBB0(self, sp40, 20);
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);
     func_800BA22C(sp3C, 1);
     if (self->unk16C < 0.0f) {
-        self->unk16C += func_800F0E00(mlAbsF(self->unk16C) * 0.1f, 50);
+        self->unk16C += ml_max_f(mlAbsF(self->unk16C) * 0.1f, 50);
         baphysics_set_vertical_velocity(self, self->unk16C);
     }
     if (player_isStable(self) != 0) {
@@ -152,8 +152,8 @@ void func_80800518_bskazpaddle(PlayerState *self) {
     if (bakey_pressed(self, BUTTON_B) != 0) {
         next_state = BS_STATE_15F;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
-        next_state = BS_STATE_BD;
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+        next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);
 }
@@ -180,7 +180,7 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if ((func_8001210C(7) == 0) && (func_800DC0C0() < 0.5f)) {
+    if ((func_8001210C(7) == 0) && (rand_f() < 0.5f)) {
         func_8009FC34(self, 1);
     }
     if (bastick_getZone(self) == BS_STICK_ZONE_ID_1) {
@@ -192,11 +192,11 @@ void func_8080070C_bskazpaddle(PlayerState *self) {
     if (bainput_should_enter_first_person(self) != 0) {
         next_state = _badrone_entrypoint_24(self);
     }
-    if (bakey_pressed(self, 9) != 0) {
+    if (bakey_pressed(self, BUTTON_B) != 0) {
         next_state = BS_STATE_15F;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
-        next_state = BS_STATE_BD;
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+        next_state = BS_STATE_BD_KAZ_JUMP;
     }
     bs_setState(self, next_state);
 }

@@ -10,4 +10,8 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjovillagecamera1/func_808003C0_chjinjovillagecamera1.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/jinjovillagecamera1/chjinjovillagecamera1_entrypoint_0.s")
+extern ActorData D_80800494_chjinjovillagecamera1;
+ActorData* chjinjovillagecamera1_entrypoint_0()
+{
+    return &D_80800494_chjinjovillagecamera1;
+}

@@ -1,9 +1,5 @@
 #include <ultra64.h>
-
-// compare_vec4i
-int func_800F371C(u32[4], u32[4]);
-// copy_vec4i
-void func_800F2E7C(u32[4], u32[4]);
+#include "core2/1EC0F10.h"
 
 typedef struct {
     /* 0x00 */ u32 prim_color[4];
@@ -100,8 +96,8 @@ void func_800E7778(Gfx** gfx, u32 cycle_type) {
 void func_800E7828(Gfx** gfx, u8 color[4]) {
     u32 color_u32[4];
     func_800F2EFC(color_u32, color);
-    if (!func_800F371C(D_8012D580.prim_color, color_u32)) {
-        func_800F2E7C(D_8012D580.prim_color, color_u32);
+    if (!ml_vec4i_isEqual(D_8012D580.prim_color, color_u32)) {
+        ml_vec4i_copy(D_8012D580.prim_color, color_u32);
         func_800E765C(gfx);
 
         gDPSetPrimColor((*gfx)++, 0, 0, color_u32[0], color_u32[1], color_u32[2], color_u32[3]);

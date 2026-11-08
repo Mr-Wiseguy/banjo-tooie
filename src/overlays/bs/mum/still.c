@@ -1,6 +1,6 @@
-#include "overlays/bs/mum/still.h"
+#include "bs/mum/still.h"
 
-enum bs_state_e func_80800000_bsmumstill(PlayerState *self, enum bs_state_e next_state) {
+BanjoStateId func_80800000_bsmumstill(PlayerState *self, BanjoStateId next_state) {
     switch (bastick_getZone(self)) {
         case BS_STICK_ZONE_ID_0:
             break;
@@ -72,7 +72,7 @@ void func_80800210_bsmumstill(PlayerState *self) {
 }
 
 void func_8080024C_bsmumstill(PlayerState *self) {
-    enum bs_state_e current_state;
+    BanjoStateId current_state;
 
     current_state = BS_STATE_0_INVALID;
     if (baanim_isStopped(self) != 0) {

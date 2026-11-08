@@ -25,4 +25,8 @@ void func_80800264_chlagoonfish()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/func_80800AE0_chlagoonfish.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ch/lagoon/fish/chlagoonfish_entrypoint_0.s")
+extern ActorData D_80800B70_chlagoonfish;
+ActorData* chlagoonfish_entrypoint_0()
+{
+    return &D_80800B70_chlagoonfish;
+}

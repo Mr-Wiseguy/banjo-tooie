@@ -1,6 +1,6 @@
-#include "common.h"
+#include "gc/lightsDll.h"
 
-void func_80800000_gclightsDll(s32 arg0)
+void func_80800000_gclightsDll(Vector* arg0)
 {
     gclightsDll_entrypoint_1();
     _gclightsDll_entrypoint_0(arg0);

@@ -1,8 +1,8 @@
 #include "common.h"
 
 #include "core2/anctrl.h"
-#include "overlays/ba/anim.h"
-#include "overlays/ba/physics.h"
+#include "ba/anim.h"
+#include "ba/physics.h"
 
 #include "core2/1EC8070.h"
 #include "core2/1ECA640.h"
@@ -44,11 +44,11 @@ void __baanim_update_scaleToHorizontalVelocity(PlayerState * self) {
     scale = (self->anim->scalable_duration) ?  self->anim->duration_scale : 1.0f;
     func_8009BB24(self, velocity);
     speed = sqrtf(velocity[0]*velocity[0] + velocity[2]*velocity[2]);
-    sp30 = func_800F1198(speed, 
+    sp30 = ml_mapRange_f(speed, 
         self->anim->speed_min, self->anim->speed_max,
         self->anim->duration_relative_min * scale, self->anim->duration_relative_max * scale
     );
-    sp2C = func_800F0D50(sp30, self->anim->duration_min, self->anim->duration_max);
+    sp2C = ml_clamp_f(sp30, self->anim->duration_min, self->anim->duration_max);
     anctrl_setDuration(self->anim->anctrl, sp2C);
     func_8008ADE4(self->anim->anctrl);
 }
@@ -59,11 +59,11 @@ void __baanim_update_scaleToVerticalVelocity(PlayerState *self) {
     f32 sp1C;
 
     speed = mlAbsF(baphysics_get_vertical_velocity(self));
-    sp20 = func_800F1198(speed, 
+    sp20 = ml_mapRange_f(speed, 
         self->anim->speed_min, self->anim->speed_max,
         self->anim->duration_relative_min, self->anim->duration_relative_max
     );
-    sp1C = func_800F0D50(sp20, self->anim->duration_min, self->anim->duration_max);
+    sp1C = ml_clamp_f(sp20, self->anim->duration_min, self->anim->duration_max);
     anctrl_setDuration(self->anim->anctrl, sp1C);
     func_8008ADE4(self->anim->anctrl);
 }
@@ -80,7 +80,7 @@ void __baanim_oscillateScale(f32 dst[3], f32 x, f32 min, f32 osc_size) {
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/baanim/__baanim_applyBottlesBonus.s")
 #else
 void __baanim_applyBottlesBonus(s32 arg0, s32 arg1) {
-    PlayerState *self = func_800F53D0(arg1);
+    PlayerState *self = character_getPlayerState(arg1);
     f32 sp2C[3];
     f32 sp28;
     static s32 D_80126CD0;
@@ -88,7 +88,7 @@ void __baanim_applyBottlesBonus(s32 arg0, s32 arg1) {
     func_80098218(self, arg0);
     func_800DFC20(arg0, self->anim->unkE, self->anim->unk10);
     if (self->anim->unkC) {
-        func_800EFD24(sp2C);
+        ml_vec3f_clear(sp2C);
         func_800DFFA0(arg0, self->anim->unkE, sp2C);
     }
     sp28 = func_800A8258();
@@ -150,7 +150,6 @@ void baanim_init(PlayerState *self) {
     func_8008C984(self, 3);
     self->anim->scalable_duration = 0;
     self->anim->duration_scale = 1.0f;
-
 }
 
 void baanim_free(PlayerState *self) {
@@ -187,7 +186,7 @@ void baanim_defrag(PlayerState *self) {
 }
 
 void func_8008C958(PlayerState *self, f32 arg1[3]) {
-    func_800EE7F8(arg1, self->anim->unk10);
+    ml_vec3f_copy(arg1, self->anim->unk10);
 }
 
 void func_8008C984(PlayerState *self, s32 arg1) {

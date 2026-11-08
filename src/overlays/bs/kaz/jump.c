@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "overlays/bs/kaz/jump.h"
+#include "bs/kaz/jump.h"
 
 extern s32 D_80800C40_bskazjump[];
 extern s32 D_80800C50_bskazjump[];
@@ -66,7 +66,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
         _bskazmove_entrypoint_0(self);
     }
     func_8009BB24(self, &sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp28 > 0.0f) && (self->unk164.word == 0)) || (player_canFullJump(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {
@@ -88,7 +88,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
             }
             if (self->unk164.word != 0) {
                 self->unk164.word = 0;
-                next_state = BS_STATE_C3;
+                next_state = BS_STATE_C3_KAZ_SHOCK_SPRING_READY;
             }
             if (func_8008DF8C(self, 0x5A) != 0) {
                 baanim_setEndAndDuration(self, 1, 2);
@@ -125,7 +125,7 @@ void bskazjump_entrypoint_1(PlayerState *self) {
 }
 
 void bskazjump_entrypoint_2(PlayerState *self) {
-    if (func_800C6E38(0xA) != 0) {
+    if (ability_getValue(ABILITY_0A_BK_FULL_JUMP_HEIGHT) != 0) {
         func_800C6DA0(0x3C);
     }
     baphysics_reset_gravity(self);
