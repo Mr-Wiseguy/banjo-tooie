@@ -22,7 +22,7 @@ void func_800DBF38(UNKfunc_800DBEB0_ARG0* arg0, s32 arg1, s32* arg2)
 void func_800DBF74(UNKfunc_800DBEB0_ARG0* arg0, s32 arg1, s32 arg2, f32* arg3)
 {
     ml_getdiff_vec3f(arg3, arg0->unk4[arg2].f, arg0->unk4[arg1].f);
-    func_800EF2A0(arg3);
+    ml_vec3f_normalizeMagnitude(arg3);
 }
 
 void func_800DBFD8(UNKfunc_800DBEB0_ARG0* arg0)

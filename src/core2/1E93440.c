@@ -143,10 +143,10 @@ void func_800BA7FC(unkStruct800BA198* arg0, f32 arg1, f32 arg2) {
 
 void func_800BA994(unkStruct800BA198* arg0, s16 arg1, s16 arg2, s16 arg3, s16 arg4, s16 arg5, s16 arg6) {
     arg0->unk4 = 1;
-    arg0->unkC4 = func_800136E4((f32)arg2);
-    arg0->unkC6 = func_800136E4((f32)arg5);
-    arg0->unkC8 = func_800136E4((f32)arg1);
-    arg0->unkCA = func_800136E4((f32)arg4);
+    arg0->unkC4 = ml_normalizeAngle_f((f32)arg2);
+    arg0->unkC6 = ml_normalizeAngle_f((f32)arg5);
+    arg0->unkC8 = ml_normalizeAngle_f((f32)arg1);
+    arg0->unkCA = ml_normalizeAngle_f((f32)arg4);
     arg0->unkCC = arg3;
     arg0->unkCE = arg6;
 }
@@ -171,8 +171,8 @@ void func_800BAB60(s32 arg0) {
     func_800F2EA0(arg0 + 0x80);
 }
 
-void func_800BAB80(s32 arg0) {
-    func_800F2EBC(arg0 + 0x80);
+void func_800BAB80(s32 arg0, s32* arg1) {
+	func_800F2EBC(arg0 + 0x80, arg1);
 }
 
 void func_800BABA0(unkStruct800BA198* arg0, f32 arg1) {

@@ -33,7 +33,7 @@ typedef struct
 } unk_D_80127688;
 extern unk_D_80127688 D_80127688[];
 
-GraphicsBuffers* func_800A7180()
+GraphicsBuffers* graphics_getGraphicsBuffer()
 {
     return &D_80127658;
 }

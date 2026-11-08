@@ -86,7 +86,7 @@ s32 fxegg_entrypoint_5(f32* arg0, f32* arg1, f32 arg2)
     sp34 = _fxdlsmoke_entrypoint_0(arg0);
     if (arg1 != NULL)
     {
-        func_800EFA20(sp28, arg1, 0.15f);
+        ml_getScaledVec3f(sp28, arg1, 0.15f);
         func_800BA930(sp34, sp28[0], (sp28[1] + 60.0f),sp28[2], sp28[0], (sp28[1] + 100.0f), sp28[2]);
     }
     func_800BABB8(sp34, arg0, arg0, arg2, &D_80800614_fxegg);

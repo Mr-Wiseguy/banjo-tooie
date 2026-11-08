@@ -67,7 +67,7 @@ int gcnewoption_entrypoint_2(void);
 int _gcnewoption_entrypoint_2(void);
 
 void _gcnewoption_entrypoint_4(Actor*, u32, u32*, u32, s32);
-void _gcnewoption_entrypoint_5(OptionState*, void*, u8, s16, s32);
+void _gcnewoption_entrypoint_5(OptionState*, void*, u8, s32, s32);
 void _gcnewoption_entrypoint_6(OptionState*, u32);
 void gcnewoption_entrypoint_7(OptionState* a0);
 void _gcnewoption_entrypoint_7(OptionState* a0);
@@ -93,7 +93,9 @@ s32 _gcnewoption_entrypoint_17();
 s32 _gcnewoption_entrypoint_19(OptionState*, s32);
 void _gcnewoption_entrypoint_21(OptionState*, u32);
 void _gcnewoption_entrypoint_23(OptionState*, u32);
-
+void _gcnewoption_entrypoint_28(OptionState*);
+void _gcnewoption_entrypoint_29(OptionState*, s32);
+void _gcnewoption_entrypoint_30(OptionState*, s32*);
 void _gcnewoption_entrypoint_31(OptionState*, s32, s16);
 void _gcnewoption_entrypoint_32(OptionState*, u32);
 void _gcnewoption_entrypoint_34(OptionState*, u32); 

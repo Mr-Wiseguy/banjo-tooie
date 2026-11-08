@@ -79,7 +79,7 @@ void func_800DC628(s32 arg0, s32 arg1) {
 
 // modelRender_draw?
 void* func_800DE448(f32* position, f32* arg1, f32 scale, f32* arg3, s32 arg4) {
-    return func_800DE498(func_800A7180(), position, arg1, scale, arg3, arg4);
+    return func_800DE498(graphics_getGraphicsBuffer(), position, arg1, scale, arg3, arg4);
 }
 
 // the real modelRender_draw?

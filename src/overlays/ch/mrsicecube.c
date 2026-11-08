@@ -4,7 +4,7 @@ extern s32 D_808008F0_chmrsicecube;
 extern u16 D_80800910_chmrsicecube[][2];
 extern ActorData D_8080099C_chmrsicecube;
 extern ActorData D_808009E4_chmrsicecube;
-extern u32 D_80800A2C_chmrsicecube;
+extern f32 D_80800A2C_chmrsicecube[];
 extern s32 D_80800A3C_chmrsicecube;
 extern s32 D_80800A44_chmrsicecube;
 extern s32 D_80800A54_chmrsicecube;
@@ -37,7 +37,7 @@ void func_80800018_chmrsicecube(Actor* arg0)
 {
     s32* sp24;
 
-    sp24 = func_80100094(arg0, 0U);
+    sp24 = actor_getAdditionalMem(arg0, 0U);
     func_8010A800(arg0, 0);
     _subaddielink_entrypoint_0(sp24);
     arg0->actorData[4] = (arg0->unk74_7) - 0x32;
@@ -64,7 +64,7 @@ void func_808000BC_chmrsicecube(Actor* arg0)
     f32 sp30[3];
     f32 sp24[3];
 
-    sp44 = func_80100094(arg0, 0U);
+    sp44 = actor_getAdditionalMem(arg0, 0U);
     sp3C = 0;
     switch (arg0->unk70_10)
     {
@@ -144,10 +144,10 @@ s32 func_80800260_chmrsicecube(Actor* arg0, s32 arg1, s32 arg2)
             }
             break;
         case 0x52:
-            _gcdialogcamera_entrypoint_3(&D_80800A2C_chmrsicecube, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80800A2C_chmrsicecube, arg0->scale);
             break;
         case EVENT_95_ACTOR_SPAWNED:
-            sp20 = func_80100094(arg0, 0U);
+            sp20 = actor_getAdditionalMem(arg0, 0U);
             temp_v0 = func_80800508_chmrsicecube(arg0);
             if (temp_v0 != 0)
             {
@@ -170,7 +170,7 @@ void func_808003BC_chmrsicecube(Actor* arg0, void* arg1)
 
     if (func_800E3E8C(arg0->position, func_80103FB8(arg0)) != 0)
     {
-        temp_v0 = _subaddielink_entrypoint_4(func_80100094(arg0, 0U));
+        temp_v0 = _subaddielink_entrypoint_4(actor_getAdditionalMem(arg0, 0U));
         if (temp_v0 != 0)
         {
             func_8010A764(temp_v0, arg1);
@@ -219,7 +219,7 @@ Unk80132ED0* func_80800508_chmrsicecube(Actor* arg0)
     MRSICECUBEStruct* sp28;
 
     temp_s0 = arg0->actorData[4];
-    sp28 = func_80100094(arg0, 0U);
+    sp28 = actor_getAdditionalMem(arg0, 0U);
     if (D_80800910_chmrsicecube[temp_s0][0] == PROP_1F4_JINJO_REAL)
     {
         var_v0 = func_8080043C_chmrsicecube(arg0, D_80800910_chmrsicecube[temp_s0][0], sp2C);
@@ -265,7 +265,7 @@ void func_808006C4_chmrsicecube(Actor* arg0)
     Actor* temp_s0;
     s32 temp_v1;
 
-    sp2C = func_80100094(arg0, 0U);
+    sp2C = actor_getAdditionalMem(arg0, 0U);
     temp_s0 = _subaddielink_entrypoint_4(sp2C);
     temp_v1 = arg0->actorData[4];
     if (!temp_v1)

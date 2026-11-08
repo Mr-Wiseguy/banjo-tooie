@@ -1,4 +1,4 @@
-#include "common.h"
+#include "core2/1E88E90.h"
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF5A0.s")
 
@@ -14,7 +14,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF5F0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF5FC.s")
+s16* func_800AF5FC(ImageStruct* arg0, s32 arg1) {
+    return arg0->unk1C[arg1];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E88E90/func_800AF614.s")
 

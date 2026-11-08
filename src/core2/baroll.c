@@ -55,11 +55,11 @@ void baroll_update(PlayerState *self) {
 }
 
 void baroll_setIdeal(PlayerState *self, f32 arg1) {
-    self->roll->ideal = func_800136E4(arg1);
+    self->roll->ideal = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_set(PlayerState *self, f32 arg1) {
-    self->roll->value = func_800136E4(arg1);
+    self->roll->value = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_applyIdeal(PlayerState *self) {

@@ -229,7 +229,7 @@ void func_80800624_bsbfly(PlayerState* self)
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            temp_f0 = func_800136E4(func_8009BFD8(self) - 30.0f);
+            temp_f0 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if ((temp_f0 > 80.0f) && (temp_f0 < 300.0f)) 
             {
                 temp_f0 = 300.0f;
@@ -398,7 +398,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 break;
         } 
         ml_vec3f_copy(sp2C, self->kazfly->unk10);
-        func_800EF2A0(sp2C);
+        ml_vec3f_normalizeMagnitude(sp2C);
         sp44 = mlAbsF(ml_vec3f_dot_product(&sp38, sp2C));
         if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (var_v0 & 0x80)) 
         {

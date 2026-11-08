@@ -15,13 +15,13 @@ ActorData* chwarppad_entrypoint_0(void) {
     return &D_808012FC_chwarppad;
 }
 
-void func_8080000C_chwarppad(Actor* arg0, u32 arg1)
+void func_8080000C_chwarppad(Actor* arg0, GraphicsBuffers* arg1)
 {
     OptionState* temp_v0;
 
     if (func_800EB854() == 3)
     {
-        temp_v0 = (OptionState*)func_80100094(arg0, 0U);
+        temp_v0 = (OptionState*)actor_getAdditionalMem(arg0, 0U);
         if (temp_v0 != NULL)
         {
             _gcnewoption_entrypoint_1(temp_v0, arg1);
@@ -175,7 +175,7 @@ void func_80800418_chwarppad(Actor* arg0, u32 arg1)
             //Open the options menu
             temp_v0 = func_808000B4_chwarppad(arg0);
             _gcnewoption_entrypoint_4(arg0, 0, &_gcnewoption_entrypoint_35, 0, WARPPAD_DATA(arg0)->unk14 + 0x185A);
-            sp28 = func_80100094(arg0, 0U);
+            sp28 = actor_getAdditionalMem(arg0, 0U);
             func_800C78CC(1U);
             //If the number of warppads exceeds 4 only show up to 4 at a time
             _gcnewoption_entrypoint_8(sp28, temp_v0 >= 5 ? 4 : temp_v0);
@@ -284,7 +284,7 @@ void func_80800748_chwarppad(Actor* arg0)
         }
         break;
     case 3:
-        _gcnewoption_entrypoint_0(func_80100094(arg0, 0U));
+        _gcnewoption_entrypoint_0(actor_getAdditionalMem(arg0, 0U));
         break;
     }
     if (arg0->unk64_19)
@@ -464,7 +464,7 @@ s32 func_80800E10_chwarppad(s32 arg0)
 
 void func_80800EF8_chwarppad(Actor* arg0)
 {
-    if (func_80100094(arg0, 0) != 0)
+    if (actor_getAdditionalMem(arg0, 0) != 0)
     {
         _gcnewoption_entrypoint_6(arg0, 0);
     }

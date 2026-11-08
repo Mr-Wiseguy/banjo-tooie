@@ -95,7 +95,7 @@ void func_808001F8_chjigsaw(Actor* arg0)
             if (rand_f() < 0.015f)
             {
                 func_80103DFC(arg0, sp70);
-                func_800EF214(sp70, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 40.0f);
+                ml_translateAngleDist_3D(sp70, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 40.0f);
                 _fxtwinkle_entrypoint_0(sp70);
             }
         }

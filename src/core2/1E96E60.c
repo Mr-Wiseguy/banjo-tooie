@@ -46,7 +46,7 @@ s32 func_800BD97C(s32* arg0)
 	{
 		return -1;
 	}
-	func_800EFB58(sp30, sp3C, &D_80128410[1]);
+	ml_getdiff_vec3i(sp30, sp3C, &D_80128410[1]);
 	return sp30[0] + (sp30[1] * D_80128410[7]) + (sp30[2] * D_80128410[8]);
 }
 

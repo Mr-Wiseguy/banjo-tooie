@@ -49,7 +49,7 @@ void func_801128D4(f32 arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg4, f32 arg5)
         *arg1 = arg0;
         sp2C = 0.0f;
     }
-    *arg1 = func_800136E4(*arg1 + sp2C);
+    *arg1 = ml_normalizeAngle_f(*arg1 + sp2C);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EEC090/func_80112A84.s")

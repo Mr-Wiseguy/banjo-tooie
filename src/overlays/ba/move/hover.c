@@ -18,7 +18,7 @@ void bamovehover_entrypoint_2(PlayerState* self)
     s32 pad;
 
     gameSpeed = time_getDelta();
-    func_800EF174(self->unkC8->unkAC, self->unkC8->unkB8, gameSpeed);
+    ml_vec3f_translate_scale(self->unkC8->unkAC, self->unkC8->unkB8, gameSpeed);
 
     for (var_s1 = 0; var_s1 < 3; var_s1++)
     {
@@ -38,7 +38,7 @@ void bamovehover_entrypoint_2(PlayerState* self)
             self->unkC8->unk10[var_s1] = func_800F15F8(self->unkC8->unk10[var_s1], sp80[var_s1], 220.0f * gameSpeed);
         }
     }
-    func_800EF174(self->unkC8->unk4, self->unkC8->unk10, gameSpeed);
+    ml_vec3f_translate_scale(self->unkC8->unk4, self->unkC8->unk10, gameSpeed);
 }
 
 void bamovehover_entrypoint_3(PlayerState* self, f32* arg1)

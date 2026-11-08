@@ -237,8 +237,8 @@ void func_80800708_bsbeefly(PlayerState* self) {
             break;
         case 1:
             // func_8009BFD8 -> pitch_getIdeal()
-            // func_800136E4 -> mlNormalizeAngle
-            angle_degrees = func_800136E4(func_8009BFD8(self) - 30.0f);
+            // ml_normalizeAngle -> mlNormalizeAngle
+            angle_degrees = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if ((angle_degrees > 80.0f) && (angle_degrees < 300.0f)) {
                 angle_degrees = 300.0f;
             }

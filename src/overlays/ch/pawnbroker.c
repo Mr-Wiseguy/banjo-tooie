@@ -4,7 +4,7 @@ extern s32 D_80800ED0_chpawnbroker;
 extern s32 D_80800F08_chpawnbroker;
 extern s32 D_80800F40_chpawnbroker;
 
-extern u32 D_80800F60_chpawnbroker;
+extern f32 D_80800F60_chpawnbroker[];
 
 extern ActorData D_80800FD0_chpawnbroker;
 
@@ -62,7 +62,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
 {
     u32* sp3C;
     f32 temp[3];
-    sp3C = func_80100094(arg0, 1U);
+    sp3C = actor_getAdditionalMem(arg0, 1U);
     inventory_showValue(0x4E);
     _sudeflect_entrypoint_1(&D_808010B8_chpawnbroker, 60.0f, 0.0f, 60.0f, 2);
     _sudeflect_entrypoint_1(arg0->position, 250.0f, 0.0f, 100.0f, 0xA);
@@ -125,7 +125,7 @@ void func_80800024_chpawnbroker(Actor* arg0)
         case 3:
             func_80800694_chpawnbroker(arg0);
             func_80103DFC(arg0, &temp);
-            if (_subaddieitem_entrypoint_3(arg0, &temp, func_80100094(arg0, 0U)) != 0)
+            if (_subaddieitem_entrypoint_3(arg0, &temp, actor_getAdditionalMem(arg0, 0U)) != 0)
             {
                 //Start Sale Complete Dialog
                 _subaddiedialog_entrypoint_11(arg0->unk0, 0xFE8U, 0xEU, arg0->position, 0x53U);
@@ -207,8 +207,8 @@ void func_80800320_chpawnbroker(Actor* arg0)
     {
         func_80108B04(arg0, 0x353U);
     }
-    _subaddieitem_entrypoint_0(func_80100094(arg0, 0U), 0x4E4U, -1, 3);
-    _subaddieitem_entrypoint_1(func_80100094(arg0, 0U), flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0 ? 5 : 0x14);
+    _subaddieitem_entrypoint_0(actor_getAdditionalMem(arg0, 0U), 0x4E4U, -1, 3);
+    _subaddieitem_entrypoint_1(actor_getAdditionalMem(arg0, 0U), flag_getValue(FLAG_0B4_PROGRESS_JRL_PAWNOS_JIGGY_PURCHASED) != 0 ? 5 : 0x14);
     func_80101FDC(arg0, sp44);
     func_8010A3E8(arg0, 0.8f);
 }
@@ -235,7 +235,7 @@ s32 func_80800534_chpawnbroker(Actor* actor, s32 eventType, s32 arg2)
             func_808006FC_chpawnbroker(actor, arg2);
             break;
         case 0x52:
-            _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, actor->scale);
+            _gcdialogcamera_entrypoint_3(D_80800F60_chpawnbroker, actor->scale);
             break;
         case 0x57:
             return func_80800A50_chpawnbroker(actor, arg2 & 0xFFFF, (arg2 & 0xFFFF0000) >> 0x10);
@@ -343,7 +343,7 @@ void func_8080083C_chpawnbroker(Actor* arg0, s32 dialogEnded, s32 choiceResult)
             return;
         //Let's see some gold
         case 0x1040:
-            _subaddieitem_entrypoint_2(func_80100094(arg0, 0U));
+            _subaddieitem_entrypoint_2(actor_getAdditionalMem(arg0, 0U));
             func_80102424(arg0, 3);
             return;
         //Pleasure doing business
@@ -425,7 +425,7 @@ void func_80800AE4_chpawnbroker(Actor* arg0, s32 arg1, s32 arg2)
     case 1:
         _capod_entrypoint_8(1);
         arg0->actorData[4] = 2;
-        _gcdialogcamera_entrypoint_3(&D_80800F60_chpawnbroker, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80800F60_chpawnbroker, arg0->scale);
         _gcdialogcamera_entrypoint_4(arg0->position);
         _gcdialogcamera_entrypoint_5(arg0->rotation);
         _gcdialogcamera_entrypoint_8();

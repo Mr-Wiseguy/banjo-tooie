@@ -114,7 +114,7 @@ void func_80800058_chfactoryrobot(Actor* arg0)
     f32 sp28[3];
 
     ml_vec3f_copy(sp3C, arg0->position);
-    func_800EF1B8(sp3C, arg0->rotation[1], 40.0f);
+    ml_translateAngleDist(sp3C, arg0->rotation[1], 40.0f);
     func_800F4F34(character_getActiveIndex(), sp3C, 30.0f, 100.0f);
     switch (arg0->unk70_10)
     {
@@ -272,13 +272,13 @@ void func_808005D4_chfactoryrobot(Actor* arg0)
     f32 sp38[3];
 
     ml_vec3f_copy(sp44, arg0->position);
-    func_800EF214(sp44, -arg0->rotation[0], arg0->rotation[1], 20.0f);
+    ml_translateAngleDist_3D(sp44, -arg0->rotation[0], arg0->rotation[1], 20.0f);
     func_800BBCB8(sp44, arg0->position, 1.0f, 8, &D_80802A38_chfactoryrobot);
     func_800BBCB8(sp44, arg0->position, 1.0f, 0xC, &D_80802A00_chfactoryrobot);
     func_8010D930(6, arg0->unk70_0, sp44, &D_80802A6C_chfactoryrobot);
     _subaddieaudioquick_entrypoint_2(arg0, sp44, &D_80802A7C_chfactoryrobot);
     ml_vec3f_copy(sp38, arg0->position);
-    func_800EF1B8(sp38, arg0->rotation[1], -50.0f);
+    ml_translateAngleDist(sp38, arg0->rotation[1], -50.0f);
     _chexploder_entrypoint_3(arg0, sp38, 0);
 }
 
@@ -287,8 +287,8 @@ s32 func_808006DC_chfactoryrobot(Actor* arg0, f32 arg1, f32 arg2)
 {
     f32 gamespeed;
     gamespeed = time_getDelta();
-    arg0->unk54 = ml_clamp_f(func_80013728(arg0->unk54), -80.0f, 80.0f);
-    arg0->unk50 = ml_clamp_f(func_80013728(arg0->unk50), -60.0f, 60.0f);
+    arg0->unk54 = ml_clamp_f(ml_absNormalizeAngle_f(arg0->unk54), -80.0f, 80.0f);
+    arg0->unk50 = ml_clamp_f(ml_absNormalizeAngle_f(arg0->unk50), -60.0f, 60.0f);
     ((f32*)arg0->actorData)[5] = func_800F1FF0(((f32*)arg0->actorData)[5], arg0->unk54, 0.15f, gamespeed * arg1, gamespeed * arg2);
     ((f32*)arg0->actorData)[6] = func_800F1FF0(((f32*)arg0->actorData)[6], arg0->unk50, 0.15f, gamespeed * arg1, gamespeed * arg2);
     return func_800F20BC(((f32*)arg0->actorData)[5], arg0->unk54, 4.0f);
@@ -302,7 +302,7 @@ void func_808007C4_chfactoryrobot(Actor* arg0)
     f32 sp38;
     FactoryRobotStruct* temp_s1;
 
-    temp_s1 = func_80100094(arg0, 0U);
+    temp_s1 = actor_getAdditionalMem(arg0, 0U);
     func_8010A3E8(arg0, 0.4f);
     actor_enableCollision(arg0);
     ml_vec3f_to_vec3s(temp_s1->unk0, arg0->position);
@@ -345,7 +345,7 @@ void func_80800920_chfactoryrobot(Actor* arg0)
     f32 sp3C;
     s32 sp38;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     if (!(arg0->unk7A_2))
     {
 
@@ -461,7 +461,7 @@ void func_80800DC4_chfactoryrobot(Actor* arg0)
     FactoryRobotStruct* temp_v0;
     s32 var_s1;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     for (var_s1 = 0; var_s1 < 2; var_s1++)
     {
         temp_v0->unk8[var_s1] = _subaddieaudioloop_entrypoint_3(temp_v0->unk8[var_s1]);
@@ -479,7 +479,7 @@ s32 func_80800E40_chfactoryrobot(Actor* arg0, s32 arg1, s32 arg2)
     FactoryRobotStruct* temp_v0;
     Actor* temp_v0_2;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     switch (arg1)
     {
         case 0x40:
@@ -536,15 +536,15 @@ void func_80800FFC_chfactoryrobot(Actor* arg0, void* arg1)
     s32 sp28[3];
     FactoryRobotStruct* temp_s0;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     if ((temp_v0->unk20 > 0.0f) && !(arg0->unk7A_2))
     {
-        temp_s0 = func_80100094(arg0, 0U);
+        temp_s0 = actor_getAdditionalMem(arg0, 0U);
         temp_s0->unkA = rand_iBounded(0, 4);
     }
 
 
-    var_s0 = temp_v0->unk20 > 0.0f ? ((FactoryRobotStruct*)func_80100094(arg0, 0U))->unkA : 0;
+    var_s0 = temp_v0->unk20 > 0.0f ? ((FactoryRobotStruct*)actor_getAdditionalMem(arg0, 0U))->unkA : 0;
 
     func_800DF744(3, var_s0);
     _subaddiefade_entrypoint_9(arg0, &sp34);
@@ -614,7 +614,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
     f32 var_f14;
     f32 temp_f0_3;
 
-    temp_s1 = func_80100094(arg0, 0U);
+    temp_s1 = actor_getAdditionalMem(arg0, 0U);
     gamespeed = time_getDelta();
     sp50 = 1.0f;
     if (_subaddierouteDll_entrypoint_4(arg0) != 0)
@@ -660,7 +660,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 sp50 = _subaddiejoy_entrypoint_9(arg0, &arg0->unk54, 1);
                 if (temp_s1->unk1C == 0.0f)
                 {
-                    func_800EEB9C((f32*)&arg0->actorData[4], arg0->unk54, ((f32*)arg0->actorData)[3] * sp50);
+                    ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], arg0->unk54, ((f32*)arg0->actorData)[3] * sp50);
                     ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
                 }
                 else {
@@ -676,7 +676,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
                 }
                 temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 150.0f);
                 arg0->unk54 = temp_f0_2;
-                func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
                 ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
             }
 
@@ -705,7 +705,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
 
                     temp_s1->unk2C = func_800F1FF0(temp_s1->unk2C, temp_s1->unk30, 0.15f, time_getDelta() * 10.0f, time_getDelta() * 120.0f);
                     arg0->unk54 = temp_f0_3;
-                    func_800EEB9C((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
+                    ml_vec3f_getVecFromYaw((f32*)&arg0->actorData[4], temp_s1->unk2C, ((f32*)arg0->actorData)[3]);
                     ((f32*)arg0->actorData)[5] = ml_clamp_f(((f32*)arg0->actorData)[1] - arg0->position[1], -300.0f, 300.0f);
                     if (func_8010B990(arg0, 0x504427) & 0x26)
                     {
@@ -736,7 +736,7 @@ s32 func_80801278_chfactoryrobot(Actor* arg0)
 //Robot
 void func_8080183C_chfactoryrobot(Actor* arg0)
 {
-    FactoryRobotStruct* temp_v0 = func_80100094(arg0, 0U);
+    FactoryRobotStruct* temp_v0 = actor_getAdditionalMem(arg0, 0U);
     f32 sp2C[2] = D_80802ACC_chfactoryrobot;
     s32 i;
 
@@ -766,7 +766,7 @@ void func_80801954_chfactoryrobot(Actor* arg0)
     f32 gamespeed;
     FactoryRobotStruct* temp_s0;
 
-    temp_s0 = func_80100094(arg0, 0U);
+    temp_s0 = actor_getAdditionalMem(arg0, 0U);
     gamespeed = time_getDelta();
     if ((arg0->unk70_10) != 5)
     {
@@ -777,7 +777,7 @@ void func_80801954_chfactoryrobot(Actor* arg0)
     if (temp_v0 != 0)
     {
         func_800E0AFC(temp_v0, 3, 1.0f, 0.0f, temp_s0->unk10, 0.0f);
-        func_800E0AFC(temp_v0, 0x12, 1.0f, 0.0f, func_800136E4(temp_s0->unkC - temp_s0->unk10), 0.0f);
+        func_800E0AFC(temp_v0, 0x12, 1.0f, 0.0f, ml_normalizeAngle_f(temp_s0->unkC - temp_s0->unk10), 0.0f);
     }
 }
 
@@ -787,7 +787,7 @@ s32 func_80801A80_chfactoryrobot(Actor* arg0)
     FactoryRobotStruct* temp_v0;
     u32 var_v0;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     if (temp_v0->unk20 > 0.0f)
     {
         return 0;
@@ -838,7 +838,7 @@ s32 func_80801BB0_chfactoryrobot(Actor* arg0)
 {
     FactoryRobotStruct* temp_v0;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     if (temp_v0->unk20 > 0.0f)
     {
         return 1;
@@ -862,7 +862,7 @@ void func_80801C7C_chfactoryrobot(Actor* arg0)
 {
     FactoryRobotStruct* temp_v0;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     func_800CD1E0(arg0->unk70_25 - 1, arg0->actorData, (f32)temp_v0->unk0[1] + 60.0f, arg0);
     temp_v0->unk6 = rand_fBounded(100.0f, 200.0f);
 }
@@ -872,7 +872,7 @@ void func_80801D08_chfactoryrobot(Actor* arg0)
 {
     FactoryRobotTubeStruct* temp_v1;
 
-    temp_v1 = func_80100094(arg0, 0U);
+    temp_v1 = actor_getAdditionalMem(arg0, 0U);
     if (arg0->unk70_4 == 0)
     {
         arg0->unk70_4 = 1;
@@ -900,7 +900,7 @@ void func_80801D7C_chfactoryrobot(Actor* arg0)
     s32 temp_s0;
     f32 sp3C;
 
-    temp_s2 = func_80100094(arg0, 0U);
+    temp_s2 = actor_getAdditionalMem(arg0, 0U);
     func_800F4F34(character_getActiveIndex(), arg0->position, 100.0f, 80.0f);
     switch (arg0->unk70_10)
     {
@@ -1102,7 +1102,7 @@ s32 func_80802398_chfactoryrobot(Actor* arg0)
     }
     //I think this is getting the tube
     sp24 = func_80106790(arg0->unk3C);
-    var_v1 = func_80100094(sp24, 0U);
+    var_v1 = actor_getAdditionalMem(sp24, 0U);
     if (sp24->unk7C_15 == 0)
     {
         func_808025D4_chfactoryrobot(sp24);
@@ -1131,7 +1131,7 @@ s32 func_80802470_chfactoryrobot(Actor* arg0, s32 arg1)
     }
 
     temp_v0 = func_80106790(arg0->unk3C);
-    sp28 = func_80100094(temp_v0, 0U);
+    sp28 = actor_getAdditionalMem(temp_v0, 0U);
     if ((arg1 != 0) && (sp28->unk12 != 0))
     {
         sp28->unk13--;
@@ -1169,7 +1169,7 @@ void func_808025D4_chfactoryrobot(Actor* arg0)
     f32 sp2C[3];
     s32* var_v0;
 
-    temp_v0 = func_80100094(arg0, 0U);
+    temp_v0 = actor_getAdditionalMem(arg0, 0U);
     if (temp_v0->unk12 != 0)
     {
         _subaddieDll_entrypoint_4(arg0, 1U);

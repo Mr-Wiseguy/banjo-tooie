@@ -47,7 +47,7 @@ void func_80800044_chicywind(Actor* arg0)
         if (timer_reachedZero(&arg0->unk58) != 0)
         {
             ml_vec3f_copy(sp30, arg0->position);
-            func_800EF1B8(sp30, arg0->rotation[1], -200.0f);
+            ml_translateAngleDist(sp30, arg0->rotation[1], -200.0f);
             func_800BBCB8(arg0->position, sp30, 1.0f, 1, &D_80800358_chicywind);
             arg0->unk58 = rand_fBounded(0.15f, 0.2f);
         }
@@ -85,6 +85,6 @@ void func_808001AC_chicywind(Actor* arg0)
     }
     character_getCoords(characterIndex, sp40);
     sp38 = ml_map_f(ml_vec3f_distance(sp40, arg0->position), 1000.0f, 1800.0f, 1200.0f, 300.0f) * (1.0f / sp34);
-    func_800EEB9C(sp4C, func_800F1DF4(arg0->position, sp40), sp38);
+    ml_vec3f_getVecFromYaw(sp4C, func_800F1DF4(arg0->position, sp40), sp38);
     func_800F48BC(characterIndex, &sp4C);
 }

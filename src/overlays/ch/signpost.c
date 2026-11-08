@@ -1,7 +1,7 @@
 #include "ch/signpost.h"
 
 extern ActorData D_808002E0_chsignpost;
-extern u32 D_80800328_chsignpost;
+extern f32 D_80800328_chsignpost[];
 
 void func_80800230_chsignpost(Actor*, s16, s16);
 void func_80800264_chsignpost(s32, s32, s32);
@@ -78,7 +78,7 @@ s32 func_8080019C_chsignpost(Actor* arg0, s32 arg1, s32 arg2) {
         func_80800264_chsignpost(arg0, ((s16*)&arg2)[0], ((s16*)&arg2)[1]);
         break;
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_80800328_chsignpost, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80800328_chsignpost, arg0->scale);
         break;
     default:
         return 0;

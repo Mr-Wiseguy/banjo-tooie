@@ -59,7 +59,7 @@ ActorData* chaliendad_entrypoint_2(void) {
 
 void func_80801E80_chaliendad(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

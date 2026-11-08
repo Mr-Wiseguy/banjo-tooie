@@ -72,7 +72,7 @@ void bsturn_entrypoint_1(PlayerState* self)
 
 void bsturn_entrypoint_2(PlayerState* self)
 {
-    yaw_set(self, func_800136E4(yaw_get(self) - 180.0f));
+    yaw_set(self, ml_normalizeAngle_f(yaw_get(self) - 180.0f));
     func_8009BF5C(self, 0.0f);
     baroll_setIdeal(self, 0.0f);
 }

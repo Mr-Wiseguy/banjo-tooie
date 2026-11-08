@@ -209,7 +209,7 @@ void bafly_entrypoint_13(PlayerState* self, s32 arg1, enum asset_e arg2, f32 arg
     _bamotor_entrypoint_1(self, 1.0f, 0.5f, 0.5f);
     func_800A32C4(self, &sp48);
     func_800F1E6C(&sp48, &sp54, &sp40);
-    yaw_setIdeal(self, func_800136E4(sp40 + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp40 + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, sp38);
     baphysics_set_target_yaw(self, sp40);
@@ -255,7 +255,7 @@ void bafly_entrypoint_16(PlayerState* self, enum asset_e arg1, f32 arg2) {
     func_8009DA40(self);
     func_800A32C4(self, &sp34);
     func_800F1E6C(&sp34, &sp40, &sp4C);
-    yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp4C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, 1300.0f);
     baphysics_set_target_yaw(self, sp4C);

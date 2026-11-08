@@ -51,7 +51,7 @@ void func_808000E0_bahold(PlayerState* self) {
 
     func_8008FF40(sp18);
     func_80092D44(self, sp24);
-    sp18[1] = func_800136E4(sp18[1] + self->hold->unk4);
+    sp18[1] = ml_normalizeAngle_f(sp18[1] + self->hold->unk4);
     sp24[1] += self->hold->unk0;
     func_80800088_bahold(self->hold->unk8, sp24, &sp18);
 }

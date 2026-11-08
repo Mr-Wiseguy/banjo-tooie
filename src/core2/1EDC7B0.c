@@ -11,7 +11,7 @@ void func_80102EC0(s32 arg0)
 
 s32 func_80102F74(Actor* arg0, s32 arg1)
 {
-	return func_80102FA0(func_80100368(arg0), arg1);
+	return func_80102FA0(actor_getActorData(arg0), arg1);
 }
 
 s32 func_80102FA0(ActorData* arg0, s32 arg1)

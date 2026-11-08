@@ -19,8 +19,8 @@ extern u32 D_80804E0C_chhandcart;
 extern u32 D_80804E18_chhandcart;
 extern u32 D_80804E2C_chhandcart;
 extern u32 D_80804E38_chhandcart;
-extern u32 D_80804E4C_chhandcart;
-extern u32 D_80804E5C_chhandcart;
+extern f32 D_80804E4C_chhandcart[];
+extern f32 D_80804E5C_chhandcart[];
 extern f32 D_808046F4_chhandcart;
 extern u32 D_80804704_chhandcart;
 extern u32 D_80804714_chhandcart;
@@ -55,7 +55,7 @@ s32 func_80800090_chhandcart(void)
 //Goto Map
 void func_808000B4_chhandcart(Actor* arg0)
 {
-    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
+    switch (((CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U))->RaceState)
     {
     case 1:
         //Control which race to go to
@@ -85,7 +85,7 @@ s32 func_80800194_chhandcart(Actor* arg0)
 {
     CanaryMaryMemory* new_var;
     u8 tempRaceState;
-    new_var = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    new_var = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     //Load the Race State into the actor's memory
     tempRaceState = flag_getMultipleValue(FLAG3_A4C_UNK, 3);
     return new_var->RaceState = tempRaceState;
@@ -96,7 +96,7 @@ void func_808001D0_chhandcart(Actor* arg0, s32 arg1)
 {
     CanaryMaryMemory* sp1C;
 
-    sp1C = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    sp1C = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     flag_setMultipleValue(FLAG3_A4C_UNK, arg1, 3);
     sp1C->RaceState = (u8)arg1;
 }
@@ -104,7 +104,7 @@ void func_808001D0_chhandcart(Actor* arg0, s32 arg1)
 //Progress the Race
 void func_80800214_chhandcart(Actor* arg0)
 {
-    switch (((CanaryMaryMemory*)func_80100094(arg0, 0U))->RaceState)
+    switch (((CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U))->RaceState)
     {
     case 0: //If we are in the default state enter the race state
         //Mid Race
@@ -137,7 +137,7 @@ void func_808002B8_chhandcart(Actor* arg0, s32 arg1)
     HandcartMemory* sp4C;
 
     tempA1 = arg1 - 1;
-    sp4C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp4C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     splineMemory = (SplineMemory*)func_80100074(arg0, 1U, _susplinet_entrypoint_18(D_80804B94_chhandcart[tempA1], 1, 1));
     _susplinet_entrypoint_19(splineMemory, D_80804B94_chhandcart[tempA1], 1, 1);
     for (var_s0 = 0; var_s0 <= 0; var_s0++)
@@ -200,8 +200,8 @@ void func_80800528_chhandcart(Actor* arg0)
     f32 sp44;
     s32 sp40;
     f32 sp34[3];
-    splineMemory = (SplineMemory*)func_80100094(arg0, 1U);
-    handcartMemory = (HandcartMemory*)func_80100094(arg0, 0U);
+    splineMemory = (SplineMemory*)actor_getAdditionalMem(arg0, 1U);
+    handcartMemory = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     gamespeed = time_getDelta();
     sp78 = NULL;
     if (handcartMemory->unk8F4 == 3)
@@ -269,7 +269,7 @@ void func_808007BC_chhandcart(Actor* arg0, s32 arg1)
 
 void func_808007F0_chhandcart(Actor* arg0)
 {
-    if (((HandcartMemory*)func_80100094(arg0, 0U))->unk8F4 == 3)
+    if (((HandcartMemory*)actor_getAdditionalMem(arg0, 0U))->unk8F4 == 3)
     {
         func_80100074(arg0, 1, 0);
     }
@@ -283,7 +283,7 @@ void func_80800830_chhandcart(Actor *arg0)
 void func_80800858_chhandcart(Actor* arg0, Actor* arg1, s32 arg2, s32 arg3)
 {
     HandcartMemory* sp1C;
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_808007F0_chhandcart(arg0);
     if (arg1 == NULL)
     {
@@ -309,7 +309,7 @@ void func_80800858_chhandcart(Actor* arg0, Actor* arg1, s32 arg2, s32 arg3)
 void func_8080090C_chhandcart(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0 *arg3)
 {
     HandcartMemory* sp1C;
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_808007F0_chhandcart(arg0);
     switch (sp1C->unk8F4)
     {
@@ -328,7 +328,7 @@ void func_8080090C_chhandcart(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0 *arg3
 void func_80800998_chhandcart(Actor* arg0, u32 arg1, u32 arg2, Unk80132ED0* arg3) {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*) func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*) actor_getAdditionalMem(arg0, 0U);
     func_808007F0_chhandcart(arg0);
     switch (sp1C->unk8F4) 
     {
@@ -347,7 +347,7 @@ void func_80800998_chhandcart(Actor* arg0, u32 arg1, u32 arg2, Unk80132ED0* arg3
 void func_80800A24_chhandcart(Actor* arg0, s32 arg1, s32 arg2) {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_808007F0_chhandcart(arg0);
     switch (sp1C->unk8F4)
     {
@@ -368,7 +368,7 @@ void func_80800AB0_chhandcart(Actor* arg0)
 {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_808007F0_chhandcart(arg0);
     if (sp1C->unk8F4 != 0)
     {
@@ -383,7 +383,7 @@ void func_80800B00_chhandcart(Actor* arg0)
     s32 var_s4;
     HandcartMemory* temp_v0;
 
-    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     temp_v1 = temp_v0->unk8F5 - 1;
     if (D_80804D84_chhandcart[temp_v1] != 0) 
     {
@@ -430,12 +430,12 @@ void func_80800CD0_chhandcart(Actor* arg0)
     Unkfunc_800E0960_1 *sp30;
 
     f32 temp_f0_2;
-    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     if (!arg0->unk5F)
     {
     }
     sp30 = (Unkfunc_800E0960_1 *)func_8010262C(arg0->unk0, 2);
-    temp_v0->unk918 = func_800136E4(temp_v0->unk918 + (HANDCART_DATA(arg0)->unkC * 0.5f));
+    temp_v0->unk918 = ml_normalizeAngle_f(temp_v0->unk918 + (HANDCART_DATA(arg0)->unkC * 0.5f));
     if (sp30 != 0)
     {
         func_800E0AFC(sp30, 0x2B, -1.0f, temp_v0->unk918, 0.0f, 0.0f);
@@ -461,7 +461,7 @@ void func_80800E58_chhandcart(Actor* arg0, s32 arg1)
 {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_800904C8(0x28);
     if (arg1 != 0)
     {
@@ -479,7 +479,7 @@ void func_80800EE4_chhandcart(Actor* arg0, s32 arg1)
 {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     if ((func_8009EA64() == 0x38A) && (sp1C->unk8FA != 0))
     {
         sp1C->unk8FA = 0U;
@@ -507,7 +507,7 @@ void func_80800FA0_chhandcart(Actor* arg0, s32 arg1)
     HandcartMemory* sp24;
     u32 temp_t6;
 
-    sp24 = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp24 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     temp_t6 = arg0->unk70_10;
     switch (temp_t6)
     {
@@ -633,7 +633,7 @@ void func_80801290_chhandcart(Actor* arg0)
     f32 spAC;
     f32 sp7C[4][3];
     s32 pad;
-    spBC = (HandcartMemory*)func_80100094(arg0, 0);
+    spBC = (HandcartMemory*)actor_getAdditionalMem(arg0, 0);
     gamespeed = time_getDelta();
     func_800EF5A0(sp7C[0], arg0->rotation, -52.0f, 0, -49.0f);
     func_800EF5A0(sp7C[1], arg0->rotation, -52.0f, 0, 30.0f);
@@ -673,7 +673,7 @@ void func_808014D8_chhandcart(Actor* arg0, u32 arg1)
     s32 var_s2;
     HandcartMemory* temp_v0;
     u8* var_s0;
-    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     var_s1 = 0;
     var_s2 = 0;
     var_s0 = (u8*)temp_v0;
@@ -745,7 +745,7 @@ void func_8080176C_chhandcart(Actor* arg0)
     f32 sp2C[3];
     f32 temp_f0;
 
-    sp44 = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp44 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_8080169C_chhandcart(arg0, 0, sp2C);
     func_8080169C_chhandcart(arg0, 1, sp38);
     temp_f0 = func_800F1828(sp2C, sp38);
@@ -768,7 +768,7 @@ void func_80801850_chhandcart(Actor* arg0)
     s32 var_s0;
     f32* f0;
 
-    temp_v0 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     temp_v0->unk91C = temp_v0->unk934[2];
     if (HANDCART_DATA(arg0)->unkC > 12.0f)
     {
@@ -850,7 +850,7 @@ void func_80801BA4_chhandcart(Actor* arg0)
     f32 sp28;
 
     sp28 = 0.1f;
-    temp_s1 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_s1 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_80105A9C(arg0, HANDCART_DATA(arg0)->unkC * 10.0f);
     func_80105834(arg0);
     temp_s1->unk920 = ml_map_f(HANDCART_DATA(arg0)->unkC, 0.0f, 100.0f, 0.0f, func_800F1DCC(arg0->rotation[1], temp_s1->unk8) * 3.0f);
@@ -870,7 +870,7 @@ void func_80801BA4_chhandcart(Actor* arg0)
 void func_80801CBC_chhandcart(Actor* arg0)
 {
     HandcartMemory* sp1C;
-    sp1C = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     HANDCART_DATA(arg0)->unkC *= 0.95f;
     arg0->rotation[0] += func_800F1DCC(0.0f, arg0->rotation[0]) * 0.05f;
     sp1C->unk934[2] += (func_800F1DCC(0, sp1C->unk934[2]) * 0.05f);
@@ -889,7 +889,7 @@ void func_80801D50_chhandcart(Actor* arg0)
     }
     gameSpeed = time_getDelta();
     sp3C = func_80106790(arg0->unk3C);
-    sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp34 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
     case 2:
@@ -1010,7 +1010,7 @@ void func_80802120_chhandcart(Actor* arg0)
     HandcartMemory* sp34;
     Prop* var_v0;
     Prop* var_v0_2;
-    sp34 = (HandcartMemory*)func_80100094(arg0, 0U);
+    sp34 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     arg0->scale = 0.425f;
     //Based on if we've spawned the first Item set which location canary mary should think we're at
     arg0->unk64_19 = collectable_isSpawned(0xC, 1);
@@ -1158,11 +1158,11 @@ void func_8080256C_chhandcart(Actor* arg0, u32 arg1)
     f32 filler;
     f32 sp50[3];
     HandcartMemory* temp_s5;
-    temp_s5 = (HandcartMemory*)func_80100094(arg0, 0U);
+    temp_s5 = (HandcartMemory*)actor_getAdditionalMem(arg0, 0U);
     func_801018A4(arg0, arg1);
     if (arg0->unk7C_12)
     {
-        imageStruct = asset_load(0x9E2);
+        imageStruct = asset_load(ASSET_9E2_GOLD_SPARKLE);
         func_800E2588(2);
         func_800E2594(arg1, imageStruct);
         ml_vec3f_assign_value(sp50, 0.06f, 0.03f, 0.06f);
@@ -1189,7 +1189,7 @@ void func_80802690_chhandcart(Actor* arg0)
     CanaryMaryMemory* temp_v0;
     f32* sp24;
 
-    temp_v0 = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    temp_v0 = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     //GameSpeed
     temp_v0->unk0 = temp_v0->unk0 - time_getDelta();
     switch (func_801022E4(arg0))
@@ -1245,7 +1245,7 @@ void func_808028F0_chhandcart(Actor* arg0)
 {
     f32 sp2C[3];
     CanaryMaryMemory* maryMemory;
-    maryMemory = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    maryMemory = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     arg0->unk64_19 = collectable_isSpawned(0xC, 1);
     if (_glcutDll_entrypoint_20() != 0)
     {
@@ -1318,7 +1318,7 @@ void func_808028F0_chhandcart(Actor* arg0)
         func_80802CE8_chhandcart(arg0, 0x18);
     }
     _suexpression_entrypoint_7(arg0, 1, 0x36);
-    _suexpression_entrypoint_12(func_80100094(arg0, 1U), 45.0f, 15.0f);
+    _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 45.0f, 15.0f);
 }
 
 void func_80802B74_chhandcart(Actor* arg0) 
@@ -1327,7 +1327,7 @@ void func_80802B74_chhandcart(Actor* arg0)
     {
         func_800904C8(0x28);
     }
-    if (func_80100094(arg0, 1U) != NULL) 
+    if (actor_getAdditionalMem(arg0, 1U) != NULL) 
     {
         _suexpression_entrypoint_8(arg0, 1);
     }
@@ -1339,7 +1339,7 @@ void func_80802BC8_chhandcart(Actor* arg0)
     f32 sp20;
     float new_var;
     sp20 = 0.1f;
-    canaryMary = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    canaryMary = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     func_80105A9C(arg0, HANDCART_DATA(arg0)->unkC * 10.0f);
     func_80105834(arg0);
     new_var = (func_800F1DCC(arg0->rotation[1], canaryMary->unk4) * HANDCART_DATA(arg0)->unkC) * 0.5f;
@@ -1364,7 +1364,7 @@ void func_80802CE8_chhandcart(Actor* arg0, s32 arg1)
     s32 temp_v0_2;
     u32 temp_t1;
     u32 temp_t6;
-    canaryMary = (CanaryMaryMemory*)func_80100094(arg0, 0U);
+    canaryMary = (CanaryMaryMemory*)actor_getAdditionalMem(arg0, 0U);
     if (arg0->unk3C != 0)
     {
         sp2C = func_80106790(arg0->unk3C);
@@ -1688,7 +1688,7 @@ void func_808036D0_chhandcart(s32 arg0, Actor* arg1)
 {
     HandcartMemory* sp1C;
 
-    sp1C = (HandcartMemory*)func_80100094(arg1, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg1, 0U);
 
     if (0) {}
     if (func_80105998(arg1, 0.9399872f) != 0)
@@ -1701,7 +1701,7 @@ void func_808036D0_chhandcart(s32 arg0, Actor* arg1)
 void func_80803730_chhandcart(Actor* arg0, Actor* arg1)
 {
     HandcartMemory* sp1C;
-    sp1C = (HandcartMemory*)func_80100094(arg1, 0U);
+    sp1C = (HandcartMemory*)actor_getAdditionalMem(arg1, 0U);
     if (arg0->unk0)
     {
     }
@@ -1723,14 +1723,14 @@ void func_80803794_chhandcart(Actor* arg0)
     if (arg0->unk3C != 0)
     {
         sp40 = func_80106790(arg0->unk3C);
-        sp3C = (HandcartMemory*)func_80100094(sp40, 0U);
+        sp3C = (HandcartMemory*)actor_getAdditionalMem(sp40, 0U);
     }
     else
     {
         sp40 = NULL;
         sp3C = NULL;
     }
-    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0);
+    _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1U), arg0->unk0, 0);
     switch (arg0->unk70_10)
     {
     case 24:
@@ -2001,7 +2001,7 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
         func_80802400_chhandcart(arg0, arg2);
         return 3;
     case 47: //Callback from dialog ending
-        temp_t0 = (HandcartMemory*)func_80100094(func_80106790(arg0->unk3C), 0U);
+        temp_t0 = (HandcartMemory*)actor_getAdditionalMem(func_80106790(arg0->unk3C), 0U);
         switch (*(s16*)&arg2)
         {
         case 0xF84:
@@ -2090,11 +2090,11 @@ s32 func_80803FC4_chhandcart(Actor* arg0, s32 arg1, u32 arg2)
     case52://Such a weird thing to do
         if (func_801022E4(arg0) == 0x7D)
         {
-            _gcdialogcamera_entrypoint_3(&D_80804E4C_chhandcart, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80804E4C_chhandcart, arg0->scale);
         }
         else
         {
-            _gcdialogcamera_entrypoint_3(&D_80804E5C_chhandcart, arg0->scale);
+            _gcdialogcamera_entrypoint_3(D_80804E5C_chhandcart, arg0->scale);
         }
         break;
     case 31:

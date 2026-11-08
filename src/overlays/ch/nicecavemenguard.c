@@ -33,7 +33,7 @@ void func_80800600_chnicecavemenguard(s32 arg0)
 
 void func_8080080C_chnicecavemenguard(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

@@ -69,7 +69,7 @@ void func_808000A8_chterryegg(Actor* arg0)
     case 3:
         if ((arg0->unk7C_12) && (timer_reachedZero(&arg0->unk58) != 0))
         {
-            _subaddiepalette_entrypoint_2(arg0, func_80100094(arg0, 1U), 0x7BE, 0x40200000);
+            _subaddiepalette_entrypoint_2(arg0, actor_getAdditionalMem(arg0, 1U), 0x7BE, 0x40200000);
             func_80102424(arg0, 4);
             arg0->unk58 = 2.5f;
         }
@@ -98,7 +98,7 @@ void func_808000A8_chterryegg(Actor* arg0)
         }
         break;
     }
-    _subaddiepalette_entrypoint_1(arg0, func_80100094(arg0, 1U));
+    _subaddiepalette_entrypoint_1(arg0, actor_getAdditionalMem(arg0, 1U));
 }
 
 s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
@@ -112,7 +112,7 @@ s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
     {
     case 0x18:
         ml_vec3f_copy(sp40, arg0->position);
-        func_800EF1B8(sp40, arg0->rotation[1] - 40.0f, 150.0f);
+        ml_translateAngleDist(sp40, arg0->rotation[1] - 40.0f, 150.0f);
         func_800F77E8(character_getActiveIndex(), sp40);
         func_800F8300(character_getActiveIndex(), 2, arg0->position);
         func_80102424(arg0, 6);
@@ -147,15 +147,15 @@ s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
     case 0x1F:
         func_801015D0(arg0);
         func_800DF6BC(*(f32*)&arg0->actorData[4], 0xFF);
-        _subaddiepalette_entrypoint_3(arg0, func_80100094(arg0, 1U), arg2);
+        _subaddiepalette_entrypoint_3(arg0, actor_getAdditionalMem(arg0, 1U), arg2);
         break;
     case 0x29:
-        _subaddiepalette_entrypoint_4(arg0, func_80100094(arg0, 1U));
+        _subaddiepalette_entrypoint_4(arg0, actor_getAdditionalMem(arg0, 1U));
         break;
     case 0x95:
         if (_glcutDll_entrypoint_19(0x33U) != 0)
         {
-            _subaddiepalette_entrypoint_0(arg0, func_80100094(arg0, 1U), 0x7BD);
+            _subaddiepalette_entrypoint_0(arg0, actor_getAdditionalMem(arg0, 1U), 0x7BD);
             func_80102424(arg0, 3);
             _subaddieDll_entrypoint_4(arg0, 1U);
             arg0->unk58 = 3.0f;
@@ -164,12 +164,12 @@ s32 func_8080023C_chterryegg(Actor* arg0, s32 arg1, s32 arg2)
         else if (flag_getValue(FLAG_0E5_PROGRESS_TDL_TERRY_DEFEATED) != 0)
         {
             func_80102424(arg0, 5);
-            _subaddiepalette_entrypoint_0(arg0, func_80100094(arg0, 1U), 0x7BE);
+            _subaddiepalette_entrypoint_0(arg0, actor_getAdditionalMem(arg0, 1U), 0x7BE);
             *(f32*)&arg0->actorData[4] = 0.0f;
         }
         else
         {
-            _subaddiepalette_entrypoint_0(arg0, func_80100094(arg0, 1U), 0x7BD);
+            _subaddiepalette_entrypoint_0(arg0, actor_getAdditionalMem(arg0, 1U), 0x7BD);
             *(f32*)&arg0->actorData[4] = 255.0f;
         }
         _subaddiefind_entrypoint_7(arg0, 0x3D6, 0x64);
@@ -224,7 +224,7 @@ void func_808005C4_chterryegg(Actor* arg0)
             }
             else
             {
-                sp40 = func_80100094(arg0, 0U);
+                sp40 = actor_getAdditionalMem(arg0, 0U);
                 flag_setValueTrue((arg0->unk74_7) + 0x143);
                 func_800CB698((arg0->unk74_7) - 0x2B, 6);
                 func_80102424(arg0, 5);
@@ -372,7 +372,7 @@ void func_80800C08_chterryegg(Actor* arg0)
 {
     s32* sp1C;
 
-    sp1C = func_80100094(arg0, 0U);
+    sp1C = actor_getAdditionalMem(arg0, 0U);
     *sp1C = _glsplinefind_entrypoint_0(0x357U, arg0->position);
 }
 

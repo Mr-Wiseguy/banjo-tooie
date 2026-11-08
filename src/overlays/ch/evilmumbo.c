@@ -53,7 +53,7 @@ void func_80800000_chevilmumbo(Actor* actor)
     CHEVILMUMBO* temp_v0;
     f32 sp20[3];
 
-    temp_v0 = (CHEVILMUMBO*)func_80100094(actor, 0U);
+    temp_v0 = (CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U);
     if ((temp_v0->unk95 == 3) && (func_800F6C88(character_getActiveIndex()) == 0))
     {
         ml_vec3f_copy(sp20, actor->position);
@@ -74,7 +74,7 @@ void func_808000BC_chevilmumbo(Actor* actor)
 {
     CHEVILMUMBO* sp1C;
 
-    sp1C = (CHEVILMUMBO*)func_80100094(actor, 0U);
+    sp1C = (CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U);
     switch (sp1C->unk95)
     {
     case 1:
@@ -93,7 +93,7 @@ void func_80800144_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2)
 {
     CHEVILMUMBO* sp1C;
 
-    sp1C = (CHEVILMUMBO*)func_80100094(arg0, 0U);
+    sp1C = (CHEVILMUMBO*)actor_getAdditionalMem(arg0, 0U);
     switch (sp1C->unk95)
     {
     case 3:
@@ -115,7 +115,7 @@ void func_808001F4_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg
 {
     CHEVILMUMBO* sp1C;
 
-    sp1C = (CHEVILMUMBO*)func_80100094(arg0, 0U);
+    sp1C = (CHEVILMUMBO*)actor_getAdditionalMem(arg0, 0U);
     switch (sp1C->unk95)
     {
     case 3:
@@ -133,7 +133,7 @@ void func_808001F4_chevilmumbo(Actor* arg0, s32 arg1, s32 arg2, Unk80132ED0* arg
 void func_80800290_chevilmumbo(Actor* arg0)
 {
     CHEVILMUMBO* sp1C;
-    sp1C = (CHEVILMUMBO*)func_80100094(arg0, 0U);
+    sp1C = (CHEVILMUMBO*)actor_getAdditionalMem(arg0, 0U);
     switch (sp1C->unk95)
     {
     case 3:
@@ -189,14 +189,14 @@ void func_808003DC_chevilmumbo(Actor* arg0, s32 arg1)
     CHEVILMUMBO* sp3C;
     f32 sp30[3];
 
-    sp3C = (CHEVILMUMBO*)func_80100094(arg0, 0U);
+    sp3C = (CHEVILMUMBO*)actor_getAdditionalMem(arg0, 0U);
     switch (sp3C->unk90)
     {
         case 1:
             func_80090708(0);
             break;
         case 4:
-            _suexpression_entrypoint_12(func_80100094(arg0, 1U), 60.0f, 0.0f);
+            _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 60.0f, 0.0f);
             break;
         case 8:
             func_800F4CC0(character_getActiveIndex());
@@ -266,7 +266,7 @@ void func_80800670_chevilmumbo(Actor* actor)
     f32 sp44[3];
     CHEVILMUMBO* temp_s1;
 
-    temp_s1 = (CHEVILMUMBO*)func_80100094(actor, 0U);
+    temp_s1 = (CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U);
     ml_vec3f_copy(sp44, actor->position);
 
     while (ml_vec3f_is_equal(sp44, actor->position) || ml_vec3f_distance_sq(sp44, (f32*)actor->actorData) < 62500.0f)
@@ -281,14 +281,14 @@ void func_80800774_chevilmumbo(Actor* actor)
 {
     func_801032B0(actor, 0x816, actor->unk0->unk16);
     actor->unk64_20 = 1;
-    _suexpression_entrypoint_4(func_80100094(actor, 1U), 0x77);
+    _suexpression_entrypoint_4(actor_getAdditionalMem(actor, 1U), 0x77);
 }
 
 void func_808007C4_chevilmumbo(Actor* arg0, s32 arg1)
 {
     CHEVILMUMBO* sp2C;
 
-    sp2C = (CHEVILMUMBO*)func_80100094(arg0, 0U);
+    sp2C = (CHEVILMUMBO*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
         case 6:
@@ -334,7 +334,7 @@ void func_808007C4_chevilmumbo(Actor* arg0, s32 arg1)
             func_80800300_chevilmumbo((s32*)arg0);
             return;
         case 1:
-            _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0.0f, 0.0f);
+            _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 0.0f, 0.0f);
             return;
         case 5:
             func_808001F4_chevilmumbo(arg0, 5, 0x20, NULL);
@@ -427,7 +427,7 @@ void func_808007C4_chevilmumbo(Actor* arg0, s32 arg1)
 void func_80800C50_chevilmumbo(Actor* actor)
 {
     CHEVILMUMBO* sp1C;
-    sp1C = (CHEVILMUMBO*)func_80100094(actor, 0U);
+    sp1C = (CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U);
     actor->unk79_4++;
     sp1C->unk93--;
     switch (actor->unk79_4)
@@ -529,7 +529,7 @@ s32 func_80800E50_chevilmumbo(Actor* actor)
 
 void func_80800ECC_chevilmumbo(Actor* actor, s32 arg1) 
 {
-    if (((CHEVILMUMBO*)func_80100094(actor, 0U))->unk93 < 5)
+    if (((CHEVILMUMBO*)actor_getAdditionalMem(actor, 0U))->unk93 < 5)
     {
         if (!(actor->unk6C_0))
         {
@@ -610,7 +610,7 @@ void func_808011F4_chevilmumbo(Actor* actor)
 
     sp34 = func_800B53A4(4);
     tempf = actor->unk58 * 720.0f;
-    func_800EEB9C(sp28, tempf, 30);
+    ml_vec3f_getVecFromYaw(sp28, tempf, 30);
     ml_vec3f_add(sp28, actor->position);
     func_800BABB8(sp34, sp28, NULL, 1.0f, &D_8080434C_chevilmumbo);
     func_800BA22C(sp34, 4);
@@ -625,7 +625,7 @@ void func_808011F4_chevilmumbo(Actor* actor)
 
 void func_808023E8_chevilmumbo(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }
@@ -661,7 +661,7 @@ void func_808030AC_chevilmumbo(Actor* arg0)
 
     sp44 = time_getDelta();
     sp40 = func_80106790(arg0->unk3C);
-    sp3C = func_80100094(sp40, 0U);
+    sp3C = actor_getAdditionalMem(sp40, 0U);
     _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1U, &D_80804208_chevilmumbo);
     if (sp3C) {}
     ((f32*)arg0->actorData)[0] += (sp44 * 500.0f);
@@ -724,7 +724,7 @@ void func_80803388_chevilmumbo(Actor* arg0)
     f32 sp24[3];
 
     sp34 = func_80106790(arg0->unk3C);
-    sp30 = (CHEVILMUMBO*)func_80100094(sp34, 0U);
+    sp30 = (CHEVILMUMBO*)actor_getAdditionalMem(sp34, 0U);
     arg0->scale = 0.4f;
     arg0->unk6C_0 = func_800C8A98();
     if (sp30->unk93 < 5)
@@ -857,7 +857,7 @@ void func_80803700_chevilmumbo(Actor* arg0)
         temp_f12 = arg0->unk58;
         if (temp_f12 <= 2.5f)
         {
-            func_800EFA20(arg0->position, (f32*)arg0->actorData, ml_map_f(temp_f12, 0.0f, 2.5f, 1.0f, 0.0f));
+            ml_getScaledVec3f(arg0->position, (f32*)arg0->actorData, ml_map_f(temp_f12, 0.0f, 2.5f, 1.0f, 0.0f));
             arg0->unk58 += sp2C;
             _subaddieaudioloop_entrypoint_4(arg0, &D_80804538_chevilmumbo, 1U, &D_80804234_chevilmumbo);
             return;
@@ -878,7 +878,7 @@ void func_80803700_chevilmumbo(Actor* arg0)
     case 4:
         temp_f12_2 = arg0->unk58;
         if (temp_f12_2 <= 3.0f) {
-            func_800EFA20(arg0->position, (f32*)arg0->actorData, ml_map_f(temp_f12_2, 0.0f, 3.0f, 0.0f, 1.0f));
+            ml_getScaledVec3f(arg0->position, (f32*)arg0->actorData, ml_map_f(temp_f12_2, 0.0f, 3.0f, 0.0f, 1.0f));
             arg0->unk58 += sp2C;
             _subaddieaudioloop_entrypoint_4(arg0, &D_80804538_chevilmumbo, 1U, &D_80804234_chevilmumbo);
             return;
@@ -921,7 +921,7 @@ void func_8080398C_chevilmumbo(Actor* arg0, s32 arg1)
     s32 pad;
     f32 sp38[3];
     CHEVILMUMBO* temp_v0;
-    temp_v0 = (CHEVILMUMBO*)func_80100094(func_80106790(arg0->unk3C), 0U);
+    temp_v0 = (CHEVILMUMBO*)actor_getAdditionalMem(func_80106790(arg0->unk3C), 0U);
     ml_vec3f_copy(arg0->position, temp_v0->unk78);
     ml_vec3f_assign_value(sp38, 0.0f, 0.0f, 0.0f);
     func_800DF47C(func_801017D0, arg0);

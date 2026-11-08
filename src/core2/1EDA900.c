@@ -50,7 +50,7 @@ s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
             sp24 = 0;
         }
         //Call the actor's event handler function
-        sp28 = (func_80100368(actor))->eventHandler(actor, eventId, arg2);
+        sp28 = (actor_getActorData(actor))->eventHandler(actor, eventId, arg2);
         if ((syscallIndex != 0) && (sp24 == 0) && (sp28 <= 0))
         {
             func_800819B4((Syscall*)actor->pointerToSyscallEntry);

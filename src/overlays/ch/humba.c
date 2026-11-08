@@ -3,7 +3,7 @@
 extern s32 D_80802590_chhumba;
 extern s32 D_80802648_chhumba[];
 extern s16 D_8080266E_chhumba[];
-extern u32 D_80802684_chhumba;
+extern f32 D_80802684_chhumba;
 extern f32 D_80802694_chhumba;
 extern f32 D_808026F0_chhumba[3];
 extern Vec3f D_808026FC_chhumba[];
@@ -437,7 +437,7 @@ void func_80800D74_chhumba(Actor* arg0)
     {
         temp_v0 = rand_iBounded(1, 3);
         sp38 = func_800B53A4(temp_v0);
-        func_800EEB9C(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
+        ml_vec3f_getVecFromYaw(sp2C, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 1000.0f) * arg0->scale);
         sp2C[1] = -50.0f;
         func_800BABB8(sp38, sp2C, NULL, 1.0f, &D_808026A0_chhumba);
         func_800BA22C(sp38, temp_v0);
@@ -633,7 +633,7 @@ void func_8080144C_chhumba(f32 arg0)
     }
     for (index = 0; index < 4; index++)
     {
-        func_800EFA20(sp98, D_808026FC_chhumba[index].f, arg0);
+        ml_getScaledVec3f(sp98, D_808026FC_chhumba[index].f, arg0);
         ml_vec3f_copy(sp80, sp98);
         sp80[1] = 610.0f * arg0;
         ml_getdiff_vec3f(sp70, sp98, sp8C);
@@ -651,7 +651,7 @@ void func_808015DC_chhumba(Actor* arg0)
     s32 var_a2;
     s32 var_a1;
 
-    _suexpression_entrypoint_10(func_80100094(arg0, 1U), arg0->unk0, 0U);
+    _suexpression_entrypoint_10(actor_getAdditionalMem(arg0, 1U), arg0->unk0, 0U);
     func_8080144C_chhumba(arg0->scale * 5.0f);
     if (func_800C0638() != 0)
     {
@@ -926,7 +926,7 @@ void func_80801F74_chhumba(Actor* arg0)
     _gspropctrl_entrypoint_11(sp24, (f32*)&arg0->actorData[4]);
     arg0->unk6C_0 = func_8080071C_chhumba(arg0);
     _suexpression_entrypoint_7(arg0, 1U, 0x40U);
-    _suexpression_entrypoint_12(func_80100094(arg0, 1U), 0.0f, 0.0f);
+    _suexpression_entrypoint_12(actor_getAdditionalMem(arg0, 1U), 0.0f, 0.0f);
     switch (currentMap)
     {
     case MAP_135_HP_WUMBA:
@@ -984,7 +984,7 @@ void func_80801F74_chhumba(Actor* arg0)
 
 void func_808021F4_chhumba(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

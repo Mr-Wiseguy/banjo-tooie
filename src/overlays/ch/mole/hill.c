@@ -32,7 +32,7 @@ void func_80800088_chmolehill(Actor* arg0)
     {
         func_8010D254(sp28);
         temp_f0 = func_800F1DF4(arg0->position, sp28);
-        var_f2 = func_80013728(func_800F1DCC(temp_f0, arg0->rotation[1] + 15.0f));
+        var_f2 = ml_absNormalizeAngle_f(func_800F1DCC(temp_f0, arg0->rotation[1] + 15.0f));
         if (var_f2 < -15.0f)
         {
             var_f2 = -15.0f;
@@ -43,7 +43,7 @@ void func_80800088_chmolehill(Actor* arg0)
         }
         temp_f0 -= var_f2;
         ml_vec3f_copy(sp34, arg0->position);
-        func_800EF1B8(sp34, temp_f0, 150.0f);
+        ml_translateAngleDist(sp34, temp_f0, 150.0f);
         func_8008F964(sp34);
     }
 }
@@ -193,7 +193,7 @@ void func_8080058C_chmolehill(Actor* arg0)
     {
         func_8010D254(sp30);
         temp_f0 = func_800F1DF4(arg0->position, sp30);
-        var_f2 = func_80013728(func_800F1DCC(temp_f0, arg0->rotation[1] + 15.0f));
+        var_f2 = ml_absNormalizeAngle_f(func_800F1DCC(temp_f0, arg0->rotation[1] + 15.0f));
         var_f2 = var_f2;
         if (var_f2 < -15.0f)
         {
@@ -205,7 +205,7 @@ void func_8080058C_chmolehill(Actor* arg0)
         }
         temp_f0 -= var_f2;
         ml_vec3f_copy(sp3C, arg0->position);
-        func_800EF1B8(sp3C, temp_f0, 150.0f);
+        ml_translateAngleDist(sp3C, temp_f0, 150.0f);
         func_8008F8B0();
         func_8008F8D8(1);
         func_8008F938(1);
@@ -286,12 +286,12 @@ typedef struct {
 }MoleHillMem;
 void chmolehill_entrypoint_4(Actor* arg0, s32 arg1)
 {
-    ((MoleHillMem*)func_80100094(arg0, 0U))->unk0 = arg1;
+    ((MoleHillMem*)actor_getAdditionalMem(arg0, 0U))->unk0 = arg1;
 }
 
 s32 chmolehill_entrypoint_5(Actor* arg0)
 {
-    return ((MoleHillMem*)func_80100094(arg0, 0U))->unk0;
+    return ((MoleHillMem*)actor_getAdditionalMem(arg0, 0U))->unk0;
 }
 
 void func_80800884_chmolehill(Actor* arg0)

@@ -3,7 +3,7 @@
 extern s32 D_80801E08_chheggy;
 extern s32 D_80801E38_chheggy;
 extern s32 D_80801E60_chheggy;
-extern u32 D_80801E8C_chheggy;
+extern f32 D_80801E8C_chheggy;
 extern ActorData D_80801E9C_chheggy;
 extern s32 D_80801EE4_chheggy[14];
 extern s32 D_80801F1C_chheggy[15];
@@ -207,7 +207,7 @@ void func_808008C4_chheggy(Actor* arg0)
     s32 numFound;
     f32 sp3C;
 
-    temp_s5 = func_80100094(arg0, 0);
+    temp_s5 = actor_getAdditionalMem(arg0, 0);
     numFound = _gccubesearch_entrypoint_9(0x299, banjoPathProps, 6);
     for (var_s0 = 0; var_s0 < numFound; var_s0++)
     {
@@ -247,8 +247,8 @@ void func_808009DC_chheggy(Actor* arg0)
         break;
 
     case 8:
-        sp54 = func_80100094(arg0, 1U);
-        sp50 = func_80100094(arg0, 0U);
+        sp54 = actor_getAdditionalMem(arg0, 1U);
+        sp50 = actor_getAdditionalMem(arg0, 0U);
         sp4C = _subaddiefind_entrypoint_2(arg0->actorData[7], 0);
         if (sp4C != NULL)
         {
@@ -294,7 +294,7 @@ void func_808009DC_chheggy(Actor* arg0)
         }
         break;
     case 13:
-        sp48 = func_80100094(arg0, 0U);
+        sp48 = actor_getAdditionalMem(arg0, 0U);
         sp44 = func_80101F24(arg0);
         if (sp44 < 0.035f)
         {
@@ -318,7 +318,7 @@ void func_808009DC_chheggy(Actor* arg0)
         }
         break;
     case 15:
-        sp40 = func_80100094(arg0, 0U);
+        sp40 = actor_getAdditionalMem(arg0, 0U);
         if (func_80101F24(arg0) <= 0.92f)
         {
             sp3C = ml_map_f(func_80101F24(arg0), 0.84f, 0.92f, 0.0f, 1.0f);
@@ -400,7 +400,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
     s32 var_a2_3;
     s32 var_a2_4;
 
-    sp34 = func_80100094(arg0, 0U);
+    sp34 = actor_getAdditionalMem(arg0, 0U);
     if (arg0->unk70_10 == 8)
     {
         temp_v0 = _subaddiefind_entrypoint_2(arg0->actorData[7], 0);
@@ -413,7 +413,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
     switch (arg1)
     {
     case 1:
-        func_80800000_chheggy(arg0, func_80100094(arg0, 0U), 0);
+        func_80800000_chheggy(arg0, actor_getAdditionalMem(arg0, 0U), 0);
         flag_setValueTrue(FLAG_3E8_FTT_IoH_HEGGY);
         func_80800750_chheggy(arg0, arg0->unk0, 8, 0x40);
         break;
@@ -457,7 +457,7 @@ void func_80800ECC_chheggy(Actor* arg0, s32 arg1)
         func_80108B04(arg0, 0U);
         break;
     case 9:
-        func_80800000_chheggy(arg0, func_80100094(arg0, 0U), 0);
+        func_80800000_chheggy(arg0, actor_getAdditionalMem(arg0, 0U), 0);
         break;
     case 10:
         func_80090734(2, sp34->unk0[arg0->actorData[7] == 0x515 ? 1 : 2].f);
@@ -649,7 +649,7 @@ s32 func_80801570_chheggy(Actor* arg0, s32 arg1, s32 arg2)
         }
         break;
     case 0x3D:
-        temp_v1 = func_80100094(arg0, 0U);
+        temp_v1 = actor_getAdditionalMem(arg0, 0U);
         temp_v0_2 = func_80108528(0x517, &temp_v1->unk0[arg0->actorData[7] == 0x515 ? 3 : 4], 0, &arg0);
         arg0->unk3C = temp_v0_2->unk0;
         temp_v0_2->unk64_16 = 0;

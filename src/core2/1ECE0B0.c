@@ -60,7 +60,7 @@ void func_800F48BC(s32 arg0, f32* arg1)
 
     sp1C = D_80135490.unk0[arg0];
     func_800F4200(sp1C, sp2C);
-    func_800EFA20(sp20, arg1, time_getDelta());
+    ml_getScaledVec3f(sp20, arg1, time_getDelta());
     ml_vec3f_add(sp2C, sp20);
     func_800F4648(sp1C, sp2C);
 }
@@ -204,7 +204,7 @@ void func_800F4D74(s32 arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4) {
     func_8009F678(sp24, sp34, sp28, player_getSpeedModifier(sp24) * 1000.0f);
 }
 
-void func_800F4E5C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+void func_800F4E5C(s32 arg0, f32* arg1, f32* arg2, s32* arg3, s32* arg4) {
     PlayerState* sp24;
 
     sp24 = D_80135490.unk0[arg0];
@@ -1800,7 +1800,7 @@ void func_800F84FC(void) {
     D_80135490.unk52 = newTransform;
 }
 
-void func_800F86C4(s32 arg0, s32 arg1) {
+void func_800F86C4(s32 arg0, TransformationId arg1) {
     D_80135490.unk50 = arg0;
     D_80135490.unk52 = arg1;
 }

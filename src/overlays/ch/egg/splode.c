@@ -25,7 +25,7 @@ s32 func_808002A8_cheggsplode(Actor* arg0, s32 arg1, s32 arg2)
     EggSplodeData* sp1C;
     s32 temp_v0;
 
-    sp1C = (EggSplodeData*)func_80100094(arg0, 0);
+    sp1C = (EggSplodeData*)actor_getAdditionalMem(arg0, 0);
     switch (arg1)
     {
     case 0x9F:
@@ -64,7 +64,7 @@ void cheggsplode_entrypoint_1(s32 arg0, s32 arg1, s32 arg2)
     EggSplodeData* temp_v0_2;
 
     temp_v0 = func_801084B0(0x2B2, arg0);
-    temp_v0_2 = (EggSplodeData*)func_80100094(temp_v0, 0);
+    temp_v0_2 = (EggSplodeData*)actor_getAdditionalMem(temp_v0, 0);
     temp_v0_2->unk6 = 0;
     temp_v0_2->unk4 = arg2;
     temp_v0_2->unk0 = arg1;
@@ -89,7 +89,7 @@ void cheggsplode_entrypoint_2(f32 arg0[3], f32 arg1, s32 arg2, s32 arg3, s32 arg
     EggSplodeData* temp_v0_2;
 
     sp1C = func_80108474(0x2B2, arg0, arg1);
-    temp_v0_2 = (EggSplodeData*)func_80100094(sp1C, 0);
+    temp_v0_2 = (EggSplodeData*)actor_getAdditionalMem(sp1C, 0);
     temp_v0_2->unk0 = arg2;
     temp_v0_2->unk4 = arg3;
     temp_v0_2->unk6 = (arg4 == 0);

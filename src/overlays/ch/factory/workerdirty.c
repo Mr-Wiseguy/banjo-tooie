@@ -20,7 +20,7 @@ void func_8080000C_chfactoryworkerdirty(Actor* arg0)
 
 void func_80800340_chfactoryworkerdirty(Actor* arg0)
 {
-    func_80100094(arg0,0);
+    actor_getAdditionalMem(arg0,0);
     func_80800DB4_chfactoryworkerdirty(arg0);
 }
 

@@ -38,7 +38,7 @@ void basudie_entrypoint_4(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 a
 	player_getCoords(self, sp40);
 	func_800A32C4(self, sp34);
 	func_800F1E6C(sp34, sp40, &sp4C);
-	yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
+	yaw_setIdeal(self, ml_normalizeAngle_f(sp4C + 180.0f));
 	yaw_applyIdeal(self);
 	baphysics_set_target_horizontal_velocity(self, arg1);
 	baphysics_set_target_yaw(self, sp4C);

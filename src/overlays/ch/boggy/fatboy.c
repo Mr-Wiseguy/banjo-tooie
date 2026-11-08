@@ -43,7 +43,7 @@ void func_80800978_chboggyfatboy(Actor* arg0)
 
 void func_80800FAC_chboggyfatboy(Actor* arg0) 
 {
-    if (func_80100094(arg0,1) != 0)
+    if (actor_getAdditionalMem(arg0,1) != 0)
     {
         _suexpression_entrypoint_8(arg0, 1);
     }

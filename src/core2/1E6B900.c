@@ -46,7 +46,7 @@ void func_800920F0(PlayerState* arg0)
     switch (arg0->unk50->unk15)
     {
     case 2:
-        arg0->unk50->unk28 = func_800136E4(yaw_get(arg0) + 180.0f);
+        arg0->unk50->unk28 = ml_normalizeAngle_f(yaw_get(arg0) + 180.0f);
         return;
     default:
         arg0->unk50->unk28 = yaw_get(arg0);
@@ -259,9 +259,9 @@ void func_80092AB0(PlayerState* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E6B900/func_80092AD8.s")
 
-PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
+void* func_80092B04(PlayerState* arg0, s32 arg1)
 {
-    ImageStruct* temp_v0;
+    void* temp_v0;
 
     if (arg0->unk50->unkC == 0x607)
     {
@@ -272,7 +272,7 @@ PlayerState* func_80092B04(PlayerState* arg0, s32 arg1)
     {
         func_800D62E4(arg0->unk50->unkC, arg1, arg0);
     }
-    return (PlayerState*)temp_v0;
+    return temp_v0;
 }
 
 s32 func_80092B80(PlayerState* arg0)
@@ -469,7 +469,7 @@ void func_800931AC(PlayerState* arg0, s32 arg1)
 {
     if ((arg1 != arg0->unk50->unk15) && ((arg1 == 2) || (arg0->unk50->unk15 == 2)))
     {
-        yaw_setIdeal(arg0, func_800136E4(yaw_get(arg0) + 180.0f));
+        yaw_setIdeal(arg0, ml_normalizeAngle_f(yaw_get(arg0) + 180.0f));
         yaw_applyIdeal(arg0);
     }
     arg0->unk50->unk15 = (u8)arg1;
@@ -485,7 +485,7 @@ void func_80093230(PlayerState* arg0, f32 arg1)
 
 void func_8009328C(PlayerState* arg0, f32 arg1)
 {
-    arg0->unk50->unk28 = func_800136E4(arg1);
+    arg0->unk50->unk28 = ml_normalizeAngle_f(arg1);
 }
 
 void func_800932BC(PlayerState* arg0, f32 arg1)

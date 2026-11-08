@@ -63,7 +63,7 @@ s32 func_8010B910(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
 	return 0;
 }
 s32 func_8010B94C(Actor* arg0, s32 arg1, s32 arg2, s32 arg3) {
-    func_800EF174(arg0->position, &((f32*)arg0->actorData)[4], time_getDelta());
+    ml_vec3f_translate_scale(arg0->position, &((f32*)arg0->actorData)[4], time_getDelta());
     return 0;
 }
 

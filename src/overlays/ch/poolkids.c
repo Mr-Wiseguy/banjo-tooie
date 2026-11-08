@@ -167,7 +167,7 @@ void func_80800618_chpoolkids(Actor* arg0)
     }
     if (_glcutDll_entrypoint_20() == 0)
     {
-        func_800EF1B8(arg0->position, rand_fBounded(0.0f, 359.0f), rand_fBounded(0.0f, 200.0f));
+        ml_translateAngleDist(arg0->position, rand_fBounded(0.0f, 359.0f), rand_fBounded(0.0f, 200.0f));
     }
     func_80103014(arg0);
 }

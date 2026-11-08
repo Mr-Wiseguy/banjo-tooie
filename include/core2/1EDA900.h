@@ -8,6 +8,7 @@
 #include "core2/1EDFED0.h"
 #include "actorevents.h"
 
+void func_80101010(f32*);
 void func_80101038(f32*);
 f32 func_80101068();
 //Store a pointer in reserved memory

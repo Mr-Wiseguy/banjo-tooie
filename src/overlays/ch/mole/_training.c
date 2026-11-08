@@ -2,7 +2,7 @@
 
 void func_80800000_chmole_training(Actor* arg0)
 {
-    if (func_80100094(arg0, 0U) != NULL)
+    if (actor_getAdditionalMem(arg0, 0U) != NULL)
     {
         _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
     }

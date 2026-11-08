@@ -58,10 +58,10 @@ void func_80800000_chegggolden(Actor* arg0)
 
     EggNormalData* temp_s1;
 
-    temp_s1 = (EggNormalData*)func_80100094(arg0, 0U);
+    temp_s1 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     if (func_800A946C() < 3)
     {
-        func_800EFA20(&sp64, &arg0->actorData[4], 0.5f);
+        ml_getScaledVec3f(&sp64, &arg0->actorData[4], 0.5f);
         temp_s1->unk28 = (f32)(temp_s1->unk28 - time_getDelta());
         temp_f20 = ml_map_f(temp_s1->unk30, 0, 1.8f, 0.0333f, 0.1f);
 
@@ -79,7 +79,7 @@ void func_80800110_chegggolden(Actor* arg0)
 {
     EggNormalData* sp2C;
 
-    sp2C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp2C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
     case 1:

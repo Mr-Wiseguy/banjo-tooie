@@ -35,7 +35,7 @@ void baeggcursor_entrypoint_1(PlayerState* self)
             func_800E24CC(1);
             sp30[0] = (self->cursor->unk0 * 4.0f);
             sp30[1] = (self->cursor->unk4 * 4.0f);
-            func_800E30E0(func_800A7180(), asset_load(0x64E), 0, sp30);
+            draw_2D_Image(graphics_getGraphicsBuffer(), asset_load(ASSET_64E_SPRITE_AIM_CURSOR), 0, sp30);
         }
     }
 }

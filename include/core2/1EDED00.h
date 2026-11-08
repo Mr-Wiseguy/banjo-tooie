@@ -15,5 +15,6 @@ void func_80105A9C(Actor*, f32);
 void func_80105C20();
 f32 func_80105AE8(Actor*);
 void func_801061D8(Actor*);
+s32 func_801065A4();
 
 #endif

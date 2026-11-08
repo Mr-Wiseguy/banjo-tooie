@@ -45,7 +45,7 @@ void func_8009E154(PlayerState* arg0, s32 arg1, f32* arg2)
 	}
 	sp7C[1] += arg0->unk114->unk0[arg1].unk18;
 	if (arg0->unk114->unk0[arg1].unk1C != 0.0f) {
-		func_800EF4E4(sp70, arg0->unk114->unk0[arg1].unk20, func_800136E4(yaw_get(arg0) + arg0->unk114->unk0[arg1].unk24), 0.0f, 0.0f, arg0->unk114->unk0[arg1].unk1C);
+		func_800EF4E4(sp70, arg0->unk114->unk0[arg1].unk20, ml_normalizeAngle_f(yaw_get(arg0) + arg0->unk114->unk0[arg1].unk24), 0.0f, 0.0f, arg0->unk114->unk0[arg1].unk1C);
 		ml_vec3f_add(sp7C, sp70);
 	}
 	func_80096394(arg0, sp40);
