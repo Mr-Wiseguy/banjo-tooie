@@ -32,6 +32,12 @@ void graphics_setTextColors(s8, s8, s8);
 void graphics_setTextPattern(s32 pattern);
 void graphics_setTextScale(f32 size);
 void graphics_drawChar(GraphicsBuffers*, s32, s32, char);
+void func_800B8FE0();
+void func_800B8FEC();
+void func_800B90C8();
+void func_800B90E8();
+void func_800B9170();
+void func_800B956C();
 
 extern struct {
 	u8 red;
