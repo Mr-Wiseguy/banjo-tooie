@@ -8,7 +8,7 @@ typedef struct {
 	u8 unk4[4];
 	s16 unk8[8];
 	s32 unk18[8];
-	f32* unk38[8];
+	unkStruct800CA334* unk38[8];
 	s32 unk58[8];
 }UNKD_801276D0;
 extern s16 D_80127750;

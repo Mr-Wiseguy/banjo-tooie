@@ -19,4 +19,6 @@ typedef struct {
     u8 pad30[0xA8 - 0x30];
 } unkStruct800EE530;
 
+void func_800EE670(void);
+
 #endif

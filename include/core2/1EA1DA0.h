@@ -125,12 +125,18 @@ void func_800C8F64(s32, s32);
 void func_800C8FB0(s32, u32, u32, u32);
 void func_800C8FE0(s32, s32);
 s32 func_800C9044(s32);
+void func_800C9074(void);
 unkStruct800C9150* func_800C91C8(s32);
 void func_800C929C();
 void func_800C92A8();
+void func_800C9358(Gfx**, s32);
+void func_800C940C(Gfx**, s32);
+void func_800C9484(void);
 s32 func_800C9510();
 s32 func_800C954C();
+void func_800C9598(void);
 s32 func_800C95D4();
+void func_800C9610();
 s32 func_800C964C(s32);
 void func_800C968C(s32, s32);
 unkStruct800C9750* func_800C9750(f32, s32, u32*, s32, s32, s32, s32, s32);
@@ -150,7 +156,9 @@ void func_800C9DE4(f32, u32*, s32);
 void func_800C9E20(f32 timerLength, u32* callback, u32 callbackArg0, u32 callbackArg1);
 void func_800C9E64(f32, u32*, s32, s32, s32);
 void func_800C9EF8(f32, u32*, void*);
+void func_800CA060(void);
 void func_800CA0A8();
+void func_800CA174(void);
 extern u8 D_8012AB54;
 
 #endif // __CORE2_1EA1DA0_H__

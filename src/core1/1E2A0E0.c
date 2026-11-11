@@ -51,11 +51,11 @@ s32* func_80012EDC(void) {
     return &D_80046A78;
 }
 
-s32* func_80012EE8(void) {
+OSMesgQueue* func_80012EE8(void) {
     return &D_80069488;
 }
 
-s32* func_80012EF4(void) {
+OSIoMesg* func_80012EF4(void) {
     return &D_80069568;
 }
 
@@ -73,11 +73,11 @@ void func_80012F34(s32 arg0, s32 arg1) {
     func_80021AD0();
 }
 
-s32* func_80012F60(void) {
+OSMesgQueue* func_80012F60(void) {
     return &D_8007695C;
 }
 
-s32* func_80012F6C(void) {
+OSIoMesg* func_80012F6C(void) {
     return &D_80076940;
 }
 

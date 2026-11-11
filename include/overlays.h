@@ -43,8 +43,10 @@ typedef struct {
     s32 unk4;
 } Syscall;
 
+void defragment_overlays(void);
 void func_800815CC();
 void func_8008160C(s32);
+void func_80081724();
 void func_800819B4(Syscall*);
 //Return the syscall index of the given syscall entry
 s32 func_80081D34(void*);

@@ -11,5 +11,6 @@
 s32 func_800B56D0(u8);
 s32 func_800B5758(s32);
 void func_800B58D4(u8);
+void func_800B5A6C(void);
 
 #endif

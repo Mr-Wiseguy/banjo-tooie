@@ -23,4 +23,7 @@
 #include "core2/1E7AB30.h"
 #include "core2/1ED68A0.h"
 
+s32 _gcgame_entrypoint_0(s32);
+void _gcgame_entrypoint_1(void);
+
 #endif

@@ -21,12 +21,17 @@
 #include "core2/1EDFED0.h"
 
 MapId map_getCurrent(void);
+void func_800E9F20(s32, s32);
 s32 func_800EA068(s32);
 s32 func_800EA090(void);
 s32 func_800EA09C();
+void func_800EA0A8();
+s32 func_800EA0CC(s32, s32, s32);
+void func_800EA148(s32);
 s32 func_800EA170();
 void func_800EA334(s32);
 void func_800EA34C(s32);
+s32 func_800EA358(void);
 void func_800EA45C();
 void func_800EA51C();
 int func_800EB15C(Unk80132ED0* arg0);

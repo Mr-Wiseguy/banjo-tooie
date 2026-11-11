@@ -13,6 +13,8 @@
 
 s32 func_800E4730();
 void func_800E4B1C(s32);
+void func_800E4C7C(void);
 void func_800E692C();
+
 
 #endif

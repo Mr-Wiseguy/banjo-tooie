@@ -6,8 +6,12 @@
 #include "core1/1E2D890.h"
 #include "core2/1EB5980.h"
 
+void func_80015E80(s32, s32*);
+void func_80015F28(s32, s32*);
+s32 func_80015F84(s32);
 //Is Pause Button Pressed
 u8 func_80015FA0(u8);
+void func_80015FFC(s32, s32*);
 void func_80016068(u8, f32*);
 void func_8001608C();
 void func_80016734();

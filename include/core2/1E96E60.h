@@ -3,6 +3,7 @@
 #include "common.h"
 #include "core2/1EC8070.h"
 
+void func_800BD600(void);
 s32 func_800BD97C(s32[3]);
 s32 func_800BDB9C(s32);
 

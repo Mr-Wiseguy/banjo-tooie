@@ -164,6 +164,8 @@ TransformationId character_getTransform(s32);
 s32 character_getTransformBit(s32);
 //Get the character control index
 u32 character_getActiveIndex(void);
+void func_800F5184(void);
+void func_800F51A8(void);
 s32 character_getCurrentHealth(s32);
 s32 character_getMaxHealth(s32);
 Unk80132ED0* func_800F55D0(s32);
@@ -252,6 +254,7 @@ void func_800F832C(s32, f32*);
 void func_800F8418(s32, f32*);
 void func_800F8444(s32, f32*);
 void func_800F86C4(s32, TransformationId);
+void func_800F86D8(void);
 void func_800F8804(s32, f32*);
 void func_800F8850();
 unkStruct800F88A0* func_800F88A0(s32);
@@ -275,6 +278,7 @@ void func_800F9178();
 s32 func_800F9184(void);
 // Might take in a PlayerState *
 void func_800F9198(void);
+void func_800F91EC(void);
 s32 func_800F9214(s32);
 TransformationId func_800F929C(void);
 void func_800F93C4(s32*, s32*);

@@ -1,6 +1,8 @@
 #include "core2/1E79FD0.h"
 
 extern f32 D_80125490;
+extern u8 D_80119250[];
+extern u8 D_80119254[];
 
 s32 func_800A06E0() 
 {
@@ -10,7 +12,98 @@ s32 func_800A06E0()
 void func_800A06E8(PlayerState* self) {
 	func_800A0714(self, func_80092B80(self));
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0714.s")
+void func_800A0714(PlayerState* self, s32 arg1) {
+    s32 temp_a1;
+
+    func_800DF3E0();
+    switch (arg1) {
+    case 0x607:
+    case 0x608:
+    case 0x61F:
+    case 0x992:
+        if (self->unk138->unk17 == 0) {
+            func_800DF744(9, self->unk138->unk10);
+            func_800DF744(0xF, self->unk138->unk10);
+            func_800DF744(0xA, self->unk138->unkE);
+            func_800DF744(0x10, self->unk138->unkE);
+            func_800DF744(0xB, self->unk138->unkD);
+            func_800DF744(0x11, self->unk138->unkD);
+            temp_a1 = self->unk138->unkF;
+            func_800DF744(0x22, temp_a1);
+            func_800DF744(0x26, temp_a1);
+            func_800DF744(0x23, temp_a1);
+            func_800DF744(0x27, temp_a1);
+            temp_a1 = self->unk138->unk11 + 1;
+            func_800DF744(0x2A, temp_a1);
+            func_800DF744(0x2E, temp_a1);
+            func_800DF744(0x2B, temp_a1);
+            func_800DF744(0x2F, temp_a1);
+        }
+        func_800DF744(3, self->unk138->unk12);
+        func_800DF744(4, self->unk138->unk12);
+        func_800DF744(7, self->unk138->unk12);
+        func_800DF744(0x12, self->unk138->unk12);
+        temp_a1 = ml_mapNormal_f(self->unk138->unk0, 1.0f, 8.0f);
+        func_800DF744(0x35, temp_a1);
+        func_800DF744(0x39, temp_a1);
+        temp_a1 = ml_mapNormal_f(self->unk138->unk4, 1.0f, 8.0f);
+        func_800DF744(0x34, temp_a1);
+        func_800DF744(0x38, temp_a1);
+        break;
+    case 0x61C:
+    case 0x83A:
+    case 0x993:
+        if (self->unk138->unk15 != 0) {
+            func_800DF744(3, 2);
+        } else {
+            func_800DF744(3, 1);
+        }
+        temp_a1 = self->unk138->unkF;
+        func_800DF744(6, temp_a1);
+        func_800DF744(7, temp_a1);
+        temp_a1 = self->unk138->unk11 + 1;
+        func_800DF744(4, temp_a1);
+        func_800DF744(5, temp_a1);
+        func_800DF744(0x33, ml_mapNormal_f(self->unk138->unk0, 1.0f, 5.0f));
+        func_800DF744(0x32, ml_mapNormal_f(self->unk138->unk4, 1.0f, 5.0f));
+        break;
+    case 0x665:
+        func_800DF744(4, self->unk138->unk13);
+        func_800DF744(5, self->unk138->unk14);
+        func_800DF744(1, ml_mapNormal_f(self->unk138->unk4, 1.0f, 4.0f));
+        break;
+    case 0x60D:
+        func_800DF744(1, ml_mapNormal_f(self->unk138->unk0, 1.0f, 4.0f));
+        func_800DF744(2, ml_mapNormal_f(self->unk138->unk4, 1.0f, 4.0f));
+        break;
+    case 0x609:
+        func_800DF744(0x33, ml_mapNormal_f(self->unk138->unk0, 1.0f, 4.0f));
+        func_800DF744(0x32, ml_mapNormal_f(self->unk138->unk4, 1.0f, 4.0f));
+        break;
+    case 0x60B:
+    case 0x60C:
+    case 0x623:
+    case 0x624:
+    case 0x626:
+    case 0x998:
+        func_800DF744(0x33, ml_mapNormal_f(self->unk138->unk0, 1.0f, 5.0f));
+        func_800DF744(0x32, ml_mapNormal_f(self->unk138->unk4, 1.0f, 5.0f));
+        break;
+    case 0x988:
+        temp_a1 = D_80119250[func_800A940C(self->unk184)];
+        func_800DF744(5, temp_a1);
+        func_800DF744(4, temp_a1);
+        func_800DF744(3, self->unk138->unk16);
+        break;
+    case 0x98D:
+        func_800DF744(4, D_80119254[func_800A940C(self->unk184)]);
+        break;
+    case 0x984:
+    case 0x986:
+        func_800DF744(1, self->unk138->unk16);
+        break;
+    }
+}
 
 s32 func_800A0C20(PlayerState* self) {
     return self->unk138->unk10;
@@ -24,7 +117,17 @@ f32 func_800A0C38(PlayerState* self) {
     return self->unk138->unk4;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E79FD0/func_800A0C44.s")
+void func_800A0C44(PlayerState* self) {
+    func_800A0CF4(self, 0);
+    func_800A0CE8(self, 0);
+    func_800A0CDC(self, 0);
+    func_800A0D74(self, 0);
+    func_800A0D84(self, 0);
+    func_800A0DB8(self, 1);
+    func_800A0DD0(self, 0);
+    func_800A0CD0(self, 1);
+    func_800A0DC4(self, 0);
+}
 
 void func_800A0CD0(PlayerState* self, s32 arg1) {
     self->unk138->unk12 = arg1;
@@ -38,8 +141,7 @@ void func_800A0CE8(PlayerState* self, s32 arg1) {
     self->unk138->unkE = arg1;
 }
 
-void func_800A0CF4(PlayerState* self, s32 arg1) 
-{
+void func_800A0CF4(PlayerState* self, s32 arg1) {
     func_800A0D14(self, arg1, 0.0f);
 }
 

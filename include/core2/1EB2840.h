@@ -5,6 +5,7 @@
 #include "core2/1ECA640.h"
 
 void func_800D8F50(f32);
+void func_800D8FA0(s32);
 s32 func_800D8FEC();
 f32 time_getDelta(void); //time_getDelta()
 f32 func_800D9004();

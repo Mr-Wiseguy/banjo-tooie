@@ -30,11 +30,14 @@
 #include "su/baddiefade.h"
 #include "su/baddiezone.h"
 
+
 void func_800FF4A4(Actor*);
 void func_800FF62C(void);
 void func_800FFA88(Unk80132ED0*);
 void actor_mark_delete(Actor*);
 void func_800FFC14();
+void func_800FFC90(void);
+void func_800FFE08(void);
 u32* func_80100074(Actor*, u32, u32);
 void* actor_getAdditionalMem(Actor*, u32);
 s32 func_801000D8(Actor*, s32, s32);

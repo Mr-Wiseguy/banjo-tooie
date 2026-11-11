@@ -14,6 +14,7 @@ void func_800DA0B4();
 void func_800DA0D8();
 void func_800DA104();
 void func_800DA188();
+void func_800DA1E0(void);
 s32 func_800DA944(GameFlag startIndex, s32 length);
 s32 func_800DA980(GameFlag, s32);
 s32 func_800DA9E4(GameFlag, s32);

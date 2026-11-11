@@ -9,18 +9,31 @@
 #include "core2/1EB2C90.h"
 #include "core2/1EC8070.h"
 
+typedef struct {
+    f32 unk0[3];
+    u8 padC[0x10];
+    f32 unk1C;
+    u8 pad20[0xA4 - 0x20];
+    MtxF unkA4;
+    f32 unkE4;
+    u8 padE8[0xF4 - 0xE8];
+    f32 unkF4;
+    u8 padF8[0x164 - 0xF8];
+    f32 unk164;
+} unkStruct800CA334;
+
 // func_800CA1B0
 // func_800CA218
 // func_800CA2A8
 void func_800CA314(void*, void*);
-s32 func_800CA334();
+unkStruct800CA334* func_800CA334();
 void func_800CA364(void*);
 void* func_800CA384(void*);
 // func_800CA3A4
 void func_800CA3F4(f32*, f32*, f32);
 // func_800CA440
 // func_800CA510
-// func_800CA558
+void func_800CA558(unkStruct800CA334*, f32);
 void func_800CA5B8(f32*, f32*);
 void func_800CA5D8(f32*, s32*);
 // func_800CA5F8
@@ -41,14 +54,14 @@ void func_800CA740(f32*, f32*);
 MtxF* func_800CA7AC(s32);
 // func_800CA7B4
 // func_800CA7BC
-f32 func_800CA7E4(s32, f32[3]);
-void func_800CA810(void*, s32);
+f32 func_800CA7E4(unkStruct800CA334*, f32[3]);
+void func_800CA810(unkStruct800CA334*, s32);
 // func_800CA8B4
 // func_800CA8F4
 // func_800CA934
 void func_800CA9D8(f32 *, s32 *);
 // func_800CAA00
-f32 func_800CAA1C(s32);
+f32 func_800CAA1C(unkStruct800CA334*);
 // func_800CAA24
 // func_800CAB70
 // func_800CACEC

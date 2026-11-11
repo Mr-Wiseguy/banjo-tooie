@@ -7,6 +7,7 @@
 
 void func_8001B4B0(void);
 void func_8001B50C(void);
+void func_8001B518(s32);
 s16 func_8001B668(s32, s32);
 void func_8001B710(s16, s32);
 void func_8001B754(s16);

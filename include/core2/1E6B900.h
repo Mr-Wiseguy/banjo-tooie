@@ -57,7 +57,6 @@ s32 func_80092B80(PlayerState*);
 f32 func_80092B8C(PlayerState*, f32*);
 f32 func_80092BE8(PlayerState *);
 f32 func_80092BF4(PlayerState *);
-
 void func_80092C00(PlayerState*, f32[3]);
 void func_80092C24(PlayerState*, f32[3]);
 void func_80092C48(PlayerState*, f32[3]);

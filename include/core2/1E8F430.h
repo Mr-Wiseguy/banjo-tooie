@@ -18,7 +18,10 @@ void func_800B4428();
 void func_800B43E0();
 void func_800B5B40();
 void func_800B5B88();
+void func_800B5DF4();
+void func_800B5E3C(void);
 s32 func_800B5BE4(s32);
+void func_800B7448(Gfx**);
 void func_800B7B68(s32);
 void func_800B7BA4(f32);
 

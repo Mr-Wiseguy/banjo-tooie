@@ -24,9 +24,9 @@
 #include "player.h"
 
 s32 func_800A06E0();
-// func_800A06E8
+void func_800A06E8(PlayerState* self);
 void func_800A0714(PlayerState*, s32);
-s32 func_800A0C20(PlayerState*);
+s32 func_800A0C20(PlayerState *self);
 f32 func_800A0C2C(PlayerState*);
 f32 func_800A0C38(PlayerState*);
 void func_800A0C44(PlayerState*);
