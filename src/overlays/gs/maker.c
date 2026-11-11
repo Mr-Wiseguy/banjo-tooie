@@ -24,7 +24,7 @@ File* gsmaker_entrypoint_1(s32 asset_id) {
     this->last_expected = -1;
     this->unk1C = -1;
     this->unk20 = asset_id;
-    this->asset_base_ptr = func_800D674C(this->unk20);
+    this->asset_base_ptr = asset_load(this->unk20);
     this->asset_current_ptr = this->asset_base_ptr;
     func_800D70D0(1);
     func_800D71F4(1);

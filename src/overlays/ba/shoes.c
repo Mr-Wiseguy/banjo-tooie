@@ -1,11 +1,14 @@
-#include "common.h"
+#include "ba/shoes.h"
 
 s32 bashoes_entrypoint_0() 
 {
     return 0x18;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/bashoes_entrypoint_1.s")
+u8 bashoes_entrypoint_1(PlayerState* self)
+{
+    return self->shoes->unk4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/bashoes_entrypoint_2.s")
 
@@ -17,9 +20,9 @@ s32 bashoes_entrypoint_0()
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/func_80800180_bashoes.s")
 
-void bashoes_entrypoint_3(s32 arg0)
+void bashoes_entrypoint_3(PlayerState* self)
 {
-    bashoes_entrypoint_6(arg0,0);
+    bashoes_entrypoint_6(self,0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/ba/shoes/bashoes_entrypoint_4.s")

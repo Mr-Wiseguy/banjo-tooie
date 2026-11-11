@@ -30,5 +30,6 @@
 #include "su/baddieskeleton.h"
 #include "su/expression.h"
 
+void _chjinjo_entrypoint_4(s32, s32, s32);
 
 #endif

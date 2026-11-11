@@ -37,7 +37,7 @@ void fxdialog_entrypoint_2(f32 arg0)
     }
 }
 
-void fxdialog_entrypoint_3(u32 arg0, f32 arg1, s32 arg2, s32 arg3)
+void fxdialog_entrypoint_3(GraphicsBuffers* arg0, f32 arg1, s32 arg2, s32 arg3)
 {
     f32 sp40[2];
     f32 sp34[3];
@@ -51,10 +51,10 @@ void fxdialog_entrypoint_3(u32 arg0, f32 arg1, s32 arg2, s32 arg3)
     func_800DF41C(temp_v0);
     func_800DF410(arg3);
     // a4 is declared as u8 -> probably needs to be a void * or f32 * / f32[2] more specifically?
-    func_800DF944(arg0, &B_80800290_fxdialog.unk0, arg2 * 90.0f, B_80800290_fxdialog.unk10, sp40, 0U, func_800D674C(0x9F1));
+    func_800DF944(arg0, &B_80800290_fxdialog.unk0, arg2 * 90.0f, B_80800290_fxdialog.unk10, sp40, 0U, asset_load(0x9F1));
 }
 
-void fxdialog_entrypoint_4(s32 arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6)
+void fxdialog_entrypoint_4(GraphicsBuffers* arg0, s32 icon, s32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6)
 {
     s32 sp28[2];
     f32 var_f12;
@@ -73,5 +73,6 @@ void fxdialog_entrypoint_4(s32 arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4, s32
     func_800E257C(arg5);
     sp28[0] = B_80800290_fxdialog.unk8 + (arg3 * 4.0f * var_f12);
     sp28[1] = B_80800290_fxdialog.unkC + (arg4 * 4.0f * sp20);
-    func_800E30E0(arg0, func_800D674C(arg1), arg2, sp28);
+    //Draw the icon
+    draw_2D_Image(arg0, asset_load(icon), arg2, sp28);
 }

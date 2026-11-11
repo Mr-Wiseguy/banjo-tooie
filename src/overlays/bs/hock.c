@@ -227,7 +227,7 @@ void bsbshock_entrypoint_5(PlayerState* self)
         {
             nextState = BS_STATE_F_BBUSTER;
         }
-        if (func_8008DA24(self) != 0)
+        if (player_canGripGrab(self) != 0)
         {
             nextState = BS_STATE_A8_GRIP_GRAB_START;
         }

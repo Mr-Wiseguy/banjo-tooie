@@ -320,7 +320,7 @@ void func_800C8F08(s32* arg0, f32* arg1) {
     }
     if (arg1 != NULL) {
         ml_vec3f_copy(D_8012AB28, arg1);
-        func_800EF2A0(D_8012AB28);
+        ml_vec3f_normalizeMagnitude(D_8012AB28);
     }
 }
 
@@ -703,15 +703,17 @@ void func_800C9AB0(s32 arg0) {
     }
 }
 
-void func_800C9B30(unkStruct800C9B30* arg0, s32 arg1, s32 arg2) {
-    unkStruct800C9B30* sp1C = arg0;
+void func_800C9B30(Unk80132ED0* arg0, s32 arg1, s32 arg2)
+{
+    Unk80132ED0* sp1C = arg0;
     s32* p2 = &arg2;
     s32* p1 = &arg1;
     s32* p0 = (s32*)&arg0;
 
-    if (sp1C->unk12) {
+    if (sp1C->unk12_1) {
     }
-    if ((func_801069A4() != 0) && (arg1 == ((u32)sp1C->unk12 >> 1))) {
+    if ((func_801069A4(sp1C) != 0) && (arg1 == ((u32)sp1C->unk12_1)))
+    {
         func_8010114C(sp1C, 0x22, arg2);
     }
 }

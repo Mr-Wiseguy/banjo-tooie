@@ -1,89 +1,101 @@
 #include "core2/1E91790.h"
 
+
+extern s8 D_8011A668;
+extern s8 D_801282C5;
+
 void func_800B7EA0(s32 arg0, s32 arg1)
 {
 	s32 sp3C;
 	s32 sp38;
 	s32 sp34;
 
-	func_800AF614(arg0, func_800D674C(arg1), 0, 0x100, 1, 2, 2, &sp38, &sp34);
-	D_801282C0.data[0xA] = sp38;
-	D_801282C0.data[0xB] = sp34;
+	func_800AF614(arg0, asset_load(arg1), 0, 0x100, 1, 2, 2, &sp38, &sp34);
+	D_801282C0.unkA = sp38;
+	D_801282C0.unkB = sp34;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B7F14.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B80D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B811C.s")
+void func_800B811C(GraphicsBuffers* arg0) {
+	Gfx* temp_v1;
+
+	temp_v1 = arg0->gfx;
+	arg0->gfx++;
+	temp_v1->words.w0 = 0xDE000000; temp_v1->words.w1 = (u32)(&D_8011A668 - 0x80000000);
+
+	D_801282C0.unk5 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8148.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B81CC.s")
 
-#ifndef NON_MATCHING
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8C50.s")
-#else
-//Reset Text Parameters
-void func_800B8C50(void)
+void graphics_resetTextParams(void)
 {
-	D_801282C0.data[2] = 0xFF;
-	D_801282C0.data[1] = 0xFF;
-	D_801282C0.data[0] = 0xFF;
-	D_801282C0.data[3] = 0xFF;
-	D_801282C0.data[9] = 0; //Color
-	D_801282C0.data[7] = 0; 
-	D_801282C0.data[4] = 0; //Shakiness
-	D_801282C0.data[6] = 0; //Font
-	D_801282C0.value = 1.0f; //Size
+	D_801282C0.alpha = D_801282C0.red = D_801282C0.green = D_801282C0.blue = 255;
+	D_801282C0.pattern = 0;
+	D_801282C0.unk7 = 0;
+	D_801282C0.shaky = 0; //Shakiness
+	D_801282C0.font = 0; //Font
+	D_801282C0.size = 1.0f; //Size
 }
-#endif
 
 //Set Text Transparency
-void func_800B8C8C(s32 Transparency)
+void graphics_setTextAlpha(s32 Transparency)
 {
-	D_801282C0.data[3] = Transparency;
+	D_801282C0.alpha = Transparency;
 }
 
 //Set Text Font
-void func_800B8C98(s32 Font)
+void graphics_setTextFont(s32 Font)
 {
-	D_801282C0.data[6] = Font;
+	D_801282C0.font = Font;
 }
 
 //Set Text Shakiness
-void func_800B8CA4(s32 shakiness)
+void graphics_setTextShaky(s32 shakiness)
 {
-	D_801282C0.data[4] = shakiness;
+	D_801282C0.shaky = shakiness;
 }
 
 void func_800B8CB0(s32 unk)
 {
-	D_801282C0.data[7] = unk;
+	D_801282C0.unk7 = unk;
 }
 
-void func_800B8CBC(s8 arg0, s8 arg1, s8 arg2)
+void graphics_setTextColors(s8 arg0, s8 arg1, s8 arg2)
 {
-	D_801282C0.data[0] = arg0;
-	D_801282C0.data[1] = arg1;
-	D_801282C0.data[2] = arg2;
+	D_801282C0.red = arg0;
+	D_801282C0.green = arg1;
+	D_801282C0.blue = arg2;
 }
 
-//Set Text Color
-void func_800B8CE0(s32 color)
+//Set Text Pattern
+void graphics_setTextPattern(s32 pattern)
 {
-	D_801282C0.data[9] = color-0xC24;
+	D_801282C0.pattern = pattern -0xC24;
 }
 
 //Set Text Size
-void func_800B8CF0(f32 size)
+void graphics_setTextScale(f32 size)
 {
-	D_801282D4 = size;
+	D_801282C0.size = size;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8CFC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8DEC.s")
+void graphics_drawChar(GraphicsBuffers* arg0, s32 coordX, s32 coordY, char charToPrint)
+{
+	if (D_801282C0.unkC != 0)
+	{
+		D_801282C0.unk8 = 0;
+		func_800B81CC(arg0, coordX, coordY, charToPrint);
+	}
+
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E91790/func_800B8E28.s")
 

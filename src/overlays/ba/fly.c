@@ -57,7 +57,7 @@ void bafly_entrypoint_5(PlayerState* self) {
     self->unk8C->unk4 = 1.0f;
     self->unk8C->unk0 = 0.0f;
     self->unk8C->unk8 = 0;
-    temp_v0 = func_800EA05C();
+    temp_v0 = map_getCurrent();
     if ((temp_v0 != 0xE4) && (temp_v0 != 0x17B)) {
         self->unk8C->unkE = 0;
         return;
@@ -87,14 +87,14 @@ void bafly_entrypoint_8(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 arg
         func_8009BA9C(self, NULL);
         sp3C = 0.0f;
     } else if (temp_f20 <= arg2) {
-        baphysics_set_terminal_velocity(self, func_800F10B4(temp_f20, arg2 - 20.0f, arg2, arg5, arg7));
-        baphysics_set_gravity(self, func_800F10B4(temp_f20, arg2 - 20.0f, arg2, arg4, arg6));
-        sp3C = func_800F10B4(temp_f20, arg2 - 20.0f, arg2, arg3, arg3 / 10.0f);
-        bafly_entrypoint_6(self, func_800F10B4(temp_f20, arg2 - 20.0f, arg2, 0.0f, 0.35f));
+        baphysics_set_terminal_velocity(self, ml_map_f(temp_f20, arg2 - 20.0f, arg2, arg5, arg7));
+        baphysics_set_gravity(self, ml_map_f(temp_f20, arg2 - 20.0f, arg2, arg4, arg6));
+        sp3C = ml_map_f(temp_f20, arg2 - 20.0f, arg2, arg3, arg3 / 10.0f);
+        bafly_entrypoint_6(self, ml_map_f(temp_f20, arg2 - 20.0f, arg2, 0.0f, 0.35f));
     } else {
-        baphysics_set_terminal_velocity(self, func_800F10B4(temp_f20, arg1, arg1 + 10.0f, -399.99f, arg5));
-        sp3C = func_800F10B4(temp_f20, arg1, arg1 + 40.0f, 0.0f, arg3);
-        bafly_entrypoint_6(self, func_800F10B4(temp_f20, arg1, arg1 + 40.0f, -0.25f, 0.0f));
+        baphysics_set_terminal_velocity(self, ml_map_f(temp_f20, arg1, arg1 + 10.0f, -399.99f, arg5));
+        sp3C = ml_map_f(temp_f20, arg1, arg1 + 40.0f, 0.0f, arg3);
+        bafly_entrypoint_6(self, ml_map_f(temp_f20, arg1, arg1 + 40.0f, -0.25f, 0.0f));
     }
     func_80096394(self, sp44);
     if ((func_8009650C(self) != 0) && (sp44[1] > -1.0f)) {
@@ -120,8 +120,8 @@ void bafly_entrypoint_9(PlayerState* self) {
         sp30 = 3.0f;
         var_f0 = 75.0f;
     }
-    baroll_setIdeal(self, func_800F10B4(sp28, -1.0f, 1.0f, -var_f0, var_f0));
-    sp34 = func_800F10B4(sp28, -1.0f, 1.0f, sp30, -sp30);
+    baroll_setIdeal(self, ml_map_f(sp28, -1.0f, 1.0f, -var_f0, var_f0));
+    sp34 = ml_map_f(sp28, -1.0f, 1.0f, sp30, -sp30);
     sp34 *= _bafpctrl_entrypoint_3(self);
     yaw_setIdeal(self, yaw_getIdeal(self) + sp34);
 }
@@ -131,9 +131,9 @@ void bafly_entrypoint_10(PlayerState* self, f32 arg1, f32 arg2) {
 
     temp_f0 = bastick_getY(self);
     if (temp_f0 < 0.0f) {
-        func_8009BF5C(self, func_800F10B4(temp_f0, -1.0f, 0.0f, arg1, 360.0f));
+        func_8009BF5C(self, ml_map_f(temp_f0, -1.0f, 0.0f, arg1, 360.0f));
     } else {
-        func_8009BF5C(self, func_800F10B4(temp_f0, 0.0f, 1.0f, 0.0f, arg2));
+        func_8009BF5C(self, ml_map_f(temp_f0, 0.0f, 1.0f, 0.0f, arg2));
     }
 }
 
@@ -151,7 +151,7 @@ void bafly_entrypoint_11(PlayerState* self) {
     func_80110818(func_800A4CA8(self), &sp38);
     temp_f0 = func_800F1DCC(sp38.pos.y + 180.0f, yaw_get(self));
     temp_f0 = mlAbsF(temp_f0);
-    sp44 -= func_800F10B4(temp_f0, 0.0f, 50.0f, 0.0f, 0.4f);
+    sp44 -= ml_map_f(temp_f0, 0.0f, 50.0f, 0.0f, 0.4f);
     sp44 += self->unk8C->unk0;
     sp48 = sp44 - self->unk8C->unk4;
     if (mlAbsF(sp48) > 0.01f) {
@@ -209,7 +209,7 @@ void bafly_entrypoint_13(PlayerState* self, s32 arg1, enum asset_e arg2, f32 arg
     _bamotor_entrypoint_1(self, 1.0f, 0.5f, 0.5f);
     func_800A32C4(self, &sp48);
     func_800F1E6C(&sp48, &sp54, &sp40);
-    yaw_setIdeal(self, func_800136E4(sp40 + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp40 + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, sp38);
     baphysics_set_target_yaw(self, sp40);
@@ -255,7 +255,7 @@ void bafly_entrypoint_16(PlayerState* self, enum asset_e arg1, f32 arg2) {
     func_8009DA40(self);
     func_800A32C4(self, &sp34);
     func_800F1E6C(&sp34, &sp40, &sp4C);
-    yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp4C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, 1300.0f);
     baphysics_set_target_yaw(self, sp4C);
@@ -309,7 +309,7 @@ void bafly_entrypoint_20(PlayerState* self)
     f32 temp_f0;
 
     temp_f0 = _bafpctrl_entrypoint_3(self);
-    temp_f0 = func_800F10B4(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
+    temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
     func_8009BFE4(self, 500.0f * temp_f0, 1.2f);
 }
 
@@ -318,6 +318,6 @@ void bafly_entrypoint_21(PlayerState* self)
     f32 temp_f0;
 
     temp_f0 = _bafpctrl_entrypoint_3(self);
-    temp_f0 = func_800F10B4(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
+    temp_f0 = ml_map_f(temp_f0, 0.1f, 1.0f, temp_f0 * temp_f0, 1.0f);
     func_8009BFE4(self, 1000.0f*temp_f0, 2.2f);
 }

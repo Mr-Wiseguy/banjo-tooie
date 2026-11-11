@@ -8,32 +8,10 @@
 #include "physicstypes.h"
 #include "transformations.h"
 
-typedef struct unkCUnk0 {
-	s32 unk0;
-	s32 unk4;
-	s32 unk8;
-	s32 unkC;
-	s32 unk10;
-	s32 unk14;
-	s16 unk18;
-    u16 unk1A;
-	s16 unk1C;
-	s16 unk1E;
-	s32 unk20;
-	s32 unk24;
-	union {
-		s32 unk28;
-		struct {
-			s32 unk28_11 : 21;
-			s32 unk28_10 : 1;
-			s32 unk28_9 : 1;
-		};
-	};
-
-} unkCUnk0;
 typedef struct ba_unknown_c_s {
-	unkCUnk0* unk0;
-	s32 pad4[2];
+    Unk80132ED0* unk0;
+	s32 unk4;
+    s32 unk8;
 	s32 unkC[3];
 	s32 unk18;
 } BaUnknownC;
@@ -87,7 +65,7 @@ typedef struct ba_unknown_50_s {
     u16 unk2;
     UNKfunc_800DBEB0_ARG0* unk4;
     s32 unk8;
-    s16 unkC;
+    s16 unkC; //Current Character Model
     s16 unkE;
     u8 unk10;
     u8 unk11;
@@ -179,19 +157,37 @@ typedef struct ba_unk54_s {
 } BaUnknown54;
 typedef struct {
     s32 unk0;
-    u8 pad4[0x18];
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
     f32 unk1C[3][3];
-    u8 pad40[0x24];
+    u8 unk40[3][4]; //Player Lighting?
+    f32 unk4C[3];
+    f32 unk58[3];
     f32 unk64[3];
+    f32 unk70;
     f32 unk74;
     f32 unk78;
     s32 unk7C;
-    u8 pad80[0xC];
+    s32 unk80;
+    s32 unk84;
+    s32 unk88;
     s16 unk8C;
-    u8 pad8E[5];
+    u8 unk8E;
+    u8 unk8F;
+    u8 unk90;
+    u8 unk91;
+    u8 unk92;
     u8 unk93;
-    u8 pad94;
+    u8 unk94;
     u8 unk95;
+    u8 unk96;
+    u8 unk97;
+    f32 unk98;
+    u8 unk9C;
 } UNKfunc_800C68A0_ARG0;
 typedef struct ba_unknown_94_s {
     UNKfunc_800C68A0_ARG0* unk0;
@@ -204,7 +200,12 @@ typedef struct ba_unknown_94_s {
     s32 unk1C;
     f32 unk20[3][3];
     f32 unk44[3];
-    u8 unk50[0x14];
+	Unk80132ED0* unk50; //Object being stood on
+	u8 unk54;
+	u8 unk55;
+	u8 unk56;
+	u8 unk57;
+    u8 unk58[0xC];
     f32 unk64;
     f32 unk68;
     u8 unk6C[8];
@@ -213,7 +214,8 @@ typedef struct ba_unknown_94_s {
     f32 unk84[3];
     f32 unk90[3];
     s32 unk9C;
-    u8 unkA0[2];
+    u8 touchingWater; //0xA0 Touching Water
+	u8 atSurface; //0xA1 At surface of water e.g. can jump
     u8 unkA2;
     u8 unkA3;
     u8 unkA4;
@@ -228,6 +230,16 @@ typedef struct ba_unknown_98_s {
     u8 unk25;
     u8 unk26;
 } ba_unknown_98_s;
+typedef struct ba_duo_s {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    f32 unk4;
+    f32 unk8[3];
+    //Size 0x14
+} BaDuo;
+
 typedef struct ba_dust_s {
     s32 unk0;
     s32 unk4;
@@ -317,7 +329,14 @@ typedef struct ba_unkA0_s {
     u8 unk56;
     u8 unk57;
 } ba_unkA0_s;
-
+typedef struct ba_unknown_AC_s {
+    u8 pad0[0x28];
+    s8 unk28;
+    s8 unk29;
+    s8 unk2A;
+    s8 unk2B;
+    f32 unk2C;
+} ba_unknown_AC_s;
 typedef struct ba_unknown_B8_s {
     void (*unk0)(s32);
     s32 unk4;
@@ -339,7 +358,7 @@ typedef struct ba_unknown_BC_s {
 typedef struct ba_unknown_C8_s {
     BaPhysicsType currentPhysicsType;
     f32 unk4[3];
-    f32 unk10[3];
+    f32 unk10[3]; //Velocity
     f32 unk1C[3];
     f32 unk28[3];
     f32 unk34[3];
@@ -356,7 +375,21 @@ typedef struct ba_unknown_DC_s {
     f32 unk8;
     f32 unkC;
 } ba_unknown_DC_s;
-
+typedef struct ba_unknown_E0_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    u8 pad1C[0x10];
+    u8 unk2C;
+    u8 unk2D;
+    u8 unk2E;
+    u8 unk2F;
+    f32 unk30;
+} ba_unknown_E0_s;
 typedef struct PositionInfo {
     f32 current[3];
     f32 oldPos[3];
@@ -372,7 +405,48 @@ typedef struct ba_unknown_E8_s {
 	f32 unk4;
 	f32 unk8;
 } ba_unknown_E8_s;
-
+typedef struct ba_unknown_F0_sUNK0
+{
+	u8 unk0;
+	u8 unk1;
+	u8 unk2;
+	u8 unk3;
+	f32 unk4[3];
+}ba_unknown_F0_sUNK0;
+typedef struct ba_unknown_F0_s {
+	ba_unknown_F0_sUNK0 unk0[8];
+	u8 unk80;
+	u8 unk81;
+	u8 unk82;
+	u8 unk83;
+} ba_unknown_F0_s;
+typedef struct ba_shoes_s {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    u8 unk4;
+    //Size 0x18
+} ba_shoes_s;
+typedef struct ba_unknown_114_2_s {
+    f32 unk0;
+    s16 unk4;
+    s16 unk6;
+    s32 unk8; //void (*arg2)(PlayerState*, s32, s32)
+	f32 unkC[3];
+	f32 unk18;
+	f32 unk1C;
+	f32 unk20;
+	f32 unk24;
+    //Size 0x28
+} BaUnknown114_2;
+typedef struct ba_unknown_114_s {
+    BaUnknown114_2 unk0[6];
+	s8 unkF0;
+	s8 unkF1;
+	s8 unkF2;
+	s8 unkF3;
+} BaUnknown114;
 typedef struct ba_unknown_134_s {
     f32 unk0;
     f32 unk4;
@@ -448,7 +522,7 @@ typedef struct bs_firstp_s {
     f32 unk20C;
 } BsFirstP;
 typedef struct bs_van_s {
-    s32 unk0;
+    Unk80132ED0* unk0;
     f32 unk4[3];
     s32 unk10;
 } BsVan;
@@ -456,8 +530,8 @@ typedef struct bs_van_s {
 typedef struct ba_unknown_150_s {
     u8 unk0;
     u8 unk1;
-    u8 unk2;
-    u8 pad3[1];
+    u8 grounded;
+    u8 unk3;
     f32 unk4;
     f32 unk8;
     f32 unkC;
@@ -487,7 +561,7 @@ typedef struct player_state_s {
     u8 pad49[0x7];
     struct ba_unknown_50_s* unk50;
     /* 0x54 */  BaUnknown54* unk54;
-    u8 pad58[0x4];
+    /* 0x58 */ BaDuo* duo;
     /* 0x5C */ BaDust* dust;
     u8 pad60[0x4];
     u8* unk64;
@@ -498,12 +572,14 @@ typedef struct player_state_s {
     u8 pad84[0x8];
     /* 0x8C */ struct ba_unknown_8C_s* unk8C;
     u8 pad90[0x4];
-    /* 0x94 */ struct ba_unknown_94_s* unk94;
+    /* 0x94 */ struct ba_unknown_94_s* unk94; //Player mesh collisions?
     /* 0x98 */ struct ba_unknown_98_s* unk98;
     /* 0x9C */ BaHold* hold;
     /* 0xA0 */ ba_unkA0_s* unkA0;
     /* 0xA4 */ struct ba_input_s *input;
-    u8 padA8[0x10];
+    u8 padA8[0x4];
+    /* 0xAC */ ba_unknown_AC_s* unkAC;
+    u8 padB0[0x8];
     /* 0xB8 */ struct ba_unknown_B8_s* unkB8;
     /* 0xBC */ struct ba_unknown_BC_s* unkBC;
     /* 0xC0 */ struct ba_unknown_C0_s *unkC0; // 1E72EA0
@@ -511,13 +587,18 @@ typedef struct player_state_s {
     /* 0xC8 */ struct ba_unknown_C8_s *unkC8;
     u8 padCC[0xDC - 0xCC];
     /* 0xDC */ ba_unknown_DC_s* unkDC;
-    u8 padE0[4];
+    /* 0xE0 */ ba_unknown_E0_s* unkE0;
     /* 0xE4 */ PositionInfo* posInfo;
 	/* 0xE8 */ ba_unknown_E8_s* unkE8;
-	u8 padEC[0x8];
+	u8 padEC[0x4];
+	/* 0xF0 */ ba_unknown_F0_s* unkF0;
     /* 0xF4 */ struct ba_roll_s *roll;
     /* 0xF8 */ struct ba_yaw_s *yaw;
-    u8 padFC[0x24];
+    u8 padFC[0x10];
+    /* 0x10C */ ba_shoes_s* shoes;
+    u8 pad110[0x4];
+    /* 0x114 */ BaUnknown114* unk114;
+    u8 pad118[0x8];
     /* 0x120 */ struct bs_state_s *state;
     u8 pad124[4];
     /* 0x128 */ struct ba_stick_s *stick;
@@ -537,10 +618,12 @@ typedef struct player_state_s {
         u8 bytes[4];
     } unk15C; // Some sort of state
     union {
+        Unk80132ED0* object; //Unk80132ED0 is an object reference of some kind
         s32 word;
         u8 bytes[4];
     } unk160;
     union {
+        Unk80132ED0* object;
         s32 word;
         u8 bytes[4];
     } unk164;

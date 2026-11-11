@@ -61,7 +61,7 @@ void bskazmove_entrypoint_0(PlayerState *self) {
             break;
     }
 
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(value, min, max));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(value, min, max));
 }
 
 BanjoStateId func_808001C4_bskazmove(PlayerState *self, BanjoStateId nextState) {
@@ -154,7 +154,7 @@ void bskazmove_entrypoint_3(PlayerState *self) {
 
     if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
-        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
+        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (player_canSwap(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
         }
@@ -277,7 +277,7 @@ void bskazmove_entrypoint_7(PlayerState *self) {
 
 void bskazmove_entrypoint_8(PlayerState *self) {
     _bskaz_entrypoint_1(self);
-    if ((bs_getPreviousState(self) == 0xBC) && (func_8009BB5C(self) < 200.0f)) {
+    if ((bs_getPreviousState(self) == 0xBC) && (baphysics_get_horizontal_velocity(self) < 200.0f)) {
         _badust_entrypoint_3(self, 0.0f, 0.0f);
     }
     self->unk15C.word = 0;
@@ -326,7 +326,7 @@ void bskazmove_entrypoint_9(PlayerState *self) {
 
     if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
-        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (func_8008D790(self) != 0)) {
+        if ((baphysics_get_target_horizontal_velocity(self) == 0.0f) && (player_canSwap(self) != 0)) {
             _baduo_entrypoint_12(self);
             return;
         }

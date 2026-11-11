@@ -10,12 +10,6 @@
 // Ratio between the anamorphic widescreen aspect ratio (16:9) and the normal one (4:3) 
 #define WIDESCREEN_ADJUSTMENT ((16.0f / 9.0f) / (4.0f / 3.0f))
 
-typedef struct {
-    Gfx* gfx;
-    Mtx* mtx;
-    Vtx* vtx;
-} GraphicsBuffers;
-
 extern s16 widescreen_enabled;
 
 // get_framebuffer_size_bytes

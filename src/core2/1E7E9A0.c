@@ -28,6 +28,6 @@ void func_800A5144()
 void func_800A516C(f32* arg0, f32* arg1, f32* arg2)
 {
     func_800F18FC(arg1, arg2, arg0);
-    arg0[0] = func_800136E4(-arg0[0]);
+    arg0[0] = ml_normalizeAngle_f(-arg0[0]);
     arg0[2] = 0.0f;
 }

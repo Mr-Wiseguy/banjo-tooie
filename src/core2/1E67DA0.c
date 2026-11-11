@@ -1,6 +1,6 @@
 #include "core2/1E67DA0.h"
 
-
+extern s32 D_80117CAC;
 extern s32 D_80126CE0[][3];
 extern f32 D_80126D08[];
 
@@ -82,7 +82,7 @@ void func_8008E6F0(PlayerState* self)
 			}
 			case TRANSFORM_B_KAZOOIE:
 			{
-				if (func_800F8B88() == 3)
+				if (bs_getSplitStatus() == SPLIT_STATE_TALON_TORPEDO)
 				{
 					if (func_800F6D24(charIndex) != 0)
 					{
@@ -137,22 +137,39 @@ void func_8008E6F0(PlayerState* self)
 	self->unkC->unk18 = -1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E92C.s")
+s32 func_8008E92C(PlayerState* arg0) {
+	return arg0->unkC->unk18;
+}
+Unk80132ED0* func_8008E938(PlayerState* arg0)
+{
+	return arg0->unkC->unk0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E938.s")
+void func_8008E944(PlayerState* arg0)
+{
+	arg0->unkC->unk0->unk28_9 = 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E944.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E95C.s")
+void func_8008E95C(PlayerState* arg0)
+{
+	arg0->unkC->unk0->unk28_9 = 1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E974.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E9A0.s")
+void func_8008E9A0(PlayerState* arg0, s32 arg1)
+{
+	arg0->unkC->unk4 = arg1;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E9AC.s")
+s32 func_8008E9AC(PlayerState* arg0) {
+	return arg0->unkC->unk4;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E9B8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008E9E4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1E67DA0/func_8008ED70.s")
+s32* func_8008ED70(void) {
+	return &D_80117CAC;
+}

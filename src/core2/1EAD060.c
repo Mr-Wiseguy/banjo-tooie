@@ -148,7 +148,7 @@ void func_800D3AF0(s32 arg0) {
 }
 
 void func_800D3B24(void) {
-    func_800D3B6C(1, &func_800DC324, osGetCount(), 0, 0);
+    func_800D3B6C(1, &rand_setSeed, osGetCount(), 0, 0);
 }
 
 u8 func_800D3B60(void) {

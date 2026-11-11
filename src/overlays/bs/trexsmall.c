@@ -136,10 +136,10 @@ void func_808002B8_bstrexsmall(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     case BS_STICK_ZONE_ID_1:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 100.0f, 300.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 100.0f, 300.0f));
         return;
     case BS_STICK_ZONE_ID_2:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 300.0f, 600.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 300.0f, 600.0f));
         return;
     }
 }
@@ -213,7 +213,7 @@ void bstrexsmall_entrypoint_3(PlayerState* self) {
     if ((self->unk160.bytes[0] != 0) && (self->unk15C.bytes[2] == 3))
     {
         sp1C = func_800C3920(self->unk160.bytes[0]);
-        temp_v0 = func_800F0E28(0, (s32)((f32)sp1C - (time_getDelta() * 60000.0f)));
+        temp_v0 = ml_max_i(0, (s32)((f32)sp1C - (time_getDelta() * 60000.0f)));
         if (temp_v0 != 0)
         {
             func_800C3058(self->unk160.bytes[0], temp_v0);
@@ -289,7 +289,7 @@ void func_80800818_bstrexsmall(PlayerState* self) {
         }
         break;
     case 2:
-        temp_f0 = func_800F0E00(self->unk16C - 7.0f, 0.0f);
+        temp_f0 = ml_max_f(self->unk16C - 7.0f, 0.0f);
         self->unk16C = temp_f0;
         if (temp_f0 > 140.0f) {
             _badust_entrypoint_9(self);

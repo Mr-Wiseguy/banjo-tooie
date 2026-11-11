@@ -6,6 +6,7 @@
 
 s32 func_80014E10(s32, s32);
 void func_80014E6C();
+s32 func_80014F00();
 s16 func_80014F4C(void);
 s16 func_80014F58(void);
 void func_80014FE8();

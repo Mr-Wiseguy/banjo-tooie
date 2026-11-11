@@ -135,7 +135,7 @@ void func_80800484_bsmum(PlayerState *self) {
             break;
         case 3:
             if (self->unk16C > 0.0f) {
-                self->unk16C = func_800F0E00(0.0f, self->unk16C - 10.0f);
+                self->unk16C = ml_max_f(0.0f, self->unk16C - 10.0f);
             }
             break;
     }
@@ -250,7 +250,7 @@ void func_808009F8_bsmum(PlayerState *self) {
         bsmum_entrypoint_13(self);
     }
     func_8009BB24(self, sp24);
-    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (func_8008D544(self) == 0)) {
+    if (((bakey_released(self, BUTTON_A) != 0) && (sp24[1] > 0.0f)) || (player_canFullJump(self) == 0)) {
         baphysics_reset_gravity(self);
     }
     switch (self->unk15C.word) {
@@ -387,7 +387,7 @@ void bsmum_entrypoint_13(PlayerState *self) {
             baphysics_set_target_horizontal_velocity(self, 0.0f);
             return;
         }
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(bastick_distance(self), 30.0f, 150.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(bastick_distance(self), 30.0f, 150.0f));
         return;
     }
     switch (stick_zone) {
@@ -396,11 +396,11 @@ void bsmum_entrypoint_13(PlayerState *self) {
             return;
         case BS_STICK_ZONE_ID_1:
             min_velocity = _bsmummove_entrypoint_2(self);
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_1(self)));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(zone_position, min_velocity, _bsmummove_entrypoint_1(self)));
             return;
         case BS_STICK_ZONE_ID_2:
             min_velocity = _bsmummove_entrypoint_1(self);
-            baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, min_velocity, _bsmummove_entrypoint_0(self)));
+            baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(zone_position, min_velocity, _bsmummove_entrypoint_0(self)));
             return;
     }
 }

@@ -21,7 +21,7 @@ void func_80800068_bskazcrouch(PlayerState *self) {
 }
 
 void func_808000B4_bskazcrouch(AnimCtrl *anim_ctrl, f32 arg1) {
-    anctrl_setDuration(anim_ctrl, func_800F10B4(arg1, 0, 180, 0.5, 0.2));
+    anctrl_setDuration(anim_ctrl, ml_map_f(arg1, 0, 180, 0.5, 0.2));
 }
 
 void func_808000FC_bskazcrouch(PlayerState *self, s32 arg1) {
@@ -110,7 +110,7 @@ void bskazcrouch_entrypoint_2(PlayerState* self)
 	sp34 = baanim_getAnimCtrlPtr(self);
 	_batimer_decrement(self, 0);
 	_batimer_decrement(self, 1);
-	sp38 = func_800F10B4(_batimer_get(self, 0), 0.0f, 0.3f, 0.0f, self->unk16C);
+	sp38 = ml_map_f(_batimer_get(self, 0), 0.0f, 0.3f, 0.0f, self->unk16C);
 	baphysics_set_target_horizontal_velocity(self, sp38);
 	if (sp38 > 220.0f)
 	{

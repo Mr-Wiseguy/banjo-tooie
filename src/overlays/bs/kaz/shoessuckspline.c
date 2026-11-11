@@ -68,7 +68,7 @@ void bskazshoessuckspline_entrypoint_3(PlayerState *self) {
     if (bakey_pressed(self, BUTTON_A) != 0) {
         next_state = _bskaz_entrypoint_3(self);
     }
-    if ((_bamovespline_entrypoint_1(self, 100) != 0) || (_bashoes_entrypoint_1(self) != 4)) {
+    if ((_bamovespline_entrypoint_1(self, 100) != 0) || (_bashoes_entrypoint_1(self) != SHOETYPE_CLAW_CLAMBER)) {
         next_state = BS_STATE_DF;
     }
     if (_bamovespline_entrypoint_3(self) != 0) {
@@ -101,7 +101,7 @@ void bskazshoessuckspline_entrypoint_6(PlayerState *self) {
     BanjoStateId next_state;
 
     next_state = BS_STATE_0_INVALID;
-    if ((baflag_isTrue(self, BA_FLAG_3D) != 0) && (_bashoes_entrypoint_1(self) == 4)) {
+    if ((baflag_isTrue(self, BA_FLAG_3D) != 0) && (_bashoes_entrypoint_1(self) == SHOETYPE_CLAW_CLAMBER)) {
         _bashoessuck_entrypoint_4(self);
         if (bastick_getZone(self) > BS_STICK_ZONE_ID_0) {
             next_state = BS_STATE_188;

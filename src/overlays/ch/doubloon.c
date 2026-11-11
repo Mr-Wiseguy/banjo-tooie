@@ -90,7 +90,7 @@ s32 func_808001D4_chdoubloon(Actor* arg0, s32 arg1, s32 arg2)
 
         case EVENT_3E_ACTOR_TOUCHED:
             _sudialog_entrypoint_0(0x165, 4);
-            func_800D0BD4(arg0->unk54s, 7U);
+            collectable_collectItem(arg0->unk54s, 7U);
             inventory_incrementValue(0x4E);
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80800290_chdoubloon);
             _fxsparkle_entrypoint_1(arg0->position, 0x13U);

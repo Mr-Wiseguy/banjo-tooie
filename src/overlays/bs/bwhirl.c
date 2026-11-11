@@ -30,7 +30,7 @@ void func_80800008_bsbwhirl(PlayerState* self) {
         sp24 = func_80092B8C(self, sp28);
         player_getCoords(self, sp34);
         ml_vec3f_add(&sp34, sp28);
-        func_800EF1B8(&sp34, func_80092BE8(self), sp24);
+        ml_translateAngleDist(&sp34, func_80092BE8(self), sp24);
         sp34[1] += sp24;
         func_800C8CB8(self->unk160.word, &sp34);
     }
@@ -54,7 +54,7 @@ void func_80800114_bsbwhirl(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80.0f, 425.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80.0f, 425.0f));
 }
 
 void func_8080017C_bsbwhirl(PlayerState* self)
@@ -111,7 +111,7 @@ void func_80800200_bsbwhirl(PlayerState* self)
         sp48[2] = sp54[2];
         sp54[2] = temp;
     }
-    self->unk170 = func_800136E4(self->unk170 + 45.0f);
+    self->unk170 = ml_normalizeAngle_f(self->unk170 + 45.0f);
     func_800BA930((unkStruct800BA198*)sp38, sp54[0], 0xFA, sp54[2], sp48[0], 0xFA, sp48[2]);
     func_800BA22C(sp38, 2);
 }
@@ -345,7 +345,7 @@ void bsbwhirl_entrypoint_13(PlayerState* self) {
     }
     func_80800430_bsbwhirl(self, &nextState);
     func_80800008_bsbwhirl(self);
-    if (func_8008DA24(self) != 0)
+    if (player_canGripGrab(self) != 0)
     {
         nextState = BS_STATE_A8_GRIP_GRAB_START;
     }

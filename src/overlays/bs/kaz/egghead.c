@@ -27,7 +27,7 @@ void bskazegghead_entrypoint_1(PlayerState *self) {
     sp28 = (AnimCtrl*) baanim_getAnimCtrlPtr(self);
     sp24 = func_80094BC0(self) != 0;
     if ((bainput_should_shoot_egg(self) != 0) && (func_80094B14(self) != 0)) {
-        self->unk15C.word = func_800F1418(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
+        self->unk15C.word = ml_min_i(self->unk15C.word + 1, func_800944E0(self, self->unk164.word));
     }
     if (sp24 != 0) {
         if (anctrl_isAt(sp28, 0.1f) != 0) {

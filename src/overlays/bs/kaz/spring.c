@@ -9,7 +9,7 @@ void func_80800000_bskazspring(PlayerState *self) {
 
     sp1C = bastick_getZonePosition(self);
     if (bastick_getZone(self) != BS_STICK_ZONE_ID_0) {
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 80, 200));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 80, 200));
         return;
     }
     baphysics_set_target_horizontal_velocity(self, 0.0f);

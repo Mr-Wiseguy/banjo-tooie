@@ -39,6 +39,7 @@
 
 s32 func_80092258(PlayerState*);
 void func_80092444(PlayerState*, s32);
+void func_8009272C(PlayerState*, s32);
 void func_80092744(PlayerState*, s32);
 void func_80092750(PlayerState*, s32, s32, s32, s32);
 void func_80092778(PlayerState*);
@@ -49,10 +50,10 @@ void func_80092A1C(PlayerState*);
 void func_80092AA4(PlayerState*);
 void func_80092AB0(PlayerState*);
 Unkfunc_800E0960_1 *func_80092AD8(PlayerState *);
-PlayerState *func_80092B04(PlayerState *, s32);
+void *func_80092B04(PlayerState *, s32);
+s32 func_80092B80(PlayerState*);
 // This might take a s32 instead of a PlayerState pointer
 // This might return a s32 instead of a PlayerState pointer
-s32 func_80092B80();
 f32 func_80092B8C(PlayerState*, f32*);
 f32 func_80092BE8(PlayerState *);
 f32 func_80092BF4(PlayerState *);
@@ -60,8 +61,11 @@ void func_80092C00(PlayerState*, f32[3]);
 void func_80092C24(PlayerState*, f32[3]);
 void func_80092C48(PlayerState*, f32[3]);
 void func_80092C90(PlayerState*, f32*, s32);
+s32 func_80092CDC(PlayerState*, f32*, s32);
+void func_80092D18(PlayerState*, f32*);
 void func_80092D44(PlayerState*, f32[3]);
 s32 func_80092EA4(PlayerState*);
+s32 func_80092EB0(PlayerState*);
 void func_80092EC8(PlayerState*, s32);
 void func_8009312C(PlayerState*, s32);
 void func_800931AC(PlayerState*, s32);
@@ -110,6 +114,6 @@ s32 func_80094DA8(PlayerState*);
 void func_80094E40(s32);
 // This might return a s32 instead of a PlayerState pointer
 
-PlayerState *func_800B27E0(PlayerState *);
+void *func_800B27E0(void *);
 
 #endif // __CORE2_1E6B900_H__

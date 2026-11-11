@@ -29,7 +29,7 @@ void __baroll_update(PlayerState *self, f32 limit, f32 rate) {
         diff += (diff < 0.0f)? 360.0f: -360.0f;
     }
     val = diff * rate * dt;
-    val = (val < 0.0f) ? func_800F0D50(val, -max, -0.1f) : func_800F0D50(val, 0.1f, max);
+    val = (val < 0.0f) ? ml_clamp_f(val, -max, -0.1f) : ml_clamp_f(val, 0.1f, max);
     if ( mlAbsF(val) <= mlAbsF(diff)) {
         self->roll->value =  self->roll->value + val;
     } else {
@@ -55,11 +55,11 @@ void baroll_update(PlayerState *self) {
 }
 
 void baroll_setIdeal(PlayerState *self, f32 arg1) {
-    self->roll->ideal = func_800136E4(arg1);
+    self->roll->ideal = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_set(PlayerState *self, f32 arg1) {
-    self->roll->value = func_800136E4(arg1);
+    self->roll->value = ml_normalizeAngle_f(arg1);
 }
 
 void baroll_applyIdeal(PlayerState *self) {

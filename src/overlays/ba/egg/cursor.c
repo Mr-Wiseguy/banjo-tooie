@@ -35,7 +35,7 @@ void baeggcursor_entrypoint_1(PlayerState* self)
             func_800E24CC(1);
             sp30[0] = (self->cursor->unk0 * 4.0f);
             sp30[1] = (self->cursor->unk4 * 4.0f);
-            func_800E30E0((s32)func_800A7180(), func_800D674C(0x64E), 0, sp30);
+            draw_2D_Image(graphics_getGraphicsBuffer(), asset_load(ASSET_64E_SPRITE_AIM_CURSOR), 0, sp30);
         }
     }
 }
@@ -159,23 +159,23 @@ void baeggcursor_entrypoint_11(PlayerState* self)
 	case 3:
 		if (self->cursor->unkC < 0.1f)
 		{
-			var_f0 = func_800F10B4(self->cursor->unkC, 0.0f, 0.1f, 1.0f, 0.8f);
+			var_f0 = ml_map_f(self->cursor->unkC, 0.0f, 0.1f, 1.0f, 0.8f);
 		}
 		else
 		{
-			var_f0 = func_800F10B4(self->cursor->unkC, 0.1f, 0.3f, 0.8f, 16.0f);
+			var_f0 = ml_map_f(self->cursor->unkC, 0.1f, 0.3f, 0.8f, 16.0f);
 		}
 		self->cursor->unk18 = var_f0;
-		self->cursor->unk14 = func_800F10B4(self->cursor->unkC, 0.00f, 0.3f, 120.0f, 0.0f);
-		if (func_800D9078(&self->cursor->unkC) != 0) {
+		self->cursor->unk14 = ml_map_f(self->cursor->unkC, 0.00f, 0.3f, 120.0f, 0.0f);
+		if (timer_reachedZero(&self->cursor->unkC) != 0) {
 			baeggcursor_entrypoint_7(self, 2U);
 			return;
 		}
 		return;
 	case 4:
-		self->cursor->unk18 = func_800F10B4(self->cursor->unkC, 0.00f, 0.2f, 16.0f, 1.0f);
-		self->cursor->unk14 = func_800F10B4(self->cursor->unkC, 0.0f, 0.2f, 0/*.0f*/, 120.0f);
-		if (func_800D9078(&self->cursor->unkC) != 0) {
+		self->cursor->unk18 = ml_map_f(self->cursor->unkC, 0.00f, 0.2f, 16.0f, 1.0f);
+		self->cursor->unk14 = ml_map_f(self->cursor->unkC, 0.0f, 0.2f, 0/*.0f*/, 120.0f);
+		if (timer_reachedZero(&self->cursor->unkC) != 0) {
 			baeggcursor_entrypoint_7(self, 1U);
 			return;
 		}
@@ -192,8 +192,8 @@ void baeggcursor_entrypoint_11(PlayerState* self)
 			}
 			index++;
 		}
-		self->cursor->unk18 = func_800F10B4(sp30, temp_v0_2[index - 1].unk0, temp_v0_2[index].unk0, temp_v0_2[index - 1].unk4, temp_v0_2[index].unk4);
-		func_800D91B8(&self->cursor->unkC);
+		self->cursor->unk18 = ml_map_f(sp30, temp_v0_2[index - 1].unk0, temp_v0_2[index].unk0, temp_v0_2[index - 1].unk4, temp_v0_2[index].unk4);
+		timer_countUp(&self->cursor->unkC);
 		break;
 	}
 }

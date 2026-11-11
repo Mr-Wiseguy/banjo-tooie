@@ -24,7 +24,7 @@ void func_808000B0_bsmumswim(PlayerState *self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(zone_position, 30.0f, 350.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(zone_position, 30.0f, 350.0f));
 }
 
 void func_80800114_bsmumswim(PlayerState *self) {
@@ -72,7 +72,7 @@ void bsmumswim_entrypoint_1(PlayerState *self) {
     anctrl_setDuration(anim_ctrl, 1.2f);
     anctrl_setStart(anim_ctrl, 0.6412f);
     anctrl_start(anim_ctrl);
-    self->unk16C = func_800F10B4(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
+    self->unk16C = ml_map_f(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
     baphysics_set_vertical_velocity(self, self->unk16C);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 3, BA_PHYSICS_6_AIRBORN);
 }
@@ -89,7 +89,7 @@ void bsmumswim_entrypoint_2(PlayerState *self) {
     func_800BA930(sp3C, -30, -30, -30, 30, 30, 30);
     func_800BA22C(sp3C, 1);
     if (self->unk16C < 0.0f) {
-        self->unk16C += func_800F0E00(mlAbsF( self->unk16C) * 0.1f, 50.0f);
+        self->unk16C += ml_max_f(mlAbsF( self->unk16C) * 0.1f, 50.0f);
         baphysics_set_vertical_velocity(self, self->unk16C);
     }
     if (player_isStable(self) != 0) {
@@ -151,7 +151,7 @@ void func_8080056C_bsmumswim(PlayerState *self) {
     if (bainput_should_enter_first_person(self) != 0) {
         next_state = _badrone_entrypoint_24(self);
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_E8;
     }
     bs_setState(self, next_state);
@@ -217,7 +217,7 @@ void func_80800870_bsmumswim(PlayerState *self) {
     if (player_inWater(self) == 0) {
         next_state = BS_STATE_E5;
     }
-    if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+    if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
         next_state = BS_STATE_E8;
     }
     bs_setState(self, next_state);

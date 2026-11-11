@@ -54,7 +54,7 @@ s32 func_8009F300(void);
 f32 func_8009F308(PlayerState *);
 // func_8009F354
 f32 func_8009F3BC(PlayerState *, f32, f32, f32, f32);
-s32 func_8009F440(PlayerState*, s32, s32, s32, s32, f32);
+s32 func_8009F440(PlayerState*, f32*, f32*, s32*, s32*, f32);
 s32 func_8009F678(PlayerState*, s32, s32, f32);
 s32 func_8009F860(PlayerState*, s32, s32, s32, f32, f32);
 // func_8009FA20
@@ -80,7 +80,7 @@ BanjoStateId func_800A02DC(PlayerState *, BanjoStateId arg1);
 void func_800A042C(PlayerState *);
 void func_800A046C(PlayerState *);
 BanjoStateId func_800A04F4(PlayerState*, BanjoStateId);
-BanjoStateId func_800A055C(PlayerState*, BanjoStateId);
+BanjoStateId bs_getTypeOfGroundedAttack(PlayerState*, BanjoStateId);
 void func_800A05DC(PlayerState*);
 
 #endif // __CORE2_1E78BF0_H__

@@ -8,6 +8,7 @@
 #include "core2/1EDFED0.h"
 #include "actorevents.h"
 
+void func_80101010(f32*);
 void func_80101038(f32*);
 f32 func_80101068();
 //Store a pointer in reserved memory
@@ -19,7 +20,7 @@ void* func_80101080(void);
 s32 event_sendToActor(Actor*, ActorEventId, s32);
 
 //Send an event to Actor that has Unk80132ED0*
-s32 func_8010114C(s32, ActorEventId, s32);
+s32 func_8010114C(Unk80132ED0*, ActorEventId, s32);
 
 //Send an event to items of type
 s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32);

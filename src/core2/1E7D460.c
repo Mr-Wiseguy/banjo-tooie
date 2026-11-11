@@ -398,13 +398,13 @@ s32 func_800A4978(PlayerState* arg0) {
     }
 
     switch (player_getTransformation(arg0)) {
-        case 0xB:
+        case TRANSFORM_B_KAZOOIE:
             var_a1 = 7;
             if (arg0->unk38->unk3 != 0) {
                 arg0->unk38->unk3 = 4;
             }
             break;
-        case 0xC:
+        case TRANSFORM_C_SUB:
             var_a1 = 8;
             break;
         default:

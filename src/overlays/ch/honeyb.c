@@ -3,7 +3,7 @@
 extern ActorData D_80801020_chhoneyb;
 extern ActorData D_80801068_chhoneyb;
 extern s32 D_808010B0_chhoneyb;
-extern s32 D_808010C0_chhoneyb;
+extern f32 D_808010C0_chhoneyb[];
 extern s32 D_808010D0_chhoneyb;
 
 void func_8080062C_chhoneyb(Actor*);
@@ -50,7 +50,7 @@ void func_80800058_chhoneyb(Actor* arg0)
         var_s0 += 1;
     }
 
-    _subaddieitem_entrypoint_1(&((unkSubGameStruct*)func_80100094(arg0, 1))->unk18, arg0->actorData[5]);
+    _subaddieitem_entrypoint_1(&((unkSubGameStruct*)actor_getAdditionalMem(arg0, 1))->unk18, arg0->actorData[5]);
 }
 
 void func_8080011C_chhoneyb(Actor* arg0)
@@ -61,7 +61,7 @@ void func_8080011C_chhoneyb(Actor* arg0)
     func_80102424(arg0, 3);
     *(f32*)&arg0->actorData[7] = 1.0f;
     arg0->unk58 = 0.25f;
-    temp_v0 = func_8008FC28();
+    temp_v0 = activePlayer_getMaxHealth();
     arg0->actorData[6] = temp_v0;
     arg0->actorData[3] = (s32)(arg0->actorData[4] + temp_v0);
     arg0->unk74_30 = 0;
@@ -77,10 +77,10 @@ void func_80800194_chhoneyb(Actor* arg0)
     {
         ml_vec3f_copy(&arg0->actorData[0], sp28);
     }
-    _subaddieitem_entrypoint_0(&((unkSubGameStruct*)func_80100094(arg0, 1))->unk18, 0x4B7, 0x258, 3);
+    _subaddieitem_entrypoint_0(&((unkSubGameStruct*)actor_getAdditionalMem(arg0, 1))->unk18, 0x4B7, 0x258, 3);
     func_80800058_chhoneyb(arg0);
-    _susubgame_entrypoint_0(arg0, (unkSubGameStruct*)func_80100094(arg0, 1), 0);
-    _susubgame_entrypoint_12((unkSubGameStruct*)func_80100094(arg0, 1), &D_808010B0_chhoneyb);
+    _susubgame_entrypoint_0(arg0, (unkSubGameStruct*)actor_getAdditionalMem(arg0, 1), 0);
+    _susubgame_entrypoint_12((unkSubGameStruct*)actor_getAdditionalMem(arg0, 1), &D_808010B0_chhoneyb);
     func_800A16BC(1);
 }
 
@@ -90,9 +90,9 @@ void func_80800240_chhoneyb(Actor* arg0)
     {
         _suexpression_entrypoint_8(arg0, 0);
     }
-    if (_susubgame_entrypoint_2(arg0, func_80100094(arg0, 1)) != 0)
+    if (_susubgame_entrypoint_2(arg0, actor_getAdditionalMem(arg0, 1)) != 0)
     {
-        _susubgame_entrypoint_4(arg0, func_80100094(arg0, 1));
+        _susubgame_entrypoint_4(arg0, actor_getAdditionalMem(arg0, 1));
     }
 }
 
@@ -122,7 +122,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
         {
             if (func_80800B78_chhoneyb() >= _gcextra_entrypoint_1())
             {
-                _susubgame_entrypoint_5(arg0, (unkSubGameStruct*)func_80100094(arg0, 1), 3, 0, 0);
+                _susubgame_entrypoint_5(arg0, (unkSubGameStruct*)actor_getAdditionalMem(arg0, 1), 3, 0, 0);
                 func_80800018_chhoneyb(arg0, 0x1521, 0xF);
                 return;
             }
@@ -131,7 +131,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
                 func_80800744_chhoneyb(arg0, 0x1519, 0);
                 return;
             }
-            _susubgame_entrypoint_5(arg0, func_80100094(arg0, 1), 3, 0, 0);
+            _susubgame_entrypoint_5(arg0, actor_getAdditionalMem(arg0, 1), 3, 0, 0);
             func_80800018_chhoneyb(arg0, 0x1519, 0xF);
             return;
         }
@@ -139,14 +139,14 @@ void func_808002AC_chhoneyb(Actor* arg0)
     case 4:
         if (arg0->unk74_29)
         {
-            _susubgame_entrypoint_5(arg0, func_80100094(arg0, 1), 3, 0, 0);
+            _susubgame_entrypoint_5(arg0, actor_getAdditionalMem(arg0, 1), 3, 0, 0);
             func_80800018_chhoneyb(arg0, 0x1518, 0xF);
             return;
         }
         break;
     case 5:
         func_80103DFC(arg0, sp34);
-        if (_subaddieitem_entrypoint_3(arg0, sp34, &((unkSubGameStruct*)func_80100094(arg0, 1))->unk18) != 0)
+        if (_subaddieitem_entrypoint_3(arg0, sp34, &((unkSubGameStruct*)actor_getAdditionalMem(arg0, 1))->unk18) != 0)
         {
             func_80800018_chhoneyb(arg0, 0x1553, 0xF);
             return;
@@ -163,10 +163,10 @@ void func_808002AC_chhoneyb(Actor* arg0)
                 if (*(f32*)&arg0->actorData[7] > 1.0f)
                 {
                     *(f32*)&arg0->actorData[7] = 1.0f;
-                    func_800C3FC0(0x66C, func_800F10B4(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
+                    func_800C3FC0(0x66C, ml_map_f(*(s32*)&arg0->actorData[6], 1/*.0f*/, 10.0f, 0.8f, 1.5f), 0x7D00);
                 }
             }
-            if (func_800D9078(&arg0->unk58) != 0)
+            if (timer_reachedZero(&arg0->unk58) != 0)
             {
                 if ((s32)arg0->actorData[6] >= (s32)arg0->actorData[3])
                 {
@@ -187,7 +187,7 @@ void func_808002AC_chhoneyb(Actor* arg0)
 void func_8080062C_chhoneyb(Actor* arg0)
 {
     _gcextra_entrypoint_2(arg0->actorData[4]);
-    func_800A1658(func_8008FD48());
+    func_800A1658(activePlayer_getTransformation());
     func_80800058_chhoneyb(arg0);
 
     event_sendToActorsOfType(0x4B8, 0x23, func_80800B78_chhoneyb());
@@ -250,7 +250,7 @@ void func_80800744_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         else {
             sp2C = 0x151B;
         }
-        _susubgame_entrypoint_5(arg0, func_80100094(arg0, 1), 3, 1, 0);
+        _susubgame_entrypoint_5(arg0, actor_getAdditionalMem(arg0, 1), 3, 1, 0);
         break;
     case 0x151A:
     case 0x151B:
@@ -266,16 +266,16 @@ void func_80800744_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         sp28 = 0x4E;
         break;
     case 0x151D:
-        _subaddieitem_entrypoint_2(&((unkSubGameStruct*)func_80100094(arg0, 1))->unk18);
-        _susubgame_entrypoint_5(arg0, func_80100094(arg0, 1), 2, 1, 0);
+        _subaddieitem_entrypoint_2(&((unkSubGameStruct*)actor_getAdditionalMem(arg0, 1))->unk18);
+        _susubgame_entrypoint_5(arg0, actor_getAdditionalMem(arg0, 1), 2, 1, 0);
         func_80102424(arg0, 5);
         break;
     case 0x1553:
-        _susubgame_entrypoint_4(arg0, func_80100094(arg0, 1));
+        _susubgame_entrypoint_4(arg0, actor_getAdditionalMem(arg0, 1));
         func_8080011C_chhoneyb(arg0);
         break;
     default:
-        _susubgame_entrypoint_4(arg0, func_80100094(arg0, 1));
+        _susubgame_entrypoint_4(arg0, actor_getAdditionalMem(arg0, 1));
         func_80102424(arg0, 1);
         break;
     }
@@ -315,7 +315,7 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
         arg0->unk74_29 = 1;
         break;
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_808010C0_chhoneyb, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_808010C0_chhoneyb, arg0->scale);
         break;
     case 0xB:
         return 3;
@@ -327,12 +327,12 @@ s32 func_80800968_chhoneyb(Actor* arg0, s32 arg1, s32 arg2)
             func_8008F904(&func_8010D5DC, arg0->unk0);
             func_8008F8D8(1);
             func_8008F990(&arg0->actorData[0], 300.0f);
-            _susubgame_entrypoint_6(arg0, func_80100094(arg0, 1), 1, 0x60, 0);
+            _susubgame_entrypoint_6(arg0, actor_getAdditionalMem(arg0, 1), 1, 0x60, 0);
             func_80102424(arg0, 4);
         }
         break;
     case 0x57:
-        return _susubgame_entrypoint_3(arg0, func_80100094(arg0, 1), arg2 & 0xFFFF, (u32)(arg2 & 0xFFFF0000) >> 0x10);
+        return _susubgame_entrypoint_3(arg0, actor_getAdditionalMem(arg0, 1), arg2 & 0xFFFF, (u32)(arg2 & 0xFFFF0000) >> 0x10);
     default:
         return 0;
     }

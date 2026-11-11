@@ -68,8 +68,8 @@ int func_80800374_chmasterjiggy(Actor* arg0)
 {
     f32 sp1C[3];
 
-    func_8008FE68(sp1C);
-    return sp1C[0] >= 1576.0f && func_8008FD48() == TRANSFORM_1_BK;
+    activePlayer_getCoords(sp1C);
+    return sp1C[0] >= 1576.0f && activePlayer_getTransformation() == TRANSFORM_1_BK;
 }
 
 int func_808003D4_chmasterjiggy(s32 arg0)
@@ -130,14 +130,14 @@ void func_808004FC_chmasterjiggy(Actor* actor)
         func_8080047C_chmasterjiggy((s32)actor);
         return;
     case 4:
-        if ((func_800C0638() == 0) && (func_800D9078(&actor->unk58) != 0))
+        if ((func_800C0638() == 0) && (timer_reachedZero(&actor->unk58) != 0))
         {
             func_808001B0_chmasterjiggy((s32)actor);
         }
         func_8080047C_chmasterjiggy((s32)actor);
         return;
     case 5:
-        if (func_800D90A4((f32*)&actor->actorData[7]) != 0)
+        if (timer_reachedZero_dupe((f32*)&actor->actorData[7]) != 0)
         {
             func_80800220_chmasterjiggy(actor, 6);
             return;

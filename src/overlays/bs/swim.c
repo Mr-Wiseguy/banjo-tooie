@@ -9,7 +9,7 @@ extern s32 D_80800BD4_bsswim[];
 BanjoStateId func_80800000_bsswim(PlayerState* self) {
 	BanjoStateId var_v1;
 
-	if (func_8008E23C(self) != 0) {
+	if (player_isSplitUp(self) != 0) {
 		var_v1 = 0x6D;
 	}
 	else {
@@ -65,7 +65,7 @@ void func_80800178_bsswim(PlayerState* self)
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
 		return;
 	}
-	baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 300.0f));
+	baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 300.0f));
 }
 
 void func_808001DC_bsswim(PlayerState* self)
@@ -125,7 +125,7 @@ void func_808002E0_bsswim(PlayerState* self)
 		}
 		else if (sp30 != BS_STATE_4C_LANDING_IN_WATER)
 		{
-			func_8009DF18(self, 0x461, 1.0f, (s32)func_800F10B4(func_800CF67C(), 1.0f, 0.0f, 8000.0f, 30000.0f));
+			func_8009DF18(self, 0x461, 1.0f, (s32)ml_map_f(func_800CF67C(), 1.0f, 0.0f, 8000.0f, 30000.0f));
 		}
 		bainput_setDiveCooldown(self, 4, 0.7f);
 	}
@@ -187,7 +187,7 @@ void func_808004C4_bsswim(PlayerState* self)
 	if (bainput_should_dive(self) != 0) {
 		nextState = func_80800000_bsswim(self);
 	}
-	if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0))
+	if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0))
 	{
 		nextState = BS_STATE_5_JUMP;
 	}
@@ -268,10 +268,10 @@ void func_808007F8_bsswim(PlayerState* self) {
 	if (player_inWater(self) == 0) {
 		nextState = BS_STATE_1_IDLE;
 	}
-	if ((func_8009650C(self) != 0) && (func_8008D214(self) != 0)) {
+	if ((func_8009650C(self) != 0) && (player_canDive(self) != 0)) {
 		func_80096440(self, sp24);
 		if (sp24[1] < -0.7f) {
-			sp20 = func_800964DC(self);
+			sp20 = player_getWaterHeight(self);
 			if ((sp20 - player_getCoordVertical(self)) > 90.0f) {
 				nextState = func_80800000_bsswim(self);
 			}
@@ -280,7 +280,7 @@ void func_808007F8_bsswim(PlayerState* self) {
 	if (bainput_should_dive(self) != 0) {
 		nextState = func_80800000_bsswim(self);
 	}
-	if ((func_80096500(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
+	if ((player_atWaterSurface(self) != 0) && (bakey_pressed(self, BUTTON_A) != 0)) {
 		nextState = BS_STATE_5_JUMP;
 	}
 	if ((baflag_isTrue(self, BA_FLAG_6) != 0) || (baflag_isTrue(self, BA_FLAG_14_LOSE_BOGGY_RACE) != 0)) {

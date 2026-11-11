@@ -229,7 +229,7 @@ void func_80800624_bsbfly(PlayerState* self)
             break;
         case 1:
             _bafly_entrypoint_7(self, 1);
-            temp_f0 = func_800136E4(func_8009BFD8(self) - 30.0f);
+            temp_f0 = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if ((temp_f0 > 80.0f) && (temp_f0 < 300.0f)) 
             {
                 temp_f0 = 300.0f;
@@ -258,10 +258,10 @@ void func_80800624_bsbfly(PlayerState* self)
     {
         next_state = BS_STATE_F_BBUSTER;
     }
-    self->kazfly->unk0 = func_800F0E00(self->kazfly->unk0 - time_getDelta(), 0);
+    self->kazfly->unk0 = ml_max_f(self->kazfly->unk0 - time_getDelta(), 0);
     if ((self->kazfly->unk0 == 0.0f)
         && bakey_pressed(self, BUTTON_B)
-        && func_8008D0E0(self)
+        && player_canBeakBomb(self)
         && _bafly_entrypoint_12(self))
     {
         next_state = 0x2A;
@@ -398,7 +398,7 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
                 break;
         } 
         ml_vec3f_copy(sp2C, self->kazfly->unk10);
-        func_800EF2A0(sp2C);
+        ml_vec3f_normalizeMagnitude(sp2C);
         sp44 = mlAbsF(ml_vec3f_dot_product(&sp38, sp2C));
         if ((baflag_isTrue(self, BA_FLAG_8) != 0) || (var_v0 & 0x80)) 
         {
@@ -410,8 +410,8 @@ s32 func_80800D80_bsbfly(PlayerState* self, s32 arg1)
             if (sp38[1] < 0.65f) 
             {
                 func_808009D0_bsbfly(self);
-                func_800A17A8(self, -1);
-                if (func_800A1718(self) != 0)
+                player_affectCurrentHealth(self, -1);
+                if (player_getCurrentHealth(self) != 0)
                 {
                     arg1 = 0x59;
                 } 
@@ -460,8 +460,8 @@ void func_80800F10_bsbfly(PlayerState* self)
             }
             player_getCoords(self, unk0);
             ml_vec3f_subtract(unk0, self->kazfly->unk4);
-            _bafly_entrypoint_6(self, func_800F10B4(func_800EEFD4(unk0), 0, 16000000, 0.2, 0.7f));
-            if (func_800EEFD4(unk0) > 1.6e7f) {
+            _bafly_entrypoint_6(self, ml_map_f(ml_vec3f_magnitude_sq(unk0), 0, 16000000, 0.2, 0.7f));
+            if (ml_vec3f_magnitude_sq(unk0) > 1.6e7f) {
                 if (bakey_held(self, BUTTON_B) != 0) {
                     func_80800A24_bsbfly(self, 3);
                 } else {
@@ -603,8 +603,8 @@ void func_808014E8_bsbfly(PlayerState* self)
     func_8009DF18(self, 0x417, 0.8f, 0x7FFF);
     func_8009D820(self, 1.8f);
     _bamotor_entrypoint_1(self, 1.0f, 0.5f, 0.5f);
-    func_800A17A8(self, -1);
-    if (func_800A1718(self) == 0) {
+    player_affectCurrentHealth(self, -1);
+    if (player_getCurrentHealth(self) == 0) {
         _basudie_entrypoint_1(self);
     }
     func_8080145C_bsbfly(self);

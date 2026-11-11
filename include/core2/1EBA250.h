@@ -28,5 +28,6 @@ void func_800E0ACC(Unkfunc_800E0960_1 *);
 void func_800E0AF0(Unkfunc_800E0960_1 *, f32);
 void func_800E0AFC(Unkfunc_800E0960_1 *, u8, f32, f32, f32, f32);
 void func_800E0B8C(Unkfunc_800E0960_1 *, u8, f32, f32, f32, f32);
+void func_800E0C20(Unkfunc_800E0960_1*, u8, f32, f32, f32, f32);
 
 #endif // __CORE2_1EBA250_H__

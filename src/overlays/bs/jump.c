@@ -19,7 +19,7 @@ void bsjump_entrypoint_0(PlayerState* self)
 	s32 temp_v0;
 
 	sp3C = baanim_getAnimCtrlPtr(self);
-	self->unk164.word = (baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD) && func_8008E23C(self) == 0);
+	self->unk164.word = (baflag_isTrue(self, BA_FLAG_2_ON_SPRING_PAD) && player_isSplitUp(self) == 0);
 	temp_v0 = bs_getPreviousState(self);
 	sp38 = temp_v0;
 	if (func_8009CBDC(self, temp_v0) == 0xA)
@@ -92,7 +92,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 		_bswalk_entrypoint_1(self);
 	}
 	func_8009BB24(self, playerVelocity);
-	if (((bakey_released(self, BUTTON_A) != 0) && (playerVelocity[1] > 0.0f) && (self->unk164.word == 0)) || (func_8008D544(self) == 0))
+	if (((bakey_released(self, BUTTON_A) != 0) && (playerVelocity[1] > 0.0f) && (self->unk164.word == 0)) || (player_canFullJump(self) == 0))
 	{
 		baphysics_reset_gravity(self);
 	}
@@ -149,7 +149,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 		if (bainput_func_80097F08(self) != 0)
 		{
 			playerHeight = player_getCoordVertical(self);
-			waterHeight = func_800964DC(self);
+			waterHeight = player_getWaterHeight(self);
 			//self->unk160.word seems to make it so you can't ratatat rap twice in one jump
 			//self->unk160.word is 1 when you are jumping out of water
 			temp = self->unk160.word;
@@ -173,7 +173,7 @@ void bsjump_entrypoint_1(PlayerState* self)
 	default:
 		break;
 	}
-	if (func_8008DA24(self) != 0)
+	if (player_canGripGrab(self) != 0)
 	{
 		nextState = BS_STATE_A8_GRIP_GRAB_START;
 	}
@@ -294,7 +294,7 @@ void bsjump_entrypoint_5(PlayerState* self)
 			}
 			break;
 		}
-		if (func_8008DA24(self) != 0)
+		if (player_canGripGrab(self) != 0)
 		{
 			nextState = BS_STATE_A8_GRIP_GRAB_START;
 		}
@@ -395,7 +395,7 @@ void bsjump_entrypoint_9(PlayerState* self)
 		}
 		break;
 	}
-	if (func_8008DA24(self) != 0)
+	if (player_canGripGrab(self) != 0)
 	{
 		nextState = BS_STATE_A8_GRIP_GRAB_START;
 	}

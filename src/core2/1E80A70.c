@@ -5,7 +5,7 @@ extern s32 D_8011A3F4;
 extern f32 D_801255F8;
 extern D_80127630_unk D_80127630;
 extern s16 D_80127632;
-extern GraphicsBuffers D_80127658;
+extern unkStructD_80127658 D_80127658;
 extern s32 D_80127674;
 extern unkStruct800CA334* D_801276BC;
 extern f32 D_80127638;
@@ -25,7 +25,7 @@ extern unkStructD_8011A420 D_8011A420[];
 extern unk_D_80127688 D_80127688[];
 extern unk_D_80127670 D_80127670;
 
-GraphicsBuffers* func_800A7180(void)
+GraphicsBuffers* graphics_getGraphicsBuffer(void)
 {
     return &D_80127658;
 }
@@ -211,7 +211,7 @@ void func_800A76F4(s32 arg0) {
     func_800A5CF0(0);
     if ((func_800DA9E4(0x647, 0) == 0) || (_gcsectionDll_entrypoint_4(D_80127630.mapValue) == D_8012762C)) {
         if (flag_getValue(0x650) == 0) {
-            _cosectionstor_entrypoint_3(func_800EA05C());
+            _cosectionstor_entrypoint_3(map_getCurrent());
         }
     }
     func_800A7380(1);
@@ -373,7 +373,7 @@ void func_800A7BB8(s32 arg0) {
     func_800133A0();
     func_800DF38C();
     func_8008B610();
-    func_800DC310();
+    rand_setInitSeed();
     func_8001A290();
     func_800D8F84();
     _gsattract_entrypoint_4();
@@ -564,7 +564,7 @@ int func_800A81C4(void) {
         return 0;
     }
     a = _gcsectionDll_entrypoint_4(D_80127630.mapValue);
-    b = _gcsectionDll_entrypoint_4(func_800EA05C());
+    b = _gcsectionDll_entrypoint_4(map_getCurrent());
     return b != a && D_80127630.unk6 == 0;
 }
 

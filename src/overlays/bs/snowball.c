@@ -17,7 +17,7 @@ f32 func_80800000_bssnowball(PlayerState* self) {
     f32 sp20;
     f32 temp_f0;
 
-    temp_f0 = func_800F13C4(func_800F10B4(_basnowball_entrypoint_3(self), 0.0f, 360.0f, 0.0f, 1.0f), 1.0f);
+    temp_f0 = ml_remainder_f(ml_map_f(_basnowball_entrypoint_3(self), 0.0f, 360.0f, 0.0f, 1.0f), 1.0f);
     sp20 = temp_f0;
     func_8008C990(self, temp_f0);
     return temp_f0;
@@ -36,7 +36,7 @@ void func_80800064_bssnowball(PlayerState* self, s32 arg1) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 30.0f, 700.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 30.0f, 700.0f));
 }
 
 BanjoStateId func_8080010C_bssnowball(PlayerState* self, BanjoStateId arg1)
@@ -96,7 +96,7 @@ void bssnowball_entrypoint_2(PlayerState* self) {
             _basnowball_entrypoint_9(self, 0.0f);
         }
         else {
-            _basnowball_entrypoint_9(self, func_8009BB5C(self));
+            _basnowball_entrypoint_9(self, baphysics_get_horizontal_velocity(self));
         }
         if ((self->unk164.bytes[1] != 0) || (baphysics_get_target_horizontal_velocity(self) == 0.0f)) {
             _basnowball_entrypoint_8(self, 1);
@@ -282,7 +282,7 @@ void func_808009B0_bssnowball(PlayerState* self) {
     temp_f0 = func_80800000_bssnowball(self);
     sp28 = temp_f0;
     if ((temp_f0 > 0.67f) && (self->unk174 < 0.67f)) {
-        temp_f0_2 = func_800F10B4(func_8009BB5C(self), 0.0f, 700.0f, 0.9f, 1.1f);
+        temp_f0_2 = ml_map_f(baphysics_get_horizontal_velocity(self), 0.0f, 700.0f, 0.9f, 1.1f);
         if (self->unk164.bytes[0] != 0) {
             var_f2 = temp_f0_2 - 0.1f;
         }

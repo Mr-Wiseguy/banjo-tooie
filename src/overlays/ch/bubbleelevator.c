@@ -22,7 +22,7 @@ void func_80800000_chbubbleelevator(Actor* arg0)
     {
         _gspropctrl_entrypoint_11(temp_v0, ELEVATOR_DATA(arg0)->unk0);
     }
-    temp_v0_2 = func_800EA05C();
+    temp_v0_2 = map_getCurrent();
     if (temp_v0_2 != MAP_136_CCL_CLOUD_CUCKOOLAND) //If Map is not CCL
     {
         if (temp_v0_2 == MAP_15A_IOH_WASTELAND) //If Map is Wasteland
@@ -74,7 +74,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     switch (arg0->unk70_10)
     {
     case 1:
-        if (func_800D90A4(&arg0->unk58) != 0)
+        if (timer_reachedZero_dupe(&arg0->unk58) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 2);
         }
@@ -90,7 +90,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         {
             _sudeflect_entrypoint_0(arg0->position, 75.0f, 140.0f, 0x1E);
         }
-        if (func_800D90A4(&ELEVATOR_DATA(arg0)->unk1C) != 0)
+        if (timer_reachedZero_dupe(&ELEVATOR_DATA(arg0)->unk1C) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 4);
             return;
@@ -103,7 +103,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         if (func_8010C500(arg0) != 0)
         {
             //Check if we're banjo and kazooie
-            if (func_800F64A4(character_getActiveIndex(), ALLOW_BK) != 0)
+            if (character_includedInTransformMask(character_getActiveIndex(), ALLOW_BK) != 0)
             {
                 func_808004DC_chbubbleelevator(arg0, 5);
             }
@@ -133,7 +133,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
     case 5:
         //Used when doing the little popup animation when getting into the bubble
         //Get Player Coordinates
-        func_800F5A00(character_getActiveIndex(), sp38);
+        character_getCoords(character_getActiveIndex(), sp38);
         //If the player coordinates is within 50.0f of the bubble start moving bubble
         if (position_isWithinRangeOf(arg0->position, 50.0f, sp38) != 0)
         {
@@ -143,7 +143,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         break;
     case 6:
         //Wait for a few seconds before initiating warp
-        if (func_800D91EC(&arg0->unk58, 4.75f) != 0)
+        if (timer_reachedValueInc(&arg0->unk58, 4.75f) != 0)
         {
             func_808004DC_chbubbleelevator(arg0, 7);
         }
@@ -153,7 +153,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 7:
-        func_800D91EC(&arg0->unk58, 5.0f);
+        timer_reachedValueInc(&arg0->unk58, 5.0f);
         func_808004DC_chbubbleelevator(arg0, 1);
         _subaddieaudioloop_entrypoint_4(arg0, arg0->position, 1, D_80800C50_chbubbleelevator);
         _subaddieaudioloop_entrypoint_0(arg0, func_800F12D4(arg0->unk58, 0.0f, 5.0f, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk10, D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk14));
@@ -161,7 +161,7 @@ void func_80800124_chbubbleelevator(Actor* arg0)
         func_800F8294(character_getActiveIndex(), arg0->position);
         return;
     case 9:
-        if (func_800D90A4(&ELEVATOR_DATA(arg0)->unk10) != 0)
+        if (timer_reachedZero_dupe(&ELEVATOR_DATA(arg0)->unk10) != 0)
         {
             //Set World Unlocked True
             flag_setValueTrue(FLAG_399_PROGRESS_OPENED_WORLD_CCL);
@@ -298,7 +298,7 @@ s32 func_8080090C_chbubbleelevator(Actor* arg0, s32 arg1, s32 arg2)
             func_808004DC_chbubbleelevator(arg0, 3);
         }
         //If we're in CCL and Canary Mary is not in CCL
-        if ((func_800EA05C() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
+        if ((map_getCurrent() == MAP_136_CCL_CLOUD_CUCKOOLAND) && (arg2 == D_80800C20_chbubbleelevator[(u32)arg0->unk79_4].unk0 && (flag_getValue(FLAG_504_PROGRESS_CANARY_MARY_IN_CCL) == 0)))
         {
             return event_sendToActorsOfType(0x383, 0xB, arg2);
         }
@@ -318,14 +318,14 @@ void func_80800A10_chbubbleelevator(Actor* arg0, s32 arg1) {
 
     if (arg0->unk70_10 != 8)
     {
-        func_800D90A4(&arg0->unk50);
-        arg0->unk54 += (time_getDelta() * func_800F10B4(arg0->unk50, 0.0f, 3.0f, 1.0f, 3.0f));
+        timer_reachedZero_dupe(&arg0->unk50);
+        arg0->unk54 += (time_getDelta() * ml_map_f(arg0->unk50, 0.0f, 3.0f, 1.0f, 3.0f));
         if (arg0->unk54 > 1.0f)
         {
             arg0->unk54 = (arg0->unk54 - 1.0f);
         }
         sp5C = arg0->unk54 * 360.0f;
-        sp58 = func_800F10B4(arg0->unk50, 0.0f, 3.0f, 0.075f, 0.200000003f);
+        sp58 = ml_map_f(arg0->unk50, 0.0f, 3.0f, 0.075f, 0.200000003f);
         ml_vec3f_copy(sp4C, arg0->position);
         sp4C[1] += 75.0f;
         func_800E3980(sp40);

@@ -25,7 +25,7 @@ void func_8080005C_chfactoryposter(Actor* arg0)
 
     if (arg0->unk70_10 == 1 && func_800F6438(character_getActiveIndex()) != 0)
     {
-        func_800F5A00(character_getActiveIndex(), sp24);
+        character_getCoords(character_getActiveIndex(), sp24);
         if (sp24[0] < arg0->position[0]) {
             _subaddieaudioquick_entrypoint_2(arg0, arg0->position, &D_80800158_chfactoryposter);
             func_800BF744(2, 2);

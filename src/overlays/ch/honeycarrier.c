@@ -43,16 +43,16 @@ ActorData D_808003F4_chhoneycarrier=
 };
 
 //Called when the object is touched
-void func_80800000_chhoneycarrier(Actor* arg0, unkStructHoneyCarrier* arg1)
+void func_80800000_chhoneycarrier(Actor* arg0, Unk80132ED0* arg1)
 {
-    if ((func_800F4B4C((u32)arg1->unk1A >> 5) != 0) && (flag_getValue(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
+    if ((func_800F4B4C(arg1->unk18_5) != 0) && (flag_getValue(FLAG2_663_EMPTY_HONEYCOMB_COLLISION) == 0))
     {
         if (arg0->unk6C_0 != 0)
         {
             func_800C8B84(arg0->unk6C_0);
         }
         //Set the collected flag
-        func_800D0BD4(arg0->unk50, 2);
+        collectable_collectItem(arg0->unk50, 2);
         //Play collected sound effect
         func_800FC63C(9, 0x6D60);
         //Wait 2 seconds before trying to show the tutorial
@@ -70,7 +70,7 @@ s32 func_808000C4_chhoneycarrier(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
         case EVENT_3E_ACTOR_TOUCHED:
-            func_80800000_chhoneycarrier(arg0, (unkStructHoneyCarrier*)arg2);
+            func_80800000_chhoneycarrier(arg0, (Unk80132ED0*)arg2);
             break;
         case 0x12:
             arg0->unk64_19 = arg2;
@@ -113,7 +113,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
     f32 sp58[3];
 
     arg0->rotation[1] += time_getDelta() * arg0->unk58;
-    arg0->rotation[1] = func_800136E4(arg0->rotation[1]);
+    arg0->rotation[1] = ml_normalizeAngle_f(arg0->rotation[1]);
     if (arg0->unk7C_12)
     {
         var_s1 = 0;
@@ -121,7 +121,7 @@ void func_80800260_chhoneycarrier(Actor* arg0)
             if (rand_percentChance(0.03f) != 0)
             {
                 func_80103DFC(arg0, sp58);
-                func_800EF214(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
+                ml_translateAngleDist_3D(sp58, rand_fBounded(0.0f, 360.0f), rand_fBounded(0.0f, 360.0f), 60.0f);
                 _fxtwinkle_entrypoint_0(sp58);
             }
             var_s1 += 1;

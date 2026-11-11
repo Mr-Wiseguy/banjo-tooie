@@ -21,26 +21,26 @@ void func_808008D0_bsbtrot(PlayerState*);
 
 s32 func_80800000_bsbtrot(PlayerState* self, s32 arg1, s32 arg2, s32 arg3, s32 arg4)
 {
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return arg4;
     }
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         return arg2;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return arg3;
     }
     return arg1;
 }
 
 f32 func_80800070_bsbtrot(PlayerState* self, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return arg4;
     }
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         return arg2;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return arg3;
     }
     return arg1;
@@ -110,7 +110,7 @@ void func_80800308_bsbtrot(PlayerState* self)
             func_8009E830(self, 2);
             return;
         case 0x58:
-            if ((self->unk160.word == 0) && (func_8008E40C(self) != 0))
+            if ((self->unk160.word == 0) && (player_wearingClawClambers(self) != 0))
             {
                 switch (bs_getCurrentState(self))
                 {
@@ -151,11 +151,11 @@ void func_80800438_bsbtrot(PlayerState* self)
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp2C, func_808001B8_bsbtrot(self), func_80800164_bsbtrot(self)));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp2C, func_808001B8_bsbtrot(self), func_80800164_bsbtrot(self)));
 }
 
 void func_808004B4_bsbtrot(PlayerState* self) {
-    if ((func_8008E3E8(self) != 0) && (bastick_getZone(self) == BS_STICK_ZONE_ID_1) && (bastick_getZonePosition(self) > 0.8f)) {
+    if ((player_wearingTurboTrainers(self) != 0) && (bastick_getZone(self) == BS_STICK_ZONE_ID_1) && (bastick_getZonePosition(self) > 0.8f)) {
         func_800962B0(self, 1);
         return;
     }
@@ -222,13 +222,13 @@ BanjoStateId func_8080075C_bsbtrot(PlayerState* self, BanjoStateId arg1) {
     if (baflag_isTrue(self, BA_FLAG_F) != 0) {
         return arg1;
     }
-    if (func_8008D3B0(self) != 0) {
+    if (player_canFly(self) != 0) {
         return BS_STATE_23_FLIGHT_LAUNCH;
     }
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         return 0x9C;
     }
-    if (func_8008E40C(self) != 0) {
+    if (player_wearingClawClambers(self) != 0) {
         return BS_STATE_95;
     }
     return 8;
@@ -312,11 +312,11 @@ void func_808008D0_bsbtrot(PlayerState* arg0)
 		}
 		break;
 	}
-	if (anctrl_isAt(sp24, func_800F13C4(sp1C + 0.2f, 1.0f)) != 0)
+	if (anctrl_isAt(sp24, ml_remainder_f(sp1C + 0.2f, 1.0f)) != 0)
 	{
 		func_808000DC_bsbtrot(arg0, 1);
 	}
-	if (anctrl_isAt(sp24, func_800F13C4(sp20 + 0.2f, 1.0f)) != 0)
+	if (anctrl_isAt(sp24, ml_remainder_f(sp20 + 0.2f, 1.0f)) != 0)
 	{
 		func_808000DC_bsbtrot(arg0, 0);
 	}
@@ -375,10 +375,10 @@ s32 func_80800C20_bsbtrot(PlayerState* self) {
 }
 
 void bsbtrot_entrypoint_4(PlayerState* self) {
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x29B, 1.3f);
     }
-    else if (func_8008E40C(self) != 0) {
+    else if (player_wearingClawClambers(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x86, 1.3f);
     }
     else {
@@ -393,7 +393,7 @@ void bsbtrot_entrypoint_5(PlayerState* self) {
     func_808002A4_bsbtrot(self, func_80800C20_bsbtrot(self));
     func_80800120_bsbtrot(self);
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         _bashoes_entrypoint_20(self);
     }
     func_8009D3A8(self, 1);
@@ -424,7 +424,7 @@ void func_80800DF4_bsbtrot(PlayerState* self) {
     func_8008C9F0(self, sp2C, sp30, sp34, func_808001EC_bsbtrot(self));
     if (func_8008E1A0(self) != 0)
     {
-        func_8008CA30(self, func_800F10B4(func_8009BBB8(self), 0.0f, 1.0f, 0.6f, 0.9f));
+        func_8008CA30(self, ml_map_f(func_8009BBB8(self), 0.0f, 1.0f, 0.6f, 0.9f));
         return;
     }
     func_8008CA30(self, 1.0f);
@@ -613,18 +613,18 @@ void bsbtrot_entrypoint_21(PlayerState* self) {
 
     nextState = BS_STATE_0_INVALID;
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0)
+    if (player_wearingTurboTrainers(self) != 0)
     {
         _bashoes_entrypoint_20(self);
     }
     func_8009D658(self);
-    self->unk16C = func_800F0E00(self->unk16C - time_getDelta(), 0.0f);
+    self->unk16C = ml_max_f(self->unk16C - time_getDelta(), 0.0f);
     if (func_8008DF18(self) != 0)
     {
         func_800963C0(self, &sp38);
         func_800F1EA4(&sp38, &sp34);
         func_8009D3A8(self, 1);
-        baphysics_set_target_horizontal_velocity(self, func_800F10B4(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_map_f(func_8009BFD8(self), 20.0f, 60.0f, 550.0f, 700.0f));
         baphysics_set_target_yaw(self, sp34);
         _badust_entrypoint_1(self);
     }
@@ -681,7 +681,7 @@ void bsbtrot_entrypoint_25(PlayerState* self) {
     nextState = BS_STATE_0_INVALID;
     sp30 = baanim_getAnimCtrlPtr(self);
     func_808004B4_bsbtrot(self);
-    if (func_8008E3E8(self) != 0) {
+    if (player_wearingTurboTrainers(self) != 0) {
         _bashoes_entrypoint_20(self);
     }
     if (baflag_isTrue(self, BA_FLAG_F) != 0) {
@@ -785,10 +785,10 @@ void bsbtrot_entrypoint_28(PlayerState* self)
 void bsbtrot_entrypoint_29(PlayerState* self) {
     func_80800538_bsbtrot(self);
     _bsrest_entrypoint_18(self);
-    if (func_8008E430(self) != 0) {
+    if (player_wearingSpringyStep(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x29B, 1.3f);
     }
-    else if (func_8008E40C(self) != 0) {
+    else if (player_wearingClawClambers(self) != 0) {
         baanim_playForDuration_loopSmooth(self, 0x86, 1.3f);
     }
     else {
@@ -828,7 +828,7 @@ void bsbtrot_entrypoint_32(PlayerState* self) {
     player_getCoords(self, sp40);
     func_800A32C4(self, sp34);
     func_800F1E6C(sp34, sp40, &sp4C);
-    yaw_setIdeal(self, func_800136E4(sp4C + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(sp4C + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, _bareact_entrypoint_4(self));
     baphysics_set_target_yaw(self, sp4C);
@@ -1126,7 +1126,7 @@ void bsbtrot_entrypoint_49(PlayerState* self) {
     {
         nextState = 0x17B;
     }
-    if ((func_80800710_bsbtrot(self) != 0) || (func_8008E40C(self) == 0))
+    if ((func_80800710_bsbtrot(self) != 0) || (player_wearingClawClambers(self) == 0))
     {
         nextState = BS_STATE_17_TTROT_EXIT;
     }
@@ -1185,7 +1185,7 @@ void bsbtrot_entrypoint_53(PlayerState* self) {
     func_80800120_bsbtrot(self);
     func_808004B4_bsbtrot(self);
     _bashoessuck_entrypoint_4(self);
-    if (func_8008E40C(self) == 0) {
+    if (player_wearingClawClambers(self) == 0) {
         nextState = BS_STATE_17_TTROT_EXIT;
     }
     bs_setState(self, func_808007E0_bsbtrot(self, nextState));

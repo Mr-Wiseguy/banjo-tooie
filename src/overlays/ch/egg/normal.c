@@ -56,16 +56,16 @@ void func_80800000_cheggnormal(Actor* arg0)
     f32 temp_f24;
     EggNormalData* temp_s3;
 
-    temp_s3 = (EggNormalData*)func_80100094(arg0, 0U);
+    temp_s3 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     temp_s3->unk28 = (f32)(temp_s3->unk28 - time_getDelta());
-    temp_f24 = func_800F10B4(temp_s3->unk30, 0, 2.0f, 0.0333f, 0.1f);
+    temp_f24 = ml_map_f(temp_s3->unk30, 0, 2.0f, 0.0333f, 0.1f);
     while (temp_s3->unk28 <= 0.0f)
     {
         temp_s3->unk28 += temp_f24;
         ml_vec3f_copy(sp74, arg0->position);
         if (temp_s3->unk39_4)
         {
-            func_800EFA20(sp68, &arg0->actorData[4], 0.125f);
+            ml_getScaledVec3f(sp68, &arg0->actorData[4], 0.125f);
             if (rand_f() < 0.5f)
             {
                 _fxegg_entrypoint_7(sp74, sp68, arg0->scale);
@@ -91,7 +91,7 @@ void func_80800194_cheggnormal(Actor* arg0)
 {
     EggNormalData* sp2C;
 
-    sp2C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp2C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -115,7 +115,7 @@ void func_80800194_cheggnormal(Actor* arg0)
     case 2:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            arg0->scale = func_800F10B4(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
+            arg0->scale = ml_map_f(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
             if (_sueggmove_entrypoint_3(arg0) != 0)
             {
                 _suegg_entrypoint_23(arg0);
@@ -153,7 +153,7 @@ Actor* cheggnormal_entrypoint_1(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
     EggNormalData* temp_v0_2;
     _sueggmove_entrypoint_10(arg0);
     temp_v0 = _suegg_entrypoint_11(0x15A, arg1, arg3);
-    temp_v0_2 = (EggNormalData*)func_80100094(temp_v0, 0U);
+    temp_v0_2 = (EggNormalData*)actor_getAdditionalMem(temp_v0, 0U);
     temp_v0_2->unk38 = 1;
     temp_v0->scale = 0.134f;
     _suegg_entrypoint_1(temp_v0, 30.0f);
@@ -171,7 +171,7 @@ Actor* cheggnormal_entrypoint_2(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
     _sueggmove_entrypoint_10(arg0);
     temp_v0 = _suegg_entrypoint_11(0x15A, arg1, arg3);
-    temp_s1 = (EggNormalData*)func_80100094(temp_v0, 0U);
+    temp_s1 = (EggNormalData*)actor_getAdditionalMem(temp_v0, 0U);
     temp_v0->scale = 0.25f;
     _sueggmove_entrypoint_5(temp_v0, 0);
     _sueggmove_entrypoint_6(temp_v0, 0, -100000.0f);

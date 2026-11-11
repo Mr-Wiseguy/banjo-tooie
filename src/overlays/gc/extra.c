@@ -21,6 +21,6 @@ void gcextra_entrypoint_2(s32 arg0)
     {
         var_a1 = temp_v0;
     }
-    flag_setMultipleValue(0x4EA, var_a1, 3);
-    func_800D517C();
+    flag_setMultipleValue(FLAG_4EA_HONEY_B_HONEY_UPGRADES_1, var_a1, 3);
+    transformation_setAllMaxHealth();
 }

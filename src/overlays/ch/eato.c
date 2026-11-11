@@ -32,8 +32,8 @@ ActorData* chcheato_entrypoint_0(void) {
 
 void func_8080000C_chcheato(Actor* arg0)
 {
-    _subaddieitem_entrypoint_0(func_80100094(arg0, 1U), 0x4E3U, -1, 3);
-    _subaddieitem_entrypoint_1(func_80100094(arg0, 1U), 5);
+    _subaddieitem_entrypoint_0(actor_getAdditionalMem(arg0, 1U), 0x4E3U, -1, 3);
+    _subaddieitem_entrypoint_1(actor_getAdditionalMem(arg0, 1U), 5);
     func_8010A828(arg0, 9U);
 }
 
@@ -59,7 +59,7 @@ void func_80800068_chcheato(Actor* arg0)
         return;
     case 3:
         func_80103DFC(arg0, sp34);
-        if (_subaddieitem_entrypoint_3(arg0, sp34, func_80100094(arg0, 1U)) != 0)
+        if (_subaddieitem_entrypoint_3(arg0, sp34, actor_getAdditionalMem(arg0, 1U)) != 0)
         {
             func_80102424(arg0, 2);
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x115DU, 0xEU, arg0->position, 0x37U);
@@ -75,7 +75,7 @@ void func_80800068_chcheato(Actor* arg0)
         }
         break;
     case 5:
-        _gcnewoption_entrypoint_0(func_80100094(arg0, 0U));
+        _gcnewoption_entrypoint_0(actor_getAdditionalMem(arg0, 0U));
         return;
     case 6:
         _gcnewoption_entrypoint_6((OptionState*)arg0, 0U);
@@ -105,7 +105,7 @@ s32 func_80800204_chcheato(Actor* arg0, s32 arg1, s32 arg2)
         func_80800AB4_chcheato(arg0, func_80101080(), ((s16*)(&arg2))[0], ((s16*)(&arg2))[1]);
         break;
     case 0x52:
-        _gcdialogcamera_entrypoint_3(&D_80800E50_chcheato, arg0->scale);
+        _gcdialogcamera_entrypoint_3(D_80800E50_chcheato, arg0->scale);
         break;
     case EVENT_95_ACTOR_SPAWNED:
         arg0->unk64_20 = 0;
@@ -124,7 +124,7 @@ void func_8080035C_chcheato(Actor* arg0, void* arg1)
     {
         if (arg0->unk70_10 == 5)
         {
-            _gcnewoption_entrypoint_1(func_80100094(arg0, 0U), arg1);
+            _gcnewoption_entrypoint_1(actor_getAdditionalMem(arg0, 0U), arg1);
         }
     }
     else
@@ -155,7 +155,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
     switch (arg1)
     {
     case 0x1144:
-        _subaddieitem_entrypoint_2(func_80100094(arg0, 1U));
+        _subaddieitem_entrypoint_2(actor_getAdditionalMem(arg0, 1U));
         func_80102424(arg0, 3);
         return;
     case 0x115D:
@@ -202,7 +202,7 @@ void func_80800434_chcheato(Actor* arg0, s32 arg1, s32 arg2)
     case 0x114F:
         if ((inventory_getValue(0x4A) >= 5) && (func_80800BB8_chcheato() != -1))
         {
-            _subaddieitem_entrypoint_2(func_80100094(arg0, 1U));
+            _subaddieitem_entrypoint_2(actor_getAdditionalMem(arg0, 1U));
             func_80102424(arg0, 3);
             return;
         }
@@ -367,8 +367,8 @@ void func_80800B00_chcheato(Actor* arg0)
 
     sp2C = func_80800C0C_chcheato();
     _gcnewoption_entrypoint_4(arg0, 0U, &_gcnewoption_entrypoint_16, (u32)&_gcnewoption_entrypoint_35, 0x1849);
-    temp_s0 = func_80100094(arg0, 0U);
-    _gcnewoption_entrypoint_8(temp_s0, func_800F1418(5, sp2C));
+    temp_s0 = actor_getAdditionalMem(arg0, 0U);
+    _gcnewoption_entrypoint_8(temp_s0, ml_min_i(5, sp2C));
     _gcnewoption_entrypoint_9(temp_s0, (u32)sp2C);
     _gcnewoption_entrypoint_10(temp_s0, 1U);
     func_8080098C_chcheato((s32)arg0, temp_s0);

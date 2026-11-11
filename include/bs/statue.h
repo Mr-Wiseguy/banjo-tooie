@@ -4,6 +4,7 @@
 
 #include <ultra64.h>
 #include "common.h"
+#include "ba/playerstate.h"
 
 // func_80800000_bsstatue
 // func_80800050_bsstatue
@@ -14,7 +15,7 @@ void func_8080009C_bsstatue(s32 arg0);
 // func_80800130_bsstatue
 // func_808001FC_bsstatue
 // bsstatue_entrypoint_0
-// bsstatue_entrypoint_1
+void _bsstatue_entrypoint_1(PlayerState*);
 // func_808003B4_bsstatue
 // func_80800474_bsstatue
 // func_808004B4_bsstatue

@@ -22,6 +22,7 @@ s32 inventory_getValue(s32 a0);
 void func_800D192C(s32, u32);
 void func_800D1960(s32, s32, s32);
 u32 func_800D1A6C(u32);
+s32 func_800D1B34(s32);
 s32 inventory_hasZeroItems(s32);
 s32 func_800D1ACC(s32);
 s32 func_800D1C5C(u32);

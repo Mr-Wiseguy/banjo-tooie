@@ -7,7 +7,7 @@ void func_80800090_chmole_cuckoo(Actor*);
 
 MoveData D_808000C0_chmole_cuckoo[] =
 {
-	{ALLOW_BANJO,0xDB5,0xDB3,0xDB4,0x2A,0xFF,0x2FD,0x19,0x0}
+	{ALLOW_BANJO,0xDB5,0xDB3,0xDB4,ABILITY_2A_SACK_PACK,0xFF,765,0x19,0x0}
 };
 ActorData D_808000D0_chmole_cuckoo = 
 {

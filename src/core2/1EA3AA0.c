@@ -33,14 +33,16 @@ void* func_800CA384(void* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA558.s")
 
-void func_800CA5B8()
+//dupe
+void func_800CA5B8(f32* dst, f32* src)
 {
-    ml_vec3f_copy();
+    ml_vec3f_copy(dst,src);
 }
 
-void func_800CA5D8()
+//dupe
+void func_800CA5D8(f32* dst, s32* src)
 {
-    ml_vec3i_to_vec3f();
+    ml_vec3i_to_vec3f(dst,src);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EA3AA0/func_800CA5F8.s")

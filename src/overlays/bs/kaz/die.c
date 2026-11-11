@@ -34,7 +34,7 @@ void bskazdie_entrypoint_0(PlayerState *self) {
     func_800A32C4(self, &unk1);
     func_800F1E6C(&unk1, &unk0, &targetYaw);
     self->unk16C = 250;
-    yaw_setIdeal(self, func_800136E4(targetYaw + 180.0f));
+    yaw_setIdeal(self, ml_normalizeAngle_f(targetYaw + 180.0f));
     yaw_applyIdeal(self);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     baphysics_set_target_yaw(self, targetYaw);
@@ -80,7 +80,7 @@ void bskazdie_entrypoint_1(PlayerState *self) {
             }
             break;
         case 2:
-            self->unk16C = func_800F0E00(self->unk16C - 12.0f, 0);
+            self->unk16C = ml_max_f(self->unk16C - 12.0f, 0);
             if (self->unk16C > 140.0f) {
                 _badust_entrypoint_9(self);
             }

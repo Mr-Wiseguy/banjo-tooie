@@ -7,8 +7,8 @@ void func_80800000_chfaircoin(Actor* arg0)
     f32 sp2C;
     f32 temp_f0;
 
-    func_800D9078((f32*)&arg0->actorData[3]);
-    temp_f0 = func_800F10B4(*(f32*)&arg0->actorData[3], arg0->unk58, 0.0f, 0.0f, 1.0f);
+    timer_reachedZero((f32*)&arg0->actorData[3]);
+    temp_f0 = ml_map_f(*(f32*)&arg0->actorData[3], arg0->unk58, 0.0f, 0.0f, 1.0f);
     sp2C = temp_f0;
     func_800EFE50(arg0->position, (f32*)&arg0->actorData[4], (f32*)&arg0->actorData[0], temp_f0);
     arg0->position[1] += func_8001395C(sp2C * 3.1415927f) * 200.0f;

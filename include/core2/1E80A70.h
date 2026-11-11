@@ -97,7 +97,13 @@ typedef struct {
     s16 unk6;
 } unkStructD_8011A420;
 
-GraphicsBuffers* func_800A7180(void);
+typedef struct {
+    Gfx* gfx;
+    Mtx* mtx;
+    Vtx* vtx;
+} unkStructD_80127658;
+
+GraphicsBuffers* graphics_getGraphicsBuffer(void);
 void func_800A718C();
 void func_800A71E0(void);
 void func_800A72A4(s32, s32, s32, s32);
@@ -145,8 +151,8 @@ void func_800A8670(void);
 void func_800A86D8(void);
 void func_800A8710(void);
 s32 func_800A877C(s32);
-// func_800A87FC
-unkStruct800CA334* func_800A88C4(s32, unkStruct800CA334*);
+s32 func_800A87FC(s32);
+unkStruct800CA334* func_800A88C4();
 unkStruct800CA334* func_800A8948(s32);
 unkStruct800CA334* func_800A8984(s32);
 s32 func_800A89A0(s32);

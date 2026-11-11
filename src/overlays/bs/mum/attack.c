@@ -142,9 +142,9 @@ void func_808003DC_bsmumattack(PlayerState *self) {
         case 2:
             _batimer_decrement(self, 0);
             timer_value = _batimer_get(self, 0);
-            _bamum_entrypoint_5(self, func_800F10B4(timer_value, 0.0f, 0.7f, 0.0f, 1.0f));
-            func_808000AC_bsmumattack(self, func_800F10B4(timer_value, 0.0f, 0.7f, 0.5f, 1.0f));
-            self->unk16C = func_800F10B4(timer_value, 0.0f, 0.7f, 0.0f, 1.0f);
+            _bamum_entrypoint_5(self, ml_map_f(timer_value, 0.0f, 0.7f, 0.0f, 1.0f));
+            func_808000AC_bsmumattack(self, ml_map_f(timer_value, 0.0f, 0.7f, 0.5f, 1.0f));
+            self->unk16C = ml_map_f(timer_value, 0.0f, 0.7f, 0.0f, 1.0f);
             if (_batimer_isAt_falling(self, 0, 0.4f) != 0) {
                 _bawandglow_entrypoint_7(self);
             }

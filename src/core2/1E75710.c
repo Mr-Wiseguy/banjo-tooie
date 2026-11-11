@@ -15,14 +15,14 @@ void func_8009BE28(PlayerState* self, f32 arg1, f32 arg2)
 
 	gameSpeed = time_getDelta();
 	temp2 = self->unkDC;
-	sp2C = func_80013728(temp2->unk4 - temp2->unk0);
+	sp2C = ml_absNormalizeAngle_f(temp2->unk4 - temp2->unk0);
 	temp_f2 = sp2C * arg2;
 	if (temp_f2 != 0.0f)
 	{
-		temp_f2 = temp_f2 < 0.0f ? func_800F0D50(temp_f2, -arg1, -3.0f) : func_800F0D50(temp_f2, 3.0f, arg1);
+		temp_f2 = temp_f2 < 0.0f ? ml_clamp_f(temp_f2, -arg1, -3.0f) : ml_clamp_f(temp_f2, 3.0f, arg1);
 	}
 	temp2->unk0 += func_800F212C(temp_f2 * gameSpeed, sp2C);
-	temp2->unk0 = func_800136E4(temp2->unk0);
+	temp2->unk0 = ml_normalizeAngle_f(temp2->unk0);
 }
 
 void func_8009BF04(PlayerState* self)
@@ -38,11 +38,11 @@ void func_8009BF34(PlayerState* self)
 }
 
 void func_8009BF5C(PlayerState* self, f32 arg1) {
-    self->unkDC->unk4 = func_800136E4(arg1);
+    self->unkDC->unk4 = ml_normalizeAngle_f(arg1);
 }
 
 void func_8009BF8C(PlayerState* self, f32 arg1) {
-    self->unkDC->unk0 = func_800136E4(arg1);
+    self->unkDC->unk0 = ml_normalizeAngle_f(arg1);
 }
 
 void func_8009BFBC(PlayerState* self) {

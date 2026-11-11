@@ -136,7 +136,7 @@ void chbaddiesetup_entrypoint_7(u32 arg0, Vec3f arg1)
     func_80108474(arg0, sp1C, 0);
 }
 
-void chbaddiesetup_entrypoint_8(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
+Actor* chbaddiesetup_entrypoint_8(PropId arg0, s32 arg1, s32 arg2, s32 arg3)
 {
     s32 sp1C[4];
 
@@ -146,7 +146,7 @@ void chbaddiesetup_entrypoint_8(s32 arg0, s32 arg1, s32 arg2, s32 arg3)
     sp1C[7] = arg3;
     sp1C[3] = arg3;
 
-    func_80108454(arg0, sp1C + 1, 0);
+    return func_80108454(arg0, &sp1C[1], 0);
 }
 
 void chbaddiesetup_entrypoint_9(s32 arg0, Vec3f arg1)

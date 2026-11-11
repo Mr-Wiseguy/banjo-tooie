@@ -116,7 +116,7 @@ u8 func_8009EA20(void) {
     return D_80127077;
 }
 
-s32 func_8009EA2C()
+s32 bs_getDragonKazooieState()
 {
     return flag_getValue(FLAG_3EC_ABILITY_DRAGON_KAZOOIE);
 }
@@ -154,7 +154,7 @@ void func_8009EAA0(s32 arg0) {
     D_80127077 = arg0;
 }
 
-void func_8009EAAC(s32 arg0) {
+void bs_setDragonKazooieState(s32 arg0) {
     flag_setValue(FLAG_3EC_ABILITY_DRAGON_KAZOOIE, arg0);
 }
 

@@ -20,8 +20,8 @@
 #include "core2/1EDCA30.h"
 #include "core2/1EDFED0.h"
 
+MapId map_getCurrent(void);
 void func_800E9F20(s32, s32);
-MapId func_800EA05C(void);
 s32 func_800EA068(s32);
 s32 func_800EA090(void);
 s32 func_800EA09C();
@@ -35,5 +35,5 @@ s32 func_800EA358(void);
 void func_800EA45C();
 void func_800EA51C();
 int func_800EB15C(Unk80132ED0* arg0);
-void func_800EB210(Unk80132ED0*, unkCUnk0*, s32);
+void func_800EB210(Unk80132ED0*, Unk80132ED0*, s32);
 #endif

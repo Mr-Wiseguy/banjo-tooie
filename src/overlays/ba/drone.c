@@ -98,7 +98,7 @@ void badrone_entrypoint_16(PlayerState* self, f32* arg1, f32 arg2) {
 
 	player_getCoords(self, sp2C);
 	ml_getdiff_vec3f(sp20, arg1, sp2C);
-	badrone_entrypoint_15(self, arg1, func_800EEFFC(sp20) / arg2);
+	badrone_entrypoint_15(self, arg1, ml_vec2f_magnitude(sp20) / arg2);
 }
 
 BanjoStateId func_80800348_badrone(PlayerState* self, s32 arg1) {

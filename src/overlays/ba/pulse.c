@@ -7,7 +7,7 @@ s32 bapulse_entrypoint_0()
 
 f32 bapulse_entrypoint_1(PlayerState* self)
 {
-	return func_800F10B4(self->unkE8->unk8, 0.0f, self->unkE8->unk4, 0.0f, 1.0f);
+	return ml_map_f(self->unkE8->unk8, 0.0f, self->unkE8->unk4, 0.0f, 1.0f);
 }
 
 void bapulse_entrypoint_2(PlayerState* self) {}
@@ -27,7 +27,7 @@ void bapulse_entrypoint_4(PlayerState* self) {
 		self->unkE8->unk8 = (f32)(self->unkE8->unk8 + temp_f0);
 		if (self->unkE8->unk4 <= self->unkE8->unk8)
 		{
-			self->unkE8->unk8 = (f32)(self->unkE8->unk4 - func_800F13C4(self->unkE8->unk8, self->unkE8->unk4));
+			self->unkE8->unk8 = (f32)(self->unkE8->unk4 - ml_remainder_f(self->unkE8->unk8, self->unkE8->unk4));
 			self->unkE8->unk0 = 1;
 		}
 	}
@@ -36,7 +36,7 @@ void bapulse_entrypoint_4(PlayerState* self) {
 		self->unkE8->unk8 = (f32)(self->unkE8->unk8 - temp_f0);
 		if (self->unkE8->unk8 < 0.0f)
 		{
-			self->unkE8->unk8 = func_800F13C4(-self->unkE8->unk8, self->unkE8->unk4);
+			self->unkE8->unk8 = ml_remainder_f(-self->unkE8->unk8, self->unkE8->unk4);
 			self->unkE8->unk0 = 0;
 		}
 	}

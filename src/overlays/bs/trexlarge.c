@@ -54,7 +54,7 @@ void func_80800044_bstrexlarge(PlayerState* self)
     sp48 = baphysics_get_vertical_velocity(self);
     if ((func_8009650C(self) != 0) && (sp2C != 0) && (sp4C < 70.0f) && (sp30[1] < 5.0f) && (sp48 < -100.0f))
     {
-        self->unk164.word = (s32)func_800F13F0((f32)(self->unk164.word + 1), 100.0f);
+        self->unk164.word = (s32)ml_min_f((f32)(self->unk164.word + 1), 100.0f);
         return;
     }
     self->unk164.word = 0;
@@ -213,10 +213,10 @@ void func_808004B4_bstrexlarge(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     case BS_STICK_ZONE_ID_1:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 100.0f, 400.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 100.0f, 400.0f));
         return;
     case BS_STICK_ZONE_ID_2:
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(sp24, 400.0f, 1000.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp24, 400.0f, 1000.0f));
         return;
     }
 }
@@ -644,7 +644,7 @@ void func_808012EC_bstrexlarge(PlayerState* self)
     {
         sp38 = func_80092AD8(self);
         func_800E0AF0(sp38, 1.0f);
-        sp34 = func_800F10B4(sp3C, 0.75f, 1.0f, -25.0f, 0.0f);
+        sp34 = ml_map_f(sp3C, 0.75f, 1.0f, -25.0f, 0.0f);
         func_800E0AFC(sp38, 1U, 1.0f, sp34, 0.0f, 0.0f);
         func_800E0AFC(sp38, 0x12U, 1.0f, sp34, 0.0f, 0.0f);
     }

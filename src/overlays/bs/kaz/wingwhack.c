@@ -13,8 +13,8 @@ void func_80800000_bskazwingwhack(PlayerState *self, f32 arg1[3], f32 arg2, f32 
 
     temp_s0 = func_800B5BE4(0xA);
     player_getCoords(self, sp30);
-    func_800BA77C(temp_s0, 0, func_800136E4(func_800F1DF4(sp30, arg1) + arg2), arg3);
-    if (func_8009EA2C() != 0) {
+    func_800BA77C(temp_s0, 0, ml_normalizeAngle_f(func_800F1DF4(sp30, arg1) + arg2), arg3);
+    if (bs_getDragonKazooieState() != 0) {
         func_800BA670(temp_s0, 0x619);
     } else {
         func_800BA670(temp_s0, 0x618);
@@ -39,8 +39,8 @@ void func_80800148_bskazwingwhack(PlayerState *self) {
     yaw_setVelocityBounded(self, 400.0f, 7.5f);
     baflag_set(self, BA_FLAG_36);
     baflag_set(self, BA_FLAG_5_HAS_PECKED);
-    self->unk16C = func_8009BB5C(self);
-    self->unk16C = func_800F13F0(self->unk16C, 1200.0f);
+    self->unk16C = baphysics_get_horizontal_velocity(self);
+    self->unk16C = ml_min_f(self->unk16C, 1200.0f);
     baphysics_set_target_horizontal_velocity(self, self->unk16C);
     func_800931AC(self, 3);
     func_8009328C(self, yaw_get(self));
@@ -63,9 +63,9 @@ void func_80800278_bskazwingwhack(PlayerState *self) {
     baphysics_set_target_yaw(self, yaw_get(self));
     temp_f0 = baanim_getTimer(self);
     if (temp_f0 < 0.5f) {
-        var_f0 = func_800F10B4(temp_f0, 0.0f, 0.15f, self->unk170, 80.0f);
+        var_f0 = ml_map_f(temp_f0, 0.0f, 0.15f, self->unk170, 80.0f);
     } else {
-        var_f0 = func_800F10B4(temp_f0, 0.8f, 0.6f, self->unk170, 80.0f);
+        var_f0 = ml_map_f(temp_f0, 0.8f, 0.6f, self->unk170, 80.0f);
     }
     sp34 = temp_f0;
     func_8009E55C(self, 1, var_f0);
@@ -163,7 +163,7 @@ void func_80800580_bskazwingwhack(PlayerState *self) {
         baflag_set(self, BA_FLAG_36);
     } else if ((animTimer > 0.317f) && (animTimer < 0.4f)) {
         func_800F3BD0(self, 9, sp28);
-        func_80800000_bskazwingwhack(self, sp28, func_800136E4(295.0f), 180.0f);
+        func_80800000_bskazwingwhack(self, sp28, ml_normalizeAngle_f(295.0f), 180.0f);
         baflag_set(self, BA_FLAG_36);
     } else if ((animTimer > 0.58f) && (animTimer < 0.7f)) {
         func_800F3BD0(self, 7, sp28);

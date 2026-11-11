@@ -93,7 +93,7 @@ void func_808002DC_bsbbilldrill(PlayerState* self, s32 arg1) {
             func_80098520(self, 0);
             _batimer_set(self, 0, 0.3f);
             
-            self->unk164.bytes[0] = (func_8009EA2C() != 0) ? func_8009D454(self, 0, &D_80800B30_bsbbilldrill) : func_8009D454(self, 0, &D_80800B10_bsbbilldrill);
+            self->unk164.bytes[0] = (bs_getDragonKazooieState() != 0) ? func_8009D454(self, 0, &D_80800B30_bsbbilldrill) : func_8009D454(self, 0, &D_80800B10_bsbbilldrill);
             self->unk15C.bytes[1] = 0;
             return;
         case 2:
@@ -194,9 +194,9 @@ void bsbbilldrill_entrypoint_2(PlayerState* self) {
             func_80800298_bsbbilldrill(self);
             temp_f0 = _batimer_get(self, 0);
             sp40 = temp_f0;
-            self->unk170 = func_800F10B4(temp_f0, 0, 0.3f, 1500.0f, 50.0f);
+            self->unk170 = ml_map_f(temp_f0, 0, 0.3f, 1500.0f, 50.0f);
             func_808005C0_bsbbilldrill(self);
-            func_80098520(self, func_800F10B4(sp40, 0.0f, 0.3f, 1.0f, 0.0f));
+            func_80098520(self, ml_map_f(sp40, 0.0f, 0.3f, 1.0f, 0.0f));
             if (_batimer_decrement(self, 0) != 0) {
                 func_808002DC_bsbbilldrill(self, 2);
             }

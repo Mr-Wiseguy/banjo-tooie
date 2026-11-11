@@ -30,7 +30,7 @@ void func_80800030_bsbswim(PlayerState* self)
         baroll_setAngularVelocity(self, 130.0f, 0.9f);
         baphysics_set_gravity(self, 0.0f);
         baphysics_set_terminal_velocity(self, -399.99f);
-        if (func_800F8B88() != 3)
+        if (bs_getSplitStatus() != SPLIT_STATE_TALON_TORPEDO)
         {
             func_800A0CF4(self, 1);
         }
@@ -84,7 +84,7 @@ void func_808001C8_bsbswim(PlayerState* self) {
     func_80800030_bsbswim(self);
     func_8009BC5C(self, 0.4f);
     _baswim_entrypoint_8(self, 300.0f);
-    if (func_8008E23C(self) != 0) {
+    if (player_isSplitUp(self) != 0) {
         func_800A0CF4(self, 0);
     }
 }
@@ -97,7 +97,7 @@ void func_80800288_bsbswim(PlayerState* self)
     _baswim_entrypoint_11(self);
     _baswim_entrypoint_12(self);
     _baswim_entrypoint_13(self);
-    if (func_8008E23C(self) != 0) 
+    if (player_isSplitUp(self) != 0) 
     {
         if ((bakey_held(self, BUTTON_A) != 0) || (bakey_held(self, BUTTON_B) != 0)) 
         {
@@ -723,7 +723,7 @@ void func_80801538_bsbswim(PlayerState* self)
     sp28 = func_800A3298(self);
     if (bs_getPreviousState(self) == BS_STATE_F_BBUSTER)
     {
-        sp28 = func_800F0E00(sp28, 600.0f);
+        sp28 = ml_max_f(sp28, 600.0f);
     }
     if (sp28 > 80.0f)
     {
@@ -743,7 +743,7 @@ void func_80801538_bsbswim(PlayerState* self)
         anctrl_setStart(temp_s0, 0.6412f);
         anctrl_start(temp_s0);
     }
-    temp_f0 = func_800F10B4(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
+    temp_f0 = ml_map_f(sp28, 40.0f, 1000.0f, -300.0f, -1200.0f);
     self->unk178 = temp_f0;
     baphysics_set_vertical_velocity(self, temp_f0);
     func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_3_BOUNDED, 3, BA_PHYSICS_9_NO_GRAVITY);
@@ -764,7 +764,7 @@ void func_808016B8_bsbswim(PlayerState* self)
     func_800BA22C(sp3C, 1);
     if (self->unk178 < 0.0f)
     {
-        self->unk178 += func_800F0E00(mlAbsF(self->unk178) * 0.1f, 50.0f);
+        self->unk178 += ml_max_f(mlAbsF(self->unk178) * 0.1f, 50.0f);
         baphysics_set_vertical_velocity(self, self->unk178);
     }
     if (player_isStable(self) != 0)
@@ -864,7 +864,7 @@ void func_808019E0_bsbswim(PlayerState* self)
     {
         func_800A0CF4(self, 0);
         _baduo_entrypoint_21(self);
-        func_800A3410(self, 0xA);
+        player_setTransformation(self, TRANSFORM_A_BANJO);
         self->unk164.bytes[1] = 1;
         player_getCoords(self, sp30);
         sp30[1] += 60.0f;

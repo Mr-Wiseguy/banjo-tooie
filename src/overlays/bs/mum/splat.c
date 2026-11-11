@@ -33,7 +33,7 @@ void func_808000A0_bsmumsplat(PlayerState *self) {
     if ((player_isStable(self) == 0) && (player_inWater(self) != 0)) {
         next_state = BS_STATE_F0;
     }
-    if (func_800A1718(self) == 0) {
+    if (player_getCurrentHealth(self) == 0) {
         next_state = BS_STATE_EB;
     }
     bs_setState(self, next_state);

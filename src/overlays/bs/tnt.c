@@ -70,7 +70,7 @@ void func_80800164_bstnt(PlayerState* self) {
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
 		return;
 	}
-	baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 600.0f));
+	baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 600.0f));
 }
 
 s32 func_808001C8_bstnt(PlayerState* self, s32 arg1)
@@ -198,7 +198,7 @@ void func_80800720_bstnt(PlayerState* self)
 {
 	u32 temp_t9;
 
-	temp_t9 = (u32)func_800F0E00((f32)(self->unk168.bytes[1] - 1), 0.0f);
+	temp_t9 = (u32)ml_max_f((f32)(self->unk168.bytes[1] - 1), 0.0f);
 	self->unk168.bytes[1] = (u8)temp_t9;
 	if (!(self->unk168.bytes[1])) {
 		func_808006EC_bstnt(self);
@@ -219,7 +219,7 @@ void func_808007EC_bstnt(PlayerState* self, s32 arg1) {
 	case 2:
 		func_808006B4_bstnt(self, 0xAU);
 		func_808005F4_bstnt(self);
-		func_800A17A8(self, -1);
+		player_affectCurrentHealth(self, -1);
 		func_800931AC(self, 3);
 		self->unk16C = 800.0f;
 		temp_f0 = yaw_get(self);
@@ -277,11 +277,11 @@ void func_80800998_bstnt(PlayerState* self) {
 		break;
 	case 2:
 		func_8080009C_bstnt(self);
-		temp_f0 = func_800136E4(self->unk170 + (self->unk16C * sp20));
+		temp_f0 = ml_normalizeAngle_f(self->unk170 + (self->unk16C * sp20));
 		self->unk170 = temp_f0;
 		func_8009328C(self, temp_f0);
 		if (baanim_getTimer(self) > 0.78f) {
-			self->unk16C = func_800F0E00(0.0f, self->unk16C - (750.0f * sp20));
+			self->unk16C = ml_max_f(0.0f, self->unk16C - (750.0f * sp20));
 		}
 		if (baanim_isAt(self, 0.5f) != 0) {
 			func_80800554_bstnt(self);
@@ -324,7 +324,7 @@ void func_80800B60_bstnt(PlayerState* self, s32 arg1) {
 		baanim_playForDuration_onceSmooth(self, 0xE3, 3.4f);
 		func_8009FFD8(self, BAANIM_UPDATE_1_NORMAL, YAW_TYPE_1_DEFAULT, 3, BA_PHYSICS_6_AIRBORN);
 		baphysics_set_target_horizontal_velocity(self, 0.0f);
-		func_8008F880(self->unk164.word, sp2C);
+		func_8008F880(self->unk164.object, sp2C);
 		player_getCoords(self, sp38);
 		func_800F1E6C(sp2C, sp38, &sp44);
 		yaw_setIdeal(self, sp44);
@@ -562,7 +562,7 @@ s32 bstnt_entrypoint_8(PlayerState* self)
 	{
 		return 0;;
 	}
-	if (func_800A1718(self) >= 2)
+	if (player_getCurrentHealth(self) >= 2)
 	{
 		return 1;
 	}
@@ -638,11 +638,11 @@ void func_8080166C_bstnt(PlayerState* self) {
 		}
 		break;
 	case 3:
-		baphysics_set_target_horizontal_velocity(self, func_8009BB5C(self) * 0.25f);
+		baphysics_set_target_horizontal_velocity(self, baphysics_get_horizontal_velocity(self) * 0.25f);
 		func_8009D2D8(self, 3);
 		func_8009D3A8(self, 0);
 		if (anctrl_isStopped(sp20) != 0) {
-			if (func_8009BB5C(self) > 0.0f) {
+			if (baphysics_get_horizontal_velocity(self) > 0.0f) {
 				sp24 = 0x108;
 			}
 			else {
@@ -677,7 +677,7 @@ s32 bstnt_entrypoint_9(s32 arg0) {
 
 void bstnt_entrypoint_10(PlayerState* self) {
 	if (func_8009E6EC(self) == 0x42) {
-		self->unk164.word = func_80099A4C(self);
+		self->unk164.object = func_80099A4C(self);
 		self->unk168.bytes[0] = 1;
 		func_8009E830(self, 2);
 		return;
@@ -710,8 +710,8 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 		baphysics_set_horizontal_velocity(self, sp28, baphysics_get_target_horizontal_velocity(self));
 		temp_f0 = baphysics_get_target_horizontal_velocity(self);
 		sp38 = temp_f0;
-		sp34 = func_800F10B4(temp_f0, 30.0f, 600.0f, 0.35f, 0.7f);
-		sp30 = func_800F10B4(sp38, 30.0f, 600.0f, 346.75f, 693.5f);
+		sp34 = ml_map_f(temp_f0, 30.0f, 600.0f, 0.35f, 0.7f);
+		sp30 = ml_map_f(sp38, 30.0f, 600.0f, 346.75f, 693.5f);
 		anctrl_reset(sp3C);
 		anctrl_setIndex(sp3C, 0xE2);
 		anctrl_setSubrange(sp3C, 0.0f, 0.4008f);
@@ -727,7 +727,7 @@ void func_80801980_bstnt(PlayerState* self, u32 arg1) {
 		baanim_setEndAndDuration(self, 0.93f, 0.7f);
 		return;
 	case 4:
-		self->unk16C = func_8009BB5C(self) * 0.25f;
+		self->unk16C = baphysics_get_horizontal_velocity(self) * 0.25f;
 		func_8009D2D8(self, 3);
 		baphysics_set_target_horizontal_velocity(self, self->unk16C);
 		func_800A2FCC(self, 0);

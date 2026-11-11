@@ -4,5 +4,6 @@
 #include "common.h"
 
 s32* _fxgenlist_entrypoint_0();
+s32* _fxgenlist_entrypoint_1();
 
 #endif

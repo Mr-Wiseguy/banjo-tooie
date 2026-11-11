@@ -46,15 +46,15 @@ void __yaw_update_limited(PlayerState *self, f32 limit_degPerSec, f32 step_perce
 
         dt_s = time_getDelta();
         pYaw = self->yaw;
-        dyaw_deg = func_80013728(pYaw->ideal - pYaw->value);
+        dyaw_deg = ml_absNormalizeAngle_f(pYaw->ideal - pYaw->value);
 
         val_deg = dyaw_deg * step_percent;
         if (val_deg != 0) {
-            val_deg = (val_deg < 0) ? func_800F0D50(val_deg, -limit_degPerSec, -3.0f) : func_800F0D50(val_deg, 3.0f, limit_degPerSec);
+            val_deg = (val_deg < 0) ? ml_clamp_f(val_deg, -limit_degPerSec, -3.0f) : ml_clamp_f(val_deg, 3.0f, limit_degPerSec);
         }
         pYaw->unk8 = val_deg;
         pYaw->value += func_800F212C(val_deg*dt_s, dyaw_deg);
-        pYaw->value = func_800136E4(pYaw->value);
+        pYaw->value = ml_normalizeAngle_f(pYaw->value);
     }
 
 void yaw_init(PlayerState *self) {
@@ -87,11 +87,11 @@ void yaw_setUpdateType(PlayerState *self, YawType type) {
 }
 
 void yaw_setIdeal(PlayerState *self, f32 arg1) {
-    self->yaw->ideal = func_800136E4(arg1);
+    self->yaw->ideal = ml_normalizeAngle_f(arg1);
 }
 
 void yaw_set(PlayerState *self, f32 arg1) {
-    self->yaw->value = func_800136E4(arg1);
+    self->yaw->value = ml_normalizeAngle_f(arg1);
 }
 
 void yaw_applyIdeal(PlayerState *self) {

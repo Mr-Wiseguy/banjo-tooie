@@ -156,9 +156,9 @@ void func_808005EC_chdinofamilymother(Actor* arg0, s32 arg1)
         func_80801118_chdinofamilymother(arg0, arg0->unk0, 0x1D, 0x30);
         break;
     case 7:
-        if (func_800F64A4(character_getActiveIndex(), 0x1000) != 0)
+        if (character_includedInTransformMask(character_getActiveIndex(), 0x1000) != 0)
         {
-            func_800D1000(TDL_SCROTTY, 1U, NULL, 1U, NULL);
+            collectable_spawnItem(TDL_SCROTTY, 1U, NULL, 1U, NULL);
             func_80801118_chdinofamilymother(arg0, arg0->unk0, 9, 0x10);
             _subaddiedialog_entrypoint_11(arg0->unk0, 0x1818U, 0xCU, (f32*)arg0->actorData, 0x65U);
         }

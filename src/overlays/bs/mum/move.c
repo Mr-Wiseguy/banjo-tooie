@@ -27,7 +27,7 @@ void func_80800068_bsmummove(PlayerState *self) {
     anim_start = 0.0f;
     if (bs_getPreviousState(self) == 0xE6) {
         anim_start = baanim_getTimer(self);
-        if (func_8009BB5C(self) < 200.0f) {
+        if (baphysics_get_horizontal_velocity(self) < 200.0f) {
             _badust_entrypoint_3(self, 0.0f, 0.0f);
         }
     }

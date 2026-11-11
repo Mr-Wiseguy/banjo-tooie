@@ -9,7 +9,7 @@ void func_80800000_bsbanbflip(PlayerState *self) {
     if (bastick_getZone(self) == BS_STICK_ZONE_ID_0) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
     } else {
-        baphysics_set_target_horizontal_velocity(self, func_800F1214(stick_position, 80.0f, 200.0f));
+        baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(stick_position, 80.0f, 200.0f));
     }
 }
 
@@ -112,7 +112,7 @@ void bsbanbflip_update(PlayerState *self) {
             if(anctrl_isStopped(anctrl)) {
                 next_state = BS_STATE_2F_FALL;
             }
-            if (func_8008DA24(self)) {
+            if (player_canGripGrab(self)) {
                 next_state = BS_STATE_A8_GRIP_GRAB_START;
             }
             break;

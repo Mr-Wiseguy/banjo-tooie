@@ -69,7 +69,7 @@ void bsdie_entrypoint_1(PlayerState* self)
         }
         break;
     case 2:
-        temp_f0 = func_800F0E00(self->unk16C - 12.0f, 0.0f);
+        temp_f0 = ml_max_f(self->unk16C - 12.0f, 0.0f);
         self->unk16C = temp_f0;
         if (temp_f0 > 140.0f) {
             _badust_entrypoint_9(self);
@@ -148,7 +148,7 @@ void bsdie_entrypoint_5(PlayerState* self) {
             }
             break;
         case 2:
-            self->unk16C = func_800F0E00(self->unk16C - 12.0f, 0.0f);
+            self->unk16C = ml_max_f(self->unk16C - 12.0f, 0.0f);
             if (self->unk16C > 140.0f) {
                 _badust_entrypoint_9(self);
             }
@@ -223,7 +223,7 @@ void bsdie_entrypoint_9(PlayerState* self) {
         }
         break;
     case 2:
-        self->unk16C = func_800F0E00(self->unk16C - 7.0f, 0.0f);
+        self->unk16C = ml_max_f(self->unk16C - 7.0f, 0.0f);
         if (self->unk16C > 140.0f) {
             _badust_entrypoint_9(self);
         }

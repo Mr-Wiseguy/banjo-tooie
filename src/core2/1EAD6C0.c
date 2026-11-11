@@ -61,7 +61,7 @@ void func_800D3F58(s32 arg0, s32 arg1) {
     flag_setValue(D_8011B5C0[arg0 - 1].unk4, arg1);
     if (&D_8011B608 == &D_8011B5C0[arg0]) {
         if (arg1 != 0) {
-            func_800F4924(character_getActiveIndex(), 0x3E7);
+            character_affectCurrentHealth(character_getActiveIndex(), 0x3E7);
         }
     }
 }

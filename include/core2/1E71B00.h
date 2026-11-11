@@ -4,7 +4,17 @@
 #include <ultra64.h>
 
 #include "common.h"
-
+#include "core2/1E71B00.h"
+#include "core2/1E75920.h"
+#include "core2/1E77A20.h"
+#include "core2/1EA0690.h"
+#include "core2/1EB2840.h"
+#include "core2/1EB93C0.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECD170.h"
+#include "gc/cubesearch.h"
+#include "gs/propctrl.h"
 #include "ba/playerstate.h"
 
 void func_80098408(PlayerState*);

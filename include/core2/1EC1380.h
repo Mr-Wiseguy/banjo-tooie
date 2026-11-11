@@ -8,6 +8,7 @@
 void func_800E7E70(Gfx**);
 void func_800E7EC0(Gfx**);
 void func_800E7EF4(Gfx**);
+void func_800E7F60();
 void func_800E7FB0(s32, s32, s32, s32);
 
 #endif

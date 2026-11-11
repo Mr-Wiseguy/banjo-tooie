@@ -55,7 +55,7 @@ void func_808001C0_chjadestatue(Actor* arg0)
 {
 	s32 temp_v0;
 	_fxsparkle_entrypoint_1(arg0->position, 0xCU);
-	func_800D0BD4((arg0->unk74_7) - 0x32, 5U);
+	collectable_collectItem((arg0->unk74_7) - 0x32, 5U);
 	temp_v0 = func_800D035C(5);
 	func_800D24E8(0xEE, temp_v0, 0);
 	func_800FC63C(0xEU, 0x3E80U);

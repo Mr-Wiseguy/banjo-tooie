@@ -58,7 +58,7 @@ u8 func_800E8B74(u32 arg0) {
     }
     temp_v0 = freelist_next(&D_8012D680, &sp20);
     if (arg0 != 0) {
-        temp_v0->unk0 = func_800D674C(arg0)->unk0;
+        temp_v0->unk0 = ((ImageStruct*)asset_load(arg0))->unk0;
     } else {
         bzero(temp_v0, 0x50);
     }

@@ -20,7 +20,7 @@ int batimer_decrement(PlayerState *self, s32 id){
         return 0;
     }
 
-    self->timer->unk0[id] = func_800F0E00(0.0f, self->timer->unk0[id] - time_getDelta());
+    self->timer->unk0[id] = ml_max_f(0.0f, self->timer->unk0[id] - time_getDelta());
     return (self->timer->unk0[id] == 0.0f); 
     
 }

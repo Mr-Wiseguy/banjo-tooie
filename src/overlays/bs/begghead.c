@@ -22,7 +22,7 @@ void bsbegghead_entrypoint_1(PlayerState* player) {
     aCtrl = baanim_getAnimCtrlPtr(player);
     has_eggs = func_80094BC0(player) != 0;
     if (bainput_should_shoot_egg(player) && func_80094B14(player)) {
-        player->unk15C.word = func_800F1418(player->unk15C.word + 1, func_800944E0(player, player->unk164.word));
+        player->unk15C.word = ml_min_i(player->unk15C.word + 1, func_800944E0(player, player->unk164.word));
     }
     if (has_eggs) {
         if (anctrl_isAt(aCtrl, 0.1f)) {

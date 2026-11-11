@@ -39,12 +39,12 @@ void func_800FFC14();
 void func_800FFC90(void);
 void func_800FFE08(void);
 u32* func_80100074(Actor*, u32, u32);
-void* func_80100094(Actor*, u32);
+void* actor_getAdditionalMem(Actor*, u32);
 s32 func_801000D8(Actor*, s32, s32);
 void func_80100120(Actor*);
 
 //Get ActorData for given actor
-ActorData* func_80100368(Actor*);
+ActorData* actor_getActorData(Actor*);
 int func_8010038C(Actor*, f32[3]);
 
 #endif

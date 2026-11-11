@@ -12,5 +12,6 @@ typedef struct ba_babykaz_s {
 
 void _bababykaz_entrypoint_1(PlayerState*);
 void _bababykaz_entrypoint_2(PlayerState*);
-
+void _bababykaz_entrypoint_8(PlayerState*);
+void _bababykaz_entrypoint_10(PlayerState*, s32);
 #endif // __BA_BABYKAZ_H__

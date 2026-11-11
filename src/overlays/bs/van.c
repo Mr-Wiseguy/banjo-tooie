@@ -24,7 +24,7 @@ void func_80800000_bsvan(PlayerState* self) {
         baphysics_set_target_horizontal_velocity(self, 0.0f);
         return;
     }
-    baphysics_set_target_horizontal_velocity(self, func_800F1214(sp1C, 30.0f, 900.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_mapNormal_f(sp1C, 30.0f, 900.0f));
 }
 
 BanjoStateId func_80800064_bsvan(PlayerState* self, BanjoStateId arg1)
@@ -120,13 +120,13 @@ void bsvan_entrypoint_3(PlayerState* self)
 
     sp2C = yaw_getIdeal(self);
     _bavan_entrypoint_5(self, func_800F1DCC(sp2C, yaw_get(self)));
-    var_f12 = func_8009BB5C(self);
-    var_f12 = var_f12 > 1.0f ? func_800F10B4(var_f12, 30.0f, 900.0f, 45.0f, 1350.0f) : 0.0f;
+    var_f12 = baphysics_get_horizontal_velocity(self);
+    var_f12 = var_f12 > 1.0f ? ml_map_f(var_f12, 30.0f, 900.0f, 45.0f, 1350.0f) : 0.0f;
     _bavan_entrypoint_6(self, var_f12);
-    temp_f0 = func_8009BB5C(self);
+    temp_f0 = baphysics_get_horizontal_velocity(self);
     if (temp_f0 > 0.0f)
     {
-        sp3C = func_800F10B4(temp_f0, 30.0f, 900.0f, 0.8f, 1.25f);
+        sp3C = ml_map_f(temp_f0, 30.0f, 900.0f, 0.8f, 1.25f);
     }
     else
     {
@@ -134,7 +134,7 @@ void bsvan_entrypoint_3(PlayerState* self)
     }
     if (!player_isStable(self))
     {
-        sp3C = func_800F13F0(1.9f, sp3C + 0.3f);
+        sp3C = ml_min_f(1.9f, sp3C + 0.3f);
     }
     _bavan_entrypoint_4(self, sp3C);
     _bavan_entrypoint_8(self);
@@ -197,7 +197,7 @@ void func_808005E4_bsvan(PlayerState* self) {
         temp_f0 = self->unk16C;
         if (temp_f0 > 0.0f)
         {
-            self->unk16C = func_800F0E00(0.0f, temp_f0 - 10.0f);
+            self->unk16C = ml_max_f(0.0f, temp_f0 - 10.0f);
         }
         break;
     }
@@ -383,7 +383,7 @@ void func_80800BDC_bsvan(PlayerState* self) {
     case 3:
         func_8009D2D8(self, 3);
         func_8009D3A8(self, 0);
-        if (func_8009BB5C(self) > 0.0f) {
+        if (baphysics_get_horizontal_velocity(self) > 0.0f) {
             nextState = 0x116;
         }
         else if (anctrl_isStopped(sp30) != 0) {
@@ -735,7 +735,7 @@ void func_80801890_bsvan(PlayerState* self)
     case 3:
         if (_batimer_decrement(self, 3) != 0)
         {
-            _chbaddiesetup_entrypoint_1(&_bsvan_entrypoint_15, (Unk80132ED0*)self->unk184);
+            _chbaddiesetup_entrypoint_1(&_bsvan_entrypoint_15,self->unk184);
             self->bsvan->unk10--;
             if (self->bsvan->unk10 != 0)
             {

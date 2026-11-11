@@ -1,15 +1,30 @@
 #include "core2/1EDA900.h"
+
+extern f32 D_80135A70[3];
+extern f32 D_80135A7C;
 extern void* D_80135A80;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_80101010.s")
+void func_80101010(f32* arg0)
+{
+    ml_vec3f_copy(D_80135A70, arg0);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_80101038.s")
+void func_80101038(f32* arg0)
+{
+    ml_vec3f_copy(arg0, D_80135A70);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_8010105C.s")
+void func_8010105C(f32 arg0) {
+    D_80135A7C = arg0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_80101068.s")
+f32 func_80101068(void) {
+    return D_80135A7C;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/core2/1EDA900/func_80101074.s")
+void func_80101074(void* arg0) {
+    D_80135A80 = arg0;
+}
 
 void* func_80101080()
 {
@@ -35,7 +50,7 @@ s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
             sp24 = 0;
         }
         //Call the actor's event handler function
-        sp28 = (func_80100368(actor))->eventHandler(actor, eventId, arg2);
+        sp28 = (actor_getActorData(actor))->eventHandler(actor, eventId, arg2);
         if ((syscallIndex != 0) && (sp24 == 0) && (sp28 <= 0))
         {
             func_800819B4((Syscall*)actor->pointerToSyscallEntry);
@@ -45,9 +60,9 @@ s32 event_sendToActor(Actor* actor, ActorEventId eventId, s32 arg2)
     return -1;
 }
 
-s32 func_8010114C(s32 arg0, ActorEventId eventId, s32 arg2)
+s32 func_8010114C(Unk80132ED0* arg0, ActorEventId eventId, s32 arg2)
 {
-    return event_sendToActor(func_80106790((Unk80132ED0*)arg0), eventId, arg2);
+    return event_sendToActor(func_80106790(arg0), eventId, arg2);
 }
 
 s32 event_sendToActorsOfType(s32 propId, ActorEventId eventId, s32 arg2)

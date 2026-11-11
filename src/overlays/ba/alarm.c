@@ -58,7 +58,7 @@ void baalarm_entrypoint_3(PlayerState *self, f32 arg1, f32 arg2) {
                 break;
             }
             s0 ^= 1;
-            f20 -= func_800F10B4(f20, 0.0f, 5.0f, 0.1f, 0.25f);
+            f20 -= ml_map_f(f20, 0.0f, 5.0f, 0.1f, 0.25f);
         }
     }
 }

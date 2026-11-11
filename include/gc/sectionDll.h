@@ -13,6 +13,8 @@
 
 s32 _gcsectionDll_entrypoint_0(s32, s32);
 s32 _gcsectionDll_entrypoint_1(s32);
+s32 _gcsectionDll_entrypoint_2(s32);
+s8 _gcsectionDll_entrypoint_3(s32, s32);
 s32 _gcsectionDll_entrypoint_4(s32);
 
 #endif

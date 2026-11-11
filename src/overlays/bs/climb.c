@@ -90,7 +90,7 @@ void bsclimb_entrypoint_0(PlayerState* self) {
 	f32 sp30[3];
 	f32 sp24[3];
 
-	func_8008FE68(sp30);
+	activePlayer_getCoords(sp30);
 	func_80098590(self, sp24);
 	if (func_8009E77C(self, 0xA) == 0) {
 		func_800F1E6C(sp30, sp24, &sp3C);

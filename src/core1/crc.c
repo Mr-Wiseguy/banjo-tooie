@@ -32,7 +32,7 @@ CrcEntry crc_entries[] = {
     {func_800965D4, 18, FALSE},
     {func_8009B7C0, 21, FALSE},
     {func_8001C1C0, 24, FALSE},
-    {func_800CFA90, 27, FALSE},
+    {collectable_setJinjoPattern, 27, FALSE},
     {inventory_setup, 30, FALSE},
 };
 

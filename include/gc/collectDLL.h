@@ -21,7 +21,7 @@
 
 
 
-void gccollectDll_entrypoint_0(s32);
+void gccollectDll_entrypoint_0(CollectableId);
 void gccollectDll_entrypoint_1();
 void _gccollectDll_entrypoint_2();
 void _gccollectDll_entrypoint_3();

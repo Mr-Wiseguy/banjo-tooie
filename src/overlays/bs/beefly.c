@@ -137,8 +137,8 @@ void func_80800480_bsbeefly(PlayerState* self) {
         sp30 = 3.0f;
         var_f0 = 65.0f;
     }
-    baroll_setIdeal(self, func_800F10B4(sp28[1], -1.0f, 1.0f, -var_f0, var_f0));
-    sp34 = func_800F10B4(sp28[1], -1.0f, 1.0f, sp30, -sp30);
+    baroll_setIdeal(self, ml_map_f(sp28[1], -1.0f, 1.0f, -var_f0, var_f0));
+    sp34 = ml_map_f(sp28[1], -1.0f, 1.0f, sp30, -sp30);
     sp34 *= _bafpctrl_entrypoint_3(self);
     yaw_setIdeal(self, yaw_getIdeal(self) + sp34);
 }
@@ -215,11 +215,11 @@ void func_80800708_bsbeefly(PlayerState* self) {
     if (baphysics_get_vertical_velocity(self) < 0/*.0f*/) {
         if (pitch < 300.0f) {
             // ml_map_f
-            var_f2_3 = func_800F10B4(pitch, 0/*.0f*/, 80.0f, 0.0f, 0.23f);
+            var_f2_3 = ml_map_f(pitch, 0/*.0f*/, 80.0f, 0.0f, 0.23f);
         }
         if (pitch > 80.0f) {
             // ml_map_f
-            var_f2_3 = func_800F10B4(pitch, 300.0f, 360.0f, -0.2f, 0.0f);
+            var_f2_3 = ml_map_f(pitch, 300.0f, 360.0f, -0.2f, 0.0f);
         }
     }
     volume += var_f2_3;
@@ -237,8 +237,8 @@ void func_80800708_bsbeefly(PlayerState* self) {
             break;
         case 1:
             // func_8009BFD8 -> pitch_getIdeal()
-            // func_800136E4 -> mlNormalizeAngle
-            angle_degrees = func_800136E4(func_8009BFD8(self) - 30.0f);
+            // ml_normalizeAngle -> mlNormalizeAngle
+            angle_degrees = ml_normalizeAngle_f(func_8009BFD8(self) - 30.0f);
             if ((angle_degrees > 80.0f) && (angle_degrees < 300.0f)) {
                 angle_degrees = 300.0f;
             }

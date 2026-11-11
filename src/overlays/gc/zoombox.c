@@ -1,16 +1,77 @@
-#include "common.h"
+#include "gc/zoombox.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800000_gczoombox.s")
+void func_80800294_gczoombox(ZoomboxStruct*, s32);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808000C4_gczoombox.s")
+void gczoombox_entrypoint_16(ZoomboxStruct*);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808000DC_gczoombox.s")
+extern s16 D_80803E80_gczoombox[];
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_0.s")
+
+void func_80800000_gczoombox(ZoomboxStruct* arg0)
+{
+    s32 var_s1;
+
+    if (arg0->unk14C == -1.0f)
+    {
+        if (func_800FCCD4(arg0->unk144[0]) != 0)
+        {
+            func_800FC74C(arg0->unk144[0]);
+        }
+    }
+    else
+    {
+        for (var_s1 = 0; var_s1 < 5; var_s1++)
+        {
+            if (arg0->unk144[var_s1] != 0)
+            {
+                func_800C2FDC(arg0->unk144[var_s1]);
+                arg0->unk178--;
+            }
+
+        }
+    }
+    for (var_s1 = 0; var_s1 < 5; var_s1++)
+    {
+        arg0->unk144[var_s1] = 0;
+    }
+}
+
+void func_808000C4_gczoombox(ZoomboxStruct* arg0)
+{
+    if (arg0->unk142 != 0) {
+        arg0->unk142 = 0U;
+    }
+}
+
+void func_808000DC_gczoombox(ZoomboxStruct* arg0)
+{
+    if (arg0->unk140 != 0)
+    {
+        arg0->unk140 = 0U;
+    }
+    func_808000C4_gczoombox(arg0);
+}
+
+void gczoombox_entrypoint_0(ZoomboxStruct* arg0)
+{
+    if (arg0 != NULL) {
+        func_800D52B0();
+        func_80800000_gczoombox(arg0);
+        func_808000DC_gczoombox(arg0);
+        heap_free(arg0);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_8080014C_gczoombox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808001D4_gczoombox.s")
+void func_808001D4_gczoombox(char* arg0, s32 arg1)
+{
+    s32 i;
+
+    for (i = 0; i < arg1; i++) {
+        arg0[i] = 0;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800228_gczoombox.s")
 
@@ -18,7 +79,9 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808002E4_gczoombox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800358_gczoombox.s")
+void func_80800358_gczoombox(ZoomboxStruct* arg0, f32 arg1) {
+    arg0->unk1F0 = arg1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800364_gczoombox.s")
 
@@ -32,10 +95,22 @@
 
 void gczoombox_entrypoint_1(char* arg0)
 {
-    func_800E7188(arg0);
+    string_length(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808006B4_gczoombox.s")
+s32 func_808006B4_gczoombox(ZoomboxStruct* arg0, s32 arg1)
+{
+    s32 temp = 0;
+    if (arg1 == -1)
+    {
+        temp = 0;
+    }
+    else
+    {
+        temp = arg1 == arg0->unk12_1;
+    }
+    return temp;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808006E0_gczoombox.s")
 
@@ -45,9 +120,45 @@ void gczoombox_entrypoint_1(char* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_808009E4_gczoombox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800E24_gczoombox.s")
+int func_80800E24_gczoombox(u8 arg0)
+{
+    return arg0 >= 0x7F && arg0 < 0x88;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800E44_gczoombox.s")
+void func_80800E44_gczoombox(ZoomboxStruct* arg0, char* dst, char* arg2)
+{
+    char* var_s0 = dst;
+    char* var_s1 = arg2;
+    s32 sp34[3];
+    f32 temp_f0;
+    temp_f0 = arg0->unk1AC / 255.0f;
+    sp34[0] = arg0->unk1B4 * temp_f0;
+    sp34[1] = arg0->unk1B5 * temp_f0;
+    sp34[2] = arg0->unk1B6 * temp_f0;
+    *dst = 0;
+    while (*var_s1 != '\0')
+    {
+        //is this character between 0x7F and 0x88
+        if (func_80800E24_gczoombox(*var_s1) != 0)
+        {
+            *var_s0 = 0;
+            _fxfontstring_entrypoint_3(dst, D_80803E80_gczoombox[95 - *var_s1], arg0->unk1E8);
+            var_s0 = dst;
+            while (*var_s0 != '\0')
+            {
+                var_s0++;
+            }
+        }
+        else
+        {
+            *var_s0 = *var_s1;
+            var_s0++;
+        }
+        var_s1++;
+    }
+
+    *var_s0 = '\0';
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80800FE0_gczoombox.s")
 
@@ -61,11 +172,30 @@ void gczoombox_entrypoint_1(char* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80801B30_gczoombox.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80801B90_gczoombox.s")
+void func_80801B90_gczoombox(ZoomboxStruct* arg0)
+{
+    arg0->unk171 = 9;
+    gczoombox_entrypoint_16(arg0);
+    arg0->unk1E0 = 0.0f;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_3.s")
+s32 gczoombox_entrypoint_3(ZoomboxStruct* arg0)
+{
+    return arg0->unk170;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80801BD0_gczoombox.s")
+void func_80801BD0_gczoombox(ZoomboxStruct* arg0, s32 arg1)
+{
+
+    if (arg1 != arg0->unk170)
+    {
+        arg0->unk170 = arg1;
+        if (arg0->unk16C != NULL)
+        {
+            arg0->unk16C(arg0->unk172);
+        }
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/func_80801C0C_gczoombox.s")
 
@@ -79,41 +209,88 @@ void gczoombox_entrypoint_1(char* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_5.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_6.s")
+s32 gczoombox_entrypoint_6(ZoomboxStruct* arg0) {
+    return arg0->unk178;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_7.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_9.s")
+void gczoombox_entrypoint_9(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 | 1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_10.s")
+void gczoombox_entrypoint_10(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 | 0x10);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_11.s")
+void gczoombox_entrypoint_11(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 | 2);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_12.s")
+void gczoombox_entrypoint_12(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 | 8);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_13.s")
+void gczoombox_entrypoint_13(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 | 0x20);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_14.s")
+void gczoombox_entrypoint_14(ZoomboxStruct* arg0) {
+    s32 var_v0;
+    var_v0 = 0;
+    for (var_v0 = 0; var_v0 < 8; var_v0++)
+    {
+        arg0->unk17C[var_v0] = 0;
+    }
+    arg0->unk174 = 0;
+    arg0->unk175 = 0;
+    arg0->unk177 = (u8)(arg0->unk177 & 0xFB);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_15.s")
+void gczoombox_entrypoint_15(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 & 0xFE);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_16.s")
+void gczoombox_entrypoint_16(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 & 0xEF);
+}
+void gczoombox_entrypoint_17(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 & 0xFD);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_17.s")
+void gczoombox_entrypoint_18(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 & 0xF7);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_18.s")
-
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_19.s")
+void gczoombox_entrypoint_19(ZoomboxStruct* arg0) {
+    arg0->unk177 = (u8)(arg0->unk177 & 0xDF);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_20.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_21.s")
+void gczoombox_entrypoint_21(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg1 != 0) {
+        arg0->unk1E4_18 = 1;
+        return;
+    }
+    arg0->unk1E4_18 = 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_22.s")
+u32 gczoombox_entrypoint_22(ZoomboxStruct* arg0) {
+    return arg0->unk1E4_18;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_23.s")
+void gczoombox_entrypoint_23(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg0 != NULL) {
+        if (arg1 != 0) {
+            arg0->unk1E4_11 = 1;
+            return;
+        }
+        arg0->unk1E4_11 = 0;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_24.s")
 
@@ -121,15 +298,38 @@ void gczoombox_entrypoint_1(char* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_26.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_27.s")
+void gczoombox_entrypoint_27(ZoomboxStruct* arg0, s16* arg1)
+{
+    if (arg0 != NULL)
+    {
+        arg0->unk1B4 = (s8)arg1[0];
+        arg0->unk1B5 = (s8)arg1[1];
+        arg0->unk1B6 = (s8)arg1[2];
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_28.s")
+void gczoombox_entrypoint_28(ZoomboxStruct* arg0, s16 arg1) {
+    if (arg0 != NULL) {
+        arg0->unk1BC = arg1;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_29.s")
+s32 gczoombox_entrypoint_29(ZoomboxStruct* arg0) {
+    if (arg0 == NULL) {
+        return 0xFF;
+    }
+    return arg0->unk1BC;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_30.s")
+void gczoombox_entrypoint_30(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg0 != NULL) {
+        arg0->unk16A = arg1;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_31.s")
+void gczoombox_entrypoint_31(ZoomboxStruct* arg0) {
+    arg0->unk177 = 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_32.s")
 
@@ -137,24 +337,58 @@ void gczoombox_entrypoint_1(char* arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_34.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_35.s")
+void gczoombox_entrypoint_35(ZoomboxStruct* arg0, Unk80132ED0* arg1, s16 arg2, s32 arg3) {
+    arg0->unk130 = arg1;
+    arg0->unk13A = arg2;
+    arg0->unk13C = arg3;
+    func_800EC370(arg1, arg0->unk134);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_36.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_37.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_38.s")
+void gczoombox_entrypoint_38(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg0 != NULL) {
+        arg0->unk1B0 = arg1;
+        func_80800294_gczoombox(arg0, arg1);
+    }
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_39.s")
+int gczoombox_entrypoint_39(ZoomboxStruct* arg0) {
+    return arg0 != NULL && arg0->unk171 == 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_40.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_41.s")
+void gczoombox_entrypoint_41(ZoomboxStruct* arg0, f32 arg1) {
+    arg0->unk1D8 = (f32)(1.0f / arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_42.s")
+void gczoombox_entrypoint_42(ZoomboxStruct* arg0, f32 arg1) {
+    func_80800358_gczoombox(arg0, arg1);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_43.s")
+void gczoombox_entrypoint_43(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg1 != 0) {
+        arg0->unk1E4_6 = 1;
+        return;
+    }
+    arg0->unk1E4_6 = 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_44.s")
+void gczoombox_entrypoint_44(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg1 != 0) {
+        arg0->unk1E4_5 = 1;
+        return;
+    }
+    arg0->unk1E4_5 = 0;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/overlays/gc/zoombox/gczoombox_entrypoint_45.s")
+void gczoombox_entrypoint_45(ZoomboxStruct* arg0, s32 arg1) {
+    if (arg1 != 0) {
+        arg0->unk1E4_4 = 1;
+        return;
+    }
+    arg0->unk1E4_4 = 0;
+}

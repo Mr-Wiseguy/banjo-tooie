@@ -40,11 +40,11 @@ static int __bainput_func_800979D8(PlayerState *self, ButtonId button_id, BaInpu
 }
 
 int bainput_should_beak_barge(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_B) && func_8008D0A0(self);
+    return bakey_pressed(self, BUTTON_B) && player_canBeakBarge(self);
 }
 
 int bainput_should_beak_bust(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_Z) && func_8008D14C(self);
+    return bakey_pressed(self, BUTTON_Z) && player_canBeakBust(self);
 }
 
 int bainput_should_enter_first_person(PlayerState *self) {
@@ -72,11 +72,11 @@ int bainput_should_exit_first_person(PlayerState *self) {
 }
 
 int bainput_should_poop_egg(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_C_DOWN) && func_8008D280(self);
+    return bakey_pressed(self, BUTTON_C_DOWN) && player_canEggShoot(self);
 }
 
 int bainput_should_shoot_egg(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_C_UP) && func_8008D280(self);
+    return bakey_pressed(self, BUTTON_C_UP) && player_canEggShoot(self);
 }
 
 int bainput_func_80097C7C(PlayerState *self) {
@@ -118,11 +118,11 @@ int bainput_should_feathery_flap(PlayerState *self) {
 }
 
 int bainput_func_80097DF4(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_A) && func_8008D304(self);
+    return bakey_pressed(self, BUTTON_A) && player_canFeatheryFlap(self);
 }
 
 int bainput_should_flap_flip(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_A) && func_8008D370(self);
+    return bakey_pressed(self, BUTTON_A) && player_canFlapFlip(self);
 }
 
 int bainput_func_80097E74(PlayerState *self) {
@@ -132,17 +132,17 @@ int bainput_func_80097E74(PlayerState *self) {
 }
 
 int bainput_func_80097EC8(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_B) && func_8008D568(self);
+    return bakey_pressed(self, BUTTON_B) && player_canPackWhack(self);
 }
 
 int bainput_func_80097F08(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_B) && func_8008D5C4(self);
+    return bakey_pressed(self, BUTTON_B) && player_canRataTatRap(self);
 }
 
 int bainput_should_dive(PlayerState *self) {
     return bakey_pressed(self, BUTTON_B) 
         && (self->input->dive_cooldown == 0.0f)
-        && func_8008D214(self);
+        && player_canDive(self);
 }
 
 int bainput_func_80097FB8(PlayerState *self) {
@@ -158,7 +158,7 @@ s32 bainput_isEnabled(PlayerState *self, BaInputId arg1) {
 
 int bainput_func_8009803C(PlayerState *self) {
     s32 sp24;
-    if (bakey_pressed(self, BUTTON_Z) && func_8008D850(self)) {
+    if (bakey_pressed(self, BUTTON_Z) && player_canTalonTorpedo(self)) {
         _suinv_entrypoint_0(&sp24, 0, 1,0x46, 5);
         return sp24;
     }
@@ -167,11 +167,11 @@ int bainput_func_8009803C(PlayerState *self) {
 }
 
 int bainput_should_trot(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_C_LEFT) && func_8008D8E4(self);
+    return bakey_pressed(self, BUTTON_C_LEFT) && player_canTalonTrot(self);
 }
 
 int bainput_should_wonderwing(PlayerState *self) {
-    return bakey_pressed(self, BUTTON_C_RIGHT) && func_8008D964(self);
+    return bakey_pressed(self, BUTTON_C_RIGHT) && player_canWonderwing(self);
 }
 
 void bainput_init(PlayerState *self) {
@@ -194,7 +194,7 @@ void bainput_setDiveCooldown(PlayerState *self, s32 arg1, f32 cooldown) {
 
 void bainput_update(PlayerState *self) {
     if (self->input->dive_cooldown != 0.0f) {
-        self->input->dive_cooldown = func_800F0E00(self->input->dive_cooldown - time_getDelta(), 0.0f);
+        self->input->dive_cooldown = ml_max_f(self->input->dive_cooldown - time_getDelta(), 0.0f);
     }
     bainput_enable(self, 6, 0);
 }

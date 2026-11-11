@@ -44,11 +44,11 @@ void __baanim_update_scaleToHorizontalVelocity(PlayerState * self) {
     scale = (self->anim->scalable_duration) ?  self->anim->duration_scale : 1.0f;
     func_8009BB24(self, velocity);
     speed = sqrtf(velocity[0]*velocity[0] + velocity[2]*velocity[2]);
-    sp30 = func_800F1198(speed, 
+    sp30 = ml_mapRange_f(speed, 
         self->anim->speed_min, self->anim->speed_max,
         self->anim->duration_relative_min * scale, self->anim->duration_relative_max * scale
     );
-    sp2C = func_800F0D50(sp30, self->anim->duration_min, self->anim->duration_max);
+    sp2C = ml_clamp_f(sp30, self->anim->duration_min, self->anim->duration_max);
     anctrl_setDuration(self->anim->anctrl, sp2C);
     func_8008ADE4(self->anim->anctrl);
 }
@@ -59,11 +59,11 @@ void __baanim_update_scaleToVerticalVelocity(PlayerState *self) {
     f32 sp1C;
 
     speed = mlAbsF(baphysics_get_vertical_velocity(self));
-    sp20 = func_800F1198(speed, 
+    sp20 = ml_mapRange_f(speed, 
         self->anim->speed_min, self->anim->speed_max,
         self->anim->duration_relative_min, self->anim->duration_relative_max
     );
-    sp1C = func_800F0D50(sp20, self->anim->duration_min, self->anim->duration_max);
+    sp1C = ml_clamp_f(sp20, self->anim->duration_min, self->anim->duration_max);
     anctrl_setDuration(self->anim->anctrl, sp1C);
     func_8008ADE4(self->anim->anctrl);
 }

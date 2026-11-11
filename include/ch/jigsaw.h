@@ -20,7 +20,11 @@
 #include "core2/1EE1510.h"
 #include "core2/1EE27C0.h"
 #include "fx/twinkle.h"
+#include "fx/genlist.h"
 #include "su/baddiedialog.h"
+#include "su/autobaddies.h"
+#include "ch/jigsawcollect.h"
+#include "gc/frontend.h"
 
 
 #endif

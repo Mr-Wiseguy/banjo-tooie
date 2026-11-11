@@ -55,9 +55,9 @@ void func_80800000_chegggrenade(Actor* arg0)
     f32 temp_f24;
     EggNormalData* temp_s3;
 
-    temp_s3 = (EggNormalData*)func_80100094(arg0, 0U);
+    temp_s3 = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     temp_s3->unk28 = (f32)(temp_s3->unk28 - time_getDelta());
-    temp_f24 = func_800F10B4(temp_s3->unk30, 0, 2.0f, 0.0333f, 0.1f);
+    temp_f24 = ml_map_f(temp_s3->unk30, 0, 2.0f, 0.0333f, 0.1f);
     _suegg_entrypoint_20(arg0, sp58);
     while (temp_s3->unk28 <= 0.0f)
     {
@@ -73,7 +73,7 @@ void chegggrenade_entrypoint_0(Unk80132ED0* arg0)
     s32 pad;
     s32 sp1C;
     temp_v0 = func_80106790(arg0);
-    sp1C = ((EggNormalData*)func_80100094(temp_v0, 0U))->unk3A;
+    sp1C = ((EggNormalData*)actor_getAdditionalMem(temp_v0, 0U))->unk3A;
     _cheggsplode_entrypoint_1(&temp_v0, sp1C, _gcegg_entrypoint_0((u32)arg0->unk24_22));
     _suegg_entrypoint_4(temp_v0, 0);
 }
@@ -84,7 +84,7 @@ void func_80800164_chegggrenade(Actor* arg0)
 
     // @hack
     do {} while (0);
-    sp2C = (EggNormalData*)func_80100094(arg0, 0U);
+    sp2C = (EggNormalData*)actor_getAdditionalMem(arg0, 0U);
     switch (arg0->unk70_10)
     {
     case 1:
@@ -108,7 +108,7 @@ void func_80800164_chegggrenade(Actor* arg0)
     case 2:
         if (_suegg_entrypoint_8(arg0) == 0)
         {
-            arg0->scale = func_800F10B4(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
+            arg0->scale = ml_map_f(sp2C->unk30, 0.0f, 0.134f, 0.1f, 0.25f);
             if (_sueggmove_entrypoint_3(arg0) != 0)
             {
                 _suegg_entrypoint_23(arg0);

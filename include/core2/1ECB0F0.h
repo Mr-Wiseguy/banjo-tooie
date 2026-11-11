@@ -3,15 +3,20 @@
 
 #include "common.h"
 #include "core1/1E2B200.h"
+#include "core2/1EC8070.h"
+#include "core2/1ECA640.h"
+#include "core2/1ECB9F0.h"
 
 f32 func_800F1828(f32*, f32*);
 void func_800F18FC(f32*, f32*, f32*);
 void func_800F1A88(f32*, f32*);
-f32 func_800F1CF0(void*, f32*);
+s32 func_800F1B78(f32*, f32*, f32, f32);
+f32 func_800F1CF0(f32*, f32*);
 f32 func_800F1DCC(f32, f32);
 f32 func_800F1DF4(f32[3], f32[3]);
 s32 func_800F1E6C(f32[3], f32[3], f32 *target_yaw);
 s32 func_800F1EA4(f32[3], f32 *);
+f32 func_800F1F0C(f32*, f32*, f32);
 f32 func_800F1F38(f32, f32, f32);
 f32 func_800F1FF0(f32, f32, f32, f32, f32);
 s32 func_800F20BC(f32, f32, f32);

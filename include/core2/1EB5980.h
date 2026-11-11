@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-s32 func_800DC090(void);
+s32 rand_i(void);
 f32 rand_f(void);
 s32 rand_iBounded(s32, s32);
 //Randomize Float
@@ -13,8 +13,8 @@ s32 rand2_iBounded(s32, s32);
 f32 rand2_fBounded(f32, f32);
 int rand_percentChance(f32);
 int rand2_percentChance(f32);
-void func_800DC310();
-void func_800DC324(s32);
-void func_800DC330();
-void func_800DC354();
+void rand_setInitSeed();
+void rand_setSeed(s32);
+void rand_saveCurrentSeed();
+void rand_restoreCurrentSeed();
 #endif // __CORE2_1EB5980_H__

@@ -7,7 +7,7 @@ void bssplat_entrypoint_0(PlayerState* self)
     s32 sp24;
 
     func_800954E8(self, &sp24);
-    func_800A17A8(self, -sp24);
+    player_affectCurrentHealth(self, -sp24);
     if (func_80096694(self) == 3)
     {
         func_8009DB04(self, 0x417, 0.8f, 0x7FFF);
@@ -37,7 +37,7 @@ void func_80800114_bssplat(PlayerState* self)
 
     nextState = BS_STATE_0_INVALID;
     sp20 = baanim_getAnimCtrlPtr(self);
-    baphysics_set_target_horizontal_velocity(self, func_800F0E00(0.0f, baphysics_get_target_horizontal_velocity(self) - 15.0f));
+    baphysics_set_target_horizontal_velocity(self, ml_max_f(0.0f, baphysics_get_target_horizontal_velocity(self) - 15.0f));
     switch (self->unk15C.word) 
     {
     case 0:
@@ -67,7 +67,7 @@ void func_80800114_bssplat(PlayerState* self)
     if ((player_isStable(self) == 0) && (player_inWater(self) != 0)) {
         nextState = BS_STATE_2D_SWIM_IDLE;
     }
-    if (func_800A1718(self) == 0) {
+    if (player_getCurrentHealth(self) == 0) {
         nextState = BS_STATE_41_FALL_DEATH;
     }
     bs_setState(self, nextState);

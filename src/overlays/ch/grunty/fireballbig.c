@@ -76,9 +76,9 @@ s32 func_808001B4_chgruntyfireballbig(Actor* actor, s32 arg1, s32 arg2)
     case 0xA:
         actor->unk6C_0 = (arg2 >> 0x10) & 0xFFFF;
         ((f32*)actor->actorData)[0] = func_80101068();
-        func_8010A590(actor);
+        actor_enableCollision(actor);
         func_80101FDC(actor, 2U);
-        func_800F5A00(actor->unk6C_0, sp34);
+        character_getCoords(actor->unk6C_0, sp34);
         temp_a0 = &actor->actorData[4];
         sp34[1] += 50.0f;
         ml_getdiff_vec3f((f32*)temp_a0, sp34, actor->position);
@@ -114,14 +114,14 @@ void func_8080034C_chgruntyfireballbig(Actor* actor)
     f32 sp70[3];
     s32 temp_s5;
     s32 var_s1;
-    func_8010A570(actor);
+    actor_disableCollision(actor);
     _subaddieaudioquick_entrypoint_2(actor, actor->position, &D_80800714_chgruntyfireballbig);
     ml_vec3f_copy(sp7C, actor->position);
     sp7C[1] += -10.0f;
     temp_s5 = func_800B53A4(0xA);
     for (var_s1 = 0; var_s1 < 0xA; var_s1++)
     {
-        func_800EEB9C(sp70, (f32)var_s1 * 36.0f, rand_fBounded(60.0f, 80.0f));
+        ml_vec3f_getVecFromYaw(sp70, (f32)var_s1 * 36.0f, rand_fBounded(60.0f, 80.0f));
         ml_vec3f_add(sp70, actor->position);
         func_800BABB8(temp_s5, sp70, sp7C, 1.0f, &D_80800724_chgruntyfireballbig);
     }
@@ -153,7 +153,7 @@ void func_80800590_chgruntyfireballbig(Actor* actor)
 
     if (!(actor->unk64_20) && (func_800F6438(actor->unk6C_0) != 0))
     {
-        func_800F5A00(actor->unk6C_0, sp3C);
+        character_getCoords(actor->unk6C_0, sp3C);
         sp3C[1] += 50.0f;
         if (ml_vec3f_distance_sq(actor->position, sp3C) < (((f32*)actor->actorData)[0] * ((f32*)actor->actorData)[0]))
         {
@@ -161,6 +161,6 @@ void func_80800590_chgruntyfireballbig(Actor* actor)
             return;
         }
         func_800F18FC(actor->position, sp3C, sp34);
-        func_800EEBF0(&actor->actorData[4], sp34, func_800EEF94(&actor->actorData[4]));
+        func_800EEBF0(&actor->actorData[4], sp34, ml_vec3f_magnitude(&actor->actorData[4]));
     }
 }

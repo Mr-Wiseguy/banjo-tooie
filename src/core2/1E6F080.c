@@ -5,7 +5,7 @@ extern Unk80126E30 D_80126E30[];
 
 s32 func_80095790() 
 {
-    return 0xAC;
+    return sizeof(ba_unknown_94_s);
 }
 
 void func_80095798(PlayerState* arg0) {
@@ -118,7 +118,7 @@ void func_80095A6C(s32 arg0, PlayerState* arg1) {
 }
 
 void func_80095A74(PlayerState* arg0, s32 arg1) {
-    if (func_800EA05C() == 0xB8) {
+    if (map_getCurrent() == 0xB8) {
         if (arg1 != 0) {
             func_80095A08(arg0, 8, 1);
             return;
@@ -132,11 +132,11 @@ void func_80095AD0(PlayerState* arg0) {
 
     arg0->unk94->unkA3 = 0;
     temp_v0 = arg0->unk94->unkA3;
-    arg0->unk94->unk50[4] = temp_v0;
-    arg0->unk94->unkA0[1] = temp_v0;
+    arg0->unk94->unk54 = temp_v0;
+    arg0->unk94->atSurface = temp_v0;
     arg0->unk94->unk18[0] = temp_v0;
-    arg0->unk94->unk50[6] = temp_v0;
-    arg0->unk94->unkA0[0] = temp_v0;
+    arg0->unk94->unk56 = temp_v0;
+    arg0->unk94->touchingWater = temp_v0;
     func_800959FC(arg0, 0x400005);
     arg0->unk94->unk0 = func_800C5A38();
     ml_vec3f_clear(arg0->unk94->unk90);
@@ -165,9 +165,9 @@ void func_80095C10(PlayerState* arg0) {
 
 f32 func_80095C34(f32 arg0, f32 arg1, f32 arg2) {
     if (arg1 < arg0) {
-        arg1 = func_800F13F0(arg0, arg1 + arg2);
+        arg1 = ml_min_f(arg0, arg1 + arg2);
     } else if (arg0 < arg1) {
-        arg1 = func_800F0E00(arg0, arg1 - arg2);
+        arg1 = ml_max_f(arg0, arg1 - arg2);
     }
     return arg1;
 }
@@ -228,10 +228,11 @@ f32 func_8009630C(PlayerState* arg0) {
 
     sp1C = player_getCoordVertical(arg0);
     sp20 = func_800C6784(arg0->unk94->unk0);
-    return sp1C - func_800F0E00(temp = sp20, func_800C67D8(arg0->unk94->unk0));
+    return sp1C - ml_max_f(temp = sp20, func_800C67D8(arg0->unk94->unk0));
 }
 
-f32 func_80096364(PlayerState* arg0) {
+//Get the height of the ground beneath the player's feet
+f32 player_getGroundHeight(PlayerState* arg0) {
     return func_800C6784(arg0->unk94->unk0);
 }
 
@@ -286,24 +287,25 @@ s32 func_800964D0(PlayerState* arg0) {
     return arg0->unk94->unkA8;
 }
 
-f32 func_800964DC(PlayerState* arg0) {
+//Get the water level beneath or above the player
+f32 player_getWaterHeight(PlayerState* arg0) {
     return func_800C67D8(arg0->unk94->unk0);
 }
 
-s32 func_80096500(PlayerState* arg0) {
-    return (s32) arg0->unk94->unkA0[1];
+s32 player_atWaterSurface(PlayerState* arg0) {
+    return arg0->unk94->atSurface;
 }
 
 s32 func_8009650C(PlayerState* arg0) {
-    return (s32) arg0->unk94->unk50[5];
+    return (s32) arg0->unk94->unk55;
 }
 
 s32 func_80096518(PlayerState* arg0) {
-    return (s32) arg0->unk94->unk50[6];
+    return (s32) arg0->unk94->unk56;
 }
 
-u8 func_80096524(PlayerState* arg0) {
-    return arg0->unk94->unkA0[0];
+s32 player_touchingWater(PlayerState* arg0) {
+    return arg0->unk94->touchingWater;
 }
 
 s32 func_80096530(PlayerState* arg0) {
@@ -322,12 +324,12 @@ s32 func_8009659C(PlayerState* arg0, s32 arg1) {
     return func_800C6744(arg0->unk94->unk0) & arg1;
 }
 
-u8 func_800965C8(PlayerState* arg0) {
+s32 func_800965C8(PlayerState* arg0) {
     return arg0->unk94->unkA4;
 }
 
-s32 func_800965D4(PlayerState* arg0) {
-    return *(s32*)arg0->unk94->unk50;
+Unk80132ED0* func_800965D4(PlayerState* arg0) {
+    return arg0->unk94->unk50;
 }
 
 void func_800965E0(PlayerState* arg0, void* arg1) {
@@ -342,7 +344,7 @@ s32 func_80096628(PlayerState* arg0) {
     return func_800C6744(arg0->unk94->unk0);
 }
 
-s16 func_8009664C(PlayerState* arg0) {
+s32 func_8009664C(PlayerState* arg0) {
     return func_800C674C(arg0->unk94->unk0);
 }
 
@@ -408,7 +410,7 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
     ml_getdiff_vec3f(sp38, arg1, arg0);
     ml_vec3f_assign_value(sp50, 0.0f, 1.0f, 0.0f);
     ml_vec3f_assign_value(sp44, sp38[0], 0.0f, sp38[2]);
-    func_800EF2A0(sp44);
+    ml_vec3f_normalizeMagnitude(sp44);
     ml_vec3f_cross_product(sp60, sp44, sp50);
     sp94 = ml_vec3f_dot_product(arg3, sp60);
     if (sp94 > 0.0f || sp94 == 0.0f) {
@@ -426,14 +428,14 @@ void func_800967C8(f32* arg0, f32* arg1, f32* arg2, f32* arg3) {
         sp7C[i] = arg2[i] + (arg3[i] * temp_f2);
     }
     ml_vec3f_assign_value(sp6C, sp38[0], 0.0f, sp38[2]);
-    func_800EF2A0(sp6C);
+    ml_vec3f_normalizeMagnitude(sp6C);
     ml_vec3f_assign_value(sp2C, sp7C[0] - arg0[0], 0.0f, sp7C[2] - arg0[2]);
     temp_f2 = ml_vec3f_dot_product(sp2C, sp6C);
     if (temp_f2 < 0.0f) {
         return;
     }
 
-    if (func_800EEF94(sp38) < temp_f2) {
+    if (ml_vec3f_magnitude(sp38) < temp_f2) {
         return;
     }
 
@@ -489,9 +491,9 @@ s32 func_80096E30(ba_unknown_98_s* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg
     f32 sp28[3];
     f32 sp1C[3];
 
-    func_800EFA20(sp28, arg0->unk0, arg4);
+    ml_getScaledVec3f(sp28, arg0->unk0, arg4);
     ml_vec3f_sum(sp1C, arg2, sp28);
-    func_800EFA20(sp28, arg0->unk0, arg3);
+    ml_getScaledVec3f(sp28, arg0->unk0, arg3);
     func_800EF934(sp7C, sp28, -arg5);
     func_800EF934(sp34, sp28, arg5);
     ml_vec3f_assign_value(sp88, sp28[2], sp28[1], -sp28[0]);
@@ -514,7 +516,7 @@ s32 func_80096E30(ba_unknown_98_s* arg0, f32* arg1, f32* arg2, f32 arg3, f32 arg
     func_800EFE50(arg1, spA0, sp58, 0.5f);
     ml_vec3f_sum(arg0->unk0, spAC, sp64);
     ml_vec3f_apply_scale(arg0->unk0, -0.5f);
-    func_800EF2A0(arg0->unk0);
+    ml_vec3f_normalizeMagnitude(arg0->unk0);
     if (ml_vec3f_is_equal(spAC, sp64) != 0) {
         var_v1 = 2;
     } else {
@@ -560,14 +562,14 @@ s32 func_80097104(PlayerState* arg0, f32* arg1, f32 arg2) {
     f32 sp28;
     f32 sp1C[3];
 
-    func_800EFA20(sp6C, arg0->unk98->unk0, arg2);
+    ml_getScaledVec3f(sp6C, arg0->unk98->unk0, arg2);
     ml_getdiff_vec3f(sp60, arg1, sp6C);
     ml_vec3f_assign_value(sp48, 0.0f, 1.0f, 0.0f);
     ml_vec3f_cross_product(sp3C, arg0->unk98->unk0, sp48);
-    func_800EFA20(sp30, sp3C, -1.0f);
+    ml_getScaledVec3f(sp30, sp3C, -1.0f);
     func_8009BB24(arg0, sp1C);
     sp1C[1] = 0.0f;
-    func_800EF2A0(sp1C);
+    ml_vec3f_normalizeMagnitude(sp1C);
     sp28 = ml_vec3f_dot_product(sp3C, sp1C);
     ml_vec3f_assign_value(sp54, sp60[0], sp60[1] - 50.0f, sp60[2]);
     if (0.0f < sp28) {
@@ -629,7 +631,7 @@ s32 func_800972BC(PlayerState* arg0, f32* arg1) {
     if (func_80097104(arg0, sp44, sp60) == 0) {
         return 0;
     }
-    func_800EFA20(sp2C, arg0->unk98->unk0, sp60 + -18.0f);
+    ml_getScaledVec3f(sp2C, arg0->unk98->unk0, sp60 + -18.0f);
     ml_getdiff_vec3f(sp50, sp44, sp2C);
     sp50[1] = (sp44[1] - sp5C) + -43.0f;
     if (func_8009700C(arg0, sp38, sp50, sp60 * 0.75f + sp5C, -50.0f) != 0) {
@@ -666,7 +668,7 @@ s32 func_80097530(PlayerState* arg0) {
     f32 sp20[3];
 
     func_80095870(arg0, &sp50, &sp54);
-    func_800EFA20(sp2C, arg0->unk98->unk0, 25.0f);
+    ml_getScaledVec3f(sp2C, arg0->unk98->unk0, 25.0f);
     ml_vec3f_add(sp2C, arg0->unk98->unkC);
     ml_vec3f_assign_value(sp44, sp2C[0], sp2C[1] + 6.0f, sp2C[2]);
     ml_vec3f_assign_value(sp38, sp2C[0], sp2C[1] + sp50 + sp54 + 5.0f, sp2C[2]);
@@ -710,7 +712,7 @@ s32 func_800976DC(PlayerState* arg0) {
     func_800F0410(sp4C, sp28[0], sp64);
     ml_getdiff_vec3f(arg0->unk98->unk0, sp4C, sp64);
     arg0->unk98->unk0[1] = 0.0f;
-    func_800EF2A0(arg0->unk98->unk0);
+    ml_vec3f_normalizeMagnitude(arg0->unk98->unk0);
     temp_v0 = arg0->unk98;
     if ((temp_v0->unk0[0] == 0.0f) && (temp_v0->unk0[2] == 0.0f)) {
         return 0;

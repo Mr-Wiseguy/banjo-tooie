@@ -20,7 +20,7 @@ void func_800A5AB0(void)
             var_a2 = D_8011A1BC[index].unk4;
         }
     }
-    currentMap = func_800EA05C();
+    currentMap = map_getCurrent();
     for (index = 0; var_a2[index].unk0 != 0; index++)
     {
         if (currentMap == var_a2[index].unk0)
