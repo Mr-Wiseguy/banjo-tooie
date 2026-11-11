@@ -64,6 +64,7 @@ f32 func_800964DC(PlayerState *);
 s32 func_80096500(PlayerState *);
 s32 func_8009650C(PlayerState *);
 s32 func_80096518(PlayerState*);
+u8 func_80096524(PlayerState*);
 s32 func_80096530(PlayerState*);
 s32 func_80096544(PlayerState *);
 s32 func_80096568(PlayerState*, s32);

@@ -4,11 +4,15 @@
 #include "common.h"
 
 void func_800A9924(s16, u8);
+void func_800A9998(void);
 void func_800A9A14();
+void func_800A9AA4(Gfx**);
+void func_800A9AF8(void);
 void func_800A9B84(void);
 void func_800A9B8C(s32, s32);
 void func_800A9BA0(s32, s32, s32);
 void func_800A9C50();
 s32 func_800A9C98();
+void func_800A9D00(void);
 
 #endif

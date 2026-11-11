@@ -5,6 +5,7 @@
 #include "memory.h"
 #include "gc/dialogexec.h"
 
+void func_800C0130(Gfx**);
 void func_800C01A8(s32, s32);
 void func_800C0438(void);
 u32 func_800C0534(u32, u32, f32*, Unk80132ED0*, s32, s32, s32, s32);
@@ -15,8 +16,13 @@ void func_800C0658();
 void func_800C067C(s32);
 void func_800C06C4();
 void func_800C0710();
+void func_800C075C(void);
 void func_800C0850();
+void func_800C08C0(void);
+void func_800C08F8(void);
+void func_800C0920(void);
 s32 func_800C0948();
+void func_800C0984(Gfx**);
 void func_800C0A2C();
 s32 func_800C0A34();
 #endif

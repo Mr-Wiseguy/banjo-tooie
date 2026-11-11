@@ -5,6 +5,7 @@
 #include "core2/1EDA900.h"
 #include "core2/1EDCA30.h"
 
+void func_801015C8(void);
 s32 func_801015D0(Actor*);
 s32 func_801017D0(Actor*);
 void func_80101808(Actor* arg0, s32(*arg1)(Actor*));

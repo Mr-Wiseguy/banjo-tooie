@@ -3,7 +3,7 @@
 
 #include <ultra64.h>
 #include "ba/playerstate.h"
-// func_801101C0
+void func_801101C0();
 // func_80110280
 // func_80110424
 // func_801104F4

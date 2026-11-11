@@ -8,5 +8,7 @@
 
 void _cosectionstor_entrypoint_0();
 void _cosectionstor_entrypoint_1();
+void _cosectionstor_entrypoint_2();
+void _cosectionstor_entrypoint_3(s32);
 
 #endif

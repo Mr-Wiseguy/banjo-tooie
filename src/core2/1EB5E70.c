@@ -77,11 +77,6 @@ void func_800DC628(s32 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/core2/1EB5E70/func_800DE318.s")
 
-typedef struct {
-    Gfx* gfx;
-    Mtx* mtx;
-} GraphicsBuffers;
-
 GraphicsBuffers* func_800A7180();
 
 void* func_800DE498(GraphicsBuffers*, f32*, f32*, f32, f32*, s32);

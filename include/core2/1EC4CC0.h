@@ -16,6 +16,8 @@
 #include "memory.h"
 #include "vector.h"
 
+void func_800EB51C(s32, Gfx**);
+void func_800EB7A8(void);
 s32 func_800EB854();
 void func_800EBB5C();
 void func_800EBD2C(unkCUnk0*, s32*, s32);

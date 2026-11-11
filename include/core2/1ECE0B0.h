@@ -140,6 +140,7 @@ typedef struct {
 } Unk80135490;
 
 void func_800F48BC(s32, f32*);
+void func_800F4924(s32, s32);
 void func_800F497C(s32);
 void func_800F49D4(s32 arg0, void* arg1, s32 arg2);
 void func_800F4A58(s32,s32,f32);
@@ -156,6 +157,8 @@ PlayerState* character_getPlayerStateBounded(s32 arg0);
 TransformationId character_getTransform(s32);
 //Get the character control index
 u32 character_getActiveIndex(void);
+void func_800F5184(void);
+void func_800F51A8(void);
 s32 func_800F5578(s32);
 s32 func_800F55A4(s32);
 s32 func_800F56AC(s32);
@@ -230,6 +233,7 @@ void func_800F82D4(s32, s32);
 void func_800F8300(s32, s32, f32*);
 void func_800F832C(s32, f32*);
 void func_800F8418(s32, f32*);
+void func_800F86D8(void);
 void func_800F8804(s32, f32*);
 void func_800F8850();
 unkStruct800F88A0* func_800F88A0(s32);
@@ -248,6 +252,7 @@ void func_800F911C(s32);
 void func_800F9178();
 // Might take in a PlayerState *
 void func_800F9198(void);
+void func_800F91EC(void);
 s32 func_800F9214(s32);
 s32 func_800F929C(void);
 void func_800F93C4(s32*, s32*);

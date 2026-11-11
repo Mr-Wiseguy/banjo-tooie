@@ -598,6 +598,8 @@ segments:
       - [0x1EFEB90, .rodata, baphysics]
       - [0x1EFEC30, .rodata, baroll]
       - [0x1EFEC40, rodata]
+      - [0x1EFECA0, .rodata, 1E79FD0]
+      - [0x1EFED80, rodata]
       - [0x1EFEE60, .rodata, 1E7D460]
       - [0x1EFEEB0, rodata]
       - [0x1EFF0B0, .rodata, 1E9A960]

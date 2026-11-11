@@ -3,6 +3,8 @@
 
 #include <common.h>
 
+void func_800E4C7C(void);
 void func_800E692C();
+
 
 #endif

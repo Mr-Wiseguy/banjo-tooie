@@ -378,6 +378,24 @@ typedef struct ba_unknown_134_s {
     f32 unk4;
 } BaUnknown134;
 
+typedef struct ba_unknown_138_s {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    u8 unkC;
+    u8 unkD;
+    u8 unkE;
+    u8 unkF;
+    u8 unk10;
+    u8 unk11;
+    u8 unk12;
+    u8 unk13;
+    u8 unk14;
+    u8 unk15;
+    u8 unk16;
+    u8 unk17;
+} BaUnknown138;
+
 typedef struct ba_deathmatch_s {
     s16 unk0[4];
     s32 unk8;
@@ -434,6 +452,18 @@ typedef struct bs_van_s {
     f32 unk4[3];
     s32 unk10;
 } BsVan;
+
+typedef struct ba_unknown_150_s {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 pad3[1];
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+} BaUnknown150;
+
 typedef struct player_state_s {
     /* 0x00 */ struct ba_alarm_s *alarm;
     /* 0x04 */ struct ba_anim_s *anim;
@@ -493,13 +523,13 @@ typedef struct player_state_s {
     /* 0x128 */ struct ba_stick_s *stick;
     u8 pad12C[0x8];
     /* 0x134 */ BaUnknown134* swim;
-    u8 pad138[0x4];
+    /* 0x138 */ struct ba_unknown_138_s *unk138;
     /* 0x13C */ struct ba_timer_s *timer;
     /* 0x140 */ struct ba_translate_s *translate;
     /* 0x144 */ struct ba_van_s *van;
     /* 0x148 */ struct ba_wandglow_s *wandglow;
     /* 0x14C */ struct ba_washer_s *washer;
-    u8 pad150[0x4];
+    /* 0x150 */ struct ba_unknown_150_s *unk150;
     /* 0x154 */ struct ba_wobble_s *wobble;
     /* 0x158 */ BaDeathmatch* deathmatch;
     union {

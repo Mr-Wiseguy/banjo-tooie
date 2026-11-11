@@ -444,7 +444,7 @@ void func_800C9310(void) {
     }
 }
 
-void func_800C9358(s32 arg0, s32 arg1) {
+void func_800C9358(Gfx** arg0, s32 arg1) {
     s32 temp_a1;
     unkStruct800C9150** var_s0;
     s32 var_s1;
@@ -467,7 +467,7 @@ void func_800C9358(s32 arg0, s32 arg1) {
     }
 }
 
-void func_800C940C(s32 arg0, s32 arg1) {
+void func_800C940C(Gfx** arg0, s32 arg1) {
     unkStruct800C9150** var_a0;
     unkStruct800C9150* temp_a2;
     s32 var_v1;
@@ -543,7 +543,7 @@ s32 func_800C95D4(void) {
     return 1;
 }
 
-void func_800C9610(void) {
+void func_800C9610() {
     unkStruct800C9150* var_a0 = func_800C91C8(4);
 
     if (var_a0 == NULL) {

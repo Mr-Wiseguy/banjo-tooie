@@ -745,11 +745,11 @@ void func_8080136C_gcnewpause(PauseState* pauseMenu)
 
 	temp_v0 = func_800E8B74(0xB59);
 	pauseMenu->ShowBButton = temp_v0;
-	func_800E8D28(temp_v0 & 0xFF, 0.6f);
+	func_800E8D28(temp_v0, 0.6f);
 	func_800E8D5C(pauseMenu->ShowBButton, &D_808021CC_gcnewpause, 3);
 	temp_v0_2 = func_800E8B74(0xB57);
 	pauseMenu->JoystickIndicator = temp_v0_2;
-	func_800E8D28(temp_v0_2 & 0xFF, 0.8f);
+	func_800E8D28(temp_v0_2, 0.8f);
 	func_800E8D5C(pauseMenu->JoystickIndicator, &D_808021E4_gcnewpause, 3);
 	pauseMenu->MoveRightJoystickTrigger = 0;
 	pauseMenu->MoveLeftJoystickTrigger = 0;

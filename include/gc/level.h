@@ -12,7 +12,9 @@
 #include "gc/sectionDll.h"
 #include "co/sectionstor.h"
 
+s32 _gclevel_entrypoint_0(s32, s32);
 void gclevel_entrypoint_1(void);
+void _gclevel_entrypoint_1(void);
 s32 gclevel_entrypoint_2(s32);
 s32 _gclevel_entrypoint_2(s32);
 

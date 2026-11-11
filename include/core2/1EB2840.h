@@ -3,6 +3,7 @@
 
 #include <ultra64.h>
 
+s32 func_800D8FA0(s32);
 s32 func_800D8FEC();
 f32 time_getDelta(void); //time_getDelta()
 f32 func_800D9004();

@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+void func_800A5654(void);
 void func_800A5800(s32);
 s32 func_800A5854(s32);
 s32 func_800A5904(s32);
